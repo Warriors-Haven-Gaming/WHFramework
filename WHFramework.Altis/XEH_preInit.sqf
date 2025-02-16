@@ -23,6 +23,38 @@ Author:
 //     _script      - Script to execute when setting is changed. (optional) <CODE>
 //     _needRestart - Setting will be marked as needing mission restart after being changed. (optional, default false) <BOOL>
 
+// Self Revive
+[
+    "WH_selfRevive_minTime",
+    "SLIDER",
+    ["STR_WH_settings_selfRevive_minTime", "STR_WH_settings_selfRevive_minTime_tooltip"],
+    ["STR_WH_settings", "STR_WH_settings_selfRevive"],
+    [0, 180, 30, 0, false],
+    true,
+    {},
+    false
+] call WH_fnc_addSetting;
+[
+    "WH_selfRevive_duration",
+    "SLIDER",
+    ["STR_WH_settings_selfRevive_duration", "STR_WH_settings_selfRevive_duration_tooltip"],
+    ["STR_WH_settings", "STR_WH_settings_selfRevive"],
+    [0.5, 30, 10, 1, false],
+    true,
+    {},
+    false
+] call WH_fnc_addSetting;
+[
+    "WH_selfRevive_FAKs",
+    "LIST",
+    ["STR_WH_settings_selfRevive_FAKs", "STR_WH_settings_selfRevive_FAKs_tooltip"],
+    ["STR_WH_settings", "STR_WH_settings_selfRevive"],
+    [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], [], 4],
+    true,
+    {},
+    false
+] call WH_fnc_addSetting;
+
 // Unflip
 [
     "WH_unflip_duration",

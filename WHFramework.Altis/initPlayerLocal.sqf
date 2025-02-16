@@ -24,4 +24,7 @@ if (isMultiplayer && {!isServer}) then {
 
 if (!hasInterface) exitWith {};
 
+call WH_fnc_initIncapacitatedHandlers;
+0 spawn WH_fnc_selfReviveLoop;
+
 systemChat format ["Finished initialization (%1)", briefingName];
