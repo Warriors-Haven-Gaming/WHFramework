@@ -23,6 +23,18 @@ Author:
 //     _script      - Script to execute when setting is changed. (optional) <CODE>
 //     _needRestart - Setting will be marked as needing mission restart after being changed. (optional, default false) <BOOL>
 
+// Damage
+[
+    "WHF_playerDamageReduction",
+    "SLIDER",
+    ["STR_WHF_settings_damage_reduction", "STR_WHF_settings_damage_reduction_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_damage"],
+    [0, 1, 0.3, 0, true],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+
 // Garbage Collection
 [
     "WHF_gcLootLifetime",

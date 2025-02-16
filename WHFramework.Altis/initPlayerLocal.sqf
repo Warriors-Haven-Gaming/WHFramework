@@ -24,6 +24,7 @@ if (isMultiplayer && {!isServer}) then {
 
 if (!hasInterface) exitWith {};
 
+call WHF_fnc_initDamageHandlers;
 call WHF_fnc_initIncapacitatedHandlers;
 0 spawn WHF_fnc_updateChannelLoop;
 0 spawn WHF_fnc_selfReviveLoop;
