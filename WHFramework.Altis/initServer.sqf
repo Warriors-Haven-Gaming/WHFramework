@@ -26,6 +26,8 @@ if (isMultiplayer) then {
     if (markerColor "respawn_west" isNotEqualTo "") then {player setPosATL markerPos "respawn_west"};
 };
 
+call WH_fnc_initChannels;
+
 WH_globalPlayerTarget = [0, -2] select isDedicated;
 publicVariable "WH_globalPlayerTarget";
 
