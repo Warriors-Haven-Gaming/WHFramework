@@ -31,25 +31,18 @@ call WHF_fnc_initChannels;
 WHF_globalPlayerTarget = [0, -2] select isDedicated;
 publicVariable "WHF_globalPlayerTarget";
 
-// WHF_mainMissionLoop_script = [
-//     [
-//         "WHF_fnc_msnMainClearZombies"
-//     ],
-//     WHF_missions_main_min,
-//     WHF_missions_main_max
-// ] spawn WHF_fnc_missionLoop;
-// WHF_sideMissionLoop_script = [
-//     [
-//         "WHF_fnc_msnAssistSoldiers",
-//         "WHF_fnc_msnClearDemons",
-//         "WHF_fnc_msnClearRaiders",
-//         "WHF_fnc_msnClearZombies",
-//         "WHF_fnc_msnDownloadIntel",
-//         "WHF_fnc_msnRescueCivilians"
-//     ],
-//     WHF_missions_side_min,
-//     WHF_missions_side_max
-// ] spawn WHF_fnc_missionLoop;
+WHF_mainMissionLoop_script = [
+    [],
+    1,
+    1
+] spawn WHF_fnc_missionLoop;
+WHF_sideMissionLoop_script = [
+    [
+        "WHF_fnc_msnDownloadIntel"
+    ],
+    1,
+    3
+] spawn WHF_fnc_missionLoop;
 
 WHF_gcDeletionQueue = [];
 WHF_gcUnhideQueue = [];

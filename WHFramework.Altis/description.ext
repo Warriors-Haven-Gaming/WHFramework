@@ -24,6 +24,7 @@ class CfgFunctions {
         };
         class Helpers {
             class anyInArea {};
+            class displayTimer {};
             class inAreaMarkers {};
             class isPlayerRemoteExecuted {};
             class isRemoteExecutedByAdmin {};
@@ -38,6 +39,13 @@ class CfgFunctions {
             class createAreaMarker {};
             class createLocalMarker {};
             class randomMarkerID {};
+        };
+        class Missions {
+            class missionLoop {};
+            class msnDownloadIntel {};
+            class msnDownloadIntelLaptop {};
+            class msnDownloadIntelLaptopTimer {};
+            class msnDownloadIntelLaptopTimerCondition {};
         };
         class Revive {
             class initIncapacitatedHandlers {};
@@ -70,8 +78,8 @@ class CfgRadio {};
 
 // https://community.bistudio.com/wiki/Description.ext#Tasks
 class CfgTaskDescriptions {
-    class exampleTask {
-        title       = "STR_WHF_exampleTask_title";
-        description = "STR_WHF_exampleTask_description";
+    class downloadIntel {
+        title       = "STR_WHF_downloadIntel_title";
+        description = "STR_WHF_downloadIntel_description";
     };
 };

@@ -1,11 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="WHFramework">
     <Container name="CfgTaskDescriptions">
-        <Key ID="STR_WHF_exampleTask_title">
-            <Original>Example Task</Original>
+        <Key ID="STR_WHF_downloadIntel_title">
+            <Original>Secure Intel</Original>
         </Key>
-        <Key ID="STR_WHF_exampleTask_description">
-            <Original>Example Task Description</Original>
+        <Key ID="STR_WHF_downloadIntel_description">
+            <Original>A military research building has been found containing intel. Secure it!</Original>
+        </Key>
+    </Container>
+    <Container name="Helpers">
+        <Key ID="STR_WHF_defaultTimer">
+            <Original>Time left: %3/%2</Original>
+        </Key>
+    </Container>
+    <Container name="Missions">
+        <Key ID="STR_WHF_downloadIntelLaptop_action">
+            <Original>Download Intel</Original>
+        </Key>
+        <Key ID="STR_WHF_downloadIntelLaptop_start">
+            <Original>Intel is being downloaded...</Original>
+        </Key>
+        <Key ID="STR_WHF_downloadIntelLaptop_interrupted">
+            <Original>Someone needs to stay near the intel laptop!</Original>
+        </Key>
+        <Key ID="STR_WHF_downloadIntelLaptop_ended">
+            <Original>Intel has been downloaded!</Original>
+        </Key>
+        <Key ID="STR_WHF_downloadIntelLaptop_ended_inArea">
+            <Original>Intel has been downloaded! Time for you to move out!</Original>
         </Key>
     </Container>
     <Container name="Revive">
