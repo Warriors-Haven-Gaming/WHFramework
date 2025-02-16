@@ -1,5 +1,5 @@
 /*
-Function: WH_fnc_addSetting
+Function: WHF_fnc_addSetting
 
 Description:
     A proxy for CBA_fnc_addSetting that assigns the default value if CBA

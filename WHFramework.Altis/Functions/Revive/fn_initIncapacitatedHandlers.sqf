@@ -1,5 +1,5 @@
 /*
-Function: WH_fnc_initIncapacitatedHandlers
+Function: WHF_fnc_initIncapacitatedHandlers
 
 Description:
     Sets up player damage handlers for incapacitation.
@@ -13,7 +13,7 @@ player addEventHandler ["HandleDamage", {call {
     if (lifeState _unit isNotEqualTo "INCAPACITATED") exitWith {};
     if (isDamageAllowed _unit) then {
         _unit allowDamage false;
-        _unit setVariable ["WH_incapacitatedInvincibility", true];
+        _unit setVariable ["WHF_incapacitatedInvincibility", true];
     };
     if (_hitIndex >= 0) then {_unit getHitIndex _hitIndex} else {damage _unit}
 }}];

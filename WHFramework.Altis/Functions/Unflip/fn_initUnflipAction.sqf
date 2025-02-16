@@ -1,5 +1,5 @@
 /*
-Function: WH_fnc_initUnflipAction
+Function: WHF_fnc_initUnflipAction
 
 Description:
     Adds an action to unflip vehicles.
@@ -10,27 +10,27 @@ Author:
 
 */
 if (!hasInterface) exitWith {};
-if (!isNil "WH_unflipActionID") then {
-    WH_unflipActionID call BIS_fnc_holdActionRemove;
+if (!isNil "WHF_unflipActionID") then {
+    WHF_unflipActionID call BIS_fnc_holdActionRemove;
 };
 
 private _actionID = [
     player,
-    localize "$STR_WH_initUnflipAction_title",
+    localize "$STR_WHF_initUnflipAction_title",
     "a3\ui_f\data\igui\cfg\holdactions\holdaction_takeoff1_ca.paa",
     "a3\ui_f\data\igui\cfg\holdactions\holdaction_takeoff2_ca.paa",
-    "isNull objectParent _this && {call WH_fnc_isLookingAtFlippedVehicle}",
+    "isNull objectParent _this && {call WHF_fnc_isLookingAtFlippedVehicle}",
     "true",
     {},
     {},
-    {[cursorObject] remoteExec ["WH_fnc_unflipVehicle", cursorObject]},
+    {[cursorObject] remoteExec ["WHF_fnc_unflipVehicle", cursorObject]},
     {},
     [],
-    WH_unflip_duration,
+    WHF_unflip_duration,
     1000,
     false,
     false,
     true
 ] call BIS_fnc_holdActionAdd;
 
-WH_unflipActionID = [player, _actionID];
+WHF_unflipActionID = [player, _actionID];

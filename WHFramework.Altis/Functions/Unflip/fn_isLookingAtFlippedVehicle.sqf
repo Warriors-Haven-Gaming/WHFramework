@@ -1,5 +1,5 @@
 /*
-Function: WH_fnc_isLookingAtFlippedVehicle
+Function: WHF_fnc_isLookingAtFlippedVehicle
 
 Description:
     Checks if the player is looking at a vehicle that can be unflipped.
@@ -23,4 +23,4 @@ if (
 private _pos = getPosASL _vehicle;
 private _surfaceNormal = if (surfaceIsWater _pos) then {[0, 0, 1]} else {surfaceNormal _pos};
 private _angle = _surfaceNormal vectorDotProduct vectorUp _vehicle;
-_angle <= WH_unflip_angle
+_angle <= WHF_unflip_angle

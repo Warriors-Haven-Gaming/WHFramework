@@ -1,5 +1,5 @@
 /*
-Function: WH_fnc_updateChannelLoop
+Function: WHF_fnc_updateChannelLoop
 
 Description:
     Periodically updates the player's channel access.
@@ -7,7 +7,7 @@ Description:
 
 Examples:
     (begin example)
-        0 spawn WH_fnc_updateChannelLoop;
+        0 spawn WHF_fnc_updateChannelLoop;
     (end)
 
 Author:
@@ -20,8 +20,8 @@ while {true} do {
 
     private _vehicle = objectParent player;
     if (_vehicle isKindOf "Air" && {currentPilot _vehicle isEqualTo player}) then {
-        WH_channelID_aircraft radioChannelAdd [player];
+        WHF_channelID_aircraft radioChannelAdd [player];
     } else {
-        WH_channelID_aircraft radioChannelRemove [player];
+        WHF_channelID_aircraft radioChannelRemove [player];
     };
 };

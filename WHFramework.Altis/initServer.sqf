@@ -26,34 +26,34 @@ if (isMultiplayer) then {
     if (markerColor "respawn_west" isNotEqualTo "") then {player setPosATL markerPos "respawn_west"};
 };
 
-call WH_fnc_initChannels;
+call WHF_fnc_initChannels;
 
-WH_globalPlayerTarget = [0, -2] select isDedicated;
-publicVariable "WH_globalPlayerTarget";
+WHF_globalPlayerTarget = [0, -2] select isDedicated;
+publicVariable "WHF_globalPlayerTarget";
 
-// WH_mainMissionLoop_script = [
+// WHF_mainMissionLoop_script = [
 //     [
-//         "WH_fnc_msnMainClearZombies"
+//         "WHF_fnc_msnMainClearZombies"
 //     ],
-//     WH_missions_main_min,
-//     WH_missions_main_max
-// ] spawn WH_fnc_missionLoop;
-// WH_sideMissionLoop_script = [
+//     WHF_missions_main_min,
+//     WHF_missions_main_max
+// ] spawn WHF_fnc_missionLoop;
+// WHF_sideMissionLoop_script = [
 //     [
-//         "WH_fnc_msnAssistSoldiers",
-//         "WH_fnc_msnClearDemons",
-//         "WH_fnc_msnClearRaiders",
-//         "WH_fnc_msnClearZombies",
-//         "WH_fnc_msnDownloadIntel",
-//         "WH_fnc_msnRescueCivilians"
+//         "WHF_fnc_msnAssistSoldiers",
+//         "WHF_fnc_msnClearDemons",
+//         "WHF_fnc_msnClearRaiders",
+//         "WHF_fnc_msnClearZombies",
+//         "WHF_fnc_msnDownloadIntel",
+//         "WHF_fnc_msnRescueCivilians"
 //     ],
-//     WH_missions_side_min,
-//     WH_missions_side_max
-// ] spawn WH_fnc_missionLoop;
+//     WHF_missions_side_min,
+//     WHF_missions_side_max
+// ] spawn WHF_fnc_missionLoop;
 
-// WH_gcDeletionQueue = [];
-// WH_gcUnhideQueue = [];
-// WH_garbageCollector_script = 0 spawn WH_fnc_garbageCollectorLoop;
+// WHF_gcDeletionQueue = [];
+// WHF_gcUnhideQueue = [];
+// WHF_garbageCollector_script = 0 spawn WHF_fnc_garbageCollectorLoop;
 
 // Why is this needed on dedicated server?
 civilian setFriend [blufor, 1];

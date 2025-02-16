@@ -6,7 +6,7 @@ Description:
     https://github.com/CBATeam/CBA_A3/wiki/CBA-Settings-System
 
     If CBA is not loaded, this is executed at mission start by init(Server).sqf.
-    This is to allow assigning default settings via WH_fnc_addSetting.
+    This is to allow assigning default settings via WHF_fnc_addSetting.
 
 Author:
     thegamecracks
@@ -25,64 +25,64 @@ Author:
 
 // Self Revive
 [
-    "WH_selfRevive_minTime",
+    "WHF_selfRevive_minTime",
     "SLIDER",
-    ["STR_WH_settings_selfRevive_minTime", "STR_WH_settings_selfRevive_minTime_tooltip"],
-    ["STR_WH_settings", "STR_WH_settings_selfRevive"],
+    ["STR_WHF_settings_selfRevive_minTime", "STR_WHF_settings_selfRevive_minTime_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_selfRevive"],
     [0, 180, 30, 0, false],
     true,
     {},
     false
-] call WH_fnc_addSetting;
+] call WHF_fnc_addSetting;
 [
-    "WH_selfRevive_duration",
+    "WHF_selfRevive_duration",
     "SLIDER",
-    ["STR_WH_settings_selfRevive_duration", "STR_WH_settings_selfRevive_duration_tooltip"],
-    ["STR_WH_settings", "STR_WH_settings_selfRevive"],
+    ["STR_WHF_settings_selfRevive_duration", "STR_WHF_settings_selfRevive_duration_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_selfRevive"],
     [0.5, 30, 10, 1, false],
     true,
     {},
     false
-] call WH_fnc_addSetting;
+] call WHF_fnc_addSetting;
 [
-    "WH_selfRevive_FAKs",
+    "WHF_selfRevive_FAKs",
     "LIST",
-    ["STR_WH_settings_selfRevive_FAKs", "STR_WH_settings_selfRevive_FAKs_tooltip"],
-    ["STR_WH_settings", "STR_WH_settings_selfRevive"],
+    ["STR_WHF_settings_selfRevive_FAKs", "STR_WHF_settings_selfRevive_FAKs_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_selfRevive"],
     [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], [], 4],
     true,
     {},
     false
-] call WH_fnc_addSetting;
+] call WHF_fnc_addSetting;
 
 // Unflip
 [
-    "WH_unflip_duration",
+    "WHF_unflip_duration",
     "SLIDER",
-    ["STR_WH_settings_unflip_duration", "STR_WH_settings_unflip_duration_tooltip"],
-    ["STR_WH_settings", "STR_WH_settings_unflip"],
+    ["STR_WHF_settings_unflip_duration", "STR_WHF_settings_unflip_duration_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_unflip"],
     [0, 30, 10, 0, false],
     true,
-    {call WH_fnc_initUnflipAction},
+    {call WHF_fnc_initUnflipAction},
     false
-] call WH_fnc_addSetting;
+] call WHF_fnc_addSetting;
 [
-    "WH_unflip_angle",
+    "WHF_unflip_angle",
     "SLIDER",
-    ["STR_WH_settings_unflip_angle", "STR_WH_settings_unflip_angle_tooltip"],
-    ["STR_WH_settings", "STR_WH_settings_unflip"],
+    ["STR_WHF_settings_unflip_angle", "STR_WHF_settings_unflip_angle_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_unflip"],
     [-1, 1, 0.1, 0, true],
     true,
     {},
     false
-] call WH_fnc_addSetting;
+] call WHF_fnc_addSetting;
 [
-    "WH_unflip_radius",
+    "WHF_unflip_radius",
     "SLIDER",
-    ["STR_WH_settings_unflip_radius", "STR_WH_settings_unflip_radius_tooltip"],
-    ["STR_WH_settings", "STR_WH_settings_unflip"],
+    ["STR_WHF_settings_unflip_radius", "STR_WHF_settings_unflip_radius_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_unflip"],
     [5, 50, 25, 0, false],
     true,
     {},
     false
-] call WH_fnc_addSetting;
+] call WHF_fnc_addSetting;

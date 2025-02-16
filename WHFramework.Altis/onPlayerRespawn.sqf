@@ -15,4 +15,4 @@ Author:
 */
 params ["_newUnit"];
 
-call WH_fnc_initUnflipAction;
+call WHF_fnc_initUnflipAction;

@@ -1,5 +1,5 @@
 /*
-Function: WH_fnc_initChannels
+Function: WHF_fnc_initChannels
 
 Description:
     Initializes custom channels.
@@ -7,7 +7,7 @@ Description:
 
 Examples:
     (begin example)
-        call WH_fnc_initChannels;
+        call WHF_fnc_initChannels;
     (end)
 
 Author:
@@ -16,10 +16,10 @@ Author:
 */
 if (!isServer) exitWith {};
 
-WH_channelID_aircraft = radioChannelCreate [
+WHF_channelID_aircraft = radioChannelCreate [
     [1, 0.4, 1, 1],
     "Aircraft channel", // TODO: localize
     "%UNIT_VEH_NAME (%UNIT_NAME)",
     []
 ];
-publicVariable "WH_channelID_aircraft";
+publicVariable "WHF_channelID_aircraft";

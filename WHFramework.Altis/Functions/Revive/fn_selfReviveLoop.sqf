@@ -1,5 +1,5 @@
 /*
-Function: WH_fnc_selfReviveLoop
+Function: WHF_fnc_selfReviveLoop
 
 Description:
     Periodically checks if the user can self-revive.
@@ -23,17 +23,17 @@ private _addReviveAction = {
 
     _reviveActionID = [
         player,
-        format ["<t color='#00FF00'>%1</t>", localize "$STR_WH_selfReviveLoop_action"],
+        format ["<t color='#00FF00'>%1</t>", localize "$STR_WHF_selfReviveLoop_action"],
         "\A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_revive_ca.paa",
         "\A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_revive_ca.paa",
         "lifeState _target isEqualTo 'INCAPACITATED'",
-        "[_target, _caller, _actionId, _arguments] call WH_fnc_selfReviveConditionProgress",
+        "[_target, _caller, _actionId, _arguments] call WHF_fnc_selfReviveConditionProgress",
         {},
         {},
-        WH_fnc_selfReviveCompleted,
+        WHF_fnc_selfReviveCompleted,
         {},
         [],
-        WH_selfRevive_duration,
+        WHF_selfRevive_duration,
         1001, // slightly higher priority than vanilla Force Respawn action
         false,
         true,
@@ -46,7 +46,7 @@ while {true} do {
     if (lifeState player isEqualTo "INCAPACITATED") then {
         private _now = time;
         if (_timeIncapacitated < 0) then {_timeIncapacitated = _now};
-        if (_reviveActionID < 0 && {_now - _timeIncapacitated > WH_selfRevive_minTime}) then {
+        if (_reviveActionID < 0 && {_now - _timeIncapacitated > WHF_selfRevive_minTime}) then {
             call _addReviveAction;
         };
         private _vehicle = objectParent player;
@@ -58,9 +58,9 @@ while {true} do {
             [player, _reviveActionID] call BIS_fnc_holdActionRemove;
             _reviveActionID = -1;
         };
-        if (!isNil {player getVariable "WH_incapacitatedInvincibility"}) then {
+        if (!isNil {player getVariable "WHF_incapacitatedInvincibility"}) then {
             player allowDamage true;
-            player setVariable ["WH_incapacitatedInvincibility", nil];
+            player setVariable ["WHF_incapacitatedInvincibility", nil];
         };
     };
 };
