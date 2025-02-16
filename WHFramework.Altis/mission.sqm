@@ -20,7 +20,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=14;
+		nextID=17;
 	};
 	class Camera
 	{
@@ -242,7 +242,20 @@ class CustomAttributes
 				};
 			};
 		};
-		nAttributes=3;
+		class Attribute3
+		{
+			property="ReviveMode";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					singleType="SCALAR";
+					value=1;
+				};
+			};
+		};
+		nAttributes=4;
 	};
 	class Category1
 	{
@@ -6120,7 +6133,7 @@ class Mission
 				};
 			};
 			id=390;
-			atlOffset=0.0025100708;
+			atlOffset=0.00048065186;
 		};
 		class Item3
 		{
