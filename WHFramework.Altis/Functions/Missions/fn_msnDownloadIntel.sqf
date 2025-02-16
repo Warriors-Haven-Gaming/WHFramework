@@ -53,6 +53,11 @@ private _intelBuilding = [
 private _laptop = _intelBuilding # 7;
 [_laptop] remoteExec ["WHF_fnc_msnDownloadIntelLaptop", 0, _laptop];
 
+private _quantity = 10 + floor random (count allPlayers min 20);
+private _group = [opfor, ["independent", "raiders"], _quantity, _intelCenter, 100, ["flashlights"]] call WHF_fnc_spawnGroup;
+[_group, _intelCenter] call BIS_fnc_taskDefend;
+// TODO: alert nearby enemies when a player starts downloading the intel
+
 private _taskID = [blufor, "", "downloadIntel", [_laptop,true], "CREATED", -1, true, "documents"] call WHF_fnc_taskCreate;
 
 while {true} do {
