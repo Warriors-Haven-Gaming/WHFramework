@@ -6,7 +6,7 @@ Description:
     https://github.com/CBATeam/CBA_A3/wiki/CBA-Settings-System
 
     If CBA is not loaded, this is executed at mission start by init(Server).sqf.
-    This is to allow assigning default settings via SHZ_fnc_addSetting.
+    This is to allow assigning default settings via WH_fnc_addSetting.
 
 Author:
     thegamecracks
@@ -23,13 +23,33 @@ Author:
 //     _script      - Script to execute when setting is changed. (optional) <CODE>
 //     _needRestart - Setting will be marked as needing mission restart after being changed. (optional, default false) <BOOL>
 
-// Economy
+// Unflip
 [
-    "WH_test",
+    "WH_unflip_duration",
     "SLIDER",
-    ["STR_WH_settings_test", "STR_WH_settings_test_tooltip"],
-    ["STR_WH_settings", "STR_WH_settings_category"],
-    [0, 10, 1, 0, true],
+    ["STR_WH_settings_unflip_duration", "STR_WH_settings_unflip_duration_tooltip"],
+    ["STR_WH_settings", "STR_WH_settings_unflip"],
+    [0, 30, 10, 0, false],
+    true,
+    {call WH_fnc_initUnflipAction},
+    false
+] call WH_fnc_addSetting;
+[
+    "WH_unflip_angle",
+    "SLIDER",
+    ["STR_WH_settings_unflip_angle", "STR_WH_settings_unflip_angle_tooltip"],
+    ["STR_WH_settings", "STR_WH_settings_unflip"],
+    [-1, 1, 0.1, 0, true],
+    true,
+    {},
+    false
+] call WH_fnc_addSetting;
+[
+    "WH_unflip_radius",
+    "SLIDER",
+    ["STR_WH_settings_unflip_radius", "STR_WH_settings_unflip_radius_tooltip"],
+    ["STR_WH_settings", "STR_WH_settings_unflip"],
+    [5, 50, 25, 0, false],
     true,
     {},
     false
