@@ -48,7 +48,7 @@ done and submitted more simply by using the [web-based editor].
   ```cpp
   // Good:
   class CfgFunctions {
-      class SHZ {
+      class WH {
           class Helpers {
               ...
           };
@@ -71,7 +71,7 @@ done and submitted more simply by using the [web-based editor].
 
   private _myCode = {
       // Good: lines that don't have a useful return type can end with a semi-colon
-      [1, 2] call SHZ_fnc_returnTypeIsNotImportant;
+      [1, 2] call WH_fnc_returnTypeIsNotImportant;
   };
   ```
 
