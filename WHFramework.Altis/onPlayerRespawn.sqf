@@ -15,4 +15,8 @@ Author:
 */
 params ["_newUnit"];
 
+if (side player isEqualTo blufor) then {
+    player setPosATL getPosATL blufor_spawn_1;
+}
+
 call WH_fnc_initUnflipAction;
