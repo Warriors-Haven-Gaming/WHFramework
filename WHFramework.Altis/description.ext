@@ -1,0 +1,30 @@
+missionGroup = "WHFramework";
+disableChannels[] = {
+    {0, true, true},
+};
+
+class Extended_PreInit_EventHandlers {
+    class WHFramework {
+        init = "call compileScript ['XEH_preInit.sqf']";
+    };
+};
+
+// https://community.bistudio.com/wiki/Arma_3:_Functions_Library
+class CfgFunctions {
+    class WH {
+    }
+};
+
+// https://community.bistudio.com/wiki/Arma_3:_Advanced_Hints_(Field_Manual)
+class CfgHints {};
+
+// https://community.bistudio.com/wiki/Description.ext#CfgRadio
+class CfgRadio {};
+
+// https://community.bistudio.com/wiki/Description.ext#Tasks
+class CfgTaskDescriptions {
+    class exampleTask {
+        title       = "STR_WH_exampleTask_title";
+        description = "STR_WH_exampleTask_description";
+    };
+};
