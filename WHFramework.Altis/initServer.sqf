@@ -19,6 +19,12 @@ if (isMultiplayer) then {
     };
 };
 
+if (isMultiplayer) then {
+    {deleteVehicle _x} forEach (playableUnits select {!isPlayer _x});
+} else {
+    {deleteVehicle _x} forEach (switchableUnits select {!isPlayer _x});
+};
+
 WH_globalPlayerTarget = [0, -2] select isDedicated;
 publicVariable "WH_globalPlayerTarget";
 
