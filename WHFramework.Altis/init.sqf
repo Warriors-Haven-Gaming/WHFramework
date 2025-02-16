@@ -17,3 +17,8 @@ if (!isMultiplayer) then {
         call compileScript ["XEH_preInit.sqf"];
     };
 };
+
+if (!isMultiplayer) then {
+    private _units = units player select {!isPlayer _x};
+    {deleteVehicle _x} forEach _units;
+};
