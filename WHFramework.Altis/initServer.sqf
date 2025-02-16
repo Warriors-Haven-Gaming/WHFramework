@@ -51,9 +51,9 @@ publicVariable "WHF_globalPlayerTarget";
 //     WHF_missions_side_max
 // ] spawn WHF_fnc_missionLoop;
 
-// WHF_gcDeletionQueue = [];
-// WHF_gcUnhideQueue = [];
-// WHF_garbageCollector_script = 0 spawn WHF_fnc_garbageCollectorLoop;
+WHF_gcDeletionQueue = [];
+WHF_gcUnhideQueue = [];
+WHF_garbageCollector_script = 0 spawn WHF_fnc_garbageCollectorLoop;
 
 // Why is this needed on dedicated server?
 civilian setFriend [blufor, 1];

@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=17;
+		nextID=20;
 	};
 	class Camera
 	{
-		pos[]={12220.365,129.63875,20312.141};
-		dir[]={0.26013678,-0.67072934,0.69459182};
-		up[]={0.23524991,0.74168593,0.62814063};
-		aside[]={0.93648201,-9.9476893e-08,-0.35072878};
+		pos[]={12275.6,123.50677,20316.145};
+		dir[]={-0.37287411,-0.58543044,0.71990043};
+		up[]={-0.26925632,0.81071252,0.51984811};
+		aside[]={0.88796735,-8.3935447e-08,0.45992392};
 	};
 };
 binarizationWanted=0;
@@ -186,6 +186,11 @@ class ScenarioData
 	{
 		gameType="Coop";
 	};
+	corpseManagerMode=1;
+	corpseRemovalMinTime=30.000002;
+	wreckManagerMode=1;
+	wreckRemovalMinTime=30.000002;
+	wreckRemovalMaxTime=3600;
 };
 class CustomAttributes
 {

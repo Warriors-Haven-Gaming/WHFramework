@@ -23,6 +23,38 @@ Author:
 //     _script      - Script to execute when setting is changed. (optional) <CODE>
 //     _needRestart - Setting will be marked as needing mission restart after being changed. (optional, default false) <BOOL>
 
+// Garbage Collection
+[
+    "WHF_gcLootLifetime",
+    "SLIDER",
+    ["STR_WHF_settings_gc_gcLootLifetime", "STR_WHF_settings_gc_gcLootLifetime_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_gc"],
+    [30, 3600, 300, 0, false],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_gcDeletionDistance",
+    "SLIDER",
+    ["STR_WHF_settings_gc_gcDeletionDistance", "STR_WHF_settings_gc_gcDeletionDistance_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_gc"],
+    [0, 10000, 500, 0, false],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_gcUnhideDistance",
+    "SLIDER",
+    ["STR_WHF_settings_gc_gcUnhideDistance", "STR_WHF_settings_gc_gcUnhideDistance_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_gc"],
+    [0, 10000, 500, 0, false],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+
 // Self Revive
 [
     "WHF_selfRevive_minTime",

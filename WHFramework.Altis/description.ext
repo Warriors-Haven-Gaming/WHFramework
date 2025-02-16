@@ -17,6 +17,14 @@ class CfgFunctions {
             class initChannels {};
             class updateChannelLoop {};
         };
+        class GC {
+            class garbageCollectorLoop {};
+            class queueGCDeletion {};
+            class queueGCUnhide {};
+        };
+        class Helpers {
+            class anyInArea {};
+        };
         class Revive {
             class initIncapacitatedHandlers {};
             class selfReviveCompleted {};
