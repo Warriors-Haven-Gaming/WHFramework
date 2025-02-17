@@ -24,6 +24,7 @@ if (isMultiplayer) then {
 } else {
     {deleteVehicle _x} forEach (switchableUnits select {!isPlayer _x});
     if (markerColor "respawn_west" isNotEqualTo "") then {player setPosATL markerPos "respawn_west"};
+    [player] execVM "onPlayerRespawn.sqf";
 };
 
 call WHF_fnc_initChannels;
