@@ -20,6 +20,7 @@ Author:
 
 */
 if (isNil "_this") exitWith {[]};
+if !(_this isEqualType []) then {_this = [_this]};
 if ({_x isEqualType ""} count _this > 0) then {_this = [_this]};
 {_x pushBack WHF_factions_current} forEach (_this select {count _x isEqualTo 1});
 
