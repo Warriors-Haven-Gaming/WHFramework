@@ -15,5 +15,5 @@ player addEventHandler ["HandleDamage", {call {
     private _old = if (_hitIndex >= 0) then {_unit getHitIndex _hitIndex} else {damage _unit};
     private _diff = _damage - _old;
     private _diff = _diff * WHF_playerDamageReduction;
-    _old + _diff
+    _old + _diff min 0.95
 }}];
