@@ -25,14 +25,14 @@ if (!isNil "_interruptProgress") then {
     _laptop setVariable ["downloadInterruptProgress", nil];
 };
 
-private _duration = _laptop getVariable ["downloadProgress", [0, 60]];
+private _duration = _laptop getVariable ["downloadProgress", [0, 30]];
 private _area = [getPosATL _laptop, 100, 100, 0, false];
 private _condition = [[_laptop], "WHF_fnc_msnDownloadIntelLaptopTimerCondition"];
 private _hasElapsed = [_duration, nil, _area, _condition] call WHF_fnc_displayTimer;
 
 if (!_hasElapsed) exitWith {
     if (isServer) then {
-        private _duration = _laptop getVariable ["downloadProgress", [0, 60]];
+        private _duration = _laptop getVariable ["downloadProgress", [0, 30]];
         _laptop setVariable ["downloadInterruptProgress", _duration, true];
 
         // For clients that already think the timer elapsed, tell them otherwise
