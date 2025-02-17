@@ -16,6 +16,6 @@ Author:
 params ["_unit"];
 if (!local _unit) exitWith {};
 _unit setDamage 0;
-_unit setCaptive false;
 _unit setUnconscious false;
 _unit allowDamage true;
+_unit spawn {sleep WHF_revive_captiveDuration; _this setCaptive false};

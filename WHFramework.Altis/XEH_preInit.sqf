@@ -113,12 +113,12 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 
-// Self Revive
+// Revive
 [
     "WHF_selfRevive_minTime",
     "SLIDER",
-    ["STR_WHF_settings_selfRevive_minTime", "STR_WHF_settings_selfRevive_minTime_tooltip"],
-    ["STR_WHF_settings", "STR_WHF_settings_selfRevive"],
+    ["STR_WHF_settings_revive_self_minTime", "STR_WHF_settings_revive_self_minTime_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_revive"],
     [0, 180, 30, 0, false],
     true,
     {},
@@ -127,8 +127,8 @@ Author:
 [
     "WHF_selfRevive_duration",
     "SLIDER",
-    ["STR_WHF_settings_selfRevive_duration", "STR_WHF_settings_selfRevive_duration_tooltip"],
-    ["STR_WHF_settings", "STR_WHF_settings_selfRevive"],
+    ["STR_WHF_settings_revive_self_duration", "STR_WHF_settings_revive_self_duration_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_revive"],
     [0.5, 30, 10, 1, false],
     true,
     {},
@@ -137,9 +137,19 @@ Author:
 [
     "WHF_selfRevive_FAKs",
     "LIST",
-    ["STR_WHF_settings_selfRevive_FAKs", "STR_WHF_settings_selfRevive_FAKs_tooltip"],
-    ["STR_WHF_settings", "STR_WHF_settings_selfRevive"],
+    ["STR_WHF_settings_revive_self_FAKs", "STR_WHF_settings_revive_self_FAKs_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_revive"],
     [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], [], 4],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_revive_captiveDuration",
+    "SLIDER",
+    ["STR_WHF_settings_revive_captive", "STR_WHF_settings_revive_captive_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_revive"],
+    [0, 30, 10, 1, false],
     true,
     {},
     false
