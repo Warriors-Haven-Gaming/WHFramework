@@ -8,7 +8,7 @@ Author:
     thegamecracks
 
 */
-// TODO: disable when ACE medical is enabled
+if (isClass (configFile >> "CfgPatches" >> "ace_medical")) exitWith {};
 player addEventHandler ["HandleDamage", {call {
     params ["_unit", "", "_damage", "", "", "_hitIndex"];
     if (lifeState _unit isEqualTo "INCAPACITATED") exitWith {};

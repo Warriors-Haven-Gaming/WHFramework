@@ -8,6 +8,7 @@ Author:
     thegamecracks
 
 */
+if (isClass (configFile >> "CfgPatches" >> "ace_medical")) exitWith {};
 player addEventHandler ["HandleDamage", {call {
     params ["_unit", "", "_damage", "", "", "_hitIndex", "_instigator"];
     if (isNull _instigator) exitWith {};
