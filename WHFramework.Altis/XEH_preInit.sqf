@@ -47,6 +47,28 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 
+// Fitness
+[
+    "WHF_fitness_stamina",
+    "CHECKBOX",
+    ["STR_WHF_settings_fitness_stamina", "STR_WHF_settings_fitness_stamina_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_fitness"],
+    false,
+    true,
+    {player enableStamina _this},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_fitness_sway",
+    "SLIDER",
+    ["STR_WHF_settings_fitness_sway", "STR_WHF_settings_fitness_sway_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_fitness"],
+    [0, 1, 0.1, 0, true],
+    true,
+    {player setCustomAimCoef _this},
+    false
+] call WHF_fnc_addSetting;
+
 // Garbage Collection
 [
     "WHF_gcLootLifetime",
