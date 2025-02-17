@@ -35,6 +35,18 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 
+// Factions
+[
+    "WHF_factions_current",
+    "LIST",
+    ["STR_WHF_settings_factions_current", "STR_WHF_settings_factions_current_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_factions"],
+    [["base"], ["STR_WHF_settings_factions_current_base"]],
+    true,
+    {}, // TODO: check required mods
+    false
+] call WHF_fnc_addSetting;
+
 // Garbage Collection
 [
     "WHF_gcLootLifetime",
