@@ -22,7 +22,7 @@ player addEventHandler ["HandleDamage", {call {
         if (!isNil "WHF_incapacitated_script" && {!scriptDone WHF_incapacitated_script}) then {
             terminate WHF_incapacitated_script;
         };
-        WHF_incapacitated_script = 0 spawn WHF_fnc_triggerIncapacitation;
+        WHF_incapacitated_script = [_unit] spawn WHF_fnc_triggerIncapacitation;
         if (isMultiplayer) then {[_unit] remoteExec ["WHF_fnc_triggerIncapacitation", -clientOwner]};
     };
 
