@@ -15,4 +15,7 @@ Author:
 */
 params ["_newUnit"];
 
+private _loadout = call WHF_fnc_getLastLoadout;
+if (_loadout isNotEqualTo []) then {_newUnit setUnitLoadout _loadout};
+
 call WHF_fnc_initUnflipAction;

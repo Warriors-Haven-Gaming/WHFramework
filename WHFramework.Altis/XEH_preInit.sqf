@@ -79,6 +79,18 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 
+// Loadouts
+[
+    "WHF_loadout_collection",
+    "EDITBOX",
+    ["STR_WHF_settings_loadouts_collection", "STR_WHF_settings_loadouts_collection_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_loadouts"],
+    "main",
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+
 // Self Revive
 [
     "WHF_selfRevive_minTime",
