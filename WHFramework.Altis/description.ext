@@ -57,9 +57,12 @@ class CfgFunctions {
         };
         class Revive {
             class initIncapacitatedHandlers {};
+            class reviveUnit {};
+            class selfReviveAdd {};
             class selfReviveCompleted {};
             class selfReviveConditionProgress {};
-            class selfReviveLoop {};
+            class selfReviveRemove {};
+            class triggerIncapacitation {};
         };
         class Settings {
             class addSetting {};

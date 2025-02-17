@@ -8,12 +8,23 @@ Author:
     thegamecracks
 
 */
+// TODO: disable when ACE medical is enabled
 player addEventHandler ["HandleDamage", {call {
-    params ["_unit", "", "", "", "", "_hitIndex"];
-    if (lifeState _unit isNotEqualTo "INCAPACITATED") exitWith {};
+    params ["_unit", "", "_damage", "", "", "_hitIndex"];
+    if (lifeState _unit isEqualTo "INCAPACITATED") exitWith {};
+
+    // Check for fatal wounds to body, head, or unknown part
+    if !(_hitIndex in [7, 2, -1]) exitWith {};
+    if (_damage < 0.95) exitWith {};
+
     if (isDamageAllowed _unit) then {
         _unit allowDamage false;
-        _unit setVariable ["WHF_incapacitatedInvincibility", true];
+        if (!isNil "WHF_incapacitated_script" && {!scriptDone WHF_incapacitated_script}) then {
+            terminate WHF_incapacitated_script;
+        };
+        WHF_incapacitated_script = 0 spawn WHF_fnc_triggerIncapacitation;
+        [_unit] remoteExec ["WHF_fnc_triggerIncapacitation", -clientOwner];
     };
+
     if (_hitIndex >= 0) then {_unit getHitIndex _hitIndex} else {damage _unit}
 }}];

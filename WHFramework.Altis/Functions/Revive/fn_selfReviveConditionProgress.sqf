@@ -3,7 +3,7 @@ Function: WHF_fnc_selfReviveConditionProgress
 
 Description:
     Checks if the self-revive action can progress.
-    See WHF_fnc_selfReviveLoop for more details.
+    See WHF_fnc_selfReviveAdd for more details.
 
 Author:
     thegamecracks

@@ -28,6 +28,5 @@ call WHF_fnc_initArsenalLoadoutHandlers;
 call WHF_fnc_initDamageHandlers;
 call WHF_fnc_initIncapacitatedHandlers;
 0 spawn WHF_fnc_updateChannelLoop;
-0 spawn WHF_fnc_selfReviveLoop;
 
 systemChat format ["Finished initialization (%1)", briefingName];
