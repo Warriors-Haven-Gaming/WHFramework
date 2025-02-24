@@ -20,6 +20,13 @@ class CfgFunctions {
         class Damage {
             class initDamageHandlers {};
         };
+        class Flares {
+            class signalFlareBegin {};
+            class signalFlareFire {};
+            class signalFlareInterrupt {};
+            class signalFlareLoop {};
+            class signalFlareReveal {};
+        };
         class GC {
             class garbageCollectorLoop {};
             class queueGCDeletion {};

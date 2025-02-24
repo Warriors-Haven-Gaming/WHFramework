@@ -69,6 +69,71 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 
+// Flares
+[
+    "WHF_signalFlareEnabled",
+    "CHECKBOX",
+    ["STR_WHF_settings_flares_enabled", "STR_WHF_settings_flares_enabled_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_flares"],
+    true,
+    true,
+    {
+        if (!isNil "WHF_signalFlareLoop_script") then {terminate WHF_signalFlareLoop_script};
+        if (_this) then {WHF_signalFlareLoop_script = 0 spawn WHF_fnc_signalFlareLoop};
+    },
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_signalFlareCheckInterval",
+    "SLIDER",
+    ["STR_WHF_settings_flares_interval", "STR_WHF_settings_flares_interval_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_flares"],
+    [1, 30, 5, 0, false],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_signalFlareGlobalCooldown",
+    "SLIDER",
+    ["STR_WHF_settings_flares_globalCooldown", "STR_WHF_settings_flares_globalCooldown_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_flares"],
+    [0, 300, 0, 0, false],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_signalFlareGroupCooldown",
+    "SLIDER",
+    ["STR_WHF_settings_flares_groupCooldown", "STR_WHF_settings_flares_groupCooldown_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_flares"],
+    [0, 300, 120, 0, false],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_signalFlareMaxDistance",
+    "SLIDER",
+    ["STR_WHF_settings_flares_maxDistance", "STR_WHF_settings_flares_maxDistance_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_flares"],
+    [50, 1000, 500, 0, false],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_signalFlareRevealDistance",
+    "SLIDER",
+    ["STR_WHF_settings_flares_revealDistance", "STR_WHF_settings_flares_revealDistance_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_flares"],
+    [100, 500, 300, 0, false],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+
 // Garbage Collection
 [
     "WHF_gcLootLifetime",
