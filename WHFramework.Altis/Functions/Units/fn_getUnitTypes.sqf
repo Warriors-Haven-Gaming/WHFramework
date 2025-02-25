@@ -1,5 +1,5 @@
 /*
-Function: WHF_fnc_getGroupUnits
+Function: WHF_fnc_getUnitTypes
 
 Description:
     Returns an array of unit classnames for one or more given types.
@@ -30,7 +30,7 @@ private _resolvedTypes = _this apply {
         case ["raiders",   "base"]: {["I_C_Soldier_Para_7_F","I_C_Soldier_Para_2_F","I_C_Soldier_Para_3_F","I_C_Soldier_Para_1_F","I_L_Criminal_SG_F","I_L_Looter_Rifle_F","I_L_Looter_Pistol_F","I_L_Looter_SG_F","I_C_Soldier_Bandit_4_F"]};
         default {
             if (_x # 1 isEqualTo "base") then {[]}
-            else {[_x # 0, "base"] call WHF_fnc_getGroupUnits}
+            else {[_x # 0, "base"] call WHF_fnc_getUnitTypes}
         };
     };
 };
