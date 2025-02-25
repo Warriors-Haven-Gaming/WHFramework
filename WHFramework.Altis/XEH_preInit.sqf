@@ -214,7 +214,7 @@ Author:
     "SLIDER",
     ["STR_WHF_settings_revive_captive", "STR_WHF_settings_revive_captive_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_revive"],
-    [0, 30, 10, 1, false],
+    [0, 30, 15, 1, false],
     true,
     {},
     false
