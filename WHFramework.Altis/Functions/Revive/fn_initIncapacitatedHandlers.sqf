@@ -19,11 +19,8 @@ player addEventHandler ["HandleDamage", {call {
 
     if (isDamageAllowed _unit) then {
         _unit allowDamage false;
-        if (!isNil "WHF_incapacitated_script" && {!scriptDone WHF_incapacitated_script}) then {
-            terminate WHF_incapacitated_script;
-        };
-        WHF_incapacitated_script = [_unit] spawn WHF_fnc_triggerIncapacitation;
-        if (isMultiplayer) then {[_unit] remoteExec ["WHF_fnc_triggerIncapacitation", -clientOwner]};
+        private _jipID = netId _unit + ":incapUnit";
+        [_unit] remoteExec ["WHF_fnc_incapUnit", 0, _jipID];
     };
     0.95
 }}];
