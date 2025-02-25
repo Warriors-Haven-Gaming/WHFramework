@@ -33,7 +33,9 @@ WHF_globalPlayerTarget = [0, -2] select isDedicated;
 publicVariable "WHF_globalPlayerTarget";
 
 WHF_mainMissionLoop_script = [
-    [],
+    [
+        "WHF_fnc_msnMainAnnexRegion"
+    ],
     1,
     1
 ] spawn WHF_fnc_missionLoop;

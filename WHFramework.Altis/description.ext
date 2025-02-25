@@ -43,6 +43,7 @@ class CfgFunctions {
             class randomPos {};
             class randomPosHidden {};
             class randomString {};
+            class shrinkCount {};
             class stringStartsWith {};
         };
         class Map {
@@ -59,6 +60,7 @@ class CfgFunctions {
             class msnDownloadIntelLaptop {};
             class msnDownloadIntelLaptopTimer {};
             class msnDownloadIntelLaptopTimerCondition {};
+            class msnMainAnnexRegion {};
         };
         class Loadouts {
             class getLastLoadout {};
@@ -108,5 +110,9 @@ class CfgTaskDescriptions {
     class downloadIntel {
         title       = "STR_WHF_downloadIntel_title";
         description = "STR_WHF_downloadIntel_description";
+    };
+    class mainAnnexRegion {
+        title       = "STR_WHF_mainAnnexRegion_title";
+        description = "STR_WHF_mainAnnexRegion_description";
     };
 };
