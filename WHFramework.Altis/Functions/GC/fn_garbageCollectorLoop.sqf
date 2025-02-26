@@ -33,6 +33,21 @@ private _processDiscreetQueue = {
 while {true} do {
     sleep (10 + random 10);
 
+    {
+        private _units = units _x;
+        if (count _units < 1) then {continue};
+
+        private _recruitsAreAbandoned = {
+            if (isNil {_x getVariable "WHF_recruitOwnedBy"}) exitWith {false};
+            if (isPlayer _x) exitWith {false};
+            true
+        } forEach _units;
+
+        if (_recruitsAreAbandoned) then {
+            {deleteVehicle _x} forEach _units;
+        };
+    } forEach groups blufor;
+
     private _remoteControlledUnits = allPlayers apply {remoteControlled _x} select {!isNull _x};
     private _units = units blufor select {isPlayer _x};
     _units append allPlayers;

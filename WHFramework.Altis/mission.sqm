@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=420;
+		nextID=421;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=25;
+		nextID=30;
 	};
 	class Camera
 	{
-		pos[]={12313.351,128.82906,20282.994};
-		dir[]={-0.8281526,-0.43585867,0.35243124};
-		up[]={-0.40111423,0.89998198,0.17069978};
-		aside[]={0.39158338,-4.8743095e-07,0.92015189};
+		pos[]={12271.291,127.38197,20347.457};
+		dir[]={-0.44174322,-0.89710641,0.0095968191};
+		up[]={-0.89691991,0.44175866,0.019486103};
+		aside[]={0.021720925,-5.1775714e-08,0.99977726};
 	};
 };
 binarizationWanted=0;
@@ -72,7 +72,8 @@ addons[]=
 	"A3_Structures_F_Mil_Helipads",
 	"A3_Characters_F",
 	"A3_Ui_F",
-	"A3_Modules_F_Curator_Curator"
+	"A3_Modules_F_Curator_Curator",
+	"A3_Structures_F_Mil_Flags"
 };
 class AddonsMetaData
 {
@@ -383,7 +384,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=4;
+		items=5;
 		class Item0
 		{
 			dataType="Layer";
@@ -3856,6 +3857,7 @@ class Mission
 							};
 							id=407;
 							type="B_MBT_01_TUSK_F";
+							atlOffset=-7.6293945e-06;
 						};
 						class Item7
 						{
@@ -3872,7 +3874,7 @@ class Mission
 							};
 							id=401;
 							type="B_Heli_Light_01_F";
-							atlOffset=7.6293945e-06;
+							atlOffset=-0.0012435913;
 						};
 						class Item8
 						{
@@ -3889,6 +3891,7 @@ class Mission
 							};
 							id=402;
 							type="B_Heli_Light_01_F";
+							atlOffset=0.00033569336;
 						};
 						class Item9
 						{
@@ -3908,7 +3911,7 @@ class Mission
 							};
 							id=410;
 							type="B_AFV_Wheeled_01_up_cannon_F";
-							atlOffset=-0.0022583008;
+							atlOffset=-0.0022659302;
 						};
 						class Item10
 						{
@@ -3941,6 +3944,7 @@ class Mission
 							};
 							id=405;
 							type="B_Heli_Transport_01_F";
+							atlOffset=-0.0017852783;
 						};
 						class Item12
 						{
@@ -3964,7 +3968,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={12236.853,107.0528,20266.262};
-								angles[]={-0,0,0.0066592805};
+								angles[]={0,0,0.0066592805};
 							};
 							side="Empty";
 							flags=4;
@@ -3973,7 +3977,7 @@ class Mission
 							};
 							id=406;
 							type="B_Heli_Transport_03_unarmed_F";
-							atlOffset=0.0092391968;
+							atlOffset=-0.0078735352;
 						};
 						class Item14
 						{
@@ -4121,7 +4125,7 @@ class Mission
 						};
 					};
 					id=418;
-					atlOffset=-1.0343781;
+					atlOffset=-1.0334244;
 				};
 				class Item191
 				{
@@ -4208,7 +4212,7 @@ class Mission
 					};
 					id=413;
 					type="Land_HelipadCircle_F";
-					atlOffset=5.2980804;
+					atlOffset=5.2980728;
 				};
 				class Item193
 				{
@@ -4224,7 +4228,7 @@ class Mission
 					};
 					id=414;
 					type="Land_HelipadCircle_F";
-					atlOffset=3.442749;
+					atlOffset=3.4427567;
 				};
 				class Item194
 				{
@@ -4240,7 +4244,7 @@ class Mission
 					};
 					id=415;
 					type="Land_HelipadCircle_F";
-					atlOffset=3.532074;
+					atlOffset=3.5320816;
 				};
 				class Item195
 				{
@@ -4273,10 +4277,11 @@ class Mission
 					};
 					id=412;
 					type="Land_HelipadCivil_F";
+					atlOffset=7.6293945e-06;
 				};
 			};
 			id=190;
-			atlOffset=0.64176941;
+			atlOffset=0.64165497;
 		};
 		class Item1
 		{
@@ -6812,6 +6817,23 @@ class Mission
 				};
 				nAttributes=4;
 			};
+		};
+		class Item4
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={12257.815,97.069252,20350.508};
+				angles[]={0,1.5876912,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				init="[this,[0,3,0]] call WHF_fnc_initSpawnRecruitAction;";
+			};
+			id=420;
+			type="Flag_NATO_F";
 		};
 	};
 	class Connections

@@ -178,6 +178,18 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 
+// Recruits
+[
+    "WHF_recruits_limit",
+    "SLIDER",
+    ["STR_WHF_settings_recruits_limit", "STR_WHF_settings_recruits_limit_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_recruits"],
+    [0, 50, 6, 0, false],
+    true,
+    {WHF_recruits_limit = round WHF_recruits_limit},
+    false
+] call WHF_fnc_addSetting;
+
 // Revive
 [
     "WHF_selfRevive_minTime",
