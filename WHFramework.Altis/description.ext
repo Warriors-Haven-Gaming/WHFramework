@@ -95,6 +95,14 @@ class CfgFunctions {
             class taskCreate {};
             class taskEnd {};
         };
+        class Time {
+            class initSkipTimeAction {};
+            class requestSkipTime {};
+            class showSkipTime {};
+            class showSkipTimeCompleted {};
+            class showSkipTimeCooldown {};
+            class showSkipTimePending {};
+        };
         class Unflip {
             class initUnflipAction {};
             class isLookingAtFlippedVehicle {};

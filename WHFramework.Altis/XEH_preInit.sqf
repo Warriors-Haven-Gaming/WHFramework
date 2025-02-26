@@ -242,6 +242,28 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 
+// Time
+[
+    "WHF_requestSkipTime_enabled",
+    "CHECKBOX",
+    ["STR_WHF_settings_time_skipEnabled", "STR_WHF_settings_time_skipEnabled_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_time"],
+    true,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_requestSkipTime_cooldown",
+    "SLIDER",
+    ["STR_WHF_settings_time_skipCooldown", "STR_WHF_settings_time_skipCooldown_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_time"],
+    [5, 60, 30, 0, false],
+    true,
+    {WHF_requestSkipTime_cooldown = _this * 60},
+    false
+] call WHF_fnc_addSetting;
+
 // Unflip
 [
     "WHF_unflip_duration",

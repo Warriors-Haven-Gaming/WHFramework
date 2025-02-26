@@ -20,7 +20,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=30;
+		nextID=35;
 	};
 	class Camera
 	{
@@ -6830,7 +6830,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="[this,[0,3,0]] call WHF_fnc_initSpawnRecruitAction;";
+				init="[this,[0,3,0]] call WHF_fnc_initSpawnRecruitAction;" \n "[this] call WHF_fnc_initSkipTimeAction;";
 			};
 			id=420;
 			type="Flag_NATO_F";

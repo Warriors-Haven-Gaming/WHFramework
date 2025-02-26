@@ -209,6 +209,21 @@
         <Key ID="STR_WHF_settings_revive_captive_tooltip">
             <Original>The duration in seconds after being revived where enemies will not target the player.</Original>
         </Key>
+        <Key ID="STR_WHF_settings_time">
+            <Original>Time</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_time_skipEnabled">
+            <Original>Enable Skip Time?</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_time_skipEnabled_tooltip">
+            <Original>Toggles actions to let players skip time.</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_time_skipCooldown">
+            <Original>Skip Time Cooldown</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_time_skipCooldown_tooltip">
+            <Original>The cooldown in minutes between time skips.</Original>
+        </Key>
         <Key ID="STR_WHF_settings_unflip">
             <Original>Unflip</Original>
         </Key>
@@ -229,6 +244,41 @@
         </Key>
         <Key ID="STR_WHF_settings_unflip_radius_tooltip">
             <Original>The distance in metres to search around the vehicle for an empty position.\nHigh values may worsen performance.</Original>
+        </Key>
+    </Container>
+    <Container name="Time">
+        <Key ID="STR_WHF_initSkipTimeAction_morning">
+            <Original>Skip to Morning</Original>
+        </Key>
+        <Key ID="STR_WHF_initSkipTimeAction_noon">
+            <Original>Skip to Noon</Original>
+        </Key>
+        <Key ID="STR_WHF_initSkipTimeAction_evening">
+            <Original>Skip to Evening</Original>
+        </Key>
+        <Key ID="STR_WHF_showSkipTime_morning">
+            <Original>%1 has requested a time skip to morning! Accelerating time for %2...</Original>
+        </Key>
+        <Key ID="STR_WHF_showSkipTime_noon">
+            <Original>%1 has requested a time skip to noon! Accelerating time for %2...</Original>
+        </Key>
+        <Key ID="STR_WHF_showSkipTime_evening">
+            <Original>%1 has requested a time skip to evening! Accelerating time for %2...</Original>
+        </Key>
+        <Key ID="STR_WHF_showSkipTimeCompleted_morning">
+            <Original>Time skip to morning has finished!</Original>
+        </Key>
+        <Key ID="STR_WHF_showSkipTimeCompleted_noon">
+            <Original>Time skip to noon has finished!</Original>
+        </Key>
+        <Key ID="STR_WHF_showSkipTimeCompleted_evening">
+            <Original>Time skip to evening has finished!</Original>
+        </Key>
+        <Key ID="STR_WHF_showSkipTimeCooldown">
+            <Original>Skip time is on cooldown for %1.</Original>
+        </Key>
+        <Key ID="STR_WHF_showSkipTimePending">
+            <Original>A time skip is already in progress!</Original>
         </Key>
     </Container>
     <Container name="Unflip">
