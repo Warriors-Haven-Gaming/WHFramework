@@ -26,7 +26,7 @@ while {true} do {
             && {simulationEnabled _leader
             && {isNull objectParent _leader
             && {eyePos _leader select 2 >= 0
-            && {['sniper', 'ghillie'] findIf {_x in toLowerANSI typeOf _leader} < 0
+            && {["sniper", "ghillie"] findIf {_x in toLowerANSI typeOf _leader} < 0
             && {
                 _leader targets [true, WHF_signalFlareMaxDistance, [west], 30]
                 select {_leader knowsAbout _x >= 1.5}
