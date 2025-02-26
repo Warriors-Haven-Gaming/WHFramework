@@ -49,13 +49,19 @@ private _taskID = [blufor, "", _description, _area # 0, "AUTOASSIGNED", -1, true
 private _groups = [];
 
 private _infCount = floor (_radius / 50 + random (count allPlayers / 10));
-private _vehicleCount = floor (_radius / 100 + random (count allPlayers / 10));
 for "_i" from 1 to _infCount do {
     private _pos = [_center, _radius] call WHF_fnc_randomPos;
     if (_pos isEqualTo [0,0]) then {continue};
     private _group = [opfor, "raiders", selectRandom [2, 4, 8], _pos, 10, ["flashlights"]] call WHF_fnc_spawnUnits;
     _groups pushBack _group;
 };
+
+private _garrisonCount = floor (_radius / 15 + random (count allPlayers / 2));
+private _garrisonGroup = [opfor, "raiders", _garrisonCount, _center, 0, ["flashlights"]] call WHF_fnc_spawnUnits;
+[_garrisonGroup, _center, _radius, true] call WHF_fnc_garrisonUnits;
+_groups pushBack _garrisonGroup;
+
+private _vehicleCount = floor (_radius / 100 + random (count allPlayers / 10));
 for "_i" from 1 to _vehicleCount do {
     private _pos = [_center, _radius] call WHF_fnc_randomPos;
     if (_pos isEqualTo [0,0]) then {continue};
@@ -108,7 +114,7 @@ while {true} do {
 
     private _allThreats = units opfor + units independent;
     private _threatsInRange = _allThreats inAreaArray _area;
-    private _threshold = 10 + _radius / 50;
+    private _threshold = 10 + _radius / 25;
     if (count _threatsInRange < _threshold) exitWith {
         [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
     };
