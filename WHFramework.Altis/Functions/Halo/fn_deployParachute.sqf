@@ -15,6 +15,7 @@ Author:
 params ["_unit"];
 if (!alive _unit) exitWith {};
 if (isTouchingGround _unit) exitWith {};
+if (!isNull objectParent _unit) exitWith {};
 
 private _pos = getPosATL _unit vectorAdd [0, 0, 3];
 
