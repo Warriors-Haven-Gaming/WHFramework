@@ -140,6 +140,38 @@ private _attackScript = [_groups] spawn {
     };
 };
 
+private _ungarrisonScript = [_groups, _garrisonGroup] spawn {
+    params ["_groups", "_garrisonGroup"];
+    while {true} do {
+        sleep (5 + random 10);
+        {
+            if (!alive _x) then {continue};
+            if (!local _x) then {continue};
+            if (_x checkAIFeature "PATH") then {continue};
+
+            private _targets = _x targets [true, 100, [], 180];
+            sleep 0.125;
+            if (count _targets < 1) then {continue};
+
+            private _target = selectRandom _targets;
+            private _position = _x getHideFrom _target;
+
+            _x setUnitPos "AUTO";
+            _x enableAIFeature ["COVER", true];
+            _x enableAIFeature ["PATH", true];
+
+            private _group = createGroup side group _x;
+            [_x] joinSilent _group;
+
+            private _waypoint = _group addWaypoint [_position, 0];
+            _waypoint setWaypointType "SAD";
+            _waypoint setWaypointCompletionRadius 5;
+
+            _groups pushBack _group;
+        } forEach units _garrisonGroup;
+    };
+};
+
 while {true} do {
     sleep 10;
 
@@ -161,5 +193,6 @@ while {true} do {
 };
 
 terminate _attackScript;
+terminate _ungarrisonScript;
 deleteMarker _areaMarker;
 {[units _x] call WHF_fnc_queueGCDeletion} forEach _groups;
