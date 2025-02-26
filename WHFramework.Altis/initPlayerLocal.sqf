@@ -27,6 +27,7 @@ if (!hasInterface) exitWith {};
 if (markerColor "respawn_west" isNotEqualTo "") then {player setPosATL markerPos "respawn_west"};
 
 call WHF_fnc_initArsenalLoadoutHandlers;
+call WHF_fnc_initContextHandlers;
 call WHF_fnc_initDamageHandlers;
 call WHF_fnc_initIncapacitatedHandlers;
 0 spawn WHF_fnc_updateChannelLoop;
