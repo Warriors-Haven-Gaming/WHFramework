@@ -9,15 +9,15 @@ Author:
     thegamecracks
 
 */
-private _lastSiren = diag_tickTime - WHF_signalFlareGlobalCooldown;
+private _lastSiren = time - WHF_signalFlareGlobalCooldown;
 while {true} do {
     sleep (WHF_signalFlareCheckInterval max 1);
 
-    if (diag_tickTime < _lastSiren + WHF_signalFlareGlobalCooldown) then {continue};
+    if (time < _lastSiren + WHF_signalFlareGlobalCooldown) then {continue};
 
     private _leadersOnAlert =
         groups east + groups independent
-        select {diag_tickTime - (_x getVariable ["WHF_siren_lastFlare", 0]) > WHF_signalFlareGroupCooldown}
+        select {time - (_x getVariable ["WHF_siren_lastFlare", 0]) > WHF_signalFlareGroupCooldown}
         apply {leader _x}
         select {
             private _leader = _x;
@@ -55,6 +55,6 @@ while {true} do {
     ) - [_siren];
     [_targets, _allies] remoteExec ["WHF_fnc_signalFlareReveal"];
 
-    _lastSiren = diag_tickTime;
+    _lastSiren = time;
     group _siren setVariable ["WHF_siren_lastFlare", _lastSiren];
 };

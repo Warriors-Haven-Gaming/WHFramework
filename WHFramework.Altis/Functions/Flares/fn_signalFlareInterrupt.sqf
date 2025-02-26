@@ -19,4 +19,4 @@ private _startedAt = _siren getVariable "WHF_siren_startedAt";
 if (isNil "_startedAt") exitWith {};
 
 _siren setVariable ["WHF_siren_startedAt", nil];
-if (diag_tickTime < _startedAt + 10) then {_siren switchMove ["", 0, 0, false]};
+if (time < _startedAt + 10) then {_siren switchMove ["", 0, 0, false]};

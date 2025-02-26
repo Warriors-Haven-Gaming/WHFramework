@@ -30,7 +30,7 @@ _siren switchMove [_animations # 0, 0, 0, false];
 _siren playMove _animations # 1;
 
 // Allow interrupting the unit via damage (can result in some janky hit reactions)
-_siren setVariable ["WHF_siren_startedAt", diag_tickTime];
+_siren setVariable ["WHF_siren_startedAt", time];
 if (local _siren) then {
     _siren addEventHandler ["HandleDamage", {
         params ["_siren"];
