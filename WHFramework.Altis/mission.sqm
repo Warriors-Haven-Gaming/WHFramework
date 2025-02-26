@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=421;
+		nextID=422;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=35;
+		nextID=40;
 	};
 	class Camera
 	{
-		pos[]={12271.291,127.38197,20347.457};
-		dir[]={-0.44174322,-0.89710641,0.0095968191};
-		up[]={-0.89691991,0.44175866,0.019486103};
-		aside[]={0.021720925,-5.1775714e-08,0.99977726};
+		pos[]={12289.574,94.192879,20375.359};
+		dir[]={-0.88119179,-0.15691255,-0.44599167};
+		up[]={-0.14002529,0.98761058,-0.07087031};
+		aside[]={-0.4515866,4.938338e-07,0.89224452};
 	};
 };
 binarizationWanted=0;
@@ -70,6 +70,7 @@ addons[]=
 	"A3_Modules_F_Multiplayer",
 	"A3_Weapons_F_Ammoboxes",
 	"A3_Structures_F_Mil_Helipads",
+	"A3_Structures_F_Tank_Military_RepairDepot",
 	"A3_Characters_F",
 	"A3_Ui_F",
 	"A3_Modules_F_Curator_Curator",
@@ -79,7 +80,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=22;
+		items=23;
 		class Item0
 		{
 			className="A3_Structures_F";
@@ -215,19 +216,26 @@ class AddonsMetaData
 		};
 		class Item19
 		{
+			className="A3_Structures_F_Tank";
+			name="Arma 3 Tank - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item20
+		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item20
+		class Item21
 		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item21
+		class Item22
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
@@ -238,7 +246,8 @@ class AddonsMetaData
 };
 dlcs[]=
 {
-	"Heli"
+	"Heli",
+	"Tank"
 };
 randomSeed=594116;
 class ScenarioData
@@ -391,7 +400,7 @@ class Mission
 			name="Main Headquarters [BLU]";
 			class Entities
 			{
-				items=197;
+				items=198;
 				class Item0
 				{
 					dataType="Object";
@@ -4279,9 +4288,25 @@ class Mission
 					type="Land_HelipadCivil_F";
 					atlOffset=7.6293945e-06;
 				};
+				class Item197
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12270.89,91.948967,20371.219};
+						angles[]={0.097027354,3.1270597,6.1914434};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+					};
+					id=421;
+					type="Land_RepairDepot_01_green_F";
+				};
 			};
 			id=190;
-			atlOffset=0.64165497;
+			atlOffset=-0.79602814;
 		};
 		class Item1
 		{
