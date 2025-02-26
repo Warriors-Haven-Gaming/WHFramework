@@ -126,7 +126,10 @@ private _attackScript = [_groups] spawn {
                 && {!(waypointType (_waypoints # 0) in ["MOVE", "SAD"])}
             ) then {continue};
 
-            private _targets = _leader targetsQuery [objNull, blufor, "", [], 180];
+            private _targets =
+                _leader targetsQuery [objNull, blufor, "", [], 180]
+                select {_x # 2 isEqualTo blufor};
+
             sleep 0.125;
             if (count _targets < 1) then {continue};
 
