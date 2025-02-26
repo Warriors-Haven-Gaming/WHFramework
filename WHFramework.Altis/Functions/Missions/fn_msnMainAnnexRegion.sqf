@@ -161,7 +161,7 @@ private _ungarrisonScript = [_groups, _garrisonGroup] spawn {
             _x enableAIFeature ["PATH", true];
 
             private _group = createGroup side group _x;
-            _group setVariable ["WHF_siren_lastFlare", time];
+            _group setVariable ["WHF_siren_disabled", true];
             [_x] joinSilent _group;
 
             private _waypoint = _group addWaypoint [_position, 0];

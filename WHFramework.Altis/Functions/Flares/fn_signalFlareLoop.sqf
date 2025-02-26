@@ -17,7 +17,10 @@ while {true} do {
 
     private _leadersOnAlert =
         groups east + groups independent
-        select {time - (_x getVariable ["WHF_siren_lastFlare", 0]) > WHF_signalFlareGroupCooldown}
+        select {
+            _x getVariable ["WHF_siren_disabled", false] isNotEqualTo true
+            && {time - (_x getVariable ["WHF_siren_lastFlare", 0]) > WHF_signalFlareGroupCooldown}
+        }
         apply {leader _x}
         select {
             private _leader = _x;
