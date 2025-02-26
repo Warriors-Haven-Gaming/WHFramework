@@ -18,8 +18,6 @@ Author:
 */
 params ["_pos", ["_dir", nil]];;
 
-_pos set [2, 1000];
-
 disableUserInput true;
 cutText ["", "BLACK", 2];
 private _soundVolume = soundVolume;
@@ -32,20 +30,34 @@ sleep (0.75 + random 0.5);
 
 playSoundUI ["UAV_05_tailhook_up_sound"];
 
-// TODO: add support for vehicles
-private _recruits = units player select {
-    isNull objectParent _x && {!isPlayer _x && {player distance _x < 100}}
-};
+private _units = units player select {_x isEqualTo player || {!isPlayer _x && {player distance _x < 100}}};
+private _vehicles = _units apply {objectParent _x} select {!isNull _x && {effectiveCommander _x in _units}};
+_vehicles = _vehicles arrayIntersect _vehicles;
 
-player setUnitFreefallHeight 50;
-player setPosATL _pos;
-if (!isNil "_dir") then {player setDir _dir};
+{_x setUnitFreefallHeight 50} forEach _units;
+_units = _units select {isNull objectParent _x};
+
+private _altitude = if (count _vehicles > 0) then {400} else {800};
+_pos set [2, _altitude];
 
 {
-    _x setUnitFreefallHeight 50;
     _x setPosATL (_pos vectorAdd [random 50 - 25, random 50 - 25]);
     if (!isNil "_dir") then {_x setDir _dir};
-} forEach _recruits;
+
+    if (!isPlayer _x || {count _vehicles > 0}) then {_x spawn {
+        waitUntil {sleep (0.5 + random 0.5); getPos _this # 2 < 200};
+        [_this] call WHF_fnc_deployParachute;
+    }};
+} forEach _units;
+
+{
+    _x setPosATL (_pos vectorAdd [random 100 - 50, random 100 - 50, (_forEachIndex + 1) * 20]);
+    if (!isNil "_dir") then {_x setDir _dir};
+    _x spawn {
+        waitUntil {sleep (0.5 + random 0.5); getPos _this # 2 < 200};
+        [_this] call WHF_fnc_deployParachute;
+    };
+} forEach _vehicles;
 
 5 fadeSound _soundVolume;
 sleep (2 + random 3);

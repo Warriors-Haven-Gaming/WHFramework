@@ -11,25 +11,7 @@ Author:
 player removeAction (player getVariable ["WHF_parachute_actionID", -1]);
 private _actionID = player addAction [
     localize "$STR_A3_action_deploy_parachute",
-    {
-        private _moveIntoParachute = {
-            params ["_unit"];
-            private _pos = getPosATL _unit vectorAdd [0, 0, 3];
-            private _parachute = createVehicle ["Steerable_Parachute_F", _pos, [], 0, "CAN_COLLIDE"];
-            _parachute setDir getDir _unit;
-            _parachute setVelocity velocity _unit;
-            _unit moveInDriver _parachute;
-        };
-
-        player call _moveIntoParachute;
-        private _recruits = units player select {
-            isNull objectParent _x && {!isPlayer _x && {
-                private _info = getUnitFreefallInfo _x;
-                _info # 0 && _info # 1
-            }}
-        };
-        {sleep random 0.5; _x call _moveIntoParachute} forEach _recruits;
-    },
+    {[player] call WHF_fnc_deployParachute},
     nil,
     6,
     true,
