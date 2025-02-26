@@ -26,6 +26,7 @@ while {true} do {
             && {simulationEnabled _leader
             && {isNull objectParent _leader
             && {eyePos _leader select 2 >= 0
+            && {stance _leader in ["STAND", "CROUCH"]
             && {["sniper", "ghillie"] findIf {_x in toLowerANSI typeOf _leader} < 0
             && {
                 _leader targets [true, WHF_signalFlareMaxDistance, [west], 30]
@@ -34,7 +35,7 @@ while {true} do {
             && {
                 private _pos = getPosASL _leader;
                 !lineIntersects [_pos, _pos vectorAdd [0, 0, 50], _leader]
-            }}}}}}}
+            }}}}}}}}
         };
     if (count _leadersOnAlert < 1) then {continue};
 
