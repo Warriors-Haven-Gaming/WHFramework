@@ -27,3 +27,12 @@ _unit setVariable ["WHF_recruitOwnedBy", getPlayerUID player, true];
 
 private _loadout = call WHF_fnc_getLastLoadout;
 if (_loadout isNotEqualTo []) then {_unit setUnitLoadout _loadout};
+
+_unit addEventHandler ["HandleDamage", {call {
+    params ["_unit", "", "_damage", "", "", "_hitIndex", "_instigator"];
+    if (isNull _instigator) exitWith {};
+    private _old = if (_hitIndex >= 0) then {_unit getHitIndex _hitIndex} else {damage _unit};
+    private _diff = _damage - _old;
+    private _diff = _diff * WHF_recruitDamageReduction;
+    _old + _diff
+}}];

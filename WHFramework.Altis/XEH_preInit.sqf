@@ -34,6 +34,16 @@ Author:
     {},
     false
 ] call WHF_fnc_addSetting;
+[
+    "WHF_recruitDamageReduction",
+    "SLIDER",
+    ["STR_WHF_settings_damage_reduction_recruit", "STR_WHF_settings_damage_reduction_recruit_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_damage"],
+    [0, 1, 0.3, 0, true],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
 
 // Factions
 [
