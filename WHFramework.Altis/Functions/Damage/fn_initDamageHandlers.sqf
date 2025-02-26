@@ -2,7 +2,7 @@
 Function: WHF_fnc_initDamageHandlers
 
 Description:
-    Sets up player damage reduction handlers.
+    Sets up player damage handlers.
 
 Author:
     thegamecracks
@@ -15,6 +15,6 @@ player addEventHandler ["HandleDamage", {call {
     // if (isPlayer _instigator) exitWith {};
     private _old = if (_hitIndex >= 0) then {_unit getHitIndex _hitIndex} else {damage _unit};
     private _diff = _damage - _old;
-    private _diff = _diff * WHF_playerDamageReduction;
+    private _diff = _diff * WHF_playerDamageScale;
     _old + _diff min 0.95
 }}];

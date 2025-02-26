@@ -25,9 +25,9 @@ Author:
 
 // Damage
 [
-    "WHF_playerDamageReduction",
+    "WHF_playerDamageScale",
     "SLIDER",
-    ["STR_WHF_settings_damage_reduction", "STR_WHF_settings_damage_reduction_tooltip"],
+    ["STR_WHF_settings_damage_scale", "STR_WHF_settings_damage_scale_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_damage"],
     [0, 1, 0.3, 0, true],
     true,
@@ -35,9 +35,9 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 [
-    "WHF_recruitDamageReduction",
+    "WHF_recruitDamageScale",
     "SLIDER",
-    ["STR_WHF_settings_damage_reduction_recruit", "STR_WHF_settings_damage_reduction_recruit_tooltip"],
+    ["STR_WHF_settings_damage_scale_recruit", "STR_WHF_settings_damage_scale_recruit_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_damage"],
     [0, 1, 0.3, 0, true],
     true,

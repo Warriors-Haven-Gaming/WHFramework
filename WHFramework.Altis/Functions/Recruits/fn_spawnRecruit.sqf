@@ -33,6 +33,6 @@ _unit addEventHandler ["HandleDamage", {call {
     if (isNull _instigator) exitWith {};
     private _old = if (_hitIndex >= 0) then {_unit getHitIndex _hitIndex} else {damage _unit};
     private _diff = _damage - _old;
-    private _diff = _diff * WHF_recruitDamageReduction;
+    private _diff = _diff * WHF_recruitDamageScale;
     _old + _diff
 }}];
