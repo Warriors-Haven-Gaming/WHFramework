@@ -11,5 +11,9 @@ Author:
 if (!hasInterface) exitWith {};
 [
     localize "$STR_WHF_initContextActionHaloJump",
-    {call WHF_fnc_haloJumpGUI}
+    {call WHF_fnc_haloJumpGUI},
+    nil,
+    "",
+    "isNull objectParent _this && {isTouchingGround _this}
+    || {!isNull objectParent _this && {isTouchingGround objectParent _this}}"
 ] call WHF_fnc_contextMenuAdd;
