@@ -33,10 +33,19 @@ sleep (0.75 + random 0.5);
 playSoundUI ["UAV_05_tailhook_up_sound"];
 
 // TODO: add support for vehicles
-// TODO: teleport AI recruits
+private _recruits = units player select {
+    isNull objectParent _x && {!isPlayer _x && {player distance _x < 100}}
+};
+
 player setUnitFreefallHeight 50;
 player setPosATL _pos;
 if (!isNil "_dir") then {player setDir _dir};
+
+{
+    _x setUnitFreefallHeight 50;
+    _x setPosATL (_pos vectorAdd [random 50 - 25, random 50 - 25]);
+    if (!isNil "_dir") then {_x setDir _dir};
+} forEach _recruits;
 
 5 fadeSound _soundVolume;
 sleep (2 + random 3);
