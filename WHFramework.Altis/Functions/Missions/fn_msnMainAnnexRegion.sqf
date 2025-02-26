@@ -109,6 +109,37 @@ private _spawnSupportUnits = {
     };
 };
 
+private _attackScript = [_groups] spawn {
+    params ["_groups"];
+    scriptName "WHF_fnc_msnMainAnnexRegion_attackScript";
+    while {true} do {
+        sleep (20 + random 20);
+        {
+            private _leader = leader _x;
+            if (!alive _leader) then {continue};
+            if (!local _leader) then {continue};
+            if !(_leader checkAIFeature "PATH") then {continue};
+
+            private _waypoints = waypoints _x;
+            if (
+                count _waypoints > 0
+                && {!(waypointType (_waypoints # 0) in ["MOVE", "SAD"])}
+            ) then {continue};
+
+            private _targets = _leader targetsQuery [objNull, blufor, "", [], 180];
+            sleep 0.125;
+            if (count _targets < 1) then {continue};
+
+            {deleteWaypoint _x} forEachReversed _waypoints;
+            _targets # 0 params ["", "", "", "", "_position"];
+            private _waypoint = _x addWaypoint [_position, 0];
+            _waypoint setWaypointType "SAD";
+            _waypoint setWaypointCompletionRadius 20;
+
+        } forEach _groups;
+    };
+};
+
 while {true} do {
     sleep 10;
 
@@ -129,5 +160,6 @@ while {true} do {
     };
 };
 
+terminate _attackScript;
 deleteMarker _areaMarker;
 {[units _x] call WHF_fnc_queueGCDeletion} forEach _groups;
