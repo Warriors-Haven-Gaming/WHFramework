@@ -135,7 +135,7 @@ private _attackScript = [_groups] spawn {
 
             {deleteWaypoint _x} forEachReversed _waypoints;
             _targets # 0 params ["", "", "", "", "_position"];
-            private _waypoint = _x addWaypoint [_position, 0];
+            private _waypoint = _x addWaypoint [_position vectorMultiply [1,1,0], 0];
             _waypoint setWaypointType "SAD";
             _waypoint setWaypointCompletionRadius 20;
 
@@ -167,7 +167,7 @@ private _ungarrisonScript = [_groups, _garrisonGroup] spawn {
             _group setVariable ["WHF_siren_disabled", true];
             [_x] joinSilent _group;
 
-            private _waypoint = _group addWaypoint [_position, 0];
+            private _waypoint = _group addWaypoint [_position vectorMultiply [1,1,0], 0];
             _waypoint setWaypointType "SAD";
             _waypoint setWaypointCompletionRadius 5;
 
