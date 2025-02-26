@@ -14,9 +14,11 @@ Author:
 
 */
 params ["_unit"];
-systemChat str [isRemoteExecuted, isRemoteExecutedJIP, remoteExecutedJIPID];
 if (!alive _unit && {isRemoteExecutedJIP}) exitWith {remoteExec ["", remoteExecutedJIPID]};
-if (!isRemoteExecutedJIP) exitWith {
+
+[_unit] call WHF_fnc_reviveActionAdd;
+
+if (!isRemoteExecutedJIP) then {
     if (_unit isEqualTo player) then {call WHF_fnc_selfReviveAdd};
     if (isPlayer _unit) then {systemChat format [localize "$STR_WHF_incapUnit_chat", name _unit]};
     if (local _unit) then {
@@ -28,5 +30,3 @@ if (!isRemoteExecutedJIP) exitWith {
         _unit setVariable ["WHF_incapacitated_script", [_unit] spawn WHF_fnc_incapLoop];
     };
 };
-
-// TODO: add revive actions
