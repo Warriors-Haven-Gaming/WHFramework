@@ -263,6 +263,19 @@ Author:
     {WHF_requestSkipTime_cooldown = _this * 60},
     false
 ] call WHF_fnc_addSetting;
+[
+    "WHF_timeMultiplier",
+    "SLIDER",
+    ["STR_WHF_settings_time_multiplier", "STR_WHF_settings_time_multiplier_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_time"],
+    [1, 60, 10, 1, false],
+    true,
+    {
+        WHF_timeMultiplier = round (_this * 10) / 10;
+        if (isServer) then {setTimeMultiplier WHF_timeMultiplier};
+    },
+    false
+] call WHF_fnc_addSetting;
 
 // Unflip
 [
