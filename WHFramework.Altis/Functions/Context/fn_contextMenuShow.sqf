@@ -19,7 +19,7 @@ if (isNil "WHF_contextMenu_entries") exitWith {};
         _title,
         _script,
         if (!isNil "_arguments") then {_arguments} else {nil},
-        1.5,
+        6,
         true,
         true,
         _shortcut,
