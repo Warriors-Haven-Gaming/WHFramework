@@ -47,6 +47,7 @@ _description = _description apply {format [localize getTextRaw _x, text _locatio
 private _taskID = [blufor, "", _description, _area # 0, "AUTOASSIGNED", -1, true, "attack"] call WHF_fnc_taskCreate;
 
 private _groups = [];
+private _vehicles = [];
 
 private _infCount = floor (_radius / 50 + random (count allPlayers / 10));
 for "_i" from 1 to _infCount do {
@@ -67,6 +68,7 @@ for "_i" from 1 to _vehicleCount do {
     if (_pos isEqualTo [0,0]) then {continue};
     private _group = [opfor, "raiders", 1, _pos, 10] call WHF_fnc_spawnVehicles;
     _groups pushBack _group;
+    _vehicles append assignedVehicles _group;
 };
 {[_x, getPosATL leader _x, 200] call BIS_fnc_taskPatrol} forEach _groups;
 
@@ -77,7 +79,7 @@ private _supportTypes = [
 private _supportUnits = [];
 private _getSupportUnitCount = {[_supportUnits, {alive _x}] call WHF_fnc_shrinkCount};
 private _spawnSupportUnits = {
-    params ["_area", "_supportTypes", "_supportUnits", "_groups"];
+    params ["_area", "_supportTypes", "_supportUnits", "_groups", "_vehicles"];
     scriptName "WHF_fnc_msnMainAnnexRegion_spawnSupportUnits";
     private _supportType = selectRandomWeighted _supportTypes;
     switch (_supportType) do {
@@ -103,6 +105,7 @@ private _spawnSupportUnits = {
             _waypoint setWaypointType "SAD";
             _waypoint setWaypointCompletionRadius 20;
             _supportUnits append units _group;
+            _vehicles append assignedVehicles _group;
             _groups pushBack _group;
         };
         default {throw format ["Unknown support type %1", _supportType]};
@@ -192,7 +195,7 @@ while {true} do {
         && {call _getSupportUnitCount < _supportLimit
         && {[allPlayers, _area] call WHF_fnc_anyInArea}}
     ) then {
-        [_area, _supportTypes, _supportUnits, _groups] spawn _spawnSupportUnits;
+        [_area, _supportTypes, _supportUnits, _groups, _vehicles] spawn _spawnSupportUnits;
     };
 };
 
@@ -200,3 +203,4 @@ terminate _attackScript;
 terminate _ungarrisonScript;
 deleteMarker _areaMarker;
 {[units _x] call WHF_fnc_queueGCDeletion} forEach _groups;
+{[_x] call WHF_fnc_queueGCDeletion} forEach _vehicles;

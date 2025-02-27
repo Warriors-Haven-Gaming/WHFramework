@@ -33,6 +33,7 @@ private _vehicles = [];
 for "_i" from 1 to _quantity do {
     private _vehicle = createVehicle [selectRandom _vehicleTypes, _center, [], _radius, "NONE"];
     _vehicle enableDynamicSimulation true;
+    _group addVehicle _vehicle;
     _vehicles pushBack _vehicle;
 };
 {_group createVehicleCrew _x} forEach _vehicles;
