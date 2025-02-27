@@ -45,7 +45,7 @@ _pos set [2, _altitude];
     if (!isNil "_dir") then {_x setDir _dir};
 
     if (!isPlayer _x || {count _vehicles > 0}) then {_x spawn {
-        waitUntil {sleep (0.5 + random 0.5); getPos _this # 2 < 200};
+        waitUntil {sleep (0.5 + random 0.5); getPos _this # 2 < 120};
         [_this] call WHF_fnc_deployParachute;
     }};
 } forEach _units;
