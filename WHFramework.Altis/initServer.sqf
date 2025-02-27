@@ -9,6 +9,9 @@ Author:
     thegamecracks
 
 */
+WHF_globalPlayerTarget = [0, -2] select isDedicated;
+publicVariable "WHF_globalPlayerTarget";
+
 skipTime random 24;
 enableSaving [false, false];
 
@@ -29,9 +32,6 @@ if (isMultiplayer) then {
 if (isMultiplayer) then {["Initialize"] call BIS_fnc_dynamicGroups};
 call WHF_fnc_initChannels;
 call WHF_fnc_initCuratorHandlers;
-
-WHF_globalPlayerTarget = [0, -2] select isDedicated;
-publicVariable "WHF_globalPlayerTarget";
 
 WHF_mainMissionLoop_script = [
     [
