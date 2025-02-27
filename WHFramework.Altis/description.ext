@@ -1,8 +1,61 @@
-missionGroup = "WHFramework";
-disableChannels[] = {
-    {0, true, true},
+// https://community.bistudio.com/wiki/Description.ext
+// Mission Information
+author = "thegamecracks";
+briefingName = "Warriors Haven Framework";
+class Header {
+    gameType = "Coop";
 };
+
+// Respawn/Revive
+respawn = "BASE";
+respawnVehicle = "BASE";
+respawnButton = 1;
+respawnDelay = 5;
+respawnVehicleDelay = 30;
+respawnDialog = 0;
 respawnOnStart = 0;
+respawnTemplates[] = {"Counter"};
+respawnWeapons[] = {};
+respawnMagazines[] = {};
+reviveMode = 0;
+
+// Player's UI
+overrideFeedback = 0;
+showHUD = 1;
+showCompass = 1;
+showGPS = 1;
+showMap = 1;
+showWatch = 1;
+showUAVFeed = 1;
+overrideHazeQuality = -1;
+
+// Corpse and Wreck Management
+corpseManagerMode = 1;
+corpseLimit = 15;
+corpseRemovalMinTime = 30;
+corpseRemovalMaxTime = 3600;
+minPlayerDistance = 0;
+weaponholderManagerMode = 1;
+weaponholderLimit = 50;
+weaponholderRemovalMinTime = 300;
+weaponholderRemovalMaxTime = 3600;
+wreckManagerMode = 1;
+wreckLimit = 15;
+wreckRemovalMinTime = 30;
+wreckRemovalMaxTime = 3600;
+
+// Mission Settings
+aiKills = 0;
+debriefing = 1;
+disableChannels[] = {0};
+disabledAI = 1;
+enableDebugConsole = 1;
+forceRotorLibSimulation = 0;
+missionGroup = "WHFramework";
+saving = 0;
+
+// Server Security
+zeusCompositionScriptLevel = 2;
 
 class Extended_PreInit_EventHandlers {
     class WHFramework {
@@ -50,6 +103,7 @@ class CfgFunctions {
             class anyInArea {};
             class displayTimer {};
             class inAreaMarkers {};
+            class initCuratorHandlers {};
             class isPlayerRemoteExecuted {};
             class isRemoteExecutedByAdmin {};
             class objectsGrabber {};

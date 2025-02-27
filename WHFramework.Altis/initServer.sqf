@@ -26,7 +26,9 @@ if (isMultiplayer) then {
     [player] execVM "onPlayerRespawn.sqf";
 };
 
+if (isMultiplayer) then {["Initialize"] call BIS_fnc_dynamicGroups};
 call WHF_fnc_initChannels;
+call WHF_fnc_initCuratorHandlers;
 
 WHF_globalPlayerTarget = [0, -2] select isDedicated;
 publicVariable "WHF_globalPlayerTarget";
