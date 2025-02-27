@@ -59,6 +59,7 @@ private _group = [opfor, "raiders", _quantity, _intelCenter, 100, ["flashlights"
 
 private _vehicleCount = 1 + floor random 4;
 private _vehicleGroup = [opfor, "raiders", _vehicleCount, _intelCenter, 100] call WHF_fnc_spawnVehicles;
+private _vehicles = assignedVehicles _vehicleGroup;
 [_vehicleGroup, _intelCenter] call BIS_fnc_taskDefend;
 // TODO: alert nearby enemies when a player starts downloading the intel
 
@@ -74,3 +75,6 @@ while {true} do {
 
 [_intelBuilding] call WHF_fnc_queueGCDeletion;
 [_terrainObjects] call WHF_fnc_queueGCUnhide;
+[units _group] call WHF_fnc_queueGCDeletion;
+[units _vehicleGroup] call WHF_fnc_queueGCDeletion;
+{[_x] call WHF_fnc_queueGCDeletion} forEach _vehicles;
