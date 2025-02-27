@@ -46,6 +46,10 @@ _description = [_description >> "description", _description >> "title"];
 _description = _description apply {format [localize getTextRaw _x, text _location]};
 private _taskID = [blufor, "", _description, _area # 0, "AUTOASSIGNED", -1, true, "attack"] call WHF_fnc_taskCreate;
 
+private _emplacementCount = floor (_radius / 20);
+[_emplacementCount, _center, _radius, [], true] call WHF_fnc_createEmplacements
+    params ["_emplacementObjects", "_emplacementTerrain"];
+
 private _groups = [];
 private _vehicles = [];
 
@@ -202,5 +206,7 @@ while {true} do {
 terminate _attackScript;
 terminate _ungarrisonScript;
 deleteMarker _areaMarker;
+{[_x] call WHF_fnc_queueGCDeletion} forEach _emplacementObjects;
+{[_x] call WHF_fnc_queueGCUnhide} forEach _emplacementTerrain;
 {[units _x] call WHF_fnc_queueGCDeletion} forEach _groups;
 {[_x] call WHF_fnc_queueGCDeletion} forEach _vehicles;

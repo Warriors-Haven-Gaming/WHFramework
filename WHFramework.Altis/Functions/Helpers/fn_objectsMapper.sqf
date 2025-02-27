@@ -10,6 +10,7 @@
     _this select 1: azimuth of the template in degrees - Number
     _this select 2: objects for the template - Array / composition class - String / tag list - Array
     _this select 3: (optional) randomizer value (how much chance each object has of being created. 0.0 is 100% chance) - Number
+    _this select 4: (optional) spawn simple objects instead of regular objects - Boolean
 
     Returns:
     Created objects (Array)
@@ -29,6 +30,8 @@ else
 {
     _rdm = 0;
 };
+
+params ["", "", "", "", ["_simple", false]];
 
 //Validate parameters
 if (!((typeName _objs) in [(typeName ""), (typeName [])])) exitWith {debugLog "Log: [BIS_fnc_objectMapper] Template objects (2) must be a String or Array!"; []};
@@ -150,21 +153,29 @@ _multiplyMatrixFunc =
         if (_ASL) then {_newPos set [2, _newPos # 2 + _posZ]};
 
         //Create the object and make sure it's in the correct location
-        _newObj = _type createVehicle [-random 500, -random 500, random 500];
-
-        if (!isNil "_simulation") then {_newObj enableSimulationGlobal _simulation; _newObj setVariable ["BIS_DynO_simulation", _simulation];};
-
-        _newObj setDir (_azi + _azimuth);
-        if (_ASL) then {
-            _newObj setPosASL _newPos
+        if (_simple) then {
+            if (!_ASL) then {_newPos = AGLToASL _newPos};
+            _newObj = createSimpleObject [_type, _newPos];
+            _newObj setDir (_azi + _azimuth);
+            if (!_ASL) then {_newObj setVectorUp surfaceNormal _newPos};
         } else {
-            _newObj setPosATL _newPos;
-            _newObj setVectorUp surfaceNormal _newPos;
+            _newObj = _type createVehicle [-random 500, -random 500, random 500];
+
+            if (!isNil "_simulation") then {_newObj enableSimulationGlobal _simulation; _newObj setVariable ["BIS_DynO_simulation", _simulation];};
+
+            _newObj setDir (_azi + _azimuth);
+            if (_ASL) then {
+                _newObj setPosASL _newPos
+            } else {
+                _newObj setPosATL _newPos;
+                _newObj setVectorUp surfaceNormal _newPos;
+            };
+
+            //If fuel and damage were grabbed, map them
+            if (!isNil "_fuel") then {_newObj setFuel _fuel};
+            if (!isNil "_damage") then {_newObj setDamage _damage;};
         };
 
-        //If fuel and damage were grabbed, map them
-        if (!isNil "_fuel") then {_newObj setFuel _fuel};
-        if (!isNil "_damage") then {_newObj setDamage _damage;};
         if (!isNil "_orientation") then
         {
             if ((count _orientation) > 0) then
