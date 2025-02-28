@@ -20,6 +20,9 @@ if (_loadout isNotEqualTo []) then {_newUnit setUnitLoadout _loadout};
 
 _newUnit enableStamina WHF_fitness_stamina;
 _newUnit setCustomAimCoef WHF_fitness_sway;
+_newUnit setUnitTrait ["engineer", true];
+_newUnit setUnitTrait ["explosiveSpecialist", true];
+_newUnit setUnitTrait ["medic", true];
 
 call WHF_fnc_initParachuteAction;
 call WHF_fnc_initServiceAction;
