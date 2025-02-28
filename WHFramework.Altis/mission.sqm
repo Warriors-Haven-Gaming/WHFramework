@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=55;
+		nextID=60;
 	};
 	class Camera
 	{
-		pos[]={12300.246,112.21902,20334.707};
-		dir[]={-0.91632062,-0.3846167,0.11153124};
-		up[]={-0.38180479,0.92307335,0.046472196};
-		aside[]={0.12082584,-8.2189217e-08,0.99267918};
+		pos[]={12265.702,112.21902,20348.822};
+		dir[]={-0.78603685,-0.61607891,0.051074501};
+		up[]={-0.61478645,0.78768039,0.039947383};
+		aside[]={0.064841464,3.2625394e-08,0.99790221};
 	};
 };
 binarizationWanted=0;
@@ -7634,6 +7634,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_initArsenal;";
 								disableSimulation=1;
 							};
 							id=393;
@@ -7663,7 +7664,7 @@ class Mission
 										class data
 										{
 											singleType="BOOL";
-											value=1;
+											value=0;
 										};
 									};
 								};
