@@ -51,7 +51,7 @@ Author:
     "LIST",
     ["STR_WHF_settings_factions_current", "STR_WHF_settings_factions_current_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_factions"],
-    [["base"], ["STR_WHF_settings_factions_current_base"]],
+    [["base", "rhsafrf"], ["STR_WHF_settings_factions_current_base", "RHSAFRF"]],
     true,
     {}, // TODO: check required mods
     false
