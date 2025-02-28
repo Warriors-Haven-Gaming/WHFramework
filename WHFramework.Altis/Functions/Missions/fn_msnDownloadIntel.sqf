@@ -37,20 +37,22 @@ private _terrainObjects = nearestTerrainObjects [_intelCenter, [], 20, false];
 _terrainObjects apply {hideObjectGlobal _x};
 
 private _intelBuilding = [
+    [
+        ["Land_Research_house_V1_F",[0.0126953,-0.00585938,0],0],
+        ["MapBoard_Tanoa_F",[-0.496094,1.24414,0.592813],172.602],
+        ["Land_BatteryPack_01_closed_olive_F",[-0.855469,2.28711,1.61578],30.2656],
+        ["Land_PortableDesk_01_olive_F",[-1.28125,2.46289,0.728849],0],
+        ["Land_Document_01_F",[-0.865234,2.66406,1.62502],194.368],
+        ["Land_Laptop_unfolded_F",[-0.503906,2.69141,1.61578],334.87],
+        ["Land_PCSet_Intel_01_F",[-1.20313,2.55273,1.62502],201.424],
+        ["Land_OfficeChair_01_F",[-1.6875,3.28906,0.728849],0]
+    ],
     _intelCenter,
     _intelDir,
-    [
-        ["Land_Research_house_V1_F",[0.899902,-1.85547,-0.00143886],0,1,0,[],"","",true,true],
-        ["MapBoard_Tanoa_F",[0.391602,-0.604004,0.591373],172.602,1,0,[],"","",false,true],
-        ["Land_PortableDesk_01_olive_F",[-0.393555,0.613281,0.727409],0,1,0,[],"","",false,true],
-        ["Land_OfficeChair_01_F",[-0.799805,1.44043,0.727409],300,1,0,[],"","",false,true],
-        ["Land_PCSet_Intel_01_F",[-0.316406,0.70459,1.62358],201.424,1,0,[],"","",false,true],
-        ["Land_BatteryPack_01_closed_olive_F",[0.03125,0.4375,1.61434],30.2656,1,0,[],"","",false,true],
-        ["Land_Document_01_F",[0.0219727,0.81543,1.62358],194.368,1,0,[],"","",false,true],
-        ["Land_Laptop_unfolded_F",[0.383789,0.842773,1.61434],334.87,1,0,[],"","",true,true]
-    ]
+    true,
+    true
 ] call WHF_fnc_objectsMapper;
-private _laptop = _intelBuilding # 7;
+private _laptop = _intelBuilding # 5;
 [_laptop] remoteExec ["WHF_fnc_msnDownloadIntelLaptop", 0, _laptop];
 
 private _quantity = 10 + floor random (count allPlayers min 20);
