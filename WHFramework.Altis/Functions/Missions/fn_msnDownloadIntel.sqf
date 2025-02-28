@@ -55,11 +55,11 @@ private _laptop = _intelBuilding # 5;
 [_laptop] remoteExec ["WHF_fnc_msnDownloadIntelLaptop", 0, _laptop];
 
 private _quantity = 10 + floor random (count allPlayers min 20);
-private _group = [opfor, "raiders", _quantity, _intelCenter, 100, ["flashlights"]] call WHF_fnc_spawnUnits;
+private _group = [opfor, "standard", _quantity, _intelCenter, 100, ["flashlights"]] call WHF_fnc_spawnUnits;
 [_group, _intelCenter] call BIS_fnc_taskDefend;
 
 private _vehicleCount = 1 + floor random 4;
-private _vehicleGroup = [opfor, "raiders", _vehicleCount, _intelCenter, 100] call WHF_fnc_spawnVehicles;
+private _vehicleGroup = [opfor, "standard", _vehicleCount, _intelCenter, 100] call WHF_fnc_spawnVehicles;
 private _vehicles = assignedVehicles _vehicleGroup;
 [_vehicleGroup, _intelCenter] call BIS_fnc_taskDefend;
 // TODO: alert nearby enemies when a player starts downloading the intel

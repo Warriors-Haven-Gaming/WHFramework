@@ -57,12 +57,12 @@ private _infCount = floor (_radius / 50 + random (count allPlayers / 10));
 for "_i" from 1 to _infCount do {
     private _pos = [_center, _radius] call WHF_fnc_randomPos;
     if (_pos isEqualTo [0,0]) then {continue};
-    private _group = [opfor, "raiders", selectRandom [2, 4, 8], _pos, 10, ["flashlights"]] call WHF_fnc_spawnUnits;
+    private _group = [opfor, "standard", selectRandom [2, 4, 8], _pos, 10, ["flashlights"]] call WHF_fnc_spawnUnits;
     _groups pushBack _group;
 };
 
 private _garrisonCount = floor (_radius / 15 + random (count allPlayers / 2));
-private _garrisonGroup = [opfor, "raiders", _garrisonCount, _center, 0, ["flashlights"]] call WHF_fnc_spawnUnits;
+private _garrisonGroup = [opfor, "standard", _garrisonCount, _center, 0, ["flashlights"]] call WHF_fnc_spawnUnits;
 [_garrisonGroup, _center, _radius, true] call WHF_fnc_garrisonUnits;
 _groups pushBack _garrisonGroup;
 
@@ -70,7 +70,7 @@ private _vehicleCount = floor (_radius / 100 + random (count allPlayers / 10));
 for "_i" from 1 to _vehicleCount do {
     private _pos = [_center, _radius] call WHF_fnc_randomPos;
     if (_pos isEqualTo [0,0]) then {continue};
-    private _group = [opfor, "raiders", 1, _pos, 10] call WHF_fnc_spawnVehicles;
+    private _group = [opfor, "standard", 1, _pos, 10] call WHF_fnc_spawnVehicles;
     _groups pushBack _group;
     _vehicles append assignedVehicles _group;
 };
@@ -92,7 +92,7 @@ private _spawnSupportUnits = {
             if (_pos isEqualTo [0,0]) exitWith {};
 
             private _quantity = 1 + floor random (3 + count allPlayers / 5);
-            private _group = [opfor, "raiders", _quantity, _pos, 50, ["flashlights"]] call WHF_fnc_spawnUnits;
+            private _group = [opfor, "standard", _quantity, _pos, 50, ["flashlights"]] call WHF_fnc_spawnUnits;
             private _waypoint = _group addWaypoint [_pos, 0];
             _waypoint setWaypointType "SAD";
             _waypoint setWaypointCompletionRadius 20;
@@ -104,7 +104,7 @@ private _spawnSupportUnits = {
             if (_pos isEqualTo [0,0]) exitWith {};
 
             private _quantity = 1;
-            private _group = [opfor, "raiders", _quantity, _pos, 50] call WHF_fnc_spawnVehicles;
+            private _group = [opfor, "standard", _quantity, _pos, 50] call WHF_fnc_spawnVehicles;
             private _waypoint = _group addWaypoint [_pos, 0];
             _waypoint setWaypointType "SAD";
             _waypoint setWaypointCompletionRadius 20;
