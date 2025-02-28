@@ -41,7 +41,7 @@ _positions = _positions call BIS_fnc_arrayShuffle;
         continue;
     };
 
-    _x setPosATL _positions # _forEachIndex;
+    _x setPos _positions # _forEachIndex;
     _x setUnitPos (["MIDDLE", "UP"] select (random 1 < 0.8));
     _x enableAIFeature ["COVER", false];
     _x enableAIFeature ["PATH", false];
