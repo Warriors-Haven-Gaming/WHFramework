@@ -49,8 +49,7 @@ private _intelBuilding = [
     ],
     _intelCenter,
     _intelDir,
-    true,
-    true
+    ["frozen", "normal"]
 ] call WHF_fnc_objectsMapper;
 private _laptop = _intelBuilding # 5;
 [_laptop] remoteExec ["WHF_fnc_msnDownloadIntelLaptop", 0, _laptop];

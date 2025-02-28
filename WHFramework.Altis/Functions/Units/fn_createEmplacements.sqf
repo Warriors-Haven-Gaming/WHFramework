@@ -16,9 +16,6 @@ Parameters:
         An optional array of emplacement types to randomly select from.
         Must be one of the following:
             "camp"
-    Boolean simple:
-        (Optional, default false)
-        If true, spawn simple objects for compositions.
 
 Returns:
     Array
@@ -30,7 +27,7 @@ Author:
     thegamecracks
 
 */
-params ["_quantity", "_center", "_radius", ["_types", []], ["_simple", false]];
+params ["_quantity", "_center", "_radius", ["_types", []]];
 
 if (_types isEqualTo []) then {_types = ["camp"]};
 
@@ -74,7 +71,7 @@ private _compositionTerrain = [];
 
     private _terrain = nearestTerrainObjects [_pos, [], _clearRadius, false];
     {hideObjectGlobal _x} forEach _terrain;
-    private _objects = [_x, _pos, random 360, true, _simple] call WHF_fnc_objectsMapper;
+    private _objects = [_x, _pos, random 360, ["normal", "simple"]] call WHF_fnc_objectsMapper;
 
     _compositionObjects pushBack _objects;
     _compositionTerrain pushBack _terrain;

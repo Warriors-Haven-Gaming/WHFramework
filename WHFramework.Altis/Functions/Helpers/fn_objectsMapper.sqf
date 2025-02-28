@@ -11,12 +11,12 @@ Parameters:
         The center coordinates of the composition to create.
     Number direction:
         The direction that the composition should face.
-    Boolean normal:
-        (Optional, default true)
-        If true, orient objects to match the surface of the terrain under them.
-    Boolean simple:
-        (Optional, default false)
-        If true, create simple objects instead of regular objects.
+    Array flags:
+        (Optional, default ["normal"])
+        An array containing any of the following flags:
+            "frozen": Disable object damage and simulation.
+            "normal": Orient objects to match the surface of the terrain under them.
+            "simple": Create simple objects instead of regular objects.
 
 Returns:
     Array
@@ -25,7 +25,7 @@ Author:
     thegamecracks
 
 */
-params ["_composition", "_center", "_direction", ["_normal", true], ["_simple", false]];
+params ["_composition", "_center", "_direction", ["_flags", ["normal"]]];
 
 private _rotateFromCenter = {
     params ["_pos", "_dir"];
@@ -36,15 +36,25 @@ private _rotateFromCenter = {
     ]
 };
 
+private _frozen = "frozen" in _flags;
+private _normal = "normal" in _flags;
+private _simple = "simple" in _flags;
+
 _composition apply {
     _x params ["_type", "_pos", "_dir"];
 
     _pos = [_pos, _direction] call _rotateFromCenter vectorAdd _center;
 
-    private _obj = if (_simple) then {
-        createSimpleObject [_type, AGLToASL _pos]
-    } else {
-        createVehicle [_type, _pos, [], 0, "CAN_COLLIDE"]
+    private _obj = switch (true) do {
+        case (_simple): {createSimpleObject [_type, AGLToASL _pos]};
+        case (_frozen): {
+            private _obj = createVehicle [_type, [-random 500, -random 500, 500], [], 0, "NONE"];
+            _obj allowDamage false;
+            _obj enableSimulationGlobal false;
+            _obj setPosATL _pos;
+            _obj
+        };
+        default {createVehicle [_type, _pos, [], 0, "CAN_COLLIDE"]};
     };
 
     _obj setDir (_dir + _direction);

@@ -47,7 +47,7 @@ _description = _description apply {format [localize getTextRaw _x, text _locatio
 private _taskID = [blufor, "", _description, _area # 0, "AUTOASSIGNED", -1, true, "attack"] call WHF_fnc_taskCreate;
 
 private _emplacementCount = floor (_radius / 20);
-[_emplacementCount, _center, _radius, [], true] call WHF_fnc_createEmplacements
+[_emplacementCount, _center, _radius, []] call WHF_fnc_createEmplacements
     params ["_emplacementObjects", "_emplacementTerrain"];
 
 private _groups = [];
