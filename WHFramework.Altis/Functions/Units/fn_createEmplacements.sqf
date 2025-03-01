@@ -29,7 +29,7 @@ Author:
 */
 params ["_quantity", "_center", "_radius", ["_types", []]];
 
-if (_types isEqualTo []) then {_types = ["camp"]};
+if (_types isEqualTo []) then {_types = ["camp", "hq"]};
 
 private _compositions = [];
 for "_i" from 1 to _quantity do {
