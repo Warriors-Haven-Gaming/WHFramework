@@ -28,7 +28,7 @@ private _resolvedTypes = _this apply {
         case ["standard", "base"]: {["I_G_Offroad_01_AT_F","I_G_Offroad_01_armed_F","I_C_Offroad_02_AT_F","I_C_Offroad_02_LMG_F"]};
         case ["standard", "csat"]: {["o_mrap_02_f","o_lsv_02_at_f","o_lsv_02_armed_f","o_truck_03_ammo_f","o_truck_03_medical_f","o_truck_03_covered_f"]};
         case ["standard", "csat_pacific"]: {["o_t_mrap_02_ghex_f","o_t_lsv_02_at_f","o_t_lsv_02_armed_f","o_t_truck_03_ammo_ghex_f","o_t_truck_03_medical_ghex_f","o_t_truck_03_covered_ghex_f"]};
-        case ["standard", "rhsafrf"]: {["rhs_btr80_vdv","rhs_tigr_sts_vdv","rhs_uaz_vdv","rhs_uaz_open_vdv","rhs_ural_vdv_01","rhs_ural_open_vdv_01"]};
+        case ["standard", "rhsafrf"]: {["rhs_tigr_sts_vdv","rhs_uaz_vdv","rhs_uaz_open_vdv","rhs_ural_vdv_01","rhs_ural_open_vdv_01"]};
         default {
             if (_x # 1 isEqualTo "base") then {[]}
             else {[_x # 0, "base"] call WHF_fnc_getVehicleTypes}
