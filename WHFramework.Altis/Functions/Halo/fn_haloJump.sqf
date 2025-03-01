@@ -37,7 +37,7 @@ _vehicles = _vehicles arrayIntersect _vehicles;
 {_x setUnitFreefallHeight 50} forEach _units;
 _units = _units select {isNull objectParent _x};
 
-private _altitude = if (count _vehicles > 0) then {400} else {800};
+private _altitude = if (count _vehicles > 0) then {WHF_halo_altitude_vehicle} else {WHF_halo_altitude_unit};
 _pos set [2, _altitude];
 
 {
@@ -45,7 +45,7 @@ _pos set [2, _altitude];
     if (!isNil "_dir") then {_x setDir _dir};
 
     if (!isPlayer _x || {count _vehicles > 0}) then {_x spawn {
-        waitUntil {sleep (0.5 + random 0.5); getPos _this # 2 < 120};
+        waitUntil {sleep (0.5 + random 0.5); getPos _this # 2 < WHF_halo_parachuteAltitude_unit};
         [_this] call WHF_fnc_deployParachute;
     }};
 } forEach _units;
@@ -54,7 +54,7 @@ _pos set [2, _altitude];
     _x setPosATL (_pos vectorAdd [random 100 - 50, random 100 - 50, (_forEachIndex + 1) * 20]);
     if (!isNil "_dir") then {_x setDir _dir};
     _x spawn {
-        waitUntil {sleep (0.5 + random 0.5); getPos _this # 2 < 200};
+        waitUntil {sleep (0.5 + random 0.5); getPos _this # 2 < WHF_halo_parachuteAltitude_vehicle};
         [_this] call WHF_fnc_deployParachute;
     };
 } forEach _vehicles;

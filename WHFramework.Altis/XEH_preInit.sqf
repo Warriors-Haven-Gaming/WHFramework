@@ -176,6 +176,48 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 
+// Halo
+[
+    "WHF_halo_altitude_unit",
+    "SLIDER",
+    ["STR_WHF_settings_halo_altitude_unit", "STR_WHF_settings_halo_altitude_unit_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_halo"],
+    [300, 2000, 800, 0, false],
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_halo_altitude_vehicle",
+    "SLIDER",
+    ["STR_WHF_settings_halo_altitude_vehicle", "STR_WHF_settings_halo_altitude_vehicle_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_halo"],
+    [300, 2000, 400, 0, false],
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_halo_parachuteAltitude_unit",
+    "SLIDER",
+    ["STR_WHF_settings_halo_parachuteAltitude_unit", "STR_WHF_settings_halo_parachuteAltitude_unit_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_halo"],
+    [80, 300, 120, 0, false],
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_halo_parachuteAltitude_vehicle",
+    "SLIDER",
+    ["STR_WHF_settings_halo_parachuteAltitude_vehicle", "STR_WHF_settings_halo_parachuteAltitude_vehicle_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_halo"],
+    [100, 500, 200, 0, false],
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+
 // Loadouts
 [
     "WHF_loadout_collection",
