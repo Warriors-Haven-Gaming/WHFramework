@@ -31,6 +31,5 @@ WHF_haloJump_mapHandlers pushBack ["MapSingleClick", addMissionEventHandler ["Ma
 
     openMap false;
     _pos = _pos vectorAdd [random 100 - 50, random 100 - 50];
-    private _dir = getPosATL player getDir _pos;
-    [_pos, _dir] spawn WHF_fnc_haloJump;
+    [_pos] spawn WHF_fnc_haloJump;
 }]];

@@ -217,6 +217,16 @@ Author:
     {},
     false
 ] call WHF_fnc_addSetting;
+[
+    "WHF_halo_spacing",
+    "SLIDER",
+    ["STR_WHF_settings_halo_spacing", "STR_WHF_settings_halo_spacing_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_halo"],
+    [10, 30, 10, 0, false],
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
 
 // Loadouts
 [

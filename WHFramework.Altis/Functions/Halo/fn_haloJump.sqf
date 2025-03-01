@@ -2,21 +2,24 @@
 Function: WHF_fnc_haloJump
 
 Description:
-    Halo jumps the player at the given location.
+    Halo jumps the player and nearby recruits to the given location.
     Function must be executed in scheduled environment.
 
 Parameters:
-    PositionATL position:
+    PositionATL center:
         The position to teleport the player to.
     Number direction:
         (Optional, default nil)
-        The direction to face the player after being halo jumped.
+        The direction of the halo jump.
+        If not provided, defaults to the direction from the player to the center.
 
 Author:
     thegamecracks
 
 */
-params ["_pos", ["_dir", nil]];;
+params ["_center", "_direction"];;
+
+if (isNil "_direction") then {_direction = getPosATL player getDir _center};
 
 disableUserInput true;
 cutText ["", "BLACK", 2];
@@ -43,11 +46,21 @@ _vehicles = _vehicles arrayIntersect _vehicles;
 _units = _units select {isNull objectParent _x};
 
 private _altitude = if (count _vehicles > 0) then {WHF_halo_altitude_vehicle} else {WHF_halo_altitude_unit};
-_pos set [2, _altitude];
+_center set [2, _altitude];
+
+private _posIndex = 0;
+private _getNextPos = {
+    params [["_front", _posIndex % 2 > 0]];
+    private _distance = _posIndex * WHF_halo_spacing;
+    if (!_front) then {_distance = -_distance};
+    private _pos = _center vectorAdd [_distance * sin _direction, _distance * cos _direction];
+    _posIndex = _posIndex + 1;
+    _pos
+};
 
 {
-    _x setPosATL (_pos vectorAdd [random 50 - 25, random 50 - 25]);
-    if (!isNil "_dir") then {_x setDir _dir};
+    _x setPosATL ([] call _getNextPos);
+    _x setDir _direction;
 
     if (!isPlayer _x || {count _vehicles > 0}) then {_x spawn {
         waitUntil {sleep (0.5 + random 0.5); getPos _this # 2 < WHF_halo_parachuteAltitude_unit};
@@ -56,8 +69,9 @@ _pos set [2, _altitude];
 } forEach _units;
 
 {
-    _x setPosATL (_pos vectorAdd [random 100 - 50, random 100 - 50, (_forEachIndex + 1) * 20]);
-    if (!isNil "_dir") then {_x setDir _dir};
+    _x setPosATL ([false] call _getNextPos);
+    _x setDir _direction;
+
     _x spawn {
         waitUntil {sleep (0.5 + random 0.5); getPos _this # 2 < WHF_halo_parachuteAltitude_vehicle};
         [_this] call WHF_fnc_deployParachute;
