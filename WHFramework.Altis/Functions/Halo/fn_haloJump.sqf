@@ -30,7 +30,12 @@ sleep (0.75 + random 0.5);
 
 playSoundUI ["UAV_05_tailhook_up_sound"];
 
-private _units = units player select {_x isEqualTo player || {!isPlayer _x && {player distance _x < 100}}};
+private _units = units player select {
+    _x isEqualTo player
+    || {!isPlayer _x
+    && {local _x
+    && {player distance _x < 100}}}
+};
 private _vehicles = _units apply {objectParent _x} select {!isNull _x && {effectiveCommander _x in _units}};
 _vehicles = _vehicles arrayIntersect _vehicles;
 
