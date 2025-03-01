@@ -71,7 +71,7 @@ private _compositionTerrain = [];
 
     private _terrain = nearestTerrainObjects [_pos, [], _clearRadius, false];
     {hideObjectGlobal _x} forEach _terrain;
-    private _objects = [_x, _pos, random 360, ["normal", "simple"]] call WHF_fnc_objectsMapper;
+    private _objects = [_x, _pos, random 360, ["normal", "path", "simple"]] call WHF_fnc_objectsMapper;
 
     _compositionObjects pushBack _objects;
     _compositionTerrain pushBack _terrain;
