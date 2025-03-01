@@ -18,12 +18,17 @@ Author:
 params [["_location", locationNull]];
 
 if (_location isEqualTo locationNull) then {
-    _location = selectRandom nearestLocations [
+    private _locations = nearestLocations [
         [worldSize / 2, worldSize / 2],
         ["NameVillage", "NameCity", "NameCityCapital"],
         sqrt 2 / 2 * worldSize
     ];
-
+    _locations = _locations call BIS_fnc_arrayShuffle;
+    {
+        if ([locationPosition _x, 1200] call WHF_fnc_isNearRespawn) then {continue};
+        _location = _x;
+        break;
+    } forEach _locations;
 };
 if (_location isEqualTo locationNull) exitWith {
     diag_log text format ["%1: No location found", _fnc_scriptName];
