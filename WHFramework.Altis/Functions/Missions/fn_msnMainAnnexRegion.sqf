@@ -50,6 +50,10 @@ private _emplacementCount = floor (_radius / 20);
 [_emplacementCount, _center, _radius, []] call WHF_fnc_createEmplacements
     params ["_emplacementObjects", "_emplacementTerrain"];
 
+private _mortarCount = floor (_radius / 350);
+[opfor, _mortarCount, _center, _radius] call WHF_fnc_createMortars
+    params ["_mortarObjects", "_mortarTerrain", "_mortarGroups"];
+
 private _groups = [];
 private _vehicles = [];
 
@@ -208,7 +212,13 @@ call WHF_fnc_cycleFaction;
 terminate _attackScript;
 terminate _ungarrisonScript;
 deleteMarker _areaMarker;
+
 {[_x] call WHF_fnc_queueGCDeletion} forEach _emplacementObjects;
 {[_x] call WHF_fnc_queueGCUnhide} forEach _emplacementTerrain;
+
+{[_x] call WHF_fnc_queueGCDeletion} forEach _mortarObjects;
+{[_x] call WHF_fnc_queueGCUnhide} forEach _mortarTerrain;
+{[units _x] call WHF_fnc_queueGCDeletion} forEach _mortarGroups;
+
 {[units _x] call WHF_fnc_queueGCDeletion} forEach _groups;
 {[_x] call WHF_fnc_queueGCDeletion} forEach _vehicles;
