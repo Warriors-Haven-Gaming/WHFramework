@@ -199,6 +199,16 @@ Author:
     {WHF_recruits_limit = round WHF_recruits_limit},
     false
 ] call WHF_fnc_addSetting;
+[
+    "WHF_recruits_skill",
+    "SLIDER",
+    ["STR_WHF_settings_recruits_skill", "STR_WHF_settings_recruits_skill_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_recruits"],
+    [0, 1, 1, 0, true],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
 
 // Revive
 [

@@ -22,7 +22,7 @@ private _unit = group player createUnit ["B_Soldier_F", _position, [], 0, "NONE"
 _unit enableStamina WHF_fitness_stamina;
 _unit setCustomAimCoef WHF_fitness_sway;
 _unit setDir (_position getDir player);
-_unit setSkill 1;
+_unit setSkill WHF_recruits_skill;
 _unit setUnitTrait ["engineer", true];
 _unit setUnitTrait ["explosiveSpecialist", true];
 _unit setUnitTrait ["medic", true];
