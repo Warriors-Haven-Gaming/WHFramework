@@ -47,13 +47,13 @@ Author:
 
 // Factions
 [
-    "WHF_factions_current",
+    "WHF_factions_selected",
     "LIST",
-    ["STR_WHF_settings_factions_current", "STR_WHF_settings_factions_current_tooltip"],
+    ["STR_WHF_settings_factions_selected", "STR_WHF_settings_factions_selected_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_factions"],
-    [["base", "rhsafrf"], ["STR_WHF_settings_factions_current_base", "RHSAFRF"]],
+    [["base", "rhsafrf", "random"], ["STR_WHF_factions_base", "STR_WHF_factions_rhsafrf", "STR_WHF_settings_factions_selected_random"]],
     true,
-    {}, // TODO: check required mods
+    {call WHF_fnc_cycleFaction},
     false
 ] call WHF_fnc_addSetting;
 
