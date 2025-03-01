@@ -38,15 +38,7 @@ for "_i" from 1 to _quantity do {
     private _unit = _group createUnit [selectRandom _unitTypes, _center, [], _radius, "NONE"];
     [_unit] joinSilent _group;
     _unit triggerDynamicSimulation false;
-
-    _unit setSkill 1;
-    _unit setSkill ["aimingAccuracy", 0.1 + random 0.1];
-    _unit setSkill ["aimingShake", 0.45 + random 0.1];
-    _unit setSkill ["aimingSpeed", 0.3 + random 0.1];
-    _unit setSkill ["courage", 0.4 + random 0.2];
-    _unit setSkill ["reloadSpeed", 0.45 + random 0.1];
-    _unit setSkill ["spotDistance", 0.2 + random 0.1];
-    _unit setSkill ["spotTime", 0.2 + random 0.1];
+    [_unit] call WHF_fnc_setUnitSkill;
 
     if ("flashlights" in _equipment) then {
         _unit addPrimaryWeaponItem "acc_flashlight";
