@@ -29,3 +29,32 @@ _spawner addAction [
     "leader _this isEqualTo _this",
     3
 ];
+_spawner addAction [
+    localize "$STR_WHF_rearmRecruits",
+    {
+        private _recruits = units player select {
+            !isPlayer _x
+            && {local _x
+            && {player distance _x < 100
+            && {!isNil {_x getVariable "WHF_recruitLoadout"}}}}
+        };
+
+        {_x setUnitLoadout (_x getVariable "WHF_recruitLoadout")} forEach _recruits;
+
+        if (count _recruits > 0) then {
+            hint format [
+                localize "$STR_WHF_rearmRecruits_completed",
+                count _recruits
+            ];
+        } else {
+            hint localize "$STR_WHF_rearmRecruits_none";
+        };
+    },
+    nil,
+    1.5,
+    true,
+    true,
+    "",
+    "leader _this isEqualTo _this",
+    3
+];

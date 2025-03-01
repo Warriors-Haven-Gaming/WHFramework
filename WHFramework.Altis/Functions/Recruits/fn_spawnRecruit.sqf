@@ -30,6 +30,7 @@ _unit setVariable ["WHF_recruitOwnedBy", getPlayerUID player, true];
 
 private _loadout = call WHF_fnc_getLastLoadout;
 if (_loadout isNotEqualTo []) then {_unit setUnitLoadout _loadout};
+_unit setVariable ["WHF_recruitLoadout", getUnitLoadout _unit];
 
 if (!isClass (configFile >> "CfgPatches" >> "ace_medical")) then {
     _unit addEventHandler ["HandleDamage", {call {
