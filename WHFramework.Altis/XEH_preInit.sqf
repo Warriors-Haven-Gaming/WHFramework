@@ -218,11 +218,21 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 [
-    "WHF_halo_spacing",
+    "WHF_halo_spacing_unit",
     "SLIDER",
-    ["STR_WHF_settings_halo_spacing", "STR_WHF_settings_halo_spacing_tooltip"],
+    ["STR_WHF_settings_halo_spacing_unit", "STR_WHF_settings_halo_spacing_unit_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_halo"],
     [10, 30, 10, 0, false],
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_halo_spacing_vehicle",
+    "SLIDER",
+    ["STR_WHF_settings_halo_spacing_vehicle", "STR_WHF_settings_halo_spacing_vehicle_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_halo"],
+    [20, 50, 20, 0, false],
     false,
     {},
     false

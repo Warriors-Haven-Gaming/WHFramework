@@ -50,8 +50,8 @@ _center set [2, _altitude];
 
 private _posIndex = 0;
 private _getNextPos = {
-    params [["_front", _posIndex % 2 > 0]];
-    private _distance = _posIndex * WHF_halo_spacing;
+    params ["_spacing", ["_front", _posIndex % 2 > 0]];
+    private _distance = _posIndex * _spacing;
     if (!_front) then {_distance = -_distance};
     private _pos = _center vectorAdd [_distance * sin _direction, _distance * cos _direction];
     _posIndex = _posIndex + 1;
@@ -59,7 +59,7 @@ private _getNextPos = {
 };
 
 {
-    _x setPosATL ([] call _getNextPos);
+    _x setPosATL ([WHF_halo_spacing_unit] call _getNextPos);
     _x setDir _direction;
 
     if (!isPlayer _x || {count _vehicles > 0}) then {_x spawn {
@@ -69,7 +69,7 @@ private _getNextPos = {
 } forEach _units;
 
 {
-    _x setPosATL ([false] call _getNextPos);
+    _x setPosATL ([WHF_halo_spacing_vehicle, false] call _getNextPos);
     _x setDir _direction;
 
     _x spawn {
