@@ -43,7 +43,7 @@ WHF_contextMenu_entries pushBack [
 ];
 
 if (!isNil "WHF_contextMenu_actionIDs") then {
-    private _actionID = player addAction [
+    private _actionID = focusOn addAction [
         _title,
         _script,
         if (!isNil "_arguments") then {_arguments} else {nil},
@@ -55,5 +55,5 @@ if (!isNil "WHF_contextMenu_actionIDs") then {
         50,
         _unconscious
     ];
-    WHF_contextMenu_actionIDs pushBack [player, _actionID];
+    WHF_contextMenu_actionIDs pushBack [focusOn, _actionID];
 };

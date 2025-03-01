@@ -9,13 +9,13 @@ Author:
 
 */
 if (!hasInterface) exitWith {};
-if (isNull player) exitWith {};
+if (isNull focusOn) exitWith {};
 if (!isNil "WHF_contextMenu_actionIDs") exitWith {};
 WHF_contextMenu_actionIDs = [];
 if (isNil "WHF_contextMenu_entries") exitWith {};
 {
     _x params ["_title", "_script", "_arguments", "_shortcut", "_condition", "_unconscious"];
-    private _actionID = player addAction [
+    private _actionID = focusOn addAction [
         _title,
         _script,
         if (!isNil "_arguments") then {_arguments} else {nil},
@@ -27,5 +27,5 @@ if (isNil "WHF_contextMenu_entries") exitWith {};
         50,
         _unconscious
     ];
-    WHF_contextMenu_actionIDs pushBack [player, _actionID];
+    WHF_contextMenu_actionIDs pushBack [focusOn, _actionID];
 } forEach WHF_contextMenu_entries;

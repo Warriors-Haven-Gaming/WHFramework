@@ -19,7 +19,7 @@ Author:
 */
 params ["_center", "_direction"];;
 
-if (isNil "_direction") then {_direction = getPosATL player getDir _center};
+if (isNil "_direction") then {_direction = getPosATL focusOn getDir _center};
 
 disableUserInput true;
 cutText ["", "BLACK", 2];
@@ -33,11 +33,11 @@ sleep (0.75 + random 0.5);
 
 playSoundUI ["UAV_05_tailhook_up_sound"];
 
-private _units = units player select {
-    _x isEqualTo player
+private _units = units focusOn select {
+    _x isEqualTo focusOn
     || {!isPlayer _x
     && {local _x
-    && {player distance _x < 100}}}
+    && {focusOn distance _x < 100}}}
 };
 private _vehicles = _units apply {objectParent _x} select {!isNull _x && {effectiveCommander _x in _units}};
 _vehicles = _vehicles arrayIntersect _vehicles;

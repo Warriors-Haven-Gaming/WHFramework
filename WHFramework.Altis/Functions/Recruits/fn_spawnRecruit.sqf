@@ -13,15 +13,16 @@ Author:
 
 */
 params ["_position"];
-private _aiCount = {!isPlayer _x} count units player;
+private _aiCount = {!isPlayer _x} count units focusOn;
 if (_aiCount >= WHF_recruits_limit) exitWith {
     hint format [localize "$STR_WHF_spawnRecruit_limit", WHF_recruits_limit];
 };
 
-private _unit = group player createUnit ["B_Soldier_F", _position, [], 0, "NONE"];
+private _unit = group focusOn createUnit ["B_Soldier_F", _position, [], 0, "NONE"];
+[_unit] joinSilent group focusOn;
 _unit enableStamina WHF_fitness_stamina;
 _unit setCustomAimCoef WHF_fitness_sway;
-_unit setDir (_position getDir player);
+_unit setDir (_position getDir focusOn);
 _unit setSkill WHF_recruits_skill;
 _unit setUnitTrait ["engineer", true];
 _unit setUnitTrait ["explosiveSpecialist", true];

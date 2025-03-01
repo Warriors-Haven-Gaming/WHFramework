@@ -11,7 +11,7 @@ Author:
     thegamecracks
 
 */
-if (!isNull objectParent player) exitWith {false};
+if (!isNull objectParent focusOn) exitWith {false};
 
 getCursorObjectParams params ["_vehicle", "", "_distance"];
 if (!alive _vehicle) exitWith {false};
@@ -24,6 +24,6 @@ if (!isNil "_lastService" && {time - _lastService < _cooldown}) exitWith {};
 
 private _depots = ["Land_RepairDepot_01_civ_F", "Land_RepairDepot_01_green_F", "Land_RepairDepot_01_tan_F"];
 private _repairDistance = 25;
-if (nearestObjects [player, _depots, _repairDistance] isEqualTo []) exitWith {false};
+if (nearestObjects [focusOn, _depots, _repairDistance] isEqualTo []) exitWith {false};
 
 true

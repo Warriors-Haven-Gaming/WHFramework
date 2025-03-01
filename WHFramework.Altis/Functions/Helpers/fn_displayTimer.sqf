@@ -63,7 +63,7 @@ if (_message select [0,1] isEqualTo "$") then {_message = localize _message};
 _condition params ["_conditionArgs", "_conditionCode"];
 if (_conditionCode isEqualType "") then {_conditionCode = missionNamespace getVariable _conditionCode};
 
-private _playerInArea = {_area isEqualTo [] || {player inArea _area}};
+private _playerInArea = {_area isEqualTo [] || {focusOn inArea _area}};
 private _showHint = {
     if (!hasInterface || {!call _playerInArea}) exitWith {};
     params ["_i"];

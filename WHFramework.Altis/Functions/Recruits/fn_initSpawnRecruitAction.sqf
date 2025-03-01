@@ -32,10 +32,10 @@ _spawner addAction [
 _spawner addAction [
     localize "$STR_WHF_rearmRecruits",
     {
-        private _recruits = units player select {
+        private _recruits = units focusOn select {
             !isPlayer _x
             && {local _x
-            && {player distance _x < 100
+            && {focusOn distance _x < 100
             && {!isNil {_x getVariable "WHF_recruitLoadout"}}}}
         };
 

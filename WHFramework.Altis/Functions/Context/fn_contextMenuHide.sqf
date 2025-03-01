@@ -9,7 +9,6 @@ Author:
 
 */
 if (!hasInterface) exitWith {};
-if (isNull player) exitWith {};
 if (isNil "WHF_contextMenu_actionIDs") exitWith {};
 {
     _x params ["_unit", "_actionID"];

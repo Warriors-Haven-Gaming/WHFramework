@@ -19,7 +19,7 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
     private _lineMinMapScale = 0.175;
 
     // Separate units from vehicles
-    private _side = side group player;
+    private _side = side group focusOn;
     private _allUnits = allPlayers select {side group _x isEqualTo _side};
     private _standaloneUnits = [];
     private _leaders = [];

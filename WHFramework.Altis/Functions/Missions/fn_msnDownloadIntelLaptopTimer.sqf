@@ -40,7 +40,7 @@ if (!_hasElapsed) exitWith {
         _laptop setVariable ["downloadEnded", false, true];
     };
 
-    if (hasInterface && {player inArea _area}) then {
+    if (hasInterface && {focusOn inArea _area}) then {
         [blufor, "HQ"] sideChat localize "$STR_WHF_downloadIntelLaptop_interrupted";
     };
 
@@ -49,7 +49,7 @@ if (!_hasElapsed) exitWith {
 _laptop setVariable ["downloadEnded", true];
 
 if (hasInterface) then {
-    if (player inArea _area) then {
+    if (focusOn inArea _area) then {
         [blufor, "HQ"] sideChat localize "$STR_WHF_downloadIntelLaptop_ended_inArea";
     } else {
         [blufor, "HQ"] sideChat localize "$STR_WHF_downloadIntelLaptop_ended";
