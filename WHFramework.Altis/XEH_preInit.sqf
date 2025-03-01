@@ -202,7 +202,7 @@ Author:
     "SLIDER",
     ["STR_WHF_settings_halo_parachuteAltitude_unit", "STR_WHF_settings_halo_parachuteAltitude_unit_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_halo"],
-    [80, 300, 120, 0, false],
+    [80, 300, 80, 0, false],
     false,
     {},
     false
