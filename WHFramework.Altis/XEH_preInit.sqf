@@ -51,7 +51,7 @@ Author:
     "LIST",
     ["STR_WHF_settings_factions_selected", "STR_WHF_settings_factions_selected_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_factions"],
-    [["random", "base", "csat", "rhsafrf"], ["STR_WHF_settings_factions_selected_random", "STR_WHF_factions_base", "STR_WHF_factions_csat", "STR_WHF_factions_rhsafrf"]],
+    [["random", "base", "csat", "csat_pacific", "rhsafrf"], ["STR_WHF_settings_factions_selected_random", "STR_WHF_factions_base", "STR_WHF_factions_csat", "STR_WHF_factions_csat_pacific", "STR_WHF_factions_rhsafrf"]],
     true,
     {call WHF_fnc_cycleFaction},
     false

@@ -11,5 +11,5 @@ Author:
     thegamecracks
 
 */
-private _factions = ["base", "csat", "rhsafrf"];
+private _factions = ["base", "csat", "csat_pacific", "rhsafrf"];
 _factions select {[_x] call WHF_fnc_isFactionSupported}
