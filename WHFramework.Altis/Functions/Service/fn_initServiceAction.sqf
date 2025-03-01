@@ -1,5 +1,5 @@
 /*
-Function: WHF_fnc_ServiceAction
+Function: WHF_fnc_initServiceAction
 
 Description:
     Add an action to service vehicles near repair depots.

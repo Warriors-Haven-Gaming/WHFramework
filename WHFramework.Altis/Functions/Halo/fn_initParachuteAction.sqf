@@ -1,5 +1,5 @@
 /*
-Function: WHF_fnc_addParachuteAction
+Function: WHF_fnc_initParachuteAction
 
 Description:
     Add a parachute action to the player.

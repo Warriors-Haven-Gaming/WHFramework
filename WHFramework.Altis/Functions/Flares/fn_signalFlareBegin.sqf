@@ -1,5 +1,5 @@
 /*
-Function: WHF_fnc_sirenFlareBegin
+Function: WHF_fnc_signalFlareBegin
 
 Description:
     Begin the animation to fire a flare for a unit.
