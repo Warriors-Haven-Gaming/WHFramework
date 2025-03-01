@@ -203,6 +203,8 @@ while {true} do {
     };
 };
 
+call WHF_fnc_cycleFaction;
+
 terminate _attackScript;
 terminate _ungarrisonScript;
 deleteMarker _areaMarker;
