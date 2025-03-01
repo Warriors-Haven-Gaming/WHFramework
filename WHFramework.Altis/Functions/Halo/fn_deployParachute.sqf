@@ -17,7 +17,7 @@ if (!alive _unit) exitWith {};
 if (isTouchingGround _unit) exitWith {};
 if (!isNull objectParent _unit) exitWith {};
 
-private _pos = getPosATL _unit vectorAdd [0, 0, 3];
+private _pos = getPosATL _unit vectorAdd [0, 0, 1];
 
 if (_unit isKindOf "Man") then {
     private _parachute = createVehicle ["Steerable_Parachute_F", _pos, [], 0, "CAN_COLLIDE"];
