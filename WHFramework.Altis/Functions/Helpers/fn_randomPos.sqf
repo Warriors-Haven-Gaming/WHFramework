@@ -35,7 +35,6 @@ Author:
 params ["_center", "_radius", ["_condition", [0, {true}]]];
 
 private _pos = [0,0];
-private _randomPosArgs = [];
 private _minRadius = 0;
 private _maxRadius = 0;
 if (_radius isEqualType []) then {
@@ -48,27 +47,19 @@ if (_radius isEqualType []) then {
 _condition params ["_conditionArgs", "_conditionCode"];
 private _checkCondition = {
     params ["_pos"];
-    [_empty, _conditionArgs] call _conditionCode isEqualTo true
-};
-
-_randomPosArgs pushBack [[_center, _maxRadius]];
-if (_minRadius > 0) then {
-    _randomPosArgs pushBack [[_center, _minRadius]];
+    [_pos, _conditionArgs] call _conditionCode isEqualTo true
 };
 
 for "_i" from 1 to 30 do {
-    _pos = _randomPosArgs call BIS_fnc_randomPos;
+    _pos = [[[_center, _maxRadius]]] call BIS_fnc_randomPos;
     if (_pos isEqualTo [0,0]) then {continue};
-    private _empty = _pos findEmptyPosition [0, 50];
+
+    private _empty = _pos findEmptyPosition [_minRadius min 50, 50];
     if (_empty isEqualTo []) then {continue};
     if !([_empty] call _checkCondition) then {continue};
+
     _pos = _empty;
     break;
 };
-if (_pos isEqualTo [0,0]) then {
-    private _empty = _center findEmptyPosition [_minRadius, _maxRadius];
-    if (_empty isEqualTo []) then {continue};
-    if !([_empty] call _checkCondition) exitWith {};
-    _pos = _empty;
-};
+
 _pos

@@ -54,6 +54,11 @@ for "_i" from 1 to _quantity do {
     };
 };
 
+private _isFlatEmpty = {
+    params ["_pos"];
+    _pos isFlatEmpty [20, -1, 0.3, 2]
+};
+
 private _clearRadius = 30;
 private _compositionObjects = [];
 private _compositionTerrain = [];
@@ -61,7 +66,7 @@ private _compositionTerrain = [];
 
     private _pos = [0,0];
     for "_i" from 1 to 5 do {
-        _pos = [_center, 0, _radius, 10, 0, 0.3, 0, [], [[0,0], [0,0]]] call BIS_fnc_findSafePos;
+        _pos = [_center, [20, _radius], [0, _isFlatEmpty]] call WHF_fnc_randomPos;
         if (_pos isEqualTo [0,0]) then {continue};
         if (_pos nearRoads _clearRadius isNotEqualTo []) then {continue};
         break;
