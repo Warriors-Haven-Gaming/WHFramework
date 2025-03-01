@@ -19,6 +19,7 @@ params ["_faction"];
 
 private _patches = switch (_faction) do {
     case "base": {[]};
+    case "csat": {[]};
     case "rhsafrf": {["rhs_main"]};
     default {-1};
 };
