@@ -85,6 +85,9 @@ for "_i" from 1 to _vehicleCount do {
 };
 {[_x, getPosATL leader _x, 200] call BIS_fnc_taskPatrol} forEach _groups;
 
+[_groups] spawn WHF_fnc_attackLoop;
+[[_garrisonGroup], _groups] spawn WHF_fnc_ungarrisonLoop;
+
 private _supportTypes = [
     "units",   90,
     "vehicles",10
@@ -125,73 +128,6 @@ private _spawnSupportUnits = {
     };
 };
 
-private _attackScript = [_groups] spawn {
-    params ["_groups"];
-    scriptName "WHF_fnc_msnMainAnnexRegion_attackScript";
-    while {true} do {
-        sleep (20 + random 20);
-        {
-            private _leader = leader _x;
-            if (!alive _leader) then {continue};
-            if (!local _leader) then {continue};
-            if !(_leader checkAIFeature "PATH") then {continue};
-
-            private _waypoints = waypoints _x;
-            if (
-                count _waypoints > 0
-                && {!(waypointType (_waypoints # 0) in ["MOVE", "SAD"])}
-            ) then {continue};
-
-            private _targets =
-                _leader targetsQuery [objNull, blufor, "", [], 180]
-                select {_x # 2 isEqualTo blufor};
-
-            sleep 0.125;
-            if (count _targets < 1) then {continue};
-
-            {deleteWaypoint _x} forEachReversed _waypoints;
-            _targets # 0 params ["", "", "", "", "_position"];
-            private _waypoint = _x addWaypoint [_position vectorMultiply [1,1,0], 0];
-            _waypoint setWaypointType "SAD";
-            _waypoint setWaypointCompletionRadius 20;
-
-        } forEach _groups;
-    };
-};
-
-private _ungarrisonScript = [_groups, _garrisonGroup] spawn {
-    params ["_groups", "_garrisonGroup"];
-    while {true} do {
-        sleep (5 + random 10);
-        {
-            if (!alive _x) then {continue};
-            if (!local _x) then {continue};
-            if (_x checkAIFeature "PATH") then {continue};
-
-            private _targets = _x targets [true, 100, [], 180];
-            sleep 0.125;
-            if (count _targets < 1) then {continue};
-
-            private _target = selectRandom _targets;
-            private _position = _x getHideFrom _target;
-
-            _x setUnitPos "AUTO";
-            _x enableAIFeature ["COVER", true];
-            _x enableAIFeature ["PATH", true];
-
-            private _group = createGroup side group _x;
-            _group setVariable ["WHF_siren_disabled", true];
-            [_x] joinSilent _group;
-
-            private _waypoint = _group addWaypoint [_position vectorMultiply [1,1,0], 0];
-            _waypoint setWaypointType "SAD";
-            _waypoint setWaypointCompletionRadius 5;
-
-            _groups pushBack _group;
-        } forEach units _garrisonGroup;
-    };
-};
-
 while {true} do {
     sleep 10;
 
@@ -214,8 +150,6 @@ while {true} do {
 
 call WHF_fnc_cycleFaction;
 
-terminate _attackScript;
-terminate _ungarrisonScript;
 deleteMarker _areaMarker;
 
 {[_x] call WHF_fnc_queueGCDeletion} forEach _emplacementObjects;
