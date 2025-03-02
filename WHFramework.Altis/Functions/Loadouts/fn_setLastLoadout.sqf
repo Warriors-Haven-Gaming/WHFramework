@@ -16,7 +16,7 @@ Author:
 */
 params ["_loadout"];
 private _loadouts = missionProfileNamespace getVariable ["WHF_last_loadouts", createHashMap];
-private _role = "rifleman";
+private _role = player getVariable "WHF_role";
 private _key = [WHF_loadout_collection, _role];
 _loadouts set [_key, _loadout];
 missionProfileNamespace setVariable ["WHF_last_loadouts", _loadouts];

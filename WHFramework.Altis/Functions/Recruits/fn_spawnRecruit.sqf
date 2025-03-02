@@ -24,9 +24,9 @@ _unit enableStamina WHF_fitness_stamina;
 _unit setCustomAimCoef WHF_fitness_sway;
 _unit setDir (_position getDir focusOn);
 _unit setSkill WHF_recruits_skill;
-_unit setUnitTrait ["engineer", true];
-_unit setUnitTrait ["explosiveSpecialist", true];
-_unit setUnitTrait ["medic", true];
+_unit setUnitTrait ["engineer", focusOn getUnitTrait "engineer"];
+_unit setUnitTrait ["explosiveSpecialist", focusOn getUnitTrait "explosiveSpecialist"];
+_unit setUnitTrait ["medic", focusOn getUnitTrait "medic"];
 _unit setVariable ["WHF_recruitOwnedBy", getPlayerUID player, true];
 
 private _loadout = call WHF_fnc_getLastLoadout;
