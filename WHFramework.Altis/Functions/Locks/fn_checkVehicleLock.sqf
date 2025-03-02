@@ -10,7 +10,7 @@ Parameters:
     Object vehicle:
         The vehicle to enter.
     String role:
-        The vehicle role to enter. Must be one of "driver", "gunner", "turret", or "cargo".
+        The vehicle role to enter. Must be one of "driver", "commander", "turret", "gunner", or "cargo".
 
 Returns:
     String
@@ -27,8 +27,9 @@ if (isNull _unit) exitWith {""};
 
 private _lock = switch (_role) do {
     case "driver": {_vehicle getVariable "WHF_vehicleLock_driver"};
+    case "commander";
+    case "turret";
     case "gunner": {_vehicle getVariable "WHF_vehicleLock_gunner"};
-    case "turret": {_vehicle getVariable "WHF_vehicleLock_gunner"};
     case "cargo": {_vehicle getVariable "WHF_vehicleLock_cargo"};
     default {};
 };

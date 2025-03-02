@@ -20,6 +20,7 @@ _unit addEventHandler ["GetInMan", {
     private _onAllowed = {
         _unit setVariable ["WHF_vehicleLock_lastSeat", switch (_role) do {
             case "driver": {["driver"]};
+            case "commander";
             case "gunner": {["gunner", _vehicle unitTurret _unit]};
             case "cargo": {["cargo", _vehicle getCargoIndex _unit]};
             default {};
