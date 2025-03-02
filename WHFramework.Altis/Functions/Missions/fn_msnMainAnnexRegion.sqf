@@ -51,42 +51,11 @@ _description = [_description >> "description", _description >> "title"];
 _description = _description apply {format [localize getTextRaw _x, text _location]};
 private _taskID = [blufor, "", _description, _area # 0, "AUTOASSIGNED", -1, true, "attack"] call WHF_fnc_taskCreate;
 
-private _emplacementCount = floor (_radius / 20);
-[_emplacementCount, _center, _radius, []] call WHF_fnc_createEmplacements
-    params ["_emplacementObjects", "_emplacementTerrain"];
+[_center, _radius] call WHF_fnc_msnMainAnnexRegionCompositions
+    params ["_compositionObjects", "_compositionTerrain", "_compositionGroups"];
 
-private _mortarCount = floor (_radius / 350);
-[opfor, _mortarCount, _center, _radius] call WHF_fnc_createMortars
-    params ["_mortarObjects", "_mortarTerrain", "_mortarGroups"];
-
-private _groups = [];
-private _vehicles = [];
-
-private _infCount = floor (_radius / 50 + random (count allPlayers / 10));
-for "_i" from 1 to _infCount do {
-    private _pos = [_center, _radius] call WHF_fnc_randomPos;
-    if (_pos isEqualTo [0,0]) then {continue};
-    private _group = [opfor, "standard", selectRandom [2, 4, 8], _pos, 10, ["flashlights"]] call WHF_fnc_spawnUnits;
-    _groups pushBack _group;
-};
-
-private _garrisonCount = floor (_radius / 15 + random (count allPlayers / 2));
-private _garrisonGroup = [opfor, "standard", _garrisonCount, _center, 0, ["flashlights"]] call WHF_fnc_spawnUnits;
-[_garrisonGroup, _center, _radius, true] call WHF_fnc_garrisonUnits;
-_groups pushBack _garrisonGroup;
-
-private _vehicleCount = floor (_radius / 100 + random (count allPlayers / 10));
-for "_i" from 1 to _vehicleCount do {
-    private _pos = [_center, _radius] call WHF_fnc_randomPos;
-    if (_pos isEqualTo [0,0]) then {continue};
-    private _group = [opfor, "standard", 1, _pos, 10] call WHF_fnc_spawnVehicles;
-    _groups pushBack _group;
-    _vehicles append assignedVehicles _group;
-};
-{[_x, getPosATL leader _x, 200] call BIS_fnc_taskPatrol} forEach _groups;
-
-[_groups] spawn WHF_fnc_attackLoop;
-[[_garrisonGroup], _groups] spawn WHF_fnc_ungarrisonLoop;
+[_center, _radius] call WHF_fnc_msnMainAnnexRegionUnits
+    params ["_groups", "_vehicles"];
 
 private _supportTypes = [
     "units",   90,
@@ -152,12 +121,9 @@ call WHF_fnc_cycleFaction;
 
 deleteMarker _areaMarker;
 
-{[_x] call WHF_fnc_queueGCDeletion} forEach _emplacementObjects;
-{[_x] call WHF_fnc_queueGCUnhide} forEach _emplacementTerrain;
-
-{[_x] call WHF_fnc_queueGCDeletion} forEach _mortarObjects;
-{[_x] call WHF_fnc_queueGCUnhide} forEach _mortarTerrain;
-{[units _x] call WHF_fnc_queueGCDeletion} forEach _mortarGroups;
+{[_x] call WHF_fnc_queueGCDeletion} forEach _compositionObjects;
+{[_x] call WHF_fnc_queueGCUnhide} forEach _compositionTerrain;
+{[units _x] call WHF_fnc_queueGCDeletion} forEach _compositionGroups;
 
 {[units _x] call WHF_fnc_queueGCDeletion} forEach _groups;
 {[_x] call WHF_fnc_queueGCDeletion} forEach _vehicles;
