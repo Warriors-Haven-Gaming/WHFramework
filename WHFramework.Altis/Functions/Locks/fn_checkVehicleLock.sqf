@@ -23,6 +23,8 @@ Author:
 */
 params ["_unit", "_vehicle", "_role"];
 
+if (isNull _unit) exitWith {""};
+
 private _lock = switch (_role) do {
     case "driver": {_vehicle getVariable "WHF_vehicleLock_driver"};
     case "gunner": {_vehicle getVariable "WHF_vehicleLock_gunner"};

@@ -23,6 +23,7 @@ _unit addEventHandler ["GetInMan", {
             case "gunner": {["gunner", _vehicle unitTurret _unit]};
             case "cargo": {["cargo", _vehicle getCargoIndex _unit]};
         }];
+        [_vehicle] call WHF_fnc_addVehicleLockCopilotHandlers;
     };
 
     private _reason = [_unit, _vehicle, _role] call WHF_fnc_checkVehicleLock;
@@ -69,5 +70,3 @@ _unit addEventHandler ["SeatSwitchedMan", {
         };
     };
 }];
-
-// TODO: prevent taking vehicle controls (requires vehicle-specific handlers)
