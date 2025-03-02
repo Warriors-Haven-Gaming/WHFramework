@@ -35,6 +35,7 @@ call WHF_fnc_initContextHandlers;
 call WHF_fnc_initDamageHandlers;
 call WHF_fnc_initIncapacitatedHandlers;
 [player] call WHF_fnc_initVehicleLockHandlers;
+call WHF_fnc_vehSpawnCatalogClient;
 0 spawn WHF_fnc_updateChannelLoop;
 0 spawn WHF_fnc_initFriendlyMapIcons;
 

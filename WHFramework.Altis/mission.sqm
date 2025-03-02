@@ -7879,7 +7879,7 @@ class Mission
 					flags=4;
 					class Attributes
 					{
-						createAsSimpleObject=1;
+						init="[this, [12290,20380,0], 180] call WHF_fnc_vehSpawnInit;";
 						disableSimulation=1;
 					};
 					id=421;
