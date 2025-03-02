@@ -30,20 +30,20 @@ private _motorcycles = [
     ["", []]
 ];
 
-private _trucksCooldown = 600;
+private _trucksCooldown = 300;
 private _trucks = [
-    ["c_van_01_transport_f",         [300, []]],
-    ["c_van_01_box_f",               [300, []]],
-    ["c_van_01_fuel_f",              [300, []]],
-    ["cup_b_t810_refuel_cz_wdl",     [300, []]],
-    ["cup_b_t810_reammo_cz_wdl",     [300, []]],
-    ["cup_b_nm1038_ammo_df_usa_wdl", [300, []]],
-    ["b_truck_01_ammo_f",            [-1,  []]],
-    ["b_truck_01_fuel_f",            [-1,  []]],
+    ["c_van_01_transport_f",         [-1, []]],
+    ["c_van_01_box_f",               [-1, []]],
+    ["c_van_01_fuel_f",              [-1, []]],
+    ["cup_b_t810_refuel_cz_wdl",     [-1, []]],
+    ["cup_b_t810_reammo_cz_wdl",     [-1, []]],
+    ["cup_b_nm1038_ammo_df_usa_wdl", [-1, []]],
+    ["b_truck_01_ammo_f",            [-1, []]],
+    ["b_truck_01_fuel_f",            [-1, []]],
     ["", []]
 ];
 
-private _MRAPsCooldown = 600;
+private _MRAPsCooldown = 300;
 private _MRAPs = [
     ["cup_b_rg31e_m2_od_usa",   [-1, []]],
     ["cup_b_rg31_m2_od_usa",    [-1, []]],
@@ -78,14 +78,14 @@ private _IFVs = [
     ["", []]
 ];
 
-private _utilityCooldown = 900;
+private _utilityCooldown = 300;
 private _utility = [
-    ["cup_b_t810_repair_cz_wdl",       [300, ["engineer"]]],
-    ["cup_b_nm1038_repair_df_usa_wdl", [300, ["engineer"]]],
-    ["b_truck_01_repair_f",            [-1,  ["engineer"]]],
-    ["cup_b_nm997_df_usa_wdl",         [-1,  ["medic"]]],
-    ["cup_b_m1133_mev_woodland",       [-1,  ["medic"]]],
-    ["cup_b_fv432_gb_ambulance",       [-1,  ["medic"]]],
+    ["cup_b_t810_repair_cz_wdl",       [-1, ["engineer"]]],
+    ["cup_b_nm1038_repair_df_usa_wdl", [-1, ["engineer"]]],
+    ["b_truck_01_repair_f",            [-1, ["engineer"]]],
+    ["cup_b_nm997_df_usa_wdl",         [-1, ["medic"]]],
+    ["cup_b_m1133_mev_woodland",       [-1, ["medic"]]],
+    ["cup_b_fv432_gb_ambulance",       [-1, ["medic"]]],
     ["", []]
 ];
 
@@ -114,7 +114,7 @@ private _tanks = [
     ["", []]
 ];
 
-private _helicoptersCooldown = 1800;
+private _helicoptersCooldown = 300;
 private _helicopters = [
     ["cup_b_ah6m_usa",                   [-1, ["pilot_cas"]]],
     ["cup_b_ah64d_dl_usa",               [-1, ["pilot_cas"]]],
@@ -129,7 +129,7 @@ private _helicopters = [
     ["", []]
 ];
 
-private _planesCooldown = 1800;
+private _planesCooldown = 300;
 private _planes = [
     ["peral_f16v",                      [-1, ["pilot_cas"]]],
     ["f_35c",                           [-1, ["pilot_cas"]]],
@@ -142,7 +142,7 @@ private _planes = [
     ["", []]
 ];
 
-private _dronesCooldown = 1800;
+private _dronesCooldown = 300;
 private _drones = [
     ["qav_b_ripsaw_mk44",     [-1, ["uav"]]],
     ["qav_ripsaw_c",          [-1, ["uav"]]],
@@ -152,7 +152,7 @@ private _drones = [
     ["", []]
 ];
 
-private _shipsCooldown = 1800;
+private _shipsCooldown = 300;
 private _ships = [
     ["cup_b_rhib_usmc",   [-1, []]],
     ["cup_b_zodiac_usmc", [-1, []]],
