@@ -33,6 +33,7 @@ private _loadout = call WHF_fnc_getLastLoadout;
 if (_loadout isNotEqualTo []) then {_unit setUnitLoadout _loadout};
 _unit setVariable ["WHF_recruitLoadout", getUnitLoadout _unit];
 
+[_unit] call WHF_fnc_initVehicleLockHandlers;
 if (!isClass (configFile >> "CfgPatches" >> "ace_medical")) then {
     _unit addEventHandler ["HandleDamage", {call {
         params ["_unit", "", "_damage", "", "", "_hitIndex", "_instigator"];
