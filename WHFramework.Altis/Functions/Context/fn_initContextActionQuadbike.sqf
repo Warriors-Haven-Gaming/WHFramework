@@ -20,7 +20,7 @@ if (!hasInterface) exitWith {};
         WHF_quadbike = createVehicle ["B_Quadbike_01_F", _pos, [], 0, "CAN_COLLIDE"];
         WHF_quadbike setDir (focusOn getDir _pos);
         WHF_quadbike engineOn true;
-        WHF_quadbike setVariable ["WHF_vehicleLock_driver", ["uid", getPlayerUID focusOn], true];
+        WHF_quadbike setVariable ["WHF_vehicleLock_driver", ["uid", [getPlayerUID focusOn]], true];
         // playSound3D ["", WHF_quadbike];
 
         WHF_quadbike remoteExec ["WHF_fnc_queueGCDeletion", 2];
