@@ -30,6 +30,7 @@ private _lock = switch (_role) do {
     case "gunner": {_vehicle getVariable "WHF_vehicleLock_gunner"};
     case "turret": {_vehicle getVariable "WHF_vehicleLock_gunner"};
     case "cargo": {_vehicle getVariable "WHF_vehicleLock_cargo"};
+    default {};
 };
 if (isNil "_lock") exitWith {""};
 

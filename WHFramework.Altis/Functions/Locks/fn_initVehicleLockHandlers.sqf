@@ -22,6 +22,7 @@ _unit addEventHandler ["GetInMan", {
             case "driver": {["driver"]};
             case "gunner": {["gunner", _vehicle unitTurret _unit]};
             case "cargo": {["cargo", _vehicle getCargoIndex _unit]};
+            default {};
         }];
         [_vehicle] call WHF_fnc_addVehicleLockCopilotHandlers;
     };
@@ -41,6 +42,7 @@ _unit addEventHandler ["SeatSwitchedMan", {
             case "driver": {["driver"]};
             case "turret": {["gunner", _vehicle unitTurret _unit]};
             case "cargo": {["cargo", _vehicle getCargoIndex _unit]};
+            default {};
         }];
     };
 
