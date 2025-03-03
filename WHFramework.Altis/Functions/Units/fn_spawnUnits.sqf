@@ -19,8 +19,9 @@ Parameters:
     Array equipment:
         (Optional, default [])
         A list of equipment types to add to each unit.
-        Can be contain of the following:
+        Can contain any of the following:
             "flashlights"
+            "lasers"
 
 Returns:
     Group
@@ -44,6 +45,11 @@ for "_i" from 1 to _quantity do {
         _unit addPrimaryWeaponItem "acc_flashlight";
         _unit addHandgunItem "acc_flashlight_pistol";
         _unit enableGunLights "ForceOn";
+    };
+
+    if ("lasers" in _equipment) then {
+        _unit addPrimaryWeaponItem "acc_pointer_IR";
+        _unit enableIRLasers true;
     };
 };
 _group setBehaviourStrong "SAFE";
