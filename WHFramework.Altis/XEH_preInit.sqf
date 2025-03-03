@@ -161,16 +161,6 @@ Author:
 
 // Garbage Collection
 [
-    "WHF_gcLootLifetime",
-    "SLIDER",
-    ["STR_WHF_settings_gc_gcLootLifetime", "STR_WHF_settings_gc_gcLootLifetime_tooltip"],
-    ["STR_WHF_settings", "STR_WHF_settings_gc"],
-    [30, 3600, 300, 0, false],
-    true,
-    {},
-    false
-] call WHF_fnc_addSetting;
-[
     "WHF_gcDeletionDistance",
     "SLIDER",
     ["STR_WHF_settings_gc_gcDeletionDistance", "STR_WHF_settings_gc_gcDeletionDistance_tooltip"],
