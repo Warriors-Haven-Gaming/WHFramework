@@ -34,7 +34,6 @@ Author:
 */
 params ["_center", "_radius", ["_condition", [0, {true}]]];
 
-private _pos = [0,0];
 private _minRadius = 0;
 private _maxRadius = 0;
 if (_radius isEqualType []) then {
@@ -44,22 +43,41 @@ if (_radius isEqualType []) then {
     _maxRadius = _radius;
 };
 
+private _type = switch (true) do {
+    case (_minRadius >= 40): {"B_T_VTOL_01_infantry_F"};
+    case (_minRadius >= 20): {"B_Plane_CAS_01_dynamicLoadout_F"};
+    case (_minRadius >= 15): {"B_Heli_Attack_01_dynamicLoadout_F"};
+    case (_minRadius >= 10): {"B_MRAP_01_F"};
+    case (_minRadius >= 5): {"B_Quadbike_01_F"};
+    default {"B_Soldier_F"};
+};
+
 _condition params ["_conditionArgs", "_conditionCode"];
 private _checkCondition = {
     params ["_pos"];
-    [_pos, _conditionArgs] call _conditionCode isEqualTo true
+    private _ret = [_pos, _conditionArgs] call _conditionCode;
+    if (isNil "_ret") exitWith {
+        ["Condition returned nil"] call BIS_fnc_error;
+        false
+    };
+    if !(_ret isEqualType true) exitWith {
+        ["Condition returned non-boolean: %1", _ret] call BIS_fnc_error;
+        false
+    };
+    _ret
 };
 
+private _ret = [0,0];
 for "_i" from 1 to 30 do {
-    _pos = [[[_center, _maxRadius]]] call BIS_fnc_randomPos;
+    private _pos = [[[_center, _maxRadius]]] call BIS_fnc_randomPos;
     if (_pos isEqualTo [0,0]) then {continue};
 
-    private _empty = _pos findEmptyPosition [_minRadius min 50, 50];
+    private _empty = _pos findEmptyPosition [_minRadius min 50, 50, _type];
     if (_empty isEqualTo []) then {continue};
     if !([_empty] call _checkCondition) then {continue};
 
-    _pos = _empty;
+    _ret = _empty;
     break;
 };
 
-_pos
+_ret

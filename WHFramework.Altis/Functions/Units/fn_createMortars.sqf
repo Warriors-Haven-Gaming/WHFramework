@@ -45,9 +45,10 @@ for "_i" from 1 to _quantity do {
     ];
 };
 
-private _isFlatEmpty = {
-    params ["_pos"];
-    _pos isFlatEmpty [20, -1, 0.3, 2]
+private _isPosSuitable = {
+    params ["_pos", "_clearRadius"];
+    _pos nearRoads _clearRadius isEqualTo []
+    && {_pos isFlatEmpty [-1, -1, 1, 20] isNotEqualTo []}
 };
 
 private _clearRadius = 40;
@@ -56,13 +57,7 @@ private _compositionTerrain = [];
 private _compositionGroups = [];
 {
 
-    private _pos = [0,0];
-    for "_i" from 1 to 5 do {
-        _pos = [_center, [20, _radius], [0, _isFlatEmpty]] call WHF_fnc_randomPos;
-        if (_pos isEqualTo [0,0]) then {continue};
-        if (_pos nearRoads _clearRadius isNotEqualTo []) then {continue};
-        break;
-    };
+    private _pos = [_center, [20, _radius], [_clearRadius, _isPosSuitable]] call WHF_fnc_randomPos;
     if (_pos isEqualTo [0,0]) then {continue};
     _pos = _pos vectorAdd [0,0,0];
 
