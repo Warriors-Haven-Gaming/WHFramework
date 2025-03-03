@@ -26,6 +26,9 @@ WHF_haloJump_mapHandlers pushBack ["Map", addMissionEventHandler ["Map", {
 WHF_haloJump_mapHandlers pushBack ["MapSingleClick", addMissionEventHandler ["MapSingleClick", {
     params ["", "_pos"];
 
+    private _reason = [_pos] call WHF_fnc_checkHaloJump;
+    if (_reason isNotEqualTo "") exitWith {50 cutText [_reason, "PLAIN", 0.3]};
+
     {removeMissionEventHandler _x} forEach WHF_haloJump_mapHandlers;
     WHF_haloJump_mapHandlers = nil;
 
