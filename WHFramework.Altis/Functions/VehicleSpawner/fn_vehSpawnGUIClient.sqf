@@ -28,6 +28,10 @@ private _categories = _spawner getVariable "WHF_vehSpawn_categories";
 private _safeArea = _spawner getVariable "WHF_vehSpawn_safeArea";
 if (count _categories == 0) then {_categories = keys _catalog};
 
+if (_categories findIf {count (_catalog get _x get "_vehicles") > 0} < 0) exitWith {
+    50 cutText [localize "$STR_WHF_vehSpawnGUIClient_empty", "PLAIN", 0.5];
+};
+
 _pos = _pos findEmptyPosition _safeArea;
 if (_pos isEqualTo []) exitWith {call WHF_fnc_vehSpawnObstructed};
 
