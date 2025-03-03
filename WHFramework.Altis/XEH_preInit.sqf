@@ -44,7 +44,7 @@ Author:
     "SLIDER",
     ["STR_WHF_settings_damage_scale", "STR_WHF_settings_damage_scale_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_damage"],
-    [0, 1, 0.3, 0, true],
+    [0.05, 1, 0.3, 0, true],
     true,
     {},
     false
@@ -54,7 +54,7 @@ Author:
     "SLIDER",
     ["STR_WHF_settings_damage_scale_recruit", "STR_WHF_settings_damage_scale_recruit_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_damage"],
-    [0, 1, 0.3, 0, true],
+    [0.05, 1, 0.3, 0, true],
     true,
     {},
     false
