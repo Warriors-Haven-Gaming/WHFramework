@@ -72,7 +72,7 @@ for "_i" from 1 to 30 do {
     private _pos = [[[_center, _maxRadius]]] call BIS_fnc_randomPos;
     if (_pos isEqualTo [0,0]) then {continue};
 
-    private _empty = _pos findEmptyPosition [_minRadius min 50, 50, _type];
+    private _empty = _pos findEmptyPosition [0, 50, _type];
     if (_empty isEqualTo []) then {continue};
     if !([_empty] call _checkCondition) then {continue};
 
