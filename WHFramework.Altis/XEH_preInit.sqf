@@ -397,3 +397,13 @@ Author:
     {},
     false
 ] call WHF_fnc_addSetting;
+[
+    "WHF_units_equipment",
+    "LIST",
+    ["STR_WHF_settings_units_equipment", "STR_WHF_settings_units_equipment_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_units"],
+    [[[], ["flashlights"], ["lasers"]], ["STR_A3_None", "STR_WHF_settings_units_equipment_flashlights", "STR_WHF_settings_units_equipment_lasers"], 1],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;

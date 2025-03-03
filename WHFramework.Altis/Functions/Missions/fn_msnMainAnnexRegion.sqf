@@ -73,7 +73,7 @@ private _spawnSupportUnits = {
             if (_pos isEqualTo [0,0]) exitWith {};
 
             private _quantity = 1 + floor random (3 + count allPlayers / 5);
-            private _group = [opfor, "standard", _quantity, _pos, 50, ["flashlights"]] call WHF_fnc_spawnUnits;
+            private _group = [opfor, "standard", _quantity, _pos, 50] call WHF_fnc_spawnUnits;
             private _waypoint = _group addWaypoint [_pos, 0];
             _waypoint setWaypointType "SAD";
             _waypoint setWaypointCompletionRadius 20;

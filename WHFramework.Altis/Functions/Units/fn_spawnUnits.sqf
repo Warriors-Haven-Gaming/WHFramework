@@ -17,7 +17,7 @@ Parameters:
     Number radius:
         The radius around the position at which units will spawn around.
     Array equipment:
-        (Optional, default [])
+        (Optional, default WHF_units_equipment)
         A list of equipment types to add to each unit.
         Can contain any of the following:
             "flashlights"
@@ -31,7 +31,7 @@ Author:
     thegamecracks
 
 */
-params ["_side", "_types", "_quantity", "_center", "_radius", ["_equipment", []]];
+params ["_side", "_types", "_quantity", "_center", "_radius", ["_equipment", WHF_units_equipment]];
 
 private _group = createGroup _side;
 private _unitTypes = _types call WHF_fnc_getUnitTypes;

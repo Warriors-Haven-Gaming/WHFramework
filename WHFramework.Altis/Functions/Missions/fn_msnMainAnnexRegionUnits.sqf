@@ -29,13 +29,13 @@ private _infCount = floor (_radius / 50 + random (count allPlayers / 10));
 for "_i" from 1 to _infCount do {
     private _pos = [_center, _radius] call WHF_fnc_randomPos;
     if (_pos isEqualTo [0,0]) then {continue};
-    private _group = [opfor, "standard", selectRandom [2, 4, 8], _pos, 10, ["flashlights"]] call WHF_fnc_spawnUnits;
+    private _group = [opfor, "standard", selectRandom [2, 4, 8], _pos, 10] call WHF_fnc_spawnUnits;
     [_group, getPosATL leader _group, 200] call BIS_fnc_taskPatrol;
     _groups pushBack _group;
 };
 
 private _garrisonCount = floor (_radius / 15 + random (count allPlayers / 2));
-private _garrisonGroup = [opfor, "standard", _garrisonCount, _center, 0, ["flashlights"]] call WHF_fnc_spawnUnits;
+private _garrisonGroup = [opfor, "standard", _garrisonCount, _center, 0] call WHF_fnc_spawnUnits;
 [_garrisonGroup, _center, _radius, true] call WHF_fnc_garrisonUnits;
 [[_garrisonGroup], _groups] spawn WHF_fnc_ungarrisonLoop;
 _groups pushBack _garrisonGroup;
