@@ -18,40 +18,50 @@ Author:
 */
 params ["_unit", ["_offset", 0]];
 
-private _level = floor (WHF_units_skill + _offset) max 0 min 3;
+private _level = floor (WHF_units_skill + _offset) max 0 min 4;
 
 switch (_level) do {
     case 0: {
         _unit setSkill 1;
         _unit setSkill ["aimingAccuracy", 0.1 + random 0.1];
         _unit setSkill ["aimingShake", 0.45 + random 0.1];
-        _unit setSkill ["aimingSpeed", 0.3 + random 0.1];
+        _unit setSkill ["aimingSpeed", 0.2 + random 0.1];
         _unit setSkill ["courage", 0.4 + random 0.2];
-        _unit setSkill ["reloadSpeed", 0.45 + random 0.1];
+        _unit setSkill ["reloadSpeed", 0.35 + random 0.1];
         _unit setSkill ["spotDistance", 0.2 + random 0.1];
         _unit setSkill ["spotTime", 0.2 + random 0.1];
     };
     case 1: {
         _unit setSkill 1;
         _unit setSkill ["aimingAccuracy", 0.45 + random 0.1];
-        _unit setSkill ["aimingShake", 0.65 + random 0.1];
-        _unit setSkill ["aimingSpeed", 0.5 + random 0.1];
+        _unit setSkill ["aimingShake", 0.55 + random 0.1];
+        _unit setSkill ["aimingSpeed", 0.45 + random 0.1];
         _unit setSkill ["courage", 0.5 + random 0.2];
-        _unit setSkill ["reloadSpeed", 0.6 + random 0.1];
+        _unit setSkill ["reloadSpeed", 0.45 + random 0.1];
         _unit setSkill ["spotDistance", 0.5 + random 0.1];
         _unit setSkill ["spotTime", 0.5 + random 0.1];
     };
     case 2: {
         _unit setSkill 1;
+        _unit setSkill ["aimingAccuracy", 0.6 + random 0.1];
+        _unit setSkill ["aimingShake", 0.65 + random 0.2];
+        _unit setSkill ["aimingSpeed", 0.55 + random 0.2];
+        _unit setSkill ["courage", 0.7 + random 0.2];
+        _unit setSkill ["reloadSpeed", 0.55 + random 0.1];
+        _unit setSkill ["spotDistance", 0.6 + random 0.1];
+        _unit setSkill ["spotTime", 0.6 + random 0.1];
+    };
+    case 3: {
+        _unit setSkill 1;
         _unit setSkill ["aimingAccuracy", 0.7 + random 0.1];
         _unit setSkill ["aimingShake", 0.7 + random 0.2];
         _unit setSkill ["aimingSpeed", 0.7 + random 0.2];
         _unit setSkill ["courage", 0.7 + random 0.2];
-        _unit setSkill ["reloadSpeed", 0.45 + random 0.1];
+        _unit setSkill ["reloadSpeed", 0.7 + random 0.2];
         _unit setSkill ["spotDistance", 0.7 + random 0.1];
         _unit setSkill ["spotTime", 0.7 + random 0.1];
     };
-    case 3: {
+    case 4: {
         _unit setSkill 1;
     };
 };

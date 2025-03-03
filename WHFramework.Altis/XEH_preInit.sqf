@@ -392,7 +392,7 @@ Author:
     "LIST",
     ["STR_WHF_settings_units_skill", "STR_WHF_settings_units_skill_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_units"],
-    [[0, 1, 2, 3], ["STR_A3_OPTIONS_LOW", "STR_A3_OPTIONS_MEDIUM", "STR_A3_OPTIONS_HIGH", "STR_A3_OPTIONS_EXTREME"]],
+    [[0, 1, 2, 3, 4], ["STR_A3_OPTIONS_LOW", "STR_A3_OPTIONS_MEDIUM", "STR_A3_OPTIONS_HIGH", "STR_A3_OPTIONS_VERYHIGH", "STR_A3_OPTIONS_EXTREME"]],
     true,
     {},
     false
