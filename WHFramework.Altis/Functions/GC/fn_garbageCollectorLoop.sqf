@@ -34,18 +34,27 @@ while {true} do {
     sleep (10 + random 10);
 
     {
-        private _units = units _x;
-        if (count _units < 1) then {continue};
+        private _recruits = [];
+        private _recruitOwners = [];
+        private _presentOwners = [];
 
-        private _recruitsAreAbandoned = {
-            if (isNil {_x getVariable "WHF_recruitOwnedBy"}) exitWith {false};
-            if (isPlayer _x) exitWith {false};
-            true
-        } forEach _units;
+        {
+            private _owner = _x getVariable "WHF_recruitOwnedBy";
+            switch (true) do {
+                case (isPlayer _x): {_presentOwners pushBack getPlayerUID _x};
+                case (!isNil "_owner"): {
+                    _recruits pushBack _x;
+                    _recruitOwners pushBackUnique _owner;
+                };
+            };
+        } forEach units _x;
 
-        if (_recruitsAreAbandoned) then {
-            {deleteVehicle _x} forEach _units;
-        };
+        private _missingOwners = _recruitOwners - _presentOwners;
+        {
+            if (_x getVariable "WHF_recruitOwnedBy" in _missingOwners) then {
+                deleteVehicle _x;
+            };
+        } forEach _recruits;
     } forEach groups blufor;
 
     private _remoteControlledUnits = allPlayers apply {remoteControlled _x} select {!isNull _x};
