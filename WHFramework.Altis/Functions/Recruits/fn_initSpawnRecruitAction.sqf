@@ -26,7 +26,7 @@ _spawner addAction [
     true,
     true,
     "",
-    "leader _this isEqualTo _this",
+    "WHF_recruits_limit > 0 && {leader _this isEqualTo _this}",
     3
 ];
 _spawner addAction [
@@ -55,6 +55,6 @@ _spawner addAction [
     true,
     true,
     "",
-    "leader _this isEqualTo _this",
+    "WHF_recruits_limit > 0 && {leader _this isEqualTo _this}",
     3
 ];
