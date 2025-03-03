@@ -27,6 +27,7 @@ if (!hasInterface) exitWith {};
 if (markerColor "respawn_west" isNotEqualTo "") then {player setPosATL markerPos "respawn_west"};
 
 if (isNil {player getVariable "WHF_role"}) then {player setVariable ["WHF_role", "rifleman", true]};
+if (isMultiplayer) then {["InitializePlayer", [player]] call BIS_fnc_dynamicGroups};
 
 call WHF_fnc_initArsenalLoadoutHandlers;
 call WHF_fnc_initContextActionHaloJump;
