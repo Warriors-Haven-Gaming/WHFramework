@@ -22,7 +22,7 @@ Examples:
         [] call WHF_fnc_randomMarkerID;
     (end)
     (begin example)
-        ["WHF_safezone_"] call WHF_fnc_randomMarkerID;
+        ["WHF_myMarkerPrefix_"] call WHF_fnc_randomMarkerID;
     (end)
 
 Author:

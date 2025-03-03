@@ -8,7 +8,7 @@ Parameters:
     Array randomMarkerIDParams:
         Parameters to use for WHF_fnc_randomMarkerID.
     Array area:
-        The safezone area in the format [center, a, b, angle, isRectangle].
+        The area in the format [center, a, b, angle, isRectangle].
         Similar to the format used for inArea except that c is ignored.
     Boolean local:
         (Optional, default false)

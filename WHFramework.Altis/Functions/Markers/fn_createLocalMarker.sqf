@@ -22,7 +22,7 @@ Examples:
         [[], [0,0,0]] call WHF_fnc_createLocalMarker;
     (end)
     (begin example)
-        [["WHF_safezone_"], [0,0,0]] call WHF_fnc_createLocalMarker;
+        [["WHF_myMarkerPrefix_"], [0,0,0]] call WHF_fnc_createLocalMarker;
     (end)
 
 Author:
