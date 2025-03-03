@@ -242,6 +242,16 @@ Author:
     {},
     false
 ] call WHF_fnc_addSetting;
+[
+    "WHF_halo_antiair_distance",
+    "SLIDER",
+    ["STR_WHF_settings_halo_antiair_distance", "STR_WHF_settings_halo_antiair_distance_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_halo"],
+    [0, 5000, 2000, 0, false],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
 
 // Loadouts
 [

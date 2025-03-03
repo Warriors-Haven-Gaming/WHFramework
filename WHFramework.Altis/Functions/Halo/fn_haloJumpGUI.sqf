@@ -9,6 +9,12 @@ Author:
 
 */
 if (!isNil "WHF_haloJump_mapHandlers") exitWith {};
+
+private _vehicles = focusOn nearEntities ["LandVehicle", WHF_halo_antiair_distance];
+if (_vehicles findIf {[_x, focusOn] call WHF_fnc_isEnemyAntiAir} >= 0) exitWith {
+    50 cutText [localize "$STR_WHF_haloJumpGUI_antiair", "PLAIN DOWN", 0.3];
+};
+
 // TODO: add combat restrictions
 // TODO: add halo jump cooldown
 if (!openMap true) exitWith {};
@@ -26,7 +32,8 @@ WHF_haloJump_mapHandlers pushBack ["Map", addMissionEventHandler ["Map", {
 WHF_haloJump_mapHandlers pushBack ["MapSingleClick", addMissionEventHandler ["MapSingleClick", {
     params ["", "_pos"];
 
-    private _reason = [_pos] call WHF_fnc_checkHaloJump;
+    // TODO: drawIcon on cursor position
+    private _reason = [focusOn, _pos] call WHF_fnc_checkHaloJump;
     if (_reason isNotEqualTo "") exitWith {50 cutText [_reason, "PLAIN", 0.3]};
 
     {removeMissionEventHandler _x} forEach WHF_haloJump_mapHandlers;
