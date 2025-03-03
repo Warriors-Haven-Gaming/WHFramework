@@ -79,6 +79,12 @@ class CfgFunctions {
             class initContextActionQuadbike {};
             class initContextHandlers {};
         };
+        class Curators {
+            class createCurator {};
+            class deleteCurator {};
+            class initCuratorHandlers {};
+            class refreshCurators {};
+        };
         class Damage {
             class initDamageHandlers {};
         };
@@ -110,7 +116,6 @@ class CfgFunctions {
             class anyInArea {};
             class displayTimer {};
             class inAreaMarkers {};
-            class initCuratorHandlers {};
             class isNearRespawn {};
             class isPlayerRemoteExecuted {};
             class isRemoteExecutedByAdmin {};

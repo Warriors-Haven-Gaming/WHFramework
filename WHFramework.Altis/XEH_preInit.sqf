@@ -23,6 +23,21 @@ Author:
 //     _script      - Script to execute when setting is changed. (optional) <CODE>
 //     _needRestart - Setting will be marked as needing mission restart after being changed. (optional, default false) <BOOL>
 
+// Curators
+[
+    "WHF_curators_uids",
+    "EDITBOX",
+    ["STR_WHF_settings_curators_uids", "STR_WHF_settings_curators_uids_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_curators"],
+    "[]",
+    true,
+    {
+        WHF_curators_uids = parseSimpleArray _this;
+        if (isServer) then {call WHF_fnc_refreshCurators};
+    },
+    false
+] call WHF_fnc_addSetting;
+
 // Damage
 [
     "WHF_playerDamageScale",
