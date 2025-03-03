@@ -176,91 +176,91 @@ private _ships = [
     createHashMapFromArray [
         // Category name
         ["Cars", createHashMapFromArray [
-            ["_order", 0],
+            ["_order", 12],
             ["_icon", "\a3\ui_f\data\map\vehicleicons\iconcar_ca.paa"],
             ["_cooldown", _carsCooldown],
             ["_locks", []],
             ["_vehicles", createHashMapFromArray _cars]
         ]],
         ["Motorcycles", createHashMapFromArray [
-            ["_order", 1],
+            ["_order", 11],
             ["_icon", "\a3\ui_f\data\map\vehicleicons\iconmotorcycle_ca.paa"],
             ["_cooldown", _motorcyclesCooldown],
             ["_locks", []],
             ["_vehicles", createHashMapFromArray _motorcycles]
         ]],
         ["Trucks", createHashMapFromArray [
-            ["_order", 2],
+            ["_order", 10],
             ["_icon", "\a3\ui_f\data\map\vehicleicons\icontruck_ca.paa"],
             ["_cooldown", _trucksCooldown],
             ["_locks", []],
             ["_vehicles", createHashMapFromArray _trucks]
         ]],
         ["MRAPs", createHashMapFromArray [
-            ["_order", 3],
+            ["_order", 9],
             ["_icon", "\a3\ui_f\data\map\vehicleicons\iconapc_ca.paa"],
             ["_cooldown", _MRAPsCooldown],
             ["_locks", []],
             ["_vehicles", createHashMapFromArray _MRAPs]
         ]],
         ["APCs", createHashMapFromArray [
-            ["_order", 4],
+            ["_order", 8],
             ["_icon", "\a3\ui_f\data\map\vehicleicons\iconapc_ca.paa"],
             ["_cooldown", _APCsCooldown],
             ["_locks", []],
             ["_vehicles", createHashMapFromArray _APCs]
         ]],
         ["IFVs", createHashMapFromArray [
-            ["_order", 5],
+            ["_order", 7],
             ["_icon", "\a3\ui_f\data\map\vehicleicons\iconapc_ca.paa"],
             ["_cooldown", _IFVsCooldown],
             ["_locks", []],
             ["_vehicles", createHashMapFromArray _IFVs]
         ]],
         ["Utilities", createHashMapFromArray [
-            ["_order", 6],
+            ["_order", 5],
             ["_icon", "\a3\ui_f\data\map\vehicleicons\iconapc_ca.paa"],
             ["_cooldown", _utilityCooldown],
             ["_locks", []],
             ["_vehicles", createHashMapFromArray _utility]
         ]],
         ["Artillery", createHashMapFromArray [
-            ["_order", 7],
+            ["_order", 3],
             ["_icon", "\a3\ui_f\data\map\vehicleicons\icontank_ca.paa"],
             ["_cooldown", _artilleryCooldown],
             ["_locks", [["driver", "role", ["artillery"]], ["gunner", "role", ["artillery"]]]],
             ["_vehicles", createHashMapFromArray _artillery]
         ]],
         ["Air Defense", createHashMapFromArray [
-            ["_order", 8],
+            ["_order", 6],
             ["_icon", "\a3\ui_f\data\map\vehicleicons\icontank_ca.paa"],
             ["_cooldown", _airdefenseCooldown],
             ["_locks", []],
             ["_vehicles", createHashMapFromArray _airdefense]
         ]],
         ["Tanks", createHashMapFromArray [
-            ["_order", 9],
+            ["_order", 4],
             ["_icon", "\a3\ui_f\data\map\vehicleicons\icontank_ca.paa"],
             ["_cooldown", _tanksCooldown],
             ["_locks", [["driver", "role", ["engineer"]]]],
             ["_vehicles", createHashMapFromArray _tanks]
         ]],
         ["Helicopters", createHashMapFromArray [
-            ["_order", 10],
+            ["_order", 1],
             ["_icon", "\a3\ui_f\data\map\vehicleicons\iconhelicopter_ca.paa"],
             ["_cooldown", _helicoptersCooldown],
             ["_locks", [["driver", "uid"]]],
             ["_vehicles", createHashMapFromArray _helicopters]
         ]],
         ["Planes", createHashMapFromArray [
-            ["_order", 11],
+            ["_order", 0],
             ["_icon", "\a3\ui_f\data\map\vehicleicons\iconplane_ca.paa"],
             ["_cooldown", _planesCooldown],
             ["_locks", [["driver", "uid"]]],
             ["_vehicles", createHashMapFromArray _planes]
         ]],
         ["Drones", createHashMapFromArray [
-            ["_order", 12],
+            ["_order", 2],
             ["_icon", "\a3\ui_f\data\map\vehicleicons\iconplane_ca.paa"],
             ["_cooldown", _dronesCooldown],
             ["_locks", [["driver", "uid"]]],
