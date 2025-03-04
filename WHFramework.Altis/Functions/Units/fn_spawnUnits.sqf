@@ -63,6 +63,7 @@ for "_i" from 1 to _quantity do {
         _unit enableIRLasers true;
     };
 };
+_group allowFleeing 0;
 _group setBehaviourStrong "SAFE";
 _group setCombatMode "RED";
 
