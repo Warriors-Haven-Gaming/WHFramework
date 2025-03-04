@@ -9,6 +9,9 @@ Parameters:
         The center of the mission area.
     Number radius:
         The radius of the mission area.
+    Array buildings:
+        (Optional, default [])
+        An array of buildings to prioritize garrisoning units io first.
 
 Returns:
     Array
@@ -20,7 +23,7 @@ Author:
     thegamecracks
 
 */
-params ["_center", "_radius"];
+params ["_center", "_radius", ["_buildings", []]];
 
 private _groups = [];
 private _vehicles = [];
@@ -34,8 +37,10 @@ for "_i" from 1 to _infCount do {
     _groups pushBack _group;
 };
 
+// NOTE: may result in positions being double garrisoned
 private _garrisonCount = floor (_radius / 15 + random (count allPlayers / 2));
-private _garrisonGroup = [opfor, "standard", _garrisonCount, _center, 0] call WHF_fnc_spawnUnits;
+private _garrisonGroup = [opfor, "standard", _garrisonCount, _center, _radius min 100] call WHF_fnc_spawnUnits;
+[units _garrisonGroup select [0, floor (_garrisonCount / 2)], _buildings] call WHF_fnc_garrisonBuildings;
 [_garrisonGroup, _center, _radius, true] call WHF_fnc_garrisonUnits;
 [[_garrisonGroup], _groups] spawn WHF_fnc_ungarrisonLoop;
 _groups pushBack _garrisonGroup;

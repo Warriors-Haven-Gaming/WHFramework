@@ -54,7 +54,8 @@ private _taskID = [blufor, "", _description, _area # 0, "AUTOASSIGNED", -1, true
 [_center, _radius] call WHF_fnc_msnMainAnnexRegionCompositions
     params ["_compositionObjects", "_compositionTerrain", "_compositionGroups"];
 
-[_center, _radius] call WHF_fnc_msnMainAnnexRegionUnits
+private _buildings = flatten _compositionObjects select {simulationEnabled _x};
+[_center, _radius, _buildings] call WHF_fnc_msnMainAnnexRegionUnits
     params ["_groups", "_vehicles"];
 
 private _supportTypes = [
