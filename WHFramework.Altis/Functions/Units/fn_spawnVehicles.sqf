@@ -33,6 +33,7 @@ private _vehicles = [];
 for "_i" from 1 to _quantity do {
     private _vehicle = createVehicle [selectRandom _vehicleTypes, _center, [], _radius, "NONE"];
     _vehicle setDir random 360;
+    _vehicle setVectorUp surfaceNormal getPosATL _vehicle;
     _vehicle enableDynamicSimulation true;
     _group addVehicle _vehicle;
     _vehicles pushBack _vehicle;
