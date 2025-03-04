@@ -328,6 +328,16 @@ Author:
     {},
     false
 ] call WHF_fnc_addSetting;
+[
+    "WHF_revive_bleedout",
+    "SLIDER",
+    ["STR_WHF_settings_revive_bleedout", "STR_WHF_settings_revive_bleedout_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_revive"],
+    [30, 3600, 600, 0, false],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
 
 // Time
 [
