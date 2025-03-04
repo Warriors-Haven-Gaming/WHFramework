@@ -25,10 +25,10 @@ _l attachTo [_flare, [0,0,0]];
 _l setLightColor [1, 0.5, 0.5];
 _l setLightAmbient [1, 0.5, 0.5];
 _l setLightUseFlare true;
-_l setLightFlareSize 40;
+_l setLightFlareSize 30;
 _l setLightFlareMaxDistance 1000;
 _l setLightAttenuation [2, 0, 0, 1];
-_l setLightBrightness 10;
+_l setLightBrightness 6;
 _l setLightDayLight true;
 
 _flare addEventHandler ["Deleted", {
