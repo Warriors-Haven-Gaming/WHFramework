@@ -12,8 +12,8 @@ Parameters:
     Number radius:
         The radius of the area.
     Array types:
-        (Optional, default ["camp", "hq", "tower"])
-        An array of emplacement types to select from.
+        (Optional, default ["camp", 0.7, "hq", 0.2, "tower", 0.1])
+        An array of emplacement types and probabilities to select from.
 
 Returns:
     Array
@@ -25,11 +25,11 @@ Author:
     thegamecracks
 
 */
-params ["_quantity", "_center", "_radius", ["_types", ["camp", "hq", "tower"]]];
+params ["_quantity", "_center", "_radius", ["_types", ["camp", 0.6, "hq", 0.3, "tower", 0.1]]];
 
 private _compositions = [];
 for "_i" from 1 to _quantity do {
-    private _type = selectRandom _types;
+    private _type = selectRandomWeighted _types;
     switch (_type) do {
         case "camp": {
             _compositions pushBack selectRandom [
