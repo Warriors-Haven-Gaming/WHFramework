@@ -26,8 +26,8 @@ private _resolvedTypes = _this apply {
     switch (_x) do {
         case ["civilians", "base"]: {["C_Van_01_fuel_F","C_Hatchback_01_F","C_Hatchback_01_sport_F","C_Offroad_02_unarmed_F","C_Offroad_01_F","C_Offroad_01_comms_F","C_Offroad_01_covered_F","C_Offroad_01_repair_F","C_Quadbike_01_F","C_SUV_01_F","C_Tractor_01_F","C_Van_01_transport_F","C_Van_01_box_F","C_Van_02_medevac_F","C_Van_02_vehicle_F","C_Van_02_service_F","C_Van_02_transport_F","C_Truck_02_fuel_F","C_Truck_02_box_F","C_Truck_02_transport_F","C_Truck_02_covered_F"]};
         case ["standard", "base"]: {["I_G_Offroad_01_AT_F","I_G_Offroad_01_armed_F","I_C_Offroad_02_AT_F","I_C_Offroad_02_LMG_F"]};
-        case ["standard", "csat"]: {["o_mrap_02_f","o_lsv_02_at_f","o_lsv_02_armed_f","o_truck_03_ammo_f","o_truck_03_medical_f","o_truck_03_covered_f"]};
-        case ["standard", "csat_pacific"]: {["o_t_mrap_02_ghex_f","o_t_lsv_02_at_f","o_t_lsv_02_armed_f","o_t_truck_03_ammo_ghex_f","o_t_truck_03_medical_ghex_f","o_t_truck_03_covered_ghex_f"]};
+        case ["standard", "csat"]: {["O_LSV_02_AT_F","O_LSV_02_armed_F","O_Truck_03_ammo_F","O_Truck_03_fuel_F","O_Truck_03_medical_F","O_Truck_03_repair_F"]};
+        case ["standard", "csat_pacific"]: {["O_T_LSV_02_AT_F","O_T_LSV_02_armed_F","O_T_Truck_03_ammo_ghex_F","O_T_Truck_03_fuel_ghex_F","O_T_Truck_03_medical_ghex_F","O_T_Truck_03_repair_ghex_F"]};
         case ["standard", "rhsafrf"]: {["rhs_tigr_sts_vdv","rhs_uaz_vdv","rhs_uaz_open_vdv","rhs_ural_vdv_01","rhs_ural_open_vdv_01"]};
         default {
             if (_x # 1 isEqualTo "base") then {[]}
