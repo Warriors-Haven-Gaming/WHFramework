@@ -39,7 +39,10 @@ for "_i" from 1 to _quantity do {
     _vehicles pushBack _vehicle;
 };
 {_group createVehicleCrew _x} forEach _vehicles;
-{_x triggerDynamicSimulation false} forEach units _group;
+{
+    _x enableStamina false;
+    _x triggerDynamicSimulation false;
+} forEach units _group;
 _group allowFleeing 0;
 _group setBehaviourStrong "SAFE";
 _group setCombatMode "RED";

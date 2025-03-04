@@ -49,6 +49,7 @@ private _unitTypes = _types call WHF_fnc_getUnitTypes;
 for "_i" from 1 to _quantity do {
     private _unit = _group createUnit [selectRandom _unitTypes, _center, [], _radius, "NONE"];
     [_unit] joinSilent _group;
+    _unit enableStamina false;
     _unit triggerDynamicSimulation false;
     [_unit] call WHF_fnc_setUnitSkill;
 
