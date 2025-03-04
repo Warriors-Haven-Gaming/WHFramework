@@ -19,7 +19,8 @@ while {true} do {
         groups east + groups independent
         select {
             _x getVariable ["WHF_siren_disabled", false] isNotEqualTo true
-            && {time - (_x getVariable ["WHF_siren_lastFlare", 0]) > WHF_signalFlareGroupCooldown}
+            && {isNil {_x getVariable "WHF_siren_lastFlare"}
+            || {time - (_x getVariable "WHF_siren_lastFlare") > WHF_signalFlareGroupCooldown}}
         }
         apply {leader _x}
         select {
