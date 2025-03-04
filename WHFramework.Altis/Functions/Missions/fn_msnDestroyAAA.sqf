@@ -49,9 +49,12 @@ if (count _aaObjects < 1) exitWith {
     diag_log text format ["%1: center %2 not clear to spawn AA emplacements", _fnc_scriptName, _center];
 };
 
-private _quantity = 30 + floor random (count allPlayers min 20);
-private _group = [opfor, "standard", _quantity, _center, _radius] call WHF_fnc_spawnUnits;
-[_group, _center] call BIS_fnc_taskDefend;
+private _groups = _aaGroups apply {
+    private _pos = leader _x;
+    private _group = [opfor, "standard", 8 + floor random 13, _pos, 50] call WHF_fnc_spawnUnits;
+    [_group, _pos] call BIS_fnc_taskDefend;
+    _group
+};
 
 private _vehicleCount = 6 + floor random 7;
 private _vehicleGroup = [opfor, "standard", _vehicleCount, _center, _radius] call WHF_fnc_spawnVehicles;
@@ -91,7 +94,7 @@ while {true} do {
 deleteMarker _areaMarker;
 {[_x] call WHF_fnc_queueGCDeletion} forEach _aaObjects;
 {[_x] call WHF_fnc_queueGCUnhide} forEach _aaTerrain;
+{[units _x] call WHF_fnc_queueGCDeletion} forEach _groups;
 {[units _x] call WHF_fnc_queueGCDeletion} forEach _aaGroups;
-[units _group] call WHF_fnc_queueGCDeletion;
 [units _vehicleGroup] call WHF_fnc_queueGCDeletion;
 {[_x] call WHF_fnc_queueGCDeletion} forEach _vehicles;
