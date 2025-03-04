@@ -153,7 +153,7 @@ Author:
     "SLIDER",
     ["STR_WHF_settings_flares_revealDistance", "STR_WHF_settings_flares_revealDistance_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_flares"],
-    [100, 500, 300, 0, false],
+    [100, 500, 500, 0, false],
     true,
     {},
     false
