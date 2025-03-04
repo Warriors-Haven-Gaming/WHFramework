@@ -23,6 +23,7 @@ Author:
 */
 params ["_unit", "_vehicle", "_role"];
 
+if (!isMultiplayer) exitWith {""};
 if (isNull _unit) exitWith {""};
 
 private _lock = switch (_role) do {
