@@ -102,7 +102,7 @@ private _compositionGroups = [];
     _fortifications = [_fortifications, _pos, _direction, ["normal", "path", "simple"]] call WHF_fnc_objectsMapper;
     _vehicles = [_vehicles, _pos, _direction, ["normal"]] call WHF_fnc_objectsMapper;
 
-    private _group = [_side, "standard", count _vehicles, [random -500, random -500, 500], 0] call WHF_fnc_spawnUnits;
+    private _group = [_side, "standard", count _vehicles, [random -500, random -500, 500], 0, false] call WHF_fnc_spawnUnits;
     {
         private _vehicle = _vehicles # _forEachIndex;
         _group addVehicle _vehicle;
