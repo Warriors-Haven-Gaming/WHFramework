@@ -113,6 +113,16 @@ private _compositionGroups = [];
         _x setFuel 0;
         _x allowCrewInImmobile [true, true];
         _x setVehicleRadar 1;
+
+        _x addEventHandler ["Fired", {
+            params ["_vehicle"];
+            if (isPlayer gunner _vehicle) exitWith {};
+            if (someAmmo _vehicle) exitWith {};
+            _vehicle spawn {
+                sleep (10 + random 20);
+                _this setVehicleAmmo 1;
+            };
+        }];
     } forEach _vehicles;
 
     _compositionObjects pushBack (_fortifications + _vehicles);
