@@ -18,12 +18,19 @@ Author:
 params [["_center",[]]];
 
 if (_center isEqualTo []) then {
-    private _options = selectBestPlaces [[worldSize / 2, worldSize / 2], sqrt 2 / 2 * worldSize, "hills", 100, 50];
+    private _options = selectBestPlaces [
+        [worldSize / 2, worldSize / 2],
+        sqrt 2 / 2 * worldSize,
+        "meadow - forest - trees",
+        100,
+        200
+    ];
     {
         _x params ["_pos"];
         _pos pushBack 0;
         if ([_pos, 1000] call WHF_fnc_isNearRespawn) then {continue};
         if (_pos nearRoads 100 isNotEqualTo []) then {continue};
+        if (_pos isFlatEmpty [-1, -1, 1, 40] isEqualTo []) then {continue};
         _center = _pos;
         break;
     } forEach _options;
@@ -37,6 +44,10 @@ private _area = [_center, _radius, _radius, 0, false];
 
 [opfor, 3 + floor random 3, _center, _radius] call WHF_fnc_createAAEmplacements
     params ["_aaObjects", "_aaTerrain", "_aaGroups"];
+
+if (count _aaObjects < 1) exitWith {
+    diag_log text format ["%1: center %2 not clear to spawn AA emplacements", _fnc_scriptName, _center];
+};
 
 private _quantity = 30 + floor random (count allPlayers min 20);
 private _group = [opfor, "standard", _quantity, _center, _radius] call WHF_fnc_spawnUnits;
