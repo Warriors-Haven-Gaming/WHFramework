@@ -18,6 +18,8 @@ if (_aiCount >= WHF_recruits_limit) exitWith {
     hint format [localize "$STR_WHF_spawnRecruit_limit", WHF_recruits_limit];
 };
 
+group focusOn setSpeedMode "FULL";
+
 private _unit = group focusOn createUnit ["B_Soldier_F", _position, [], 0, "NONE"];
 [_unit] joinSilent group focusOn;
 _unit enableStamina WHF_fitness_stamina;

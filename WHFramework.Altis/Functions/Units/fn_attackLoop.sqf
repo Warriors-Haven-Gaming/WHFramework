@@ -53,6 +53,7 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
         _waypoint setWaypointType "SAD";
         _waypoint setWaypointCompletionRadius 20;
 
+        _x setSpeedMode "FULL";
     } forEach _groups;
 
     _groups = [_inputGroups] call WHF_fnc_coerceGroups;
