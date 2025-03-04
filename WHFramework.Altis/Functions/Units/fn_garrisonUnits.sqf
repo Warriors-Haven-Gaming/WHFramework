@@ -8,6 +8,7 @@ Description:
 Parameters:
     Array | Group units:
         An array or group of units to garrison.
+        Units already garrisoned are ignored.
     Position2D center:
         The center of the area to be garrisoned.
     Number radius:
@@ -27,6 +28,7 @@ Author:
 params ["_units", "_center", "_radius", ["_delete", false]];
 
 if (_units isEqualType grpNull) then {_units = units _units};
+_units = _units select {_x checkAIFeature "PATH"};
 
 private _buildings = _center nearObjects _radius;
 _buildings = _buildings select {_x buildingPos 0 isNotEqualTo [0,0,0]};

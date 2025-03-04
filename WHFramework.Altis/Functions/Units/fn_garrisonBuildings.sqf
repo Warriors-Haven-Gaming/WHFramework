@@ -9,6 +9,7 @@ Description:
 Parameters:
     Array | Group units:
         An array or group of units to garrison.
+        Units already garrisoned are ignored.
     Array buildings:
         The buildings to be garrisoned.
     Boolean delete:
@@ -26,6 +27,7 @@ Author:
 params ["_units", "_buildings", ["_delete", false]];
 
 if (_units isEqualType grpNull) then {_units = units _units};
+_units = _units select {_x checkAIFeature "PATH"};
 
 _buildings = _buildings select {_x buildingPos 0 isNotEqualTo [0,0,0]};
 
