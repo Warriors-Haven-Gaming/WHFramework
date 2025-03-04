@@ -28,24 +28,28 @@ params ["_center", "_radius", ["_buildings", []]];
 private _groups = [];
 private _vehicles = [];
 
-private _infCount = floor (_radius / 50 + random (count allPlayers / 10));
-for "_i" from 1 to _infCount do {
+private _infCount = floor (_radius / 8);
+while {_infCount > 0} do {
     private _pos = [_center, _radius] call WHF_fnc_randomPos;
     if (_pos isEqualTo [0,0]) then {continue};
-    private _group = [opfor, "standard", selectRandom [2, 4, 8], _pos, 10] call WHF_fnc_spawnUnits;
+
+    private _quantity = selectRandom [2, 4, 6, 8];
+    private _group = [opfor, "standard", _quantity, _pos, 10] call WHF_fnc_spawnUnits;
     [_group, getPosATL leader _group, 200] call BIS_fnc_taskPatrol;
+
     _groups pushBack _group;
+    _infCount = _infCount - _quantity;
 };
 
 // NOTE: may result in positions being double garrisoned
-private _garrisonCount = floor (_radius / 15 + random (count allPlayers / 2));
+private _garrisonCount = floor (_radius / 15);
 private _garrisonGroup = [opfor, "standard", _garrisonCount, _center, _radius min 100] call WHF_fnc_spawnUnits;
 [units _garrisonGroup select [0, floor (_garrisonCount / 2)], _buildings] call WHF_fnc_garrisonBuildings;
 [_garrisonGroup, _center, _radius, true] call WHF_fnc_garrisonUnits;
 [[_garrisonGroup], _groups] spawn WHF_fnc_ungarrisonLoop;
 _groups pushBack _garrisonGroup;
 
-private _vehicleCount = floor (_radius / 100 + random (count allPlayers / 10));
+private _vehicleCount = floor (_radius / 100);
 for "_i" from 1 to _vehicleCount do {
     private _pos = [_center, _radius] call WHF_fnc_randomPos;
     if (_pos isEqualTo [0,0]) then {continue};
