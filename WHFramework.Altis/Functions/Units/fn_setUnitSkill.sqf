@@ -65,3 +65,5 @@ switch (_level) do {
         _unit setSkill 1;
     };
 };
+
+_unit setVariable ["WHF_units_skill_offset", _offset];
