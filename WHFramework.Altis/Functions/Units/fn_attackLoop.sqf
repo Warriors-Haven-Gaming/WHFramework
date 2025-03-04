@@ -34,6 +34,9 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
         if (!local _leader) then {continue};
         if !(_leader checkAIFeature "PATH") then {continue};
 
+        private _leadVehicle = objectParent _leader;
+        if (!isNull _leadVehicle && {!canFire _leadVehicle}) then {continue};
+
         private _waypoints = waypoints _x;
         if (
             count _waypoints > 0
