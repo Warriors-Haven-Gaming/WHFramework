@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={620.56653,85.284332,10756.263};
-		dir[]={0.63892412,-0.55781585,0.52974337};
-		up[]={0.42941836,0.82995945,0.35603905};
-		aside[]={0.63827008,2.9802322e-07,-0.76981747};
+		pos[]={599.91473,63.098717,10793.244};
+		dir[]={0.48306522,-0.5083999,0.7128703};
+		up[]={0.28519854,0.86111999,0.42087385};
+		aside[]={0.827838,-9.4529241e-08,-0.56097215};
 	};
 };
 binarizationWanted=0;
@@ -14544,20 +14544,21 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={652.21759,16.72847,10985.503};
-								angles[]={0,0,0.012798273};
+								position[]={652.21735,16.728512,10985.503};
+								angles[]={0,0,0.012793263};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_transport""]];";
 								reportRemoteTargets=1;
 								receiveRemoteTargets=1;
 								reportOwnPosition=1;
 							};
 							id=996;
 							type="B_T_VTOL_01_vehicle_F";
-							atlOffset=-4.2915344e-05;
+							atlOffset=9.5367432e-07;
 						};
 						class Item2
 						{
@@ -14801,6 +14802,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_transport""]];";
 							};
 							id=777;
 							type="CUP_B_MV22_VIV_USMC";
@@ -14811,13 +14813,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={633.20508,9.8870287,10882.903};
-								angles[]={0,1.6569623,0};
+								position[]={633.20502,9.8870287,10882.903};
+								angles[]={0,1.6569631,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_transport""]];";
 							};
 							id=1184;
 							type="CUP_B_MH47E_USA";
@@ -14834,6 +14837,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_transport""]];";
 							};
 							id=736;
 							type="CUP_B_MH60L_DAP_2x_US";
@@ -14850,6 +14854,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_transport""]];";
 							};
 							id=756;
 							type="CUP_B_MH6M_USA";
@@ -14875,17 +14880,18 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={632.32092,11.21268,10842.599};
-								angles[]={0,1.5717696,0};
+								position[]={632.32098,11.21268,10842.599};
+								angles[]={0,1.5717736,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_transport""]];";
 								reportRemoteTargets=1;
 								receiveRemoteTargets=1;
 								reportOwnPosition=1;
-								pylons="PylonRack_12Rnd_PG_missiles[0];PylonRack_12Rnd_PG_missiles[0];[0];[0];";
+								pylons="PylonRack_12Rnd_PG_missiles[1];PylonRack_12Rnd_PG_missiles[1];[1];[1];";
 							};
 							id=735;
 							type="Valor_Turret_Transport_CrewGun_F";
@@ -15574,6 +15580,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas""]];";
 							};
 							id=1033;
 							type="Peral_F16V";
@@ -15672,6 +15679,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas""]];";
 								reportRemoteTargets=1;
 								receiveRemoteTargets=1;
 								reportOwnPosition=1;
@@ -15684,20 +15692,21 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={688.92346,10.310835,10597.988};
-								angles[]={0,4.7414713,0};
+								position[]={688.92334,10.310547,10597.988};
+								angles[]={0,4.741466,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas""]];";
 								reportRemoteTargets=1;
 								receiveRemoteTargets=1;
 								reportOwnPosition=1;
 							};
 							id=727;
 							type="FA_EMB312_AT27M35_Nato";
-							atlOffset=0.075288773;
+							atlOffset=0.074999809;
 						};
 						class Item62
 						{
@@ -15721,16 +15730,17 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={694.86987,24.435749,10849.184};
-								angles[]={0,4.7394381,0};
+								position[]={694.87,24.435745,10849.184};
+								angles[]={0,4.7394414,0};
 							};
 							side="Empty";
-							flags=4;
 							class Attributes
 							{
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_transport""]];";
 							};
 							id=768;
 							type="CUP_C_IDAP_412_Luxury";
+							atlOffset=3.9820824;
 						};
 						class Item64
 						{
@@ -15744,6 +15754,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas""]];";
 							};
 							id=726;
 							type="B_Plane_CAS_01_dynamicLoadout_F";
@@ -15760,6 +15771,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas""]];";
 								reportRemoteTargets=1;
 								receiveRemoteTargets=1;
 								reportOwnPosition=1;
@@ -15779,13 +15791,14 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas""]];";
 							};
 							id=1182;
 							type="CUP_B_AH6M_USA";
 						};
 					};
 					id=523;
-					atlOffset=0.77599621;
+					atlOffset=0.77599049;
 				};
 				class Item3
 				{
