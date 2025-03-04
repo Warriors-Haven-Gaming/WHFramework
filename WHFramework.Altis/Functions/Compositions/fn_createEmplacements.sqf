@@ -12,10 +12,8 @@ Parameters:
     Number radius:
         The radius of the area.
     Array types:
-        (Optional, default [])
-        An optional array of emplacement types to randomly select from.
-        Must be one of the following:
-            "camp"
+        (Optional, default ["camp", "hq"])
+        An array of emplacement types to select from.
 
 Returns:
     Array
@@ -27,9 +25,7 @@ Author:
     thegamecracks
 
 */
-params ["_quantity", "_center", "_radius", ["_types", []]];
-
-if (_types isEqualTo []) then {_types = ["camp", "hq"]};
+params ["_quantity", "_center", "_radius", ["_types", ["camp", "hq"]]];
 
 private _compositions = [];
 for "_i" from 1 to _quantity do {
