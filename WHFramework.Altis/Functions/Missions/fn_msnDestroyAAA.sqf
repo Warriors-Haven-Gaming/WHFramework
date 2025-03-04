@@ -38,11 +38,11 @@ private _area = [_center, _radius, _radius, 0, false];
 [opfor, 3 + floor random 3, _center, _radius] call WHF_fnc_createAAEmplacements
     params ["_aaObjects", "_aaTerrain", "_aaGroups"];
 
-private _quantity = 20 + floor random (count allPlayers min 20);
+private _quantity = 30 + floor random (count allPlayers min 20);
 private _group = [opfor, "standard", _quantity, _center, _radius] call WHF_fnc_spawnUnits;
 [_group, _center] call BIS_fnc_taskDefend;
 
-private _vehicleCount = 4 + floor random 4;
+private _vehicleCount = 6 + floor random 7;
 private _vehicleGroup = [opfor, "standard", _vehicleCount, _center, _radius] call WHF_fnc_spawnVehicles;
 private _vehicles = assignedVehicles _vehicleGroup;
 [_vehicleGroup, _center] call BIS_fnc_taskDefend;
