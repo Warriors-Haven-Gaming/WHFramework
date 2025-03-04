@@ -24,7 +24,11 @@ Author:
 */
 private _ret = "";
 isNil {
-    _this set [1, call WHF_fnc_randomTaskID];
+    if (_this # 1 isEqualType []) then {
+        _this # 1 set [0, call WHF_fnc_randomTaskID];
+    } else {
+        _this set [1, call WHF_fnc_randomTaskID];
+    };
     _ret = _this call BIS_fnc_taskCreate;
 };
 _ret

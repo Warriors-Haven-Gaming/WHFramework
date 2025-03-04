@@ -71,6 +71,7 @@ class CfgFunctions {
             class updateChannelLoop {};
         };
         class Compositions {
+            class createAAEmplacements {};
             class createEmplacements {};
             class createMortars {};
         };
@@ -144,6 +145,7 @@ class CfgFunctions {
         };
         class Missions {
             class missionLoop {};
+            class msnDestroyAAA {};
             class msnDownloadIntel {};
             class msnDownloadIntelLaptop {};
             class msnDownloadIntelLaptopTimer {};
@@ -254,6 +256,14 @@ class CfgRadio {};
 
 // https://community.bistudio.com/wiki/Description.ext#Tasks
 class CfgTaskDescriptions {
+    class destroyAAA {
+        title       = "STR_WHF_destroyAAA_title";
+        description = "STR_WHF_destroyAAA_description";
+    };
+    class destroyAAAEmplacement {
+        title       = "STR_WHF_destroyAAAEmplacement_title";
+        description = "STR_WHF_destroyAAAEmplacement_description";
+    };
     class downloadIntel {
         title       = "STR_WHF_downloadIntel_title";
         description = "STR_WHF_downloadIntel_description";

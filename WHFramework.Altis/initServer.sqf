@@ -43,7 +43,8 @@ WHF_mainMissionLoop_script = [
 ] spawn WHF_fnc_missionLoop;
 WHF_sideMissionLoop_script = [
     [
-        "WHF_fnc_msnDownloadIntel"
+        "WHF_fnc_msnDownloadIntel",
+        "WHF_fnc_msnDestroyAAA"
     ],
     1,
     3

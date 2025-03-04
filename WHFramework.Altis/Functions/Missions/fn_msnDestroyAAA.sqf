@@ -1,0 +1,86 @@
+/*
+Function: WHF_fnc_msnDestroyAAA
+
+Description:
+    Players must destroy an AAA emplacement.
+    Function must be ran in scheduled environment.
+
+Parameters:
+    PositionATL center:
+        (Optional, default [])
+        If specified, the given position is used for the AA battery instead of
+        attempting to find a suitable location.
+
+Author:
+    thegamecracks
+
+*/
+params [["_center",[]]];
+
+if (_center isEqualTo []) then {
+    private _options = selectBestPlaces [[worldSize / 2, worldSize / 2], sqrt 2 / 2 * worldSize, "hills", 100, 50];
+    {
+        _x params ["_pos"];
+        _pos pushBack 0;
+        if ([_pos, 1000] call WHF_fnc_isNearRespawn) then {continue};
+        if (_pos nearRoads 100 isNotEqualTo []) then {continue};
+        _center = _pos;
+        break;
+    } forEach _options;
+};
+if (_center isEqualTo []) exitWith {
+    diag_log text format ["%1: No center found", _fnc_scriptName];
+};
+
+private _radius = 300;
+private _area = [_center, _radius, _radius, 0, false];
+
+[opfor, 3 + floor random 3, _center, _radius] call WHF_fnc_createAAEmplacements
+    params ["_aaObjects", "_aaTerrain", "_aaGroups"];
+
+private _quantity = 20 + floor random (count allPlayers min 20);
+private _group = [opfor, "standard", _quantity, _center, 100] call WHF_fnc_spawnUnits;
+[_group, _center] call BIS_fnc_taskDefend;
+
+private _vehicleCount = 4 + floor random 4;
+private _vehicleGroup = [opfor, "standard", _vehicleCount, _center, 100] call WHF_fnc_spawnVehicles;
+private _vehicles = assignedVehicles _vehicleGroup;
+[_vehicleGroup, _center] call BIS_fnc_taskDefend;
+
+private _areaMarker = [["WHF_msnDestroyAAA_"], _area, true] call WHF_fnc_createAreaMarker;
+_areaMarker setMarkerBrushLocal "FDiagonal";
+_areaMarker setMarkerColorLocal "ColorRed";
+_areaMarker setMarkerAlpha 0.7;
+
+private _taskID = [blufor, "", "destroyAAA", _center, "CREATED", -1, true, "destroy"] call WHF_fnc_taskCreate;
+private _childTaskIDs = _aaObjects apply {
+    [blufor, ["", _taskID], "destroyAAAEmplacement", objNull, "CREATED", -1, false, "destroy"] call WHF_fnc_taskCreate;
+};
+private _completedChildTaskIDs = [];
+
+while {true} do {
+    sleep 10;
+
+    {
+        private _childTaskID = _childTaskIDs # _forEachIndex;
+        if (_childTaskID in _completedChildTaskIDs) then {continue};
+
+        private _vehicles = _x select {_x isKindOf "LandVehicle" && {alive _x}};
+        if (count _vehicles > 0) then {continue};
+
+        [_childTaskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
+        _completedChildTaskIDs pushBack _childTaskID;
+    } forEach _aaObjects;
+
+    if (count _completedChildTaskIDs isEqualTo count _childTaskIDs) exitWith {
+        [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
+    };
+};
+
+deleteMarker _areaMarker;
+{[_x] call WHF_fnc_queueGCDeletion} forEach _aaObjects;
+{[_x] call WHF_fnc_queueGCUnhide} forEach _aaTerrain;
+{[units _x] call WHF_fnc_queueGCDeletion} forEach _aaGroups;
+[units _group] call WHF_fnc_queueGCDeletion;
+[units _vehicleGroup] call WHF_fnc_queueGCDeletion;
+{[_x] call WHF_fnc_queueGCDeletion} forEach _vehicles;
