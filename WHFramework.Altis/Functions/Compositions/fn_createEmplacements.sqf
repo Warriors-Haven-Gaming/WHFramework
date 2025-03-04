@@ -12,7 +12,7 @@ Parameters:
     Number radius:
         The radius of the area.
     Array types:
-        (Optional, default ["camp", "hq", "tower])
+        (Optional, default ["camp", "hq", "tower"])
         An array of emplacement types to select from.
 
 Returns:
@@ -25,7 +25,7 @@ Author:
     thegamecracks
 
 */
-params ["_quantity", "_center", "_radius", ["_types", ["camp", "hq"]]];
+params ["_quantity", "_center", "_radius", ["_types", ["camp", "hq", "tower"]]];
 
 private _compositions = [];
 for "_i" from 1 to _quantity do {
