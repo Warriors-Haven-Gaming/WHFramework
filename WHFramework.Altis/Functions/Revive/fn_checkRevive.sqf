@@ -33,4 +33,20 @@ if (!isNull (_caller getVariable ["WHF_revive_target", objNull])) exitWith {loca
 if (!isNull (_target getVariable ["WHF_revive_caller", objNull])) exitWith {localize "$STR_WHF_checkRevive_generic"};
 if (!_full) exitWith {""};
 
+if (WHF_revive_medic && {!(_caller getUnitTrait "medic")}) exitWith {
+    localize "$STR_WHF_checkRevive_medic"
+};
+
+private _items = items _target + items _caller;
+if (
+    WHF_revive_medkit
+    && {_items findIf {_x call BIS_fnc_itemType select 1 isEqualTo "Medikit"} < 0
+}) exitWith {
+    localize "$STR_WHF_checkRevive_medkit"
+};
+
+private _nFAKs = {_x call BIS_fnc_itemType select 1 isEqualTo "FirstAidKit"} count _items;
+private _nMissing = WHF_revive_FAKs - _nFAKs;
+if (_nMissing > 0) exitWith {format [localize "$STR_WHF_checkRevive_FAKs", _nMissing]};
+
 ""

@@ -338,6 +338,36 @@ Author:
     {},
     false
 ] call WHF_fnc_addSetting;
+[
+    "WHF_revive_FAKs",
+    "LIST",
+    ["STR_WHF_settings_revive_FAKs", "STR_WHF_settings_revive_FAKs_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_revive"],
+    [[0, 1, 2, 3, 4, 5], [], 1],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_revive_medic",
+    "CHECKBOX",
+    ["STR_WHF_settings_revive_medic", "STR_WHF_settings_revive_medic_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_revive"],
+    true,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_revive_medkit",
+    "CHECKBOX",
+    ["STR_WHF_settings_revive_medkit", "STR_WHF_settings_revive_medkit_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_revive"],
+    true,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
 
 // Time
 [
