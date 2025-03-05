@@ -23,6 +23,7 @@ Author:
 */
 params ["_unit", "_vehicle", "_role"];
 
+if (!WHF_locks_enabled) exitWith {""};
 if (!isMultiplayer) exitWith {""};
 if (isNull _unit) exitWith {""};
 

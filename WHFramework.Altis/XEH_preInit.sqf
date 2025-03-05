@@ -308,6 +308,18 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 
+// Locks
+[
+    "WHF_locks_enabled",
+    "CHECKBOX",
+    ["STR_WHF_settings_locks_enabled", "STR_WHF_settings_locks_enabled_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_locks"],
+    true,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+
 // Recruits
 [
     "WHF_recruits_limit",
