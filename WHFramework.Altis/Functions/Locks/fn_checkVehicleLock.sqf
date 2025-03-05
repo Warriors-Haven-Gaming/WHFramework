@@ -45,6 +45,7 @@ switch (_lock # 0) do {
     };
     case "uid": {
         private _uids = _lock # 1;
+        // NOTE: player is used to allow recruits into the same seats
         if (getPlayerUID player in _uids) exitWith {""};
         localize "$STR_WHF_vehicleLock"
     };
