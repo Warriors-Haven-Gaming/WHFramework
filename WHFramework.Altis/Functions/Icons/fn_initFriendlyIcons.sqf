@@ -1,8 +1,8 @@
 /*
-Function: WHF_fnc_initFriendlyMapIcons
+Function: WHF_fnc_initFriendlyIcons
 
 Description:
-    Sets up the custom friendly map icons.
+    Set up friendly icons.
     Function must be ran in scheduled environment.
 
 Author:
