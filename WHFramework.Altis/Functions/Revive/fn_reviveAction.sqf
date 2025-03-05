@@ -16,7 +16,11 @@ Author:
 
 */
 params ["_caller", "_target"];
-if !([_caller, _target] call WHF_fnc_unitCanRevive) exitWith {};
+
+private _reason = [_caller, _target] call WHF_fnc_checkRevive;
+if (_reason isNotEqualTo "") exitWith {
+    if (_caller isEqualTo focusOn) then {50 cutText [_reason, "PLAIN", 0.3]};
+};
 
 switch ([stance _caller, currentWeapon _caller]) do {
     case ["STAND", ""]:                       {["ainvpknlmstpslaywnondnon_medicother", "amovpknlmstpsnonwnondnon"]};
