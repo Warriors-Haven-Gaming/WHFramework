@@ -51,9 +51,7 @@ _groups pushBack _garrisonGroup;
 
 private _vehicleCount = floor (_radius / 100);
 for "_i" from 1 to _vehicleCount do {
-    private _pos = [_center, _radius] call WHF_fnc_randomPos;
-    if (_pos isEqualTo [0,0]) then {continue};
-    private _group = [opfor, "standard", 1, _pos, 10] call WHF_fnc_spawnVehicles;
+    private _group = [opfor, "standard", 1, _center, _radius] call WHF_fnc_spawnVehicles;
     [_group, getPosATL leader _group, 200] call BIS_fnc_taskPatrol;
     _groups pushBack _group;
     _vehicles append assignedVehicles _group;

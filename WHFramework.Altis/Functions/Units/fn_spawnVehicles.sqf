@@ -31,7 +31,17 @@ private _group = createGroup _side;
 private _vehicleTypes = _types call WHF_fnc_getVehicleTypes;
 private _vehicles = [];
 for "_i" from 1 to _quantity do {
-    private _vehicle = createVehicle [selectRandom _vehicleTypes, _center, [], _radius, "NONE"];
+    // TODO: add support for random water positions with Ship vehicles
+    private _pos = _center;
+    private _special = "NONE";
+    if (_radius > 0) then {
+        private _empty = [_center, [10, _radius]] call WHF_fnc_randomPos;
+        if (_empty isEqualTo [0,0]) exitWith {};
+        _pos = _empty;
+        _special = "CAN_COLLIDE";
+    };
+
+    private _vehicle = createVehicle [selectRandom _vehicleTypes, _pos, [], 0, _special];
     _vehicle setDir random 360;
     _vehicle setVectorUp surfaceNormal getPosATL _vehicle;
     _vehicle enableDynamicSimulation true;
