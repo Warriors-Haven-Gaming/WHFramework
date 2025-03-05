@@ -20,7 +20,10 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
 
     // Separate units from vehicles
     private _side = side group focusOn;
-    private _allUnits = allPlayers select {side group _x isEqualTo _side};
+    private _allUnits = units _side select {
+        isPlayer _x
+        || {!isNil {_x getVariable "WHF_recruitOwnedBy"}}
+    };
     private _standaloneUnits = [];
     private _leaders = [];
     private _vehicles = [];
