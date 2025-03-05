@@ -25,7 +25,8 @@ private _firstAidKits = items _caller select {
 50 cutText [
     format [
         localize "$STR_WHF_selfReviveCompleted",
-        WHF_selfRevive_FAKs min count _firstAidKits
+        WHF_selfRevive_FAKs min count _firstAidKits,
+        count _firstAidKits
     ],
     "PLAIN DOWN",
     0.3
