@@ -39,7 +39,11 @@ private _units = units focusOn select {
     && {local _x
     && {focusOn distance _x < 100}}}
 };
-private _vehicles = _units apply {objectParent _x} select {!isNull _x && {effectiveCommander _x in _units}};
+private _vehicles = _units apply {objectParent _x} select {
+    !isNull _x
+    && {effectiveCommander _x in _units
+    && {!(_x isKindOf "Air")}}
+};
 _vehicles = _vehicles arrayIntersect _vehicles;
 
 {_x setUnitFreefallHeight 50} forEach _units;

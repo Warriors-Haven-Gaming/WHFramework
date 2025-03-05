@@ -15,5 +15,6 @@ if (!hasInterface) exitWith {};
     nil,
     "",
     "isNull objectParent _this && {isTouchingGround _this}
-    || {!isNull objectParent _this && {isTouchingGround objectParent _this}}"
+    || {!isNull objectParent _this && {isTouchingGround objectParent _this
+    && {!(objectParent _this isKindOf 'Air')}}}"
 ] call WHF_fnc_contextMenuAdd;
