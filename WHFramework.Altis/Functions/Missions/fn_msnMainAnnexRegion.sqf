@@ -58,46 +58,6 @@ private _buildings = flatten _compositionObjects select {simulationEnabled _x};
 [_center, _radius, _buildings] call WHF_fnc_msnMainAnnexRegionUnits
     params ["_groups", "_vehicles"];
 
-private _supportTypes = [
-    "units",   90,
-    "vehicles",10
-];
-private _supportUnits = [];
-private _getSupportUnitCount = {[_supportUnits, {alive _x}] call WHF_fnc_shrinkCount};
-private _spawnSupportUnits = {
-    params ["_area", "_supportTypes", "_supportUnits", "_groups", "_vehicles"];
-    scriptName "WHF_fnc_msnMainAnnexRegion_spawnSupportUnits";
-    private _supportType = selectRandomWeighted _supportTypes;
-    switch (_supportType) do {
-        case "units": {
-            private _pos = [_area # 0, _area # 1, 100] call WHF_fnc_randomPosHidden;
-            if (_pos isEqualTo [0,0]) exitWith {};
-
-            private _quantity = 1 + floor random (3 + count allPlayers / 5);
-            private _group = [opfor, "standard", _quantity, _pos, 50] call WHF_fnc_spawnUnits;
-            private _waypoint = _group addWaypoint [_pos, 0];
-            _waypoint setWaypointType "SAD";
-            _waypoint setWaypointCompletionRadius 20;
-            _supportUnits append units _group;
-            _groups pushBack _group;
-        };
-        case "vehicles": {
-            private _pos = [_area # 0, _area # 1, 100] call WHF_fnc_randomPosHidden;
-            if (_pos isEqualTo [0,0]) exitWith {};
-
-            private _quantity = 1;
-            private _group = [opfor, "standard", _quantity, _pos, 50] call WHF_fnc_spawnVehicles;
-            private _waypoint = _group addWaypoint [_pos, 0];
-            _waypoint setWaypointType "SAD";
-            _waypoint setWaypointCompletionRadius 20;
-            _supportUnits append units _group;
-            _vehicles append assignedVehicles _group;
-            _groups pushBack _group;
-        };
-        default {throw format ["Unknown support type %1", _supportType]};
-    };
-};
-
 while {true} do {
     sleep 10;
 
@@ -106,15 +66,6 @@ while {true} do {
     private _threshold = 10 + _radius / 25;
     if (count _threatsInRange < _threshold) exitWith {
         [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
-    };
-
-    private _supportLimit = 10 + _radius / 80 + count allPlayers;
-    if (
-        random 1 < 0.3 + count allPlayers / 50
-        && {call _getSupportUnitCount < _supportLimit
-        && {[allPlayers, _area] call WHF_fnc_anyInArea}}
-    ) then {
-        [_area, _supportTypes, _supportUnits, _groups, _vehicles] spawn _spawnSupportUnits;
     };
 };
 
