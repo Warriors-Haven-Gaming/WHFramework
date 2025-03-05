@@ -41,7 +41,8 @@ if (_animation isEqualTo "") exitWith {};
 private _reviveIsCanceled = {
     time > _timeout
     || {lifeState _target isNotEqualTo "INCAPACITATED"
-    || {_caller getVariable ["WHF_revive_target", objNull] isNotEqualTo _target}}
+    || {!(lifeState _caller in ["HEALTHY", "INJURED"])
+    || {_caller getVariable ["WHF_revive_target", objNull] isNotEqualTo _target}}}
 };
 
 _caller addEventHandler ["AnimDone", {
