@@ -24,6 +24,8 @@ private _modules = allCurators;
 private _index = _modules findIf {_x getVariable "WHF_curators_owner" isEqualTo _uid};
 if (_index >= 0) exitWith {
     private _module = _modules # _index;
+    private _current = getAssignedCuratorLogic _player;
+    if (_module isEqualTo _current) exitWith {};
 
     diag_log text format [
         "%1: reassigning %2 to %3 (%4)",
@@ -34,7 +36,7 @@ if (_index >= 0) exitWith {
     ];
 
     unassignCurator _module;
-    unassignCurator getAssignedCuratorLogic _player;
+    unassignCurator _current;
     _player assignCurator _module;
 };
 

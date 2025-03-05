@@ -11,6 +11,7 @@ Author:
 */
 if (!isServer) exitWith {};
 if (isRemoteExecuted) exitWith {};
+if (!isNil "WHF_initCuratorHandlers") exitWith {};
 
 // Ensure curators can edit mission objects
 private _objects = allMissionObjects "" select {!(_x isKindOf "Logic")};
@@ -38,12 +39,16 @@ addMissionEventHandler ["PlayerDisconnected", {
     [_uid] call WHF_fnc_deleteCurator;
 }];
 
-// Shoddy attempt at restoring curator modules
 addMissionEventHandler ["EntityRespawned", {
-    params ["_new", "_old"];
-    private _logic = getAssignedCuratorLogic _old;
-    if (!isNull _logic) then {
-        unassignCurator _logic;
-        _new assignCurator _logic;
-    };
+    params ["_entity"];
+    if (!isPlayer _entity) exitWith {};
+    if !(getPlayerUID _entity in WHF_curators_uids) exitWith {};
+    [_entity] call WHF_fnc_createCurator;
 }];
+
+WHF_refreshCurators_script = 0 spawn {while {true} do {
+    sleep (25 + random 10);
+    call WHF_fnc_refreshCurators;
+}};
+
+WHF_initCuratorHandlers = true;

@@ -11,7 +11,7 @@ Author:
 */
 if (!isServer) exitWith {};
 if (isRemoteExecuted) exitWith {};
-if (!isMultiplayer) exitWith {[player] call WHF_fnc_createCurator};
+if (!isMultiplayer) exitWith {};
 
 {
     private _uid = _x getVariable ["WHF_curators_owner", -1];
