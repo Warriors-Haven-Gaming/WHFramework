@@ -253,6 +253,38 @@ class CfgFunctions {
 // https://community.bistudio.com/wiki/Arma_3:_Advanced_Hints_(Field_Manual)
 class CfgHints {};
 
+// https://steamcommunity.com/sharedfiles/filedetails/?id=1867660876
+class CfgPylonManager {
+    blacklistedMagazines[] = {
+        "EMP_AGM_magazine_Missiles_Cruise_01_x1",
+        "EMP_AGM_magazine_Missiles_Cruise_02_x1",
+        "EMP_AGM_magazine_Missiles_Cruise_03_x1",
+        "FSNB_AGM_86B_Cruise_M",
+        "FSNB_AGM_86B_M",
+        "FSNB_B61_4_M",
+        "FSNB_B61_4_Timed_M",
+        "WNZ_EMPBomb_Mag",
+        "WNZ_EMPBomb_Mag_x2",
+        "WNZ_EMPClusterBomb_Mag",
+        "WNZ_EMPClusterBomb_Mag_x2",
+        "WNZ_EMPDAGRx12_Mag",
+        "WNZ_EMPDAGRx19_Mag",
+        "WNZ_EMPDAGRx20_Mag",
+        "WNZ_EMPDASGRx12_Mag",
+        "WNZ_EMPDASGRx19_Mag",
+        "WNZ_EMPDASGRx20_Mag",
+        "WNZ_EMPHARM_Mag",
+        "WNZ_EMPMissile_L_Mag",
+        "WNZ_EMPMissile_L_x3_Mag",
+        "WNZ_EMPMissile_L_x4_Mag",
+        "WNZ_EMPMissile_Mag",
+        "WNZ_EMPMissile_x3_Mag",
+        "WNZ_EMPMissile_x4_Mag",
+    };
+    rearmObjects[] = {};
+    rearmRange = 15;
+};
+
 // https://community.bistudio.com/wiki/Description.ext#CfgRadio
 class CfgRadio {};
 
