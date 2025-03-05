@@ -156,7 +156,7 @@ private _shipsCooldown = 300;
 private _ships = [
     ["cup_b_rhib_usmc",   [-1, []]],
     ["cup_b_zodiac_usmc", [-1, []]],
-    ["rhicc_green",       [-1, []]],
+    ["bae_fic",           [-1, []]],
     ["", []]
 ];
 
