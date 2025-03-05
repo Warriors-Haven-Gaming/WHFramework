@@ -24,6 +24,7 @@ private _patches = switch (_faction) do {
     case "rhsafrf": {["rhs_main"]};
     case "cup_afrf": {["CUP_Creatures_Military_Russia", "CUP_WheeledVehicles_UAZ"]};
     case "cup_afrf_modern": {["CUP_Creatures_Military_RussiaModern_Units", "CUP_WheeledVehicles_GAZTigr"]};
+    case "cup_npc": {["CUP_Creatures_Military_NAPA", "CUP_WheeledVehicles_Hilux"]};
     default {-1};
 };
 if (_patches isEqualTo -1) exitWith {false};

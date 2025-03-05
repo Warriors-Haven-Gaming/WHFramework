@@ -31,6 +31,7 @@ private _resolvedTypes = _this apply {
         case ["standard", "rhsafrf"]: {["rhs_tigr_sts_vdv","rhs_uaz_vdv","rhs_uaz_open_vdv","rhs_ural_vdv_01","rhs_ural_open_vdv_01"]};
         case ["standard", "cup_afrf"]: {["CUP_O_UAZ_AGS30_RU","CUP_O_UAZ_METIS_RU","CUP_O_UAZ_MG_RU","CUP_O_UAZ_SPG9_RU","CUP_O_Ural_Reammo_RU","CUP_O_Ural_Refuel_RU","CUP_O_Ural_Repair_RU"]};
         case ["standard", "cup_afrf_modern"]: {["CUP_O_Kamaz_6396_ammo_RUS_M","CUP_O_Kamaz_6396_fuel_RUS_M","CUP_O_Kamaz_6396_medical_RUS_M","CUP_O_Kamaz_6396_repair_RUS_M","CUP_O_Tigr_233014_GREEN_PK_RU","CUP_O_Tigr_M_233114_GREEN_KORD_RU"]};
+        case ["standard", "cup_npc"]: {["CUP_I_Datsun_AA_Random","CUP_I_Datsun_PK_Random","CUP_I_Hilux_AGS30_NAPA","CUP_I_Hilux_BMP1_NAPA","CUP_I_Hilux_btr60_NAPA","CUP_I_Hilux_DSHKM_NAPA","CUP_I_Hilux_igla_NAPA","CUP_I_Hilux_metis_NAPA","CUP_I_Hilux_MLRS_NAPA","CUP_I_Hilux_podnos_NAPA","CUP_I_Hilux_SPG9_NAPA","CUP_I_Hilux_UB32_NAPA","CUP_I_Hilux_zu23_NAPA","CUP_I_Ural_ZU23_NAPA"]};
         default {
             if (_x # 1 isEqualTo "base") then {[]}
             else {[_x # 0, "base"] call WHF_fnc_getVehicleTypes}
