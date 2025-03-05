@@ -19,11 +19,6 @@ Author:
 */
 params ["_functions", "_minScripts", "_maxScripts"];
 
-_functions = _functions select {
-    private _predicate = missionNamespace getVariable [_x + "PreCondition", {true}];
-    [] call _predicate
-};
-
 if (count _functions < 1) exitWith {
     diag_log text format ["%1: No functions to call", _fnc_scriptName];
 };
@@ -45,6 +40,12 @@ private _refreshFunctionCounts = {
     private _min = selectMin _counts;
     {_functionCounts set [_x, _y - _min]} forEach _functionCounts;
 };
+private _checkPredicate = {
+    params ["_function"];
+    // TODO: allow predicates to pass-through arguments to the function
+    private _predicate = missionNamespace getVariable [_function + "PreCondition", {true}];
+    [] call _predicate
+};
 private _selectRandomFunction = {
     /* Selects a random mission function to be spawned. */
     call _refreshFunctionCounts;
@@ -52,7 +53,7 @@ private _selectRandomFunction = {
     if (count _functionCounts < 2) exitWith {
         private _selected = keys _functionCounts select 0;
         _functionCounts set [_selected, (_functionCounts get _selected) + 1];
-        _selected
+        if ([_selected] call _checkPredicate) then {_selected}
     };
 
     private _total = 0;
@@ -65,9 +66,12 @@ private _selectRandomFunction = {
             [_x, _chance]
         }
     );
-    private _selected = keys _functionChances selectRandomWeighted values _functionChances;
-    _functionCounts set [_selected, (_functionCounts get _selected) + 1];
-    _selected
+
+    for "_i" from 1 to 30 do {
+        private _selected = keys _functionChances selectRandomWeighted values _functionChances;
+        _functionCounts set [_selected, (_functionCounts get _selected) + 1];
+        if ([_selected] call _checkPredicate) exitWith {_selected};
+    }
 };
 
 while {true} do {
@@ -75,6 +79,8 @@ while {true} do {
     if (_nScripts < _minScripts) then {
         for "_i" from 1 to (_maxScripts - _nScripts) do {
             private _function = call _selectRandomFunction;
+            if (isNil "_function") then {continue};
+
             private _script = [] spawn (missionNamespace getVariable _function);
             _scripts pushBack _script;
             sleep (1 + random 4);
