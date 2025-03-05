@@ -36,12 +36,12 @@ if (_unit isKindOf "Man") then {
             sleep 0.125;
             private _z = abs (boundingBox _unit # 0 # 2);
             private _pos = getPosASLVisual _unit;
-            private _below = _pos vectorAdd [0, 0, _z];
+            private _below = _pos vectorAdd [0, 0, _z - 3];
 
             !alive _unit
             || {!alive _parachute
             || {lineIntersects [_pos, _below, _unit, _parachute]
-            || {getPos _unit select 2 < 2}}}
+            || {getPos _unit select 2 < 3}}}
         };
         detach _unit;
     };
