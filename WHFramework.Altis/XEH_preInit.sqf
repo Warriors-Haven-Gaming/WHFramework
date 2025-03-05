@@ -61,12 +61,23 @@ Author:
 ] call WHF_fnc_addSetting;
 
 // Factions
+/*
+    Useful scripts for adding new factions:
+    - Units:
+        units player apply {typeOf _x}
+    - Vehicles:
+        _types = player nearObjects ["LandVehicle",50] apply {typeOf _x};
+        _types sort true;
+        _types
+    - Patches:
+        configSourceAddonList (configFile >> "CfgVehicles" >> typeOf cursorObject)
+*/
 [
     "WHF_factions_selected",
     "LIST",
     ["STR_WHF_settings_factions_selected", "STR_WHF_settings_factions_selected_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_factions"],
-    [["random", "base", "csat", "csat_pacific", "rhsafrf"], ["STR_WHF_settings_factions_selected_random", "STR_WHF_factions_base", "STR_WHF_factions_csat", "STR_WHF_factions_csat_pacific", "STR_WHF_factions_rhsafrf"]],
+    [["random", "base", "csat", "csat_pacific", "rhsafrf", "cup_afrf", "cup_afrf_modern"], ["STR_WHF_settings_factions_selected_random", "STR_WHF_factions_base", "STR_WHF_factions_csat", "STR_WHF_factions_csat_pacific", "STR_WHF_factions_rhsafrf", "STR_WHF_factions_cup_afrf", "STR_WHF_factions_cup_afrf_modern"]],
     true,
     {call WHF_fnc_cycleFaction},
     false
