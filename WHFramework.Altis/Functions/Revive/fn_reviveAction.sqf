@@ -55,6 +55,7 @@ _caller addEventHandler ["AnimDone", {
 
 // WHF_revive_animation is cleared to indicate completion of animation, while
 // WHF_revive_target is cleared to indicate a revive cancellation request.
+// FIXME: add revive failsafe in case caller disconnects
 _caller setVariable ["WHF_revive_animation", _animation];
 _caller setVariable ["WHF_revive_target", _target];
 _target setVariable ["WHF_revive_caller", _caller, true];
