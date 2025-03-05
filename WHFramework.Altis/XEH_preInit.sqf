@@ -264,6 +264,38 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 
+// Icons
+[
+    "WHF_icons_3D",
+    "CHECKBOX",
+    ["STR_WHF_settings_icons_3D", "STR_WHF_settings_icons_3D_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_icons"],
+    true,
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_icons_3D_group",
+    "CHECKBOX",
+    ["STR_WHF_settings_icons_3D_group", "STR_WHF_settings_icons_3D_group_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_icons"],
+    false,
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_icons_3D_distance",
+    "SLIDER",
+    ["STR_WHF_settings_icons_3D_distance", "STR_WHF_settings_icons_3D_distance_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_icons"],
+    [10, 10000, 6000, 0, false],
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+
 // Loadouts
 [
     "WHF_loadout_collection",
