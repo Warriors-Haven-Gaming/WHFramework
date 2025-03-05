@@ -20,7 +20,7 @@ params [["_location", locationNull]];
 if (_location isEqualTo locationNull) then {
     private _locations = nearestLocations [
         [worldSize / 2, worldSize / 2],
-        ["NameVillage", "NameCity", "NameCityCapital"],
+        ["Hill", "NameVillage", "NameCity", "NameCityCapital"],
         sqrt 2 / 2 * worldSize
     ];
     _locations = _locations call BIS_fnc_arrayShuffle;
