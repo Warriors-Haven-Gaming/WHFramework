@@ -49,9 +49,12 @@ _areaMarker setMarkerColorLocal "ColorRed";
 _areaMarker setMarkerAlpha 0.7;
 
 // FIXME: localize description on clients
+private _name = if (text _location isNotEqualTo "") then {text _location} else {
+    localize "$STR_WHF_mainAnnexRegion_region"
+};
 private _description = getMissionConfig "CfgTaskDescriptions" >> "mainAnnexRegion";
 _description = [_description >> "description", _description >> "title"];
-_description = _description apply {format [localize getTextRaw _x, text _location]};
+_description = _description apply {format [localize getTextRaw _x, _name]};
 private _taskID = [blufor, "", _description, _area # 0, "AUTOASSIGNED", -1, true, "attack"] call WHF_fnc_taskCreate;
 
 [_center, _radius] call WHF_fnc_msnMainAnnexRegionCompositions
