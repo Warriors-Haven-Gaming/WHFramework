@@ -57,7 +57,7 @@ private _groups = _aaGroups apply {
 };
 
 private _vehicleCount = 6 + floor random 7;
-private _vehicleGroup = [opfor, "standard", _vehicleCount, _center, _radius] call WHF_fnc_spawnVehicles;
+private _vehicleGroup = [opfor, ["standard", "supply"], _vehicleCount, _center, _radius] call WHF_fnc_spawnVehicles;
 private _vehicles = assignedVehicles _vehicleGroup;
 [_vehicleGroup, _center] call BIS_fnc_taskDefend;
 

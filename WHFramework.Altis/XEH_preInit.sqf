@@ -376,7 +376,7 @@ Author:
     "EDITBOX",
     ["STR_WHF_settings_missions_annex_vehicles_types", "STR_WHF_settings_missions_annex_vehicles_types_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_missions"],
-    '["standard"]',
+    '["standard", "supply"]',
     true,
     {WHF_missions_annex_vehicles_types = parseSimpleArray _this},
     false
