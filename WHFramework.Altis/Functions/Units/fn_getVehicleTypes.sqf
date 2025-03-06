@@ -3,7 +3,6 @@ Function: WHF_fnc_getVehicleTypes
 
 Description:
     Returns an array of unit classnames for one or more given types.
-    Note that classnames are not de-duplicated.
     If none of the types are valid, an empty array is returned.
 
 Parameters:
@@ -39,4 +38,6 @@ private _resolvedTypes = _this apply {
         };
     };
 };
-flatten _resolvedTypes
+_resolvedTypes = flatten _resolvedTypes;
+_resolvedTypes = _resolvedTypes arrayIntersect _resolvedTypes;
+_resolvedTypes
