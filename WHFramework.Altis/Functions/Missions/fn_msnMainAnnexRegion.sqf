@@ -40,6 +40,7 @@ _center = _center vectorAdd [50 - random 100, 50 - random 100];
 private _minRadius = 250 + count allPlayers * 10 min 650;
 private _maxRadius = 500 + count allPlayers * 15 min 1100;
 private _radius = selectMax size _location * 2 max _minRadius min _maxRadius;
+_radius = _radius * WHF_missions_annex_size;
 private _area = [_center, _radius, _radius, 0, false];
 
 private _areaMarker = [["WHF_mainMission"], _area, true] call WHF_fnc_createAreaMarker;
@@ -59,14 +60,15 @@ private _taskID = [blufor, "", _description, _area # 0, "AUTOASSIGNED", -1, true
 private _buildings = flatten _compositionObjects select {simulationEnabled _x};
 [_center, _radius, _buildings] call WHF_fnc_msnMainAnnexRegionUnits
     params ["_groups", "_vehicles"];
+private _initialUnitCount = count flatten (_groups apply {units _x});
 
 while {true} do {
     sleep 10;
 
     private _allThreats = units opfor + units independent;
     private _threatsInRange = _allThreats inAreaArray _area;
-    private _threshold = 10 + _radius / 20;
-    if (count _threatsInRange < _threshold) exitWith {
+    private _threshold = floor (_initialUnitCount * WHF_missions_annex_threshold);
+    if (count _threatsInRange <= _threshold) exitWith {
         [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
     };
 };

@@ -29,6 +29,7 @@ private _groups = [];
 private _vehicles = [];
 
 private _infCount = 40 + floor (_radius / 8);
+_infCount = floor (_infCount * WHF_missions_annex_units);
 while {_infCount > 0} do {
     private _pos = [_center, _radius] call WHF_fnc_randomPos;
     if (_pos isEqualTo [0,0]) then {continue};
@@ -43,6 +44,7 @@ while {_infCount > 0} do {
 
 // NOTE: may result in positions being double garrisoned
 private _garrisonCount = 30 + floor (_radius / 15);
+_garrisonCount = floor (_garrisonCount * WHF_missions_annex_units);
 private _garrisonGroup = [opfor, "standard", _garrisonCount, _center, _radius min 100] call WHF_fnc_spawnUnits;
 [units _garrisonGroup select [0, floor (_garrisonCount / 2)], _buildings] call WHF_fnc_garrisonBuildings;
 [_garrisonGroup, _center, _radius, true] call WHF_fnc_garrisonUnits;
@@ -50,6 +52,7 @@ private _garrisonGroup = [opfor, "standard", _garrisonCount, _center, _radius mi
 _groups pushBack _garrisonGroup;
 
 private _vehicleCount = 4 + floor (_radius / 70);
+_vehicleCount = floor (_vehicleCount * WHF_missions_annex_vehicles);
 for "_i" from 1 to _vehicleCount do {
     private _group = [opfor, "standard", 1, _center, _radius] call WHF_fnc_spawnVehicles;
     [_group, getPosATL leader _group, 200] call BIS_fnc_taskPatrol;

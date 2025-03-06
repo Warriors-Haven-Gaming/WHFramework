@@ -320,6 +320,48 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 
+// Missions
+[
+    "WHF_missions_annex_size",
+    "SLIDER",
+    ["STR_WHF_settings_missions_annex_size", "STR_WHF_settings_missions_annex_size_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_missions"],
+    [0.5, 2, 1, 0, true],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_missions_annex_threshold",
+    "SLIDER",
+    ["STR_WHF_settings_missions_annex_threshold", "STR_WHF_settings_missions_annex_threshold_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_missions"],
+    [0.3, 1, 0.7, 0, true],
+    true,
+    {WHF_missions_annex_threshold = 1 - _this},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_missions_annex_units",
+    "SLIDER",
+    ["STR_WHF_settings_missions_annex_units", "STR_WHF_settings_missions_annex_units_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_missions"],
+    [0.5, 2, 1, 0, true],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_missions_annex_vehicles",
+    "SLIDER",
+    ["STR_WHF_settings_missions_annex_vehicles", "STR_WHF_settings_missions_annex_vehicles_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_missions"],
+    [0, 2, 1, 0, true],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+
 // Recruits
 [
     "WHF_recruits_limit",
