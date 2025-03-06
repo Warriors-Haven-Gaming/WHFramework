@@ -33,8 +33,9 @@ private _resolvedTypes = _this apply {
         case ["standard", "cup_afrf_modern"]: {["CUP_O_Kamaz_6396_ammo_RUS_M","CUP_O_Kamaz_6396_fuel_RUS_M","CUP_O_Kamaz_6396_medical_RUS_M","CUP_O_Kamaz_6396_repair_RUS_M","CUP_O_Tigr_233014_GREEN_PK_RU","CUP_O_Tigr_M_233114_GREEN_KORD_RU"]};
         case ["standard", "cup_npc"]: {["CUP_I_Datsun_AA_Random","CUP_I_Datsun_PK_Random","CUP_I_Hilux_AGS30_NAPA","CUP_I_Hilux_BMP1_NAPA","CUP_I_Hilux_btr60_NAPA","CUP_I_Hilux_DSHKM_NAPA","CUP_I_Hilux_igla_NAPA","CUP_I_Hilux_metis_NAPA","CUP_I_Hilux_MLRS_NAPA","CUP_I_Hilux_podnos_NAPA","CUP_I_Hilux_SPG9_NAPA","CUP_I_Hilux_UB32_NAPA","CUP_I_Hilux_zu23_NAPA","CUP_I_Ural_ZU23_NAPA"]};
         default {
-            if (_x # 1 isEqualTo "base") then {[]}
-            else {[_x # 0, "base"] call WHF_fnc_getVehicleTypes}
+            if (_x # 0 isNotEqualTo "standard") exitWith {["standard", _x # 1] call WHF_fnc_getVehicleTypes};
+            if (_x # 1 isNotEqualTo "base") exitWith {[_x # 0, "base"] call WHF_fnc_getVehicleTypes};
+            []
         };
     };
 };
