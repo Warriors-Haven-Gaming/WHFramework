@@ -37,7 +37,9 @@ if (_location isEqualTo locationNull) exitWith {
 private _center = locationPosition _location vectorMultiply [1, 1, 0];
 _center = _center vectorAdd [50 - random 100, 50 - random 100];
 
-private _radius = selectMax size _location * 2 max 500 min 1000;
+private _minRadius = 250 + count allPlayers * 10 min 650;
+private _maxRadius = 500 + count allPlayers * 15 min 1100;
+private _radius = selectMax size _location * 2 max _minRadius min _maxRadius;
 private _area = [_center, _radius, _radius, 0, false];
 
 private _areaMarker = [["WHF_mainMission"], _area, true] call WHF_fnc_createAreaMarker;
