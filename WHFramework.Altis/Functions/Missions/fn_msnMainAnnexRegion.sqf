@@ -65,7 +65,7 @@ while {true} do {
 
     private _allThreats = units opfor + units independent;
     private _threatsInRange = _allThreats inAreaArray _area;
-    private _threshold = 10 + _radius / 25;
+    private _threshold = 10 + _radius / 20;
     if (count _threatsInRange < _threshold) exitWith {
         [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
     };
