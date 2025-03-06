@@ -22,11 +22,12 @@ private _firstAidKits = items _caller select {
 
 [_caller] call WHF_fnc_reviveUnit;
 
+private _consumed = WHF_selfRevive_FAKs min count _firstAidKits;
 50 cutText [
     format [
         localize "$STR_WHF_selfReviveCompleted",
-        WHF_selfRevive_FAKs min count _firstAidKits,
-        count _firstAidKits
+        _consumed,
+        count _firstAidKits - _consumed
     ],
     "PLAIN DOWN",
     0.3
