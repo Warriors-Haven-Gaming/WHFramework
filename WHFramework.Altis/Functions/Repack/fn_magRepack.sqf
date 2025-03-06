@@ -23,7 +23,6 @@ private _animSpeed = getAnimSpeedCoef _unit;
 
 if (_unit isEqualTo focusOn) then {
     _unit action ["Gear", objNull];
-    hint localize "$STR_WHF_magRepack_started";
 } else {
     _unit playActionNow "Medic";
 };
