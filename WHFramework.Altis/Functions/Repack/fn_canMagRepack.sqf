@@ -1,0 +1,26 @@
+/*
+Function: WHF_fnc_canMagRepack
+
+Description:
+    Check if a unit can repack magazines.
+
+Parameters:
+    Object unit:
+        The unit to check.
+
+Returns:
+    Boolean
+
+Author:
+    thegamecracks
+
+*/
+params ["_unit"];
+if (!isNull objectParent _unit) exitWith {false};
+if (!isTouchingGround _unit) exitWith {false};
+if (!isNil {_unit getVariable "WHF_magRepack"}) exitWith {false};
+
+private _magazineGroups = [_unit, true] call WHF_fnc_groupMagazines;
+if (count _magazineGroups < 1) exitWith {false};
+
+true

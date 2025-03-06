@@ -81,6 +81,7 @@ class CfgFunctions {
             class contextMenuRemove {};
             class contextMenuShow {};
             class initContextActionHaloJump {};
+            class initContextActionMagRepack {};
             class initContextActionQuadbike {};
             class initContextHandlers {};
         };
@@ -169,6 +170,11 @@ class CfgFunctions {
         class Recruits {
             class initSpawnRecruitAction {};
             class spawnRecruit {};
+        };
+        class Repack {
+            class canMagRepack {};
+            class groupMagazines {};
+            class magRepack {};
         };
         class Revive {
             class checkRevive {};
