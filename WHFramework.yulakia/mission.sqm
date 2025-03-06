@@ -1,7 +1,7 @@
 version=54;
 class EditorData
 {
-	moveGridStep=0.5;
+	moveGridStep=0.25;
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1624;
+		nextID=1627;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=173;
+		nextID=185;
 	};
 	class Camera
 	{
-		pos[]={666.7403,48.330841,10852.162};
-		dir[]={0.50905842,-0.59873039,-0.61841649};
-		up[]={0.38052538,0.80093771,-0.46227062};
-		aside[]={-0.77208942,8.2503539e-07,-0.63555777};
+		pos[]={670.70923,15.340308,10823.776};
+		dir[]={0.76436818,-0.50202149,-0.40466318};
+		up[]={0.44383317,0.8647517,-0.23496939};
+		aside[]={-0.46789408,8.7718945e-07,-0.88380396};
 	};
 };
 binarizationWanted=0;
@@ -818,10 +818,9 @@ class Mission
 		{
 			dataType="Layer";
 			name="Spawns";
-			state=1;
 			class Entities
 			{
-				items=1;
+				items=3;
 				class Item0
 				{
 					dataType="Marker";
@@ -832,8 +831,28 @@ class Mission
 					angle=180;
 					id=334;
 				};
+				class Item1
+				{
+					dataType="Marker";
+					position[]={685,11,10926.5};
+					name="respawn_west_uav";
+					type="Empty";
+					angle=270;
+					id=1624;
+					atlOffset=0.88122177;
+				};
+				class Item2
+				{
+					dataType="Marker";
+					position[]={677,9.9700003,10720};
+					name="respawn_west_pilot_cas";
+					type="Empty";
+					angle=270;
+					id=1625;
+				};
 			};
 			id=335;
+			atlOffset=0.25750065;
 		};
 		class Item1
 		{
@@ -3118,7 +3137,7 @@ class Mission
 					name="Props";
 					class Entities
 					{
-						items=465;
+						items=466;
 						class Item0
 						{
 							dataType="Object";
@@ -10855,8 +10874,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={680.45941,10.710514,10819.991};
-								angles[]={0,3.1415927,0};
+								position[]={680.5,10.710514,10820.5};
+								angles[]={-0,3.1415927,0};
 							};
 							side="Empty";
 							flags=4;
@@ -12832,7 +12851,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={676.33856,10.490262,10818.817};
+								position[]={675.5,10.490262,10820};
 							};
 							side="Empty";
 							flags=4;
@@ -18655,9 +18674,43 @@ class Mission
 							type="Land_WaterCooler_01_new_F";
 							atlOffset=0.00032711029;
 						};
+						class Item465
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={676.75,10.490262,10820};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								createAsLocalObject=1;
+								disableSimulation=1;
+							};
+							id=1626;
+							type="Land_Bollard_01_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="allowDamage";
+									expression="_this allowdamage _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
 					};
 					id=524;
-					atlOffset=6.1895037;
+					atlOffset=3.0947523;
 				};
 				class Item2
 				{
@@ -19731,14 +19784,14 @@ class Mission
 							{
 								class Attribute0
 								{
-									property="F16V_Squadron_Insignia";
-									expression="_this setVariable [""F16V_Squadron_Insignia"", _value]; [_this,_value] call Peral_F16V_fnc_Squadron_Insignia;";
+									property="F16VFontStyle";
+									expression="_this setVariable [""F16VFontStyle"", _value]; [_this, _value] call lala_peral_F16V_fnc_applyAircraftFontStyle; [_this,_this getVariable [""F16V_Squadron_Insignia"",""None""]] call Peral_F16V_fnc_Squadron_Insignia;";
 									class Value
 									{
 										class data
 										{
 											singleType="STRING";
-											value="None";
+											value="white_font";
 										};
 									};
 								};
@@ -19796,14 +19849,14 @@ class Mission
 								};
 								class Attribute5
 								{
-									property="F16VFontStyle";
-									expression="_this setVariable [""F16VFontStyle"", _value]; [_this, _value] call lala_peral_F16V_fnc_applyAircraftFontStyle; [_this,_this getVariable [""F16V_Squadron_Insignia"",""None""]] call Peral_F16V_fnc_Squadron_Insignia;";
+									property="F16V_Squadron_Insignia";
+									expression="_this setVariable [""F16V_Squadron_Insignia"", _value]; [_this,_value] call Peral_F16V_fnc_Squadron_Insignia;";
 									class Value
 									{
 										class data
 										{
 											singleType="STRING";
-											value="white_font";
+											value="None";
 										};
 									};
 								};
@@ -27606,7 +27659,7 @@ class Mission
 				};
 			};
 			id=1354;
-			atlOffset=8.7515707;
+			atlOffset=8.7394819;
 		};
 	};
 	class Connections
