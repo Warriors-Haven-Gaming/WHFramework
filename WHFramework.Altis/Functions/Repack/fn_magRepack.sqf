@@ -68,14 +68,18 @@ private _completed = false;
 {
     private _magazines = _x;
 
-    // Since we can't delete a specific magazine from the unit, we'll delete
-    // all magazines upfront
-    {switch (_x # 3) do {
-        case -1: {_unit removeMagazine _x # 0};
-        case 1: {_unit removePrimaryWeaponItem _x # 0};
-        case 2: {_unit removeHandgunItem _x # 0};
-        case 4: {_unit removeSecondaryWeaponItem _x # 0};
-    }} forEach _magazines;
+    // Since we can't delete a specific magazine from the unit's inventory,
+    // we'll delete all inventory magazines upfront, plus partial weapon magazines
+    {
+        if (_x # 3 isEqualTo -1) then {_unit removeMagazine _x # 0; continue};
+        private _capacity = getNumber (configFile >> "CfgMagazines" >> _x # 0 >> "count");
+        if (_x # 1 >= _capacity) then {continue};
+        switch (_x # 3) do {
+            case 1: {_unit removePrimaryWeaponItem _x # 0};
+            case 2: {_unit removeHandgunItem _x # 0};
+            case 4: {_unit removeSecondaryWeaponItem _x # 0};
+        };
+    } forEach _magazines;
 
     while {
         count _magazines > 1
