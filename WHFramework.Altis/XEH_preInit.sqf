@@ -352,6 +352,16 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 [
+    "WHF_missions_annex_units_types",
+    "EDITBOX",
+    ["STR_WHF_settings_missions_annex_units_types", "STR_WHF_settings_missions_annex_units_types_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_missions"],
+    '["standard"]',
+    true,
+    {WHF_missions_annex_units_types = parseSimpleArray _this},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_missions_annex_vehicles",
     "SLIDER",
     ["STR_WHF_settings_missions_annex_vehicles", "STR_WHF_settings_missions_annex_vehicles_tooltip"],
@@ -359,6 +369,16 @@ Author:
     [0, 2, 1, 0, true],
     true,
     {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_missions_annex_vehicles_types",
+    "EDITBOX",
+    ["STR_WHF_settings_missions_annex_vehicles_types", "STR_WHF_settings_missions_annex_vehicles_types_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_missions"],
+    '["standard"]',
+    true,
+    {WHF_missions_annex_vehicles_types = parseSimpleArray _this},
     false
 ] call WHF_fnc_addSetting;
 
