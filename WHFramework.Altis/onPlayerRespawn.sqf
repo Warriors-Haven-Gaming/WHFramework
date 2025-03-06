@@ -18,6 +18,13 @@ params ["_unit"];
 private _loadout = call WHF_fnc_getLastLoadout;
 if (_loadout isNotEqualTo []) then {_unit setUnitLoadout _loadout};
 
+private _respawns = [_unit] call WHF_fnc_respawnMarkers;
+if (count _respawns > 0) then {
+    private _marker = _respawns # 0;
+    _unit setPosATL markerPos _marker;
+    _unit setDir markerDir _marker;
+};
+
 _unit enableStamina WHF_fitness_stamina;
 _unit setCustomAimCoef WHF_fitness_sway;
 _unit setCaptive false;
