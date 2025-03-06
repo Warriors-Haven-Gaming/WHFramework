@@ -52,9 +52,10 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
             [_x] joinSilent _group;
 
             _group allowFleeing 0;
+            _group setBehaviourStrong "AWARE";
             _group setSpeedMode "FULL";
 
-            private _waypoint = _group addWaypoint [_position vectorMultiply [1,1,0], 0];
+            private _waypoint = _group addWaypoint [_position vectorMultiply [1,1,0], 5];
             _waypoint setWaypointType "SAD";
             _waypoint setWaypointCompletionRadius 5;
 

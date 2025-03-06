@@ -52,10 +52,11 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
 
         {deleteWaypoint _x} forEachReversed _waypoints;
         _targets # 0 params ["", "", "", "", "_position"];
-        private _waypoint = _x addWaypoint [_position vectorMultiply [1,1,0], 0];
+        private _waypoint = _x addWaypoint [_position vectorMultiply [1,1,0], 50];
         _waypoint setWaypointType "SAD";
         _waypoint setWaypointCompletionRadius 20;
 
+        if (combatBehaviour _x isEqualTo "SAFE") then {_x setBehaviourStrong "AWARE"};
         _x setSpeedMode "FULL";
     } forEach _groups;
 
