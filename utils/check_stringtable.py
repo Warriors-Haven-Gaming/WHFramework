@@ -22,7 +22,8 @@ def extract_stringtable_keys(content: str) -> set[str]:
 def find_used_keys(root: Path) -> set[str]:
     keys: set[str] = set()
 
-    for path in root.rglob("*.sqf"):
+    paths = [root / "description.ext", *root.rglob("*.sqf")]
+    for path in paths:
         content = path.read_text("utf-8")
         for m in re.finditer(r'"\$?(STR_WHF_[^"]+)"', content):
             keys.add(m[1])
