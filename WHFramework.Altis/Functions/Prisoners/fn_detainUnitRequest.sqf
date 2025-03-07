@@ -88,7 +88,10 @@ if (_targetArmed) then {_success append [
 [_target, selectRandom _success] remoteExec ["WHF_fnc_localChat", WHF_globalPlayerTarget];
 [_target] joinSilent grpNull;
 
-removeAllWeapons _target;
+_target removeWeaponGlobal primaryWeapon _target;
+_target removeWeaponGlobal handgunWeapon _target;
+_target removeWeaponGlobal secondaryWeapon _target;
+
 _target enableAIFeature ["PATH", false];
 _target setCaptive true;
 _target setUnitPos "UP";
