@@ -320,6 +320,18 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 
+// Prisoners
+[
+    "WHF_detain_cooldown",
+    "SLIDER",
+    ["STR_WHF_settings_prisoners_detain_cooldown", "STR_WHF_settings_prisoners_detain_cooldown_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_prisoners"],
+    [3, 30, 3, 1, false],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+
 // Missions
 [
     "WHF_missions_annex_size",

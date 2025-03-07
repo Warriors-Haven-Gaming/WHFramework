@@ -80,6 +80,7 @@ class CfgFunctions {
             class contextMenuHide {};
             class contextMenuRemove {};
             class contextMenuShow {};
+            class initContextActionDetain {};
             class initContextActionHaloJump {};
             class initContextActionMagRepack {};
             class initContextActionQuadbike {};
@@ -128,6 +129,7 @@ class CfgFunctions {
             class isNearRespawn {};
             class isPlayerRemoteExecuted {};
             class isRemoteExecutedByAdmin {};
+            class localChat {};
             class objectsGrabber {};
             class objectsMapper {};
             class randomPos {};
@@ -166,6 +168,15 @@ class CfgFunctions {
             class addVehicleLockCopilotHandlers {};
             class checkVehicleLock {};
             class initVehicleLockHandlers {};
+        };
+        class Prisoners {
+            class addPrisonerActions {};
+            class canDetainUnit {};
+            class detainAction {};
+            class detainUnit {};
+            class detainUnitRequest {};
+            class escortUnit {};
+            class initDetainKeybind {};
         };
         class Recruits {
             class initSpawnRecruitAction {};

@@ -28,11 +28,13 @@ if (isNil {player getVariable "WHF_role"}) then {player setVariable ["WHF_role",
 if (isMultiplayer) then {["InitializePlayer", [player]] call BIS_fnc_dynamicGroups};
 
 call WHF_fnc_initArsenalLoadoutHandlers;
+call WHF_fnc_initContextActionDetain;
 call WHF_fnc_initContextActionHaloJump;
 call WHF_fnc_initContextActionMagRepack;
 call WHF_fnc_initContextActionQuadbike;
 call WHF_fnc_initContextHandlers;
 call WHF_fnc_initDamageHandlers;
+call WHF_fnc_initDetainKeybind;
 call WHF_fnc_initIncapacitatedHandlers;
 [player] call WHF_fnc_initVehicleLockHandlers;
 call WHF_fnc_vehSpawnCatalogClient;

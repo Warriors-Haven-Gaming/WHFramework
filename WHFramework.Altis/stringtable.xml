@@ -27,6 +27,9 @@
         </Key>
     </Container>
     <Container name="Context">
+        <Key ID="STR_WHF_context_action_detain">
+            <Original>Detain</Original>
+        </Key>
         <Key ID="STR_WHF_context_action_haloJump">
             <Original>Halo Jump</Original>
         </Key>
@@ -102,6 +105,68 @@
         </Key>
         <Key ID="STR_WHF_vehicleLock_copilot">
             <Original>You cannot take control of this vehicle!</Original>
+        </Key>
+    </Container>
+    <Container name="Prisoners">
+        <Key ID="STR_WHF_detain_keybind">
+            <Original>Detain</Original>
+        </Key>
+        <Key ID="STR_WHF_detain_keybind_tooltip">
+            <Original>Press this key while looking at an enemy to command them to surrender.</Original>
+        </Key>
+        <Key ID="STR_WHF_detain_request_generic_1">
+            <Original>Hands in the air!</Original>
+        </Key>
+        <Key ID="STR_WHF_detain_request_generic_2">
+            <Original>Surrender now!</Original>
+        </Key>
+        <Key ID="STR_WHF_detain_request_generic_3">
+            <Original>Get down on the ground!</Original>
+        </Key>
+        <Key ID="STR_WHF_detain_request_generic_4">
+            <Original>Stop right there!</Original>
+        </Key>
+        <Key ID="STR_WHF_detain_request_stop_1">
+            <Original>Freeze!</Original>
+        </Key>
+        <Key ID="STR_WHF_detain_request_stop_2">
+            <Original>Don't move!</Original>
+        </Key>
+        <Key ID="STR_WHF_detain_request_gun_1">
+            <Original>Drop your weapon!</Original>
+        </Key>
+        <Key ID="STR_WHF_detain_failed_1">
+            <Original>Fuck you!</Original>
+        </Key>
+        <Key ID="STR_WHF_detain_failed_2">
+            <Original>Screw you!</Original>
+        </Key>
+        <Key ID="STR_WHF_detain_failed_3">
+            <Original>No way I'm doing that!</Original>
+        </Key>
+        <Key ID="STR_WHF_detain_failed_4">
+            <Original>I'm not giving up!</Original>
+        </Key>
+        <Key ID="STR_WHF_detain_failed_5">
+            <Original>You're not going to stop me!</Original>
+        </Key>
+        <Key ID="STR_WHF_detain_failed_kill_1">
+            <Original>You're dead!</Original>
+        </Key>
+        <Key ID="STR_WHF_detain_failed_kill_2">
+            <Original>I'll kill you!</Original>
+        </Key>
+        <Key ID="STR_WHF_detain_success_1">
+            <Original>Okay, okay! I surrender!</Original>
+        </Key>
+        <Key ID="STR_WHF_detain_success_gun_1">
+            <Original>Okay, okay! I surrender! Don't shoot!</Original>
+        </Key>
+        <Key ID="STR_WHF_prisoner_escort">
+            <Original>Escort</Original>
+        </Key>
+        <Key ID="STR_WHF_prisoner_release">
+            <Original>Release</Original>
         </Key>
     </Container>
     <Container name="Missions">
@@ -370,6 +435,15 @@
         </Key>
         <Key ID="STR_WHF_settings_locks_enabled_tooltip">
             <Original>Toggles the role/owner-based vehicle lock system. In singleplayer, this is always disabled.</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_prisoners">
+            <Original>Prisoners</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_prisoners_detain_cooldown">
+            <Original>Detain Cooldown</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_prisoners_detain_cooldown_tooltip">
+            <Original>The cooldown in seconds after attempting to detain a unit.</Original>
         </Key>
         <Key ID="STR_WHF_settings_missions">
             <Original>Missions</Original>
