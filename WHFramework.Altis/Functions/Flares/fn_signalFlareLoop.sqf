@@ -51,6 +51,7 @@ while {true} do {
     // NOTE: conditions duplicated in WHF_fnc_signalFlareBegin
     sleep 2;
     if (!alive _siren) then {continue};
+    if (captive _siren) then {continue}; // Probably detained mid-signal, nice
     if (isNil {_siren getVariable "WHF_siren_startedAt"}) then {continue};
 
     private _targets = _siren nearTargets WHF_signalFlareMaxDistance select {_x # 2 == west} apply {_x # 4};
