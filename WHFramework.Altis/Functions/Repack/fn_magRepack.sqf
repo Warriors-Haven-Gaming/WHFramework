@@ -22,7 +22,12 @@ if (!local _unit) exitWith {};
 private _animSpeed = getAnimSpeedCoef _unit;
 
 if (_unit isEqualTo focusOn) then {
-    _unit action ["Gear", objectParent _unit];
+    private _vehicle = objectParent _unit;
+    if (!isNull _vehicle) then {
+        _unit actionNow ["Gear", _vehicle];
+    } else {
+        _unit action ["Gear", objNull];
+    };
 } else {
     _unit playActionNow "Medic";
 };
