@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1627;
+		nextID=1628;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=197;
+		nextID=221;
 	};
 	class Camera
 	{
-		pos[]={664.69269,34.970001,10831.828};
-		dir[]={0.77187741,-0.59281963,-0.22972785};
-		up[]={0.56819105,0.80533373,-0.16910587};
-		aside[]={-0.28525683,-2.1769665e-08,-0.95845366};
+		pos[]={662.67828,51.068398,10835.38};
+		dir[]={0.67908657,-0.69713914,-0.22991762};
+		up[]={0.66032892,0.71692681,-0.2235662};
+		aside[]={-0.3206917,1.6245758e-07,-0.94719595};
 	};
 };
 binarizationWanted=0;
@@ -3496,7 +3496,7 @@ class Mission
 							};
 							id=1045;
 							type="Land_WeldingTrolley_01_F";
-							atlOffset=0.22920132;
+							atlOffset=9.5367432e-07;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -3806,7 +3806,6 @@ class Mission
 							};
 							id=1044;
 							type="Land_ToolTrolley_02_F";
-							atlOffset=0.23795891;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -5737,7 +5736,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={771.888,10.283805,10802.637};
+								position[]={771.25,10.427461,10802.5};
 								angles[]={0,1.6218297,0};
 							};
 							side="Empty";
@@ -5748,6 +5747,7 @@ class Mission
 							};
 							id=1345;
 							type="SignAd_Sponsor_ARMEX_F";
+							atlOffset=0.022396088;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -11902,7 +11902,7 @@ class Mission
 							};
 							id=1042;
 							type="Land_CampingTable_small_F";
-							atlOffset=0.14908314;
+							atlOffset=0.14942074;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -20476,7 +20476,6 @@ class Mission
 							};
 							id=726;
 							type="B_Plane_CAS_01_dynamicLoadout_F";
-							atlOffset=0.082080841;
 						};
 						class Item64
 						{
@@ -21910,15 +21909,15 @@ class Mission
 					name="Terrain Hiders";
 					class Entities
 					{
-						items=7;
+						items=8;
 						class Item0
 						{
 							dataType="Logic";
 							class PositionInfo
 							{
-								position[]={699.51007,9.9700003,10758.092};
+								position[]={699.51007,9.9700003,10822.269};
 							};
-							areaSize[]={30.527893,0,108.98193};
+							areaSize[]={30.527893,0,44.805176};
 							areaIsRectangle=1;
 							flags=1;
 							id=543;
@@ -21959,10 +21958,10 @@ class Mission
 							dataType="Logic";
 							class PositionInfo
 							{
-								position[]={759.65643,9.9700003,10825.11};
+								position[]={759.66711,9.9700003,10825.47};
 								angles[]={0,4.7420535,0};
 							};
-							areaSize[]={40.658638,0,16.906261};
+							areaSize[]={40.298534,0,16.906261};
 							areaIsRectangle=1;
 							flags=1;
 							id=544;
@@ -22219,9 +22218,53 @@ class Mission
 								nAttributes=2;
 							};
 						};
+						class Item7
+						{
+							dataType="Logic";
+							class PositionInfo
+							{
+								position[]={701.63708,9.9700003,10712.123};
+								angles[]={0,4.7420535,0};
+							};
+							areaSize[]={63.592758,0,29.053268};
+							areaIsRectangle=1;
+							flags=1;
+							id=1627;
+							type="ModuleHideTerrainObjects_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="#filter";
+									expression="_this setVariable [""#filter"",_value]";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=15;
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="#hideLocally";
+									expression="_this setVariable [""#hideLocally"",_value]";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
 					};
 					id=1360;
-					atlOffset=2.2926617;
+					atlOffset=1.0957165;
 				};
 				class Item8
 				{
@@ -28199,7 +28242,7 @@ class Mission
 				};
 			};
 			id=1354;
-			atlOffset=8.7394819;
+			atlOffset=8.4655542;
 		};
 	};
 	class Connections
