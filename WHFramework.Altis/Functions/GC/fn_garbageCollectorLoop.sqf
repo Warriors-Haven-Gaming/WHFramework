@@ -30,9 +30,7 @@ private _processDiscreetQueue = {
     {_queue deleteAt _x} forEachReversed _queueProcessed;
 };
 
-while {true} do {
-    sleep (10 + random 10);
-
+private _deleteAbandonedRecruits = {
     {
         private _recruits = [];
         private _recruitOwners = [];
@@ -56,6 +54,12 @@ while {true} do {
             };
         } forEach _recruits;
     } forEach groups blufor;
+};
+
+while {true} do {
+    sleep (10 + random 10);
+
+    if (isServer) then {call _deleteAbandonedRecruits};
 
     private _remoteControlledUnits = allPlayers apply {remoteControlled _x} select {!isNull _x};
     private _units = units blufor select {isPlayer _x};
