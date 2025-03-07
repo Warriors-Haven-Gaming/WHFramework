@@ -22,7 +22,7 @@ _spawner addAction [
         [_spawner modelToWorld _position vectorMultiply [1,1,0]] call WHF_fnc_spawnRecruit;
     },
     _position,
-    1.5,
+    11,
     true,
     true,
     "",
@@ -51,7 +51,7 @@ _spawner addAction [
         };
     },
     nil,
-    1.5,
+    11,
     true,
     true,
     "",
