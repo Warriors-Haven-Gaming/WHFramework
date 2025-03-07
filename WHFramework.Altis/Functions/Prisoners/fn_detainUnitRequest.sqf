@@ -90,7 +90,9 @@ if (_targetArmed) then {_success append [
 
 {
     if (_x isEqualTo "") then {continue};
-    private _holder = createVehicle ["GroundWeaponHolder", getPosATL _target, [], 2, "CAN_COLLIDE"];
+    private _distance = [0, -1, 1] select _forEachIndex;
+    private _pos = _target modelToWorldVisual [_distance, 0.5, 0] vectorMultiply [1, 1, 0];
+    private _holder = createVehicle ["GroundWeaponHolder", _pos, [], 0, "CAN_COLLIDE"];
     _target actionNow ["DropWeapon", _holder, _x];
 } forEach [primaryWeapon _target, handgunWeapon _target, secondaryWeapon _target];
 
