@@ -14,11 +14,12 @@ addMissionEventHandler ["Draw3D", {
 
     // Separate units from vehicles
     private _side = side group focusOn;
-    private _allUnits = if (WHF_icons_3D_group) then {units focusOn} else {units _side};
-    _allUnits = _allUnits select {
-        isPlayer _x
-        || {!isNil {_x getVariable "WHF_recruitOwnedBy"}}
-    };
+    private _groups = if (WHF_icons_3D_group) then {group focusOn} else {groups _side};
+    private _units = flatten (
+        _groups
+        apply {units _x}
+        select {_x findIf {isPlayer _x || {_x isEqualTo focusOn}} >= 0}
+    );
     private _standaloneUnits = [];
     private _vehicles = [];
     {
@@ -28,7 +29,7 @@ addMissionEventHandler ["Draw3D", {
         } else {
             _standaloneUnits pushBack _x;
         };
-    } forEach _allUnits;
+    } forEach _units;
 
     private _sideColor = switch (_side) do {
         // Preferably wouldn't hardcode this, but it's fast enough
@@ -106,10 +107,12 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
 
     // Separate units from vehicles
     private _side = side group focusOn;
-    private _allUnits = units _side select {
-        isPlayer _x
-        || {!isNil {_x getVariable "WHF_recruitOwnedBy"}}
-    };
+    private _groups = groups _side;
+    private _units = flatten (
+        _groups
+        apply {units _x}
+        select {_x findIf {isPlayer _x || {_x isEqualTo focusOn}} >= 0}
+    );
     private _standaloneUnits = [];
     private _leaders = [];
     private _vehicles = [];
@@ -123,7 +126,7 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
             };
             _standaloneUnits pushBack _x;
         };
-    } forEach _allUnits;
+    } forEach _units;
 
     private _getVibrantSideColor = {
         params ["_side"];
@@ -150,7 +153,7 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
                 leader _x call _getUnitPos,
                 [1,1,1,0.6]
             ];
-        } forEach _allUnits;
+        } forEach _units;
     };
 
     // Draw unit icons
