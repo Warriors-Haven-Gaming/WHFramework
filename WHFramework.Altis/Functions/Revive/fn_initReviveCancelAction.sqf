@@ -20,7 +20,7 @@ private _cancelID = player addAction [
         [_caller] call WHF_fnc_reviveActionCancel;
     },
     nil,
-    6,
+    11,
     true,
     true,
     "",

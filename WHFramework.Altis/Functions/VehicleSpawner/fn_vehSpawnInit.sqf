@@ -41,7 +41,7 @@ private _actionID = _obj addAction [
         [player, _target] remoteExec ["WHF_fnc_vehSpawnGUIServer", 2];
     },
     nil,
-    6,
+    11,
     true,
     true,
     "",

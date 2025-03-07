@@ -30,7 +30,7 @@ private _releaseID = _caller addAction [
         _caller setVariable ["WHF_escort", nil];
     },
     nil,
-    6,
+    11,
     true,
     true,
     "",

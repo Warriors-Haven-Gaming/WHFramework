@@ -13,7 +13,7 @@ private _actionID = player addAction [
     localize "$STR_A3_action_deploy_parachute",
     {[player] call WHF_fnc_deployParachute},
     nil,
-    6,
+    11,
     true,
     true,
     "",

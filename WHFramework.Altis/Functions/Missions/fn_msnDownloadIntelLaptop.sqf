@@ -21,7 +21,7 @@ _laptop addAction [
         [_target] remoteExec ["WHF_fnc_msnDownloadIntelLaptopTimer"];
     },
     nil,
-    6,
+    11,
     true,
     true,
     "",
