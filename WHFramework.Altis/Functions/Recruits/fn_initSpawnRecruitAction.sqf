@@ -24,7 +24,7 @@ _spawner addAction [
     _position,
     11,
     true,
-    true,
+    false,
     "",
     "WHF_recruits_limit > 0 && {leader _this isEqualTo _this}",
     3
