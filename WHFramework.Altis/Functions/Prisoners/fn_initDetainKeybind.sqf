@@ -12,7 +12,7 @@ Author:
 if (isClass (configFile >> "CfgPatches" >> "cba_keybinding")) then {
     [
         "$STR_WHF_settings",
-        "detain",
+        "WHF_keybind_detain",
         ["$STR_WHF_detain_keybind", "$STR_WHF_detain_keybind_tooltip"],
         WHF_fnc_detainAction,
         {},

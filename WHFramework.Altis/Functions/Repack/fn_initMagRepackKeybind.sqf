@@ -12,7 +12,7 @@ Author:
 if (isClass (configFile >> "CfgPatches" >> "cba_keybinding")) then {
     [
         "$STR_WHF_settings",
-        "repack",
+        "WHF_keybind_repack",
         ["$STR_WHF_repack_keybind", "$STR_WHF_repack_keybind_tooltip"],
         {
             if !([focusOn] call WHF_fnc_canMagRepack) exitWith {};

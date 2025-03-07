@@ -12,7 +12,7 @@ Author:
 if (isClass (configFile >> "CfgPatches" >> "cba_keybinding")) then {
     [
         "$STR_WHF_settings",
-        "context_menu",
+        "WHF_keybind_context_menu",
         ["$STR_WHF_context_keybind", "$STR_WHF_context_keybind_tooltip"],
         WHF_fnc_contextMenuShow,
         WHF_fnc_contextMenuHide,
