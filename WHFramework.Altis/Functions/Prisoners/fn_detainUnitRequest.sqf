@@ -98,6 +98,7 @@ _target setUnitPos "UP";
 
 [_target] remoteExec ["WHF_fnc_addPrisonerActions"];
 [_target, ["amovpercmstpssurwnondnon", 0, 0, false]] remoteExec ["switchMove"];
+[_target, ["", 0, 0, false]] remoteExec ["switchGesture"];
 _target spawn {while {alive _this && {captive _this}} do {
     sleep (1 + random 1);
     if (!isNull objectParent _this) then {continue};
