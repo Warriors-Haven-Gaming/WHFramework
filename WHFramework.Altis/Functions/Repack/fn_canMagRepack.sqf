@@ -16,7 +16,8 @@ Author:
 
 */
 params ["_unit"];
-if (!isNull objectParent _unit) exitWith {false};
+private _vehicle = objectParent _unit;
+if (isEngineOn _vehicle && {currentPilot _vehicle isEqualTo _unit}) exitWith {false};
 if (!isTouchingGround _unit) exitWith {false};
 if (!isNil {_unit getVariable "WHF_magRepack"}) exitWith {false};
 
