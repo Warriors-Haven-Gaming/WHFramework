@@ -90,9 +90,22 @@ if (_targetArmed) then {_success append [
 
 {
     if (_x isEqualTo "") then {continue};
+
     private _distance = [0, -1, 1] select _forEachIndex;
-    private _pos = _target modelToWorldVisual [_distance, 0.5, 0] vectorMultiply [1, 1, 0];
+    private _start = ATLToASL (_target modelToWorldVisual [_distance, 0.5, 1.5]);
+    private _end = AGLToASL (_start vectorMultiply [1, 1, 0]);
+    private _surfaces = lineIntersectsSurfaces [_start, _end, _target];
+
+    private _pos = if (count _surfaces > 0) then {ASLToATL (_surfaces # 0 # 0)} else {
+        _target modelToWorldVisual [_distance, 0.5, 0]
+    };
+    private _normal = if (count _surfaces > 0) then {_surfaces # 0 # 1} else {
+        surfaceNormal _pos
+    };
+
     private _holder = createVehicle ["GroundWeaponHolder", _pos, [], 0, "CAN_COLLIDE"];
+    _holder setDir random 360;
+    _holder setVectorUp _normal;
     _target actionNow ["DropWeapon", _holder, _x];
 } forEach [primaryWeapon _target, handgunWeapon _target, secondaryWeapon _target];
 
