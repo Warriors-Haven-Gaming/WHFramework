@@ -59,7 +59,7 @@ private _index = floor (_seed random count _characterSounds + 1 % count _charact
 private _sound = selectRandom (_characterSounds # _index);
 
 if (_unit isEqualTo focusOn) then {
-    playSoundUI [_sound, 3, 1, true];
+    playSoundUI [_sound, 4, 1, true];
 } else {
     playSound3D [
         _sound,
