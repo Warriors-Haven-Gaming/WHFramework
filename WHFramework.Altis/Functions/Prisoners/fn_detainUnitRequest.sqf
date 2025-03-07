@@ -88,9 +88,11 @@ if (_targetArmed) then {_success append [
 [_target, selectRandom _success] remoteExec ["WHF_fnc_localChat", WHF_globalPlayerTarget];
 [_target] joinSilent grpNull;
 
-_target removeWeaponGlobal primaryWeapon _target;
-_target removeWeaponGlobal handgunWeapon _target;
-_target removeWeaponGlobal secondaryWeapon _target;
+{
+    if (_x isEqualTo "") then {continue};
+    private _holder = createVehicle ["GroundWeaponHolder", getPosATL _target, [], 2, "CAN_COLLIDE"];
+    _target actionNow ["DropWeapon", _holder, _x];
+} forEach [primaryWeapon _target, handgunWeapon _target, secondaryWeapon _target];
 
 _target enableAIFeature ["PATH", false];
 _target setCaptive true;
