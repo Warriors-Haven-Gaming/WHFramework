@@ -55,7 +55,7 @@ private _characterSounds = [
     ["a3\sounds_f\characters\human-sfx\person3\p3_hit_01.wss","a3\sounds_f\characters\human-sfx\person3\p3_hit_02.wss","a3\sounds_f\characters\human-sfx\person3\p3_hit_03.wss","a3\sounds_f\characters\human-sfx\person3\p3_hit_04.wss","a3\sounds_f\characters\human-sfx\person3\p3_hit_05.wss","a3\sounds_f\characters\human-sfx\person3\p3_hit_06.wss","a3\sounds_f\characters\human-sfx\person3\p3_hit_07.wss","a3\sounds_f\characters\human-sfx\person3\p3_hit_08.wss","a3\sounds_f\characters\human-sfx\person3\p3_hit_09.wss","a3\sounds_f\characters\human-sfx\person3\p3_hit_10.wss","a3\sounds_f\characters\human-sfx\person3\p3_hit_11.wss","a3\sounds_f\characters\human-sfx\person3\p3_hit_12.wss","a3\sounds_f\characters\human-sfx\person3\p3_hit_13.wss"]
 ];
 private _seed = parseNumber (netId _unit splitString ":" select 1);
-private _index = floor (_seed random count _characterSounds + 1 % count _characterSounds);
+private _index = floor (_seed random count _characterSounds + 1) % count _characterSounds;
 private _sound = selectRandom (_characterSounds # _index);
 
 if (_unit isEqualTo focusOn) then {
