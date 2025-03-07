@@ -27,7 +27,12 @@ WHF_haloJump_mapHandlers pushBack ["Map", addMissionEventHandler ["Map", {
     if (_opened) exitWith {};
 
     {removeMissionEventHandler _x} forEach WHF_haloJump_mapHandlers;
+    {
+        params ["_unit", "_event"];
+        _unit removeEventHandler _event;
+    } forEach WHF_haloJump_mapUnitHandlers;
     WHF_haloJump_mapHandlers = nil;
+    WHF_haloJump_mapUnitHandlers = nil;
 }]];
 WHF_haloJump_mapHandlers pushBack ["MapSingleClick", addMissionEventHandler ["MapSingleClick", {
     params ["", "_pos"];
@@ -43,3 +48,13 @@ WHF_haloJump_mapHandlers pushBack ["MapSingleClick", addMissionEventHandler ["Ma
     _pos = _pos vectorAdd [random 100 - 50, random 100 - 50];
     [_pos] spawn WHF_fnc_haloJump;
 }]];
+
+WHF_haloJump_mapUnitHandlers = [];
+WHF_haloJump_mapUnitHandlers pushBack [
+    focusOn,
+    ["HandleDamage", focusOn addEventHandler ["HandleDamage", {
+        params ["_unit"];
+        openMap false;
+        _unit removeEventHandler [_thisEvent, _thisEventHandler];
+    }]]
+];
