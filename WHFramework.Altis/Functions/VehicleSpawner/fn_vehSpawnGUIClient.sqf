@@ -35,6 +35,7 @@ if (_categories findIf {count (_catalog get _x get "_vehicles") > 0} < 0) exitWi
 _pos = _pos findEmptyPosition _safeArea;
 if (_pos isEqualTo []) exitWith {call WHF_fnc_vehSpawnObstructed};
 
+WHF_vehSpawnGUIClient_script = _thisScript;
 0 cutText ["", "BLACK OUT", 0.5];
 sleep 0.5;
 
