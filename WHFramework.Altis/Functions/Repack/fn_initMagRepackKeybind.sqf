@@ -11,9 +11,9 @@ Author:
 #include "\a3\ui_f\hpp\definedikcodes.inc"
 if (isClass (configFile >> "CfgPatches" >> "cba_keybinding")) then {
     [
-        localize "$STR_WHF_settings",
+        "$STR_WHF_settings",
         "repack",
-        [localize "$STR_WHF_repack_keybind", localize "$STR_WHF_repack_keybind_tooltip"],
+        ["$STR_WHF_repack_keybind", "$STR_WHF_repack_keybind_tooltip"],
         {
             if !([focusOn] call WHF_fnc_canMagRepack) exitWith {};
             [focusOn] spawn WHF_fnc_magRepack;
