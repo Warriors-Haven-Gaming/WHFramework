@@ -57,21 +57,32 @@ if (!_intimidated) exitWith {
         "$STR_WHF_detain_failed_3",
         "$STR_WHF_detain_failed_4",
         "$STR_WHF_detain_failed_5",
-        "$STR_WHF_detain_failed_5"
+        "$STR_WHF_detain_failed_6",
+        "$STR_WHF_detain_failed_7",
+        "$STR_WHF_detain_failed_8",
+        "$STR_WHF_detain_failed_9"
     ];
     if (_targetArmed) then {_failed append [
         "$STR_WHF_detain_failed_kill_1",
-        "$STR_WHF_detain_failed_kill_2"
+        "$STR_WHF_detain_failed_kill_2",
+        "$STR_WHF_detain_failed_kill_3",
+        "$STR_WHF_detain_failed_kill_4"
     ]};
     [_target, selectRandom _failed] remoteExec ["WHF_fnc_localChat", WHF_globalPlayerTarget];
     _target reveal [_caller, 4];
 };
 
 private _success = [
-    "$STR_WHF_detain_success_1"
+    "$STR_WHF_detain_success_1",
+    "$STR_WHF_detain_success_2",
+    "$STR_WHF_detain_success_3"
 ];
-if (_callerArmed) then {_success append [
-    "$STR_WHF_detain_success_gun_1"
+if (_targetArmed) then {_success append [
+    "$STR_WHF_detain_success_gun_1",
+    "$STR_WHF_detain_success_gun_2",
+    "$STR_WHF_detain_success_gun_3",
+    "$STR_WHF_detain_success_gun_4",
+    "$STR_WHF_detain_success_gun_5"
 ]};
 
 [_target, selectRandom _success] remoteExec ["WHF_fnc_localChat", WHF_globalPlayerTarget];
