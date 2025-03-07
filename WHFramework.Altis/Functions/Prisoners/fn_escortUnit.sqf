@@ -36,7 +36,8 @@ private _releaseID = _caller addAction [
     "",
     "
     !isNil {_this getVariable 'WHF_escort'}
-    && {attachedTo (_this getVariable 'WHF_escort') isEqualTo _this}
+    && {attachedTo (_this getVariable 'WHF_escort') isEqualTo _this
+    && {lifeState (_this getVariable 'WHF_escort') in ['HEALTHY', 'INJURED']}}
     "
 ];
 _caller setVariable ["WHF_escort_releaseID", _releaseID];
@@ -49,6 +50,7 @@ _caller spawn {
         if (isNil "_target") then {break};
         if (attachedTo _target isNotEqualTo _this) then {break};
         if !(lifeState _this in ["HEALTHY", "INJURED"]) then {break};
+        if !(lifeState _target in ["HEALTHY", "INJURED"]) then {break};
         sleep (1 + random 1);
     };
 
