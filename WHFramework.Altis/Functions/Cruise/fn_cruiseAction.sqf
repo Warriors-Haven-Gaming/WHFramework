@@ -20,7 +20,7 @@ if (getCruiseControl _vehicle # 0 > 0) exitWith {
 };
 
 private _speedMPS = vectorMagnitude velocity _vehicle;
-if (_speedMPS <= 0) exitWith {};
+if (_speedMPS <= 1.39) exitWith {};
 
 private _speedKPH = _speedMPS * 3.6;
 _speedKPH = round (_speedKPH / 5) * 5;

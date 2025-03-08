@@ -21,7 +21,7 @@ if (isClass (configFile >> "CfgPatches" >> "ace_vehicles")) exitWith {};
     _vehicle isKindOf 'LandVehicle'
     && {currentPilot _vehicle isEqualTo focusOn
     && {getCruiseControl _vehicle # 0 <= 0
-    && {vectorMagnitude velocity _vehicle > 0}}}
+    && {vectorMagnitude velocity _vehicle > 1.39}}}
     "
 ] call WHF_fnc_contextMenuAdd;
 [
