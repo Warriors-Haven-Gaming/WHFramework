@@ -11,7 +11,7 @@ Author:
 if (!hasInterface) exitWith {};
 if (isClass (configFile >> "CfgPatches" >> "ace_vehicles")) exitWith {};
 [
-    localize "$STR_WHF_context_action_cruise",
+    localize "$STR_WHF_context_action_cruise_on",
     WHF_fnc_cruiseAction,
     nil,
     true,
@@ -20,7 +20,8 @@ if (isClass (configFile >> "CfgPatches" >> "ace_vehicles")) exitWith {};
     private _vehicle = objectParent focusOn;
     _vehicle isKindOf 'LandVehicle'
     && {currentPilot _vehicle isEqualTo focusOn
-    && {vectorMagnitude velocity _vehicle > 0}}
+    && {getCruiseControl _vehicle # 0 <= 0
+    && {vectorMagnitude velocity _vehicle > 0}}}
     "
 ] call WHF_fnc_contextMenuAdd;
 [
@@ -43,5 +44,16 @@ if (isClass (configFile >> "CfgPatches" >> "ace_vehicles")) exitWith {};
     "
     currentPilot objectParent focusOn isEqualTo focusOn
     && {getCruiseControl objectParent focusOn # 0 > 5}
+    "
+] call WHF_fnc_contextMenuAdd;
+[
+    localize "$STR_WHF_context_action_cruise_off",
+    WHF_fnc_cruiseAction,
+    nil,
+    true,
+    "",
+    "
+    currentPilot objectParent focusOn isEqualTo focusOn
+    && {getCruiseControl objectParent focusOn # 0 > 0}
     "
 ] call WHF_fnc_contextMenuAdd;
