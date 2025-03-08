@@ -39,8 +39,6 @@ disableUserInput true;
 0 cutText ["", "BLACK OUT", 0.5];
 sleep 0.5;
 
-player setDir (getPosATL player getDir _pos);
-
 private _camera = "camera" camCreate ASLToATL eyePos player;
 _camera cameraEffect ["internal", "back"];
 _camera camPreparePos (_pos getPos [15, _dir - 45] vectorAdd [0, 0, 5]);
@@ -228,6 +226,7 @@ with uiNamespace do {
             deleteVehicle WHF_vehSpawnGUI_ctrlVehicle_preview;
 
             if (_exitCode isEqualTo 1) then {
+                player setDir (getPosATL player getDir WHF_vehSpawnGUI_pos);
                 [player, WHF_vehSpawnGUI_spawner, _category, _vehicle] remoteExec ["WHF_fnc_vehSpawnRequest", 2];
                 sleep 0.5;
             };
