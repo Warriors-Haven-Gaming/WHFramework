@@ -3,6 +3,8 @@ Function: WHF_fnc_incapLoop
 
 Description:
     Handle a unit becoming incapacitated.
+    This may be called on a remote unit, in which case the script will
+    idle until the unit is killed/revived or the unit becomes local.
     Function must be ran in scheduled environment.
 
 Parameters:
@@ -15,9 +17,11 @@ Author:
 */
 params ["_unit"];
 
+// NOTE: bleedout time is defined by each client and not synchronized
 private _bleedoutAt = time + WHF_revive_bleedout;
 
 while {alive _unit && {lifeState _unit isEqualTo "INCAPACITATED"}} do {
+    if (!local _unit) then {sleep (5 + random 5); continue};
     private _time = time;
 
     private _bleedoutLeft = _bleedoutAt - _time;
