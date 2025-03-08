@@ -26,7 +26,11 @@ _spawner addAction [
     true,
     false,
     "",
-    "WHF_recruits_limit > 0 && {leader _this isEqualTo _this}",
+    "
+    WHF_recruits_limit > 0
+    && {count allPlayers <= WHF_recruits_limit_player
+    && {leader _this isEqualTo _this}}
+    ",
     3
 ];
 _spawner addAction [

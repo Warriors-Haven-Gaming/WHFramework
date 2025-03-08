@@ -416,6 +416,16 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 [
+    "WHF_recruits_limit_player",
+    "SLIDER",
+    ["STR_WHF_settings_recruits_limit_player", "STR_WHF_settings_recruits_limit_player_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_recruits"],
+    [0, 100, 20, 0, false],
+    true,
+    {WHF_recruits_limit_player = round WHF_recruits_limit_player},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_recruits_skill",
     "SLIDER",
     ["STR_WHF_settings_recruits_skill", "STR_WHF_settings_recruits_skill_tooltip"],
