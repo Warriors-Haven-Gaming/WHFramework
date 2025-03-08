@@ -37,7 +37,7 @@ private _deleteAbandonedRecruits = {
         private _presentOwners = [];
 
         {
-            private _owner = _x getVariable "WHF_recruitOwnedBy";
+            private _owner = _x getVariable "WHF_recruiter";
             switch (true) do {
                 case (isPlayer _x): {_presentOwners pushBack getPlayerUID _x};
                 case (!isNil "_owner"): {
@@ -49,7 +49,7 @@ private _deleteAbandonedRecruits = {
 
         private _missingOwners = _recruitOwners - _presentOwners;
         {
-            if (_x getVariable "WHF_recruitOwnedBy" in _missingOwners) then {
+            if (_x getVariable "WHF_recruiter" in _missingOwners) then {
                 deleteVehicle _x;
             };
         } forEach _recruits;

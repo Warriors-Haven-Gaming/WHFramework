@@ -18,7 +18,7 @@ if (_aiCount >= WHF_recruits_limit) exitWith {
     hint format [localize "$STR_WHF_spawnRecruit_limit", WHF_recruits_limit];
 };
 
-private _recruitCount = {!isNil {_x getVariable "WHF_recruitOwnedBy"}} count allUnits;
+private _recruitCount = {!isNil {_x getVariable "WHF_recruiter"}} count allUnits;
 if (_recruitCount >= WHF_recruits_limit_global) exitWith {
     hint format [localize "$STR_WHF_spawnRecruit_limit_global", WHF_recruits_limit_global];
 };
@@ -34,7 +34,7 @@ _unit setSkill WHF_recruits_skill;
 _unit setUnitTrait ["engineer", focusOn getUnitTrait "engineer"];
 _unit setUnitTrait ["explosiveSpecialist", focusOn getUnitTrait "explosiveSpecialist"];
 _unit setUnitTrait ["medic", focusOn getUnitTrait "medic"];
-_unit setVariable ["WHF_recruitOwnedBy", getPlayerUID player, true];
+_unit setVariable ["WHF_recruiter", getPlayerUID player, true];
 
 private _loadout = call WHF_fnc_getLastLoadout;
 if (_loadout isNotEqualTo []) then {_unit setUnitLoadout _loadout};
