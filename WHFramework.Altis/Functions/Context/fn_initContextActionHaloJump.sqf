@@ -13,6 +13,7 @@ if (!hasInterface) exitWith {};
     localize "$STR_WHF_context_action_haloJump",
     {call WHF_fnc_haloJumpGUI},
     nil,
+    true,
     "",
     "
     count allPlayers <= WHF_halo_limit_player

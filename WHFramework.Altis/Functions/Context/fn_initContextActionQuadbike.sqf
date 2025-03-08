@@ -26,6 +26,7 @@ if (!hasInterface) exitWith {};
         WHF_quadbike remoteExec ["WHF_fnc_queueGCDeletion", 2];
     },
     nil,
+    true,
     "",
     "
     isNull objectParent _this

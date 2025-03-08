@@ -13,6 +13,9 @@ Parameters:
     Anything arguments:
         (Optional, default nil)
         Arguments to pass to the script.
+    Anything hideOnUse:
+        (Optional, default true)
+        If true, the player's actions are hidden after the action is used.
     String shortcut:
         (Optional, default "")
         An optional shortcut key defined in
@@ -30,13 +33,23 @@ Author:
 
 */
 if (!hasInterface) exitWith {};
-params ["_title", "_script", "_arguments", ["_shortcut", ""], ["_condition", "true"], ["_unconscious", false]];
+params [
+    "_title",
+    "_script",
+    "_arguments",
+    ["_hideOnUse", true],
+    ["_shortcut", ""],
+    ["_condition", "true"],
+    ["_unconscious", false]
+];
+
 if (isNil "WHF_contextMenu_entries") then {WHF_contextMenu_entries = []};
 
 WHF_contextMenu_entries pushBack [
     _title,
     _script,
     if (!isNil "_arguments") then {_arguments} else {nil},
+    _hideOnUse,
     _shortcut,
     _condition,
     _unconscious
@@ -49,7 +62,7 @@ if (!isNil "WHF_contextMenu_actionIDs") then {
         if (!isNil "_arguments") then {_arguments} else {nil},
         12,
         true,
-        true,
+        _hideOnUse,
         _shortcut,
         _condition,
         50,
