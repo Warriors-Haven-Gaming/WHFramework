@@ -14,12 +14,19 @@ Author:
     thegamecracks
 
 */
+private _isPilot = {
+    private _role = player getVariable ["WHF_role", ""];
+    if ("pilot" in _role) exitWith {true};
+
+    private _vehicle = objectParent player;
+    _vehicle isKindOf "Air" && {currentPilot _vehicle isEqualTo player}
+};
+
 while {true} do {
     sleep 5;
     if (isNull player) then {continue};
 
-    private _vehicle = objectParent player;
-    if (_vehicle isKindOf "Air" && {currentPilot _vehicle isEqualTo player}) then {
+    if (call _isPilot) then {
         WHF_channelID_aircraft radioChannelAdd [player];
     } else {
         WHF_channelID_aircraft radioChannelRemove [player];
