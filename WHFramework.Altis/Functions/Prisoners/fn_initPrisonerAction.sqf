@@ -20,15 +20,15 @@ private _unloadID = player addAction [
         moveOut (_prisoners # -1);
     },
     nil,
-    10,
+    11,
     true,
     true,
     "",
-    "
-    getCursorObjectParams params ['_vehicle', '', '_distance'];
-    _distance < 3
-    && {!(_vehicle isKindOf 'Man')
-    && {crew _vehicle findIf {!isNil {_x getVariable 'WHF_prisoner_actionIDs'}} >= 0}}
-    "
+    "isNil {_this getVariable 'WHF_escort'} && {
+        getCursorObjectParams params ['_vehicle', '', '_distance'];
+        _distance < 3
+        && {!(_vehicle isKindOf 'Man')
+        && {crew _vehicle findIf {!isNil {_x getVariable 'WHF_prisoner_actionIDs'}} >= 0}}
+    }"
 ];
 player setVariable ["WHF_prisoner_unloadID", _unloadID];
