@@ -35,7 +35,7 @@ if (_categories findIf {count (_catalog get _x get "_vehicles") > 0} < 0) exitWi
 _pos = _pos findEmptyPosition _safeArea;
 if (_pos isEqualTo []) exitWith {call WHF_fnc_vehSpawnObstructed};
 
-WHF_vehSpawnGUIClient_script = _thisScript;
+disableUserInput true;
 0 cutText ["", "BLACK OUT", 0.5];
 sleep 0.5;
 
@@ -48,6 +48,7 @@ _camera camPrepareTarget (_pos vectorAdd [0, 0, 1]);
 _camera camCommitPrepared (2.5 + random 0.5);
 showCinemaBorder true;
 camUseNVG (currentVisionMode player isEqualTo 1);
+disableUserInput false;
 0 cutText ["", "BLACK IN", 0.5];
 
 uiNamespace setVariable ["WHF_vehSpawnGUI_camera", _camera];

@@ -45,7 +45,7 @@ private _actionID = _obj addAction [
     true,
     true,
     "",
-    "isNil 'WHF_vehSpawnGUIClient_script' || {scriptDone WHF_vehSpawnGUIClient_script}",
+    "true",
     5
 ];
 
