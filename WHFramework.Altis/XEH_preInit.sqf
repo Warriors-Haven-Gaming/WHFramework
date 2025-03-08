@@ -402,7 +402,7 @@ Author:
     ["STR_WHF_settings", "STR_WHF_settings_recruits"],
     [0, 50, 6, 0, false],
     true,
-    {WHF_recruits_limit = round WHF_recruits_limit},
+    {WHF_recruits_limit = round _this},
     false
 ] call WHF_fnc_addSetting;
 [
@@ -412,7 +412,7 @@ Author:
     ["STR_WHF_settings", "STR_WHF_settings_recruits"],
     [0, 200, 40, 0, false],
     true,
-    {WHF_recruits_limit_global = round WHF_recruits_limit_global},
+    {WHF_recruits_limit_global = round _this},
     false
 ] call WHF_fnc_addSetting;
 [
@@ -422,7 +422,7 @@ Author:
     ["STR_WHF_settings", "STR_WHF_settings_recruits"],
     [0, 100, 20, 0, false],
     true,
-    {WHF_recruits_limit_player = round WHF_recruits_limit_player},
+    {WHF_recruits_limit_player = round _this},
     false
 ] call WHF_fnc_addSetting;
 [
