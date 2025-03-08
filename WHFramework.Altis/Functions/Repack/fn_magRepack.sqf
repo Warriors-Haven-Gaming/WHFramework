@@ -73,6 +73,13 @@ private _magazineGroups = [_unit, true] call WHF_fnc_groupMagazines;
 private _completed = false;
 {
     private _magazines = _x;
+    private _canRepack = {
+        count _magazines > 1
+        && {lifeState _unit in ["HEALTHY", "INJURED"]
+        && {!isNil {_unit getVariable "WHF_magRepack"}}}
+    };
+
+    if !(call _canRepack) then {continue};
 
     // Since we can't delete a specific magazine from the unit's inventory,
     // we'll delete all inventory magazines upfront, plus partial weapon magazines
@@ -87,11 +94,7 @@ private _completed = false;
         };
     } forEach _magazines;
 
-    while {
-        count _magazines > 1
-        && {lifeState _unit in ["HEALTHY", "INJURED"]
-        && {!isNil {_unit getVariable "WHF_magRepack"}}}
-    } do {
+    while _canRepack do {
         private _first = _magazines # 0;
         private _firstCount = _first # 1;
         private _firstCapacity = getNumber (configFile >> "CfgMagazines" >> _first # 0 >> "count");
