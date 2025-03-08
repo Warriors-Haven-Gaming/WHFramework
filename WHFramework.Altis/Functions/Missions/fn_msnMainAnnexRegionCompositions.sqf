@@ -27,14 +27,17 @@ private _objects = [];
 private _terrain = [];
 private _groups = [];
 
-private _emplacementCount = floor (_radius / 20);
-[_emplacementCount, _center, _radius, [], _objects] call WHF_fnc_createEmplacements
-    params ["_emplacementObjects", "_emplacementTerrain"];
-_objects append flatten _emplacementObjects;
-_terrain append flatten _emplacementTerrain;
+private _fortCount = floor (_radius / 20);
+private _fortTypes = ["camp", 0.5, "hq", 0.2, "outpost", 0.2, "tower", 0.1];
+[opfor, _fortCount, _center, _radius, _fortTypes, _objects] call WHF_fnc_createEmplacements
+    params ["_fortObjects", "_fortTerrain", "_fortGroups"];
+_objects append flatten _fortObjects;
+_terrain append flatten _fortTerrain;
+_groups append flatten _fortGroups;
 
 private _mortarCount = floor (_radius / 350);
-[opfor, _mortarCount, _center, _radius, _objects] call WHF_fnc_createMortars
+private _mortarTypes = ["mortar", 1];
+[opfor, _mortarCount, _center, _radius, _mortarTypes, _objects] call WHF_fnc_createEmplacements
     params ["_mortarObjects", "_mortarTerrain", "_mortarGroups"];
 
 _objects append flatten _mortarObjects;

@@ -43,7 +43,8 @@ private _radius = 300;
 private _area = [_center, _radius, _radius, 0, false];
 private _ruins = [];
 
-[opfor, 3 + floor random 3, _center, _radius, [], _ruins] call WHF_fnc_createAAEmplacements
+private _aaTypes = ["aa_short", 1, "aa_medium", 1, "aa_long", 1];
+[opfor, 3 + floor random 3, _center, _radius, _aaTypes, _ruins] call WHF_fnc_createEmplacements
     params ["_aaObjects", "_aaTerrain", "_aaGroups"];
 
 if (count _aaObjects < 1) exitWith {
