@@ -41,8 +41,9 @@ if (_center isEqualTo []) exitWith {
 
 private _radius = 300;
 private _area = [_center, _radius, _radius, 0, false];
+private _ruins = [];
 
-[opfor, 3 + floor random 3, _center, _radius] call WHF_fnc_createAAEmplacements
+[opfor, 3 + floor random 3, _center, _radius, [], _ruins] call WHF_fnc_createAAEmplacements
     params ["_aaObjects", "_aaTerrain", "_aaGroups"];
 
 if (count _aaObjects < 1) exitWith {
@@ -92,6 +93,7 @@ while {true} do {
 };
 
 deleteMarker _areaMarker;
+[_ruins] call WHF_fnc_queueGCDeletion;
 {[_x] call WHF_fnc_queueGCDeletion} forEach _aaObjects;
 {[_x] call WHF_fnc_queueGCUnhide} forEach _aaTerrain;
 {[units _x] call WHF_fnc_queueGCDeletion} forEach _groups;

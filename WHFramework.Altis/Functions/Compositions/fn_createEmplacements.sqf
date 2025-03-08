@@ -12,8 +12,13 @@ Parameters:
     Number radius:
         The radius of the area.
     Array types:
-        (Optional, default ["camp", 0.5, "hq", 0.2, "outpost", 0.2, "tower", 0.1])
+        (Optional, default [])
         An array of emplacement types and probabilities to select from.
+        Can be any of "camp", "hq", "outpost", "tower".
+    Array ruins:
+        (Optional, default -1)
+        An array to append ruins to when buildings change state.
+        Useful for garbage collection.
 
 Returns:
     Array
@@ -25,7 +30,9 @@ Author:
     thegamecracks
 
 */
-params ["_quantity", "_center", "_radius", ["_types", ["camp", 0.5, "hq", 0.2, "outpost", 0.2, "tower", 0.1]]];
+params ["_quantity", "_center", "_radius", ["_types", []], ["_ruins", -1]];
+
+if (count _types < 1) then {_types = ["camp", 0.5, "hq", 0.2, "outpost", 0.2, "tower", 0.1]};
 
 private _compositions = [];
 for "_i" from 1 to _quantity do {
@@ -93,7 +100,7 @@ private _compositionTerrain = [];
 
     private _terrain = nearestTerrainObjects [_pos, [], _clearRadius, false];
     {hideObjectGlobal _x} forEach _terrain;
-    private _objects = [_x, _pos, random 360, ["normal", "path", "simple"]] call WHF_fnc_objectsMapper;
+    private _objects = [_x, _pos, random 360, ["normal", "path", "simple"], _ruins] call WHF_fnc_objectsMapper;
 
     _compositionObjects pushBack _objects;
     _compositionTerrain pushBack _terrain;

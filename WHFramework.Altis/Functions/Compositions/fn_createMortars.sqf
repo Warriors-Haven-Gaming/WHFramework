@@ -13,6 +13,10 @@ Parameters:
         The center of the area.
     Number radius:
         The radius of the area.
+    Array ruins:
+        (Optional, default -1)
+        An array to append ruins to when buildings change state.
+        Useful for garbage collection.
 
 Returns:
     Array
@@ -25,7 +29,7 @@ Author:
     thegamecracks
 
 */
-params ["_side", "_quantity", "_center", "_radius"];
+params ["_side", "_quantity", "_center", "_radius", ["_ruins", -1]];
 
 private _compositions = [];
 for "_i" from 1 to _quantity do {
@@ -67,8 +71,8 @@ private _compositionGroups = [];
     {hideObjectGlobal _x} forEach _terrain;
 
     private _direction = random 360;
-    _fortifications = [_fortifications, _pos, _direction, ["normal", "path", "simple"]] call WHF_fnc_objectsMapper;
-    _mortars = [_mortars, _pos, _direction, ["normal"]] call WHF_fnc_objectsMapper;
+    _fortifications = [_fortifications, _pos, _direction, ["normal", "path", "simple"], _ruins] call WHF_fnc_objectsMapper;
+    _mortars = [_mortars, _pos, _direction, ["normal"], _ruins] call WHF_fnc_objectsMapper;
 
     private _group = [_side, "standard", count _mortars, [random -500, random -500, 500], 0, false] call WHF_fnc_spawnUnits;
     {

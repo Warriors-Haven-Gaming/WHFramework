@@ -19,6 +19,10 @@ Parameters:
             "path": When combined with "simple", don't create simple objects for
                     types that allow AI pathfinding.
             "simple": Create simple objects instead of regular objects.
+    Array ruins:
+        (Optional, default -1)
+        An array to append ruins to when buildings change state.
+        Useful for garbage collection.
 
 Returns:
     Array
@@ -27,7 +31,7 @@ Author:
     thegamecracks
 
 */
-params ["_composition", "_center", "_direction", ["_flags", ["normal"]]];
+params ["_composition", "_center", "_direction", ["_flags", ["normal"]], ["_ruins", -1]];
 
 private _rotateFromCenter = {
     params ["_pos", "_dir"];
@@ -81,6 +85,10 @@ _composition apply {
 
     _obj setDir (_dir + _direction);
     if (_normal) then {_obj setVectorUp surfaceNormal _pos};
+
+    if (_ruins isEqualType [] && {!isSimpleObject _obj && {_obj isKindOf "Building"}}) then {
+        _obj setVariable ["WHF_ruins", _ruins];
+    };
 
     _obj
 }
