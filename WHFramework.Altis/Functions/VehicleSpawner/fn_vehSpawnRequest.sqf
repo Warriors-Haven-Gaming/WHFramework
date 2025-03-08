@@ -55,7 +55,7 @@ if (_pos isEqualTo []) exitWith {
 if (isNil "WHF_vehSpawn_lastVehicles") then {WHF_vehSpawn_lastVehicles = createHashMap};
 private _lastVehicle = WHF_vehSpawn_lastVehicles getOrDefault [_uid, objNull];
 if (!isNull _lastVehicle) then {
-    [_lastVehicle] remoteExec ["WHF_fnc_vehSpawnDespawn", _lastVehicle];
+    [_lastVehicle, _player] remoteExec ["WHF_fnc_vehSpawnDespawn", _lastVehicle];
     private _timeout = diag_tickTime + 3;
     waitUntil {
         uiSleep 0.2;
