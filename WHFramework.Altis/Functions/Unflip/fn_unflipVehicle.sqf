@@ -19,10 +19,11 @@ if (!local _vehicle) exitWith {};
 
 private _pos = getPosATL _vehicle findEmptyPosition [5, WHF_unflip_radius, typeOf _vehicle];
 if (_pos isEqualTo []) exitWith {
+    private _message = "$STR_WHF_showInsufficientRoomToUnflip";
     if (isRemoteExecuted) then {
-        remoteExec ["WHF_fnc_showInsufficientRoomToUnflip", remoteExecutedOwner];
+        _message remoteExec ["WHF_fnc_localizedHint", remoteExecutedOwner];
     } else {
-        call WHF_fnc_showInsufficientRoomToUnflip;
+        _message call WHF_fnc_localizedHint;
     };
 };
 

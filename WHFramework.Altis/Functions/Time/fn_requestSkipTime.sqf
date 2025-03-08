@@ -20,12 +20,17 @@ params ["_player", "_timeOfDay"];
 if !([_player] call WHF_fnc_isPlayerRemoteExecuted) exitWith {};
 if (!WHF_requestSkipTime_enabled) exitWith {};
 if (!isNil "WHF_requestSkipTime_script" && {!scriptDone WHF_requestSkipTime_script}) exitWith {
-    remoteExec ["WHF_fnc_showSkipTimePending", remoteExecutedOwner];
+    "$STR_WHF_showSkipTimePending" remoteExec ["WHF_fnc_localizedHint", remoteExecutedOwner];
 };
 
 private _last = missionNamespace getVariable ["WHF_requestSkipTime_last", time - WHF_requestSkipTime_cooldown];
 private _diff = ceil (_last - time + WHF_requestSkipTime_cooldown);
-if (_diff > 0) exitWith {[_diff] remoteExec ["WHF_fnc_showSkipTimeCooldown", remoteExecutedOwner]};
+if (_diff > 0) exitWith {
+    [
+        localize "$STR_WHF_showSkipTimeCooldown",
+        [_diff, "HH:MM:SS"] call BIS_fnc_secondsToString
+    ] remoteExec ["WHF_fnc_localizedHint", remoteExecutedOwner];
+};
 
 private _target = switch (_timeOfDay) do {
     case "morning": {6.25};

@@ -137,6 +137,7 @@ class CfgFunctions {
             class isPlayerRemoteExecuted {};
             class isRemoteExecutedByAdmin {};
             class localChat {};
+            class localizedHint {};
             class objectsGrabber {};
             class objectsMapper {};
             class randomPos {};
@@ -234,13 +235,10 @@ class CfgFunctions {
             class requestSkipTime {};
             class showSkipTime {};
             class showSkipTimeCompleted {};
-            class showSkipTimeCooldown {};
-            class showSkipTimePending {};
         };
         class Unflip {
             class initUnflipAction {};
             class isLookingAtFlippedVehicle {};
-            class showInsufficientRoomToUnflip {};
             class unflipVehicle {};
         };
         class Units {
@@ -268,7 +266,6 @@ class CfgFunctions {
             class vehSpawnCooldownGet {};
             class vehSpawnCooldownSet {};
             class vehSpawnDespawn {};
-            class vehSpawnDespawnMessage {};
             class vehSpawnGUIClient {};
             class vehSpawnGUIServer {};
             class vehSpawnInit {};
