@@ -228,13 +228,21 @@ private _canSpawnComposition = {
     true
 };
 
+private _discarded = 0;
 {
     private _compositions = _x;
     {
         private _comp = _x;
         if (_comp call _canSpawnComposition) then {continue};
         _compositions deleteAt _forEachIndex;
+        _discarded = _discarded + 1;
     } forEachReversed _compositions;
 } forEach values _catalog;
+
+if (_discarded > 0) then {diag_log text format [
+    "%1: discarded %2 modded compositions",
+    _fnc_scriptName,
+    _discarded
+]};
 
 WHF_emplacements = compileFinal _catalog;
