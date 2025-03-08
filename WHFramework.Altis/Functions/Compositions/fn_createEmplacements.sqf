@@ -230,17 +230,22 @@ private _isPosSuitable = {
 };
 
 private _initTurrets = {
-    params ["_turrets"];
+    params ["_turrets", "_side"];
     {
         private _turret = _x;
         _turret setFuel 0;
         _turret allowCrewInImmobile [true, true];
         _turret setVehicleRadar 1;
 
+        _turret setVariable ["WHF_turret_side", _side];
         _turret addEventHandler ["Fired", {
             params ["_turret"];
-            if (isPlayer gunner _turret) exitWith {};
             if (someAmmo _turret) exitWith {};
+
+            private _side = _turret getVariable "WHF_turret_side";
+            if (isNil "_side") exitWith {};
+            if (side group gunner _turret isNotEqualTo _side) exitWith {};
+            if (isPlayer gunner _turret) exitWith {};
             _turret spawn {
                 sleep (10 + random 20);
                 _this setVehicleAmmo 1;
@@ -285,7 +290,7 @@ private _compositionGroups = [];
         _x moveInGunner _turret;
     } forEach units _group;
 
-    [_turrets] call _initTurrets;
+    [_turrets, _side] call _initTurrets;
     [_turrets, _group] call _registerArtillery;
 
     _compositionObjects pushBack _objects;
