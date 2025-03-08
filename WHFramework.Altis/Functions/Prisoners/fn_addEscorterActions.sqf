@@ -28,6 +28,10 @@ private _loadID = _unit addAction [
         params ["", "_unit"];
         private _target = _unit getVariable "WHF_escort";
         detach _target;
+
+        private _sound = getArray (configFile >> "CfgVehicles" >> typeOf cursorObject >> "soundGetIn") # 0;
+        if !("." in _sound) then {_sound = _sound + ".wss"};
+        playSound3D [_sound, objNull, false, getPosASL cursorObject];
         [_target, cursorObject] remoteExec ["moveInCargo", _target];
     },
     nil,

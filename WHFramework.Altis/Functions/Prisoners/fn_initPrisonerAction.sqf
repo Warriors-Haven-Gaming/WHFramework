@@ -14,10 +14,14 @@ player removeAction (player getVariable ["WHF_prisoner_unloadID", -1]);
 private _unloadID = player addAction [
     localize "$STR_VIV_UNLOAD",
     {
-        private _prisoners = crew cursorObject select {
+        private _target = crew cursorObject select {
             !isNil {_x getVariable 'WHF_prisoner_actionIDs'}
-        };
-        moveOut (_prisoners # -1);
+        } select -1;
+
+        private _sound = getArray (configFile >> "CfgVehicles" >> typeOf cursorObject >> "soundGetOut") # 0;
+        if !("." in _sound) then {_sound = _sound + ".wss"};
+        playSound3D [_sound, objNull, false, getPosASL _target];
+        moveOut _target;
     },
     nil,
     11,
