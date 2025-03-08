@@ -22,6 +22,8 @@ private _bleedoutAt = time + WHF_revive_bleedout;
 
 while {alive _unit && {lifeState _unit isEqualTo "INCAPACITATED"}} do {
     if (!local _unit) then {sleep (5 + random 5); continue};
+    if (damage _unit isEqualTo 0) exitWith {[_unit] call WHF_fnc_reviveUnit};
+
     private _time = time;
 
     private _bleedoutLeft = _bleedoutAt - _time;

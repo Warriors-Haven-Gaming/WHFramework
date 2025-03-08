@@ -29,5 +29,6 @@ if (!isRemoteExecutedJIP) then {
         _unit allowDamage false;
         _unit setCaptive true;
         _unit setUnconscious true;
+        _unit setDamage (damage _unit max 0.05);
     };
 };
