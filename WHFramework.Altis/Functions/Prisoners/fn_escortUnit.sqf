@@ -19,30 +19,7 @@ if (!isNil {_caller getVariable "WHF_escort"}) exitWith {};
 
 _target attachTo [_caller, [0.1, -1.1, 0]];
 _caller setVariable ["WHF_escort", _target];
-
-// FIXME: could be extracted into a function
-_caller removeAction (_caller getVariable ["WHF_escort_releaseID", -1]);
-private _releaseID = _caller addAction [
-    localize "$STR_WHF_prisoner_release",
-    {
-        params ["", "_caller"];
-        detach (_caller getVariable "WHF_escort");
-        _caller setVariable ["WHF_escort", nil];
-    },
-    nil,
-    11,
-    true,
-    true,
-    "",
-    "
-    !isNil {_this getVariable 'WHF_escort'}
-    && {attachedTo (_this getVariable 'WHF_escort') isEqualTo _this
-    && {lifeState (_this getVariable 'WHF_escort') in ['HEALTHY', 'INJURED']}}
-    "
-];
-_caller setVariable ["WHF_escort_releaseID", _releaseID];
-
-// TODO: add Load/Unload actions
+[_caller] call WHF_fnc_addEscorterActions;
 
 _caller spawn {
     while {true} do {
