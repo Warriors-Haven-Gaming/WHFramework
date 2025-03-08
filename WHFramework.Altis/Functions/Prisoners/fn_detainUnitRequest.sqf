@@ -113,7 +113,7 @@ _target enableAIFeature ["PATH", false];
 _target setCaptive true;
 _target setUnitPos "UP";
 
-[_target] remoteExec ["WHF_fnc_addPrisonerActions"];
+[_target] remoteExec ["WHF_fnc_addPrisonerActions", 0, netId _target + ":addPrisonerActions"];
 [_target, ["amovpercmstpssurwnondnon", 0, 0, false]] remoteExec ["switchMove"];
 [_target, ["", 0, 0, false]] remoteExec ["switchGesture"];
 _target spawn {while {alive _this && {captive _this}} do {

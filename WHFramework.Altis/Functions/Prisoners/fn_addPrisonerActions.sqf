@@ -13,6 +13,7 @@ Author:
 
 */
 params ["_unit"];
+if (!alive _unit && {isRemoteExecutedJIP}) exitWith {remoteExec ["", remoteExecutedJIPID]};
 if (!isNil {_unit getVariable "WHF_prisoner_actionIDs"}) exitWith {};
 
 private _escortID = _unit addAction [
