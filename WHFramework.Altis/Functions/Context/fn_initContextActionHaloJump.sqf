@@ -14,7 +14,15 @@ if (!hasInterface) exitWith {};
     {call WHF_fnc_haloJumpGUI},
     nil,
     "",
-    "isNull objectParent _this && {isTouchingGround _this}
-    || {!isNull objectParent _this && {isTouchingGround objectParent _this
-    && {!(objectParent _this isKindOf 'Air')}}}"
+    "
+    count allPlayers <= WHF_halo_limit_player
+    && {
+        isNull objectParent _this && {isTouchingGround _this}
+        || {
+            !isNull objectParent _this
+            && {isTouchingGround objectParent _this
+            && {!(objectParent _this isKindOf 'Air')}}
+        }
+    }
+    "
 ] call WHF_fnc_contextMenuAdd;

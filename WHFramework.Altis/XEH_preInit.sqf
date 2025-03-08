@@ -263,6 +263,16 @@ Author:
     {},
     false
 ] call WHF_fnc_addSetting;
+[
+    "WHF_halo_limit_player",
+    "SLIDER",
+    ["STR_WHF_settings_halo_limit_player", "STR_WHF_settings_halo_limit_player_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_halo"],
+    [0, 100, 20, 0, false],
+    true,
+    {WHF_halo_limit_player = round _this},
+    false
+] call WHF_fnc_addSetting;
 
 // Icons
 [
