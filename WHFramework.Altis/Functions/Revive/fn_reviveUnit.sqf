@@ -18,7 +18,11 @@ if (!local _unit) exitWith {};
 _unit setDamage 0;
 _unit setUnconscious false;
 _unit allowDamage true;
-_unit spawn {sleep WHF_revive_captiveDuration; _this setCaptive false};
+_unit spawn {
+    sleep WHF_revive_captiveDuration;
+    if !(lifeState _this in ["HEALTHY", "INJURED"]) exitWith {};
+    _this setCaptive false;
+};
 if (isNull objectParent _unit) then {
     private _animation = switch (true) do {
         case (primaryWeapon _unit isNotEqualTo ""): {"amovppnemstpsnonwnondnon_amovppnemstpsraswrfldnon"};
