@@ -39,6 +39,7 @@ call WHF_fnc_initIncapacitatedHandlers;
 call WHF_fnc_initMagRepackKeybind;
 [player] call WHF_fnc_initVehicleLockHandlers;
 call WHF_fnc_vehSpawnCatalogClient;
+0 spawn WHF_fnc_laserLightLoop;
 0 spawn WHF_fnc_updateChannelLoop;
 0 spawn WHF_fnc_initFriendlyIcons;
 
