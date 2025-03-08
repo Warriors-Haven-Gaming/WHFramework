@@ -26,6 +26,7 @@ if (!isRemoteExecutedJIP) then {
     if (_unit isEqualTo player) then {call WHF_fnc_selfReviveAdd};
     if (isPlayer _unit) then {systemChat format [localize "$STR_WHF_incapUnit_chat", name _unit]};
     if (local _unit) then {
+        _unit allowDamage false;
         _unit setCaptive true;
         _unit setUnconscious true;
     };
