@@ -27,6 +27,7 @@ if (_unit isEqualTo focusOn) then {
         _unit actionNow ["Gear", _vehicle];
     } else {
         _unit action ["Gear", objNull];
+        sleep 0.5;
     };
 } else {
     _unit playActionNow "Medic";
