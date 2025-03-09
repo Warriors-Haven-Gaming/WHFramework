@@ -72,21 +72,20 @@ private _taskID = [blufor, "", "destroyAAA", _center, "CREATED", -1, true, "dest
 private _childTaskIDs = _aaObjects apply {
     [blufor, ["", _taskID], "destroyAAAEmplacement", objNull, "CREATED", -1, false, "destroy"] call WHF_fnc_taskCreate;
 };
+private _aaTurrets = _aaObjects apply {_x select {_x call WHF_fnc_isAntiAirVehicle}};
 private _completedChildTaskIDs = [];
 
 while {true} do {
-    sleep 10;
+    sleep 5;
 
     {
         private _childTaskID = _childTaskIDs # _forEachIndex;
         if (_childTaskID in _completedChildTaskIDs) then {continue};
-
-        private _vehicles = _x select {_x isKindOf "LandVehicle" && {alive _x}};
-        if (count _vehicles > 0) then {continue};
+        if (_x findIf {alive _x} >= 0) then {continue};
 
         [_childTaskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
         _completedChildTaskIDs pushBack _childTaskID;
-    } forEach _aaObjects;
+    } forEach _aaTurrets;
 
     if (count _completedChildTaskIDs isEqualTo count _childTaskIDs) exitWith {
         [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
