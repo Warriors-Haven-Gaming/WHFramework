@@ -15,7 +15,7 @@ player addEventHandler ["HandleDamage", {call {
     if (isNull _instigator) then {_instigator = _source};
 
     // Check for fatal wounds to body, head, or unknown part
-    if !(_hitIndex in [7, 2, -1]) exitWith {};
+    if !(_hitIndex in [7, 2, -1]) exitWith {_damage min 0.95};
     if (_damage < 0.95) exitWith {};
 
     if (isDamageAllowed _unit) then {
