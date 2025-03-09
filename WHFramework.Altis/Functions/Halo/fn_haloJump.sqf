@@ -17,7 +17,7 @@ Author:
     thegamecracks
 
 */
-params ["_center", "_direction"];;
+params ["_center", "_direction"];
 
 if (isNil "_direction") then {_direction = getPosATL focusOn getDir _center};
 
