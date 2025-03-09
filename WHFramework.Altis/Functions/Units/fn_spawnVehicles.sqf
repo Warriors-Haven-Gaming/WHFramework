@@ -27,7 +27,7 @@ Author:
 */
 params ["_side", "_types", "_quantity", "_center", "_radius"];
 
-private _group = createGroup _side;
+private _group = createGroup [_side, true];
 private _vehicleTypes = _types call WHF_fnc_getVehicleTypes;
 private _vehicles = [];
 for "_i" from 1 to _quantity do {

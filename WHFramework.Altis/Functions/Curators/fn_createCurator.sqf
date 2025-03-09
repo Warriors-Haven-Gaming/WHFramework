@@ -40,7 +40,7 @@ if (_index >= 0) exitWith {
     _player assignCurator _module;
 };
 
-private _module = createGroup sideLogic createUnit ["ModuleCurator_F", [-1000, -1000, 0], [], 0, "CAN_COLLIDE"];
+private _module = createGroup [sideLogic, true] createUnit ["ModuleCurator_F", [-1000, -1000, 0], [], 0, "CAN_COLLIDE"];
 _module setVariable ["addons", 3, true];
 _module setVariable ["birdType", "", true];
 _module setVariable ["forced", 0, true];

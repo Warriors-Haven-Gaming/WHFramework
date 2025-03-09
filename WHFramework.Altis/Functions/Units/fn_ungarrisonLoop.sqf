@@ -47,7 +47,7 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
             _x enableAIFeature ["COVER", true];
             _x enableAIFeature ["PATH", true];
 
-            private _group = createGroup side group _x;
+            private _group = createGroup [side group _x, true];
             _group setVariable ["WHF_siren_disabled", true];
             [_x] joinSilent _group;
 

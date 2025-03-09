@@ -44,7 +44,7 @@ params [
     ["_equipment", WHF_units_equipment]
 ];
 
-private _group = createGroup _side;
+private _group = createGroup [_side, true];
 private _unitTypes = _types call WHF_fnc_getUnitTypes;
 for "_i" from 1 to _quantity do {
     private _unit = _group createUnit [selectRandom _unitTypes, _center, [], _radius, "NONE"];
