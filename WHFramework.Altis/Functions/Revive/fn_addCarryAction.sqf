@@ -30,10 +30,8 @@ private _carryID = [
     "true",
     {
         params ["", "_caller"];
-        switch (currentWeapon _caller) do {
-            case "": {};
-            case secondaryWeapon _caller: {_caller action ["WeaponOnBack", _caller]};
-            default {_caller action ["WeaponInHand", _caller]};
+        if !("slow" in animationState _caller) then {
+            _caller action ["WeaponOnBack", _caller];
         };
     },
     {},
