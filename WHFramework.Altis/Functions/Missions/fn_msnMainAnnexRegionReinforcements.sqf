@@ -68,12 +68,17 @@ private _reinforceVehicles = {
     _vehicles append assignedVehicles _group;
 };
 
-private _frequency = [50, 100];
 private _reinforceArgs = [
-    [true, _frequency, _thresholdUnits, _groups, [_center, _radius, _groups], _reinforceUnits],
-    [true, _frequency, _thresholdVehicles, _vehicles, [_center, _radius, _groups, _vehicles], _reinforceVehicles]
+    [true, 30, _thresholdUnits, _groups, [_center, _radius, _groups], _reinforceUnits],
+    [true, 30, _thresholdVehicles, _vehicles, [_center, _radius, _groups, _vehicles], _reinforceVehicles]
 ];
 private _reinforceScripts = _reinforceArgs apply {_x spawn WHF_fnc_reinforceLoop};
 
-waitUntil {sleep (5 + random 5); !(_this # 0)};
+while {_this # 0} do {
+    sleep (5 + random 5);
+    if !(_this # 0) exitWith {};
+
+    _reinforceArgs # 0 set [1, WHF_missions_annex_reinforce_frequency_units];
+    _reinforceArgs # 1 set [1, WHF_missions_annex_reinforce_frequency_vehicles];
+};
 {_x set [0, false]} forEach _reinforceArgs;

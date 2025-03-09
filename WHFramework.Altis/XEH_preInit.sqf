@@ -403,6 +403,26 @@ Author:
     {WHF_missions_annex_vehicles_types = parseSimpleArray _this},
     false
 ] call WHF_fnc_addSetting;
+[
+    "WHF_missions_annex_reinforce_frequency_units",
+    "SLIDER",
+    ["STR_WHF_settings_missions_annex_reinforce_frequency_units", "STR_WHF_settings_missions_annex_reinforce_frequency_units_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_missions"],
+    [10, 600, 60, 0, false],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_missions_annex_reinforce_frequency_vehicles",
+    "SLIDER",
+    ["STR_WHF_settings_missions_annex_reinforce_frequency_vehicles", "STR_WHF_settings_missions_annex_reinforce_frequency_vehicles_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_missions"],
+    [10, 600, 120, 0, false],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
 
 // Recruits
 [
