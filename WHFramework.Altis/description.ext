@@ -150,6 +150,17 @@ class CfgFunctions {
         class Icons {
             class initFriendlyIcons {};
         };
+        class Loadouts {
+            class getLastLoadout {};
+            class initArsenal {};
+            class initArsenalLoadoutHandlers {};
+            class setLastLoadout {};
+        };
+        class Locks {
+            class addVehicleLockCopilotHandlers {};
+            class checkVehicleLock {};
+            class initVehicleLockHandlers {};
+        };
         class Markers {
             class createAreaMarker {};
             class createLocalMarker {};
@@ -166,17 +177,6 @@ class CfgFunctions {
             class msnMainAnnexRegionCompositions {};
             class msnMainAnnexRegionReinforcements {};
             class msnMainAnnexRegionUnits {};
-        };
-        class Loadouts {
-            class getLastLoadout {};
-            class initArsenal {};
-            class initArsenalLoadoutHandlers {};
-            class setLastLoadout {};
-        };
-        class Locks {
-            class addVehicleLockCopilotHandlers {};
-            class checkVehicleLock {};
-            class initVehicleLockHandlers {};
         };
         class Prisoners {
             class addEscorterActions {};
