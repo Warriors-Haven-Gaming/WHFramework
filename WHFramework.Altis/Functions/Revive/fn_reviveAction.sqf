@@ -75,7 +75,7 @@ _target setVariable ["WHF_revive_caller", nil, true];
 
 if (_isCanceled) exitWith {
     if (animationState _caller isEqualTo _animation) then {
-        _caller switchMove [_cancelAnim, 0, 0, false];
+        [_caller, [_cancelAnim, 0, 0, false]] remoteExec ["switchMove"];
     };
 };
 

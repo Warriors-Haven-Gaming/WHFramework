@@ -29,5 +29,5 @@ if (isNull objectParent _unit) then {
         case (handgunWeapon _unit isNotEqualTo ""): {"amovppnemstpsnonwnondnon_amovppnemstpsraswpstdnon"};
         default {"unconsciousoutprone"};
     };
-    _unit switchMove [_animation, 0, 0, false];
+    [_unit, [_animation, 0, 0, false]] remoteExec ["switchMove"];
 };
