@@ -19,6 +19,8 @@ private _vehicle = objectParent focusOn;
 if (currentPilot _vehicle isNotEqualTo focusOn) exitWith {};
 
 getCruiseControl _vehicle params ["_speedKPH"];
+if (_speedKPH <= 0) then {call WHF_fnc_cruiseAction};
+getCruiseControl _vehicle params ["_speedKPH"];
 if (_speedKPH <= 0) exitWith {};
 private _step = if (_increment) then {5} else {-5};
 
