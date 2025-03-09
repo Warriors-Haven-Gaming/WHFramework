@@ -39,15 +39,15 @@ private _units = units focusOn select {
     && {local _x
     && {focusOn distance _x < 100}}}
 };
+{_x setUnitFreefallHeight 50} forEach _units;
+
 private _vehicles = _units apply {objectParent _x} select {
     !isNull _x
     && {effectiveCommander _x in _units
     && {!(_x isKindOf "Air")}}
 };
-_vehicles = _vehicles arrayIntersect _vehicles;
-
-{_x setUnitFreefallHeight 50} forEach _units;
 _units = _units select {isNull objectParent _x};
+_vehicles = _vehicles arrayIntersect _vehicles;
 
 private _altitude = if (count _vehicles > 0) then {WHF_halo_altitude_vehicle} else {WHF_halo_altitude_unit};
 _center set [2, _altitude];
@@ -63,6 +63,9 @@ private _getNextPos = {
 };
 
 {
+    private _vehicle = objectParent _x;
+    if (!isNull _vehicle && {!(_vehicle in _vehicles)}) then {moveOut _x};
+
     _x setPosATL ([WHF_halo_spacing_unit] call _getNextPos);
     _x setDir _direction;
 
