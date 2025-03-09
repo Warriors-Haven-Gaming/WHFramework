@@ -38,6 +38,7 @@ private _statusAfter = time + 3;
 private _actOfGod = if (random 1 < 0.1) then {time + 30 + random 60} else {-1};
 // NOTE: bleedout time is defined by each client and not synchronized
 private _bleedoutAt = time + WHF_revive_bleedout;
+private _drownAt = -1;
 
 while {alive _unit && {lifeState _unit isEqualTo "INCAPACITATED"}} do {
     private _vehicle = objectParent _unit;
@@ -58,6 +59,13 @@ while {alive _unit && {lifeState _unit isEqualTo "INCAPACITATED"}} do {
     if (_bleedoutLeft <= 0) exitWith {
         _unit setDamage 1;
         if (isPlayer _unit) then {[_unit] remoteExec ["WHF_fnc_incapBleedout"]};
+    };
+
+    private _drowning = isNull _vehicle && {!isAbleToBreathe _unit};
+    switch (true) do {
+        case (!_drowning): {_drownAt = -1};
+        case (_drownAt < 0): {_drownAt = _time + 9};
+        case (_time > _drownAt): {_unit setDamage 1};
     };
 
     if (_actOfGod > 0 && {_time > _actOfGod && {_unit isEqualTo focusOn}}) exitWith {
