@@ -40,7 +40,16 @@ private _actOfGod = if (random 1 < 0.1) then {time + 30 + random 60} else {-1};
 private _bleedoutAt = time + WHF_revive_bleedout;
 
 while {alive _unit && {lifeState _unit isEqualTo "INCAPACITATED"}} do {
-    if (!local _unit) then {sleep (5 + random 5); continue};
+    private _vehicle = objectParent _unit;
+    if (
+        isNull _vehicle
+        && {isNull attachedTo _unit
+        && {animationState _unit isNotEqualTo "unconsciousrevivedefault"}}
+    ) then {
+        _unit switchMove ["unconsciousrevivedefault", 0, 0, false];
+    };
+
+    if (!local _unit) then {sleep (1 + random 1); continue};
     if (damage _unit isEqualTo 0) exitWith {[_unit] call WHF_fnc_reviveUnit};
 
     private _time = time;
@@ -76,7 +85,6 @@ while {alive _unit && {lifeState _unit isEqualTo "INCAPACITATED"}} do {
         hintSilent (_status joinString "\n");
     };
 
-    private _vehicle = objectParent _unit;
     if (!isNull _vehicle && {!alive _vehicle}) then {_unit moveOut _vehicle};
 
     sleep (1 + random 1);
