@@ -21,18 +21,6 @@ params ["_center", "_direction"];
 
 if (isNil "_direction") then {_direction = getPosATL focusOn getDir _center};
 
-disableUserInput true;
-cutText ["", "BLACK", 2];
-private _soundVolume = soundVolume;
-2 fadeSound 0;
-sleep 2;
-
-playSoundUI ["surrender_fall"];
-playSoundUI ["Planes_Passby", 0.2];
-sleep (0.75 + random 0.5);
-
-playSoundUI ["UAV_05_tailhook_up_sound"];
-
 private _units = units focusOn select {
     _x isEqualTo focusOn
     || {!isPlayer _x
@@ -40,14 +28,21 @@ private _units = units focusOn select {
     && {focusOn distance _x < 100}}}
 };
 {_x setUnitFreefallHeight 50} forEach _units;
+_units = _units select {isNull objectParent _x};
 
 private _vehicles = _units apply {objectParent _x} select {
     !isNull _x
     && {effectiveCommander _x in _units
     && {!(_x isKindOf "Air")}}
 };
-_units = _units select {isNull objectParent _x};
 _vehicles = _vehicles arrayIntersect _vehicles;
+
+disableUserInput true;
+private _seed = floor random 1000000;
+private _players = _vehicles apply {crew _x} select {isPlayer _x};
+_seed spawn WHF_fnc_haloJumpCut;
+{_seed remoteExec ["WHF_fnc_haloJumpCut", _x]} forEach _players;
+sleep 3;
 
 private _altitude = if (count _vehicles > 0) then {WHF_halo_altitude_vehicle} else {WHF_halo_altitude_unit};
 _center set [2, _altitude];
@@ -85,8 +80,5 @@ private _getNextPos = {
     };
 } forEach _vehicles;
 
-5 fadeSound _soundVolume;
-sleep (2 + random 3);
-
-cutText ["", "BLACK IN", 1];
+sleep 2;
 disableUserInput false;
