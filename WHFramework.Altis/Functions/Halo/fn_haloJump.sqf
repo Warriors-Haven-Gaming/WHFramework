@@ -42,6 +42,21 @@ private _seed = floor random 1000000;
 private _players = _vehicles apply {crew _x} select {isPlayer _x};
 _seed spawn WHF_fnc_haloJumpCut;
 {_seed remoteExec ["WHF_fnc_haloJumpCut", _x]} forEach _players;
+{[_x, _forEachIndex] spawn {
+    params ["_unit", "_i"];
+    sleep (0.1 * _i + random 0.5);
+    playSound3D [
+        selectRandom [
+            "a3\sounds_f\characters\ingame\parachute\parachute_rustle_1.wss",
+            "a3\sounds_f\characters\ingame\parachute\parachute_rustle_2.wss",
+            "a3\sounds_f\characters\ingame\parachute\parachute_rustle_3.wss",
+            "a3\sounds_f\characters\ingame\parachute\parachute_rustle_4.wss",
+            "a3\sounds_f\characters\ingame\parachute\parachute_rustle_5.wss",
+            "a3\sounds_f\characters\ingame\parachute\parachute_rustle_6.wss"
+        ],
+        _unit
+    ];
+}} forEach (_units + _vehicles);
 sleep 3;
 
 private _altitude = if (count _vehicles > 0) then {WHF_halo_altitude_vehicle} else {WHF_halo_altitude_unit};
