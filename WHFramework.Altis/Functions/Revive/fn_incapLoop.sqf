@@ -17,6 +17,24 @@ Author:
 */
 params ["_unit"];
 
+private _findNearestMedic = {
+    private _medics = allPlayers select {
+        side group _x isEqualTo side group _unit
+        && {_x getUnitTrait "medic"}
+    };
+    _medics = _medics inAreaArray [getPosATL _unit, 500, 500];
+    if (count _medics < 1) exitWith {[objNull, 0]};
+
+    private _distances = [];
+    {
+        _distances pushBack [_unit distance _x, _forEachIndex, _x];
+    } forEach _medics;
+
+    _distances sort false;
+    [_distances # 0 # 2, _distances # 0 # 0]
+};
+
+private _statusAfter = time + 3;
 // NOTE: bleedout time is defined by each client and not synchronized
 private _bleedoutAt = time + WHF_revive_bleedout;
 
@@ -32,12 +50,25 @@ while {alive _unit && {lifeState _unit isEqualTo "INCAPACITATED"}} do {
         if (isPlayer _unit) then {[_unit] remoteExec ["WHF_fnc_incapBleedout"]};
     };
 
-    // if (_unit isEqualTo focusOn) then {
-    //     hintSilent format [
-    //         localize "$STR_WHF_incapLoop_status",
-    //         ceil (_bleedoutLeft / 60)
-    //     ];
-    // };
+    if (_time >_statusAfter && {_unit isEqualTo focusOn}) then {
+        private _status = [];
+
+        _status pushBack format [
+            localize "$STR_WHF_incapLoop_status_bleedout",
+            ceil (_bleedoutLeft / 60)
+        ];
+
+        call _findNearestMedic params ["_medic", "_medicDistance"];
+        if (!isNull _medic) then {
+            _status pushBack format [
+                localize "$STR_WHF_incapLoop_status_medic",
+                name _medic,
+                ceil _medicDistance
+            ];
+        };
+
+        hintSilent (_status joinString "\n");
+    };
 
     private _vehicle = objectParent _unit;
     if (!isNull _vehicle && {!alive _vehicle}) then {_unit moveOut _vehicle};
