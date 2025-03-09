@@ -11,7 +11,7 @@ Author:
 if (isClass (configFile >> "CfgPatches" >> "ace_vehicles")) exitWith {};
 
 private _vehicle = objectParent focusOn;
-if !(_vehicle isKindOf "LandVehicle") exitWith {};
+if !(_vehicle isKindOf "LandVehicle" || {_vehicle isKindOf "Ship"}) exitWith {};
 if (currentPilot _vehicle isNotEqualTo focusOn) exitWith {};
 
 if (getCruiseControl _vehicle # 0 > 0) exitWith {

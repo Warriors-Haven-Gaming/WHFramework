@@ -18,7 +18,7 @@ if (isClass (configFile >> "CfgPatches" >> "ace_vehicles")) exitWith {};
     "",
     "
     private _vehicle = objectParent focusOn;
-    _vehicle isKindOf 'LandVehicle'
+    (_vehicle isKindOf 'LandVehicle' || {_vehicle isKindOf 'Ship'})
     && {currentPilot _vehicle isEqualTo focusOn
     && {getCruiseControl _vehicle # 0 <= 0
     && {vectorMagnitude velocity _vehicle > 1.39}}}
