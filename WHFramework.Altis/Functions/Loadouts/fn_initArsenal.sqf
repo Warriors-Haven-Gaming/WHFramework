@@ -21,7 +21,13 @@ _arsenal addAction [
     {
         params ["", "_caller"];
         private _loadout = call WHF_fnc_getLastLoadout;
-        if (_loadout isNotEqualTo []) then {_caller setUnitLoadout _loadout};
+        if (_loadout isEqualTo []) exitWith {};
+        _caller setUnitLoadout _loadout;
+
+        private _weapon = configFile >> "CfgWeapons" >> currentWeapon _caller;
+        private _sound = getArray (_weapon >> "reloadMagazineSound") # 0;
+        if !("." in _sound) then {_sound = _sound + ".wss"};
+        playSoundUI [_sound, 0.75, 1, true];
     },
     nil,
     1.5,
