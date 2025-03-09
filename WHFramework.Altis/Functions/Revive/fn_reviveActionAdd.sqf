@@ -27,6 +27,6 @@ private _actionID = _unit addAction [
     true,
     "",
     "[_this, _originalTarget, false] call WHF_fnc_checkRevive isEqualTo ''",
-    5
+    3
 ];
 _unit setVariable ["WHF_revive_actionID", _actionID];
