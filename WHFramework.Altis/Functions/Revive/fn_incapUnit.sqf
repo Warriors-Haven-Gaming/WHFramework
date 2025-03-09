@@ -21,6 +21,7 @@ if (!alive _unit && {isRemoteExecutedJIP}) exitWith {remoteExec ["", remoteExecu
 if (!alive _unit) exitWith {};
 
 [_unit] call WHF_fnc_reviveActionAdd;
+[_unit] call WHF_fnc_addCarryAction;
 
 private _incapScript = _unit getVariable ["WHF_incapacitated_script", scriptNull];
 if (!scriptDone _incapScript) then {terminate _incapScript};

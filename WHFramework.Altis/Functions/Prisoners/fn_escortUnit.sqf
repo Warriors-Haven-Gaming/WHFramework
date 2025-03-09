@@ -3,6 +3,7 @@ Function: WHF_fnc_escortUnit
 
 Description:
     Make a unit escort a target.
+    Function must be executed where the unit is local.
 
 Parameters:
     Object caller:
@@ -19,7 +20,7 @@ if (!isNil {_caller getVariable "WHF_escort"}) exitWith {};
 
 _target attachTo [_caller, [0.1, -1.1, 0]];
 _caller setVariable ["WHF_escort", _target];
-[_caller] call WHF_fnc_addEscorterActions;
+[_caller, "WHF_escort", ["HEALTHY", "INJURED"]] call WHF_fnc_addLoadActions;
 
 _caller spawn {
     while {true} do {
