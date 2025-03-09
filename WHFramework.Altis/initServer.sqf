@@ -20,6 +20,9 @@ if (isMultiplayer) then {
     if (!isClass (configFile >> "CfgPatches" >> "cba_xeh")) then {
         call compileScript ["XEH_preInit.sqf"];
     };
+
+    call WHF_fnc_initEmplacementCatalog;
+    call WHF_fnc_initDynamicSimulation;
 };
 
 if (isMultiplayer) then {
