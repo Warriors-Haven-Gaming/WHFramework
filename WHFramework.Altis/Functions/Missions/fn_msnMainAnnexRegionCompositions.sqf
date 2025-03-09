@@ -39,9 +39,22 @@ private _mortarCount = floor (_radius / 350);
 private _mortarTypes = ["mortar", 1];
 [opfor, _mortarCount, _center, _radius, _mortarTypes, _objects] call WHF_fnc_createEmplacements
     params ["_mortarObjects", "_mortarTerrain", "_mortarGroups"];
-
 _objects append flatten _mortarObjects;
 _terrain append flatten _mortarTerrain;
 _groups append flatten _mortarGroups;
+
+private _minefieldSpacing = 75 + random 75;
+private _minefieldStep = 360 / ceil (2 * pi * _radius / _minefieldSpacing);
+for "_i" from 0 to 359 step _minefieldStep do {
+    private _distance = _radius * (0.4 + random 0.55);
+    private _dir = _i + random _minefieldStep - _minefieldStep / 2;
+    private _pos = _center getPos [_distance, _dir];
+    private _size = 35 + random 25;
+    private _quantity = floor (_size * 0.2);
+    private _isNearRoad = _pos nearRoads _size isNotEqualTo [];
+    private _type = ["AP", "ATAP"] select _isNearRoad;
+    private _mines = [opfor, _quantity, _pos, _size, _type, true] call WHF_fnc_createMinefield;
+    _objects append _mines;
+};
 
 [_objects, _terrain, _groups]
