@@ -65,7 +65,7 @@ private _buildings = flatten _compositionObjects select {simulationEnabled _x};
     params ["_groups", "_vehicles"];
 private _initialUnitCount = count flatten (_groups apply {units _x});
 
-private _reinforceArgs = [true, _center, _radius, _initialUnitCount, _groups];
+private _reinforceArgs = [true, _center, _radius, _initialUnitCount, count _vehicles, _groups, _vehicles];
 _reinforceArgs spawn WHF_fnc_msnMainAnnexRegionReinforcements;
 
 while {true} do {

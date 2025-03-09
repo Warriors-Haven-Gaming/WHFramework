@@ -16,8 +16,11 @@ Parameters:
         If an array is passed, it is treated as the minimum and maximum time.
     Number threshold:
         The maximum number of units before reinforcements are paused.
-    Array inputGroups:
-        An array of groups to count units from.
+    Array units:
+        An array to count units from.
+        Any elements that are groups will have their units counted.
+        Other elements are simply considered as one unit.
+        Null elements and non-unique elements are ignored.
     Array arguments:
         The arguments to pass to the reinforce function.
     Code function:
@@ -36,22 +39,31 @@ private _sleepIteration = {
     };
 };
 
+private _countUnits = {
+    private _total = 0;
+    {
+        if (isNull _x) then {continue};
+        if (_x isEqualType grpNull) then {
+            _total = _total + count units _x;
+        } else {
+            _total = _total + 1;
+        };
+    } forEach (_units arrayIntersect _units);
+    _total
+};
+
 while {_this # 0} do {
     params [
         "",
         "_frequency",
         "_threshold",
-        "_inputGroups",
+        "_units",
         "_arguments",
         "_function"
     ];
 
     call _sleepIteration;
     if !(_this # 0) exitWith {};
-
-    _inputGroups = [_inputGroups] call WHF_fnc_coerceGroups;
-    private _total = 0;
-    {_total = _total + count units _x} forEach _inputGroups;
-    if (_total >= _threshold) then {continue};
+    if (call _countUnits >= _threshold) then {continue};
     _arguments call _function;
 };

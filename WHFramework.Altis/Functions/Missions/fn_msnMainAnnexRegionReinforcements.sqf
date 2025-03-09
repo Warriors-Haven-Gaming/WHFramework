@@ -14,17 +14,30 @@ Parameters:
         The center of the mission area.
     Number radius:
         The radius of the mission area.
-    Number threshold:
-        The maximum number of units before reinforcements are paused.
+    Number thresholdUnits:
+        The maximum number of units allowed.
+    Number thresholdVehicles:
+        The maximum number of vehicles allowed.
     Array groups:
         An array of groups to count units from.
+        Reinforcement groups that spawn in will be appended to this array.
+    Array vehicles:
+        An array of vehicles to count from.
         Reinforcement groups that spawn in will be appended to this array.
 
 Author:
     thegamecracks
 
 */
-params ["", "_center", "_radius", "_threshold", "_groups"];
+params [
+    "",
+    "_center",
+    "_radius",
+    "_thresholdUnits",
+    "_thresholdVehicles",
+    "_groups",
+    "_vehicles"
+];
 if !(_this # 0) exitWith {};
 
 private _reinforceUnits = {
@@ -41,9 +54,24 @@ private _reinforceUnits = {
     _groups pushBack _group;
 };
 
+private _reinforceVehicles = {
+    params ["_center", "_radius", "_groups", "_vehicles"];
+
+    private _pos = [_center, _radius] call WHF_fnc_randomPosHidden;
+    if (_pos isEqualTo [0, 0]) then {continue};
+
+    private _types = WHF_missions_annex_vehicles_types;
+    private _group = [opfor, _types, 1, _pos, 10] call WHF_fnc_spawnVehicles;
+    [_group, getPosATL leader _group, 200] call BIS_fnc_taskPatrol;
+
+    _groups pushBack _group;
+    _vehicles append assignedVehicles _group;
+};
+
 private _frequency = [50, 100];
 private _reinforceArgs = [
-    [true, _frequency, _threshold, _groups, [_center, _radius, _groups], _reinforceUnits]
+    [true, _frequency, _thresholdUnits, _groups, [_center, _radius, _groups], _reinforceUnits],
+    [true, _frequency, _thresholdVehicles, _vehicles, [_center, _radius, _groups, _vehicles], _reinforceVehicles]
 ];
 private _reinforceScripts = _reinforceArgs apply {_x spawn WHF_fnc_reinforceLoop};
 
