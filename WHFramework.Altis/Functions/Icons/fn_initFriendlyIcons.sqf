@@ -101,7 +101,7 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
     params ["_display"];
 
     private _mapScale = ctrlMapScale _display;
-    private _iconScale = linearConversion [0.01, 0.15, _mapScale, 16, 20, true];
+    private _iconScale = linearConversion [0.05, 0.002, _mapScale, 20, 32, true];
     private _textMinMapScale = 0.062;
     private _lineMinMapScale = 0.175;
 
@@ -132,10 +132,10 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
         params ["_side"];
         switch (_side) do {
             // Preferably wouldn't hardcode this, but it's fast enough
-            case blufor: {[0, 0.45, 0.9, 1]};
-            case opfor: {[0.75, 0, 0, 1]};
-            case independent: {[0, 0.75, 0, 1]};
-            case civilian: {[0.6, 0, 0.75, 1]};
+            case blufor: {[0, 0.75, 1, 1]};
+            case opfor: {[0.85, 0, 0, 1]};
+            case independent: {[0, 0.85, 0, 1]};
+            case civilian: {[0.7, 0, 0.85, 1]};
             default {[_side] call BIS_fnc_sideColor}
         }
     };
@@ -163,7 +163,7 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
         private _color = if (
             lifeState _x in ["HEALTHY", "INJURED"]
         ) then {[_side] call _getVibrantSideColor} else {[1, 0.5, 0, 1]};
-        private _textScale = 0.03;
+        private _textScale = 0.045;
         private _text = if (_mapScale <= _textMinMapScale) then {name _x} else {""};
         _display drawIcon [
             getText (_config >> "icon"),
@@ -183,7 +183,7 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
     {
         private _config = configFile >> "CfgGroupIcons" >> "b_inf";
         private _pos = getPosWorldVisual _x;
-        private _offsetPos = _pos vectorAdd [50, 50, 0];
+        private _offsetPos = _pos vectorAdd [150, 150, 0];
         _display drawLine [
             _pos,
             _offsetPos,
@@ -198,7 +198,7 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
             0,
             groupId group _x,
             1,
-            0.06,
+            0.08,
             "TahomaB",
             "right"
         ];
@@ -213,10 +213,8 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
         ) then {[_side] call _getVibrantSideColor} else {[1, 0.5, 0, 1]};
         private _pos = getPosWorldVisual _x;
         private _iconScale = _iconScale;
-        private _textScale = 0.03;
+        private _textScale = 0.05;
         private _text = if (_mapScale > _textMinMapScale) then {
-            _iconScale = _iconScale * 1.5;
-            _textScale = _textScale * 2;
             groupId group effectiveCommander _x
         } else {
             private _commander = effectiveCommander _x;
