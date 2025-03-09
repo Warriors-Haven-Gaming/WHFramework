@@ -65,6 +65,9 @@ private _buildings = flatten _compositionObjects select {simulationEnabled _x};
     params ["_groups", "_vehicles"];
 private _initialUnitCount = count flatten (_groups apply {units _x});
 
+private _reinforceArgs = [true, _center, _radius, _initialUnitCount, _groups];
+_reinforceArgs spawn WHF_fnc_msnMainAnnexRegionReinforcements;
+
 while {true} do {
     sleep 10;
 
@@ -79,6 +82,7 @@ while {true} do {
 call WHF_fnc_cycleFaction;
 
 deleteMarker _areaMarker;
+_reinforceArgs set [0, false];
 
 {[_x] call WHF_fnc_queueGCDeletion} forEach _compositionObjects;
 {[_x] call WHF_fnc_queueGCUnhide} forEach _compositionTerrain;
