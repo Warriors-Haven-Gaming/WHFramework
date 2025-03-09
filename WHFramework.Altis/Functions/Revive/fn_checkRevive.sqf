@@ -31,6 +31,7 @@ if !(lifeState _caller in ["HEALTHY", "INJURED"]) exitWith {localize "$STR_WHF_c
 if (lifeState _target isNotEqualTo "INCAPACITATED") exitWith {localize "$STR_WHF_checkRevive_generic"};
 if (!isNull (_caller getVariable ["WHF_revive_target", objNull])) exitWith {localize "$STR_WHF_checkRevive_generic"};
 if (!isNull (_target getVariable ["WHF_revive_caller", objNull])) exitWith {localize "$STR_WHF_checkRevive_generic"};
+if (!isNull attachedTo _target) exitWith {localize "$STR_WHF_checkRevive_generic"};
 if (!_full) exitWith {""};
 
 if (WHF_revive_medic && {!(_caller getUnitTrait "medic")}) exitWith {
