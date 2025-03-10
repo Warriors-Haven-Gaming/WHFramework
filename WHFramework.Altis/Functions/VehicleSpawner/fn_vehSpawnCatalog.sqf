@@ -91,10 +91,10 @@ private _utility = [
 
 private _artilleryCooldown = 1800;
 private _artillery = [
-    ["cup_b_fv432_mortar",           [-1,   ["artillery"]]],
-    ["cup_b_m1129_mc_mk19_woodland", [-1,   ["artillery"]]],
-    ["cup_b_m270_he_baf_wood",       [2500, ["artillery"]]],
-    ["cup_b_m270_dpicm_baf_wood",    [2500, ["artillery"]]],
+    ["cup_b_fv432_mortar",           [-1,   ["arty"]]],
+    ["cup_b_m1129_mc_mk19_woodland", [-1,   ["arty"]]],
+    ["cup_b_m270_he_baf_wood",       [2500, ["arty"]]],
+    ["cup_b_m270_dpicm_baf_wood",    [2500, ["arty"]]],
     ["", []]
 ];
 
@@ -228,7 +228,7 @@ private _ships = [
             ["_order", 3],
             ["_icon", "\a3\ui_f\data\map\vehicleicons\icontank_ca.paa"],
             ["_cooldown", _artilleryCooldown],
-            ["_locks", [["driver", "role", ["artillery"]], ["gunner", "role", ["artillery"]]]],
+            ["_locks", [["driver", "role", ["arty"]], ["gunner", "role", ["arty"]]]],
             ["_vehicles", createHashMapFromArray _artillery]
         ]],
         ["Air Defense", createHashMapFromArray [
