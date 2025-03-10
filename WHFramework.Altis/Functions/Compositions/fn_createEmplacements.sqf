@@ -65,6 +65,7 @@ private _isPosSuitable = {
 
 private _createGunners = {
     // params ["_turrets", "_side"];
+    private _turrets = _turrets select {alive _x && {count allTurrets _x > 0}};
     private _group = [_side, "standard", count _turrets, [random -500, random -500, 0], 0, false] call WHF_fnc_spawnUnits;
     {
         private _turret = _turrets # _forEachIndex;
