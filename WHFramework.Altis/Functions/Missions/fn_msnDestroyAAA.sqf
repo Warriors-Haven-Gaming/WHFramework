@@ -47,12 +47,16 @@ private _aaTypes = ["aa_short", 1, "aa_medium", 1, "aa_long", 1];
 [opfor, 3 + floor random 3, _center, _radius, _aaTypes, _ruins] call WHF_fnc_createEmplacements
     params ["_aaObjects", "_aaTerrain", "_aaGroups"];
 
-if (count _aaObjects < 1) exitWith {
+private _aaTurrets =
+    _aaObjects apply {_x select {alive _x && {_x call WHF_fnc_isAntiAirVehicle}}}
+    select {count _x > 0};
+
+if (count _aaTurrets < 1) exitWith {
     diag_log text format ["%1: center %2 not clear to spawn AA emplacements", _fnc_scriptName, _center];
 };
 
-private _groups = _aaGroups apply {
-    private _pos = leader _x;
+private _groups = _aaTurrets apply {
+    private _pos = getPosATL selectRandom _x;
     private _group = [opfor, "standard", 8 + floor random 13, _pos, 50] call WHF_fnc_spawnUnits;
     [_group, _pos] call BIS_fnc_taskDefend;
     _group
@@ -69,10 +73,9 @@ _areaMarker setMarkerColorLocal "ColorRed";
 _areaMarker setMarkerAlpha 0.7;
 
 private _taskID = [blufor, "", "destroyAAA", _center, "CREATED", -1, true, "destroy"] call WHF_fnc_taskCreate;
-private _childTaskIDs = _aaObjects apply {
+private _childTaskIDs = _aaTurrets apply {
     [blufor, ["", _taskID], "destroyAAAEmplacement", objNull, "CREATED", -1, false, "destroy"] call WHF_fnc_taskCreate;
 };
-private _aaTurrets = _aaObjects apply {_x select {_x call WHF_fnc_isAntiAirVehicle}};
 private _completedChildTaskIDs = [];
 
 while {true} do {
