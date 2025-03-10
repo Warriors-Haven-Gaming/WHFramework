@@ -23,10 +23,6 @@ if (!alive _unit) exitWith {};
 [_unit] call WHF_fnc_reviveActionAdd;
 [_unit] call WHF_fnc_addCarryAction;
 
-private _incapScript = _unit getVariable ["WHF_incapacitated_script", scriptNull];
-if (!scriptDone _incapScript) then {terminate _incapScript};
-_unit setVariable ["WHF_incapacitated_script", [_unit] spawn WHF_fnc_incapLoop];
-
 if (!isRemoteExecutedJIP) then {
     if (_unit isEqualTo player) then {call WHF_fnc_selfReviveAdd};
     if (isPlayer _unit) then {
@@ -44,6 +40,10 @@ if (!isRemoteExecutedJIP) then {
         _unit allowDamage false;
         _unit setCaptive true;
         _unit setUnconscious true;
-        _unit setDamage (damage _unit max 0.05);
+        if (damage _unit < 0.05) then {_unit setDamage 0.05};
     };
 };
+
+private _incapScript = _unit getVariable ["WHF_incapacitated_script", scriptNull];
+if (!scriptDone _incapScript) then {terminate _incapScript};
+_unit setVariable ["WHF_incapacitated_script", [_unit] spawn WHF_fnc_incapLoop];
