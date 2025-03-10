@@ -74,7 +74,7 @@ private _taskID = [
     ["", _parent],
     "mainAnnexRegionCommand",
     _pos getPos [75 + random 75, random 360],
-    "AUTOASSIGNED",
+    "CREATED",
     -1,
     true,
     "kill"
