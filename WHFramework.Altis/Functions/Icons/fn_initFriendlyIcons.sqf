@@ -160,9 +160,11 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
     {
         private _config = configOf _x;
         private _side = side group _x;
-        private _color = if (
-            lifeState _x in ["HEALTHY", "INJURED"]
-        ) then {[_side] call _getVibrantSideColor} else {[1, 0.5, 0, 1]};
+        private _color = switch (true) do {
+            case (!alive _x): {[0.2, 0.2, 0.2]};
+            case (lifeState _x in ["INCAPACITATED"]): {[1, 0.5, 0, 1]};
+            default {[_side] call _getVibrantSideColor};
+        };
         private _textScale = 0.045;
         private _text = if (_mapScale <= _textMinMapScale) then {name _x} else {""};
         _display drawIcon [
@@ -208,9 +210,12 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
     {
         private _config = configOf _x;
         private _side = side group effectiveCommander _x;
-        private _color = if (
-            crew _x findIf {lifeState _x isEqualTo "INCAPACITATED"} < 0
-        ) then {[_side] call _getVibrantSideColor} else {[1, 0.5, 0, 1]};
+        private _crew = crew _x;
+        private _color = switch (true) do {
+            case (_crew findIf {alive _x} < 0): {[0.2, 0.2, 0.2]};
+            case (_crew findIf {lifeState _x isEqualTo "INCAPACITATED"} >= 0): {[1, 0.5, 0, 1]};
+            default {[_side] call _getVibrantSideColor};
+        };
         private _pos = getPosWorldVisual _x;
         private _iconScale = _iconScale;
         private _textScale = 0.05;
@@ -218,7 +223,6 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
             groupId group effectiveCommander _x
         } else {
             private _commander = effectiveCommander _x;
-            private _crew = crew _x;
             format [
                 "%1 (%2)",
                 [_config] call BIS_fnc_displayName,
