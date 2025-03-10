@@ -31,6 +31,13 @@ private _resolvedTypes = _this apply {
         case ["standard", "cup_afrf"]: {["CUP_O_RU_Soldier_AR_VDV_EMR","CUP_O_RU_Engineer_VDV_EMR","CUP_O_RU_Explosive_Specialist_VDV_EMR","CUP_O_RU_Soldier_GL_VDV_EMR","CUP_O_RU_Soldier_MG_VDV_EMR","CUP_O_RU_Soldier_Marksman_VDV_EMR","CUP_O_RU_Medic_VDV_EMR","CUP_O_RU_Soldier_AA_VDV_EMR","CUP_O_RU_Soldier_HAT_VDV_EMR","CUP_O_RU_Soldier_VDV_EMR","CUP_O_RU_Soldier_LAT_VDV_EMR","CUP_O_RU_Soldier_AT_VDV_EMR","CUP_O_RU_Soldier_Saiga_VDV_EMR","CUP_O_RU_Soldier_SL_VDV_EMR","CUP_O_RU_Soldier_TL_VDV_EMR"]};
         case ["standard", "cup_afrf_modern"]: {["CUP_O_RUS_M_Soldier_A_Ratnik_Summer","CUP_O_RUS_M_Soldier_AAR_Ratnik_Summer","CUP_O_RUS_M_Soldier_AAR_Ratnik_Summer","CUP_O_RUS_M_Soldier_AHAT_Ratnik_Summer","CUP_O_RUS_M_Soldier_AAT_Ratnik_Summer","CUP_O_RUS_M_Soldier_AR_Ratnik_Summer","CUP_O_RUS_M_Soldier_Medic_Ratnik_Summer","CUP_O_RUS_M_Soldier_Engineer_Ratnik_Summer","CUP_O_RUS_M_Soldier_Exp_Ratnik_Summer","CUP_O_RUS_M_Soldier_GL_Ratnik_Summer","CUP_O_RUS_M_Soldier_MG_Ratnik_Summer","CUP_O_RUS_M_Soldier_Marksman_Ratnik_Summer","CUP_O_RUS_M_Soldier_AA_Ratnik_Summer","CUP_O_RUS_M_Soldier_AT_Ratnik_Summer","CUP_O_RUS_M_Soldier_Repair_Ratnik_Summer","CUP_O_RUS_M_Soldier_Ratnik_Summer","CUP_O_RUS_M_Soldier_LAT_Ratnik_Summer","CUP_O_RUS_M_Soldier_HAT_Ratnik_Summer","CUP_O_RUS_M_Soldier_Lite_Ratnik_Summer","CUP_O_RUS_M_Soldier_SL_Ratnik_Summer","CUP_O_RUS_M_Soldier_TL_Ratnik_Summer"]};
         case ["standard", "cup_npc"]: {["CUP_I_GUE_Soldier_AA","CUP_I_GUE_Ammobearer","CUP_I_GUE_Soldier_AR","CUP_I_GUE_Officer","CUP_I_GUE_Soldier_GL","CUP_I_GUE_Soldier_MG","CUP_I_GUE_Engineer","CUP_I_GUE_Medic","CUP_I_GUE_Soldier_AKS74","CUP_I_GUE_Soldier_AKM","CUP_I_GUE_Soldier_AKSU","CUP_I_GUE_Soldier_LAT","CUP_I_GUE_Soldier_AT","CUP_I_GUE_Soldier_AA2","CUP_I_GUE_Saboteur","CUP_I_GUE_Commander"]};
+        case ["officer", "base"]: {["I_G_Soldier_SL_F"]};
+        case ["officer", "csat"]: {["O_officer_F"]};
+        case ["officer", "csat_pacific"]: {["O_T_officer_F"]};
+        case ["officer", "rhsafrf"]: {["rhs_vdv_officer_armored"]};
+        case ["officer", "cup_afrf"]: {["CUP_O_RU_Officer_VDV_EMR"]};
+        case ["officer", "cup_afrf_modern"]: {["CUP_O_RU_Officer_VDV_EMR"]};
+        case ["officer", "cup_npc"]: {["CUP_I_GUE_Commander"]};
         default {
             if !(_x # 0 in ["civilians", "standard"]) exitWith {[["standard", _x # 1]] call WHF_fnc_getUnitTypes};
             if (_x # 1 isNotEqualTo "base") exitWith {[[_x # 0, "base"]] call WHF_fnc_getUnitTypes};

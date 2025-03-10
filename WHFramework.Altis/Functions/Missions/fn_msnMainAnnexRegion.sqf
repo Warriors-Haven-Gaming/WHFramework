@@ -68,8 +68,15 @@ private _initialUnitCount = count flatten (_groups apply {units _x});
 private _reinforceArgs = [true, _center, _radius, _initialUnitCount, count _vehicles, _groups, _vehicles];
 _reinforceArgs spawn WHF_fnc_msnMainAnnexRegionReinforcements;
 
+private _subObjectives = [
+    [_center, _radius, _taskID, _compositionObjects, _compositionTerrain, _groups, _vehicles]
+        spawn WHF_fnc_msnMainAnnexRegionCommand
+];
+
 while {true} do {
     sleep 10;
+
+    if (_subObjectives findIf {!scriptDone _x} >= 0) then {continue};
 
     private _allThreats = units opfor + units independent;
     private _threatsInRange = _allThreats inAreaArray _area;
