@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=354;
+		nextID=366;
 	};
 	class Camera
 	{
-		pos[]={645.37061,58.041443,10812.546};
-		dir[]={0.69887465,-0.69903576,0.15140419};
-		up[]={0.6831876,0.71508664,0.14800574};
-		aside[]={0.21172842,0,-0.97732848};
+		pos[]={704.89984,44.282196,10754.762};
+		dir[]={0.30614269,-0.80536282,-0.50761521};
+		up[]={0.41592738,0.59277755,-0.68964857};
+		aside[]={-0.85632104,5.4715201e-09,-0.51644731};
 	};
 };
 binarizationWanted=0;
@@ -23431,6 +23431,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""arty""]];" \n "this setVariable [""WHF_vehicleLock_gunner"", [""role"", ""arty""]];";
 							};
 							id=839;
 							type="CUP_B_M1129_MC_MK19_Woodland";
@@ -23854,6 +23855,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""arty""]];" \n "this setVariable [""WHF_vehicleLock_gunner"", [""role"", ""arty""]];";
 							};
 							id=842;
 							type="CUP_B_FV432_Mortar";
@@ -23879,14 +23881,14 @@ class Mission
 							{
 								class Attribute0
 								{
-									property="F16V_Squadron_Insignia";
-									expression="_this setVariable [""F16V_Squadron_Insignia"", _value]; [_this,_value] call Peral_F16V_fnc_Squadron_Insignia;";
+									property="F16VFontStyle";
+									expression="_this setVariable [""F16VFontStyle"", _value]; [_this, _value] call lala_peral_F16V_fnc_applyAircraftFontStyle; [_this,_this getVariable [""F16V_Squadron_Insignia"",""None""]] call Peral_F16V_fnc_Squadron_Insignia;";
 									class Value
 									{
 										class data
 										{
 											singleType="STRING";
-											value="None";
+											value="white_font";
 										};
 									};
 								};
@@ -23944,14 +23946,14 @@ class Mission
 								};
 								class Attribute5
 								{
-									property="F16VFontStyle";
-									expression="_this setVariable [""F16VFontStyle"", _value]; [_this, _value] call lala_peral_F16V_fnc_applyAircraftFontStyle; [_this,_this getVariable [""F16V_Squadron_Insignia"",""None""]] call Peral_F16V_fnc_Squadron_Insignia;";
+									property="F16V_Squadron_Insignia";
+									expression="_this setVariable [""F16V_Squadron_Insignia"", _value]; [_this,_value] call Peral_F16V_fnc_Squadron_Insignia;";
 									class Value
 									{
 										class data
 										{
 											singleType="STRING";
-											value="white_font";
+											value="None";
 										};
 									};
 								};
