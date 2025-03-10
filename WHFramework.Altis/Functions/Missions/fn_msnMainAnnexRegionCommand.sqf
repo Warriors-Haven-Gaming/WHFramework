@@ -71,7 +71,7 @@ _groups append [_turretsGroup, _garrisonGroup, _commanderGroup];
 
 private _taskID = [
     blufor,
-    _parent,
+    ["", _parent],
     "mainAnnexRegionCommand",
     _pos vectorAdd [150 - random 75, 150 - random 75],
     "AUTOASSIGNED",
