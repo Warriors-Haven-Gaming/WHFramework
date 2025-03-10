@@ -109,6 +109,7 @@ if (_targetArmed) then {_success append [
     _target actionNow ["DropWeapon", _holder, _x];
 } forEach [primaryWeapon _target, handgunWeapon _target, secondaryWeapon _target];
 
+moveOut _target;
 _target enableAIFeature ["PATH", false];
 _target setCaptive true;
 _target setUnitPos "UP";
