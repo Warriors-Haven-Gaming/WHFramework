@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2034;
+		nextID=2035;
 	};
 	class MarkerIDProvider
 	{
@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={704.89984,44.282196,10754.762};
-		dir[]={0.30614269,-0.80536282,-0.50761521};
-		up[]={0.41592738,0.59277755,-0.68964857};
-		aside[]={-0.85632104,5.4715201e-09,-0.51644731};
+		pos[]={703.53442,20.544188,10757.718};
+		dir[]={0.11908633,-0.47029471,-0.8744424};
+		up[]={0.063462511,0.88250536,-0.46600053};
+		aside[]={-0.99085706,1.3253884e-07,-0.13494071};
 	};
 };
 binarizationWanted=0;
@@ -877,7 +877,7 @@ class Mission
 			name="Spawns";
 			class Entities
 			{
-				items=3;
+				items=4;
 				class Item0
 				{
 					dataType="Marker";
@@ -907,9 +907,19 @@ class Mission
 					angle=270;
 					id=1625;
 				};
+				class Item3
+				{
+					dataType="Marker";
+					position[]={705,11,10747};
+					name="respawn_west_arty";
+					type="Empty";
+					angle=180;
+					id=2034;
+					atlOffset=1.0299997;
+				};
 			};
 			id=335;
-			atlOffset=0.25750065;
+			atlOffset=0.64375019;
 		};
 		class Item1
 		{
