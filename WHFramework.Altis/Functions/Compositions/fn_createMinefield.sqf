@@ -93,6 +93,7 @@ if (_signs) then {
     private _step = 360 / ceil (2 * pi * _radius / _spacing);
     for "_i" from 0 to 359 step _step do {
         private _pos = _center getPos [_radius, _i + random _step - _step / 2];
+        if (isOnRoad _pos) then {continue};
         private _sign = createSimpleObject [
             selectRandom ["Land_Sign_Mines_F", "Land_Sign_MinesTall_F"],
             ATLToASL _pos
