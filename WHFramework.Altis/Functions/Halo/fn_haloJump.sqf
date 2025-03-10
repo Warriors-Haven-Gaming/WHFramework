@@ -39,7 +39,7 @@ private _units = _allUnits select {isNull objectParent _x};
 
 disableUserInput true;
 private _seed = floor random 1000000;
-private _players = _vehicles apply {crew _x} select {isPlayer _x};
+private _players = _vehicles apply {crew _x} select {isPlayer _x && {_x isNotEqualTo focusOn}};
 _seed spawn WHF_fnc_haloJumpCut;
 {_seed remoteExec ["WHF_fnc_haloJumpCut", _x]} forEach _players;
 {[_x, _forEachIndex] spawn {
