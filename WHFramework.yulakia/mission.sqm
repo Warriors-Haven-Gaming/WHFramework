@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=342;
+		nextID=354;
 	};
 	class Camera
 	{
-		pos[]={666.41229,34.390877,10776.135};
-		dir[]={0.58803046,-0.61218911,0.52863538};
-		up[]={0.45526639,0.7907089,0.40928087};
-		aside[]={0.66855425,-1.6391277e-07,-0.74366987};
+		pos[]={645.37061,58.041443,10812.546};
+		dir[]={0.69887465,-0.69903576,0.15140419};
+		up[]={0.6831876,0.71508664,0.14800574};
+		aside[]={0.21172842,0,-0.97732848};
 	};
 };
 binarizationWanted=0;
@@ -23879,14 +23879,14 @@ class Mission
 							{
 								class Attribute0
 								{
-									property="F16VFontStyle";
-									expression="_this setVariable [""F16VFontStyle"", _value]; [_this, _value] call lala_peral_F16V_fnc_applyAircraftFontStyle; [_this,_this getVariable [""F16V_Squadron_Insignia"",""None""]] call Peral_F16V_fnc_Squadron_Insignia;";
+									property="F16V_Squadron_Insignia";
+									expression="_this setVariable [""F16V_Squadron_Insignia"", _value]; [_this,_value] call Peral_F16V_fnc_Squadron_Insignia;";
 									class Value
 									{
 										class data
 										{
 											singleType="STRING";
-											value="white_font";
+											value="None";
 										};
 									};
 								};
@@ -23944,14 +23944,14 @@ class Mission
 								};
 								class Attribute5
 								{
-									property="F16V_Squadron_Insignia";
-									expression="_this setVariable [""F16V_Squadron_Insignia"", _value]; [_this,_value] call Peral_F16V_fnc_Squadron_Insignia;";
+									property="F16VFontStyle";
+									expression="_this setVariable [""F16VFontStyle"", _value]; [_this, _value] call lala_peral_F16V_fnc_applyAircraftFontStyle; [_this,_this getVariable [""F16V_Squadron_Insignia"",""None""]] call Peral_F16V_fnc_Squadron_Insignia;";
 									class Value
 									{
 										class data
 										{
 											singleType="STRING";
-											value="None";
+											value="white_font";
 										};
 									};
 								};
@@ -25916,6 +25916,7 @@ class Mission
 							{
 								position[]={699.51007,9.9700003,10822.269};
 							};
+							init="if (!isServer) exitWith {}; " \n "_filter = [ " \n "    ""BUILDING"",""HOUSE"",""CHURCH"",""CHAPEL"",""FUELSTATION"",""HOSPITAL"",""RUIN"",""BUNKER"", " \n "    ""TREE"",""SMALL TREE"",""BUSH"", " \n "    ""WALL"",""FENCE"", " \n "    ""ROCK"",""ROCKS"",""FOREST BORDER"",""FOREST TRIANGLE"",""FOREST SQUARE"",""CROSS"",""FORTRESS"",""FOUNTAIN"",""VIEW-TOWER"",""LIGHTHOUSE"",""QUAY"",""HIDE"",""BUSSTOP"",""ROAD"",""FOREST"",""TRANSMITTER"",""STACK"",""TOURISM"",""WATERTOWER"",""TRACK"",""MAIN ROAD"",""POWER LINES"",""RAILWAY"",""POWERSOLAR"",""POWERWAVE"",""POWERWIND"",""SHIPWRECK"",""TRAIL"" " \n "]; " \n "_area = [getPosATL this] + (this getVariable [""objectarea"",[]]); " \n "_area params ["""",""_a"",""_b""]; " \n "_radius = (_a max _b) * sqrt 2; " \n "_objects = nearestTerrainObjects [this,_filter,_radius,false] inAreaArray _area; " \n "{_x hideObjectGlobal true; _x allowDamage false} forEach _objects;";
 							areaSize[]={30.527893,0,44.805176};
 							areaIsRectangle=1;
 							flags=1;
@@ -25960,6 +25961,7 @@ class Mission
 								position[]={758.60583,9.9700003,10811.06};
 								angles[]={0,4.7420535,0};
 							};
+							init="if (!isServer) exitWith {}; " \n "_filter = [ " \n "    ""BUILDING"",""HOUSE"",""CHURCH"",""CHAPEL"",""FUELSTATION"",""HOSPITAL"",""RUIN"",""BUNKER"", " \n "    ""TREE"",""SMALL TREE"",""BUSH"", " \n "    ""WALL"",""FENCE"", " \n "    ""ROCK"",""ROCKS"",""FOREST BORDER"",""FOREST TRIANGLE"",""FOREST SQUARE"",""CROSS"",""FORTRESS"",""FOUNTAIN"",""VIEW-TOWER"",""LIGHTHOUSE"",""QUAY"",""HIDE"",""BUSSTOP"",""ROAD"",""FOREST"",""TRANSMITTER"",""STACK"",""TOURISM"",""WATERTOWER"",""TRACK"",""MAIN ROAD"",""POWER LINES"",""RAILWAY"",""POWERSOLAR"",""POWERWAVE"",""POWERWIND"",""SHIPWRECK"",""TRAIL"" " \n "]; " \n "_area = [getPosATL this] + (this getVariable [""objectarea"",[]]); " \n "_area params ["""",""_a"",""_b""]; " \n "_radius = (_a max _b) * sqrt 2; " \n "_objects = nearestTerrainObjects [this,_filter,_radius,false] inAreaArray _area; " \n "{_x hideObjectGlobal true; _x allowDamage false} forEach _objects;";
 							areaSize[]={54.7342,0,17.539669};
 							areaIsRectangle=1;
 							flags=1;
@@ -26004,6 +26006,7 @@ class Mission
 							{
 								position[]={703.14899,9.9700003,10880.449};
 							};
+							init="if (!isServer) exitWith {}; " \n "_filter = [ " \n "    ""BUILDING"",""HOUSE"",""CHURCH"",""CHAPEL"",""FUELSTATION"",""HOSPITAL"",""RUIN"",""BUNKER"", " \n "    ""TREE"",""SMALL TREE"",""BUSH"", " \n "    ""WALL"",""FENCE"", " \n "    ""ROCK"",""ROCKS"",""FOREST BORDER"",""FOREST TRIANGLE"",""FOREST SQUARE"",""CROSS"",""FORTRESS"",""FOUNTAIN"",""VIEW-TOWER"",""LIGHTHOUSE"",""QUAY"",""HIDE"",""BUSSTOP"",""ROAD"",""FOREST"",""TRANSMITTER"",""STACK"",""TOURISM"",""WATERTOWER"",""TRACK"",""MAIN ROAD"",""POWER LINES"",""RAILWAY"",""POWERSOLAR"",""POWERWAVE"",""POWERWIND"",""SHIPWRECK"",""TRAIL"" " \n "]; " \n "_area = [getPosATL this] + (this getVariable [""objectarea"",[]]); " \n "_area params ["""",""_a"",""_b""]; " \n "_radius = (_a max _b) * sqrt 2; " \n "_objects = nearestTerrainObjects [this,_filter,_radius,false] inAreaArray _area; " \n "{_x hideObjectGlobal true; _x allowDamage false} forEach _objects;";
 							areaSize[]={12.958,0,4.3299999};
 							areaIsRectangle=1;
 							flags=1;
@@ -26048,6 +26051,7 @@ class Mission
 								position[]={808.5575,9.9700003,10663.001};
 								angles[]={0,4.7420535,0};
 							};
+							init="if (!isServer) exitWith {}; " \n "_filter = [ " \n "    ""BUILDING"",""HOUSE"",""CHURCH"",""CHAPEL"",""FUELSTATION"",""HOSPITAL"",""RUIN"",""BUNKER"", " \n "    ""TREE"",""SMALL TREE"",""BUSH"", " \n "    ""WALL"",""FENCE"", " \n "    ""ROCK"",""ROCKS"",""FOREST BORDER"",""FOREST TRIANGLE"",""FOREST SQUARE"",""CROSS"",""FORTRESS"",""FOUNTAIN"",""VIEW-TOWER"",""LIGHTHOUSE"",""QUAY"",""HIDE"",""BUSSTOP"",""ROAD"",""FOREST"",""TRANSMITTER"",""STACK"",""TOURISM"",""WATERTOWER"",""TRACK"",""MAIN ROAD"",""POWER LINES"",""RAILWAY"",""POWERSOLAR"",""POWERWAVE"",""POWERWIND"",""SHIPWRECK"",""TRAIL"" " \n "]; " \n "_area = [getPosATL this] + (this getVariable [""objectarea"",[]]); " \n "_area params ["""",""_a"",""_b""]; " \n "_radius = (_a max _b) * sqrt 2; " \n "_objects = nearestTerrainObjects [this,_filter,_radius,false] inAreaArray _area; " \n "{_x hideObjectGlobal true; _x allowDamage false} forEach _objects;";
 							areaSize[]={51.543854,0,73.650002};
 							areaIsRectangle=1;
 							flags=1;
@@ -26091,6 +26095,7 @@ class Mission
 							{
 								position[]={824.75671,9.4396009,10813.025};
 							};
+							init="if (!isServer) exitWith {}; " \n "_filter = [ " \n "    ""BUILDING"",""HOUSE"",""CHURCH"",""CHAPEL"",""FUELSTATION"",""HOSPITAL"",""RUIN"",""BUNKER"", " \n "    ""TREE"",""SMALL TREE"",""BUSH"", " \n "    ""WALL"",""FENCE"", " \n "    ""ROCK"",""ROCKS"",""FOREST BORDER"",""FOREST TRIANGLE"",""FOREST SQUARE"",""CROSS"",""FORTRESS"",""FOUNTAIN"",""VIEW-TOWER"",""LIGHTHOUSE"",""QUAY"",""HIDE"",""BUSSTOP"",""ROAD"",""FOREST"",""TRANSMITTER"",""STACK"",""TOURISM"",""WATERTOWER"",""TRACK"",""MAIN ROAD"",""POWER LINES"",""RAILWAY"",""POWERSOLAR"",""POWERWAVE"",""POWERWIND"",""SHIPWRECK"",""TRAIL"" " \n "]; " \n "_area = [getPosATL this] + (this getVariable [""objectarea"",[]]); " \n "_area params ["""",""_a"",""_b""]; " \n "_radius = (_a max _b) * sqrt 2; " \n "_objects = nearestTerrainObjects [this,_filter,_radius,false] inAreaArray _area; " \n "{_x hideObjectGlobal true; _x allowDamage false} forEach _objects;";
 							areaSize[]={6.9042282,0,53.493088};
 							areaIsRectangle=1;
 							flags=1;
@@ -26136,6 +26141,7 @@ class Mission
 								position[]={810.65442,9.6037331,10861.708};
 								angles[]={6.2416096,0,6.2671871};
 							};
+							init="if (!isServer) exitWith {}; " \n "_filter = [ " \n "    ""BUILDING"",""HOUSE"",""CHURCH"",""CHAPEL"",""FUELSTATION"",""HOSPITAL"",""RUIN"",""BUNKER"", " \n "    ""TREE"",""SMALL TREE"",""BUSH"", " \n "    ""WALL"",""FENCE"", " \n "    ""ROCK"",""ROCKS"",""FOREST BORDER"",""FOREST TRIANGLE"",""FOREST SQUARE"",""CROSS"",""FORTRESS"",""FOUNTAIN"",""VIEW-TOWER"",""LIGHTHOUSE"",""QUAY"",""HIDE"",""BUSSTOP"",""ROAD"",""FOREST"",""TRANSMITTER"",""STACK"",""TOURISM"",""WATERTOWER"",""TRACK"",""MAIN ROAD"",""POWER LINES"",""RAILWAY"",""POWERSOLAR"",""POWERWAVE"",""POWERWIND"",""SHIPWRECK"",""TRAIL"" " \n "]; " \n "_area = [getPosATL this] + (this getVariable [""objectarea"",[]]); " \n "_area params ["""",""_a"",""_b""]; " \n "_radius = (_a max _b) * sqrt 2; " \n "_objects = nearestTerrainObjects [this,_filter,_radius,false] inAreaArray _area; " \n "{_x hideObjectGlobal true; _x allowDamage false} forEach _objects;";
 							areaSize[]={10.063927,0,4.545332};
 							areaIsRectangle=1;
 							flags=1;
@@ -26181,6 +26187,7 @@ class Mission
 								position[]={782.40918,14.6686,10911.515};
 								angles[]={6.2416096,0,6.2671871};
 							};
+							init="if (!isServer) exitWith {}; " \n "_filter = [ " \n "    ""BUILDING"",""HOUSE"",""CHURCH"",""CHAPEL"",""FUELSTATION"",""HOSPITAL"",""RUIN"",""BUNKER"", " \n "    ""TREE"",""SMALL TREE"",""BUSH"", " \n "    ""WALL"",""FENCE"", " \n "    ""ROCK"",""ROCKS"",""FOREST BORDER"",""FOREST TRIANGLE"",""FOREST SQUARE"",""CROSS"",""FORTRESS"",""FOUNTAIN"",""VIEW-TOWER"",""LIGHTHOUSE"",""QUAY"",""HIDE"",""BUSSTOP"",""ROAD"",""FOREST"",""TRANSMITTER"",""STACK"",""TOURISM"",""WATERTOWER"",""TRACK"",""MAIN ROAD"",""POWER LINES"",""RAILWAY"",""POWERSOLAR"",""POWERWAVE"",""POWERWIND"",""SHIPWRECK"",""TRAIL"" " \n "]; " \n "_area = [getPosATL this] + (this getVariable [""objectarea"",[]]); " \n "_area params ["""",""_a"",""_b""]; " \n "_radius = (_a max _b) * sqrt 2; " \n "_objects = nearestTerrainObjects [this,_filter,_radius,false] inAreaArray _area; " \n "{_x hideObjectGlobal true; _x allowDamage false} forEach _objects;";
 							areaSize[]={16.477165,0,31.989668};
 							areaIsRectangle=1;
 							flags=1;
@@ -26226,6 +26233,7 @@ class Mission
 								position[]={704.48602,9.9700003,10712.702};
 								angles[]={0,4.712389,0};
 							};
+							init="if (!isServer) exitWith {}; " \n "_filter = [ " \n "    ""BUILDING"",""HOUSE"",""CHURCH"",""CHAPEL"",""FUELSTATION"",""HOSPITAL"",""RUIN"",""BUNKER"", " \n "    ""TREE"",""SMALL TREE"",""BUSH"", " \n "    ""WALL"",""FENCE"", " \n "    ""ROCK"",""ROCKS"",""FOREST BORDER"",""FOREST TRIANGLE"",""FOREST SQUARE"",""CROSS"",""FORTRESS"",""FOUNTAIN"",""VIEW-TOWER"",""LIGHTHOUSE"",""QUAY"",""HIDE"",""BUSSTOP"",""ROAD"",""FOREST"",""TRANSMITTER"",""STACK"",""TOURISM"",""WATERTOWER"",""TRACK"",""MAIN ROAD"",""POWER LINES"",""RAILWAY"",""POWERSOLAR"",""POWERWAVE"",""POWERWIND"",""SHIPWRECK"",""TRAIL"" " \n "]; " \n "_area = [getPosATL this] + (this getVariable [""objectarea"",[]]); " \n "_area params ["""",""_a"",""_b""]; " \n "_radius = (_a max _b) * sqrt 2; " \n "_objects = nearestTerrainObjects [this,_filter,_radius,false] inAreaArray _area; " \n "{_x hideObjectGlobal true; _x allowDamage false} forEach _objects;";
 							areaSize[]={62.927231,0,31.976999};
 							areaIsRectangle=1;
 							flags=1;
@@ -26270,6 +26278,7 @@ class Mission
 								position[]={764.6767,16.493935,10738.989};
 								angles[]={0,4.7420535,0};
 							};
+							init="if (!isServer) exitWith {}; " \n "_filter = [ " \n "    ""BUILDING"",""HOUSE"",""CHURCH"",""CHAPEL"",""FUELSTATION"",""HOSPITAL"",""RUIN"",""BUNKER"", " \n "    ""TREE"",""SMALL TREE"",""BUSH"", " \n "    ""WALL"",""FENCE"", " \n "    ""ROCK"",""ROCKS"",""FOREST BORDER"",""FOREST TRIANGLE"",""FOREST SQUARE"",""CROSS"",""FORTRESS"",""FOUNTAIN"",""VIEW-TOWER"",""LIGHTHOUSE"",""QUAY"",""HIDE"",""BUSSTOP"",""ROAD"",""FOREST"",""TRANSMITTER"",""STACK"",""TOURISM"",""WATERTOWER"",""TRACK"",""MAIN ROAD"",""POWER LINES"",""RAILWAY"",""POWERSOLAR"",""POWERWAVE"",""POWERWIND"",""SHIPWRECK"",""TRAIL"" " \n "]; " \n "_area = [getPosATL this] + (this getVariable [""objectarea"",[]]); " \n "_area params ["""",""_a"",""_b""]; " \n "_radius = (_a max _b) * sqrt 2; " \n "_objects = nearestTerrainObjects [this,_filter,_radius,false] inAreaArray _area; " \n "{_x hideObjectGlobal true; _x allowDamage false} forEach _objects;";
 							areaSize[]={17.241074,0,27.814013};
 							areaIsRectangle=1;
 							flags=1;
