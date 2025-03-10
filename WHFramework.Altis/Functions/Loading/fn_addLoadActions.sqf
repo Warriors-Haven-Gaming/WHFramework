@@ -75,7 +75,9 @@ private _loadID = _unit addAction [
         private _sound = getArray (configFile >> "CfgVehicles" >> typeOf cursorObject >> "soundGetIn") # 0;
         if !("." in _sound) then {_sound = _sound + ".wss"};
         playSound3D [_sound, objNull, false, getPosASL cursorObject];
+
         [_target, cursorObject] remoteExec ["moveInCargo", _target];
+        _target setVariable ["WHF_load_canUnload", true, true];
         [_target, _onLoadArgs] call _onLoadCode;
     },
     nil,
