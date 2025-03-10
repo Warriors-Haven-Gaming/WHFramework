@@ -27,7 +27,7 @@ private _actionID = [
     {},
     [],
     WHF_unflip_duration,
-    1000,
+    12,
     false,
     false,
     true

@@ -81,7 +81,7 @@ private _loadID = _unit addAction [
         [_target, _onLoadArgs] call _onLoadCode;
     },
     nil,
-    11,
+    12,
     true,
     true,
     "",
@@ -114,7 +114,7 @@ private _releaseID = _unit addAction [
         _unit setVariable [_targetVar, nil];
     },
     nil,
-    11,
+    12,
     true,
     true,
     "",

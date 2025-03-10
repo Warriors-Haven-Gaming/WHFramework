@@ -23,7 +23,7 @@ private _escortID = _unit addAction [
         [_caller, _target] call WHF_fnc_escortUnit;
     },
     nil,
-    11,
+    12,
     true,
     true,
     "",

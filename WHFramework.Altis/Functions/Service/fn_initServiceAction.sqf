@@ -37,7 +37,7 @@ private _actionID = [
     },
     [],
     10,
-    1000,
+    12,
     false,
     false,
     true

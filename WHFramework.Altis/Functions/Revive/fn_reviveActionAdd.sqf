@@ -22,7 +22,7 @@ private _actionID = _unit addAction [
         [_caller, _target] call WHF_fnc_reviveAction;
     },
     nil,
-    11,
+    12,
     true,
     true,
     "",

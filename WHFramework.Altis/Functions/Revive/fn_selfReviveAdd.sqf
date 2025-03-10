@@ -28,7 +28,7 @@ private _id = [
     {},
     [],
     WHF_selfRevive_duration,
-    1001, // slightly higher priority than vanilla Force Respawn action
+    12,
     false,
     true,
     true

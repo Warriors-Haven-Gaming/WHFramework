@@ -42,7 +42,7 @@ private _carryID = [
     {},
     [],
     2.5,
-    11,
+    12,
     false
 ] call BIS_fnc_holdActionAdd;
 _unit setVariable ["WHF_revive_carryID", _carryID];
