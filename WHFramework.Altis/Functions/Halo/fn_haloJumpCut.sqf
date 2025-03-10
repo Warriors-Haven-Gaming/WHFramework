@@ -1,5 +1,5 @@
 /*
-Function: WHF_fnc_haloJumpCutIn
+Function: WHF_fnc_haloJumpCut
 
 Description:
     Start the halo jump cutscene.

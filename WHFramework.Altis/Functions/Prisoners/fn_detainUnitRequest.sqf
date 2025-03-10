@@ -1,5 +1,5 @@
 /*
-Function: WHF_fnc_detainActionRequest
+Function: WHF_fnc_detainUnitRequest
 
 Description:
     Handle a unit's attempt to detain another unit.
