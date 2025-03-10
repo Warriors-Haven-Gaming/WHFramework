@@ -18,12 +18,16 @@ Description:
 Parameters:
     Array inputGroups:
         An array of groups to assign waypoints to.
+    Array | Nothing area:
+        (Optional, default nil)
+        If provided, units will only consider targets within the given area.
+        Should be in a format suitable for inArea.
 
 Author:
     thegamecracks
 
 */
-params ["_inputGroups"];
+params ["_inputGroups", "_area"];
 
 sleep (20 + random 20);
 private _groups = [_inputGroups] call WHF_fnc_coerceGroups;
@@ -45,7 +49,11 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
 
         private _targets =
             _leader targetsQuery [objNull, blufor, "", [], 180]
-            select {_x # 2 isEqualTo blufor};
+            select {
+                _x # 2 isEqualTo blufor
+                && {isNil "_area"
+                || {_x # 4 vectorMultiply [1,1,0] inArea _area}}
+            };
 
         sleep 0.125;
         if (count _targets < 1) then {continue};
