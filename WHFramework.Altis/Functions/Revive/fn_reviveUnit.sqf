@@ -31,3 +31,4 @@ if (isNull objectParent _unit) then {
     };
     [_unit, [_animation, 0, 0, false]] remoteExec ["switchMove"];
 };
+if (_unit isEqualTo focusOn) then {hintSilent ""};

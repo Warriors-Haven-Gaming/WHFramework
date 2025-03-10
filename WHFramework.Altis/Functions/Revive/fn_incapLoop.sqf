@@ -40,6 +40,12 @@ private _actOfGod = if (random 1 < 0.1) then {time + 30 + random 60} else {-1};
 private _bleedoutAt = time + WHF_revive_bleedout;
 private _drownAt = -1;
 
+private _killedEH = ["Killed", _unit addEventHandler ["Killed", {
+    params ["_unit"];
+    if (_unit isEqualTo focusOn) then {hintSilent ""};
+    _unit removeEventHandler [_thisEvent, _thisEventHandler];
+}]];
+
 while {alive _unit && {lifeState _unit isEqualTo "INCAPACITATED"}} do {
     private _vehicle = objectParent _unit;
     if (
@@ -97,3 +103,6 @@ while {alive _unit && {lifeState _unit isEqualTo "INCAPACITATED"}} do {
 
     sleep (1 + random 1);
 };
+
+_unit removeEventHandler _killedEH;
+if (_unit isEqualTo focusOn) then {hintSilent ""};
