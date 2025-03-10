@@ -37,7 +37,6 @@ if (!isRemoteExecutedJIP) then {
         };
     };
     if (local _unit) then {
-        _unit allowDamage false;
         _unit setCaptive true;
         _unit setUnconscious true;
         if (damage _unit < 0.05) then {_unit setDamage 0.05};
