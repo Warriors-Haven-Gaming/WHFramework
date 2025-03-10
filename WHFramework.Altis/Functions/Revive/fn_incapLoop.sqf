@@ -18,7 +18,7 @@ Author:
 params ["_unit"];
 
 private _findNearestMedic = {
-    private _medics = allPlayers select {
+    private _medics = allPlayers - [focusOn] select {
         side group _x isEqualTo side group _unit
         && {_x getUnitTrait "medic"}
     };
