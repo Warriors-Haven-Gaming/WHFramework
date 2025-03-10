@@ -9,7 +9,8 @@ Author:
     thegamecracks
 
 */
-focusOn say3D selectRandom ["headshot_noHelm_1", "headshot_noHelm_2"];
+private _sound = selectRandom ["headshot_noHelm_1", "headshot_noHelm_2"];
+playSoundUI [_sound, 1, 1, true];
 
 private _blur = ppEffectCreate ["DynamicBlur", 474];
 _blur ppEffectEnable true;
