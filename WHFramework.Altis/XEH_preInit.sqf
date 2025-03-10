@@ -329,6 +329,16 @@ Author:
     {},
     false
 ] call WHF_fnc_addSetting;
+[
+    "WHF_locks_copilot",
+    "CHECKBOX",
+    ["STR_WHF_settings_locks_copilot", "STR_WHF_settings_locks_copilot_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_locks"],
+    false,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
 
 // Prisoners
 [
