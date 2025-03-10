@@ -20,7 +20,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=330;
+		nextID=342;
 	};
 	class Camera
 	{
@@ -1339,6 +1339,7 @@ class Mission
 							{
 								init="this setVariable [""WHF_role"", ""rifleman""];";
 								description="Rifleman@Riflemen";
+								isPlayer=1;
 								isPlayable=1;
 							};
 							id=1273;
