@@ -64,7 +64,7 @@ private _isPosSuitable = {
 };
 
 private _createGunners = {
-    params ["_turrets", "_side"];
+    // params ["_turrets", "_side"];
     private _group = [_side, "standard", count _turrets, [random -500, random -500, 0], 0, false] call WHF_fnc_spawnUnits;
     {
         private _turret = _turrets # _forEachIndex;
@@ -72,13 +72,13 @@ private _createGunners = {
         _x moveInGunner _turret;
     } forEach units _group;
 
-    [_turrets, _side] call _initTurrets;
-    [_turrets, _group] call _registerArtillery;
+    call _initTurrets;
+    call _registerArtillery;
     _group
 };
 
 private _initTurrets = {
-    params ["_turrets", "_side"];
+    // params ["_turrets", "_side"];
     {
         private _turret = _x;
         _turret setFuel 0;
@@ -103,7 +103,7 @@ private _initTurrets = {
 };
 
 private _registerArtillery = {
-    params ["_turrets", "_group"];
+    // params ["_turrets", "_group"];
     if (_turrets findIf {getNumber (configOf _x >> "artilleryScanner") > 0} < 0) exitWith {};
     if (isNil "lambs_wp_fnc_taskartilleryregister") exitWith {};
 
@@ -134,7 +134,7 @@ private _compositionGroups = [];
     _objects append _turrets;
 
     if (count _turrets > 0) then {
-        private _group = [_turrets, _side] call _createGunners;
+        private _group = call _createGunners;
         _compositionGroups pushBack _group;
     };
 

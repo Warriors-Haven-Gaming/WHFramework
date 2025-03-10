@@ -34,10 +34,10 @@ Author:
 params ["_composition", "_center", "_direction", ["_flags", ["normal"]], ["_ruins", -1]];
 
 private _rotateFromCenter = {
-    params ["_pos", "_dir"];
+    // params ["_pos", "_dir"];
     [
-         cos _dir * _pos # 0 + sin _dir * _pos # 1,
-        -sin _dir * _pos # 0 + cos _dir * _pos # 1,
+         cos _direction * _pos # 0 + sin _direction * _pos # 1,
+        -sin _direction * _pos # 0 + cos _direction * _pos # 1,
         _pos # 2
     ]
 };
@@ -67,7 +67,7 @@ private _simple = "simple" in _flags;
 _composition apply {
     _x params ["_type", "_pos", "_dir"];
 
-    _pos = [_pos, _direction] call _rotateFromCenter vectorAdd _center;
+    _pos = call _rotateFromCenter vectorAdd _center;
 
     private _obj = switch (true) do {
         case (_simple && {!_path || {_type call _countPathLODs < 1}}): {
