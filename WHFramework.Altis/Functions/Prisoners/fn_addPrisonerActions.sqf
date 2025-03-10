@@ -30,7 +30,8 @@ private _escortID = _unit addAction [
     "
     isNil {_this getVariable 'WHF_escort'}
     && {captive _originalTarget
-    && {isNull attachedTo _originalTarget}}
+    && {lifeState _originalTarget in ['HEALTHY', 'INJURED']
+    && {isNull attachedTo _originalTarget}}}
     ",
     3
 ];
