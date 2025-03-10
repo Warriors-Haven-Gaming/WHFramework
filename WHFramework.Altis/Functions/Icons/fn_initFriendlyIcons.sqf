@@ -210,7 +210,7 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
     {
         private _config = configOf _x;
         private _side = side group effectiveCommander _x;
-        private _crew = crew _x;
+        private _crew = crew _x select {_x in _units};
         private _color = switch (true) do {
             case (_crew findIf {alive _x} < 0): {[0.2, 0.2, 0.2]};
             case (_crew findIf {lifeState _x isEqualTo "INCAPACITATED"} >= 0): {[1, 0.5, 0, 1]};
