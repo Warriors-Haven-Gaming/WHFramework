@@ -21,21 +21,21 @@ params ["_center", "_direction"];
 
 if (isNil "_direction") then {_direction = getPosATL focusOn getDir _center};
 
-private _units = units focusOn select {
+private _allUnits = units focusOn select {
     _x isEqualTo focusOn
     || {!isPlayer _x
     && {local _x
     && {focusOn distance _x < 100}}}
 };
-{_x setUnitFreefallHeight 50} forEach _units;
-_units = _units select {isNull objectParent _x};
+{_x setUnitFreefallHeight 50} forEach _allUnits;
 
-private _vehicles = _units apply {objectParent _x} select {
+private _vehicles = _allUnits apply {objectParent _x} select {
     !isNull _x
-    && {effectiveCommander _x in _units
+    && {effectiveCommander _x in _allUnits
     && {!(_x isKindOf "Air")}}
 };
 _vehicles = _vehicles arrayIntersect _vehicles;
+private _units = _allUnits select {isNull objectParent _x};
 
 disableUserInput true;
 private _seed = floor random 1000000;
