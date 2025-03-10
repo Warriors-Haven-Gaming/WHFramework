@@ -23,7 +23,7 @@ private _speedMPS = vectorMagnitude velocity _vehicle;
 if (_speedMPS <= 1.39) exitWith {};
 
 private _speedKPH = _speedMPS * 3.6;
-_speedKPH = round (_speedKPH / 5) * 5;
+_speedKPH = round (_speedKPH / 5) * 5 min 200;
 
 _vehicle setCruiseControl [_speedKPH, true];
 playSoundUI ["click"];

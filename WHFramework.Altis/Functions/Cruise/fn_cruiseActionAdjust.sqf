@@ -22,6 +22,7 @@ getCruiseControl _vehicle params ["_speedKPH"];
 if (_speedKPH <= 0) then {call WHF_fnc_cruiseAction};
 getCruiseControl _vehicle params ["_speedKPH"];
 if (_speedKPH <= 0) exitWith {};
+if (_increment && {_speedKPH >= 200}) exitWith {};
 private _step = if (_increment) then {5} else {-5};
 
 _vehicle setCruiseControl [_speedKPH + _step max 5, true];
