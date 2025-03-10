@@ -73,7 +73,7 @@ private _taskID = [
     blufor,
     ["", _parent],
     "mainAnnexRegionCommand",
-    _pos vectorAdd [150 - random 75, 150 - random 75],
+    _pos getPos [75 + random 75, random 360],
     "AUTOASSIGNED",
     -1,
     true,
