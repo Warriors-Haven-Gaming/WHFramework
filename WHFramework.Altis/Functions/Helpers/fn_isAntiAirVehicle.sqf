@@ -21,7 +21,7 @@ private _sensors = listVehicleSensors _vehicle;
 private _allowedSensors = ["IRSensorComponent", "ActiveRadarSensorComponent"];
 if (_sensors findIf {_x # 1 in _allowedSensors} >= 0) exitWith {true};
 
-if (typeOf _vehicle in ["I_G_Offroad_01_AT_F", "I_C_Offroad_02_AT_F"]) exitWith {false};
+if (typeOf _vehicle in ["CUP_O_Kornet_RU", "I_G_Offroad_01_AT_F", "I_C_Offroad_02_AT_F"]) exitWith {false};
 
 private _weapons = _vehicle weaponsTurret [0];
 _weapons findIf {"launcher" in toLowerANSI _x} >= 0
