@@ -40,8 +40,8 @@ if (isNil "_lock") exitWith {""};
 switch (_lock # 0) do {
     case "role": {
         private _roles = _lock # 1;
-        private _unitRole = _unit getVariable "WHF_role";
-        if (!isNil "_unitRole" && {_unitRole in _roles}) exitWith {""};
+        private _role = player getVariable "WHF_role";
+        if (!isNil "_role" && {_role in _roles}) exitWith {""};
         localize "$STR_WHF_vehicleLock"
     };
     case "uid": {
