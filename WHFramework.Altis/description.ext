@@ -101,6 +101,11 @@ class CfgFunctions {
         class Damage {
             class initDamageHandlers {};
         };
+        class Diary {
+            class diaryGuide {};
+            class diaryLocalize {};
+            class initDiary {};
+        };
         class Factions {
             class cycleFaction {};
             class isFactionSupported {};
@@ -285,7 +290,15 @@ class CfgFunctions {
 };
 
 // https://community.bistudio.com/wiki/Arma_3:_Advanced_Hints_(Field_Manual)
-class CfgHints {};
+class CfgHints {
+    class Intro {
+        displayName = "$STR_WHF_intro_displayName";
+        class Welcome {
+            displayName = "$STR_WHF_intro_displayName";
+            description = "$STR_WHF_intro_welcome_description";
+        };
+    };
+};
 
 // https://steamcommunity.com/sharedfiles/filedetails/?id=1867660876
 class CfgPylonManager {

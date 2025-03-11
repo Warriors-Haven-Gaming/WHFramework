@@ -35,6 +35,7 @@ call WHF_fnc_initContextActionMagRepack;
 call WHF_fnc_initContextActionQuadbike;
 call WHF_fnc_initContextHandlers;
 call WHF_fnc_initDamageHandlers;
+call WHF_fnc_initDiary;
 call WHF_fnc_initCruiseKeybind;
 call WHF_fnc_initDetainKeybind;
 call WHF_fnc_initIncapacitatedHandlers;
@@ -44,5 +45,16 @@ call WHF_fnc_vehSpawnCatalogClient;
 0 spawn WHF_fnc_laserLightLoop;
 0 spawn WHF_fnc_updateChannelLoop;
 0 spawn WHF_fnc_initFriendlyIcons;
+
+private _firstPlayed = missionProfileNamespace getVariable ["WHF_play_first", systemTimeUTC];
+missionProfileNamespace setVariable ["WHF_play_first", _firstPlayed];
+
+private _timesPlayed = missionProfileNamespace getVariable ["WHF_play_times", 0];
+missionProfileNamespace setVariable ["WHF_play_times", _timesPlayed + 1];
+saveMissionProfileNamespace;
+
+if (_timesPlayed < 5) then {
+    [["Intro", "Welcome"], 15, nil, 35, nil, true, true] spawn BIS_fnc_advHint;
+};
 
 systemChat format ["Finished initialization (%1)", briefingName];

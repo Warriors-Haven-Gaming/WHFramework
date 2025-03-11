@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="WHFramework">
+    <Container name="CfgHints">
+        <Key ID="STR_WHF_intro_displayName">
+            <Original>Introduction</Original>
+        </Key>
+        <Key ID="STR_WHF_intro_welcome_description">
+            <Original>Welcome to Warriors Haven Framework!%1If you're new to this gamemode, you should check out the Getting Started guide on your map journal.</Original>
+        </Key>
+    </Container>
     <Container name="CfgTaskDescriptions">
         <Key ID="STR_WHF_destroyAAA_title">
             <Original>Destroy Anti-Air Artillery</Original>
@@ -85,6 +93,166 @@
         </Key>
         <Key ID="STR_WHF_cruise_down_keybind_tooltip">
             <Original>Decrease set speed while cruise control is enabled.\nDisabled when ACE is loaded.</Original>
+        </Key>
+    </Container>
+    <Container name="Diary">
+        <Key ID="STR_WHF_diaryGuide_subject">
+            <Original>Getting Started</Original>
+        </Key>
+        <Key ID="STR_WHF_diaryGuide_summary_title">
+            <Original>Summary</Original>
+        </Key>
+        <Key ID="STR_WHF_diaryGuide_summary_description">
+            <Original>
+                This is a persistent, Invade &amp;amp; Annex-like mission where
+                players are working together to complete procedurally generated
+                objectives across the map of %1.
+                &lt;br/&gt;
+                &lt;br/&gt;
+                This mission was developed by thegamecracks and Vicious Resilience
+                as part of the Warriors Haven community. This took a lot of hard
+                work to make, so thank you for playing!
+                &lt;br/&gt;
+                &lt;br/&gt;
+                Playing solo and want a taste of combat? Grab yourself your
+                favorite gun and a lot of first aid kits, then recruit some AI
+                and halo jump into the main objective!
+            </Original>
+        </Key>
+        <Key ID="STR_WHF_diaryGuide_keybinds_title">
+            <Original>Keybinds</Original>
+        </Key>
+        <Key ID="STR_WHF_diaryGuide_keybinds_description">
+            <Original>
+                The following keybinds are provided by this mission:
+                &lt;br/&gt;
+                - Context Menu: [Left Windows]
+                  &lt;br/&gt;
+                - Detain: [T]
+                  &lt;br/&gt;
+                &lt;br/&gt;
+                The following keybinds are also available when ACE is not loaded:
+                &lt;br/&gt;
+                - Repack Magazines: [Ctrl+R]
+                  &lt;br/&gt;
+                - Cruise Control: [Insert]
+                  &lt;br/&gt;
+                - Cruise Up: [Ctrl+Mouse wheel up]
+                  &lt;br/&gt;
+                - Cruise Down: [Ctrl+Mouse wheel down]
+                  &lt;br/&gt;
+                &lt;br/&gt;
+                If you have CBA loaded, these keybinds can be changed by going
+                to your Controls &amp;gt; Configure Addons menu.
+            </Original>
+        </Key>
+        <Key ID="STR_WHF_diaryGuide_halo_title">
+            <Original>Halo Jumping</Original>
+        </Key>
+        <Key ID="STR_WHF_diaryGuide_halo_description">
+            <Original>
+                When available, halo jumping may be accessed from anywhere by
+                holding the Context Menu keybind. This allows you to drop over
+                any location of your choosing, as long as it is not within coverage
+                of enemy anti-air vehicles. Halo jumps can carry along AI recruits
+                and vehicles.
+                &lt;br/&gt;
+                &lt;br/&gt;
+                If you have CBA installed, you can customize how high you want
+                to be dropped off, when recruit/vehicle parachutes automatically
+                deploy, and the separation between your units.
+                &lt;br/&gt;
+                &lt;br/&gt;
+                Depending on server settings, halo jumping may become hidden
+                after a certain number of players have joined.
+            </Original>
+        </Key>
+        <Key ID="STR_WHF_diaryGuide_incapacitation_title">
+            <Original>Incapacitation</Original>
+        </Key>
+        <Key ID="STR_WHF_diaryGuide_incapacitation_description">
+            <Original>
+                NOTE: this section does not apply if ACE Medical is loaded.
+                &lt;br/&gt;
+                &lt;br/&gt;
+                Once you have been significantly wounded, you will become incapacitated
+                and unable to move. There are four ways to recover from incapacitation:
+                &lt;br/&gt;
+                1. Press Escape and respawn back at base;
+                   &lt;br/&gt;
+                2. Pray for an act of god;
+                   &lt;br/&gt;
+                3. Wait for a player medic to revive you, or;
+                   &lt;br/&gt;
+                4. Perform a self-revive.
+                   &lt;br/&gt;
+                &lt;br/&gt;
+                Depending on server settings, options (3) and (4) may have different
+                requirements to succeed. By default, players can only revive units
+                when they are a Medic, have a Medkit on hand, and have one First Aid Kit
+                to be consumed. The last two item requirements will check the
+                incapacitated unit's inventory first, so medics that have forgotten
+                their medkit or have ran out of first aid kits can still perform
+                revives on anyone that has the necessary items themselves.
+                &lt;br/&gt;
+                &lt;br/&gt;
+                For self-reviving, this option typically appears after 30 seconds,
+                and allows any player with at least four First Aid Kits to self-revive
+                themselves.
+            </Original>
+        </Key>
+        <Key ID="STR_WHF_diaryGuide_recruits_title">
+            <Original>Recruits</Original>
+        </Key>
+        <Key ID="STR_WHF_diaryGuide_recruits_description">
+            <Original>
+                Certain objects around the base, typically flag poles, may serve
+                as places for group leaders to request AI recruits.
+                They will receive the last loadout you choose from the arsenal
+                and have the same traits that your role provides (engineer/medic).
+                &lt;br/&gt;
+                &lt;br/&gt;
+                Depending on server settings, recruit actions may become hidden
+                after a certain number of players have joined.
+            </Original>
+        </Key>
+        <Key ID="STR_WHF_diaryGuide_service_title">
+            <Original>Vehicle Servicing</Original>
+        </Key>
+        <Key ID="STR_WHF_diaryGuide_service_description">
+            <Original>
+                Repair depots provide service capabilities to all players within
+                range. You must park your vehicle near the depot, exit it, and
+                look at the vehicle to service it. This will repair, refuel, and
+                rearm your vehicle.
+            </Original>
+        </Key>
+        <Key ID="STR_WHF_diaryGuide_locks_title">
+            <Original>Vehicle Locks</Original>
+        </Key>
+        <Key ID="STR_WHF_diaryGuide_locks_description">
+            <Original>
+                Depending on server settings, certain vehicles will be locked
+                to a specific role or owner. These locks typically apply to the
+                driver seat only, but may also apply to gunner and passenger seats.
+                Aircraft provided by Vehicle Spawners will have their pilot
+                seats locked to the owner.
+            </Original>
+        </Key>
+        <Key ID="STR_WHF_diaryGuide_vehSpawn_title">
+            <Original>Vehicle Spawners</Original>
+        </Key>
+        <Key ID="STR_WHF_diaryGuide_vehSpawn_description">
+            <Original>
+                Certain objects around the base, typically laptops, may serve as
+                vehicle spawners and can provide various types of vehicles. Some
+                vehicle types, like Artillery, Tanks, and Helicopters, are only available for
+                certain roles like Artillery Gunner, Engineer, and Transport Pilot respectively.
+                &lt;br/&gt;
+                &lt;br/&gt;
+                Once you spawn a vehicle, all Vehicle Spawners will enter
+                a cooldown based on the specific vehicle you have chosen.
+            </Original>
         </Key>
     </Container>
     <Container name="Factions">
