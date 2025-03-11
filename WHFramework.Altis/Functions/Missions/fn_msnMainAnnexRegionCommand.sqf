@@ -53,7 +53,7 @@ _vehicles append _compVehicles;
 
 private _createGunners = {
     private _turrets = _compVehicles select {alive _x && {count allTurrets _x > 0}};
-    private _group = [opfor, "standard", count _turrets, [random -500, random -500, 0], 0, false] call WHF_fnc_spawnUnits;
+    private _group = [opfor, "standard", count _turrets, [-random 500, -random 500, 0], 0, false] call WHF_fnc_spawnUnits;
     {
         private _turret = _turrets # _forEachIndex;
         _group addVehicle _turret;

@@ -43,7 +43,8 @@ _objects append flatten _mortarObjects;
 _terrain append flatten _mortarTerrain;
 _groups append flatten _mortarGroups;
 
-private _roadblockCount = 4 + floor (_radius / 40);
+private _roadblockCount = 4 + _radius / 40;
+_roadblockCount = floor (_roadblockCount * WHF_missions_annex_vehicles);
 [opfor, _roadblockCount, _center, _radius] call WHF_fnc_createRoadblocks
     params ["_roadblockObjects", "_roadblockTerrain", "_roadblockGroups"];
 _objects append flatten _roadblockObjects;
