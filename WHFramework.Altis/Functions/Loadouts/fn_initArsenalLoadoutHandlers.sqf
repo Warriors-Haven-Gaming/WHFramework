@@ -12,3 +12,10 @@ Author:
     [getUnitLoadout player] call WHF_fnc_setLastLoadout;
     saveMissionProfileNamespace;
 }] call BIS_fnc_addScriptedEventHandler;
+
+if (isClass (configFile >> "CfgPatches" >> "ace_arsenal")) then {
+    ["ace_arsenal_displayClosed", {
+        [getUnitLoadout player] call WHF_fnc_setLastLoadout;
+        saveMissionProfileNamespace;
+    }] call CBA_fnc_addEventHandler;
+};

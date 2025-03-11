@@ -14,7 +14,26 @@ Author:
 */
 params ["_arsenal"];
 
-["AmmoboxInit", [_arsenal, true]] spawn BIS_fnc_arsenal;
+if (isClass (configFile >> "CfgPatches" >> "ace_arsenal")) then {
+    [_arsenal, true] call ace_arsenal_fnc_initBox;
+
+    _arsenal addAction [
+        localize "$STR_A3_Arsenal",
+        {
+            params ["_target", "_caller"];
+            [_target, _caller] call ace_arsenal_fnc_openBox;
+        },
+        nil,
+        6,
+        true,
+        true,
+        "",
+        "true",
+        5
+    ];
+} else {
+    ["AmmoboxInit", [_arsenal, true]] spawn BIS_fnc_arsenal;
+};
 
 _arsenal addAction [
     localize "$STR_WHF_initArsenal_loadLastLoadout",
