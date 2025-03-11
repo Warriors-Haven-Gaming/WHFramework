@@ -87,36 +87,45 @@ if (_targetArmed) then {_success append [
 
 [_target, selectRandom _success] remoteExec ["WHF_fnc_localChat", WHF_globalPlayerTarget];
 [_target] joinSilent grpNull;
-
-{
-    if (_x isEqualTo "") then {continue};
-
-    private _distance = [0, -1, 1] select _forEachIndex;
-    private _start = ATLToASL (_target modelToWorldVisual [_distance, 0.5, 1.5]);
-    private _end = AGLToASL (_start vectorMultiply [1, 1, 0]);
-    private _surfaces = lineIntersectsSurfaces [_start, _end, _target];
-
-    private _pos = if (count _surfaces > 0) then {ASLToATL (_surfaces # 0 # 0)} else {
-        _target modelToWorldVisual [_distance, 0.5, 0]
-    };
-    private _normal = if (count _surfaces > 0) then {_surfaces # 0 # 1} else {
-        surfaceNormal _pos
-    };
-
-    private _holder = createVehicle ["GroundWeaponHolder", _pos, [], 0, "CAN_COLLIDE"];
-    _holder setDir random 360;
-    _holder setVectorUp _normal;
-    _target actionNow ["DropWeapon", _holder, _x];
-} forEach [primaryWeapon _target, handgunWeapon _target, secondaryWeapon _target];
-
-moveOut _target;
 _target enableAIFeature ["PATH", false];
 _target setCaptive true;
 _target setUnitPos "UP";
+moveOut _target;
 
 [_target] remoteExec ["WHF_fnc_addPrisonerActions", 0, netId _target + ":addPrisonerActions"];
 [_target, ["amovpercmstpssurwnondnon", 0, 0, false]] remoteExec ["switchMove"];
 [_target, ["", 0, 0, false]] remoteExec ["switchGesture"];
+
+if (isNil {_target getVariable "WHF_disableGC"}) then {
+    _target remoteExec ["WHF_fnc_queueGCDeletion", 2];
+};
+
+_target spawn {
+    {
+        if (_x isEqualTo "") then {continue};
+
+        sleep (0.4 + random 0.2);
+        if !(lifeState _this in ["HEALTHY", "INJURED"]) exitWith {};
+
+        private _distance = [0, -1, 1] select _forEachIndex;
+        private _start = ATLToASL (_this modelToWorldVisual [_distance, 0.5, 1.5]);
+        private _end = AGLToASL (_start vectorMultiply [1, 1, 0]);
+        private _surfaces = lineIntersectsSurfaces [_start, _end, _this];
+
+        private _pos = if (count _surfaces > 0) then {ASLToATL (_surfaces # 0 # 0)} else {
+            _this modelToWorldVisual [_distance, 0.5, 0]
+        };
+        private _normal = if (count _surfaces > 0) then {_surfaces # 0 # 1} else {
+            surfaceNormal _pos
+        };
+
+        private _holder = createVehicle ["GroundWeaponHolder", _pos, [], 0, "CAN_COLLIDE"];
+        _holder setDir random 360;
+        _holder setVectorUp _normal;
+        _this actionNow ["DropWeapon", _holder, _x];
+    } forEach [primaryWeapon _this, handgunWeapon _this, secondaryWeapon _this];
+};
+
 _target spawn {while {alive _this && {captive _this}} do {
     sleep (1 + random 1);
     if (!isNull objectParent _this) then {continue};
@@ -124,7 +133,3 @@ _target spawn {while {alive _this && {captive _this}} do {
     if (animationState _this isEqualTo "amovpercmstpssurwnondnon") then {continue};
     [_this, ["amovpercmstpssurwnondnon", 0, 0, false]] remoteExec ["switchMove"];
 }};
-
-if (isNil {_target getVariable "WHF_disableGC"}) then {
-    _target remoteExec ["WHF_fnc_queueGCDeletion", 2];
-};
