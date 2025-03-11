@@ -43,6 +43,13 @@ _objects append flatten _mortarObjects;
 _terrain append flatten _mortarTerrain;
 _groups append flatten _mortarGroups;
 
+private _roadblockCount = 4 + floor (_radius / 40);
+[opfor, _roadblockCount, _center, _radius] call WHF_fnc_createRoadblocks
+    params ["_roadblockObjects", "_roadblockTerrain", "_roadblockGroups"];
+_objects append flatten _roadblockObjects;
+_terrain append flatten _roadblockTerrain;
+_groups append flatten _roadblockGroups;
+
 private _minefieldSpacing = 75 + random 75;
 private _minefieldStep = 360 / ceil (2 * pi * _radius / _minefieldSpacing);
 for "_i" from 0 to 359 step _minefieldStep do {

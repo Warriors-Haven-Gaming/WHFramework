@@ -51,14 +51,8 @@ for "_i" from 1 to _quantity do {
             !_isPedestrian
         };
         if (count _roads < 1) exitWith {};
-        selectRandom _roads params ["", "_width", "", "", "", "", "_begPos", "_endPos"];
-
-        private _line = _endPos vectorDiff _begPos;
-        private _posASL = vectorLinearConversion [0, 1, random 1, _begPos, _endPos];
-        private _normal = vectorNormalized _line vectorCrossProduct [0, 0, 1];
-        private _distance = _width * (-1 + random 2);
-        _posASL = _posASL vectorAdd (_normal vectorMultiply _distance);
-        _pos = ASLToATL _posASL;
+        private _road = selectRandom _roads;
+        _pos = ASLToATL ([_road, random 1, random 2 - 1] call WHF_fnc_getRoadPos);
     };
 
     private _mines = switch (_type) do {
