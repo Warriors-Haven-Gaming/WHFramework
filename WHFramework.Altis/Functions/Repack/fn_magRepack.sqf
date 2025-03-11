@@ -44,18 +44,13 @@ private _addMagazine = {
     _unit addMagazine [_type, _count];
 
     if (_transferredRounds) then {
-        playSound3D [
+        playSoundUI [
             selectRandom [
                 "a3\sounds_f\weapons\other\reload_bolt_1.wss",
                 "a3\sounds_f\weapons\other\reload_bolt_2.wss"
             ],
-            _unit,
-            false,
-            getPosASL _unit,
             5,
             1,
-            0,
-            0,
             true
         ];
         sleep 0.5;
@@ -123,16 +118,12 @@ private _completed = false;
 } forEach _magazineGroups;
 
 if (_completed) then {
-    playSound3D [
+    playSoundUI [
         "a3\sounds_f\arsenal\weapons\machineguns\mk200\reload_mk200.wss",
-        _unit,
-        false,
-        getPosASL _unit,
-        5,
+        3,
         1,
-        0,
-        4.2,
-        true
+        true,
+        4.2
     ];
 };
 
