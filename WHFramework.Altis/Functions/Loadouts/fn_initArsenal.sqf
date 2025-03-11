@@ -54,5 +54,5 @@ _arsenal addAction [
     true,
     "",
     "true",
-    3
+    5
 ];
