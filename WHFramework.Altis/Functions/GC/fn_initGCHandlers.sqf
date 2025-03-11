@@ -33,3 +33,14 @@ addMissionEventHandler ["PlayerDisconnected", {
     if (isNil "_vehicle" || {isNull _vehicle}) exitWith {};
     _vehicle call WHF_fnc_queueGCDeletion;
 }];
+
+[missionNamespace, "respawn", {
+    params ["_new"];
+
+    // Propagate vehicle locks to all clients
+    {
+        if ([_x, "whf_vehiclelock_"] call WHF_fnc_stringStartsWith) then {
+            _new setVariable [_x, _new getVariable _x, true];
+        };
+    } forEach allVariables _new;
+}] call BIS_fnc_addScriptedEventHandler;
