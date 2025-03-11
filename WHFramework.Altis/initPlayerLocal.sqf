@@ -54,7 +54,7 @@ missionProfileNamespace setVariable ["WHF_play_times", _timesPlayed + 1];
 saveMissionProfileNamespace;
 
 if (_timesPlayed < 5) then {
-    [["Intro", "Welcome"], 15, nil, 35, nil, true, true] spawn BIS_fnc_advHint;
+    [["WHF", "Intro"], 15, nil, 35, nil, true, true] spawn BIS_fnc_advHint;
 };
 
 systemChat format ["Finished initialization (%1)", briefingName];

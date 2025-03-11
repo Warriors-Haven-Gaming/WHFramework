@@ -291,11 +291,12 @@ class CfgFunctions {
 
 // https://community.bistudio.com/wiki/Arma_3:_Advanced_Hints_(Field_Manual)
 class CfgHints {
-    class Intro {
-        displayName = "$STR_WHF_intro_displayName";
-        class Welcome {
-            displayName = "$STR_WHF_intro_displayName";
-            description = "$STR_WHF_intro_welcome_description";
+    class WHF {
+        displayName = "$STR_WHF_settings";
+
+        class Intro {
+            displayName = "$STR_WHF_hint_intro_title";
+            description = "$STR_WHF_hint_intro_description";
         };
     };
 };
