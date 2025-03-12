@@ -17,7 +17,12 @@ if (!hasInterface) exitWith {};
     "",
     "
     count allPlayers <= WHF_halo_limit_player
-    && {isTouchingGround vehicle _this
-    && {!(objectParent _this isKindOf 'Air')}}
+    && {
+        (
+            isTouchingGround vehicle _this
+            || {private _z = getPos vehicle _this # 2; _z <= 0 && {_z > -3}}
+        )
+        && {!(objectParent _this isKindOf 'Air')}
+    }
     "
 ] call WHF_fnc_contextMenuAdd;
