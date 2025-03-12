@@ -9,12 +9,14 @@ Parameters:
         The position where the signal flare will spawn.
     Array vel:
         The 3D velocity at which the signal flare should fire with.
+    Array color:
+        The color of the flare.
 
 Author:
     thegamecracks
 
 */
-params ["_pos", "_vel"];
+params ["_pos", "_vel", "_color"];
 
 private _flare = "F_40mm_Red" createVehicleLocal _pos;
 private _l = "#lightpoint" createVehicleLocal _pos;
@@ -22,7 +24,7 @@ _flare setVelocity _vel;
 _flare setVariable ["WHF_siren_light", _l];
 
 _l attachTo [_flare, [0,0,0]];
-_l setLightColor [1, 0.5, 0.5];
+_l setLightColor _color;
 _l setLightAmbient [1, 0.5, 0.5];
 _l setLightUseFlare true;
 _l setLightFlareSize 30;

@@ -46,4 +46,13 @@ if (captive _siren) exitWith {}; // Probably detained mid-signal, nice
 if (isNil {_siren getVariable "WHF_siren_startedAt"}) exitWith {};
 
 _flareDir = getDir _siren + _flareDir;
-[getPosATL _siren vectorAdd [0, 0, 2], [sin _flareDir * 3, cos _flareDir * 3, 50]] call WHF_fnc_signalFlareFire;
+private _pos = getPosATL _siren vectorAdd [0, 0, 2];
+private _velocity = [sin _flareDir * 3, cos _flareDir * 3, 50];
+private _color = switch (side group _siren) do {
+    case blufor: {[0.5, 0.5, 1]};
+    case opfor: {[1, 0.5, 0.5]};
+    case independent: {[0.5, 1, 0.5]};
+    default {[1, 1, 1]};
+};
+
+[_pos, _velocity, _color] call WHF_fnc_signalFlareFire;
