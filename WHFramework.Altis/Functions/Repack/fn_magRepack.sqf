@@ -36,26 +36,11 @@ if (_unit isEqualTo focusOn) then {
 _unit setAnimSpeedCoef (_animSpeed / 2);
 _unit setVariable ["WHF_magRepack", true];
 
-private _transferredRounds = false;
 private _addMagazine = {
     params ["_type", "_count"];
     // TODO: queue magazines to be reloaded while repacking is in progress
     // TODO: drop magazines if inventory is full
     _unit addMagazine [_type, _count];
-
-    if (_transferredRounds) then {
-        playSoundUI [
-            selectRandom [
-                "a3\sounds_f\weapons\other\reload_bolt_1.wss",
-                "a3\sounds_f\weapons\other\reload_bolt_2.wss"
-            ],
-            5,
-            1,
-            true
-        ];
-        sleep 0.5;
-        _transferredRounds = false;
-    };
 };
 
 _unit addEventHandler ["InventoryClosed", {
@@ -66,6 +51,7 @@ _unit addEventHandler ["InventoryClosed", {
 
 private _magazineGroups = [_unit, true] call WHF_fnc_groupMagazines;
 private _completed = false;
+private _soundPlayed = false;
 {
     private _magazines = _x;
     private _canRepack = {
@@ -109,8 +95,25 @@ private _completed = false;
         _lastCount = _lastCount - _transfer;
         _last set [1, _lastCount];
 
+        if (_soundPlayed) then {sleep 0.5};
+        // Before we remove empty magazines, check now to see if the player
+        // interrupted the mag repack so we don't play an extra sound.
+        // We can't remove empty magazines beforehand as that may cause
+        // _canRepack to return false, indicating the group is fully repacked.
+        private _interrupted = !call _canRepack;
         if (_lastCount < 1) then {_magazines deleteAt [-1]};
-        _transferredRounds = true;
+        if (_interrupted) then {break};
+
+        _soundPlayed = true;
+        playSoundUI [
+            selectRandom [
+                "a3\sounds_f\weapons\other\reload_bolt_1.wss",
+                "a3\sounds_f\weapons\other\reload_bolt_2.wss"
+            ],
+            5,
+            1,
+            true
+        ];
     };
 
     {[_x # 0, _x # 1] call _addMagazine} forEach _magazines;
@@ -118,6 +121,7 @@ private _completed = false;
 } forEach _magazineGroups;
 
 if (_completed) then {
+    if (_soundPlayed) then {sleep 0.5};
     playSoundUI [
         "a3\sounds_f\arsenal\weapons\machineguns\mk200\reload_mk200.wss",
         3,
