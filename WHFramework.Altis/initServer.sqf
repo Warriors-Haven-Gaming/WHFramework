@@ -58,5 +58,7 @@ WHF_gcDeletionQueue = [];
 WHF_gcUnhideQueue = [];
 WHF_garbageCollector_script = 0 spawn WHF_fnc_garbageCollectorLoop;
 
-// Why is this needed on dedicated server?
-civilian setFriend [blufor, 1];
+{blufor      setFriend _x} forEach [[blufor, 1], [opfor, 0], [independent, 0], [civilian, 1]];
+{opfor       setFriend _x} forEach [[blufor, 0], [opfor, 1], [independent, 1], [civilian, 1]];
+{independent setFriend _x} forEach [[blufor, 0], [opfor, 1], [independent, 1], [civilian, 1]];
+{civilian    setFriend _x} forEach [[blufor, 1], [opfor, 1], [independent, 1], [civilian, 1]];
