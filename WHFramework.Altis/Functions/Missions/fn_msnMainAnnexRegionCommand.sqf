@@ -65,7 +65,7 @@ private _taskID = [
     _pos getPos [75 + random 75, random 360],
     "CREATED",
     -1,
-    true,
+    false,
     "kill"
 ] call WHF_fnc_taskCreate;
 
