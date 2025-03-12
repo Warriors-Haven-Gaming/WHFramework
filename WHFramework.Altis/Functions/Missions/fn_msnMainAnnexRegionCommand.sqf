@@ -51,18 +51,7 @@ _compVehicles = [_compVehicles, _pos, _dir, ["normal"], _objects] call WHF_fnc_o
 _objects append _compProps;
 _vehicles append _compVehicles;
 
-private _createGunners = {
-    private _turrets = _compVehicles select {alive _x && {count allTurrets _x > 0}};
-    private _group = [opfor, "standard", count _turrets, [-random 500, -random 500, 0], 0, false] call WHF_fnc_spawnUnits;
-    {
-        private _turret = _turrets # _forEachIndex;
-        _group addVehicle _turret;
-        _x moveInGunner _turret;
-    } forEach units _group;
-    _group
-};
-
-private _turretsGroup = call _createGunners;
+private _turretsGroup = [opfor, _compVehicles] call WHF_fnc_spawnGunners;
 private _garrisonGroup = [opfor, "standard", selectRandom [16, 24, 32], _pos, 25] call WHF_fnc_spawnUnits;
 private _commanderGroup = [opfor, "officer", 1, _pos, 10] call WHF_fnc_spawnUnits;
 private _commander = units _commanderGroup # 0;
