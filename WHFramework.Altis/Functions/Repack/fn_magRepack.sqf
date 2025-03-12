@@ -109,15 +109,16 @@ private _soundPlayed = false;
         if (_interrupted) then {break};
 
         _soundPlayed = true;
-        playSoundUI [
-            selectRandom [
-                "a3\sounds_f\weapons\other\reload_bolt_1.wss",
-                "a3\sounds_f\weapons\other\reload_bolt_2.wss"
-            ],
-            5,
-            1,
-            true
+        private _sound = selectRandom [
+            "a3\sounds_f\weapons\other\reload_bolt_1.wss",
+            "a3\sounds_f\weapons\other\reload_bolt_2.wss"
         ];
+        if (_unit isEqualTo focusOn) then {
+            playSoundUI [_sound, 5, 1, true];
+        } else {
+            private _pos = _unit modelToWorldVisualWorld [0, 0.5, 0.5];
+            playSound3D [_sound, objNull, false, _pos, 3, 1, 0, 0, true];
+        };
     };
 
     {[_x # 0, _x # 1] call _addMagazine} forEach _magazines;
@@ -126,13 +127,13 @@ private _soundPlayed = false;
 
 if (_completed) then {
     if (_soundPlayed) then {sleep 0.5};
-    playSoundUI [
-        "a3\sounds_f\arsenal\weapons\machineguns\mk200\reload_mk200.wss",
-        3,
-        1,
-        true,
-        4.2
-    ];
+    private _sound = "a3\sounds_f\arsenal\weapons\machineguns\mk200\reload_mk200.wss";
+    if (_unit isEqualTo focusOn) then {
+        playSoundUI [_sound, 3, 1, true, 4.2];
+    } else {
+        private _pos = _unit modelToWorldVisualWorld [0, 0.5, 0.5];
+        playSound3D [_sound, objNull, false, _pos, 3, 1, 0, 4.2, true];
+    };
 };
 
 _unit setAnimSpeedCoef _animSpeed;
