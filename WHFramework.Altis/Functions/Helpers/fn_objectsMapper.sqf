@@ -69,22 +69,23 @@ _composition apply {
 
     _pos = call _rotateFromCenter vectorAdd _center;
 
+    private _randPos = [-random 500, -random 500, 500];
     private _obj = switch (true) do {
         case (_simple && {!_path || {_type call _countPathLODs < 1}}): {
-            createSimpleObject [_type, AGLToASL _pos]
+            createSimpleObject [_type, _randPos]
         };
         case (_frozen): {
-            private _obj = createVehicle [_type, [-random 500, -random 500, 500], [], 0, "NONE"];
+            private _obj = createVehicle [_type, _randPos, [], 0, "NONE"];
             _obj allowDamage false;
             _obj enableSimulationGlobal false;
-            _obj setPosATL _pos;
             _obj
         };
-        default {createVehicle [_type, _pos, [], 0, "CAN_COLLIDE"]};
+        default {createVehicle [_type, _randPos, [], 0, "NONE"]};
     };
 
-    _obj setDir (_dir + _direction);
-    if (_normal) then {_obj setVectorUp surfaceNormal _pos};
+        _obj setDir (_dir + _direction);
+        if (_normal) then {_obj setVectorUp surfaceNormal _pos};
+        _obj setPosATL _pos;
 
     if (_ruins isEqualType [] && {!isSimpleObject _obj && {_obj isKindOf "Building"}}) then {
         _obj setVariable ["WHF_ruins", _ruins];
