@@ -54,6 +54,9 @@ private _aaTurrets =
 
 if (count _aaTurrets < 1) exitWith {
     diag_log text format ["%1: center %2 not clear to spawn AA emplacements", _fnc_scriptName, _center];
+    {[_x] call WHF_fnc_queueGCDeletion} forEach _aaObjects;
+    {[_x] call WHF_fnc_queueGCUnhide} forEach _aaTerrain;
+    {[units _x] call WHF_fnc_queueGCDeletion} forEach _aaGroups;
 };
 
 private _groups = _aaTurrets apply {
