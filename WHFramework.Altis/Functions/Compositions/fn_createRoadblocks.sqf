@@ -9,10 +9,11 @@ Parameters:
         The group's side.
     Number quantity:
         The number of roadblocks to spawn.
-    PositionATL center:
-        The position at which vehicles will spawn around.
-    Number radius:
-        The radius around the position at which vehicles will spawn around.
+    Array roads:
+        An array containing road objects (or getRoadInfo arrays) to select from.
+    Position2D center:
+        (Optional, default nil)
+        If provided, all roadblocks will be oriented away from this position.
 
 Returns:
     Array
@@ -25,7 +26,14 @@ Author:
     thegamecracks
 
 */
-params ["_side", "_quantity", "_center", "_radius"];
+params ["_side", "_quantity", "_roads", "_center"];
+
+_roads = _roads apply {
+    if (_x isEqualType objNull) then {getRoadInfo _x} else {_x}
+} select {_x # 0 isNotEqualTo ""};
+
+if (count _roads < 1) exitWith {[[], [], []]};
+_quantity = _quantity min count _roads;
 
 // TODO: full-fledged roadblock compositions
 private _turretTypes = [
@@ -44,12 +52,6 @@ private _turretTypes = [
     "CUP_I_SPG9_NAPA"
 ] select {isClass (configFile >> "CfgVehicles" >> _x)};
 
-// NOTE: little bit slow, 0.1ms for 500m radius
-private _roads = _center nearRoads _radius apply {getRoadInfo _x} select {
-    _x # 0 in ["ROAD", "MAIN ROAD", "TRACK"] && {!(_x # 2)}
-};
-_quantity = _quantity min count _roads;
-
 private _selectedRoads = [];
 private _turrets = [];
 for "_i" from 1 to _quantity * 2 do {
@@ -66,8 +68,12 @@ for "_i" from 1 to _quantity * 2 do {
     if (_pos isEqualTo []) then {continue};
 
     private _dir = _road # 6 getDir _road # 7;
-    private _dirAwayDiff = (_center getDir _pos) - _dir;
-    if (abs _dirAwayDiff > 120) then {_dir = (_dir + 180) % 360};
+    if (!isNil "_center") then {
+        private _dirAwayDiff = (_center getDir _pos) - _dir;
+        if (abs _dirAwayDiff > 120) then {_dir = (_dir + 180) % 360};
+    } else {
+        if (random 1 < 0.5) then {_dir = (_dir + 180) % 360};
+    };
 
     private _turret = createVehicle [_type, [-random 500, -random 500, 0], [], 0, "CAN_COLLIDE"];
     _turret setDir _dir;
