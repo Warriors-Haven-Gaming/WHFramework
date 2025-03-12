@@ -47,6 +47,7 @@ private _aaTypes = ["aa_short", 1, "aa_medium", 1, "aa_long", 1];
 [opfor, 3 + floor random 3, _center, _radius, _aaTypes, _ruins] call WHF_fnc_createEmplacements
     params ["_aaObjects", "_aaTerrain", "_aaGroups"];
 
+sleep (1.5 + random 2.5);
 private _aaTurrets =
     _aaObjects apply {_x select {alive _x && {_x call WHF_fnc_isAntiAirVehicle}}}
     select {count _x > 0};

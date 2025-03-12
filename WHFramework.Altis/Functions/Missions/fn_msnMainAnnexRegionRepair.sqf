@@ -55,6 +55,7 @@ private _group = [opfor, _compVehicles] call WHF_fnc_spawnGunners;
 _groups pushBack _group;
 
 private _repair = _compVehicles # 0;
+sleep (1.5 + random 2.5);
 if (!alive _repair) exitWith {};
 
 private _taskID = [
