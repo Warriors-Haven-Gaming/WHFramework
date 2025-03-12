@@ -72,19 +72,13 @@ private _subObjectives = [
     [_center, _radius, _taskID, _compositionObjects, _compositionTerrain, _groups, _vehicles]
         spawn WHF_fnc_msnMainAnnexRegionCommand
 ];
+waitUntil {sleep 3; _subObjectives findIf {!scriptDone _x} < 0};
 
-while {true} do {
-    sleep 10;
+sleep 3;
+private _thresholdScript = [_taskID, _area, _initialUnitCount] spawn WHF_fnc_msnMainAnnexRegionThreshold;
+waitUntil {sleep 3; scriptDone _thresholdScript};
 
-    if (_subObjectives findIf {!scriptDone _x} >= 0) then {continue};
-
-    private _allThreats = units opfor + units independent;
-    private _threatsInRange = _allThreats inAreaArray _area;
-    private _threshold = floor (_initialUnitCount * WHF_missions_annex_threshold);
-    if (count _threatsInRange <= _threshold) exitWith {
-        [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
-    };
-};
+[_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
 
 call WHF_fnc_cycleFaction;
 
