@@ -17,7 +17,7 @@ Parameters:
             "frozen": Disable object damage and simulation.
             "normal": Orient objects to match the surface of the terrain under them.
             "path": When combined with "simple", don't create simple objects for
-                    types that allow AI pathfinding.
+                    types that allow AI pathfinding, or has an openable door.
             "simple": Create simple objects instead of regular objects.
     Array ruins:
         (Optional, default -1)
@@ -45,19 +45,30 @@ private _rotateFromCenter = {
 
 private _countPathLODs = {
     // If there's a path LOD, the object can probably be garrisoned
-    params ["_type"];
-
-    if (isNil "WHF_objectsMapper_paths") then {WHF_objectsMapper_paths = createHashMap};
-    private _nPaths = WHF_objectsMapper_paths get toLowerANSI _type;
-    if (!isNil "_nPaths") exitWith {_nPaths};
-
-    private _lods = allLODs getText (configFile >> "CfgVehicles" >> _type >> "model");
+    // params ["_type"];
+    private _lods = allLODs getText (_config >> "model");
     private _pathsIndex = _lods findIf {_x # 2 isEqualTo 4e+15};
-    _nPaths = if (_pathsIndex < 0) then {0} else {_lods # _pathsIndex # 3};
+    if (_pathsIndex < 0) then {0} else {_lods # _pathsIndex # 3}
+};
 
-    WHF_objectsMapper_paths set [toLowerANSI _type, _nPaths];
+private _isStatic = {
+    // params ["_type"];
+    if (isNil "WHF_objectsMapper_static") then {WHF_objectsMapper_static = createHashMap};
+    private _cached = WHF_objectsMapper_static get toLowerANSI _type;
+    if (!isNil "_cached") exitWith {_cached};
 
-    _nPaths
+    private _config = configFile >> "CfgVehicles" >> _type;
+    private _ret = call {
+        if (call _countPathLODs > 0) exitWith {false};
+
+        private _actions = "true" configClasses (_config >> "UserActions");
+        if (_actions findIf {"door" in toLowerANSI configName _x} >= 0) exitWith {false};
+
+        true
+    };
+
+    WHF_objectsMapper_static set [toLowerANSI _type, _ret];
+    _ret
 };
 
 private _frozen = "frozen" in _flags;
@@ -72,7 +83,7 @@ private _objects = _composition apply {
 
     private _randPos = [-random 500, -random 500, 500];
     private _obj = switch (true) do {
-        case (_simple && {!_path || {_type call _countPathLODs < 1}}): {
+        case (_simple && {!_path || {call _isStatic}}): {
             createSimpleObject [_type, _randPos]
         };
         case (_frozen): {
