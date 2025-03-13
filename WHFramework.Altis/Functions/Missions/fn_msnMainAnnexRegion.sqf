@@ -94,6 +94,7 @@ waitUntil {sleep 3; scriptDone _thresholdScript};
 [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
 
 call WHF_fnc_cycleFaction;
+call WHF_fnc_playMusicMissionEnd;
 
 deleteMarker _areaMarker;
 _reinforceArgs set [0, false];
