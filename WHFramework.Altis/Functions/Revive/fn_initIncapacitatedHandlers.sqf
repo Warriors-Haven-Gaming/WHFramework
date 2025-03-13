@@ -11,6 +11,7 @@ Author:
 if (isClass (configFile >> "CfgPatches" >> "ace_medical")) exitWith {};
 player addEventHandler ["HandleDamage", {call {
     params ["_unit", "", "_damage", "_source", "", "_hitIndex", "_instigator"];
+    if (!isDamageAllowed _unit) exitWith {};
     if (lifeState _unit isEqualTo "INCAPACITATED") exitWith {};
     if (isNull _instigator) then {_instigator = _source};
     if (_instigator isEqualTo _unit) then {_instigator = objNull};
@@ -19,14 +20,12 @@ player addEventHandler ["HandleDamage", {call {
     if !(_hitIndex in [7, 2, -1]) exitWith {_damage min 0.95};
     if (_damage < 0.95) exitWith {};
 
-    if (isDamageAllowed _unit) then {
-        _unit allowDamage false;
-        private _jipID = netId _unit + ":incapUnit";
-        [_unit, _instigator] remoteExec ["WHF_fnc_incapUnit", 0, _jipID];
+    _unit allowDamage false;
+    private _jipID = netId _unit + ":incapUnit";
+    [_unit, _instigator] remoteExec ["WHF_fnc_incapUnit", 0, _jipID];
 
-        if (_hitIndex isEqualTo 2 && {_unit isEqualTo focusOn}) then {
-            0 spawn WHF_fnc_headshotEffects;
-        };
+    if (_hitIndex isEqualTo 2 && {_unit isEqualTo focusOn}) then {
+        0 spawn WHF_fnc_headshotEffects;
     };
     0.95
 }}];
