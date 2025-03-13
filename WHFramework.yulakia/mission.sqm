@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=390;
+		nextID=402;
 	};
 	class Camera
 	{
-		pos[]={694.17224,13.731025,10789.497};
-		dir[]={0.77802771,-0.62799591,-0.01844429};
-		up[]={0.62783945,0.77820253,-0.014883513};
-		aside[]={-0.023699207,7.9846359e-08,-0.99974459};
+		pos[]={663.6358,21.057629,10818.512};
+		dir[]={0.54456979,-0.58350194,0.60247672};
+		up[]={0.39130944,0.81206882,0.43291825};
+		aside[]={0.74186277,-3.1222589e-07,-0.67055887};
 	};
 };
 binarizationWanted=0;
@@ -23118,8 +23118,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={663.5,11.596288,10832.5};
-								angles[]={0,5.2359877,0};
+								position[]={676,11.596287,10833.5};
+								angles[]={-0,5.2359877,0};
 							};
 							side="Empty";
 							flags=4;
@@ -23128,15 +23128,14 @@ class Mission
 							};
 							id=833;
 							type="B_Quadbike_01_F";
-							atlOffset=9.5367432e-07;
 						};
 						class Item9
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={663.5,11.596288,10835.5};
-								angles[]={0,5.2359877,0};
+								position[]={676,11.596287,10836.5};
+								angles[]={-0,5.2359877,0};
 							};
 							side="Empty";
 							flags=4;
@@ -23145,15 +23144,14 @@ class Mission
 							};
 							id=834;
 							type="B_Quadbike_01_F";
-							atlOffset=9.5367432e-07;
 						};
 						class Item10
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={663.5,11.596288,10838.5};
-								angles[]={0,5.2359877,0};
+								position[]={676,11.596287,10839.5};
+								angles[]={-0,5.2359877,0};
 							};
 							side="Empty";
 							flags=4;
@@ -23162,7 +23160,6 @@ class Mission
 							};
 							id=835;
 							type="B_Quadbike_01_F";
-							atlOffset=9.5367432e-07;
 						};
 						class Item11
 						{
@@ -23322,8 +23319,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={663.5,11.546,10823.5};
-								angles[]={0,5.2359877,0};
+								position[]={676,11.546,10824.5};
+								angles[]={-0,5.2359877,0};
 							};
 							side="Empty";
 							flags=4;
@@ -23332,15 +23329,14 @@ class Mission
 							};
 							id=829;
 							type="CUP_B_M1030_USA";
-							atlOffset=-9.5367432e-07;
 						};
 						class Item21
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={663.5,11.546,10826.5};
-								angles[]={0,5.2359877,0};
+								position[]={676,11.546,10827.5};
+								angles[]={-0,5.2359877,0};
 							};
 							side="Empty";
 							flags=4;
@@ -23349,15 +23345,14 @@ class Mission
 							};
 							id=830;
 							type="CUP_B_M1030_USA";
-							atlOffset=-9.5367432e-07;
 						};
 						class Item22
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={663.5,11.546,10829.5};
-								angles[]={0,5.2359877,0};
+								position[]={676,11.546,10830.5};
+								angles[]={-0,5.2359877,0};
 							};
 							side="Empty";
 							flags=4;
@@ -23366,7 +23361,6 @@ class Mission
 							};
 							id=831;
 							type="CUP_B_M1030_USA";
-							atlOffset=-9.5367432e-07;
 						};
 						class Item23
 						{
@@ -23960,14 +23954,14 @@ class Mission
 							{
 								class Attribute0
 								{
-									property="F16VFontStyle";
-									expression="_this setVariable [""F16VFontStyle"", _value]; [_this, _value] call lala_peral_F16V_fnc_applyAircraftFontStyle; [_this,_this getVariable [""F16V_Squadron_Insignia"",""None""]] call Peral_F16V_fnc_Squadron_Insignia;";
+									property="F16V_Squadron_Insignia";
+									expression="_this setVariable [""F16V_Squadron_Insignia"", _value]; [_this,_value] call Peral_F16V_fnc_Squadron_Insignia;";
 									class Value
 									{
 										class data
 										{
 											singleType="STRING";
-											value="white_font";
+											value="None";
 										};
 									};
 								};
@@ -24025,14 +24019,14 @@ class Mission
 								};
 								class Attribute5
 								{
-									property="F16V_Squadron_Insignia";
-									expression="_this setVariable [""F16V_Squadron_Insignia"", _value]; [_this,_value] call Peral_F16V_fnc_Squadron_Insignia;";
+									property="F16VFontStyle";
+									expression="_this setVariable [""F16VFontStyle"", _value]; [_this, _value] call lala_peral_F16V_fnc_applyAircraftFontStyle; [_this,_this getVariable [""F16V_Squadron_Insignia"",""None""]] call Peral_F16V_fnc_Squadron_Insignia;";
 									class Value
 									{
 										class data
 										{
 											singleType="STRING";
-											value="None";
+											value="white_font";
 										};
 									};
 								};
