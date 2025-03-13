@@ -19,7 +19,8 @@ _spawner addAction [
     localize "$STR_WHF_spawnRecruit",
     {
         params ["_spawner", "", "", "_position"];
-        [_spawner modelToWorld _position vectorMultiply [1,1,0]] call WHF_fnc_spawnRecruit;
+        _position = _spawner modelToWorld _position vectorMultiply [1,1,0];
+        [_position] call WHF_fnc_spawnRecruitGUI;
     },
     _position,
     12,

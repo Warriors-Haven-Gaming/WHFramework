@@ -6,13 +6,15 @@ Description:
 
 Parameters:
     PositionATL position:
-        The position to spawn the recruit from.
+        The position to spawn the recruit on.
+    String role:
+        The role of the recruit.
 
 Author:
     thegamecracks
 
 */
-params ["_position"];
+params ["_position", "_role"];
 private _aiCount = {!isPlayer _x} count units focusOn;
 if (_aiCount >= WHF_recruits_limit) exitWith {
     hint format [localize "$STR_WHF_spawnRecruit_limit", WHF_recruits_limit];
@@ -25,18 +27,34 @@ if (_recruitCount >= WHF_recruits_limit_global) exitWith {
 
 group focusOn setSpeedMode "FULL";
 
-private _unit = group focusOn createUnit ["B_Soldier_F", _position, [], 0, "NONE"];
+private _type = switch (_role) do {
+    case "at": {"B_soldier_AT_F"};
+    case "autorifleman": {"B_soldier_AR_F"};
+    case "engineer": {"B_engineer_F"};
+    case "medic": {"B_medic_F"};
+    default {"B_Soldier_F"};
+};
+
+private _unit = group focusOn createUnit [_type, _position, [], 0, "NONE"];
 [_unit] joinSilent group focusOn;
 _unit enableStamina WHF_fitness_stamina;
 _unit setCustomAimCoef WHF_fitness_sway;
 _unit setDir (_position getDir focusOn);
 _unit setSkill WHF_recruits_skill;
-_unit setUnitTrait ["engineer", focusOn getUnitTrait "engineer"];
-_unit setUnitTrait ["explosiveSpecialist", focusOn getUnitTrait "explosiveSpecialist"];
-_unit setUnitTrait ["medic", focusOn getUnitTrait "medic"];
 _unit setVariable ["WHF_recruiter", getPlayerUID player, true];
 
-private _loadout = [] call WHF_fnc_getLastLoadout;
+// TODO: extract role traits into function
+switch (_role) do {
+    case "engineer": {
+        _unit setUnitTrait ["engineer", true];
+        _unit setUnitTrait ["explosiveSpecialist", true];
+    };
+    case "medic": {
+        _unit setUnitTrait ["medic", true];
+    };
+};
+
+private _loadout = [_role] call WHF_fnc_getLastLoadout;
 if (_loadout isNotEqualTo []) then {_unit setUnitLoadout _loadout};
 _unit setVariable ["WHF_recruitLoadout", getUnitLoadout _unit];
 
