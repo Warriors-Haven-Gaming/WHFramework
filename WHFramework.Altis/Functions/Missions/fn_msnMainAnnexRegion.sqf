@@ -68,14 +68,23 @@ private _initialUnitCount = count flatten (_groups apply {units _x});
 private _reinforceArgs = [true, _center, _radius, _initialUnitCount, count _vehicles, _groups, _vehicles];
 _reinforceArgs spawn WHF_fnc_msnMainAnnexRegionReinforcements;
 
-private _subObjectives = [
-    [_center, _radius, _taskID, _compositionObjects, _compositionTerrain, _groups, _vehicles]
-        spawn WHF_fnc_msnMainAnnexRegionCommand,
-    [_center, _radius, _taskID, _compositionObjects, _compositionTerrain, _groups, _vehicles]
-        spawn WHF_fnc_msnMainAnnexRegionComms,
-    [_center, _radius, _taskID, _compositionObjects, _compositionTerrain, _groups, _vehicles]
-        spawn WHF_fnc_msnMainAnnexRegionRepair
+private _subObjectiveArgs = [
+    _center,
+    _radius,
+    _taskID,
+    _compositionObjects,
+    _compositionTerrain,
+    _groups,
+    _vehicles
 ];
+private _subObjectives = [
+    [_subObjectiveArgs, WHF_fnc_msnMainAnnexRegionCommand],
+    [_subObjectiveArgs, WHF_fnc_msnMainAnnexRegionComms],
+    [_subObjectiveArgs, WHF_fnc_msnMainAnnexRegionRepair]
+];
+_subObjectives = _subObjectives call BIS_fnc_arrayShuffle;
+_subObjectives = _subObjectives select [0, 2];
+_subObjectives = _subObjectives apply {_x # 0 spawn _x # 1};
 waitUntil {sleep 3; _subObjectives findIf {!scriptDone _x} < 0};
 
 sleep 3;
