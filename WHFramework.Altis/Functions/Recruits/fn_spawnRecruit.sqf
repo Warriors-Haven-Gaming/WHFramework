@@ -50,4 +50,58 @@ if (!isClass (configFile >> "CfgPatches" >> "ace_medical")) then {
         private _diff = _diff * WHF_recruitDamageScale;
         _old + _diff
     }}];
+
+    _unit addEventHandler ["HandleDamage", {call {
+        params ["_unit", "", "_damage", "", "", "_hitIndex"];
+        if (!isDamageAllowed _unit) exitWith {};
+        if (lifeState _unit isEqualTo "INCAPACITATED") exitWith {};
+
+        // Check for fatal wounds to body, head, or unknown part
+        if !(_hitIndex in [7, 2, -1]) exitWith {_damage min 0.95};
+        if (_damage < 0.95) exitWith {};
+
+        private _canIncap = {
+            if (WHF_recruits_incap_noFAKs) exitWith {true};
+            if (WHF_recruits_incap_FAKs < 1) exitWith {false};
+            private _nFAKs = {_x call BIS_fnc_itemType select 1 isEqualTo "FirstAidKit"} count items _unit;
+            _nFAKs >= WHF_recruits_incap_FAKs
+        };
+        if !(call _canIncap) exitWith {};
+
+        _unit allowDamage false;
+        private _jipID = netId _unit + ":incapUnit";
+        [_unit, _instigator] remoteExec ["WHF_fnc_incapUnit", 0, _jipID];
+
+        _unit spawn {
+            sleep (WHF_selfRevive_minTime + random 5);
+
+            private _startedAt = -1;
+            while {local _this && {lifeState _this isEqualTo "INCAPACITATED"}} do {
+                sleep (1 + random 1);
+
+                if (!isNil {_this getVariable "WHF_revive_caller"}) then {
+                    _startedAt = -1;
+                    continue;
+                };
+
+                private _FAKs = items _this select {
+                    _x call BIS_fnc_itemType select 1 isEqualTo "FirstAidKit"
+                } select [0, WHF_recruits_incap_FAKs];
+
+                if (count _FAKs < WHF_recruits_incap_FAKs) then {
+                    _startedAt = -1;
+                    continue;
+                };
+
+                private _time = time;
+                if (_startedAt < 0) then {_startedAt = _time; continue};
+                if (_time < _startedAt + WHF_selfRevive_duration) then {continue};
+
+                {_this removeItem _x} forEach _FAKs;
+                _this call WHF_fnc_reviveUnit;
+                break;
+            };
+        };
+        0.95
+    }}];
 };

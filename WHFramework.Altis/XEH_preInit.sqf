@@ -475,6 +475,26 @@ Author:
     {},
     false
 ] call WHF_fnc_addSetting;
+[
+    "WHF_recruits_incap_FAKs",
+    "LIST",
+    ["STR_WHF_settings_recruits_incap_FAKs", "STR_WHF_settings_recruits_incap_FAKs_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_recruits"],
+    [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], ["STR_A3_Disabled"], 6],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_recruits_incap_noFAKs",
+    "CHECKBOX",
+    ["STR_WHF_settings_recruits_incap_noFAKs", "STR_WHF_settings_recruits_incap_noFAKs_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_recruits"],
+    false,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
 
 // Revive
 [
