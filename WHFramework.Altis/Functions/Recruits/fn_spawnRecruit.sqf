@@ -36,7 +36,7 @@ _unit setUnitTrait ["explosiveSpecialist", focusOn getUnitTrait "explosiveSpecia
 _unit setUnitTrait ["medic", focusOn getUnitTrait "medic"];
 _unit setVariable ["WHF_recruiter", getPlayerUID player, true];
 
-private _loadout = call WHF_fnc_getLastLoadout;
+private _loadout = [] call WHF_fnc_getLastLoadout;
 if (_loadout isNotEqualTo []) then {_unit setUnitLoadout _loadout};
 _unit setVariable ["WHF_recruitLoadout", getUnitLoadout _unit];
 

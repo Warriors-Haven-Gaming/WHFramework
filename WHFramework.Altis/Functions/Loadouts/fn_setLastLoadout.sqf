@@ -9,14 +9,18 @@ Parameters:
     Array loadout:
         The loadout to be saved.
         Should follow the format returned by the getUnitLoadout command.
+    String role:
+        (Optional, default player getVariable ["WHF_role", ""])
+        The role to set the player's last loadout for.
 
 Author:
     thegamecracks
 
 */
-params ["_loadout"];
+params ["_loadout", ["_role", player getVariable ["WHF_role", ""]]];
+if (_role isEqualTo "") exitWith {};
+
 private _loadouts = missionProfileNamespace getVariable ["WHF_last_loadouts", createHashMap];
-private _role = player getVariable "WHF_role";
 private _key = [WHF_loadout_collection, _role];
 _loadouts set [_key, _loadout];
 missionProfileNamespace setVariable ["WHF_last_loadouts", _loadouts];

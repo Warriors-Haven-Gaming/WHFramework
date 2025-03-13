@@ -39,7 +39,7 @@ _arsenal addAction [
     localize "$STR_WHF_initArsenal_loadLastLoadout",
     {
         params ["", "_caller"];
-        private _loadout = call WHF_fnc_getLastLoadout;
+        private _loadout = [] call WHF_fnc_getLastLoadout;
         if (_loadout isEqualTo []) exitWith {};
         _caller setUnitLoadout _loadout;
 
