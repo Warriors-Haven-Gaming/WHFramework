@@ -17,7 +17,12 @@ Author:
 
 */
 params ["_unit", ["_killer", objNull]];
-if (!alive _unit && {isRemoteExecutedJIP}) exitWith {remoteExec ["", remoteExecutedJIPID]};
+if (
+    isRemoteExecutedJIP
+    && {lifeState _unit isNotEqualTo "INCAPACITATED"}
+) exitWith {
+    remoteExec ["", remoteExecutedJIPID];
+};
 if (!alive _unit) exitWith {};
 
 [_unit] call WHF_fnc_reviveActionAdd;
