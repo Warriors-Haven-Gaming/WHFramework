@@ -11,23 +11,16 @@ Author:
 */
 params ["", "_caller"];
 
-private _firstAidKits = items _caller select {
-    _x call BIS_fnc_itemType select 1 isEqualTo "FirstAidKit"
-};
-
-{
-    if (_forEachIndex + 1 > WHF_selfRevive_FAKs) exitWith {};
-    _caller removeItem _x;
-} forEach _firstAidKits;
-
+private _FAKs = items _caller select {_x call BIS_fnc_itemType select 1 isEqualTo "FirstAidKit"};
+{_caller removeItem _x} forEach (_FAKs select [0, WHF_selfRevive_FAKs]);
 [_caller] call WHF_fnc_reviveUnit;
 
-private _consumed = WHF_selfRevive_FAKs min count _firstAidKits;
+private _consumed = WHF_selfRevive_FAKs min count _FAKs;
 50 cutText [
     format [
         localize "$STR_WHF_selfReviveCompleted",
         _consumed,
-        count _firstAidKits - _consumed
+        count _FAKs - _consumed
     ],
     "PLAIN DOWN",
     0.3
