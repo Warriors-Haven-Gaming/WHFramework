@@ -67,7 +67,7 @@ private _checkCondition = {
     _ret
 };
 
-private _blacklist = [];
+private _blacklist = ["water"];
 if (_minRadius > 0 && {!isNil "WHF_usedPositions"}) then {
     private _expired = [];
     {
