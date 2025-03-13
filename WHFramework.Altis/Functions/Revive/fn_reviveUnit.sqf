@@ -32,3 +32,14 @@ if (isNull objectParent _unit) then {
     [_unit, [_animation, 0, 0, false]] remoteExec ["switchMove"];
 };
 if (_unit isEqualTo focusOn) then {hintSilent ""};
+
+playSound3D [
+    selectRandom [
+        "a3\sounds_f\characters\human-sfx\p18\soundrecovered_1.wss",
+        "a3\sounds_f\characters\human-sfx\p18\soundrecovered_2.wss",
+        "a3\sounds_f\characters\human-sfx\p18\soundrecovered_water_2.wss"
+    ],
+    _unit,
+    false,
+    _unit modelToWorldVisualWorld [0, 1, 0]
+];
