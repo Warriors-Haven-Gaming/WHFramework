@@ -32,6 +32,7 @@ Author:
 
 */
 params ["_composition", "_center", "_direction", ["_flags", ["normal"]], ["_ruins", -1]];
+if (count _composition < 1) exitWith {[]};
 
 private _rotateFromCenter = {
     // params ["_pos", "_dir"];
@@ -64,7 +65,7 @@ private _normal = "normal" in _flags;
 private _path = "path" in _flags;
 private _simple = "simple" in _flags;
 
-_composition apply {
+private _objects = _composition apply {
     _x params ["_type", "_pos", "_dir"];
 
     _pos = call _rotateFromCenter vectorAdd _center;
@@ -92,4 +93,13 @@ _composition apply {
     };
 
     _obj
-}
+};
+
+private _index = _objects findIf {!isNull _x};
+if (_index >= 0) then {
+    if (isNil "WHF_usedPositions") then {WHF_usedPositions = []};
+    private _obj = _objects # _index;
+    WHF_usedPositions pushBack _obj;
+};
+
+_objects

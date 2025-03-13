@@ -67,9 +67,19 @@ private _checkCondition = {
     _ret
 };
 
+private _blacklist = [];
+if (_minRadius > 0 && {!isNil "WHF_usedPositions"}) then {
+    private _expired = [];
+    {
+        if (isNull _x) then {_expired pushBack _forEachIndex; continue};
+        _blacklist pushBack [getPosATL _x, _minRadius];
+    } forEach WHF_usedPositions;
+    {WHF_usedPositions deleteAt _x} forEachReversed _expired;
+};
+
 private _ret = [0,0];
 for "_i" from 1 to 30 do {
-    private _pos = [[[_center, _maxRadius]]] call BIS_fnc_randomPos;
+    private _pos = [[[_center, _maxRadius]], _blacklist] call BIS_fnc_randomPos;
     if (_pos isEqualTo [0,0]) then {continue};
 
     private _empty = _pos findEmptyPosition [0, 50, _type];

@@ -69,7 +69,7 @@ private _compositionTerrain = [];
 private _compositionGroups = [];
 {
 
-    private _pos = [_center, [20, _radius], [_clearRadius, _isPosSuitable]] call WHF_fnc_randomPos;
+    private _pos = [_center, [30, _radius], [_clearRadius, _isPosSuitable]] call WHF_fnc_randomPos;
     if (_pos isEqualTo [0,0]) then {continue};
     _pos = _pos vectorAdd [0,0,0];
 
