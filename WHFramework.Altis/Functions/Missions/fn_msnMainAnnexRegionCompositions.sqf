@@ -54,7 +54,7 @@ _objects append flatten _roadblockObjects;
 _terrain append flatten _roadblockTerrain;
 _groups append flatten _roadblockGroups;
 
-private _minefieldSpacing = 75 + random 75;
+private _minefieldSpacing = 100 + random 200;
 private _minefieldStep = 360 / ceil (2 * pi * _radius / _minefieldSpacing);
 for "_i" from 0 to 359 step _minefieldStep do {
     private _distance = _radius * (0.4 + random 0.55);
