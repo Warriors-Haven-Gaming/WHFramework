@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=516;
+		nextID=524;
 	};
 	class MarkerIDProvider
 	{
@@ -20,7 +20,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=75;
+		nextID=80;
 	};
 	class Camera
 	{
@@ -7910,6 +7910,7 @@ class Mission
 		{
 			dataType="Layer";
 			name="Players";
+			state=1;
 			class Entities
 			{
 				items=11;
@@ -8979,15 +8980,15 @@ class Mission
 								position[]={8837.7363,24.11199,25354.568};
 							};
 							side="West";
-							flags=7;
+							flags=6;
 							class Attributes
 							{
 								init="this setVariable [""WHF_role"", ""autorifleman""];";
 								description="Autorifleman@Autoriflemen";
 								isPlayable=1;
 							};
-							id=435;
-							type="B_Soldier_F";
+							id=516;
+							type="B_soldier_AR_F";
 						};
 						class Item1
 						{
@@ -8997,15 +8998,15 @@ class Mission
 								position[]={8839.3525,23.692457,25354.609};
 							};
 							side="West";
-							flags=5;
+							flags=4;
 							class Attributes
 							{
 								init="this setVariable [""WHF_role"", ""autorifleman""];";
 								description="Autorifleman@Autoriflemen";
 								isPlayable=1;
 							};
-							id=436;
-							type="B_Soldier_F";
+							id=517;
+							type="B_soldier_AR_F";
 							atlOffset=1.9073486e-06;
 						};
 						class Item2
@@ -9016,15 +9017,15 @@ class Mission
 								position[]={8837.6816,24.224007,25352.91};
 							};
 							side="West";
-							flags=5;
+							flags=4;
 							class Attributes
 							{
 								init="this setVariable [""WHF_role"", ""autorifleman""];";
 								description="Autorifleman@Autoriflemen";
 								isPlayable=1;
 							};
-							id=445;
-							type="B_Soldier_F";
+							id=518;
+							type="B_soldier_AR_F";
 						};
 						class Item3
 						{
@@ -9034,15 +9035,15 @@ class Mission
 								position[]={8839.2979,23.782009,25352.951};
 							};
 							side="West";
-							flags=5;
+							flags=4;
 							class Attributes
 							{
 								init="this setVariable [""WHF_role"", ""autorifleman""];";
 								description="Autorifleman@Autoriflemen";
 								isPlayable=1;
 							};
-							id=446;
-							type="B_Soldier_F";
+							id=519;
+							type="B_soldier_AR_F";
 						};
 					};
 					class Attributes
@@ -9082,15 +9083,15 @@ class Mission
 								position[]={8842.9668,22.787783,25354.496};
 							};
 							side="West";
-							flags=7;
+							flags=6;
 							class Attributes
 							{
 								init="this setVariable [""WHF_role"", ""at""];";
 								description="AT Specialist@Anti-Tank";
 								isPlayable=1;
 							};
-							id=437;
-							type="B_Soldier_F";
+							id=520;
+							type="B_soldier_AT_F";
 						};
 						class Item1
 						{
@@ -9100,15 +9101,15 @@ class Mission
 								position[]={8844.7842,22.386095,25354.426};
 							};
 							side="West";
-							flags=5;
+							flags=4;
 							class Attributes
 							{
 								init="this setVariable [""WHF_role"", ""at""];";
 								description="AT Specialist@Anti-Tank";
 								isPlayable=1;
 							};
-							id=438;
-							type="B_Soldier_F";
+							id=521;
+							type="B_soldier_AT_F";
 						};
 						class Item2
 						{
@@ -9118,15 +9119,15 @@ class Mission
 								position[]={8842.9121,22.870514,25352.838};
 							};
 							side="West";
-							flags=5;
+							flags=4;
 							class Attributes
 							{
 								init="this setVariable [""WHF_role"", ""at""];";
 								description="AT Specialist@Anti-Tank";
 								isPlayable=1;
 							};
-							id=447;
-							type="B_Soldier_F";
+							id=522;
+							type="B_soldier_AT_F";
 						};
 						class Item3
 						{
@@ -9136,15 +9137,15 @@ class Mission
 								position[]={8844.7295,22.468903,25352.768};
 							};
 							side="West";
-							flags=5;
+							flags=4;
 							class Attributes
 							{
 								init="this setVariable [""WHF_role"", ""at""];";
 								description="AT Specialist@Anti-Tank";
 								isPlayable=1;
 							};
-							id=448;
-							type="B_Soldier_F";
+							id=523;
+							type="B_soldier_AT_F";
 						};
 					};
 					class Attributes
