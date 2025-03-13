@@ -71,37 +71,7 @@ if (!isClass (configFile >> "CfgPatches" >> "ace_medical")) then {
         _unit allowDamage false;
         private _jipID = netId _unit + ":incapUnit";
         [_unit, _instigator] remoteExec ["WHF_fnc_incapUnit", 0, _jipID];
-
-        _unit spawn {
-            sleep (WHF_selfRevive_minTime + random 5);
-
-            private _startedAt = -1;
-            while {local _this && {lifeState _this isEqualTo "INCAPACITATED"}} do {
-                sleep (1 + random 1);
-
-                if (!isNil {_this getVariable "WHF_revive_caller"}) then {
-                    _startedAt = -1;
-                    continue;
-                };
-
-                private _FAKs = items _this select {
-                    _x call BIS_fnc_itemType select 1 isEqualTo "FirstAidKit"
-                } select [0, WHF_recruits_incap_FAKs];
-
-                if (count _FAKs < WHF_recruits_incap_FAKs) then {
-                    _startedAt = -1;
-                    continue;
-                };
-
-                private _time = time;
-                if (_startedAt < 0) then {_startedAt = _time; continue};
-                if (_time < _startedAt + WHF_selfRevive_duration) then {continue};
-
-                {_this removeItem _x} forEach _FAKs;
-                _this call WHF_fnc_reviveUnit;
-                break;
-            };
-        };
+        [_unit, WHF_recruits_incap_FAKs] spawn WHF_fnc_selfReviveAuto;
         0.95
     }}];
 };
