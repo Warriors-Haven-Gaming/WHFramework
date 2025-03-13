@@ -79,14 +79,13 @@ if (_isCanceled) exitWith {
     };
 };
 
-private _items =
-    (items _target apply {[_target, _x]})
-    + (items _caller apply {[_caller, _x]});
-private _FAKs = _items select {_x # 1 call BIS_fnc_itemType select 1 isEqualTo "FirstAidKit"};
+private _isFAK = {_x call BIS_fnc_itemType select 1 isEqualTo "FirstAidKit"};
+private _FAKs =
+    (items _target select _isFAK apply {[_target, _x]})
+    + (items _caller select _isFAK apply {[_caller, _x]});
 {
-    if (_forEachIndex > WHF_revive_FAKs) exitWith {};
     _x params ["_unit", "_item"];
     _unit removeItem _item;
-} forEach _FAKs;
+} forEach (_FAKs select [0, WHF_revive_FAKs]);
 
 [_target] remoteExec ["WHF_fnc_reviveUnit", _target];
