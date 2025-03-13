@@ -72,6 +72,8 @@ private _subObjectives = [
     [_center, _radius, _taskID, _compositionObjects, _compositionTerrain, _groups, _vehicles]
         spawn WHF_fnc_msnMainAnnexRegionCommand,
     [_center, _radius, _taskID, _compositionObjects, _compositionTerrain, _groups, _vehicles]
+        spawn WHF_fnc_msnMainAnnexRegionComms,
+    [_center, _radius, _taskID, _compositionObjects, _compositionTerrain, _groups, _vehicles]
         spawn WHF_fnc_msnMainAnnexRegionRepair
 ];
 waitUntil {sleep 3; _subObjectives findIf {!scriptDone _x} < 0};

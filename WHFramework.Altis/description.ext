@@ -180,6 +180,7 @@ class CfgFunctions {
             class randomMarkerID {};
         };
         class Missions {
+            class addIntelAction {};
             class missionLoop {};
             class msnDestroyAAA {};
             class msnDownloadIntel {};
@@ -188,6 +189,8 @@ class CfgFunctions {
             class msnDownloadIntelLaptopTimerCondition {};
             class msnMainAnnexRegion {};
             class msnMainAnnexRegionCommand {};
+            class msnMainAnnexRegionComms {};
+            class msnMainAnnexRegionCommsTower {};
             class msnMainAnnexRegionCompositions {};
             class msnMainAnnexRegionReinforcements {};
             class msnMainAnnexRegionRepair {};
@@ -361,6 +364,10 @@ class CfgTaskDescriptions {
     class mainAnnexRegionCommand {
         title       = "STR_WHF_mainAnnexRegionCommand_title";
         description = "STR_WHF_mainAnnexRegionCommand_description";
+    };
+    class mainAnnexRegionComms {
+        title       = "STR_WHF_mainAnnexRegionComms_title";
+        description = "STR_WHF_mainAnnexRegionComms_description";
     };
     class mainAnnexRegionRepair {
         title       = "STR_WHF_mainAnnexRegionRepair_title";
