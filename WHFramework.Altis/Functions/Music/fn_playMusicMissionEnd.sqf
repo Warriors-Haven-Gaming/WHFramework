@@ -10,6 +10,7 @@ Author:
 
 */
 if (!isServer) exitWith {};
+if (!WHF_missions_music_main) exitWith {};
 selectRandom [
     ["LeadTrack01a_F_EXP", 0],      // This Is War (Apex Remix) - Part 1
     ["AmbientTrack02_F_Orange", 0], // Laws of War DLC: Remnants of War

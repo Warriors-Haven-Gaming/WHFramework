@@ -354,6 +354,16 @@ Author:
 
 // Missions
 [
+    "WHF_missions_music_main",
+    "CHECKBOX",
+    ["STR_WHF_settings_missions_music_main", "STR_WHF_settings_missions_music_main_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_missions"],
+    true,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_missions_annex_size",
     "SLIDER",
     ["STR_WHF_settings_missions_annex_size", "STR_WHF_settings_missions_annex_size_tooltip"],
