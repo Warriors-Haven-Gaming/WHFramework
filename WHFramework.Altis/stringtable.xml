@@ -77,9 +77,6 @@
         <Key ID="STR_WHF_context_action_haloJump">
             <Original>Halo Jump</Original>
         </Key>
-        <Key ID="STR_WHF_context_action_loadout">
-            <Original>Edit Recruit Loadout</Original>
-        </Key>
         <Key ID="STR_WHF_context_action_magrepack">
             <Original>Repack Magazines</Original>
         </Key>
@@ -237,9 +234,9 @@
                 receive the last loadout you used in that role. If you have yet
                 to play as that role, or have not yet made a loadout for it,
                 they will receive a default loadout. In this case, you can edit
-                their loadout by looking at them and using the Context Menu keybind.
-                The loadout you give them will be saved to the role, allowing you
-                to reuse the loadout for future recruits.
+                their loadout by looking at them and using the Edit Recruit Loadout
+                action. The loadout you give them will be saved to the role,
+                allowing you to reuse the loadout for future recruits.
                 &lt;br/&gt;
                 &lt;br/&gt;
                 Depending on server settings, recruit actions may become hidden
@@ -468,6 +465,9 @@
         </Key>
     </Container>
     <Container name="Recruits">
+        <Key ID="STR_WHF_addRecruitLoadoutAction_edit">
+            <Original>Edit Recruit Loadout</Original>
+        </Key>
         <Key ID="STR_WHF_spawnRecruit">
             <Original>Request Recruit</Original>
         </Key>
