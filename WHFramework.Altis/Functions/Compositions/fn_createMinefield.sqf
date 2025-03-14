@@ -52,7 +52,7 @@ for "_i" from 1 to _quantity do {
         };
         if (count _roads < 1) exitWith {};
         private _road = selectRandom _roads;
-        _pos = ASLToATL ([_road, random 1, random 2 - 1] call WHF_fnc_getRoadPos);
+        _pos = [_road, random 1, random 2 - 1] call WHF_fnc_getRoadPos;
     };
 
     private _mines = switch (_type) do {

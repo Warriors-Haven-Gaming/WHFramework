@@ -16,7 +16,7 @@ Parameters:
         Typical values range between -1 and +1.
 
 Returns:
-    PositionASL
+    PositionATL
 
 Author:
     thegamecracks
@@ -31,4 +31,7 @@ private _posASL = vectorLinearConversion [0, 1, _x, _begPos, _endPos];
 private _normal = vectorNormalized _line vectorCrossProduct [0, 0, 1];
 private _distance = _width * _y / 2;
 _posASL = _posASL vectorAdd (_normal vectorMultiply _distance);
-_posASL
+
+private _posATL = ASLToATL _posASL;
+if (!surfaceIsWater _posATL) then {_posATL set [2, _posATL # 2 max 0]};
+_posATL

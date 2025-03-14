@@ -63,7 +63,7 @@ for "_i" from 1 to _quantity * 2 do {
     private _type = selectRandom _turretTypes;
     private _offset = 0.5 + random 0.4;
     if (random 1 < 0.5) then {_offset = -_offset};
-    private _pos = ASLToATL ([_road, random 1, _offset] call WHF_fnc_getRoadPos);
+    private _pos = [_road, random 1, _offset] call WHF_fnc_getRoadPos;
     _pos = _pos findEmptyPosition [0, 10, _type];
     if (_pos isEqualTo []) then {continue};
 
