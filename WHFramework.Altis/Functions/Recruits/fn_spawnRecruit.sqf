@@ -42,6 +42,7 @@ _unit setCustomAimCoef WHF_fitness_sway;
 _unit setDir (_position getDir focusOn);
 _unit setSkill WHF_recruits_skill;
 _unit setVariable ["WHF_recruiter", getPlayerUID player, true];
+_unit setVariable ["WHF_role", _role, true];
 
 // TODO: extract role traits into function
 switch (_role) do {

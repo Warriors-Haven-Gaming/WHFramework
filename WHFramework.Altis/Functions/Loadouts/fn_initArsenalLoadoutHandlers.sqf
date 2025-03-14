@@ -8,14 +8,18 @@ Author:
     thegamecracks
 
 */
-[missionNamespace, "arsenalClosed", {
-    [getUnitLoadout player] call WHF_fnc_setLastLoadout;
-    saveMissionProfileNamespace;
+// FIXME: redundancy between vanilla and ACE handlers, maybe worth refactoring?
+[missionNamespace, "arsenalPreOpen", {
+    params ["", "_center"];
+    [_center] call WHF_fnc_onArsenalOpened;
 }] call BIS_fnc_addScriptedEventHandler;
 
+[missionNamespace, "arsenalClosed", WHF_fnc_onArsenalClosed] call BIS_fnc_addScriptedEventHandler;
+
 if (isClass (configFile >> "CfgPatches" >> "ace_arsenal")) then {
-    ["ace_arsenal_displayClosed", {
-        [getUnitLoadout player] call WHF_fnc_setLastLoadout;
-        saveMissionProfileNamespace;
+    ["ace_arsenal_displayOpened", {
+        [ace_arsenal_center] call WHF_fnc_onArsenalOpened;
     }] call CBA_fnc_addEventHandler;
+
+    ["ace_arsenal_displayClosed", WHF_fnc_onArsenalClosed] call CBA_fnc_addEventHandler;
 };

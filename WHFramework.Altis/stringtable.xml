@@ -77,6 +77,9 @@
         <Key ID="STR_WHF_context_action_haloJump">
             <Original>Halo Jump</Original>
         </Key>
+        <Key ID="STR_WHF_context_action_loadout">
+            <Original>Edit Recruit Loadout</Original>
+        </Key>
         <Key ID="STR_WHF_context_action_magrepack">
             <Original>Repack Magazines</Original>
         </Key>
@@ -229,7 +232,9 @@
                 Each time you select a role for your next recruit, they will
                 receive the last loadout you had used in that role. If you
                 have yet to play as that role, or have not yet made a loadout
-                for it, they will receive a default loadout instead.
+                for it, they will receive a default loadout. Recruit loadouts
+                can also be edited by looking at them and using the Context Menu
+                keybind.
                 &lt;br/&gt;
                 &lt;br/&gt;
                 Depending on server settings, recruit actions may become hidden
@@ -323,6 +328,9 @@
     <Container name="Loadouts">
         <Key ID="STR_WHF_initArsenal_loadLastLoadout">
             <Original>Load Last Loadout</Original>
+        </Key>
+        <Key ID="STR_WHF_initArsenalLoadoutHandlers_role">
+            <Original>Editing loadout for: %1</Original>
         </Key>
     </Container>
     <Container name="Locks">
