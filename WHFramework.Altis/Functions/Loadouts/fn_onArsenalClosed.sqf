@@ -17,8 +17,3 @@ if (isNil "_role") exitWith {};
 private _loadout = getUnitLoadout WHF_loadout_center;
 [_loadout, _role] call WHF_fnc_setLastLoadout;
 saveMissionProfileNamespace;
-
-private _uid = WHF_loadout_center getVariable ["WHF_recruiter", ""];
-if (_uid isEqualTo getPlayerUID player) then {
-    WHF_loadout_center setVariable ["WHF_recruitLoadout", _loadout];
-};

@@ -41,10 +41,28 @@ _spawner addAction [
             !isPlayer _x
             && {local _x
             && {focusOn distance _x < 100
-            && {!isNil {_x getVariable "WHF_recruitLoadout"}}}}
+            && {_x getVariable ["WHF_recruiter", ""] isEqualTo getPlayerUID player
+            && {!isNil {_x getVariable "WHF_role"}}}}}
         };
 
-        {_x setUnitLoadout (_x getVariable "WHF_recruitLoadout")} forEach _recruits;
+        // Filter out recruits whose roles have no saved loadouts
+        private _roles = _recruits apply {_x getVariable "WHF_role"};
+        _roles = _roles arrayIntersect _roles;
+
+        private _loadouts = createHashMapFromArray (_roles apply {
+            [_x, [_x] call WHF_fnc_getLastLoadout]
+        });
+
+        _recruits = _recruits select {
+            private _role = _x getVariable "WHF_role";
+            _loadouts get _role isNotEqualTo []
+        };
+
+        {
+            private _role = _x getVariable "WHF_role";
+            private _loadout = _loadouts get _role;
+            _x setUnitLoadout _loadout;
+        } forEach _recruits;
 
         if (count _recruits > 0) then {
             hint format [

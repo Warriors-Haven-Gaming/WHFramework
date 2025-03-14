@@ -57,7 +57,6 @@ switch (_role) do {
 
 private _loadout = [_role] call WHF_fnc_getLastLoadout;
 if (_loadout isNotEqualTo []) then {_unit setUnitLoadout _loadout};
-_unit setVariable ["WHF_recruitLoadout", getUnitLoadout _unit];
 
 [_unit] call WHF_fnc_initVehicleLockHandlers;
 if (!isClass (configFile >> "CfgPatches" >> "ace_medical")) then {
