@@ -42,6 +42,8 @@ private _maxPlayerDistanceSqr = _maxPlayerDistance * _maxPlayerDistance;
 private _condition = {
     params ["_pos", "_arguments"];
     _arguments params ["_minPlayerDistanceSqr", "_maxPlayerDistanceSqr"];
+    if (count allPlayers < 1) exitWith {true};
+
     // Assuming a person shouldn't be visible at this position, we'll add
     // 2 metres to the height
     private _posASL = AGLToASL _pos vectorAdd [0, 0, 2];
