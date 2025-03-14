@@ -49,6 +49,7 @@ if (_fadeLast >= 0 && {getMusicPlayedTime > 0}) then {
 playMusic [_music, _offset];
 _fadeIn fadeMusic 1;
 sleep (_fadeIn + _duration);
+if (getMusicPlayedTime <= 0) exitWith {};
 
 _fadeOut fadeMusic 0;
 sleep _fadeOut;
