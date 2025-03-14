@@ -21,12 +21,25 @@ with uiNamespace do {
     private _display = findDisplay -1;
 
     private _localizeRole = missionNamespace getVariable "WHF_fnc_localizeRole";
+    private _primaryColor = [
+        profileNamespace getVariable ["GUI_BCG_RGB_R", 1],
+        profileNamespace getVariable ["GUI_BCG_RGB_G", 1],
+        profileNamespace getVariable ["GUI_BCG_RGB_B", 1],
+        profileNamespace getVariable ["GUI_BCG_RGB_A", 0.7]
+    ];
 
     private _frame = _display ctrlCreate ["RscText", -1];
     _frame ctrlSetPosition [safezoneX + 0.35 * safezoneW, safezoneY + 0.45 * safezoneH, 0.3 * safezoneW, 0.15 * safezoneH];
     _frame ctrlSetBackgroundColor [0, 0, 0, 0.7];
     _frame ctrlEnable false;
     _frame ctrlCommit 0;
+
+    private _title = _display ctrlCreate ["RscText", -1];
+    _title ctrlSetPosition [safezoneX + 0.35 * safezoneW, safezoneY + 0.45 * safezoneH, 0.3 * safezoneW, 0.025 * safezoneH];
+    _title ctrlSetBackgroundColor _primaryColor;
+    _title ctrlSetText localize "$STR_WHF_spawnRecruit";
+    _title ctrlEnable false;
+    _title ctrlCommit 0;
 
     _atButton = _display ctrlCreate ["RscButton", -1];
     _atButton ctrlSetPosition [safezoneX + 0.3925 * safezoneW, safezoneY + 0.49 * safezoneH, 0.065 * safezoneW, 0.03 * safezoneH];
