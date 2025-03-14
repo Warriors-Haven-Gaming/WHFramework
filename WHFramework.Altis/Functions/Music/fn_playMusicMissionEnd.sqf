@@ -31,4 +31,4 @@ selectRandom [
     ["Track_R_01", 0],              // A2: Manhattan
     ["Track_R_17", 0]               // A2: Insertion
 ] params ["_music", "_offset"];
-[_music, 30, _offset, 15, 15, 2.5] remoteExec ["WHF_fnc_playMusicSnippet", WHF_globalPlayerTarget];
+[_music, 60, _offset, 15, 15, 2.5] remoteExec ["WHF_fnc_playMusicSnippet", WHF_globalPlayerTarget];
