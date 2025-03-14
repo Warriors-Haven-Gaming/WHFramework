@@ -16,5 +16,16 @@ Author:
 
 */
 params ["_role"];
-private _key = format ["STR_WHF_roles_%1", _role];
-if (isLocalized _key) then {localize _key} else {_role}
+switch (_role) do {
+    case "autorifleman": {localize "str_b_soldier_ar_f0"};
+    case "engineer": {localize "str_b_engineer_f0"};
+    case "jtac": {localize "str_a3_b_ctrg_soldier_jtac_tna_f0"};
+    case "pilot_cas": {localize "STR_A3_B_Fighter_Pilot_name"};
+    case "rifleman": {localize "str_dn_rifleman"};
+    case "sniper": {localize "str_b_sniper_f0"};
+    case "uav": {localize "str_a3_b_soldier_uav_f0"};
+    default {
+        private _key = format ["STR_WHF_roles_%1", _role];
+        if (isLocalized _key) then {localize _key} else {_role}
+    };
+}
