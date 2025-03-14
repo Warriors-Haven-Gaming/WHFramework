@@ -108,7 +108,9 @@ private _airdefense = [
 
 private _tanksCooldown = 1500;
 private _tanks = [
-    ["b_w_abramsx",                          [-1, ["engineer"]]],
+    ["qav_abramsx",                          [-1, ["engineer"]]],
+    ["qav_abramsx_tusk",                     [-1, ["engineer"]]],
+    ["qav_abramsx_templar",                  [-1, ["engineer"]]],
     ["cup_b_m1a2c_tusk_II_woodland_us_army", [-1, ["engineer"]]],
     ["cup_b_challenger2_woodland_baf",       [-1, ["engineer"]]],
     ["", []]
