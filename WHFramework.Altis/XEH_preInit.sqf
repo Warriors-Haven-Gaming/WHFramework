@@ -334,7 +334,7 @@ Author:
     "CHECKBOX",
     ["STR_WHF_settings_locks_copilot", "STR_WHF_settings_locks_copilot_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_locks"],
-    false,
+    true,
     true,
     {},
     false
@@ -378,7 +378,7 @@ Author:
     "SLIDER",
     ["STR_WHF_settings_missions_annex_threshold", "STR_WHF_settings_missions_annex_threshold_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_missions"],
-    [0.3, 1, 0.7, 0, true],
+    [0.3, 1, 0.55, 0, true],
     true,
     {WHF_missions_annex_threshold = 1 - _this},
     false
@@ -428,7 +428,7 @@ Author:
     "SLIDER",
     ["STR_WHF_settings_missions_annex_reinforce_frequency_units", "STR_WHF_settings_missions_annex_reinforce_frequency_units_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_missions"],
-    [10, 600, 60, 0, false],
+    [10, 600, 120, 0, false],
     true,
     {},
     false
@@ -438,7 +438,7 @@ Author:
     "SLIDER",
     ["STR_WHF_settings_missions_annex_reinforce_frequency_vehicles", "STR_WHF_settings_missions_annex_reinforce_frequency_vehicles_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_missions"],
-    [10, 600, 120, 0, false],
+    [10, 600, 180, 0, false],
     true,
     {},
     false
@@ -512,7 +512,7 @@ Author:
     "SLIDER",
     ["STR_WHF_settings_revive_self_minTime", "STR_WHF_settings_revive_self_minTime_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_revive"],
-    [0, 180, 30, 0, false],
+    [0, 180, 3, 0, false],
     true,
     {},
     false
@@ -522,7 +522,7 @@ Author:
     "SLIDER",
     ["STR_WHF_settings_revive_self_duration", "STR_WHF_settings_revive_self_duration_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_revive"],
-    [0.5, 30, 10, 1, false],
+    [0.5, 30, 2.5, 1, false],
     true,
     {},
     false
@@ -532,7 +532,7 @@ Author:
     "LIST",
     ["STR_WHF_settings_revive_self_FAKs", "STR_WHF_settings_revive_self_FAKs_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_revive"],
-    [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], [], 4],
+    [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], [], 3],
     true,
     {},
     false
