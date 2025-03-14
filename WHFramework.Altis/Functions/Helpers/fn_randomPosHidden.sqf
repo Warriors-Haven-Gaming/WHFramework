@@ -53,9 +53,8 @@ private _condition = {
         if (_distanceSqr < _minPlayerDistanceSqr) then {continueWith false};
         if (_distanceSqr > _maxPlayerDistanceSqr) then {continueWith true};
 
-        private _visibility = [_x, "VIEW"] checkVisibility [_eyePos, _posASL];
-        if (_visibility > 0.1) exitWith {false};
-
+        private _surfaces = lineIntersectsSurfaces [_eyePos, _posASL, _x];
+        if (_surfaces isEqualTo []) exitWith {false};
         true
     } forEach allPlayers
 };
