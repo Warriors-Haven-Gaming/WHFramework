@@ -54,7 +54,7 @@ private _condition = {
         if (_distanceSqr > _maxPlayerDistanceSqr) then {continueWith true};
 
         private _surfaces = lineIntersectsSurfaces [_eyePos, _posASL, _x];
-        if (_surfaces isEqualTo []) exitWith {false};
+        if (_surfaces findIf {!(typeOf (_x # 3) in ["hatg_mirror"])} < 0) exitWith {false};
         true
     } forEach allPlayers
 };
