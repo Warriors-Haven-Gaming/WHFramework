@@ -44,9 +44,9 @@ private _countUnits = {
     {
         if (isNull _x) then {continue};
         if (_x isEqualType grpNull) then {
-            _total = _total + count units _x;
+            _total = _total + ({alive _x} count units _x);
         } else {
-            _total = _total + 1;
+            if (alive _x) then {_total = _total + 1};
         };
     } forEach (_units arrayIntersect _units);
     _total
