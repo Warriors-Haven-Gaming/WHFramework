@@ -30,7 +30,7 @@ params ["_units", "_center", "_radius", ["_delete", false]];
 if (_units isEqualType grpNull) then {_units = units _units};
 _units = _units select {_x checkAIFeature "PATH"};
 
-private _buildings = _center nearObjects _radius;
+private _buildings = _center nearObjects _radius select {!isObjectHidden _x};
 _buildings = _buildings select {_x buildingPos 0 isNotEqualTo [0,0,0]};
 
 private _positions = [];

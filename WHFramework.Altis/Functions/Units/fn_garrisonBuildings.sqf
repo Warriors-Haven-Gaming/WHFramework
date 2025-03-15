@@ -29,7 +29,10 @@ params ["_units", "_buildings", ["_delete", false]];
 if (_units isEqualType grpNull) then {_units = units _units};
 _units = _units select {_x checkAIFeature "PATH"};
 
-_buildings = _buildings select {_x buildingPos 0 isNotEqualTo [0,0,0]};
+_buildings = _buildings select {
+    !isObjectHidden _x
+    && {_x buildingPos 0 isNotEqualTo [0,0,0]}
+};
 
 private _positions = [];
 {_positions append (_x buildingPos -1)} forEach _buildings;
