@@ -96,6 +96,7 @@ if (_signs) then {
         _sign setVectorUp surfaceNormal _pos;
         _signs pushBack _sign;
     };
+    [_signs, false] remoteExec ["WHF_fnc_setPhysicsCollisions", 0, true];
     _objects append _signs;
 };
 
