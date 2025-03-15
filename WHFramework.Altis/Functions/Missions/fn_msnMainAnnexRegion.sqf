@@ -23,7 +23,7 @@ if (_location isEqualTo locationNull) then {
         ["Hill", "NameVillage", "NameCity", "NameCityCapital"],
         sqrt 2 / 2 * worldSize
     ];
-    _locations = _locations call BIS_fnc_arrayShuffle;
+    _locations = _locations call WHF_fnc_arrayShuffle;
     {
         if ([locationPosition _x, 1200] call WHF_fnc_isNearRespawn) then {continue};
         _location = _x;
@@ -58,31 +58,28 @@ private _description = [
 private _taskID = [blufor, "", _description, _area # 0, "AUTOASSIGNED", -1, true, "attack"] call WHF_fnc_taskCreate;
 
 [_center, _radius] call WHF_fnc_msnMainAnnexRegionCompositions
-    params ["_compositionObjects", "_compositionTerrain", "_compositionGroups"];
+    params ["_objects", "_terrain", "_compGroups"];
 
-private _buildings = flatten _compositionObjects select {simulationEnabled _x};
+private _buildings = flatten _objects select {simulationEnabled _x};
 [_center, _radius, _buildings] call WHF_fnc_msnMainAnnexRegionUnits
     params ["_groups", "_vehicles"];
-private _initialUnitCount = count flatten (_groups apply {units _x});
 
-private _reinforceArgs = [true, _center, _radius, _initialUnitCount, count _vehicles, _groups, _vehicles];
+// Note that unlike _compGroups, the above function will dynamically append
+// newly created groups to its own array. We're using it as the canonical list
+// of groups to ensure everyone gets garbage collected.
+_groups append _compGroups;
+
+private _initialUnitCount = count flatten (_groups apply {units _x});
+private _reinforceArgs = [true, _center, _radius, _initialUnitCount, _groups, _vehicles];
 _reinforceArgs spawn WHF_fnc_msnMainAnnexRegionReinforcements;
 
-private _subObjectiveArgs = [
-    _center,
-    _radius,
-    _taskID,
-    _compositionObjects,
-    _compositionTerrain,
-    _groups,
-    _vehicles
-];
+private _subObjectiveArgs = [_center, _radius, _taskID, _objects, _terrain, _groups];
 private _subObjectives = [
     [_subObjectiveArgs, WHF_fnc_msnMainAnnexRegionCommand],
     [_subObjectiveArgs, WHF_fnc_msnMainAnnexRegionComms],
     [_subObjectiveArgs, WHF_fnc_msnMainAnnexRegionRepair]
 ];
-_subObjectives = _subObjectives call BIS_fnc_arrayShuffle;
+_subObjectives = _subObjectives call WHF_fnc_arrayShuffle;
 _subObjectives = _subObjectives select [0, 2];
 _subObjectives = _subObjectives apply {_x # 0 spawn _x # 1};
 waitUntil {sleep 3; _subObjectives findIf {!scriptDone _x} < 0};
@@ -99,9 +96,11 @@ call WHF_fnc_playMusicMissionEnd;
 deleteMarker _areaMarker;
 _reinforceArgs set [0, false];
 
-{[_x] call WHF_fnc_queueGCDeletion} forEach _compositionObjects;
-{[_x] call WHF_fnc_queueGCUnhide} forEach _compositionTerrain;
-{[units _x] call WHF_fnc_queueGCDeletion} forEach _compositionGroups;
+// Because the reinforcement script needs to count the number of vehicles
+// in the mission and append new vehicles to it, we've kept it separate
+// the from objects array.
+_objects append _vehicles;
 
+{[_x] call WHF_fnc_queueGCDeletion} forEach _objects;
+{[_x] call WHF_fnc_queueGCUnhide} forEach _terrain;
 {[units _x] call WHF_fnc_queueGCDeletion} forEach _groups;
-{[_x] call WHF_fnc_queueGCDeletion} forEach _vehicles;

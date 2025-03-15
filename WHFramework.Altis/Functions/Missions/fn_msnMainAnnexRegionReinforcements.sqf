@@ -16,13 +16,12 @@ Parameters:
         The radius of the mission area.
     Number thresholdUnits:
         The maximum number of units allowed.
-    Number thresholdVehicles:
-        The maximum number of vehicles allowed.
     Array groups:
         An array of groups to count units from.
         Reinforcement groups that spawn in will be appended to this array.
     Array vehicles:
-        An array of vehicles to count from.
+        An array of vehicles to count from. The array's initial size
+        will determine the maximum number of vehicles allowed.
         Reinforcement groups that spawn in will be appended to this array.
 
 Author:
@@ -34,7 +33,6 @@ params [
     "_center",
     "_radius",
     "_thresholdUnits",
-    "_thresholdVehicles",
     "_groups",
     "_vehicles"
 ];
@@ -68,6 +66,7 @@ private _reinforceVehicles = {
     _vehicles append assignedVehicles _group;
 };
 
+private _thresholdVehicles = count _vehicles;
 private _reinforceArgs = [
     [true, 30, _thresholdUnits, _groups, [_center, _radius, _groups], _reinforceUnits],
     [true, 30, _thresholdVehicles, _vehicles, [_center, _radius, _groups, _vehicles], _reinforceVehicles]

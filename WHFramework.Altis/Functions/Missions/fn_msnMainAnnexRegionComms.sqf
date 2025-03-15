@@ -13,7 +13,7 @@ Parameters:
     String parent:
         The parent task ID.
     Array objects:
-        An array to append composition objects to.
+        An array to append objects to.
         Useful for garbage collection.
     Array terrain:
         An array to append hidden terrain to.
@@ -21,15 +21,12 @@ Parameters:
     Array groups:
         An array to append groups to.
         Useful for garbage collection.
-    Array vehicles:
-        An array to individually append vehicles to.
-        Useful for garbage collection.
 
 Author:
     thegamecracks
 
 */
-params ["_center", "_radius", "_parent", "_objects", "_terrain", "_groups", "_vehicles"];
+params ["_center", "_radius", "_parent", "_objects", "_terrain", "_groups"];
 
 private _isPosSuitable = {
     params ["_pos"];
@@ -49,9 +46,7 @@ private _dir = random 360;
 _props = [_props, _pos, _dir, ["normal", "path", "simple"], _objects] call WHF_fnc_objectsMapper;
 _tower = [_tower, _pos, _dir, ["frozen", "normal"], _objects] call WHF_fnc_objectsMapper;
 _intel = [_intel, _pos, _dir, ["frozen", "normal"], _objects] call WHF_fnc_objectsMapper;
-_objects append _props;
-_vehicles append _tower;
-_vehicles append _intel;
+_objects pushBack (_props + _tower + _intel);
 
 private _building = _props # 0;
 private _group = [opfor, "officer", 1, _pos, 0] call WHF_fnc_spawnUnits;

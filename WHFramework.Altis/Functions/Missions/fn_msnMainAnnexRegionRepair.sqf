@@ -13,7 +13,7 @@ Parameters:
     String parent:
         The parent task ID.
     Array objects:
-        An array to append composition objects to.
+        An array to append objects to.
         Useful for garbage collection.
     Array terrain:
         An array to append hidden terrain to.
@@ -21,15 +21,12 @@ Parameters:
     Array groups:
         An array to append groups to.
         Useful for garbage collection.
-    Array vehicles:
-        An array to individually append vehicles to.
-        Useful for garbage collection.
 
 Author:
     thegamecracks
 
 */
-params ["_center", "_radius", "_parent", "_objects", "_terrain", "_groups", "_vehicles"];
+params ["_center", "_radius", "_parent", "_objects", "_terrain", "_groups"];
 
 private _isPosSuitable = {
     params ["_pos"];
@@ -48,8 +45,8 @@ if (_compVehicles findIf {!isClass (configFile >> "CfgVehicles" >> _x # 0)} >= 0
 private _dir = random 360;
 _compProps = [_compProps, _pos, _dir, ["normal", "path", "simple"], _objects] call WHF_fnc_objectsMapper;
 _compVehicles = [_compVehicles, _pos, _dir, ["normal"], _objects] call WHF_fnc_objectsMapper;
-_objects append _compProps;
-_vehicles append _compVehicles;
+_objects pushBack _compProps;
+_objects append _compVehicles; // Ensure GC area check happens per vehicle
 
 private _group = [opfor, _compVehicles] call WHF_fnc_spawnGunners;
 _groups pushBack _group;

@@ -26,7 +26,7 @@ WHF_serviceSoundScript = [_vehicle] spawn {
         "a3\sounds_f\sfx\ui\vehicles\vehicle_repair.wss",
         "a3\sounds_f\sfx\ui\vehicles\vehicle_rearm.wss",
         "a3\sounds_f\sfx\ui\vehicles\vehicle_refuel.wss"
-    ] call BIS_fnc_arrayShuffle;
+    ] call WHF_fnc_arrayShuffle;
 
     while {true} do {
         private _sound = _sounds deleteAt 0;

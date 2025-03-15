@@ -13,7 +13,7 @@ Parameters:
     String parent:
         The parent task ID.
     Array objects:
-        An array to append composition objects to.
+        An array to append objects to.
         Useful for garbage collection.
     Array terrain:
         An array to append hidden terrain to.
@@ -21,20 +21,17 @@ Parameters:
     Array groups:
         An array to append groups to.
         Useful for garbage collection.
-    Array vehicles:
-        An array to individually append vehicles to.
-        Useful for garbage collection.
 
 Author:
     thegamecracks
 
 */
-params ["_center", "_radius", "_parent", "_objects", "_terrain", "_groups", "_vehicles"];
+params ["_center", "_radius", "_parent", "_objects", "_terrain", "_groups"];
 
 [opfor, 1, _center, _radius, ["hq", 1], _objects] call WHF_fnc_createEmplacements
     params ["_compObjects", "_compTerrain", "_compGroups"];
-_objects append flatten _compObjects;
-_terrain append flatten _compTerrain;
+_objects append _compObjects;
+_terrain append _compTerrain;
 _groups append _compGroups;
 
 private _pos = getPosATL (_compObjects # 0 # 0);

@@ -35,7 +35,7 @@ _buildings = _buildings select {_x buildingPos 0 isNotEqualTo [0,0,0]};
 
 private _positions = [];
 {_positions append (_x buildingPos -1)} forEach _buildings;
-_positions = _positions call BIS_fnc_arrayShuffle;
+_positions = _positions call WHF_fnc_arrayShuffle;
 
 {
     if (_forEachIndex >= count _positions) then {
