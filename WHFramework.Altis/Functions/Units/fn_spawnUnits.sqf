@@ -5,8 +5,9 @@ Description:
     Spawn units at the given position.
 
 Parameters:
-    Side side:
-        The group's side.
+    Group | Side group:
+        The group to spawn the units in, or the side to create a new group from.
+        If a group is provided, their behaviour will not be set.
     Array types:
         One or more group types to spawn units from.
         See WHF_fnc_getUnitTypes for allowed values.
@@ -27,15 +28,16 @@ Parameters:
             "lasers"
 
 Returns:
-    Group
-        The group that was spawned in.
+    Array | Group
+        If a side was passed, this will be the newly created group.
+        If a group was passed, this will be the array of new units.
 
 Author:
     thegamecracks
 
 */
 params [
-    "_side",
+    "_group",
     "_types",
     "_quantity",
     "_center",
@@ -44,8 +46,11 @@ params [
     ["_equipment", WHF_units_equipment]
 ];
 
-private _group = createGroup [_side, true];
+private _sideProvided = _group isEqualType sideEmpty;
+if (_sideProvided) then {_group = createGroup [_group, true]};
 private _unitTypes = _types call WHF_fnc_getUnitTypes;
+
+private _units = [];
 for "_i" from 1 to _quantity do {
     private _unit = _group createUnit [selectRandom _unitTypes, _center, [], _radius, "NONE"];
     [_unit] joinSilent _group;
@@ -63,14 +68,19 @@ for "_i" from 1 to _quantity do {
         _unit addPrimaryWeaponItem "acc_pointer_IR";
         _unit enableIRLasers true;
     };
+
+    _units pushBack _unit;
 };
-_group allowFleeing 0;
-_group setBehaviourStrong "SAFE";
-_group setCombatMode "RED";
+
+if (_sideProvided) then {
+    _group allowFleeing 0;
+    _group setBehaviourStrong "SAFE";
+    _group setCombatMode "RED";
+};
 
 if (_dynamicSimulation) then {_group spawn {
     sleep 1;
     [_this, true] remoteExec ["enableDynamicSimulation"]
 }};
 
-_group
+if (_sideProvided) then {_group} else {_units}

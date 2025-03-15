@@ -48,11 +48,16 @@ for "_i" from 1 to _quantity do {
     _group addVehicle _vehicle;
     _vehicles pushBack _vehicle;
 };
-{_group createVehicleCrew _x} forEach _vehicles;
+
 {
-    _x enableStamina false;
-    _x triggerDynamicSimulation false;
-} forEach units _group;
+    private _vehicle = _x;
+    private _seats = _vehicle emptyPositions "";
+    private _quantity = selectRandom [3, 5, 7] min _seats;
+    private _units = [_group, "standard", _quantity, [-random 500, -random 500, 0], 0] call WHF_fnc_spawnUnits;
+    {_x moveInAny _vehicle} forEach _units;
+    {if (isNull objectParent _x) then {deleteVehicle _x}} forEach _units;
+} forEach _vehicles;
+
 _group allowFleeing 0;
 _group setBehaviourStrong "SAFE";
 _group setCombatMode "RED";
