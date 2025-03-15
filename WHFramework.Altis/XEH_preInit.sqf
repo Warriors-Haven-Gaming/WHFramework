@@ -434,6 +434,16 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 [
+    "WHF_missions_aaa_types",
+    "EDITBOX",
+    ["STR_WHF_settings_missions_aaa_types", "STR_WHF_settings_missions_aaa_types_tooltip"],
+    ["STR_WHF_settings_missions", "STR_WHF_destroyAAA_title"],
+    '["aa_short",1, "aa_medium",1, "aa_long",1]',
+    true,
+    {WHF_missions_aaa_types = parseSimpleArray _this},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_missions_music_main",
     "CHECKBOX",
     ["STR_WHF_settings_missions_music_main", "STR_WHF_settings_missions_music_main_tooltip"],
