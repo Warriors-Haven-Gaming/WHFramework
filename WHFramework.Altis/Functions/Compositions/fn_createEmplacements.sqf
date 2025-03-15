@@ -68,27 +68,25 @@ private _compositionObjects = [];
 private _compositionTerrain = [];
 private _compositionGroups = [];
 {
+    private _compData = _x;
 
     private _pos = [_center, [30, _radius], [_clearRadius, _isPosSuitable]] call WHF_fnc_randomPos;
     if (_pos isEqualTo [0,0]) then {continue};
     _pos = _pos vectorAdd [0,0,0];
-
-    _x params ["_buildings", "_turrets"];
 
     private _terrain = nearestTerrainObjects [_pos, [], _clearRadius, false];
     {hideObjectGlobal _x} forEach _terrain;
 
     private _objects = [];
     private _direction = random 360;
-    _buildings = [_buildings, _pos, _direction, ["normal", "path", "simple"], _ruins] call WHF_fnc_objectsMapper;
-    _turrets = [_turrets, _pos, _direction, ["normal"], _ruins] call WHF_fnc_objectsMapper;
-    _objects append _buildings;
-    _objects append _turrets;
+    {
+        _x params ["_flags", "_parts"];
+        _parts = [_parts, _pos, _direction, _flags, _ruins] call WHF_fnc_objectsMapper;
+        _objects append _parts;
+    } forEach _compData;
 
-    if (count _turrets > 0) then {
-        private _group = [_side, _turrets] call WHF_fnc_spawnGunners;
-        _compositionGroups pushBack _group;
-    };
+    private _group = [_side, _objects] call WHF_fnc_spawnGunners;
+    if (_group isNotEqualTo grpNull) then {_compositionGroups pushBack _group};
 
     _compositionObjects pushBack _objects;
     _compositionTerrain pushBack _terrain;
