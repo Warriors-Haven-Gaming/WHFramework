@@ -14,6 +14,8 @@ Parameters:
     Array flags:
         (Optional, default ["normal"])
         An array containing any of the following flags:
+            "ASL": Use Z heights as offset from the center without considering
+                   terrain height. Useful for objects in the air.
             "frozen": Disable object damage and simulation.
             "normal": Orient objects to match the surface of the terrain under them.
             "path": When combined with "simple", don't create simple objects for
@@ -71,10 +73,13 @@ private _isStatic = {
     _ret
 };
 
+private _ASL = "ASL" in _flags;
 private _frozen = "frozen" in _flags;
 private _normal = "normal" in _flags;
 private _path = "path" in _flags;
 private _simple = "simple" in _flags;
+
+if (_ASL) then {_center = ATLToASL _center};
 
 private _objects = _composition apply {
     _x params ["_type", "_pos", "_dir"];
@@ -95,9 +100,9 @@ private _objects = _composition apply {
         default {createVehicle [_type, _randPos, [], 0, "NONE"]};
     };
 
-        _obj setDir (_dir + _direction);
-        if (_normal) then {_obj setVectorUp surfaceNormal _pos};
-        _obj setPosATL _pos;
+    _obj setDir (_dir + _direction);
+    if (_normal) then {_obj setVectorUp surfaceNormal _pos};
+    if (_ASL) then {_obj setPosASL _pos} else {_obj setPosATL _pos};
 
     if (_ruins isEqualType [] && {!isSimpleObject _obj && {_obj isKindOf "Building"}}) then {
         _obj setVariable ["WHF_ruins", _ruins];
