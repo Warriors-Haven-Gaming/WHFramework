@@ -26,6 +26,7 @@ Author:
 
 */
 params ["_side", "_types", "_quantity", "_center", "_radius"];
+if (_quantity < 1) exitWith {grpNull};
 
 private _group = createGroup [_side, true];
 private _vehicleTypes = _types call WHF_fnc_getVehicleTypes;

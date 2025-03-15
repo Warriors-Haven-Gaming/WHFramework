@@ -27,6 +27,7 @@ _turrets = _turrets select {
     && {count allTurrets _x > 0
     && {isNull gunner _x}}}
 };
+if (count _turrets < 1) exitWith {grpNull};
 
 private _initTurrets = {
     // params ["_turrets", "_side"];

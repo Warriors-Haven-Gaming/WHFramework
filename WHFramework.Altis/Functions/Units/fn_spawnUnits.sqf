@@ -47,6 +47,7 @@ params [
 ];
 
 private _sideProvided = _group isEqualType sideEmpty;
+if (_quantity < 1) exitWith {if (_sideProvided) then {grpNull} else {[]}};
 if (_sideProvided) then {_group = createGroup [_group, true]};
 private _unitTypes = _types call WHF_fnc_getUnitTypes;
 
