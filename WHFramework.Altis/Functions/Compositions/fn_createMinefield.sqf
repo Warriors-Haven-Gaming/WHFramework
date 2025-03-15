@@ -88,10 +88,8 @@ if (_signs) then {
     for "_i" from 0 to 359 step _step do {
         private _pos = _center getPos [_radius, _i + random _step - _step / 2];
         if (isOnRoad _pos) then {continue};
-        private _sign = createSimpleObject [
-            selectRandom ["Land_Sign_Mines_F", "Land_Sign_MinesTall_F"],
-            ATLToASL _pos
-        ];
+        private _type = selectRandom ["Land_Sign_Mines_F", "Land_Sign_MinesTall_F"];
+        private _sign = createVehicle [ _type, _pos, [], 0, "CAN_COLLIDE"];
         _sign setDir (_pos getDir _center);
         _sign setVectorUp surfaceNormal _pos;
         _signs pushBack _sign;
