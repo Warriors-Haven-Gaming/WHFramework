@@ -94,6 +94,7 @@ if (_signs) then {
         ];
         _sign setDir (_pos getDir _center);
         _sign setVectorUp surfaceNormal _pos;
+        _signs pushBack _sign;
     };
     _objects append _signs;
 };
