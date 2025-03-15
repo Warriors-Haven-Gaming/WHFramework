@@ -28,7 +28,7 @@ private _terrain = [];
 private _groups = [];
 
 private _fortCount = floor (_radius / 20);
-private _fortTypes = ["camp", 0.5, "hq", 0.2, "outpost", 0.2, "tower", 0.1];
+private _fortTypes = ["camp", 0.5, "outpost", 0.4, "tower", 0.1];
 [opfor, _fortCount, _center, _radius, _fortTypes, _objects] call WHF_fnc_createEmplacements
     params ["_fortObjects", "_fortTerrain", "_fortGroups"];
 _objects append flatten _fortObjects;

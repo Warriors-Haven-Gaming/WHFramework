@@ -96,19 +96,24 @@ private _catalog = createHashMapFromArray [
             ],
             [
                 [["normal", "path", "simple"], [["Land_HBarrier_01_big_4_green_F",[-0.835938,3.49219,0],0],["Land_HBarrier_01_big_4_green_F",[-0.960938,-3.50781,0],180],["Land_HBarrier_01_big_4_green_F",[3.78906,0.117188,0],90],["Land_Cargo_Patrol_V4_F",[0.0390625,-0.0078125,0],0],["Land_BagFence_01_short_green_F",[-5.71191,3.99219,0],180],["Land_HBarrier_01_line_3_green_F",[-6.96094,-3.38281,0],180],["Land_HBarrier_01_line_3_green_F",[-7.96094,-1.13281,0],270],["Land_BagFence_01_round_green_F",[-7.58594,3.36719,0],135]]]
-            ]
-        ]
-    ],
-    [
-        "hq",
-        [
-            // Vanilla
+            ],
             [
                 [["normal", "path", "simple"], [["Land_Pallet_MilBoxes_F",[1.98926,3.95508,-0.00135994],120],["Land_Cargo10_grey_F",[4.01953,1.97852,-0.00415802],60.0012],["Land_Cargo_HQ_V4_F",[1.54688,-6.99609,0],0],["Land_PaperBox_open_full_F",[-7.13379,-3.96875,0.000724792],90],["Land_PaperBox_closed_F",[-7.04102,-5.63477,0.000593185],0],["Land_PaperBox_closed_F",[3.20215,8.96289,-0.00308418],120],["Land_Cargo_House_V4_F",[-7.57813,6.00391,0.00164032],345],["Land_PaperBox_closed_F",[1.71875,10.3984,-0.0010891],0],["Land_WoodenCrate_01_stack_x5_F",[0.671875,12.0039,0],165],["Land_HBarrier_01_big_4_green_F",[-12.0762,5.50195,0.00729561],255],["Land_HBarrier_01_big_4_green_F",[-2.20313,13.3789,0],345],["Land_HBarrier_01_big_4_green_F",[-11.0762,-8.61914,0.00946999],90.0001],["Land_HBarrier_01_line_3_green_F",[3.92285,-14.4961,0],150],["Land_HBarrier_01_line_3_green_F",[1.29688,-15.1211,0],0],["Land_HBarrier_01_big_4_green_F",[-10.0762,11.3789,0.00452614],345],["Land_HBarrier_01_line_3_green_F",[6.54688,-13.8711,0],0],["Land_BagFence_01_long_green_F",[-5.45215,-16.4961,0.00848007],0],["Land_HBarrier_01_line_3_green_F",[-10.4521,-13.8711,0.0100002],240],["Land_HBarrier_01_line_3_green_F",[-8.45313,-15.8711,0.0100002],210],["Land_Cargo20_grey_F",[12.0469,-13.4961,0],285]]]
             ],
             [
                 [["normal", "path", "simple"], [["Land_Cargo_HQ_V4_F",[-0.0380859,0.0488281,0],270],["Land_HBarrier_01_line_5_green_F",[8.08691,1.17383,0],90],["Land_HBarrier_01_line_5_green_F",[8.08691,-4.32617,0],90],["Land_BagFence_01_long_green_F",[-6.91309,-6.95117,0],0],["Land_HBarrier_01_line_5_green_F",[0.461914,10.1738,0],0],["Land_HBarrier_01_line_5_green_F",[8.08691,6.79883,0],90],["Land_HBarrier_01_line_5_green_F",[6.33691,-8.70117,0],135],["Land_HBarrier_01_line_3_green_F",[3.21191,-10.4512,0],180],["Land_HBarrier_01_line_5_green_F",[-4.91309,10.1738,0],0],["Land_HBarrier_01_line_5_green_F",[6.08691,10.1738,0],0],["Land_HBarrier_01_line_5_green_F",[-11.4131,4.17383,0],90],["Land_BagFence_01_long_green_F",[2.21191,-12.5762,0],270],["Land_PowerGenerator_F",[-12.7188,-2.13867,0],104.305],["Land_HBarrier_01_line_5_green_F",[-11.0381,-7.07617,0],0],["Land_HBarrier_01_line_5_green_F",[-13.4131,0.798828,0],180],["Land_WoodenCrate_01_stack_x3_F",[-1.66211,-13.4512,0],300],["Land_BagFence_01_long_green_F",[-11.4131,8.42383,0],270],["Land_BagFence_01_short_green_F",[2.21289,-14.8262,0],90],["Land_BagFence_01_long_green_F",[0.836914,-15.5762,0],0],["Land_HBarrier_01_line_5_green_F",[-15.4131,-2.70117,0],90],["Land_HBarrier_01_line_3_green_F",[-14.5391,-6.07617,0],225],["Land_HBarrier_01_line_3_green_F",[-2.41309,-15.5762,0],180],["Land_HBarrier_01_line_3_green_F",[-8.66309,-15.5762,0],180],["Land_BagBunker_01_small_green_F",[-5.66309,-17.0762,0],0],["Land_BagFence_01_long_green_F",[-14.7881,-11.4512,0],270],["Land_BagFence_01_long_green_F",[-11.7881,-15.5762,0],0],["Land_BagFence_01_long_green_F",[-14.7881,-14.2012,0],90],["Land_BagFence_01_short_green_F",[-14.0381,-15.5762,0],180],["Land_Communication_F",[-13.1631,-4.20117,0],0]]]
             ]
+        ]
+    ],
+    [
+        "hq",
+        [
+            // CUP
+            [
+                [["normal", "path", "simple"], [["Land_BagFence_01_long_green_F",[-2.7002,-0.599609,0.602],0],["Land_Cargo_HQ_V4_F",[0.0380859,0.000976563,0],0],["CUP_vojenska_palanda",[-0.200195,3.90039,0.602],270],["Land_CampingChair_V2_F",[4.01367,0.871094,0.601674],255],["Land_BagFence_01_long_green_F",[2.2998,-3.59961,0.601674],270],["Land_BagFence_01_long_green_F",[-2.7002,-3.59961,0.601674],0],["CUP_vojenska_palanda",[-2.7002,3.90039,0.601674],270],["Land_Pallet_F",[-4.69531,0.78418,0.722],90],["Land_CampingChair_V2_F",[3.7998,2.90039,0.601674],255],["Land_PortableDesk_01_black_F",[4.7998,0.400391,0.601674],90],["Land_Camping_Light_F",[4.69727,-0.630859,1.489],0],["Land_Laptop_device_F",[4.53418,2.93066,1.498],255],["Land_PortableDesk_01_black_F",[4.7998,2.90039,0.601674],90],["Land_CampingChair_V2_F",[5.61719,0.825195,0.602],120],["Land_TripodScreen_01_large_F",[2.7998,5.40039,0.722],135],["Land_CampingChair_V2_F",[5.78809,2.52246,0.602],120],["Land_PortableServer_01_black_F",[3.92285,5.94336,0.722],0],["CUP_fridge",[7.2998,0.400391,0.602],270],["Land_OfficeChair_01_F",[5.2998,4.90039,0.722],150],["Land_PCSet_01_keyboard_F",[5.03711,5.66211,1.609],0],["Land_PCSet_01_mouse_F",[5.31445,5.64941,1.609],0],["Land_PCSet_Intel_01_F",[5.08496,6.03906,1.609],0],["Land_PortableDesk_01_black_F",[5.7998,5.90039,0.722087],0],["Land_WaterCooler_01_new_F",[8.2998,-1.09961,0.722092],90],["Land_Microwave_01_F",[8.15625,-2.08203,1.535],90],["Land_CampingTable_small_F",[8.24023,-2.09277,0.722],0],["Land_PortableCabinet_01_bookcase_black_F",[8.08105,3.00781,0.722],90],["Land_PCSet_01_case_F",[6.73535,5.83691,0.722],0],["Land_PortableCabinet_01_7drawers_black_F",[8.03516,3.89648,0.722],90],["SatelliteAntenna_01_Mounted_Black_F",[4.7998,-5.59961,4.28],180],["OmniDirectionalAntenna_01_black_F",[2.7998,-4.09961,5.75552],0]]],
+                [["normal"], [["CUP_VABox_RU",[0.799805,1.40039,0.602],90],["Land_PortableLight_02_double_olive_F",[-0.700195,-3.59961,0.601674],135],["CUP_O_Kornet_RU",[-2.7002,0.900391,3.12652],270],["CUP_O_KORD_high_RU",[-4.7002,0.900391,0.926089],270],["Land_Laptop_Intel_02_F",[5.00586,1.1084,1.489],120],["CUP_O_KORD_high_RU",[-2.7002,-4.59961,3.12652],210],["CUP_O_Kornet_RU",[6.2998,0.400391,3.12652],90],["CUP_O_KORD_high_RU",[6.00879,4.95703,3.09916],30]]]
+            ]
+            // TODO: add vanilla
         ]
     ],
     [

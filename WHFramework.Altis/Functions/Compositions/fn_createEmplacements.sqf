@@ -51,6 +51,7 @@ for "_i" from 0 to count _types - 1 step 2 do {
     if (isNil "_comps") then {continue};
     {_availableCompositions append [_x, _weight]} forEach _comps;
 };
+if (count _availableCompositions < 2) exitWith {[[], [], []]};
 
 private _compositions = [];
 for "_i" from 1 to _quantity do {
