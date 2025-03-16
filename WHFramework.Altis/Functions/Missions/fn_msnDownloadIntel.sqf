@@ -55,22 +55,32 @@ private _intelBuilding = [
 private _laptop = _intelBuilding # 5;
 [_laptop] remoteExec ["WHF_fnc_msnDownloadIntelLaptop", 0, _laptop];
 
+private _groups = [];
+private _vehicles = [];
+
 private _quantity = 10 + floor random (count allPlayers min 20);
 private _group = [opfor, "standard", _quantity, _intelCenter, 100] call WHF_fnc_spawnUnits;
+_groups pushBack _group;
 [_group, _intelCenter] call BIS_fnc_taskDefend;
 
 private _vehicleCount = 1 + floor random 4;
 private _vehicleGroup = [opfor, "standard", _vehicleCount, _intelCenter, 100] call WHF_fnc_spawnVehicles;
-private _vehicles = assignedVehicles _vehicleGroup;
+_groups pushBack _vehicleGroup;
+_vehicles append assignedVehicles _vehicleGroup;
 [_vehicleGroup, _intelCenter] call BIS_fnc_taskDefend;
-// TODO: alert nearby enemies when a player starts downloading the intel
 
 private _taskID = [blufor, "", "downloadIntel", [_laptop,true], "CREATED", -1, true, "documents"] call WHF_fnc_taskCreate;
 
+private _downloadStartedOnce = false;
 while {true} do {
     sleep 3;
     if (!alive _laptop) exitWith {[_taskID, "FAILED"] spawn WHF_fnc_taskEnd};
-    if (_laptop getVariable ["downloadStarted", false] isEqualTo true) then {};
+    if (_laptop getVariable ["downloadStarted", false] isEqualTo true) then {
+        if (!_downloadStartedOnce) then {
+            _downloadStartedOnce = true;
+            [_laptop, _groups, _vehicles] call WHF_fnc_msnDownloadIntelReinforcements;
+        };
+    };
     if (_laptop getVariable ["downloadEnded", false] isEqualTo true) exitWith {
         [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
     };
@@ -78,6 +88,5 @@ while {true} do {
 
 [_intelBuilding] call WHF_fnc_queueGCDeletion;
 [_terrainObjects] call WHF_fnc_queueGCUnhide;
-[units _group] call WHF_fnc_queueGCDeletion;
-[units _vehicleGroup] call WHF_fnc_queueGCDeletion;
+{[units _x] call WHF_fnc_queueGCDeletion} forEach _groups;
 {[_x] call WHF_fnc_queueGCDeletion} forEach _vehicles;
