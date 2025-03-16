@@ -77,7 +77,6 @@ private _loadID = _unit addAction [
         playSound3D [_sound, objNull, false, getPosASL cursorObject];
 
         [_target, cursorObject] remoteExec ["moveInCargo", _target];
-        _target setVariable ["WHF_load_canUnload", true, true];
         [_target, _onLoadArgs] call _onLoadCode;
     },
     nil,
