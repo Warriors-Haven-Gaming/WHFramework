@@ -25,13 +25,14 @@ private _actionID = [
         && {alive _vehicle
         && {local _vehicle
         && {maxLoad _vehicle > 0
+        && {vectorMagnitude velocity _vehicle < 1.39
         && {['LandVehicle', 'ReammoBox_F', 'Air', 'Ship'] findIf {_vehicle isKindOf _x} >= 0
         && {
             private _arsenalText = localize '$STR_A3_Arsenal';
             actionIDs _vehicle findIf {
                 _vehicle actionParams _x select 0 isEqualTo _arsenalText
             } < 0
-        && {[getPosATL _vehicle, 50] call WHF_fnc_isNearArsenal}}}}}}
+        && {[getPosATL _vehicle, 50] call WHF_fnc_isNearArsenal}}}}}}}
     }
     ",
     "true",
