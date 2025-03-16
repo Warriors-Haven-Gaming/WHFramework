@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2092;
+		nextID=2095;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=430;
+		nextID=444;
 	};
 	class Camera
 	{
-		pos[]={778.03595,21.298803,10867.263};
-		dir[]={0.88928366,-0.3939577,0.23234433};
-		up[]={0.38117108,0.9191249,0.099588782};
-		aside[]={0.25278771,1.1222437e-07,-0.96752745};
+		pos[]={582.81079,19.202196,10366.703};
+		dir[]={0.11233491,-0.30132687,0.94689518};
+		up[]={0.035504039,0.95351261,0.29926395};
+		aside[]={0.99304885,6.1892206e-07,-0.11781057};
 	};
 };
 binarizationWanted=0;
@@ -2266,7 +2266,7 @@ class Mission
 					name="Interactables";
 					class Entities
 					{
-						items=26;
+						items=27;
 						class Item0
 						{
 							dataType="Object";
@@ -3297,9 +3297,43 @@ class Mission
 								nAttributes=1;
 							};
 						};
+						class Item26
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={585.46906,12.559202,10385.531};
+								angles[]={-0,4.1883831,0.01919602};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								disableSimulation=1;
+							};
+							id=2093;
+							type="Land_RepairDepot_01_green_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="allowDamage";
+									expression="_this allowdamage _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
 					};
 					id=500;
-					atlOffset=-2.4545336;
+					atlOffset=-1.1414671;
 				};
 				class Item1
 				{
@@ -24098,14 +24132,14 @@ class Mission
 							{
 								class Attribute0
 								{
-									property="F16V_Squadron_Insignia";
-									expression="_this setVariable [""F16V_Squadron_Insignia"", _value]; [_this,_value] call Peral_F16V_fnc_Squadron_Insignia;";
+									property="F16VFontStyle";
+									expression="_this setVariable [""F16VFontStyle"", _value]; [_this, _value] call lala_peral_F16V_fnc_applyAircraftFontStyle; [_this,_this getVariable [""F16V_Squadron_Insignia"",""None""]] call Peral_F16V_fnc_Squadron_Insignia;";
 									class Value
 									{
 										class data
 										{
 											singleType="STRING";
-											value="None";
+											value="white_font";
 										};
 									};
 								};
@@ -24163,14 +24197,14 @@ class Mission
 								};
 								class Attribute5
 								{
-									property="F16VFontStyle";
-									expression="_this setVariable [""F16VFontStyle"", _value]; [_this, _value] call lala_peral_F16V_fnc_applyAircraftFontStyle; [_this,_this getVariable [""F16V_Squadron_Insignia"",""None""]] call Peral_F16V_fnc_Squadron_Insignia;";
+									property="F16V_Squadron_Insignia";
+									expression="_this setVariable [""F16V_Squadron_Insignia"", _value]; [_this,_value] call Peral_F16V_fnc_Squadron_Insignia;";
 									class Value
 									{
 										class data
 										{
 											singleType="STRING";
-											value="white_font";
+											value="None";
 										};
 									};
 								};
@@ -33821,7 +33855,7 @@ class Mission
 					name="Markers";
 					class Entities
 					{
-						items=14;
+						items=16;
 						class Item0
 						{
 							dataType="Marker";
@@ -33994,9 +34028,33 @@ class Mission
 							id=2065;
 							atlOffset=8.1062317e-05;
 						};
+						class Item14
+						{
+							dataType="Marker";
+							position[]={580.68365,9.9700003,11193.639};
+							name="marker_16";
+							text="Service";
+							type="b_service";
+							alpha=0.69999999;
+							a=0.5;
+							b=0.5;
+							id=2092;
+						};
+						class Item15
+						{
+							dataType="Marker";
+							position[]={585,10.132,10385.5};
+							name="marker_17";
+							text="Service";
+							type="b_service";
+							alpha=0.69999999;
+							a=0.5;
+							b=0.5;
+							id=2094;
+						};
 					};
 					id=2063;
-					atlOffset=-0.10674953;
+					atlOffset=0.054312706;
 				};
 				class Item10
 				{
@@ -34046,7 +34104,7 @@ class Mission
 						{
 							dataType="Trigger";
 							position[]={749.08099,10.15942,11071.372};
-							angle=2.2591715;
+							angle=2.2591712;
 							class Attributes
 							{
 								text="Gate3 Trigger";
@@ -34066,7 +34124,7 @@ class Mission
 						{
 							dataType="Trigger";
 							position[]={737,9.1855602,11097.5};
-							angle=6.0980229;
+							angle=6.0980225;
 							class Attributes
 							{
 								text="Gate4 Trigger";
@@ -34088,7 +34146,7 @@ class Mission
 				};
 			};
 			id=1354;
-			atlOffset=0.29865456;
+			atlOffset=0.56449127;
 		};
 	};
 	class Connections
