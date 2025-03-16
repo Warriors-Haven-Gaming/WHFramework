@@ -42,6 +42,7 @@ if (!isRemoteExecutedJIP) then {
         };
     };
     if (local _unit) then {
+        _unit setVariable ["WHF_incapUnit_wasCaptive", captive _unit, true];
         _unit setCaptive true;
         _unit setUnconscious true;
         if (damage _unit < 0.05) then {_unit setDamage 0.05};
