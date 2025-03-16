@@ -42,7 +42,7 @@ private _reinforceUnits = {
     params ["_center", "_radius", "_groups"];
 
     private _pos = [_center, _radius] call WHF_fnc_randomPosHidden;
-    if (_pos isEqualTo [0, 0]) then {continue};
+    if (_pos isEqualTo [0,0]) then {continue};
 
     private _types = WHF_missions_annex_units_types;
     private _quantity = selectRandom [2, 4, 6, 8];
@@ -56,7 +56,7 @@ private _reinforceVehicles = {
     params ["_center", "_radius", "_groups", "_vehicles"];
 
     private _pos = [_center, _radius] call WHF_fnc_randomPosHidden;
-    if (_pos isEqualTo [0, 0]) then {continue};
+    if (_pos isEqualTo [0,0]) then {continue};
 
     private _types = WHF_missions_annex_vehicles_types;
     private _group = [opfor, _types, 1, _pos, 10] call WHF_fnc_spawnVehicles;
