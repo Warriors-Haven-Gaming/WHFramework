@@ -39,7 +39,7 @@ _terrainObjects apply {hideObjectGlobal _x};
 
 private _intelBuilding = [
     [
-        ["Land_Research_house_V1_F",[0.0126953,-0.00585938,0],0],
+        ["Land_Cargo_House_V4_F",[0.0126953,-0.00585938,0],0],
         ["MapBoard_Tanoa_F",[-0.496094,1.24414,0.592813],172.602],
         ["Land_BatteryPack_01_closed_olive_F",[-0.855469,2.28711,1.61578],30.2656],
         ["Land_PortableDesk_01_olive_F",[-1.28125,2.46289,0.728849],0],
