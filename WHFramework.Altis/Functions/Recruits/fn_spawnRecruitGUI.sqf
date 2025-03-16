@@ -66,6 +66,11 @@ with uiNamespace do {
     _riflemanButton ctrlSetText ("rifleman" call _localizeRole);
     _riflemanButton ctrlCommit 0;
 
+    _clearButton = _display ctrlCreate ["RscButton", -1];
+    _clearButton ctrlSetPosition [safezoneX + 0.56 * safezoneW, safezoneY + 0.56 * safezoneH, 0.08 * safezoneW, 0.03 * safezoneH];
+    _clearButton ctrlSetText localize "$STR_WHF_spawnRecruitGUI_clear";
+    _clearButton ctrlCommit 0;
+
     _atButton ctrlAddEventHandler ["ButtonClick", {
         private _position = uiNamespace getVariable "WHF_spawnRecruitGUI_pos";
         [_position, "at"] call WHF_fnc_spawnRecruit;
@@ -89,5 +94,14 @@ with uiNamespace do {
     _riflemanButton ctrlAddEventHandler ["ButtonClick", {
         private _position = uiNamespace getVariable "WHF_spawnRecruitGUI_pos";
         [_position, "rifleman"] call WHF_fnc_spawnRecruit;
+    }];
+
+    _clearButton ctrlAddEventHandler ["ButtonClick", {
+        private _recruits = units focusOn select {
+            !isPlayer _x
+            && {local _x
+            && {_x getVariable ["WHF_recruiter", ""] isEqualTo getPlayerUID player}}
+        };
+        {deleteVehicle _x} forEach _recruits;
     }];
 };
