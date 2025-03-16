@@ -18,29 +18,42 @@ params ["_spawner", "_position"];
 _spawner addAction [
     localize "$STR_WHF_spawnRecruit",
     {
-        params ["_spawner", "", "", "_position"];
+        params ["_spawner", "_caller", "", "_position"];
+
+        if (leader _caller isNotEqualTo _caller) exitWith {
+            hint localize "$STR_WHF_spawnRecruit_leader";
+        };
+        if (count allPlayers > WHF_recruits_limit_player) exitWith {
+            hint format [localize "$STR_WHF_spawnRecruit_limit_player", WHF_recruits_limit_player];
+        };
+
         _position = _spawner modelToWorld _position vectorMultiply [1,1,0];
         [_position] call WHF_fnc_spawnRecruitGUI;
     },
     _position,
     12,
     true,
-    false,
+    true,
     "",
-    "
-    WHF_recruits_limit > 0
-    && {count allPlayers <= WHF_recruits_limit_player
-    && {leader _this isEqualTo _this}}
-    ",
+    "WHF_recruits_limit > 0",
     3
 ];
 _spawner addAction [
     localize "$STR_WHF_rearmRecruits",
     {
-        private _recruits = units focusOn select {
+        params ["", "_caller"];
+
+        if (leader _caller isNotEqualTo _caller) exitWith {
+            hint localize "$STR_WHF_spawnRecruit_leader";
+        };
+        if (count allPlayers > WHF_recruits_limit_player) exitWith {
+            hint format [localize "$STR_WHF_spawnRecruit_limit_player", WHF_recruits_limit_player];
+        };
+
+        private _recruits = units _caller select {
             !isPlayer _x
             && {local _x
-            && {focusOn distance _x < 100
+            && {_caller distance _x < 100
             && {_x getVariable ["WHF_recruiter", ""] isEqualTo getPlayerUID player
             && {!isNil {_x getVariable "WHF_role"}}}}}
         };
@@ -78,6 +91,6 @@ _spawner addAction [
     true,
     true,
     "",
-    "WHF_recruits_limit > 0 && {leader _this isEqualTo _this}",
+    "WHF_recruits_limit > 0",
     3
 ];
