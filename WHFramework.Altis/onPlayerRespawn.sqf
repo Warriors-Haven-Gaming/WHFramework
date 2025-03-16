@@ -33,4 +33,5 @@ call WHF_fnc_initParachuteAction;
 call WHF_fnc_initUnloadAction;
 call WHF_fnc_initServiceAction;
 call WHF_fnc_initUnflipAction;
+// call WHF_fnc_initVehicleArsenalAction;
 call WHF_fnc_initReviveCancelAction;
