@@ -24,10 +24,10 @@ if !(_wasCaptive) then {
     _unit spawn {
         sleep WHF_revive_captiveDuration;
         if !(lifeState _this in ["HEALTHY", "INJURED"]) exitWith {};
+        _this setVariable ["WHF_incapUnit_wasCaptive", nil, true];
         _this setCaptive false;
     };
 };
-_unit setVariable ["WHF_incapUnit_wasCaptive", nil, true];
 
 if (isNull objectParent _unit) then {
     private _animation = switch (true) do {
