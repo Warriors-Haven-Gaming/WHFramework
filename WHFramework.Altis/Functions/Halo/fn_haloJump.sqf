@@ -30,7 +30,7 @@ private _allUnits = units focusOn select {
 {_x setUnitFreefallHeight 50} forEach _allUnits;
 
 private _vehicles = _allUnits apply {objectParent _x} select {
-    !isNull _x
+    local _x
     && {!(_x isKindOf "Air")
     && {effectiveCommander _x in _allUnits || {unitIsUAV _x}}}
 };
