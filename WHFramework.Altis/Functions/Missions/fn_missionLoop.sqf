@@ -7,10 +7,10 @@ Description:
 Parameters:
     Array functions:
         The function names of each mission to spawn.
-    Number minScripts:
-        The minimum number of active missions allowed.
-    Number maxScripts:
-        The maximum number of active missions allowed.
+    Code minScripts:
+        A function that returns minimum number of active missions allowed.
+    Code maxScripts:
+        A function that returns maximum number of active missions allowed.
         Takes priority over minScripts.
 
 Author:
@@ -22,8 +22,6 @@ params ["_functions", "_minScripts", "_maxScripts"];
 if (count _functions < 1) exitWith {
     diag_log text format ["%1: No functions to call", _fnc_scriptName];
 };
-
-_minScripts = _minScripts min _maxScripts;
 
 private _functionCounts = createHashMapFromArray (_functions apply {[_x, 0]});
 private _scripts = [];
@@ -76,6 +74,8 @@ private _selectRandomFunction = {
 
 while {true} do {
     private _nScripts = call _countActiveScripts;
+    private _maxScripts = call _maxScripts;
+    private _minScripts = call _minScripts min _maxScripts;
     if (_nScripts < _minScripts) then {
         for "_i" from 1 to (_maxScripts - _nScripts) do {
             private _function = call _selectRandomFunction;

@@ -443,6 +443,38 @@ Author:
     {WHF_missions_aaa_types = parseSimpleArray _this},
     false
 ] call WHF_fnc_addSetting;
+
+[
+    "WHF_missions_main_enabled",
+    "CHECKBOX",
+    ["STR_WHF_settings_missions_main_enabled", "STR_WHF_settings_missions_main_enabled_tooltip"],
+    ["STR_WHF_settings_missions", "STR_WHF_settings_missions_main"],
+    true,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_missions_main_min",
+    "SLIDER",
+    ["STR_WHF_settings_missions_main_min", "STR_WHF_settings_missions_main_min_tooltip"],
+    ["STR_WHF_settings_missions", "STR_WHF_settings_missions_main"],
+    [1, 3, 1, 0, false],
+    true,
+    {WHF_missions_main_min = round _this},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_missions_main_max",
+    "SLIDER",
+    ["STR_WHF_settings_missions_main_max", "STR_WHF_settings_missions_main_max_tooltip"],
+    ["STR_WHF_settings_missions", "STR_WHF_settings_missions_main"],
+    [1, 3, 1, 0, false],
+    true,
+    {WHF_missions_main_max = round _this},
+    false
+] call WHF_fnc_addSetting;
+
 [
     "WHF_missions_music_main",
     "CHECKBOX",
@@ -451,6 +483,37 @@ Author:
     true,
     true,
     {},
+    false
+] call WHF_fnc_addSetting;
+
+[
+    "WHF_missions_side_enabled",
+    "CHECKBOX",
+    ["STR_WHF_settings_missions_side_enabled", "STR_WHF_settings_missions_side_enabled_tooltip"],
+    ["STR_WHF_settings_missions", "STR_WHF_settings_missions_side"],
+    true,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_missions_side_min",
+    "SLIDER",
+    ["STR_WHF_settings_missions_side_min", "STR_WHF_settings_missions_side_min_tooltip"],
+    ["STR_WHF_settings_missions", "STR_WHF_settings_missions_side"],
+    [1, 10, 1, 0, false],
+    true,
+    {WHF_missions_side_min = round _this},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_missions_side_max",
+    "SLIDER",
+    ["STR_WHF_settings_missions_side_max", "STR_WHF_settings_missions_side_max_tooltip"],
+    ["STR_WHF_settings_missions", "STR_WHF_settings_missions_side"],
+    [1, 10, 3, 0, false],
+    true,
+    {WHF_missions_side_max = round _this},
     false
 ] call WHF_fnc_addSetting;
 

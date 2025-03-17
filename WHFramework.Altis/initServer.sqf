@@ -42,16 +42,16 @@ WHF_mainMissionLoop_script = [
     [
         "WHF_fnc_msnMainAnnexRegion"
     ],
-    1,
-    1
+    {if (WHF_missions_main_enabled) then {WHF_missions_main_min} else {0}},
+    {if (WHF_missions_main_enabled) then {WHF_missions_main_max} else {0}}
 ] spawn WHF_fnc_missionLoop;
 WHF_sideMissionLoop_script = [
     [
         "WHF_fnc_msnDownloadIntel",
         "WHF_fnc_msnDestroyAAA"
     ],
-    1,
-    3
+    {if (WHF_missions_side_enabled) then {WHF_missions_side_min} else {0}},
+    {if (WHF_missions_side_enabled) then {WHF_missions_side_max} else {0}}
 ] spawn WHF_fnc_missionLoop;
 
 WHF_gcDeletionQueue = [];
