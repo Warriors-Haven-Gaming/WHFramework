@@ -74,7 +74,10 @@ private _getNextPos = {
 
 {
     private _vehicle = objectParent _x;
-    if (!isNull _vehicle && {!(_vehicle in _vehicles)}) then {moveOut _x};
+    if (!isNull _vehicle) then {
+        if (_vehicle in _vehicles) then {continue};
+        moveOut _x;
+    };
 
     _x setPosATL ([WHF_halo_spacing_unit] call _getNextPos);
     _x setDir _direction;
@@ -83,7 +86,7 @@ private _getNextPos = {
         waitUntil {sleep (0.5 + random 0.5); getPos _this # 2 < WHF_halo_parachuteAltitude_unit};
         [_this] call WHF_fnc_deployParachute;
     }};
-} forEach _units;
+} forEach _allUnits;
 
 {
     _x setPosATL ([WHF_halo_spacing_vehicle, false] call _getNextPos);
