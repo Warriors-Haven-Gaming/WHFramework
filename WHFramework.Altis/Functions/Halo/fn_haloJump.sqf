@@ -32,8 +32,19 @@ private _allUnits = units focusOn select {
 private _vehicles = _allUnits apply {objectParent _x} select {
     local _x
     && {!(_x isKindOf "Air")
-    && {effectiveCommander _x in _allUnits || {unitIsUAV _x}}}
+    && {effectiveCommander _x in _allUnits}}
 };
+
+// NOTE: in localhost, this can steal a bunch of UGVs from the base
+_vehicles append (allUnitsUAV select {
+    private _commander = effectiveCommander _x;
+    local _x
+    && {alive _commander
+    && {side group _commander isEqualTo side group focusOn
+    && {!(_x isKindOf "Air")
+    && {focusOn distance _x < 100}}}}
+});
+
 _vehicles = _vehicles arrayIntersect _vehicles;
 private _units = _allUnits select {isNull objectParent _x};
 
