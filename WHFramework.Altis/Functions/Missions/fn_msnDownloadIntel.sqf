@@ -69,7 +69,16 @@ _groups pushBack _vehicleGroup;
 _vehicles append assignedVehicles _vehicleGroup;
 [_vehicleGroup, _intelCenter] call BIS_fnc_taskDefend;
 
-private _taskID = [blufor, "", "downloadIntel", [_laptop,true], "CREATED", -1, true, "documents"] call WHF_fnc_taskCreate;
+private _taskID = [
+    blufor,
+    "",
+    "downloadIntel",
+    _intelCenter getPos [50 + random 100, random 360],
+    "CREATED",
+    -1,
+    true,
+    "documents"
+] call WHF_fnc_taskCreate;
 
 private _downloadStartedOnce = false;
 while {true} do {
