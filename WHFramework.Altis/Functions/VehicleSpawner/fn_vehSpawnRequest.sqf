@@ -75,10 +75,12 @@ if (isNull _vehicle) exitWith {
 
 WHF_vehSpawn_lastVehicles set [_uid, _vehicle];
 
-if (unitIsUAV _vehicle) then {side group _player createVehicleCrew _vehicle};
-
 _vehicle setDir _dir;
 _vehicle setPos _pos;
-
 [_category, _vehicle, _player] call WHF_fnc_vehSpawnCatalogAddVehicleLocks;
 [_uid, _cooldown] call WHF_fnc_vehSpawnCooldownSet;
+
+_vehicle setOwner owner _player;
+if (unitIsUAV _vehicle) then {
+    [side group _player, _vehicle] remoteExec ["createVehicleCrew", _vehicle];
+};
