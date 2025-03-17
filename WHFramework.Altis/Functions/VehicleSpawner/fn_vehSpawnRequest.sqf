@@ -80,7 +80,12 @@ _vehicle setPos _pos;
 [_category, _vehicle, _player] call WHF_fnc_vehSpawnCatalogAddVehicleLocks;
 [_uid, _cooldown] call WHF_fnc_vehSpawnCooldownSet;
 
-_vehicle setOwner owner _player;
+if (isMultiplayer) then {
+    // HACK: wait a bit and hope position is propagated before transferring locality
+    sleep 2;
+    _vehicle setOwner owner _player;
+};
+
 if (unitIsUAV _vehicle) then {
     [side group _player, _vehicle] remoteExec ["createVehicleCrew", _vehicle];
 };
