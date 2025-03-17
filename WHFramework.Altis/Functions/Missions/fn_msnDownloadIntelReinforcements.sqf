@@ -43,12 +43,18 @@ private _reinforceVehicles = {
 };
 
 private _attackWaypoint = {
-    private _waypoint = _group addWaypoint [getPosATL _laptop, 0];
-    _waypoint waypointAttachObject _laptop;
+    private _target = selectRandom _targets;
+    _group reveal [_target, 4];
+
+    private _waypoint = _group addWaypoint [_target, -1];
+    _waypoint waypointAttachObject _target;
     _waypoint setWaypointType "DESTROY";
     _group setBehaviourStrong "AWARE";
     _group setSpeedMode "FULL";
 };
+
+private _targets = units blufor inAreaArray [getPosATL _laptop, 5, 5, 0, false, 5];
+if (count _targets < 1) then {_targets = [_laptop]};
 
 private _center = getPosATL _laptop vectorMultiply [1,1,0];
 private _radius = [40, 200];
