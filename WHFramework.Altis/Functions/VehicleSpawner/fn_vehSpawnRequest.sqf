@@ -75,7 +75,7 @@ if (isNull _vehicle) exitWith {
 
 WHF_vehSpawn_lastVehicles set [_uid, _vehicle];
 
-if (unitIsUAV _vehicle) then {side _player createVehicleCrew _vehicle};
+if (unitIsUAV _vehicle) then {side group _player createVehicleCrew _vehicle};
 
 _vehicle setDir _dir;
 _vehicle setPos _pos;
