@@ -31,8 +31,8 @@ private _allUnits = units focusOn select {
 
 private _vehicles = _allUnits apply {objectParent _x} select {
     !isNull _x
-    && {effectiveCommander _x in _allUnits
-    && {!(_x isKindOf "Air")}}
+    && {!(_x isKindOf "Air")
+    && {effectiveCommander _x in _allUnits || {unitIsUAV _x}}}
 };
 _vehicles = _vehicles arrayIntersect _vehicles;
 private _units = _allUnits select {isNull objectParent _x};
