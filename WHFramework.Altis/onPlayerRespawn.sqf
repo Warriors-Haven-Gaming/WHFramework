@@ -29,6 +29,10 @@ _unit enableStamina WHF_fitness_stamina;
 _unit setCustomAimCoef WHF_fitness_sway;
 _unit setCaptive false;
 
+if (!isNil {_unit getVariable "WHF_incapUnit_wasCaptive"}) then {
+    _unit setVariable ["WHF_incapUnit_wasCaptive", nil, true];
+};
+
 // Unit actions
 call WHF_fnc_initParachuteAction;
 call WHF_fnc_initReviveCancelAction;
