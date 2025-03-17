@@ -254,6 +254,16 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 [
+    "WHF_halo_eject",
+    "CHECKBOX",
+    ["STR_WHF_settings_halo_eject", "STR_WHF_settings_halo_eject_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_halo"],
+    true,
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_halo_antiair_distance",
     "SLIDER",
     ["STR_WHF_settings_halo_antiair_distance", "STR_WHF_settings_halo_antiair_distance_tooltip"],

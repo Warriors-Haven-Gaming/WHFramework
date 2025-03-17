@@ -76,7 +76,7 @@ private _getNextPos = {
     private _vehicle = objectParent _x;
     if (!isNull _vehicle) then {
         if (_vehicle in _vehicles) then {continue};
-        moveOut _x;
+        if (!WHF_halo_eject) then {continue} else {moveOut _x};
     };
 
     _x setPosATL ([WHF_halo_spacing_unit] call _getNextPos);
