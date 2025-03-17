@@ -19,9 +19,10 @@ _recruit removeAction (_recruit getVariable ["WHF_recruitLoadout_actionID", -1])
 private _actionID = _recruit addAction [
     localize "$STR_WHF_addRecruitLoadoutAction_edit",
     {
+        params ["_recruit"];
         // TODO: add compatibility with ACE arsenal, also consider adding
         //       an equivalent ACE interaciton
-        ["Open", [true, cursorObject, cursorObject]] call BIS_fnc_arsenal;
+        ["Open", [true, _recruit, _recruit]] call BIS_fnc_arsenal;
     },
     nil,
     12,
