@@ -111,7 +111,9 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
     private _units = flatten (
         _groups
         apply {units _x}
-        select {_x findIf {isPlayer _x || {_x isEqualTo focusOn}} >= 0}
+        select {_x findIf {
+            isPlayer _x || {_x isEqualTo focusOn || {unitIsUAV _x}}
+        } >= 0}
     );
     private _standaloneUnits = [];
     private _leaders = [];
@@ -219,23 +221,34 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
         private _pos = getPosWorldVisual _x;
         private _iconScale = _iconScale;
         private _textScale = 0.05;
-        private _text = if (_mapScale > _textMinMapScale) then {
-            groupId group effectiveCommander _x
-        } else {
-            private _commander = effectiveCommander _x;
-            format [
-                "%1 (%2)",
-                [_config] call BIS_fnc_displayName,
-                // _crew apply {
-                //     if (isPlayer _x) then {name _x} else {
-                //         format ["%1 [AI]", name _x]
-                //     }
-                // } joinString ", "
-                if (count _crew < 2) then {name _commander} else {
-                    format ["%1 + %2", name _commander, count _crew - 1]
+        private _text = switch (true) do {
+            case (_mapScale > _textMinMapScale): {groupId group effectiveCommander _x};
+            case (unitIsUAV _x): {
+                private _controller = _crew apply {remoteControlled _x} select {!isNull _x};
+                private _displayName = [_config] call BIS_fnc_displayName;
+                if (count _controller > 0) then {
+                    format ["%1 (%2)", _displayName, name (_controller # 0)]
+                } else {
+                    _displayName
                 }
-            ]
+            };
+            default {
+                private _commander = effectiveCommander _x;
+                format [
+                    "%1 (%2)",
+                    [_config] call BIS_fnc_displayName,
+                    // _crew apply {
+                    //     if (isPlayer _x) then {name _x} else {
+                    //         format ["%1 [AI]", name _x]
+                    //     }
+                    // } joinString ", "
+                    if (count _crew < 2) then {name _commander} else {
+                        format ["%1 + %2", name _commander, count _crew - 1]
+                    }
+                ]
+            };
         };
+
         _display drawIcon [
             getText (_config >> "icon"),
             _color,
