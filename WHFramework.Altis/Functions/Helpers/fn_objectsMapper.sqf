@@ -64,7 +64,13 @@ private _isStatic = {
         if (call _countPathLODs > 0) exitWith {false};
 
         private _actions = "true" configClasses (_config >> "UserActions");
-        if (_actions findIf {"door" in toLowerANSI configName _x} >= 0) exitWith {false};
+        private _keywords = ["door", "gate"];
+        if (
+            _actions findIf {
+                private _name = configName _x;
+                _keywords findIf {_x in toLowerANSI _name} >= 0
+            } >= 0
+        ) exitWith {false};
 
         true
     };

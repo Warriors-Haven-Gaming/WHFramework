@@ -47,8 +47,9 @@ WHF_mainMissionLoop_script = [
 ] spawn WHF_fnc_missionLoop;
 WHF_sideMissionLoop_script = [
     [
-        "WHF_fnc_msnDownloadIntel",
-        "WHF_fnc_msnDestroyAAA"
+        "WHF_fnc_msnDestroyAAA",
+        "WHF_fnc_msnDestroyRoadblock",
+        "WHF_fnc_msnDownloadIntel"
     ],
     {if (WHF_missions_side_enabled) then {WHF_missions_side_min} else {0}},
     {if (WHF_missions_side_enabled) then {WHF_missions_side_max} else {0}}

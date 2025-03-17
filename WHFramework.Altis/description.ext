@@ -189,6 +189,7 @@ class CfgFunctions {
             class addIntelAction {};
             class missionLoop {};
             class msnDestroyAAA {};
+            class msnDestroyRoadblock {};
             class msnDownloadIntel {};
             class msnDownloadIntelLaptop {};
             class msnDownloadIntelLaptopTimer {};
@@ -371,6 +372,10 @@ class CfgTaskDescriptions {
     class destroyAAAEmplacement {
         title       = "STR_WHF_destroyAAAEmplacement_title";
         description = "STR_WHF_destroyAAAEmplacement_description";
+    };
+    class destroyRoadblock {
+        title       = "STR_WHF_destroyRoadblock_title";
+        description = "STR_WHF_destroyRoadblock_description";
     };
     class downloadIntel {
         title       = "STR_WHF_downloadIntel_title";
