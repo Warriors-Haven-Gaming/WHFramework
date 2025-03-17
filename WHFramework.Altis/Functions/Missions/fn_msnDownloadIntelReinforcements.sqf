@@ -43,7 +43,8 @@ private _reinforceVehicles = {
 };
 
 private _attackWaypoint = {
-    private _waypoint = _group addWaypoint [_center, 3];
+    private _waypoint = _group addWaypoint [getPosATL _laptop, 0];
+    _waypoint waypointAttachObject _laptop;
     _waypoint setWaypointType "DESTROY";
     _group setBehaviourStrong "AWARE";
     _group setSpeedMode "FULL";
