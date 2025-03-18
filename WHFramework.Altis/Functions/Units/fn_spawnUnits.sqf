@@ -62,16 +62,17 @@ for "_i" from 1 to _quantity do {
     if ("flashlights" in _equipment) then {
         _unit addPrimaryWeaponItem "acc_flashlight";
         _unit addHandgunItem "acc_flashlight_pistol";
-        _unit enableGunLights "ForceOn";
     };
 
     if ("lasers" in _equipment) then {
         _unit addPrimaryWeaponItem "acc_pointer_IR";
-        _unit enableIRLasers true;
     };
 
     _units pushBack _unit;
 };
+
+if ("flashlights" in _equipment) then {_group enableGunLights "ForceOn"};
+if ("lasers" in _equipment) then {_group enableIRLasers true};
 
 if (_sideProvided) then {
     _group allowFleeing 0;
