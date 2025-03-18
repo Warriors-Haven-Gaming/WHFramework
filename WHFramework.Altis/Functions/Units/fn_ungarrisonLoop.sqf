@@ -48,6 +48,7 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
             _x enableAIFeature ["COVER", true];
             _x enableAIFeature ["PATH", true];
 
+            private _dynamicSimulation = dynamicSimulationEnabled group _x;
             private _group = createGroup [side group _x, true];
             _group setVariable ["WHF_siren_disabled", true];
             [_x] joinSilent _group;
@@ -59,6 +60,11 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
             private _waypoint = _group addWaypoint [_position vectorMultiply [1,1,0], 5];
             _waypoint setWaypointType "SAD";
             _waypoint setWaypointCompletionRadius 5;
+
+            if (_dynamicSimulation) then {_group spawn {
+                sleep 1;
+                [_this, true] remoteExec ["enableDynamicSimulation"];
+            }};
 
             if (!isNil "_outputGroups") then {_outputGroups pushBack _group};
         } forEach units _x;
