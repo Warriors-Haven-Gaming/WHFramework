@@ -81,7 +81,7 @@ if (_sideProvided) then {
 
 if (_dynamicSimulation) then {_group spawn {
     sleep 1;
-    [_this, true] remoteExec ["enableDynamicSimulation"]
+    [_this, true] remoteExec ["enableDynamicSimulation"];
 }};
 
 if (_sideProvided) then {_group} else {_units}
