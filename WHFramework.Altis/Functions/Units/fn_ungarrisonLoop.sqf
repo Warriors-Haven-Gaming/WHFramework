@@ -34,6 +34,7 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
         {
             if (!alive _x) then {continue};
             if (!local _x) then {continue};
+            if (!simulationEnabled _x) then {continue};
             if (_x checkAIFeature "PATH") then {continue};
 
             private _targets = _x targets [true, 100, [], 180];

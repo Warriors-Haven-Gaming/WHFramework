@@ -36,6 +36,7 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
         private _leader = leader _x;
         if (!alive _leader) then {continue};
         if (!local _leader) then {continue};
+        if (!simulationEnabled _leader) then {continue};
         if !(_leader checkAIFeature "PATH") then {continue};
 
         private _leadVehicle = objectParent _leader;
