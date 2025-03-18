@@ -13,7 +13,7 @@ player addEventHandler ["HandleDamage", {call {
     params ["_unit", "", "_damage", "_source", "", "_hitIndex", "_instigator"];
     if (!isDamageAllowed _unit) exitWith {};
     if (lifeState _unit isEqualTo "INCAPACITATED") exitWith {};
-    if (isNull _instigator) then {_instigator = _source};
+    if (isNull _instigator) then {_instigator = effectiveCommander _source};
     if (_instigator isEqualTo _unit) then {_instigator = objNull};
 
     // Check for fatal wounds to body, head, or unknown part
