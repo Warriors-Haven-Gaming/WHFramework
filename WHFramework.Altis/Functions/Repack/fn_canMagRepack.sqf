@@ -21,6 +21,7 @@ if (isClass (configFile >> "CfgPatches" >> "ace_magazinerepack")) exitWith {fals
 private _vehicle = objectParent _unit;
 if (isEngineOn _vehicle && {currentPilot _vehicle isEqualTo _unit}) exitWith {false};
 if (!isTouchingGround vehicle _unit) exitWith {false};
+if !(lifeState _unit in ["HEALTHY", "INJURED"]) exitWith {false};
 if (!isNil {_unit getVariable "WHF_magRepack"}) exitWith {false};
 
 private _magazineGroups = [_unit, true] call WHF_fnc_groupMagazines;
