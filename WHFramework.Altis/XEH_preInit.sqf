@@ -529,6 +529,16 @@ Author:
 
 // Recruits
 [
+    "WHF_recruits_speaker",
+    "CHECKBOX",
+    ["STR_WHF_settings_recruits_speaker", "STR_WHF_settings_recruits_speaker_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_recruits"],
+    false,
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_recruits_limit",
     "SLIDER",
     ["STR_WHF_settings_recruits_limit", "STR_WHF_settings_recruits_limit_tooltip"],

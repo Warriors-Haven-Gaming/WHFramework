@@ -42,3 +42,9 @@ call WHF_fnc_initUnflipAction;
 call WHF_fnc_initServiceAction;
 call WHF_fnc_initUnloadAction;
 // call WHF_fnc_initVehicleArsenalAction;
+
+private _target = WHF_globalPlayerTarget;
+if (!WHF_recruits_speaker) then {
+    private _jipID = netId _unit + ":WHF_setSpeaker";
+    [_unit, "NoVoice"] remoteExec ["WHF_fnc_setSpeaker", _target, _jipID];
+};
