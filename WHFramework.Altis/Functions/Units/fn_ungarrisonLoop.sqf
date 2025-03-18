@@ -49,6 +49,9 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
             _x enableAIFeature ["PATH", true];
 
             private _dynamicSimulation = dynamicSimulationEnabled group _x;
+            private _lasersOn = _x isIRLaserOn currentWeapon _x;
+            private _lightsOn = _x isFlashlightOn currentWeapon _x;
+
             private _group = createGroup [side group _x, true];
             _group setVariable ["WHF_siren_disabled", true];
             [_x] joinSilent _group;
@@ -56,6 +59,8 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
             _group allowFleeing 0;
             _group setBehaviourStrong "AWARE";
             _group setSpeedMode "FULL";
+            _group enableIRLasers _lasersOn;
+            _group enableGunLights (["Auto", "ForceOn"] select _lightsOn);
 
             private _waypoint = _group addWaypoint [_position vectorMultiply [1,1,0], 5];
             _waypoint setWaypointType "SAD";
