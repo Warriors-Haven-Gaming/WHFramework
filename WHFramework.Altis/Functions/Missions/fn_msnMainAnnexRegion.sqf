@@ -43,20 +43,6 @@ private _radius = selectMax size _location * 2 max _minRadius min _maxRadius;
 _radius = _radius * WHF_missions_annex_size;
 private _area = [_center, _radius, _radius, 0, false];
 
-private _areaMarker = [["WHF_mainMission"], _area, true] call WHF_fnc_createAreaMarker;
-_areaMarker setMarkerBrushLocal "FDiagonal";
-_areaMarker setMarkerColorLocal "ColorRed";
-_areaMarker setMarkerAlpha 0.7;
-
-private _name = if (text _location isNotEqualTo "") then {text _location} else {
-    localize "$STR_WHF_mainAnnexRegion_region"
-};
-private _description = [
-    ["STR_WHF_mainAnnexRegion_description", _name],
-    ["STR_WHF_mainAnnexRegion_title", _name]
-];
-private _taskID = [blufor, "", _description, _area # 0, "AUTOASSIGNED", -1, true, "attack"] call WHF_fnc_taskCreate;
-
 [_center, _radius] call WHF_fnc_msnMainAnnexRegionCompositions
     params ["_objects", "_terrain", "_compGroups"];
 
@@ -72,6 +58,20 @@ _groups append _compGroups;
 private _initialUnitCount = count flatten (_groups apply {units _x});
 private _reinforceArgs = [true, _center, _radius, _initialUnitCount, _groups, _vehicles];
 _reinforceArgs spawn WHF_fnc_msnMainAnnexRegionReinforcements;
+
+private _areaMarker = [["WHF_mainMission"], _area, true] call WHF_fnc_createAreaMarker;
+_areaMarker setMarkerBrushLocal "FDiagonal";
+_areaMarker setMarkerColorLocal "ColorRed";
+_areaMarker setMarkerAlpha 0.7;
+
+private _name = if (text _location isNotEqualTo "") then {text _location} else {
+    localize "$STR_WHF_mainAnnexRegion_region"
+};
+private _description = [
+    ["STR_WHF_mainAnnexRegion_description", _name],
+    ["STR_WHF_mainAnnexRegion_title", _name]
+];
+private _taskID = [blufor, "", _description, _area # 0, "AUTOASSIGNED", -1, true, "attack"] call WHF_fnc_taskCreate;
 
 private _subObjectiveArgs = [_center, _radius, _taskID, _objects, _terrain, _groups];
 private _subObjectives = [
