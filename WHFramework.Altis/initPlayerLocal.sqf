@@ -53,8 +53,14 @@ private _timesPlayed = missionProfileNamespace getVariable ["WHF_play_times", 0]
 missionProfileNamespace setVariable ["WHF_play_times", _timesPlayed + 1];
 saveMissionProfileNamespace;
 
-if (_timesPlayed < 5) then {
-    [["WHF", "Intro"], 15, nil, 35, nil, true, true] spawn BIS_fnc_advHint;
-};
+[_timesPlayed] spawn {
+    params ["_timesPlayed"];
 
-systemChat format ["Finished initialization (%1)", briefingName];
+    [] call WHF_fnc_waitLoadingScreen;
+
+    if (_timesPlayed < 5) then {
+        [["WHF", "Intro"], 15, nil, 35, nil, true, true] spawn BIS_fnc_advHint;
+    };
+
+    systemChat format ["Finished initialization (%1)", briefingName];
+};
