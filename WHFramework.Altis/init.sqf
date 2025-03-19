@@ -20,4 +20,7 @@ if (!isMultiplayer) then {
     call WHF_fnc_initEmplacementCatalog;
     call WHF_fnc_initDynamicSimulation;
     call WHF_fnc_initVehicleHandlers;
+
+    // HACK: onPlayerRespawn.sqf can sometimes run before initServer.sqf
+    WHF_globalPlayerTarget = 0;
 };
