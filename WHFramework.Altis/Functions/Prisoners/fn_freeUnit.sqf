@@ -42,6 +42,8 @@ private _group = group _target;
 if (side _group isNotEqualTo civilian || {count units _group > 1}) then {
     _group = createGroup [civilian, true];
     [_target] joinSilent _group;
+} else {
+    {deleteWaypoint _x} forEachReversed waypoints _group;
 };
 
 // FIXME: maybe prevent running into water?
