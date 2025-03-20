@@ -132,6 +132,7 @@ _target spawn {
         sleep (1 + random 1);
         if (!isNull objectParent _this) then {continue};
         if !(lifeState _this in ["HEALTHY", "INJURED"]) then {continue};
+        if (stance _this isNotEqualTo "STAND") then {continue};
         if (animationState _this isEqualTo "amovpercmstpssurwnondnon") then {continue};
         [_this, ["amovpercmstpssurwnondnon", 0, 0, false]] remoteExec ["switchMove"];
     };
