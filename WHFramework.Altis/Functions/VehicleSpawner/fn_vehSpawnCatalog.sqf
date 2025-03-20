@@ -113,6 +113,7 @@ private _tanks = [
     ["qav_abramsx_templar",                  [-1, ["engineer"]]],
     ["cup_b_m1a2c_tusk_II_woodland_us_army", [-1, ["engineer"]]],
     ["cup_b_challenger2_woodland_baf",       [-1, ["engineer"]]],
+    ["cup_o_t90m_ru",                        [-1, ["engineer"]]],
     ["", []]
 ];
 
