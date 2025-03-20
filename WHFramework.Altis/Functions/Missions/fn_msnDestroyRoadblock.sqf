@@ -74,6 +74,7 @@ private _turrets = [
     _direction,
     ["normal"]
 ] call WHF_fnc_objectsMapper;
+_objects append _turrets;
 
 private _groups = [];
 for "_i" from 1 to 4 + random 5 do {
