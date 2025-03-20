@@ -46,7 +46,12 @@ if (side _group isNotEqualTo civilian || {count units _group > 1}) then {
     {deleteWaypoint _x} forEachReversed waypoints _group;
 };
 
-// FIXME: maybe prevent running into water?
 private _dir = getPosATL _caller getDir getPosATL _target;
-private _pos = getPosATL _target getPos [500, _dir];
-private _waypoint = _group addWaypoint [_pos, 0];
+private _pos = getPosATL _target getPos [700, _dir];
+if (surfaceIsWater _pos) then {
+    private _randPos = [[[_pos, 200]]] call BIS_fnc_randomPos;
+    if (_randPos isNotEqualTo [0,0]) exitWith {_pos = _randPos};
+    _randPos = [[[_pos, 1000]], [[getPosATL _target, 500], "water"]] call BIS_fnc_randomPos;
+    if (_randPos isNotEqualTo [0,0]) exitWith {_pos = _randPos};
+};
+private _waypoint = _group addWaypoint [_pos vectorMultiply [1,1,0], 0];
