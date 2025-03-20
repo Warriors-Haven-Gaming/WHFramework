@@ -36,6 +36,8 @@ _target setHit ["legs", (_target getHit "legs") min 0.45];
 // for this unit and that they shouldn't run away
 if (!isNil {_target getVariable "WHF_disableGC"}) exitWith {};
 
+_target enableAIFeature ["FSM", false];
+
 private _group = group _target;
 if (side _group isNotEqualTo civilian || {count units _group > 1}) then {
     _group = createGroup [civilian, true];
