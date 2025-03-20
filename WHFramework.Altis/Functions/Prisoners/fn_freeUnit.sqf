@@ -26,7 +26,7 @@ private _animation = "amovpercmstpssurwnondnon_amovpercmstpsnonwnondnon";
 [_target, [_animation, 0, 0, false]] remoteExec ["switchMove"];
 _target setCaptive false;
 _target enableAIFeature ["PATH", true];
-// _target setUnitPos "AUTO";
+_target setUnitPos "UP";
 
 // Healing the target afterwards can cause them to follow the player
 // indefinitely, so let's make sure their legs work right away

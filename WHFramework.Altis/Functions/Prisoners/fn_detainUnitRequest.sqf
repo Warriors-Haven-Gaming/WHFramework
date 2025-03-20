@@ -133,6 +133,7 @@ _target spawn {
         if (isNil {_this getVariable "WHF_prisoner_actionIDs"}) then {break};
         if (!isNull objectParent _this) then {continue};
         if !(lifeState _this in ["HEALTHY", "INJURED"]) then {continue};
+        if (unitPos _this isNotEqualTo "Up") then {_this setUnitPos "UP"};
         if (stance _this isNotEqualTo "STAND") then {continue};
         if (animationState _this isEqualTo "amovpercmstpssurwnondnon") then {continue};
         [_this, ["amovpercmstpssurwnondnon", 0, 0, false]] remoteExec ["switchMove"];
