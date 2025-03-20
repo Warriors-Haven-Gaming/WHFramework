@@ -37,6 +37,7 @@ _target setHit ["legs", (_target getHit "legs") min 0.45];
 if (!isNil {_target getVariable "WHF_disableGC"}) exitWith {};
 
 _target enableAIFeature ["FSM", false];
+_target forceSpeed (_target getSpeed "FAST");
 
 private _group = group _target;
 if (side _group isNotEqualTo civilian || {count units _group > 1}) then {
