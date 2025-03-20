@@ -30,6 +30,10 @@ _target setCaptive false;
 _target enableAIFeature ["PATH", true];
 // _target setUnitPos "AUTO";
 
+// Healing the target afterwards can cause them to follow the player
+// indefinitely, so let's make sure their legs work right away
+_target setHit ["legs", (_target getHit "legs") min 0.45];
+
 // If garbage collection is disabled, assume there's custom behaviour
 // for this unit and that they shouldn't run away
 if (!isNil {_target getVariable "WHF_disableGC"}) exitWith {};
