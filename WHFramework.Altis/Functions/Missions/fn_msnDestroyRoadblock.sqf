@@ -103,11 +103,6 @@ _groups pushBack _vehicleGroup;
 
 [_groups, _area] spawn WHF_fnc_attackLoop;
 
-private _areaMarker = [["WHF_msnDestroyRoadblock_"], _area, true] call WHF_fnc_createAreaMarker;
-_areaMarker setMarkerBrushLocal "FDiagonal";
-_areaMarker setMarkerColorLocal "ColorRed";
-_areaMarker setMarkerAlpha 0.7;
-
 private _taskID = [
     blufor,
     "",
@@ -134,7 +129,6 @@ while {true} do {
     };
 };
 
-deleteMarker _areaMarker;
 [_ruins] call WHF_fnc_queueGCDeletion;
 [_objects] call WHF_fnc_queueGCDeletion;
 [_terrain] call WHF_fnc_queueGCUnhide;
