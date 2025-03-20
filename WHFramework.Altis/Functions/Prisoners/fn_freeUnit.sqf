@@ -54,4 +54,4 @@ if (surfaceIsWater _pos) then {
     _randPos = [[[_pos, 1000]], [[getPosATL _target, 500], "water"]] call BIS_fnc_randomPos;
     if (_randPos isNotEqualTo [0,0]) exitWith {_pos = _randPos};
 };
-private _waypoint = _group addWaypoint [_pos vectorMultiply [1,1,0], 0];
+_target doMove (_pos vectorMultiply [1,1,0]);
