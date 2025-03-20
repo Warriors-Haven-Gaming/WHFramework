@@ -93,7 +93,7 @@ _target setUnitPos "UP";
 moveOut _target;
 
 [_target] remoteExec ["WHF_fnc_addPrisonerActions", 0, netId _target + ":addPrisonerActions"];
-[_target, ["amovpercmstpssurwnondnon", 0, 0, false]] remoteExec ["switchMove"];
+_target action ["Surrender", _target];
 [_target, ["", 0, 0, false]] remoteExec ["switchGesture"];
 
 if (isNil {_target getVariable "WHF_disableGC"}) then {
@@ -126,10 +126,13 @@ _target spawn {
     } forEach [primaryWeapon _this, handgunWeapon _this, secondaryWeapon _this];
 };
 
-_target spawn {while {alive _this && {captive _this}} do {
-    sleep (1 + random 1);
-    if (!isNull objectParent _this) then {continue};
-    if !(lifeState _this in ["HEALTHY", "INJURED"]) then {continue};
-    if (animationState _this isEqualTo "amovpercmstpssurwnondnon") then {continue};
-    [_this, ["amovpercmstpssurwnondnon", 0, 0, false]] remoteExec ["switchMove"];
-}};
+_target spawn {
+    sleep 5;
+    while {alive _this && {captive _this}} do {
+        sleep (1 + random 1);
+        if (!isNull objectParent _this) then {continue};
+        if !(lifeState _this in ["HEALTHY", "INJURED"]) then {continue};
+        if (animationState _this isEqualTo "amovpercmstpssurwnondnon") then {continue};
+        [_this, ["amovpercmstpssurwnondnon", 0, 0, false]] remoteExec ["switchMove"];
+    };
+};
