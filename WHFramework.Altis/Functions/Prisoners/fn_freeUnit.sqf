@@ -22,10 +22,8 @@ remoteExec ["", netId _target + ":addPrisonerActions"];
 
 // TODO: request/response local chat
 
-if ("amovpercmstpssurwnondnon" in animationState _target) then {
-    private _animation = "amovpercmstpssurwnondnon_amovpercmstpsnonwnondnon";
-    [_target, [_animation, 0, 0, false]] remoteExec ["switchMove"];
-};
+private _animation = "amovpercmstpssurwnondnon_amovpercmstpsnonwnondnon";
+[_target, [_animation, 0, 0, false]] remoteExec ["switchMove"];
 _target setCaptive false;
 _target enableAIFeature ["PATH", true];
 // _target setUnitPos "AUTO";
