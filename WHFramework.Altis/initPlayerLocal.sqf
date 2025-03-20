@@ -46,21 +46,22 @@ call WHF_fnc_vehSpawnCatalogClient;
 0 spawn WHF_fnc_updateChannelLoop;
 0 spawn WHF_fnc_initFriendlyIcons;
 
-private _firstPlayed = missionProfileNamespace getVariable ["WHF_play_first", systemTimeUTC];
-missionProfileNamespace setVariable ["WHF_play_first", _firstPlayed];
+addMissionEventHandler ["PreloadFinished", {
+    removeMissionEventHandler [_thisEvent, _thisEventHandler];
 
-private _timesPlayed = missionProfileNamespace getVariable ["WHF_play_times", 0];
-missionProfileNamespace setVariable ["WHF_play_times", _timesPlayed + 1];
-saveMissionProfileNamespace;
+    private _firstPlayed = missionProfileNamespace getVariable ["WHF_play_first", systemTimeUTC];
+    missionProfileNamespace setVariable ["WHF_play_first", _firstPlayed];
 
-[_timesPlayed] spawn {
-    params ["_timesPlayed"];
-
-    [] call WHF_fnc_waitLoadingScreen;
+    private _timesPlayed = missionProfileNamespace getVariable ["WHF_play_times", 0];
+    missionProfileNamespace setVariable ["WHF_play_times", _timesPlayed + 1];
+    saveMissionProfileNamespace;
 
     if (_timesPlayed < 5) then {
         [["WHF", "Intro"], 15, nil, 35, nil, true, true] spawn BIS_fnc_advHint;
     };
 
-    systemChat format ["Finished initialization (%1)", briefingName];
-};
+    0 spawn {
+        sleep 0.5;
+        systemChat format ["Finished initialization (%1)", briefingName];
+    };
+}];
