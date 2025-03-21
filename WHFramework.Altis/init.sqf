@@ -25,5 +25,6 @@ if (!isMultiplayer) then {
     WHF_globalPlayerTarget = 0;
 };
 
+if (isMultiplayer && {!isServer}) then {call WHF_fnc_initVehicleHandlers};
 WHF_findAPSLoop_script = 0 spawn WHF_fnc_findAPSLoop;
 WHF_simulateAPSLoop_script = 0 spawn WHF_fnc_simulateAPSLoop;
