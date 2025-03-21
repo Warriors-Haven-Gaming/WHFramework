@@ -19,6 +19,15 @@ if (!local _vehicle) exitWith {};
 
 private _pos = getPosATL _vehicle findEmptyPosition [5, WHF_unflip_radius, typeOf _vehicle];
 if (_pos isEqualTo []) exitWith {
+    private _failedAt = _vehicle getVariable "WHF_unflipVehicle_failedAt";
+    private _forceUnflipDuration = 60; // NOTE: must be greater than WHF_unflip_duration
+    if (!isNil "_failedAt" && {time < _failedAt + _forceUnflipDuration}) exitWith {
+        // Unflip vehicle in-place, and hopefully nothing bad happens
+        _vehicle setPos ASLToAGL getPosASL _vehicle;
+        _vehicle setVariable ["WHF_unflipVehicle_failedAt", time];
+    };
+
+    _vehicle setVariable ["WHF_unflipVehicle_failedAt", time];
     private _message = "$STR_WHF_showInsufficientRoomToUnflip";
     if (isRemoteExecuted) then {
         _message remoteExec ["WHF_fnc_localizedHint", remoteExecutedOwner];
