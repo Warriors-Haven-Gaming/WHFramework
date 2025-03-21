@@ -25,4 +25,9 @@ private _ret = [];
     private _projectiles = _position nearObjects [_x, _radius];
     {if (local _x) then {_ret pushBack _x}} forEach _projectiles;
 } forEach ["RocketCore", "MissileCore", "SubmunitionCore", "ammo_Penetrator_Base"];
+// Have fun with these:
+// - "BombCore"
+// - "BulletCore"
+// - "GrenadeCore"
+// - "ShellCore"
 _ret
