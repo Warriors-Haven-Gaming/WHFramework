@@ -222,7 +222,6 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
         private _iconScale = _iconScale;
         private _textScale = 0.05;
         private _text = switch (true) do {
-            case (_mapScale > _textMinMapScale): {groupId group effectiveCommander _x};
             case (unitIsUAV _x): {
                 private _controller = _crew apply {remoteControlled _x} select {!isNull _x};
                 private _displayName = [_config] call BIS_fnc_displayName;
@@ -232,6 +231,7 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
                     _displayName
                 }
             };
+            case (_mapScale > _textMinMapScale): {groupId group effectiveCommander _x};
             default {
                 private _commander = effectiveCommander _x;
                 format [
