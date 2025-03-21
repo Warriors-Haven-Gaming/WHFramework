@@ -3,7 +3,8 @@ Function: WHF_fnc_nearAPSTargets
 
 Description:
     Return an array of all projectiles near a position that can be intercepted.
-    Results are not sorted by distance.
+    Results are not sorted by distance. Only projectiles local to the client
+    are returned.
 
 Parameters:
     PositionAGL center:
@@ -21,6 +22,7 @@ Author:
 params ["_position", "_radius"];
 private _ret = [];
 {
-    _ret append (_position nearObjects [_x, _radius]);
+    private _projectiles = _position nearObjects [_x, _radius];
+    {if (local _x) then {_ret pushBack _x}} forEach _projectiles;
 } forEach ["RocketCore", "MissileCore", "SubmunitionCore", "ammo_Penetrator_Base"];
 _ret

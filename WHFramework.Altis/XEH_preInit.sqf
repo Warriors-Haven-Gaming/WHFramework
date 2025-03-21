@@ -30,7 +30,7 @@ Author:
     ["STR_WHF_settings_aps_enabled", "STR_WHF_settings_aps_enabled_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_aps"],
     true,
-    false,
+    true,
     {},
     false
 ] call WHF_fnc_addSetting;
@@ -40,7 +40,7 @@ Author:
     ["STR_WHF_settings_aps_enabled_ai", "STR_WHF_settings_aps_enabled_ai_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_aps"],
     true,
-    false,
+    true,
     {},
     false
 ] call WHF_fnc_addSetting;
@@ -50,7 +50,7 @@ Author:
     ["STR_WHF_settings_aps_radius", "STR_WHF_settings_aps_radius_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_aps"],
     [100, 300, 200, 0, false],
-    false,
+    true,
     {},
     false
 ] call WHF_fnc_addSetting;
@@ -60,7 +60,7 @@ Author:
     ["STR_WHF_settings_aps_rate", "STR_WHF_settings_aps_rate_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_aps"],
     [8, 128, 32, 0, false],
-    false,
+    true,
     {WHF_aps_rate = 1 / round _this},
     false
 ] call WHF_fnc_addSetting;

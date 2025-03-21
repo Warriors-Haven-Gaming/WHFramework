@@ -14,10 +14,9 @@ while {true} do {
     if (!WHF_aps_enabled) then {WHF_aps_vehicles = nil; continue};
 
     WHF_aps_vehicles = vehicles select {
-        local _x
-        && {alive _x
+        alive _x
         && {_x getVariable ["WHF_aps_ammo", 0] > 0
         && {alive effectiveCommander _x
-        && {WHF_aps_enabled_ai || {isPlayer effectiveCommander _x}}}}}
+        && {WHF_aps_enabled_ai || {isPlayer effectiveCommander _x}}}}
     };
 };

@@ -21,12 +21,14 @@ private _interceptTarget = {
 };
 
 private _showMessage = {
-    private _message = format [
-        localize "$STR_WHF_simulateAPSLoop_intercept",
+    // NOTE: does not consider remote controlled units
+    private _players = crew _vehicle select {isPlayer _x};
+    private _message = [
+        "$STR_WHF_simulateAPSLoop_intercept",
         _ammo,
         _vehicle getVariable ["WHF_aps_ammo_max", _ammo]
     ];
-    50 cutText [_message, "PLAIN", 0.5];
+    {_message remoteExec ["WHF_fnc_localizedCutText", _x]} forEach _players;
 };
 
 while {true} do {
@@ -37,7 +39,6 @@ while {true} do {
 
     {
         private _vehicle = _x;
-        if (!local _vehicle) then {continue};
         if (!alive _vehicle) then {continue};
 
         private _ammo = _vehicle getVariable ["WHF_aps_ammo", 0];
@@ -52,9 +53,12 @@ while {true} do {
         _targets = _targets select [0, _ammo];
         _interceptTarget forEach _targets;
 
+        // FIXME: this has a race condition where if the same vehicle intercepts
+        //        projectiles across multiple clients, the ammo may not decrement
+        //        correctly.
         _ammo = _ammo - count _targets;
         _vehicle setVariable ["WHF_aps_ammo", _ammo, true];
-        if (focusOn in crew _vehicle) then _showMessage;
+        call _showMessage;
     } forEach WHF_aps_vehicles;
 
     sleep WHF_aps_rate;
