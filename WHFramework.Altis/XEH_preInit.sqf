@@ -76,32 +76,32 @@ Author:
 ] call WHF_fnc_addSetting;
 [
     "WHF_aps_ammoMRAP",
-    "SLIDER",
+    "LIST",
     ["STR_WHF_settings_aps_ammoMRAP", "STR_WHF_settings_aps_ammoMRAP_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_aps"],
-    [0, 8, 2, 0, false],
+    [[0, 1, 2, 3, 4, 5, 6, 7, 8], [], 2],
     true,
-    {WHF_aps_ammoMRAP = round _this},
+    {},
     false
 ] call WHF_fnc_addSetting;
 [
     "WHF_aps_ammoAPC",
-    "SLIDER",
+    "LIST",
     ["STR_WHF_settings_aps_ammoAPC", "STR_WHF_settings_aps_ammoAPC_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_aps"],
-    [0, 8, 3, 0, false],
+    [[0, 1, 2, 3, 4, 5, 6, 7, 8], [], 3],
     true,
-    {WHF_aps_ammoAPC = round _this},
+    {},
     false
 ] call WHF_fnc_addSetting;
 [
     "WHF_aps_ammoMBT",
-    "SLIDER",
+    "LIST",
     ["STR_WHF_settings_aps_ammoMBT", "STR_WHF_settings_aps_ammoMBT_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_aps"],
-    [0, 8, 4, 0, false],
+    [[0, 1, 2, 3, 4, 5, 6, 7, 8], [], 4],
     true,
-    {WHF_aps_ammoMBT = round _this},
+    {},
     false
 ] call WHF_fnc_addSetting;
 
