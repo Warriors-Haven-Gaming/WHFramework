@@ -69,7 +69,7 @@ Author:
     "SLIDER",
     ["STR_WHF_settings_aps_distance", "STR_WHF_settings_aps_distance_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_aps"],
-    [4, 16, 8, 1, false],
+    [4, 16, 4, 1, false],
     true,
     {},
     false
