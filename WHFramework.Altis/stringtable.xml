@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="WHFramework">
+    <Container name="APS">
+        <Key ID="STR_WHF_simulateAPSLoop_intercept">
+            <Original>APS intercepted!\nCharges: %1/%2</Original>
+        </Key>
+    </Container>
     <Container name="CfgHints">
         <Key ID="STR_WHF_hint_intro_title">
             <Original>Introduction</Original>
@@ -585,6 +590,57 @@
     <Container name="Settings">
         <Key ID="STR_WHF_settings">
             <Original>Warriors Haven Framework</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_aps">
+            <Original>Active Protection System</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_aps_enabled">
+            <Original>Enabled?</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_aps_enabled_tooltip">
+            <Original>Toggles APS usage and simulation. Can be disabled to improve performance.</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_aps_radius">
+            <Original>Scan Radius</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_aps_radius_tooltip">
+            <Original>The distance in metres from which threats are considered for intercept.\nHigher distances can improve reliability against faster projectiles, but may worsen performance.</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_aps_rate">
+            <Original>Scan Rate</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_aps_rate_tooltip">
+            <Original>How frequently threats are scanned around APS-enabled vehicles every second.\nHigher scan rates can improve reliability against faster projectiles, but may worsen performance.</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_aps_enabled_ai">
+            <Original>Allow AI?</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_aps_enabled_ai_tooltip">
+            <Original>Toggles APS simulation for AI-controlled vehicles. Can be disabled to improve performance.</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_aps_distance">
+            <Original>Intercept Distance</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_aps_distance_tooltip">
+            <Original>The distance factor at which threats are intercepted.\nActual intercept distance is determined by the projectile's speed and the scan rate.</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_aps_ammoMRAP">
+            <Original>MRAP Charges</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_aps_ammoMRAP_tooltip">
+            <Original>The number of APS charges loaded on MRAPs.</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_aps_ammoAPC">
+            <Original>APC Charges</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_aps_ammoAPC_tooltip">
+            <Original>The number of APS charges loaded on APCs and IFVs.</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_aps_ammoMBT">
+            <Original>MBT Charges</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_aps_ammoMBT_tooltip">
+            <Original>The number of APS charges loaded on MBTs.</Original>
         </Key>
         <Key ID="STR_WHF_settings_curators">
             <Original>Curators</Original>

@@ -23,6 +23,88 @@ Author:
 //     _script      - Script to execute when setting is changed. (optional) <CODE>
 //     _needRestart - Setting will be marked as needing mission restart after being changed. (optional, default false) <BOOL>
 
+// APS
+[
+    "WHF_aps_enabled",
+    "CHECKBOX",
+    ["STR_WHF_settings_aps_enabled", "STR_WHF_settings_aps_enabled_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_aps"],
+    true,
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_aps_enabled_ai",
+    "CHECKBOX",
+    ["STR_WHF_settings_aps_enabled_ai", "STR_WHF_settings_aps_enabled_ai_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_aps"],
+    true,
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_aps_radius",
+    "SLIDER",
+    ["STR_WHF_settings_aps_radius", "STR_WHF_settings_aps_radius_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_aps"],
+    [100, 300, 200, 0, false],
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_aps_rate",
+    "SLIDER",
+    ["STR_WHF_settings_aps_rate", "STR_WHF_settings_aps_rate_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_aps"],
+    [8, 128, 32, 0, false],
+    false,
+    {WHF_aps_rate = 1 / round _this},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_aps_distance",
+    "SLIDER",
+    ["STR_WHF_settings_aps_distance", "STR_WHF_settings_aps_distance_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_aps"],
+    [4, 16, 8, 1, false],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_aps_ammoMRAP",
+    "SLIDER",
+    ["STR_WHF_settings_aps_ammoMRAP", "STR_WHF_settings_aps_ammoMRAP_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_aps"],
+    [0, 8, 2, 0, false],
+    true,
+    {WHF_aps_ammoMRAP = round _this},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_aps_ammoAPC",
+    "SLIDER",
+    ["STR_WHF_settings_aps_ammoAPC", "STR_WHF_settings_aps_ammoAPC_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_aps"],
+    [0, 8, 3, 0, false],
+    true,
+    {WHF_aps_ammoAPC = round _this},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_aps_ammoMBT",
+    "SLIDER",
+    ["STR_WHF_settings_aps_ammoMBT", "STR_WHF_settings_aps_ammoMBT_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_aps"],
+    [0, 8, 4, 0, false],
+    true,
+    {WHF_aps_ammoMBT = round _this},
+    false
+] call WHF_fnc_addSetting;
+
 // Curators
 [
     "WHF_curators_uids",

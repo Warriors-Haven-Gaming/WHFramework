@@ -22,3 +22,6 @@ _vehicle setFuel 1;
 _vehicle setRepairCargo 1;
 _vehicle setAmmoCargo 1;
 _vehicle setFuelCargo 1;
+
+private _apsAmmo = _vehicle getVariable "WHF_aps_ammo_max";
+if (!isNil "_apsAmmo") then {_vehicle setVariable ["WHF_aps_ammo", _apsAmmo, true]};

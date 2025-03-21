@@ -24,3 +24,6 @@ if (!isMultiplayer) then {
     // HACK: onPlayerRespawn.sqf can sometimes run before initServer.sqf
     WHF_globalPlayerTarget = 0;
 };
+
+WHF_findAPSLoop_script = 0 spawn WHF_fnc_findAPSLoop;
+WHF_simulateAPSLoop_script = 0 spawn WHF_fnc_simulateAPSLoop;

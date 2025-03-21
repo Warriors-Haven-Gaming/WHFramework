@@ -66,6 +66,13 @@ class Extended_PreInit_EventHandlers {
 // https://community.bistudio.com/wiki/Arma_3:_Functions_Library
 class CfgFunctions {
     class WHF {
+        class APS {
+            class addAPS {};
+            class checkAPSTargetPaths {};
+            class findAPSLoop {};
+            class nearAPSTargets {};
+            class simulateAPSLoop {};
+        };
         class Channels {
             class initChannels {};
             class updateChannelLoop {};
