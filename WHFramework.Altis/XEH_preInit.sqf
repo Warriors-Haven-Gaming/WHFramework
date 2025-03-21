@@ -49,7 +49,7 @@ Author:
     "SLIDER",
     ["STR_WHF_settings_aps_radius", "STR_WHF_settings_aps_radius_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_aps"],
-    [100, 300, 200, 0, false],
+    [100, 300, 150, 0, false],
     true,
     {},
     false
