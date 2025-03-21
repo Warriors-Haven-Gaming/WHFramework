@@ -26,6 +26,7 @@ WHF_haloJump_mapHandlers pushBack ["Map", addMissionEventHandler ["Map", {
     params ["_opened"];
     if (_opened) exitWith {};
 
+    hintSilent "";
     {removeMissionEventHandler _x} forEach WHF_haloJump_mapHandlers;
     {
         _x params ["_unit", "_event"];
