@@ -21,7 +21,8 @@ private _actionID = [
     "a3\ui_f\data\igui\cfg\holdactions\holdaction_takeoff2_ca.paa",
     "isNull objectParent _this && {call WHF_fnc_isLookingAtFlippedVehicle}",
     "
-        if (crew cursorObject findIf {alive _x} >= 0) exitWith {
+        private _vehicle = cursorObject;
+        if (!unitIsUAV _vehicle && {crew _vehicle findIf {alive _x} >= 0}) exitWith {
             50 cutText [localize '$STR_WHF_initUnflipAction_crew', 'PLAIN', 0.5];
             false
         };
