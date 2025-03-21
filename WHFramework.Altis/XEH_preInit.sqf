@@ -722,7 +722,7 @@ Author:
     "SLIDER",
     ["STR_WHF_settings_unflip_duration", "STR_WHF_settings_unflip_duration_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_unflip"],
-    [0, 30, 5, 0, false],
+    [0, 30, 3.5, 0, false],
     true,
     {call WHF_fnc_initUnflipAction},
     false
