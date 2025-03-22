@@ -118,10 +118,6 @@ private _objects = _composition apply {
 };
 
 private _index = _objects findIf {!isNull _x};
-if (_index >= 0) then {
-    if (isNil "WHF_usedPositions") then {WHF_usedPositions = []};
-    private _obj = _objects # _index;
-    WHF_usedPositions pushBack _obj;
-};
+if (_index >= 0) then {WHF_usedPositions pushBack [_objects # _index, 30]};
 
 _objects

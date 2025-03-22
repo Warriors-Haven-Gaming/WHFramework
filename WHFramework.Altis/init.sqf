@@ -20,11 +20,16 @@ if (!isMultiplayer) then {
     call WHF_fnc_initEmplacementCatalog;
     call WHF_fnc_initDynamicSimulation;
     call WHF_fnc_initVehicleHandlers;
+    WHF_usedPositions = [];
 
     // HACK: onPlayerRespawn.sqf can sometimes run before initServer.sqf
     WHF_globalPlayerTarget = 0;
 };
 
-if (isMultiplayer && {!isServer}) then {call WHF_fnc_initVehicleHandlers};
+if (isMultiplayer && {!isServer}) then {
+    call WHF_fnc_initVehicleHandlers;
+    WHF_usedPositions = [];
+};
+
 WHF_findAPSLoop_script = 0 spawn WHF_fnc_findAPSLoop;
 WHF_simulateAPSLoop_script = 0 spawn WHF_fnc_simulateAPSLoop;

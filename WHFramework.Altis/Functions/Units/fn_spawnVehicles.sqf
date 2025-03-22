@@ -36,7 +36,7 @@ for "_i" from 1 to _quantity do {
     private _pos = _center;
     private _special = "NONE";
     if (_radius > 0) then {
-        private _empty = [_center, [30, _radius]] call WHF_fnc_randomPos;
+        private _empty = [_center, _radius] call WHF_fnc_randomPos;
         if (_empty isEqualTo [0,0]) exitWith {};
         _pos = _empty;
         _special = "CAN_COLLIDE";
@@ -48,6 +48,8 @@ for "_i" from 1 to _quantity do {
     _vehicle enableDynamicSimulation true;
     _group addVehicle _vehicle;
     _vehicles pushBack _vehicle;
+
+    WHF_usedPositions pushBack [_vehicle, 5];
 };
 
 {
