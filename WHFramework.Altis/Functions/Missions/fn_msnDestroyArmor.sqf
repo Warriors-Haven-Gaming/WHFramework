@@ -45,13 +45,7 @@ private _area = [_center, _radius, _radius, 0, false];
 private _terrainObjects = nearestTerrainObjects [_center, [], 30, false];
 _terrainObjects apply {hideObjectGlobal _x};
 
-private _depot = [
-    [["StorageBladder_01_fuel_forest_F",[-1,1,0],90],["CamoNet_ghex_open_F",[0,0,1.09],90],["B_Slingload_01_Fuel_F",[-1,-7,0],60],["Box_East_AmmoVeh_F",[-3,7,0],0],["Land_RepairDepot_01_green_F",[-8,3,0],0],["Land_RepairDepot_01_green_F",[-8,-3,0],0],["Land_FuelStation_01_pump_F",[-6,7,0],0],["Land_FuelStation_01_pump_F",[-9,7,0],0],["B_Slingload_01_Ammo_F",[-8,-9,0],90]],
-    _center,
-    random 360,
-    ["frozen", "normal"]
-] call WHF_fnc_objectsMapper;
-
+private _objects = [];
 private _groups = [];
 private _vehicles = [];
 
@@ -71,6 +65,18 @@ private _vehicles = [];
     private _infantryGroup = _infantryArgs call WHF_fnc_spawnUnits;
     [_infantryGroup, _pos] call BIS_fnc_taskDefend;
     _groups pushBack _infantryGroup;
+
+    private _depotPos = [_pos, [5, 50]] call WHF_fnc_randomPos;
+    if (_depotPos isNotEqualTo [0,0]) then {
+        private _depotDir = ((_depotPos getDir _pos) + 90) % 360;
+        private _depot = [
+            [["StorageBladder_01_fuel_forest_F",[-1,1,0],90],["CamoNet_ghex_open_F",[0,0,1.09],90],["B_Slingload_01_Fuel_F",[-1,-7,0],60],["Box_East_AmmoVeh_F",[-3,7,0],0],["Land_RepairDepot_01_green_F",[-8,3,0],0],["Land_RepairDepot_01_green_F",[-8,-3,0],0],["Land_FuelStation_01_pump_F",[-6,7,0],0],["Land_FuelStation_01_pump_F",[-9,7,0],0],["B_Slingload_01_Ammo_F",[-8,-9,0],90]],
+            _depotPos,
+            _depotDir,
+            ["normal", "simple"]
+        ] call WHF_fnc_objectsMapper;
+        _objects append _depot;
+    };
 } forEach [
     ["standard", 4 + floor random 5],
     ["supply", 3 + floor random 4],
@@ -82,7 +88,7 @@ private _vehicles = [];
 
 if (count _vehicles < 1) exitWith {
     diag_log text format ["%1: center %2 not clear to spawn vehicles", _fnc_scriptName, _center];
-    [_depot] call WHF_fnc_queueGCDeletion;
+    [_objects] call WHF_fnc_queueGCDeletion;
     [_terrainObjects] call WHF_fnc_queueGCUnhide;
     {[units _x] call WHF_fnc_queueGCDeletion} forEach _groups;
 };
@@ -131,7 +137,7 @@ while {true} do {
 
 deleteMarker _areaMarker;
 
-[_depot] call WHF_fnc_queueGCDeletion;
+[_objects] call WHF_fnc_queueGCDeletion;
 [_terrainObjects] call WHF_fnc_queueGCUnhide;
 {[units _x] call WHF_fnc_queueGCDeletion} forEach _groups;
 {[_x] call WHF_fnc_queueGCDeletion} forEach _vehicles;
