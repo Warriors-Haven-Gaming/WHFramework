@@ -49,6 +49,7 @@ WHF_mainMissionLoop_script = [
 WHF_sideMissionLoop_script = [
     [
         "WHF_fnc_msnDestroyAAA",
+        "WHF_fnc_msnDestroyArmor",
         "WHF_fnc_msnDestroyRoadblock",
         "WHF_fnc_msnDownloadIntel"
     ],
