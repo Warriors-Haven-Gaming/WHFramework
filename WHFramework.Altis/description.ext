@@ -201,6 +201,7 @@ class CfgFunctions {
             class missionLoop {};
             class msnDestroyAAA {};
             class msnDestroyArmor {};
+            class msnDestroyBarracks {};
             class msnDestroyRoadblock {};
             class msnDownloadIntel {};
             class msnDownloadIntelLaptop {};
@@ -397,6 +398,10 @@ class CfgTaskDescriptions {
     class destroyArmor {
         title       = "STR_WHF_destroyArmor_title";
         description = "STR_WHF_destroyArmor_description";
+    };
+    class destroyBarracks {
+        title       = "STR_WHF_destroyBarracks_title";
+        description = "STR_WHF_destroyBarracks_description";
     };
     class destroyRoadblock {
         title       = "STR_WHF_destroyRoadblock_title";
