@@ -35,7 +35,7 @@ private _infCount = 40 + floor (_radius / 8);
 _infCount = floor (_infCount * WHF_missions_annex_units);
 while {_infCount > 0} do {
     private _pos = [_center, _radius] call WHF_fnc_randomPos;
-    if (_pos isEqualTo [0,0]) then {continue};
+    if (_pos isEqualTo [0,0]) then {break};
 
     private _quantity = selectRandom [2, 4, 6, 8];
     private _group = [opfor, _unitTypes, _quantity, _pos, 10] call WHF_fnc_spawnUnits;
