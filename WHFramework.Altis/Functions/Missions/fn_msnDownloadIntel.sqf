@@ -26,6 +26,7 @@ if (_intelCenter isEqualTo []) then {
         if ([_pos, 500] call WHF_fnc_isNearRespawn) then {continue};
         if (_pos isFlatEmpty [-1, -1, 0.45, 12] isEqualTo []) then {continue};
         if (_pos nearRoads 50 isNotEqualTo []) then {continue};
+        if ([_pos, 100] call WHF_fnc_isNearUsedPosition) then {continue};
         _intelCenter = _pos;
         break;
     } forEach _options;

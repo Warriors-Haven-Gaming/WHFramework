@@ -17,6 +17,8 @@ Author:
 */
 params [["_center",[]]];
 
+private _radius = 150;
+
 if (_center isEqualTo []) then {
     private _options = selectBestPlaces [
         [worldSize / 2, worldSize / 2],
@@ -31,6 +33,7 @@ if (_center isEqualTo []) then {
         if ([_pos, 1000] call WHF_fnc_isNearRespawn) then {continue};
         if (_pos nearRoads 100 isNotEqualTo []) then {continue};
         if (_pos isFlatEmpty [-1, -1, 1, 40] isEqualTo []) then {continue};
+        if ([_pos, _radius] call WHF_fnc_isNearUsedPosition) then {continue};
         _center = _pos;
         break;
     } forEach _options;
@@ -39,7 +42,6 @@ if (_center isEqualTo []) exitWith {
     diag_log text format ["%1: No center found", _fnc_scriptName];
 };
 
-private _radius = 150;
 private _area = [_center, _radius, _radius, 0, false];
 
 private _terrainObjects = nearestTerrainObjects [_center, [], 30, false];

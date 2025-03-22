@@ -21,6 +21,8 @@ Author:
 */
 params [["_center", []], ["_direction", 0]];
 
+private _radius = 100;
+
 if (_center isEqualTo []) then {
     private _options = selectBestPlaces [
         [worldSize / 2, worldSize / 2],
@@ -34,6 +36,7 @@ if (_center isEqualTo []) then {
         _pos pushBack 0;
         if ([_pos, 1000] call WHF_fnc_isNearRespawn) then {continue};
         if (_pos isFlatEmpty [-1, -1, 1, 12] isEqualTo []) then {continue};
+        if ([_pos, _radius + 200] call WHF_fnc_isNearUsedPosition) then {continue};
 
         private _roads = _pos nearRoads 200 apply {getRoadInfo _x} select {
             _x # 0 in ["ROAD", "MAIN ROAD", "TRACK"] && {!(_x # 2)}
@@ -54,7 +57,6 @@ if (_center isEqualTo []) exitWith {
     diag_log text format ["%1: No center found", _fnc_scriptName];
 };
 
-private _radius = 100;
 private _area = [_center, _radius, _radius, 0, false];
 private _ruins = [];
 
