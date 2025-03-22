@@ -68,15 +68,13 @@ private _checkCondition = {
 };
 
 private _blacklist = ["water"];
-if (_minRadius > 0 && {!isNil "WHF_usedPositions"}) then {
-    private _expired = [];
-    {
-        _x params ["_obj", "_radius"];
-        if (isNull _obj) then {_expired pushBack _forEachIndex; continue};
-        _blacklist pushBack [getPosATL _obj, _minRadius + _radius];
-    } forEach WHF_usedPositions;
-    {WHF_usedPositions deleteAt _x} forEachReversed _expired;
-};
+private _expired = [];
+{
+    _x params ["_obj", "_objRadius"];
+    if (isNull _obj) then {_expired pushBack _forEachIndex; continue};
+    _blacklist pushBack [getPosATL _obj, _objRadius + _minRadius];
+} forEach WHF_usedPositions;
+{WHF_usedPositions deleteAt _x} forEachReversed _expired;
 
 private _ret = [0,0];
 for "_i" from 1 to 30 do {
