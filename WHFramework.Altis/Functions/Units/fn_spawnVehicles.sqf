@@ -49,7 +49,7 @@ for "_i" from 1 to _quantity do {
     _group addVehicle _vehicle;
     _vehicles pushBack _vehicle;
 
-    WHF_usedPositions pushBack [_vehicle, 5];
+    WHF_usedPositions pushBack [_vehicle, 10];
 };
 
 {
