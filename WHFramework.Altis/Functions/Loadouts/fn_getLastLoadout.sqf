@@ -22,4 +22,17 @@ if (_role isEqualTo "") exitWith {[]};
 
 private _loadouts = missionProfileNamespace getVariable ["WHF_last_loadouts", createHashMap];
 private _key = [WHF_loadout_collection, _role];
-_loadouts getOrDefault [_key, []]
+_loadouts getOrDefaultCall [_key, {switch (_role) do {
+    case "arty": {[]};
+    case "at": {[]};
+    case "autorifleman": {[]};
+    case "engineer": {[]};
+    case "jtac": {[]};
+    case "medic": {[]};
+    case "pilot_cas": {[]};
+    case "pilot_transport": {[]};
+    case "rifleman": {[]};
+    case "sniper": {[]};
+    case "uav": {[]};
+    default {[]};
+}}]
