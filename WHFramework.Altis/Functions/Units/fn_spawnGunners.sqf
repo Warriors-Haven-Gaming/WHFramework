@@ -59,7 +59,7 @@ private _initTurrets = {
 
 private _registerArtillery = {
     // params ["_turrets", "_group"];
-    if (_turrets findIf {getNumber (configOf _x >> "artilleryScanner") > 0} < 0) exitWith {};
+    if (_turrets findIf {_x call WHF_fnc_isArtilleryVehicle} < 0) exitWith {};
     if (isNil "lambs_wp_fnc_taskartilleryregister") exitWith {};
 
     // TODO: add scripts for automatic targeting in vanilla

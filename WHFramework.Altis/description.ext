@@ -150,6 +150,7 @@ class CfgFunctions {
             class inAreaMarkers {};
             class initDynamicSimulation {};
             class isAntiAirVehicle {};
+            class isArtilleryVehicle {};
             class isEnemyAntiAir {};
             class isNearRespawn {};
             class isNearUsedPosition {};
@@ -202,6 +203,7 @@ class CfgFunctions {
             class missionLoop {};
             class msnDestroyAAA {};
             class msnDestroyArmor {};
+            class msnDestroyArtillery {};
             class msnDestroyBarracks {};
             class msnDestroyRoadblock {};
             class msnDownloadIntel {};
@@ -399,6 +401,10 @@ class CfgTaskDescriptions {
     class destroyArmor {
         title       = "STR_WHF_destroyArmor_title";
         description = "STR_WHF_destroyArmor_description";
+    };
+    class destroyArtillery {
+        title       = "STR_WHF_destroyArtillery_title";
+        description = "STR_WHF_destroyArtillery_description";
     };
     class destroyBarracks {
         title       = "STR_WHF_destroyBarracks_title";

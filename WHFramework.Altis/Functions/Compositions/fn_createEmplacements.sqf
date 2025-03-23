@@ -20,6 +20,7 @@ Parameters:
             "aa_short"
             "aa_medium"
             "aa_long"
+            "arty"
             "camp"
             "hq"
             "mortar"
