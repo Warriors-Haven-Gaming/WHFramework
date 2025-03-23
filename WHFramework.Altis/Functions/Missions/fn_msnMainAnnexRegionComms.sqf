@@ -57,6 +57,10 @@ private _officer = leader _group;
 _groups pushBack _group;
 [_group, [_building]] call WHF_fnc_garrisonBuildings;
 
+private _guardGroup = [opfor, "standard", selectRandom [4, 6, 8], _pos, 20] call WHF_fnc_spawnUnits;
+[_guardGroup, _pos] call BIS_fnc_taskDefend;
+_groups pushBack _guardGroup;
+
 private _towerFunction = "WHF_fnc_msnMainAnnexRegionCommsTower";
 {_x remoteExec [_towerFunction, WHF_globalPlayerTarget, _x]} forEach _tower;
 {_x remoteExec ["WHF_fnc_addIntelAction", WHF_globalPlayerTarget, _x]} forEach _intel;
