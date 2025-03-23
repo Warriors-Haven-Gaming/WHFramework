@@ -58,6 +58,8 @@ switch (true) do {
     };
     case (_vehicle isKindOf "CUP_M1A2Abrams_Base"): {
         [_vehicle, WHF_aps_ammoMBT] call WHF_fnc_addAPS;
+        private _HE = "CUP_1Rnd_TE1_Red_Tracer_120mm_M908_M256_Cannon_M";
+        for "_i" from 1 to 16 do {_vehicle addMagazineTurret [_HE, [0]]};
     };
     case (_vehicle isKindOf "CUP_M2Bradley_Base"): {
         [_vehicle, WHF_aps_ammoAPC] call WHF_fnc_addAPS;
@@ -83,5 +85,6 @@ switch (true) do {
     // QAV - AbramsX
     case (_vehicle isKindOf "qav_abramsx_base"): {
         [_vehicle, WHF_aps_ammoMBT] call WHF_fnc_addAPS;
+        _vehicle addMagazineTurret ["16Rnd_120mm_HE_shells_Tracer_Red", [0]];
     };
 };
