@@ -40,6 +40,7 @@ while {true} do {
     {
         private _vehicle = _x;
         if (!alive _vehicle) then {continue};
+        if (!simulationEnabled _vehicle) then {continue};
 
         private _ammo = _vehicle getVariable ["WHF_aps_ammo", 0];
         if (_ammo < 1) then {continue};
