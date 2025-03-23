@@ -23,7 +23,7 @@ _unit spawn {
     sleep WHF_revive_captiveDuration;
     if !(lifeState _this in ["HEALTHY", "INJURED"]) exitWith {};
 
-    private _wasCaptive = _unit getVariable "WHF_incapUnit_wasCaptive";
+    private _wasCaptive = _this getVariable "WHF_incapUnit_wasCaptive";
     if (isNil "_wasCaptive" || {!_wasCaptive}) then {_this setCaptive false};
     if (!isNil "_wasCaptive") then {_this setVariable ["WHF_incapUnit_wasCaptive", nil, true]};
 };
