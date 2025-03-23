@@ -22,11 +22,18 @@ private _allowedSensors = ["IRSensorComponent", "ActiveRadarSensorComponent"];
 if (_sensors findIf {_x # 1 in _allowedSensors} >= 0) exitWith {true};
 
 private _exceptions = [
+    "APC_Wheeled_02_base_v2_F",
+    "CUP_BMP1_base",
+    "CUP_BRDM2_ATGM_Base",
+    "CUP_BTR80_Common_Base",
+    "CUP_BTR90_Base",
     "CUP_I_Hilux_metis_NAPA",
     "CUP_I_Hilux_MLRS_NAPA",
+    "CUP_O_GAZ_Vodnik_BPPU_RU",
     "CUP_O_GAZ_Vodnik_KPVT_RU",
     "CUP_Kornet_Base",
     "CUP_Metis_Base",
+    "CUP_T72_Base",
     "I_G_Offroad_01_AT_F",
     "I_C_Offroad_02_AT_F"
 ];
