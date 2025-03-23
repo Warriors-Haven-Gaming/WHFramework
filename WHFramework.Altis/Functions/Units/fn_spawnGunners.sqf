@@ -71,6 +71,7 @@ private _group = [_side, "standard", count _turrets, [-random 500, -random 500, 
     private _turret = _turrets # _forEachIndex;
     _group addVehicle _turret;
     _x moveInGunner _turret;
+    if (isNull objectParent _x) then {deleteVehicle _x};
 } forEach units _group;
 
 call _initTurrets;
