@@ -59,6 +59,12 @@ private _loadout = [_role] call WHF_fnc_getLastLoadout;
 if (_loadout isNotEqualTo []) then {_unit setUnitLoadout _loadout};
 _unit call WHF_fnc_addRecruitLoadoutAction;
 
+private _target = WHF_globalPlayerTarget;
+if (WHF_recruits_speaker in [2, 3]) then {
+    private _jipID = netId _unit + ":WHF_setSpeaker";
+    [_unit, "NoVoice"] remoteExec ["WHF_fnc_setSpeaker", _target, _jipID];
+};
+
 [_unit] call WHF_fnc_initVehicleLockHandlers;
 if (!isClass (configFile >> "CfgPatches" >> "ace_medical")) then {
     _unit addEventHandler ["HandleDamage", {call {

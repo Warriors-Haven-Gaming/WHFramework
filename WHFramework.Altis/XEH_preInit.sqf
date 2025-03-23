@@ -612,10 +612,10 @@ Author:
 // Recruits
 [
     "WHF_recruits_speaker",
-    "CHECKBOX",
+    "LIST",
     ["STR_WHF_settings_recruits_speaker", "STR_WHF_settings_recruits_speaker_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_recruits"],
-    false,
+    [[0, 1, 2, 3], ["str_enabled", "STR_WHF_settings_recruits_speaker_recruits", "STR_WHF_settings_recruits_speaker_player", "STR_A3_Disabled"], 1],
     false,
     {},
     false
