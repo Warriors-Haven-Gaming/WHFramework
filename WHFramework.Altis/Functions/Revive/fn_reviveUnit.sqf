@@ -29,14 +29,14 @@ _unit spawn {
 };
 
 if (isNull objectParent _unit) then {
-    if (_unit isEqualTo focusOn) then {
+    if (
+        _unit isEqualTo focusOn
+        && {animationState _unit isNotEqualTo "unconsciousrevivedefault"
+        || {cameraView isNotEqualTo "INTERNAL"}}
+    ) then {
         private _eyePos = positionCameraToWorld [0,0,0];
         private _dirVector = getCameraViewDirection _unit;
         private _dir = _eyePos getDir (_eyePos vectorAdd _dirVector);
-        if (
-            animationState _unit isEqualTo "unconsciousrevivedefault"
-            && {cameraView isEqualTo "INTERNAL"}
-        ) then {_dir = (_dir + 180) % 360};
         _unit setDir _dir;
     };
 
