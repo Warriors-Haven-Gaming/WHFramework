@@ -92,7 +92,6 @@ def build_mission(
             ADDON_BUILDER,
             str(src_dir),
             str(dest_dir),
-            "-clear",
             f"-include={shlex.quote(includes.name)}",
             dry_run=dry_run,
         )
