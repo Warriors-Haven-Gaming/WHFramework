@@ -39,6 +39,8 @@ switch (true) do {
         if (WHF_earplugs_radio) then {_duration fadeRadio WHF_earplugs_volume};
         _duration fadeSound WHF_earplugs_volume;
         _duration fadeSpeech WHF_earplugs_volume;
+
+        playSoundUI ["a3\ui_f\data\sound\cfgnotifications\defaultnotificationclose.wss", 5, 0.5];
     };
     case (_enabled): {
         WHF_earplugs_music_last = musicVolume;
@@ -50,12 +52,16 @@ switch (true) do {
         if (WHF_earplugs_radio) then {_duration fadeRadio (WHF_earplugs_radio_last * WHF_earplugs_volume)};
         _duration fadeSound (WHF_earplugs_sound_last * WHF_earplugs_volume);
         _duration fadeSpeech (WHF_earplugs_speech_last * WHF_earplugs_volume);
+
+        playSoundUI ["a3\ui_f\data\sound\cfgnotifications\defaultnotificationclose.wss", 5, 0.5];
     };
     case (!_enabled && {_force}): {
         _duration fadeMusic 1;
         _duration fadeRadio 1;
         _duration fadeSound 1;
         _duration fadeSpeech 1;
+
+        playSoundUI ["a3\ui_f\data\sound\cfgingameui\hintexpand.wss", 5, 0.5];
     };
     case (!_enabled): {
         if (isNil "WHF_earplugs_music_last") then {WHF_earplugs_music_last = 1};
@@ -67,6 +73,8 @@ switch (true) do {
         if (WHF_earplugs_radio) then {_duration fadeRadio WHF_earplugs_radio_last};
         _duration fadeSound WHF_earplugs_sound_last;
         _duration fadeSpeech WHF_earplugs_speech_last;
+
+        playSoundUI ["a3\ui_f\data\sound\cfgingameui\hintexpand.wss", 5, 0.5];
     };
 };
 
