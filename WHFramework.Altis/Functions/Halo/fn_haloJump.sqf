@@ -48,7 +48,6 @@ _vehicles append (allUnitsUAV select {
 _vehicles = _vehicles arrayIntersect _vehicles;
 private _units = _allUnits select {isNull objectParent _x};
 
-disableUserInput true;
 private _seed = floor random 1000000;
 private _players = flatten (_vehicles apply {crew _x}) select {isPlayer _x && {_x isNotEqualTo focusOn}};
 _seed spawn WHF_fnc_haloJumpCut;
@@ -68,7 +67,7 @@ _seed spawn WHF_fnc_haloJumpCut;
         _unit
     ];
 }} forEach (_units + _vehicles);
-sleep 3;
+sleep 3; // CAUTION: unit/vehicle locality can change after this point
 
 private _altitude = if (count _vehicles > 0) then {WHF_halo_altitude_vehicle} else {WHF_halo_altitude_unit};
 _center set [2, _altitude];
@@ -84,6 +83,8 @@ private _getNextPos = {
 };
 
 {
+    if (!local _x) then {continue}; // Zeus probably took control
+
     private _vehicle = objectParent _x;
     if (!isNull _vehicle) then {
         if (_vehicle in _vehicles) then {continue};
@@ -100,6 +101,8 @@ private _getNextPos = {
 } forEach _allUnits;
 
 {
+    if (!local _x) then {continue}; // Someone else got into the driver seat >:(
+
     _x setPosATL ([WHF_halo_spacing_vehicle, false] call _getNextPos);
     _x setDir _direction;
 
@@ -108,6 +111,3 @@ private _getNextPos = {
         [_this] call WHF_fnc_deployParachute;
     };
 } forEach _vehicles;
-
-sleep 2;
-disableUserInput false;
