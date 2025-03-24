@@ -142,6 +142,38 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 
+// Earplugs
+[
+    "WHF_earplugs_volume",
+    "SLIDER",
+    ["STR_WHF_settings_earplugs_volume", "STR_WHF_settings_earplugs_volume_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_earplugs"],
+    [0.1, 1, 0.8, 0, true],
+    false,
+    {WHF_earplugs_volume = 1 - _this},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_earplugs_radio",
+    "CHECKBOX",
+    ["STR_WHF_settings_earplugs_radio", "STR_WHF_settings_earplugs_radio_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_earplugs"],
+    true,
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_earplugs_music",
+    "CHECKBOX",
+    ["STR_WHF_settings_earplugs_music", "STR_WHF_settings_earplugs_music_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_earplugs"],
+    false,
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+
 // Factions
 /*
     Useful scripts for adding new factions:

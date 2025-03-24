@@ -180,6 +180,8 @@
                   &lt;br/&gt;
                 - Detain: [T]
                   &lt;br/&gt;
+                - Earplugs: [End]
+                  &lt;br/&gt;
                 &lt;br/&gt;
                 The following keybinds are also available when ACE is not loaded:
                 &lt;br/&gt;
@@ -313,6 +315,14 @@
                 Once you spawn a vehicle, all Vehicle Spawners will enter
                 a cooldown based on the specific vehicle you have chosen.
             </Original>
+        </Key>
+    </Container>
+    <Container name="Earplugs">
+        <Key ID="STR_WHF_earplugs_keybind">
+            <Original>Toggle Earplugs</Original>
+        </Key>
+        <Key ID="STR_WHF_earplugs_keybind_tooltip">
+            <Original>Press this key to enable and disable earplugs.</Original>
         </Key>
     </Container>
     <Container name="Factions">
@@ -684,6 +694,27 @@
         </Key>
         <Key ID="STR_WHF_settings_damage_scale_recruit_tooltip">
             <Original>The percentage of damage that AI recruits receive.\nHas no effect when ACE Medical is loaded.</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_earplugs">
+            <Original>Earplugs</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_earplugs_volume">
+            <Original>Volume Reduction</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_earplugs_volume_tooltip">
+            <Original>The percentage volume reduction. Setting to 100% will mute most sounds.</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_earplugs_radio">
+            <Original>Affect Radio?</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_earplugs_radio_tooltip">
+            <Original>Toggles effect of earplugs on radio callouts from players and AI.</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_earplugs_music">
+            <Original>Affect Music?</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_earplugs_music_tooltip">
+            <Original>Toggles effect of earplugs on ingame music.</Original>
         </Key>
         <Key ID="STR_WHF_settings_factions">
             <Original>Factions</Original>

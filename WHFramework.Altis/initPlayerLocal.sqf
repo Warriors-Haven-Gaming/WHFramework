@@ -39,6 +39,7 @@ call WHF_fnc_initDamageHandlers;
 call WHF_fnc_initDiary;
 call WHF_fnc_initCruiseKeybind;
 call WHF_fnc_initDetainKeybind;
+call WHF_fnc_initEarplugsKeybind;
 call WHF_fnc_initIncapacitatedHandlers;
 call WHF_fnc_initMagRepackKeybind;
 [player] call WHF_fnc_initVehicleLockHandlers;
