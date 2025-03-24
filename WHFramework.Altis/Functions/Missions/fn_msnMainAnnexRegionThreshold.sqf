@@ -30,7 +30,7 @@ if (_current <= _threshold) exitWith {};
 
 private _getDescription = {[
     ["STR_WHF_mainAnnexRegionThreshold_description", _current - _threshold],
-    "STR_WHF_mainAnnexRegionThreshold_title"
+    ["STR_WHF_mainAnnexRegionThreshold_title", _current - _threshold]
 ]};
 
 private _taskDescription = call _getDescription;
