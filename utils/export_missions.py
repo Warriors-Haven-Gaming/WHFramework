@@ -7,7 +7,9 @@ Requires Git to run. Index and working directory must be clean.
 import argparse
 import contextlib
 import shlex
+import shutil
 import subprocess
+import tempfile
 from pathlib import Path
 from typing import Iterable, Iterator
 
@@ -27,6 +29,12 @@ def main() -> None:
         nargs="*",
     )
     parser.add_argument(
+        "-c",
+        "--clear-temp",
+        action="store_true",
+        help="Clear temporary directories used by Addon Builder",
+    )
+    parser.add_argument(
         "-d",
         "--dest",
         default=DESTINATION,
@@ -41,6 +49,7 @@ def main() -> None:
 
     args = parser.parse_args()
     branches: list[str] = args.branches
+    clear_temp: bool = args.clear_temp
     dest: Path = args.dest
     dry_run: bool = args.dry_run
 
@@ -49,20 +58,35 @@ def main() -> None:
 
     with contextlib.suppress(subprocess.CalledProcessError, AddonBuilderError):
         for branch in branches:
-            build_branch(branch, dest, dry_run=dry_run)
+            build_branch(branch, dest, clear_temp=clear_temp, dry_run=dry_run)
 
 
-def build_branch(branch: str, dest_dir: Path, *, dry_run: bool) -> None:
+def build_branch(
+    branch: str,
+    dest_dir: Path,
+    *,
+    clear_temp: bool,
+    dry_run: bool,
+) -> None:
     check_call("git", "switch", branch, dry_run=dry_run)
     for path in find_mission_directories():
-        build_mission(path, dest_dir, dry_run=dry_run)
+        build_mission(path, dest_dir, clear_temp=clear_temp, dry_run=dry_run)
 
 
 def find_mission_directories() -> Iterable[Path]:
     return (p for p in Path().resolve().glob("WHFramework.*") if p.is_dir())
 
 
-def build_mission(src_dir: Path, dest_dir: Path, *, dry_run: bool) -> None:
+def build_mission(
+    src_dir: Path,
+    dest_dir: Path,
+    *,
+    clear_temp: bool,
+    dry_run: bool,
+) -> None:
+    if clear_temp:
+        clear_temp_build(src_dir, dry_run=dry_run)
+
     with temp_patterns_file("*") as includes:
         check_addon_builder_output(
             ADDON_BUILDER,
@@ -72,6 +96,9 @@ def build_mission(src_dir: Path, dest_dir: Path, *, dry_run: bool) -> None:
             f"-include={shlex.quote(includes.name)}",
             dry_run=dry_run,
         )
+
+    if clear_temp:
+        clear_temp_build(src_dir, dry_run=dry_run)
 
 
 @contextlib.contextmanager
@@ -114,6 +141,14 @@ def check_addon_builder_output(*args: object, dry_run: bool) -> str | None:
             raise AddonBuilderError(line[error_index + 9 :])
 
     return out
+
+
+def clear_temp_build(src_dir: Path, *, dry_run: bool) -> None:
+    temp_dir = Path(tempfile.gettempdir()) / src_dir.name
+    print(f"$ rm -rf {temp_dir}")
+    if dry_run or not temp_dir.is_dir():
+        return
+    shutil.rmtree(temp_dir)
 
 
 class AddonBuilderError(Exception): ...
