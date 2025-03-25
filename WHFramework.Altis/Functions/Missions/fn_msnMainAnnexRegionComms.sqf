@@ -36,7 +36,7 @@ private _isPosSuitable = {
 private _pos = [_center, [30, _radius], [0, _isPosSuitable]] call WHF_fnc_randomPos;
 if (_pos isEqualTo [0,0]) exitWith {};
 
-private _posTerrain = nearestTerrainObjects [_pos, [], 25, false];
+private _posTerrain = nearestTerrainObjects [_pos, [], 25, false, true];
 {hideObjectGlobal _x} forEach _posTerrain;
 _terrain pushBack _posTerrain;
 

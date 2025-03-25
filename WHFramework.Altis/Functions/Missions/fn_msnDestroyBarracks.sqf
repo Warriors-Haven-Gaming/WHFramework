@@ -54,7 +54,7 @@ if (_center isEqualTo []) exitWith {
 
 private _area = [_center, _radius, _radius, 0, false];
 
-private _terrainObjects = nearestTerrainObjects [_center, [], 20, false];
+private _terrainObjects = nearestTerrainObjects [_center, [], 20, false, true];
 _terrainObjects apply {hideObjectGlobal _x};
 
 private _objects = [];

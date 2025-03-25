@@ -54,7 +54,7 @@ private _centerService = [["B_Slingload_01_Fuel_F",[1.22894,-2.44824,0],179.719]
 private _centerTurrets = [["CUP_O_KORD_high_RUS_M_Summer",[2.93109,-13.7754,0],206.313],["CUP_O_KORD_high_RUS_M_Summer",[3.11127,13.875,0],331.155]];
 private _missingClass = {!isClass (configFile >> "CfgVehicles" >> _x # 0)};
 if ([_centerComp, _centerService, _centerTurrets] findIf {_x findIf _missingClass >= 0} < 0) then {
-    private _centerTerrain = nearestTerrainObjects [_center, [], 30, false];
+    private _centerTerrain = nearestTerrainObjects [_center, [], 30, false, true];
     _centerTerrain apply {hideObjectGlobal _x};
     _terrain append _centerTerrain;
 
@@ -93,7 +93,7 @@ if ([_centerComp, _centerService, _centerTurrets] findIf {_x findIf _missingClas
 
     private _depotPos = [_pos, [5, 50]] call WHF_fnc_randomPos;
     if (_depotPos isNotEqualTo [0,0]) then {
-        private _depotTerrain = nearestTerrainObjects [_depotPos, [], 30, false];
+        private _depotTerrain = nearestTerrainObjects [_depotPos, [], 30, false, true];
         _depotTerrain apply {hideObjectGlobal _x};
         _terrain append _depotTerrain;
 

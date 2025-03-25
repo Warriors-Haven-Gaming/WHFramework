@@ -76,7 +76,7 @@ private _compositionGroups = [];
     if (_pos isEqualTo [0,0]) then {continue};
     _pos = _pos vectorAdd [0,0,0];
 
-    private _terrain = nearestTerrainObjects [_pos, [], _clearRadius, false];
+    private _terrain = nearestTerrainObjects [_pos, [], _clearRadius, false, true];
     {hideObjectGlobal _x} forEach _terrain;
 
     private _objects = [];

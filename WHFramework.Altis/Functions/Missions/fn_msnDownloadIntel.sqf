@@ -35,7 +35,7 @@ if (_intelCenter isEqualTo []) exitWith {
     diag_log text format ["%1: No center found", _fnc_scriptName];
 };
 
-private _terrainObjects = nearestTerrainObjects [_intelCenter, [], 20, false];
+private _terrainObjects = nearestTerrainObjects [_intelCenter, [], 20, false, true];
 _terrainObjects apply {hideObjectGlobal _x};
 
 private _intelBuilding = [
