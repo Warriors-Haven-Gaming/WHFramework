@@ -18,10 +18,10 @@ Author:
 params ["_unit"];
 
 private _findNearestMedic = {
-    private _medics = allPlayers select {
-        side group _x isEqualTo side group _unit
-        && {_x getUnitTrait "medic"
-        && {lifeState _x in ["HEALTHY", "INJURED"]}}
+    private _medics = units blufor select {
+        _x getUnitTrait "medic"
+        && {lifeState _x in ["HEALTHY", "INJURED"]
+        && {isPlayer _x || {!isNil {_x getVariable "WHF_recruiter"}}}}
     };
     _medics = _medics inAreaArray [getPosATL _unit, 500, 500];
     if (count _medics < 1) exitWith {[objNull, 0]};
