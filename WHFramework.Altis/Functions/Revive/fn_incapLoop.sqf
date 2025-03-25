@@ -35,6 +35,16 @@ private _findNearestMedic = {
     [_distances # 0 # 2, _distances # 0 # 0]
 };
 
+private _nearestMedicMessage = {
+    private _assigned = _unit getVariable ["WHF_reviveActionAuto_assigned", objNull];
+    switch (true) do {
+        case (_medic isEqualTo _assigned): {
+            localize "$STR_WHF_incapLoop_status_medic_assigned"
+        };
+        default {localize "$STR_WHF_incapLoop_status_medic"};
+    }
+};
+
 private _statusAfter = time + 3;
 private _actOfGod = if (random 1 < 0.1) then {time + 30 + random 60} else {-1};
 // NOTE: bleedout time is defined by each client and not synchronized
@@ -91,7 +101,7 @@ while {alive _unit && {lifeState _unit isEqualTo "INCAPACITATED"}} do {
         call _findNearestMedic params ["_medic", "_medicDistance"];
         if (!isNull _medic) then {
             _status pushBack format [
-                localize "$STR_WHF_incapLoop_status_medic",
+                call _nearestMedicMessage,
                 name _medic,
                 ceil _medicDistance
             ];
