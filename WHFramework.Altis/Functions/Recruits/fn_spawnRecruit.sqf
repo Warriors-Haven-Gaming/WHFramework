@@ -96,7 +96,9 @@ if (!isClass (configFile >> "CfgPatches" >> "ace_medical")) then {
         _unit allowDamage false;
         private _jipID = netId _unit + ":incapUnit";
         [_unit, _instigator] remoteExec ["WHF_fnc_incapUnit", 0, _jipID];
-        [_unit, WHF_recruits_incap_FAKs] spawn WHF_fnc_selfReviveAuto;
+        if (WHF_recruits_incap_FAKs > 0) then {
+            [_unit, WHF_recruits_incap_FAKs] spawn WHF_fnc_selfReviveAuto;
+        };
         0.95
     }}];
 
