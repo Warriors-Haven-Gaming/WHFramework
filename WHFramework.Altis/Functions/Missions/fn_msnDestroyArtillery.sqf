@@ -80,10 +80,12 @@ _areaMarker setMarkerAlpha 0.7;
 
 private _taskID = [blufor, "", "destroyArtillery", _center, "CREATED", -1, true, "destroy"] call WHF_fnc_taskCreate;
 
+private _allArtyTurrets = flatten _artyTurrets;
 while {true} do {
-    sleep 5;
+    sleep 10;
 
-    if (_artyTurrets findIf {_x findIf {alive _x} >= 0} < 0) exitWith {
+    private _active = _allArtyTurrets select {alive _x} inAreaArray _area;
+    if (count _active < 1) exitWith {
         [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
     };
 };

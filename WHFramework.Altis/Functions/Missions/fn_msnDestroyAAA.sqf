@@ -85,12 +85,14 @@ private _childTaskIDs = _aaTurrets apply {
 private _completedChildTaskIDs = [];
 
 while {true} do {
-    sleep 5;
+    sleep 10;
 
     {
         private _childTaskID = _childTaskIDs # _forEachIndex;
         if (_childTaskID in _completedChildTaskIDs) then {continue};
-        if (_x findIf {alive _x} >= 0) then {continue};
+
+        private _active = _x select {alive _x} inAreaArray _area;
+        if (count _active > 0) then {continue};
 
         [_childTaskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
         _completedChildTaskIDs pushBack _childTaskID;
