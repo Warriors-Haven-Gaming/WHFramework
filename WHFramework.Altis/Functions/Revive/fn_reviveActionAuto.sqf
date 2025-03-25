@@ -53,25 +53,24 @@ while {local _unit && {alive _unit}} do {
     {_distances pushBack [_unit distance _x, _forEachIndex]} forEach _targets;
     _distances sort true;
 
-    _distances # 0 params ["_initialDistance", "_targetIndex"];
+    _distances # 0 params ["_distance", "_targetIndex"];
     private _target = _targets # _targetIndex;
 
-    if (_initialDistance <= _reviveRange) then {
-        [_unit, _target] call WHF_fnc_reviveAction;
-        continue;
-    };
-
     _target setVariable ["WHF_reviveActionAuto_assigned", _unit];
-    _unit doMove getPosATL _target;
-    private _timeout = time + 10;
-    waitUntil {
-        moveToCompleted _unit
-        || {time > _timeout
-        || {_target getVariable ["WHF_reviveActionAuto_assigned", objNull] isNotEqualTo _unit}}
+
+    if (_distance > _reviveRange) then {
+        _unit doMove getPosATL _target;
+        private _timeout = time + 10;
+        waitUntil {
+            moveToCompleted _unit
+            || {time > _timeout
+            || {_target getVariable ["WHF_reviveActionAuto_assigned", objNull] isNotEqualTo _unit}}
+        };
+        _unit doFollow leader _unit;
+        _distance = _unit distance _target;
     };
 
-    _unit doFollow leader _unit;
-    if (_unit distance _target <= _reviveRange) then {
+    if (_distance <= _reviveRange) then {
         [_unit, _target] call WHF_fnc_reviveAction;
     };
 
