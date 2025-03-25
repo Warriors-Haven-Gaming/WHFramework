@@ -18,13 +18,20 @@ Author:
 params ["_unit"];
 
 private _findNearestMedic = {
+    private _assigned = _unit getVariable ["WHF_reviveActionAuto_assigned", objNull];
+    if (alive _assigned) exitWith {format [
+        localize "$STR_WHF_incapLoop_status_assigned",
+        name _assigned,
+        ceil (_unit distance _assigned)
+    ]};
+
     private _medics = units blufor select {
         _x getUnitTrait "medic"
         && {lifeState _x in ["HEALTHY", "INJURED"]
         && {isPlayer _x || {!isNil {_x getVariable "WHF_recruiter"}}}}
     };
     _medics = _medics inAreaArray [getPosATL _unit, 500, 500];
-    if (count _medics < 1) exitWith {[objNull, 0]};
+    if (count _medics < 1) exitWith {""};
 
     private _distances = [];
     {
@@ -32,17 +39,8 @@ private _findNearestMedic = {
     } forEach _medics;
 
     _distances sort true;
-    [_distances # 0 # 2, _distances # 0 # 0]
-};
-
-private _nearestMedicMessage = {
-    private _assigned = _unit getVariable ["WHF_reviveActionAuto_assigned", objNull];
-    switch (true) do {
-        case (_medic isEqualTo _assigned): {
-            localize "$STR_WHF_incapLoop_status_medic_assigned"
-        };
-        default {localize "$STR_WHF_incapLoop_status_medic"};
-    }
+    _distances # 0 params ["_distance", "", "_medic"];
+    format [localize "$STR_WHF_incapLoop_status_medic", name _medic, ceil _distance]
 };
 
 private _statusAfter = time + 3;
@@ -98,14 +96,8 @@ while {alive _unit && {lifeState _unit isEqualTo "INCAPACITATED"}} do {
             ceil (_bleedoutLeft / 60)
         ];
 
-        call _findNearestMedic params ["_medic", "_medicDistance"];
-        if (!isNull _medic) then {
-            _status pushBack format [
-                call _nearestMedicMessage,
-                name _medic,
-                ceil _medicDistance
-            ];
-        };
+        private _medic = call _findNearestMedic;
+        if (_medic isNotEqualTo "") then {_status pushBack _medic};
 
         hintSilent (_status joinString "\n");
     };
