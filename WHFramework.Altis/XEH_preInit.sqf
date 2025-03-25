@@ -653,6 +653,26 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 [
+    "WHF_recruits_revive_group",
+    "CHECKBOX",
+    ["STR_WHF_settings_recruits_revive_group", "STR_WHF_settings_recruits_revive_group_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_recruits"],
+    true,
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_recruits_revive_foreign",
+    "CHECKBOX",
+    ["STR_WHF_settings_recruits_revive_foreign", "STR_WHF_settings_recruits_revive_foreign_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_recruits"],
+    false,
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_recruits_limit",
     "SLIDER",
     ["STR_WHF_settings_recruits_limit", "STR_WHF_settings_recruits_limit_tooltip"],

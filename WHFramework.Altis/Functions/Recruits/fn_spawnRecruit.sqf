@@ -99,4 +99,6 @@ if (!isClass (configFile >> "CfgPatches" >> "ace_medical")) then {
         [_unit, WHF_recruits_incap_FAKs] spawn WHF_fnc_selfReviveAuto;
         0.95
     }}];
+
+    _unit setVariable ["WHF_reviveActionAuto_script", _unit spawn WHF_fnc_reviveActionAuto];
 };
