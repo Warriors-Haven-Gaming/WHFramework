@@ -42,6 +42,12 @@ while {local _unit && {lifeState _unit isEqualTo "INCAPACITATED"}} do {
         continue;
     };
 
+    // Skip self-reviving when assigned an AI medic
+    if (!isNil {_unit getVariable "WHF_reviveActionAuto_assigned"}) then {
+        _startedAt = -1;
+        continue;
+    };
+
     private _FAKs = items _unit select {
         _x call BIS_fnc_itemType select 1 isEqualTo "FirstAidKit"
     } select [0, _requiredFAKs];
