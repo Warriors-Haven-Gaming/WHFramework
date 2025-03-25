@@ -70,11 +70,12 @@ while {local _unit && {alive _unit}} do {
         || {_target getVariable ["WHF_reviveActionAuto_assigned", objNull] isNotEqualTo _unit}}
     };
 
+    _unit doFollow leader _unit;
+    if (_unit distance _target <= _reviveRange) then {
+        [_unit, _target] call WHF_fnc_reviveAction;
+    };
+
     if (_target getVariable ["WHF_reviveActionAuto_assigned", objNull] isEqualTo _unit) then {
         _target setVariable ["WHF_reviveActionAuto_assigned", nil];
     };
-
-    _unit doFollow leader _unit;
-    if (_unit distance _target > _reviveRange) then {continue};
-    [_unit, _target] call WHF_fnc_reviveAction;
 };
