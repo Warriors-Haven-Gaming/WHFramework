@@ -85,10 +85,16 @@ addMissionEventHandler ["Draw3D", {
             default {_sideColor};
         };
 
+        private _pos = if (count _aliveCrew > 0) then {
+            _aliveCrew # 0 modelToWorldVisual (_x selectionPosition "Spine3")
+        } else {
+            _x modelToWorldVisual [0,0,0]
+        };
+
         drawIcon3D [
             "a3\ui_f\data\igui\cfg\cursors\select_ca.paa",
             _color + [_opacity],
-            _aliveCrew # 0 modelToWorldVisual (_x selectionPosition "Spine3"),
+            _pos,
             _size,
             _size,
             0
