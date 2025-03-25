@@ -30,9 +30,9 @@ while {local _unit && {alive _unit}} do {
     if (!isNull (_unit getVariable ["WHF_revive_target", objNull])) then {continue};
     if !(currentCommand _unit in _allowedCommands) then {continue};
 
-    private _units = switch (true) do {
-        case (WHF_recruits_revive_foreign): {allUnits};
-        case (WHF_recruits_revive_group): {units group _unit};
+    private _units = switch (WHF_recruits_revive_targets) do {
+        case 2: {allUnits};
+        case 0: {units group _unit};
         default {units side group _unit};
     };
 
