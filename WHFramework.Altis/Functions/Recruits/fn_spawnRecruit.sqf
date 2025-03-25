@@ -103,4 +103,26 @@ if (!isClass (configFile >> "CfgPatches" >> "ace_medical")) then {
     }}];
 
     _unit setVariable ["WHF_reviveActionAuto_script", _unit spawn WHF_fnc_reviveActionAuto];
+
+    _unit spawn {
+        scriptName "WHF_fnc_spawnRecruit_autoHeal";
+        while {true} do {
+            sleep (10 + random 10);
+            if (!alive _this) then {break};
+            if (!isPlayer leader _this) then {continue};
+            if !(lifeState _this in ["HEALTHY", "INJURED"]) then {continue};
+            if (_this getHit "legs" < 0.5) then {continue};
+
+            private _types = ["FirstAidKit"];
+            if (_this getUnitTrait "medic") then {_types pushBack "Medikit"};
+            private _canHeal = {_x call BIS_fnc_itemType select 1 in _types};
+            if (items _this findIf _canHeal < 0) then {continue};
+
+            _this action ["HealSoldierSelf", _this];
+
+            // For whatever reason, if we make them heal while prone,
+            // they'll indefinitely stop moving until they stand up
+            if (stance _this isEqualTo "PRONE") then {_this playAction "Crouch"};
+        };
+    };
 };
