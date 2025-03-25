@@ -19,7 +19,7 @@ params ["_unit"];
 
 private _findNearestMedic = {
     private _assigned = _unit getVariable ["WHF_reviveActionAuto_assigned", objNull];
-    if (alive _assigned) exitWith {format [
+    if (lifeState _assigned in ["HEALTHY", "INJURED"]) exitWith {format [
         localize "$STR_WHF_incapLoop_status_assigned",
         name _assigned,
         ceil (_unit distance _assigned)
