@@ -657,7 +657,7 @@ Author:
     "CHECKBOX",
     ["STR_WHF_settings_recruits_revive_group", "STR_WHF_settings_recruits_revive_group_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_recruits"],
-    true,
+    false,
     false,
     {},
     false
