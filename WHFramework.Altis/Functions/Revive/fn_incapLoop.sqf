@@ -31,7 +31,7 @@ private _findNearestMedic = {
         _distances pushBack [_unit distance _x, _forEachIndex, _x];
     } forEach _medics;
 
-    _distances sort false;
+    _distances sort true;
     [_distances # 0 # 2, _distances # 0 # 0]
 };
 
