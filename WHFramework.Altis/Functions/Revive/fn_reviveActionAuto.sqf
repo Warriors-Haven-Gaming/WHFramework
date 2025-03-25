@@ -12,6 +12,7 @@ Parameters:
     Number radius:
         (Optional, default 50)
         The radius at which the unit will search for incapacitated units.
+        Units in the same group will always be searched up to 500m.
 
 Author:
     thegamecracks
@@ -37,8 +38,11 @@ while {local _unit && {alive _unit}} do {
     };
 
     private _area = [getPosATL _unit, _radius, _radius, 0, false];
+    private _groupArea = [getPosATL _unit, 500, 500, 0, false];
     private _targets = _units select {call {
         if (isNil {_x getVariable "WHF_revive_actionID_remote"}) exitWith {false};
+
+        private _area = [_area, _groupArea] select (group _x isEqualTo group _unit);
         if !(_x inArea _area) exitWith {false};
 
         private _assigned = _x getVariable "WHF_reviveActionAuto_assigned";
