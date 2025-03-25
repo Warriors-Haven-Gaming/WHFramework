@@ -50,13 +50,21 @@ private _aaTypes = WHF_missions_aaa_types;
     params ["_aaObjects", "_aaTerrain", "_aaGroups"];
 
 sleep (1.5 + random 2.5);
-private _aaTurrets =
-    _aaObjects apply {_x select {alive _x && {_x call WHF_fnc_isAntiAirVehicle}}}
-    select {count _x > 0};
+private _aaTurrets = [];
+private _allTurrets = [];
+{
+    private _comp = _x;
+    private _turrets = _comp select {alive _x && {_x call WHF_fnc_isAntiAirVehicle}};
+    if (count _turrets < 1) then {continue};
+    {_comp deleteAt (_comp find _x)} forEach _turrets;
+    _aaTurrets pushBack _turrets;
+    _allTurrets append _turrets;
+} forEach _aaObjects;
 
 if (count _aaTurrets < 1) exitWith {
     diag_log text format ["%1: center %2 not clear to spawn AA emplacements", _fnc_scriptName, _center];
     {[_x] call WHF_fnc_queueGCDeletion} forEach _aaObjects;
+    {[_x] call WHF_fnc_queueGCDeletion} forEach _allTurrets;
     {[_x] call WHF_fnc_queueGCUnhide} forEach _aaTerrain;
     {[units _x] call WHF_fnc_queueGCDeletion} forEach _aaGroups;
 };
@@ -106,6 +114,7 @@ while {true} do {
 deleteMarker _areaMarker;
 [_ruins] call WHF_fnc_queueGCDeletion;
 {[_x] call WHF_fnc_queueGCDeletion} forEach _aaObjects;
+{[_x] call WHF_fnc_queueGCDeletion} forEach _allTurrets;
 {[_x] call WHF_fnc_queueGCUnhide} forEach _aaTerrain;
 {[units _x] call WHF_fnc_queueGCDeletion} forEach _groups;
 {[units _x] call WHF_fnc_queueGCDeletion} forEach _aaGroups;

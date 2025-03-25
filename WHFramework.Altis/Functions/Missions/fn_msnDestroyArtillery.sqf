@@ -49,13 +49,21 @@ private _ruins = [];
     params ["_artyObjects", "_artyTerrain", "_artyGroups"];
 
 sleep (1.5 + random 2.5);
-private _artyTurrets =
-    _artyObjects apply {_x select {alive _x && {_x call WHF_fnc_isArtilleryVehicle}}}
-    select {count _x > 0};
+private _artyTurrets = [];
+private _allTurrets = [];
+{
+    private _comp = _x;
+    private _turrets = _comp select {alive _x && {_x call WHF_fnc_isArtilleryVehicle}};
+    if (count _turrets < 1) then {continue};
+    {_comp deleteAt (_comp find _x)} forEach _turrets;
+    _artyTurrets pushBack _turrets;
+    _allTurrets append _turrets;
+} forEach _artyObjects;
 
 if (count _artyTurrets < 1) exitWith {
     diag_log text format ["%1: center %2 not clear to spawn artillery emplacements", _fnc_scriptName, _center];
     {[_x] call WHF_fnc_queueGCDeletion} forEach _artyObjects;
+    {[_x] call WHF_fnc_queueGCDeletion} forEach _allTurrets;
     {[_x] call WHF_fnc_queueGCUnhide} forEach _artyTerrain;
     {[units _x] call WHF_fnc_queueGCDeletion} forEach _artyGroups;
 };
@@ -80,11 +88,10 @@ _areaMarker setMarkerAlpha 0.7;
 
 private _taskID = [blufor, "", "destroyArtillery", _center, "CREATED", -1, true, "destroy"] call WHF_fnc_taskCreate;
 
-private _allArtyTurrets = flatten _artyTurrets;
 while {true} do {
     sleep 10;
 
-    private _active = _allArtyTurrets select {alive _x} inAreaArray _area;
+    private _active = _allTurrets select {alive _x} inAreaArray _area;
     if (count _active < 1) exitWith {
         [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
     };
@@ -93,6 +100,7 @@ while {true} do {
 deleteMarker _areaMarker;
 [_ruins] call WHF_fnc_queueGCDeletion;
 {[_x] call WHF_fnc_queueGCDeletion} forEach _artyObjects;
+{[_x] call WHF_fnc_queueGCDeletion} forEach _allTurrets;
 {[_x] call WHF_fnc_queueGCUnhide} forEach _artyTerrain;
 {[units _x] call WHF_fnc_queueGCDeletion} forEach _groups;
 {[units _x] call WHF_fnc_queueGCDeletion} forEach _artyGroups;
