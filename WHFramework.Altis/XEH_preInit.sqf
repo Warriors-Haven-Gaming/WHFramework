@@ -653,6 +653,26 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 [
+    "WHF_recruits_revive_radius_group",
+    "SLIDER",
+    ["STR_WHF_settings_recruits_revive_radius_group", "STR_WHF_settings_recruits_revive_radius_group_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_recruits"],
+    [30, 500, 500, 0, false],
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_recruits_revive_radius",
+    "SLIDER",
+    ["STR_WHF_settings_recruits_revive_radius", "STR_WHF_settings_recruits_revive_radius_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_recruits"],
+    [30, 500, 50, 0, false],
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_recruits_revive_targets",
     "LIST",
     ["STR_WHF_settings_recruits_revive_targets", "STR_WHF_settings_recruits_revive_targets_tooltip"],

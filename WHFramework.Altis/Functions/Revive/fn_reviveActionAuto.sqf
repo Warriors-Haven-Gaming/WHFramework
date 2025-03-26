@@ -9,16 +9,12 @@ Description:
 Parameters:
     Object unit:
         The unit to perform revives.
-    Number radius:
-        (Optional, default 50)
-        The radius at which the unit will search for incapacitated units.
-        Units in the same group will always be searched up to 500m.
 
 Author:
     thegamecracks
 
 */
-params ["_unit", ["_radius", 50]];
+params ["_unit"];
 
 private _canRevive = {
     if !(lifeState _unit in ["HEALTHY", "INJURED"]) exitWith {false};
@@ -35,8 +31,10 @@ private _findNearestTarget = {
         default {units side group _unit};
     };
 
+    private _radius = WHF_recruits_revive_radius;
     private _area = [getPosATL _unit, _radius, _radius, 0, false];
-    private _groupArea = [getPosATL _unit, 500, 500, 0, false];
+    private _groupRadius = WHF_recruits_revive_radius_group;
+    private _groupArea = [getPosATL _unit, _groupRadius, _groupRadius, 0, false];
     private _targets = _units select {call _isTargetSuitable};
     if (count _targets < 1) exitWith {[objNull, 0]};
 
