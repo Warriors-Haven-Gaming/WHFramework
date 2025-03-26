@@ -683,6 +683,26 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 [
+    "WHF_recruits_incap_hold",
+    "SLIDER",
+    ["STR_WHF_settings_recruits_incap_hold", "STR_WHF_settings_recruits_incap_hold_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_recruits"],
+    [0, 600, 0, 0, false],
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_recruits_incap_hold_assigned",
+    "SLIDER",
+    ["STR_WHF_settings_recruits_incap_hold_assigned", "STR_WHF_settings_recruits_incap_hold_assigned_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_recruits"],
+    [0, 600, 90, 0, false],
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_recruits_limit",
     "SLIDER",
     ["STR_WHF_settings_recruits_limit", "STR_WHF_settings_recruits_limit_tooltip"],

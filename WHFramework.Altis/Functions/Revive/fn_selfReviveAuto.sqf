@@ -33,6 +33,8 @@ params [
 sleep (_delay + random 5);
 
 private _incappedAt = time;
+private _bleedoutAt = _incappedAt + WHF_revive_bleedout; // Duplicated in WHF_fnc_incapLoop
+private _mustRevive = _bleedoutAt - _duration - 10;
 private _startedAt = -1;
 while {local _unit && {lifeState _unit isEqualTo "INCAPACITATED"}} do {
     sleep (1 + random 1);
@@ -47,8 +49,13 @@ while {local _unit && {lifeState _unit isEqualTo "INCAPACITATED"}} do {
     private _time = time;
     if (
         !isNil {_unit getVariable "WHF_reviveActionAuto_assigned"}
-        && {_time < _incappedAt + 90}
+        && {_time < _incappedAt + WHF_recruits_incap_hold_assigned min _mustRevive}
     ) then {
+        _startedAt = -1;
+        continue;
+    };
+
+    if (_time < _incappedAt + WHF_recruits_incap_hold min _mustRevive) then {
         _startedAt = -1;
         continue;
     };
