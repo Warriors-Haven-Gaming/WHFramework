@@ -60,6 +60,7 @@ _caller addEventHandler ["AnimDone", {
 _caller setVariable ["WHF_revive_animation", _animation];
 _caller setVariable ["WHF_revive_target", _target];
 _target setVariable ["WHF_revive_caller", _caller, true];
+if (!isPlayer _caller) then {_caller doWatch _target};
 
 _caller playMoveNow _animation;
 private _timeout = time + 10;
@@ -72,6 +73,7 @@ private _isCanceled = call _reviveIsCanceled;
 _caller setVariable ["WHF_revive_animation", nil];
 _caller setVariable ["WHF_revive_target", nil];
 _target setVariable ["WHF_revive_caller", nil, true];
+if (!isPlayer _caller) then {_caller doWatch objNull};
 
 if (_isCanceled) exitWith {
     if (animationState _caller isEqualTo _animation) then {
