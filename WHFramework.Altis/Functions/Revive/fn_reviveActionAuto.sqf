@@ -20,17 +20,15 @@ Author:
 */
 params ["_unit", ["_radius", 50]];
 
-// https://community.bistudio.com/wiki/currentCommand
-private _allowedCommands = ["", "WAIT", "ATTACK", "MOVE", "GET OUT", "ATTACKFIRE", "Suppress"];
-private _reviveRange = 3;
+private _canRevive = {
+    if !(lifeState _unit in ["HEALTHY", "INJURED"]) exitWith {false};
+    if (!isNull objectParent _unit) exitWith {false};
+    if (!isNull (_unit getVariable ["WHF_revive_target", objNull])) exitWith {false};
+    if !(currentCommand _unit in _allowedCommands) exitWith {false};
+    true
+};
 
-while {local _unit && {alive _unit}} do {
-    sleep (2 + random 2);
-    if !(lifeState _unit in ["HEALTHY", "INJURED"]) then {continue};
-    if (!isNull objectParent _unit) then {continue};
-    if (!isNull (_unit getVariable ["WHF_revive_target", objNull])) then {continue};
-    if !(currentCommand _unit in _allowedCommands) then {continue};
-
+private _findNearestTarget = {
     private _units = switch (WHF_recruits_revive_targets) do {
         case 2: {allUnits};
         case 0: {units group _unit};
@@ -39,38 +37,57 @@ while {local _unit && {alive _unit}} do {
 
     private _area = [getPosATL _unit, _radius, _radius, 0, false];
     private _groupArea = [getPosATL _unit, 500, 500, 0, false];
-    private _targets = _units select {call {
-        if (isNil {_x getVariable "WHF_revive_actionID_remote"}) exitWith {false};
-
-        private _area = [_area, _groupArea] select (group _x isEqualTo group _unit);
-        if !(_x inArea _area) exitWith {false};
-
-        private _assigned = _x getVariable "WHF_reviveActionAuto_assigned";
-        if (!isNil "_assigned" && {_unit distance _x >= _x distance _assigned}) exitWith {false};
-
-        if ([_unit, _x] call WHF_fnc_checkRevive isNotEqualTo "") exitWith {false};
-        true
-    }};
-    if (count _targets < 1) then {continue};
+    private _targets = _units select {call _isTargetSuitable};
+    if (count _targets < 1) exitWith {[objNull, 0]};
 
     private _distances = [];
     {_distances pushBack [_unit distance _x, _forEachIndex]} forEach _targets;
     _distances sort true;
-
     _distances # 0 params ["_distance", "_targetIndex"];
-    private _target = _targets # _targetIndex;
+    [_targets # _targetIndex, _distance]
+};
+
+private _isTargetSuitable = {
+    // params ["_x"];
+    if (isNil {_x getVariable "WHF_revive_actionID_remote"}) exitWith {false};
+
+    private _area = [_area, _groupArea] select (group _x isEqualTo group _unit);
+    if !(_x inArea _area) exitWith {false};
+
+    private _assigned = _x getVariable "WHF_reviveActionAuto_assigned";
+    if (!isNil "_assigned" && {_unit distance _x >= _x distance _assigned}) exitWith {false};
+
+    if ([_unit, _x] call WHF_fnc_checkRevive isNotEqualTo "") exitWith {false};
+    true
+};
+
+private _moveToTarget = {
+    // params ["_target"];
+    _unit doMove getPosATL _target;
+    private _timeout = time + 10;
+    waitUntil {
+        moveToCompleted _unit
+        || {time > _timeout
+        || {_target getVariable ["WHF_reviveActionAuto_assigned", objNull] isNotEqualTo _unit}}
+    };
+    _unit doFollow leader _unit;
+};
+
+// https://community.bistudio.com/wiki/currentCommand
+private _allowedCommands = ["", "WAIT", "ATTACK", "MOVE", "GET OUT", "ATTACKFIRE", "Suppress"];
+private _reviveRange = 3;
+
+while {local _unit && {alive _unit}} do {
+    sleep (2 + random 2);
+    if (!call _canRevive) then {continue};
+
+    call _findNearestTarget params ["_target", "_distance"];
+    if (isNull _target) then {continue};
 
     _target setVariable ["WHF_reviveActionAuto_assigned", _unit];
 
     if (_distance > _reviveRange) then {
-        _unit doMove getPosATL _target;
-        private _timeout = time + 10;
-        waitUntil {
-            moveToCompleted _unit
-            || {time > _timeout
-            || {_target getVariable ["WHF_reviveActionAuto_assigned", objNull] isNotEqualTo _unit}}
-        };
-        _unit doFollow leader _unit;
+        call _moveToTarget;
         _distance = _unit distance _target;
     };
 
