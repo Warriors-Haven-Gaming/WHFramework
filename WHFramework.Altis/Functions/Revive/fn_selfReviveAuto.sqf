@@ -32,6 +32,7 @@ params [
 
 sleep (_delay + random 5);
 
+private _incappedAt = time;
 private _startedAt = -1;
 while {local _unit && {lifeState _unit isEqualTo "INCAPACITATED"}} do {
     sleep (1 + random 1);
@@ -42,8 +43,12 @@ while {local _unit && {lifeState _unit isEqualTo "INCAPACITATED"}} do {
         continue;
     };
 
-    // Skip self-reviving when assigned an AI medic
-    if (!isNil {_unit getVariable "WHF_reviveActionAuto_assigned"}) then {
+    // Give some time for AI medics to arrive
+    private _time = time;
+    if (
+        !isNil {_unit getVariable "WHF_reviveActionAuto_assigned"}
+        && {_time < _incappedAt + 90}
+    ) then {
         _startedAt = -1;
         continue;
     };
@@ -57,7 +62,6 @@ while {local _unit && {lifeState _unit isEqualTo "INCAPACITATED"}} do {
         continue;
     };
 
-    private _time = time;
     if (_startedAt < 0) then {_startedAt = _time; continue};
     if (_time < _startedAt + _duration) then {continue};
 
