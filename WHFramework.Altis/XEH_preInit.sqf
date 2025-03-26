@@ -646,58 +646,8 @@ Author:
     "WHF_recruits_speaker",
     "LIST",
     ["STR_WHF_settings_recruits_speaker", "STR_WHF_settings_recruits_speaker_tooltip"],
-    ["STR_WHF_settings", "STR_WHF_settings_recruits"],
+    "STR_WHF_settings_recruits",
     [[0, 1, 2, 3], ["str_enabled", "STR_WHF_settings_recruits_speaker_recruits", "STR_WHF_settings_recruits_speaker_player", "STR_A3_Disabled"], 1],
-    false,
-    {},
-    false
-] call WHF_fnc_addSetting;
-[
-    "WHF_recruits_revive_radius_group",
-    "SLIDER",
-    ["STR_WHF_settings_recruits_revive_radius_group", "STR_WHF_settings_recruits_revive_radius_group_tooltip"],
-    ["STR_WHF_settings", "STR_WHF_settings_recruits"],
-    [30, 500, 500, 0, false],
-    false,
-    {},
-    false
-] call WHF_fnc_addSetting;
-[
-    "WHF_recruits_revive_radius",
-    "SLIDER",
-    ["STR_WHF_settings_recruits_revive_radius", "STR_WHF_settings_recruits_revive_radius_tooltip"],
-    ["STR_WHF_settings", "STR_WHF_settings_recruits"],
-    [30, 500, 50, 0, false],
-    false,
-    {},
-    false
-] call WHF_fnc_addSetting;
-[
-    "WHF_recruits_revive_targets",
-    "LIST",
-    ["STR_WHF_settings_recruits_revive_targets", "STR_WHF_settings_recruits_revive_targets_tooltip"],
-    ["STR_WHF_settings", "STR_WHF_settings_recruits"],
-    [[0, 1, 2], ["STR_WHF_settings_recruits_revive_targets_group", "STR_WHF_settings_recruits_revive_targets_side", "STR_WHF_settings_recruits_revive_targets_all"], 1],
-    false,
-    {},
-    false
-] call WHF_fnc_addSetting;
-[
-    "WHF_recruits_incap_hold",
-    "SLIDER",
-    ["STR_WHF_settings_recruits_incap_hold", "STR_WHF_settings_recruits_incap_hold_tooltip"],
-    ["STR_WHF_settings", "STR_WHF_settings_recruits"],
-    [0, 600, 0, 0, false],
-    false,
-    {},
-    false
-] call WHF_fnc_addSetting;
-[
-    "WHF_recruits_incap_hold_assigned",
-    "SLIDER",
-    ["STR_WHF_settings_recruits_incap_hold_assigned", "STR_WHF_settings_recruits_incap_hold_assigned_tooltip"],
-    ["STR_WHF_settings", "STR_WHF_settings_recruits"],
-    [0, 600, 90, 0, false],
     false,
     {},
     false
@@ -706,7 +656,7 @@ Author:
     "WHF_recruits_limit",
     "SLIDER",
     ["STR_WHF_settings_recruits_limit", "STR_WHF_settings_recruits_limit_tooltip"],
-    ["STR_WHF_settings", "STR_WHF_settings_recruits"],
+    "STR_WHF_settings_recruits",
     [0, 50, 6, 0, false],
     true,
     {WHF_recruits_limit = round _this},
@@ -716,7 +666,7 @@ Author:
     "WHF_recruits_limit_global",
     "SLIDER",
     ["STR_WHF_settings_recruits_limit_global", "STR_WHF_settings_recruits_limit_global_tooltip"],
-    ["STR_WHF_settings", "STR_WHF_settings_recruits"],
+    "STR_WHF_settings_recruits",
     [0, 200, 40, 0, false],
     true,
     {WHF_recruits_limit_global = round _this},
@@ -726,7 +676,7 @@ Author:
     "WHF_recruits_limit_player",
     "SLIDER",
     ["STR_WHF_settings_recruits_limit_player", "STR_WHF_settings_recruits_limit_player_tooltip"],
-    ["STR_WHF_settings", "STR_WHF_settings_recruits"],
+    "STR_WHF_settings_recruits",
     [0, 100, 20, 0, false],
     true,
     {WHF_recruits_limit_player = round _this},
@@ -736,9 +686,61 @@ Author:
     "WHF_recruits_skill",
     "SLIDER",
     ["STR_WHF_settings_recruits_skill", "STR_WHF_settings_recruits_skill_tooltip"],
-    ["STR_WHF_settings", "STR_WHF_settings_recruits"],
+    "STR_WHF_settings_recruits",
     [0, 1, 1, 0, true],
     true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+
+[
+    "WHF_recruits_revive_radius_group",
+    "SLIDER",
+    ["STR_WHF_settings_recruits_revive_radius_group", "STR_WHF_settings_recruits_revive_radius_group_tooltip"],
+    ["STR_WHF_settings_recruits", "STR_WHF_settings_recruits_revive"],
+    [30, 500, 500, 0, false],
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_recruits_revive_radius",
+    "SLIDER",
+    ["STR_WHF_settings_recruits_revive_radius", "STR_WHF_settings_recruits_revive_radius_tooltip"],
+    ["STR_WHF_settings_recruits", "STR_WHF_settings_recruits_revive"],
+    [30, 500, 50, 0, false],
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_recruits_revive_targets",
+    "LIST",
+    ["STR_WHF_settings_recruits_revive_targets", "STR_WHF_settings_recruits_revive_targets_tooltip"],
+    ["STR_WHF_settings_recruits", "STR_WHF_settings_recruits_revive"],
+    [[0, 1, 2], ["STR_WHF_settings_recruits_revive_targets_group", "STR_WHF_settings_recruits_revive_targets_side", "STR_WHF_settings_recruits_revive_targets_all"], 1],
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+
+[
+    "WHF_recruits_incap_hold",
+    "SLIDER",
+    ["STR_WHF_settings_recruits_incap_hold", "STR_WHF_settings_recruits_incap_hold_tooltip"],
+    ["STR_WHF_settings_recruits", "STR_WHF_settings_recruits_incap"],
+    [0, 600, 0, 0, false],
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_recruits_incap_hold_assigned",
+    "SLIDER",
+    ["STR_WHF_settings_recruits_incap_hold_assigned", "STR_WHF_settings_recruits_incap_hold_assigned_tooltip"],
+    ["STR_WHF_settings_recruits", "STR_WHF_settings_recruits_incap"],
+    [0, 600, 90, 0, false],
+    false,
     {},
     false
 ] call WHF_fnc_addSetting;
@@ -746,7 +748,7 @@ Author:
     "WHF_recruits_incap_FAKs",
     "LIST",
     ["STR_WHF_settings_recruits_incap_FAKs", "STR_WHF_settings_recruits_incap_FAKs_tooltip"],
-    ["STR_WHF_settings", "STR_WHF_settings_recruits"],
+    ["STR_WHF_settings_recruits", "STR_WHF_settings_recruits_incap"],
     [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], ["STR_A3_Disabled"], 6],
     true,
     {},
@@ -756,7 +758,7 @@ Author:
     "WHF_recruits_incap_noFAKs",
     "CHECKBOX",
     ["STR_WHF_settings_recruits_incap_noFAKs", "STR_WHF_settings_recruits_incap_noFAKs_tooltip"],
-    ["STR_WHF_settings", "STR_WHF_settings_recruits"],
+    ["STR_WHF_settings_recruits", "STR_WHF_settings_recruits_incap"],
     false,
     true,
     {},
