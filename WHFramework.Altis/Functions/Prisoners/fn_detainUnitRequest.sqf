@@ -86,7 +86,10 @@ if (_targetArmed) then {_success append [
 ]};
 
 [_target, selectRandom _success] remoteExec ["WHF_fnc_localChat", WHF_globalPlayerTarget];
-if (side group _target isNotEqualTo civilian) then {[_target] joinSilent grpNull};
+if (side group _target isNotEqualTo civilian) then {
+    private _group = createGroup [civilian, true];
+    [_target] joinSilent _group;
+};
 _target enableAIFeature ["PATH", false];
 _target setCaptive true;
 _target setUnitPos "UP";
