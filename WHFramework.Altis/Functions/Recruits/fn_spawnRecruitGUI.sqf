@@ -21,12 +21,7 @@ with uiNamespace do {
     private _display = findDisplay -1;
 
     private _localizeRole = missionNamespace getVariable "WHF_fnc_localizeRole";
-    private _primaryColor = [
-        profileNamespace getVariable ["GUI_BCG_RGB_R", 1],
-        profileNamespace getVariable ["GUI_BCG_RGB_G", 1],
-        profileNamespace getVariable ["GUI_BCG_RGB_B", 1],
-        profileNamespace getVariable ["GUI_BCG_RGB_A", 0.7]
-    ];
+    private _primaryColor = ["GUI", "BCG_RGB"] call BIS_fnc_displayColorGet;
 
     private _frame = _display ctrlCreate ["RscText", -1];
     _frame ctrlSetPosition [safezoneX + 0.35 * safezoneW, safezoneY + 0.45 * safezoneH, 0.3 * safezoneW, 0.15 * safezoneH];
