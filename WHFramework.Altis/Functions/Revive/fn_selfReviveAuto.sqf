@@ -60,10 +60,7 @@ while {local _unit && {lifeState _unit isEqualTo "INCAPACITATED"}} do {
         continue;
     };
 
-    private _FAKs = items _unit select {
-        _x call BIS_fnc_itemType select 1 isEqualTo "FirstAidKit"
-    } select [0, _requiredFAKs];
-
+    private _FAKs = [items _unit] call WHF_fnc_filterFAKs select [0, _requiredFAKs];
     if (count _FAKs < _requiredFAKs) then {
         _startedAt = -1;
         continue;

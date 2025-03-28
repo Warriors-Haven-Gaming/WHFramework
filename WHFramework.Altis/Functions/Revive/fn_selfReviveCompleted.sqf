@@ -11,7 +11,7 @@ Author:
 */
 params ["", "_caller"];
 
-private _FAKs = items _caller select {_x call BIS_fnc_itemType select 1 isEqualTo "FirstAidKit"};
+private _FAKs = [items _caller] call WHF_fnc_filterFAKs;
 {_caller removeItem _x} forEach (_FAKs select [0, WHF_selfRevive_FAKs]);
 [_caller] call WHF_fnc_reviveUnit;
 

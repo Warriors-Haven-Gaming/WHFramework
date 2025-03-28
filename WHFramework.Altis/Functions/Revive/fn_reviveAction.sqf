@@ -81,10 +81,9 @@ if (_isCanceled) exitWith {
     };
 };
 
-private _isFAK = {_x call BIS_fnc_itemType select 1 isEqualTo "FirstAidKit"};
 private _FAKs =
-    (items _target select _isFAK apply {[_target, _x]})
-    + (items _caller select _isFAK apply {[_caller, _x]});
+    ([items _target] call WHF_fnc_filterFAKs apply {[_target, _x]})
+    + ([items _caller] call WHF_fnc_filterFAKs apply {[_caller, _x]});
 {
     _x params ["_unit", "_item"];
     _unit removeItem _item;

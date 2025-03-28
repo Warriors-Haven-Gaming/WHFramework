@@ -11,9 +11,7 @@ Author:
 */
 params ["", "_caller"];
 
-private _nFAKs = {
-    _x call BIS_fnc_itemType select 1 isEqualTo "FirstAidKit"
-} count items _caller;
+private _nFAKs = count ([items _caller] call WHF_fnc_filterFAKs);
 private _nMissing = WHF_selfRevive_FAKs - _nFAKs;
 
 if (_nMissing > 0) exitWith {

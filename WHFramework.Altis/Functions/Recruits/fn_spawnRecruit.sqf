@@ -88,8 +88,7 @@ if (!isClass (configFile >> "CfgPatches" >> "ace_medical")) then {
         private _canIncap = {
             if (WHF_recruits_incap_noFAKs) exitWith {true};
             if (WHF_recruits_incap_FAKs < 1) exitWith {false};
-            private _nFAKs = {_x call BIS_fnc_itemType select 1 isEqualTo "FirstAidKit"} count items _unit;
-            _nFAKs >= WHF_recruits_incap_FAKs
+            count ([items _unit] call WHF_fnc_filterFAKs) >= WHF_recruits_incap_FAKs
         };
         if !(call _canIncap) exitWith {};
 
