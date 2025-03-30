@@ -24,6 +24,7 @@ if (
     remoteExec ["", remoteExecutedJIPID];
 };
 if (!alive _unit) exitWith {};
+if !(_unit isKindOf "Man") exitWith {};
 
 [_unit] call WHF_fnc_reviveActionAdd;
 [_unit] call WHF_fnc_addCarryAction;
