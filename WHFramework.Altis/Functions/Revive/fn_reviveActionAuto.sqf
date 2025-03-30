@@ -104,14 +104,6 @@ private _shouldRepath = {
     _plan isNotEqualTo "LEADER PLANNED" || {_destination distance _pos > _reviveRange}
 };
 
-private _unloadTarget = {
-    // params ["_target"];
-    private _sound = getArray (configFile >> "CfgVehicles" >> typeOf objectParent _target >> "soundGetOut") # 0;
-    if !("." in _sound) then {_sound = _sound + ".wss"};
-    playSound3D [_sound, objNull, false, getPosASL _target];
-    moveOut _target;
-};
-
 // https://community.bistudio.com/wiki/currentCommand
 private _allowedCommands = ["", "WAIT", "ATTACK", "MOVE", "GET OUT", "ATTACKFIRE", "Suppress"];
 private _reviveRange = 3;
@@ -130,10 +122,6 @@ while {true} do {
     if (_distance > _reviveRange) then {
         call _moveToTarget;
         _distance = _unit distance _target;
-    };
-
-    if (_distance <= 10 && {!isNull objectParent _target}) then {
-        call _unloadTarget;
     };
 
     if (_distance <= _reviveRange) then {
