@@ -99,14 +99,20 @@ private _moveToTarget = {
 };
 
 private _shouldRepath = {
-    // params ["_pos"];
+    // params ["_target", "_pos"];
     expectedDestination _unit params ["_destination", "_plan"];
-    _plan isNotEqualTo "LEADER PLANNED" || {_destination distance _pos > _reviveRange}
+    _plan isNotEqualTo "LEADER PLANNED" || {_destination distance _pos > call _reviveRange}
+};
+
+private _infantryRange = 3;
+private _vehicleRange = 10;
+private _reviveRange = {
+    // params ["_target"];
+    if (isNull objectParent _target) then {_infantryRange} else {_vehicleRange}
 };
 
 // https://community.bistudio.com/wiki/currentCommand
 private _allowedCommands = ["", "WAIT", "ATTACK", "MOVE", "GET OUT", "ATTACKFIRE", "Suppress"];
-private _reviveRange = 3;
 private _assignedTarget = objNull;
 
 while {true} do {
@@ -119,12 +125,12 @@ while {true} do {
     if (isNull _target) then {call _cancelTarget; continue};
 
     call _switchTarget;
-    if (_distance > _reviveRange) then {
+    if (_distance > _infantryRange) then {
         call _moveToTarget;
         _distance = _unit distance _target;
     };
 
-    if (_distance <= _reviveRange) then {
+    if (_distance <= call _reviveRange) then {
         [_unit, _target] call WHF_fnc_reviveAction;
         sleep 0.5; // Allow for some network delay
     };
