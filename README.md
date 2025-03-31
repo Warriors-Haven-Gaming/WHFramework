@@ -25,6 +25,24 @@ down in a line of parachutes.
 
 ![](/docs/images/halo.jpg)
 
+## Factions
+
+The following vanilla factions are always available for OPFOR:
+- CSAT
+- CSAT (Pacific)
+- Syndikat
+
+Additional factions are supported with the following mods:
+- [CUP Vehicles] and Units
+  - National Party of Chernarus
+  - Armed Forces of the Russian Federation
+  - AFRF (Modern)
+- [RHSAFRF]
+  - Also... Armed Forces of the Russian Federation
+
+[CUP Vehicles]: https://steamcommunity.com/sharedfiles/filedetails/?id=541888371
+[RHSAFRF]: https://steamcommunity.com/sharedfiles/filedetails/?id=843425103
+
 # License
 
 This project is written under the [MIT License].
