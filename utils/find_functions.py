@@ -1,4 +1,5 @@
 """Count all uses of mission functions, optionally inside a function category."""
+
 import argparse
 import re
 from collections import Counter, defaultdict
@@ -10,9 +11,25 @@ FUNCTION_PATTERN = re.compile(r"(?<!Function: )WHF_fnc_\w+")
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("-c", "--category", default="", help="A function category to scan")
-    parser.add_argument("-m", "--most-common", action="store_true", help="Sort by most common functions")
-    parser.add_argument("-v", "--verbose", action="count", default=0, help="Increase output verbosity")
+    parser.add_argument(
+        "-c",
+        "--category",
+        default="",
+        help="A function category to scan",
+    )
+    parser.add_argument(
+        "-m",
+        "--most-common",
+        action="store_true",
+        help="Sort by most common functions",
+    )
+    parser.add_argument(
+        "-v",
+        "--verbose",
+        action="count",
+        default=0,
+        help="Increase output verbosity",
+    )
 
     args = parser.parse_args()
     category: str = args.category
