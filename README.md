@@ -50,6 +50,12 @@ and players to customize the gamemode to their liking. Various settings are prov
 for OPFOR skill levels, max recruits, vehicle Active Protection Systems, self-reviving,
 number of objectives, and more.
 
+## ACE Compatibility
+
+Certain features like damage reduction and our revive system are disabled when
+ACE is loaded. However, we don't normally test ACE with this gamemode, so you
+may encounter issues with it.
+
 # License
 
 This project is written under the [MIT License].
