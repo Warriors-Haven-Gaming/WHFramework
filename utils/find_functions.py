@@ -1,7 +1,7 @@
 """Count all uses of mission functions, optionally inside a function category."""
 import argparse
 import re
-from collections import defaultdict
+from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Iterable, Iterator, NamedTuple
 
@@ -25,13 +25,7 @@ def main() -> None:
 
     total = sum(len(refs) for _, refs in references)
     print(f"{total:,} references found")
-
-    for name, refs in references:
-        print(f"{name} ({len(refs):,})")
-        if verbose < 1:
-            continue
-        for ref in refs:
-            print(f"    {ref.path}:{ref.lineno}:{ref.col}")
+    print_references(references, most_common=most_common, verbose=verbose)
 
 
 class Reference(NamedTuple):
@@ -68,6 +62,38 @@ def sort_grouped_references(
     if most_common:
         references.sort(key=lambda t: len(t[1]), reverse=True)
     return references
+
+
+def print_references(
+    references: list[tuple[str, list[Reference]]],
+    *,
+    most_common: bool,
+    verbose: int,
+) -> None:
+    for name, refs in references:
+        print(f"{name} ({len(refs):,})")
+        if verbose < 1:
+            continue
+        elif verbose < 2:
+            print_aggregate_reference_paths(refs, most_common=most_common)
+        else:
+            for ref in refs:
+                print(f"    {ref.path}:{ref.lineno}:{ref.col}")
+
+
+def print_aggregate_reference_paths(
+    references: list[Reference],
+    *,
+    most_common: bool,
+) -> None:
+    path_counts = Counter(ref.path for ref in references)
+    if most_common:
+        path_counts = path_counts.most_common()
+    else:
+        path_counts = sorted(path_counts.items())
+
+    for path, count in path_counts:
+        print(f"    {path} ({count:,})")
 
 
 if __name__ == "__main__":
