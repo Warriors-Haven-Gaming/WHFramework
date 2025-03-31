@@ -43,6 +43,37 @@ Additional factions are supported with the following mods:
 [CUP Vehicles]: https://steamcommunity.com/sharedfiles/filedetails/?id=541888371
 [RHSAFRF]: https://steamcommunity.com/sharedfiles/filedetails/?id=843425103
 
+## How do I play?
+
+You can find this mission published on the Steam Workshop:
+
+- [Warriors Haven Framework (Altis)](https://steamcommunity.com/sharedfiles/filedetails/?id=3455424755), ID 3455424755
+- [Warriors Haven Framework (Yulakia)](https://steamcommunity.com/sharedfiles/filedetails/?id=3455426168), ID 3455426168
+
+Once subscribed, you can host the mission by going to Server Browser > Host Server,
+and then select Warriors Haven Framework from the appropriate map.
+You may choose to host LAN if you want to play alone.
+
+For dedicated server hosters, you can either download the mission files from our
+[Releases] page, or copy and rename the mission file from your workshop directory:
+1. Navigate to `<Steam>/steamapps/workshop/content/107410/<itemID>`,
+   where itemID corresponds to the workshop map you downloaded above.
+2. Copy the `<numbers>_legacy.bin` file into your server's `MPMissions` directory.
+3. Rename it to `WHFramework.<terrain>.pbo`, where terrain is the name
+   of the map (`Altis` or `yulakia`).
+4. In your server.cfg, use `WHFramework.<terrain>` as the template name,
+   for example:
+
+   ```cpp
+   class Missions {
+       class WHF {
+           template = "WHFramework.Altis";
+       };
+   };
+   ```
+
+[Releases]: https://github.com/Warriors-Haven-Gaming/WHFramework/releases
+
 ## CBA Compatibility
 
 Community Based Addons, or CBA_A3, can optionally be installed for the server hoster
