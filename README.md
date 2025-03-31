@@ -43,6 +43,13 @@ Additional factions are supported with the following mods:
 [CUP Vehicles]: https://steamcommunity.com/sharedfiles/filedetails/?id=541888371
 [RHSAFRF]: https://steamcommunity.com/sharedfiles/filedetails/?id=843425103
 
+## CBA Compatibility
+
+Community Based Addons, or CBA_A3, can optionally be installed for the server hoster
+and players to customize the gamemode to their liking. Various settings are provided
+for OPFOR skill levels, max recruits, vehicle Active Protection Systems, self-reviving,
+number of objectives, and more.
+
 # License
 
 This project is written under the [MIT License].
