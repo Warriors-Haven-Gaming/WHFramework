@@ -81,12 +81,15 @@ For dedicated server hosters, you can either download the mission files from our
 [CUP Terrains - Core]: https://steamcommunity.com/sharedfiles/filedetails/?id=583496184
 [CUP Vehicles]: https://steamcommunity.com/sharedfiles/filedetails/?id=541888371
 
-## CBA Compatibility
+## CBA Settings
 
-Community Based Addons, or CBA_A3, can optionally be installed for the server hoster
-and players to customize the gamemode to their liking. Various settings are provided
-for OPFOR skill levels, max recruits, vehicle Active Protection Systems, self-reviving,
-number of objectives, and more.
+Installing [CBA_A3] allows server hosters and players to customize the gamemode
+to their liking in the Configure Addons menu. Various settings are provided for
+OPFOR skill levels, max recruits, vehicle Active Protection Systems, self-reviving,
+number of objectives, and more. Without CBA_A3, these settings will be unavailable
+and the gamemode will fallback to default values.
+
+[CBA_A3]: https://steamcommunity.com/sharedfiles/filedetails/?id=450814997
 
 ## ACE Compatibility
 
