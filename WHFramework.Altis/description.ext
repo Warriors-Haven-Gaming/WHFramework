@@ -81,7 +81,12 @@ class CfgFunctions {
             class createEmplacements {};
             class createMinefield {};
             class createRoadblocks {};
+            class getRoadPos {};
             class initEmplacementCatalog {};
+            class isNearUsedPosition {};
+            class objectsGrabber {};
+            class objectsMapper {};
+            class setPhysicsCollisions {};
         };
         class Context {
             class contextMenuAdd {};
@@ -150,26 +155,15 @@ class CfgFunctions {
             class anyInArea {};
             class arrayShuffle {};
             class displayTimer {};
-            class getRoadPos {};
-            class inAreaMarkers {};
             class initDynamicSimulation {};
-            class isAntiAirVehicle {};
-            class isArtilleryVehicle {};
-            class isEnemyAntiAir {};
-            class isNearRespawn {};
-            class isNearUsedPosition {};
             class isPlayerRemoteExecuted {};
             class isRemoteExecutedByAdmin {};
             class localChat {};
             class localizedCutText {};
             class localizedHint {};
-            class objectsGrabber {};
-            class objectsMapper {};
             class randomPos {};
             class randomPosHidden {};
             class randomString {};
-            class respawnMarkers {};
-            class setPhysicsCollisions {};
             class setSpeaker {};
             class stringStartsWith {};
             class waitLoadingScreen {};
@@ -199,7 +193,10 @@ class CfgFunctions {
         class Markers {
             class createAreaMarker {};
             class createLocalMarker {};
+            class inAreaMarkers {};
+            class isNearRespawn {};
             class randomMarkerID {};
+            class respawnMarkers {};
         };
         class Missions {
             class addIntelAction {};
@@ -319,6 +316,9 @@ class CfgFunctions {
         };
         class Vehicles {
             class initVehicleHandlers {};
+            class isAntiAirVehicle {};
+            class isArtilleryVehicle {};
+            class isEnemyAntiAir {};
             class setupVehicle {};
         };
         class VehicleSpawner {
