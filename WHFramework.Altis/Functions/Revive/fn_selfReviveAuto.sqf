@@ -30,6 +30,14 @@ params [
     ["_duration", WHF_selfRevive_duration]
 ];
 
+private _isAssigned = {
+    !isNil {_unit getVariable "WHF_reviveActionAuto_assigned"}
+    || {!isNull attachedTo _unit}
+};
+private _beforeHoldAssigned = {
+    _time < _incappedAt + WHF_recruits_incap_hold_assigned min _mustRevive
+};
+
 sleep (_delay + random 5);
 
 private _incappedAt = time;
@@ -45,12 +53,9 @@ while {local _unit && {lifeState _unit isEqualTo "INCAPACITATED"}} do {
         continue;
     };
 
-    // Give some time for AI medics to arrive
+    // Give some time for carrying, or for AI medics to arrive
     private _time = time;
-    if (
-        !isNil {_unit getVariable "WHF_reviveActionAuto_assigned"}
-        && {_time < _incappedAt + WHF_recruits_incap_hold_assigned min _mustRevive}
-    ) then {
+    if (call _isAssigned && _beforeHoldAssigned) then {
         _startedAt = -1;
         continue;
     };
