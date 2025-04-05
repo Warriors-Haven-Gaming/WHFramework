@@ -93,6 +93,7 @@ private _artilleryCooldown = 1800;
 private _artillery = [
     ["cup_b_fv432_mortar",           [-1,   ["arty"]]],
     ["cup_b_m1129_mc_mk19_woodland", [-1,   ["arty"]]],
+    ["b_mbt_01_arty_f",              [2500, ["arty"]]],
     ["cup_b_m270_he_baf_wood",       [2500, ["arty"]]],
     ["cup_b_m270_dpicm_baf_wood",    [2500, ["arty"]]],
     ["", []]
