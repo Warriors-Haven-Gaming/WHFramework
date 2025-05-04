@@ -62,7 +62,7 @@ _target setVariable ["WHF_revive_caller", _caller, true];
 if (!isPlayer _caller) then {_caller doWatch _target};
 
 _caller playMoveNow _animation;
-private _timeout = time + 10;
+private _timeout = time + 8;
 waitUntil {
     sleep 0.1;
     time > _timeout
