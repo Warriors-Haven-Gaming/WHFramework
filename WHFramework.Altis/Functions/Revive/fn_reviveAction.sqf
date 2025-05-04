@@ -24,14 +24,17 @@ if (_reason isNotEqualTo "") exitWith {
 
 switch ([stance _caller, currentWeapon _caller]) do {
     case ["STAND", ""]:                       {["ainvpknlmstpslaywnondnon_medicother", "amovpknlmstpsnonwnondnon"]};
+    case ["STAND", binocular _caller];
     case ["STAND", primaryWeapon _caller]:    {["ainvpknlmstpslaywrfldnon_medicother", "amovpknlmstpsraswrfldnon"]};
     case ["STAND", handgunWeapon _caller]:    {["ainvpknlmstpslaywpstdnon_medicother", "amovpknlmstpsraswpstdnon"]};
     case ["STAND", secondaryWeapon _caller]:  {["ainvpknlmstpslaywlnrdnon_medicother", "amovpknlmstpsraswlnrdnon"]};
     case ["CROUCH", ""]:                      {["ainvpknlmstpslaywnondnon_medicother", "amovpknlmstpsnonwnondnon"]};
+    case ["CROUCH", binocular _caller];
     case ["CROUCH", primaryWeapon _caller]:   {["ainvpknlmstpslaywrfldnon_medicother", "amovpknlmstpsraswrfldnon"]};
     case ["CROUCH", handgunWeapon _caller]:   {["ainvpknlmstpslaywpstdnon_medicother", "amovpknlmstpsraswpstdnon"]};
     case ["CROUCH", secondaryWeapon _caller]: {["ainvpknlmstpslaywlnrdnon_medicother", "amovpknlmstpsraswlnrdnon"]};
     case ["PRONE", ""]:                       {["ainvppnemstpslaywnondnon_medicother", "amovppnemstpsnonwnondnon"]};
+    case ["PRONE", binocular _caller];
     case ["PRONE", primaryWeapon _caller]:    {["ainvppnemstpslaywrfldnon_medicother", "amovppnemstpsraswrfldnon"]};
     case ["PRONE", handgunWeapon _caller]:    {["ainvppnemstpslaywpstdnon_medicother", "amovppnemstpsraswpstdnon"]};
     default {["", ""]};
