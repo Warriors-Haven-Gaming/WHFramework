@@ -39,10 +39,9 @@ switch ([stance _caller, currentWeapon _caller]) do {
 if (_animation isEqualTo "") exitWith {};
 
 private _reviveIsCanceled = {
-    time > _timeout
-    || {lifeState _target isNotEqualTo "INCAPACITATED"
+    lifeState _target isNotEqualTo "INCAPACITATED"
     || {!(lifeState _caller in ["HEALTHY", "INJURED"])
-    || {_caller getVariable ["WHF_revive_target", objNull] isNotEqualTo _target}}}
+    || {_caller getVariable ["WHF_revive_target", objNull] isNotEqualTo _target}}
 };
 
 _caller addEventHandler ["AnimDone", {
@@ -66,7 +65,9 @@ _caller playMoveNow _animation;
 private _timeout = time + 10;
 waitUntil {
     sleep 0.1;
-    call _reviveIsCanceled || {isNil {_caller getVariable "WHF_revive_animation"}}
+    time > _timeout
+    || {call _reviveIsCanceled
+    || {isNil {_caller getVariable "WHF_revive_animation"}}}
 };
 private _isCanceled = call _reviveIsCanceled;
 
