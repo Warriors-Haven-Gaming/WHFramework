@@ -103,6 +103,7 @@ if (isNil {_target getVariable "WHF_disableGC"}) then {
     _target remoteExec ["WHF_fnc_queueGCDeletion", 2];
 };
 
+_target removeWeapon binocular _target;
 _target spawn {
     {
         if (_x isEqualTo "") then {continue};
