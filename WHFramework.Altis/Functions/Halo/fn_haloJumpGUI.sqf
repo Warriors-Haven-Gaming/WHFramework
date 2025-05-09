@@ -21,19 +21,27 @@ if (!openMap true) exitWith {};
 
 hint localize "$STR_WHF_haloJumpGUI_description";
 
+WHF_haloJump_removeHandlers = {
+    if (!isNil "WHF_haloJump_mapHandlers") then {
+        {removeMissionEventHandler _x} forEach WHF_haloJump_mapHandlers;
+        WHF_haloJump_mapHandlers = nil;
+    };
+    if (!isNil "WHF_haloJump_mapUnitHandlers") then {
+        {
+            _x params ["_unit", "_event"];
+            _unit removeEventHandler _event;
+        } forEach WHF_haloJump_mapUnitHandlers;
+        WHF_haloJump_mapUnitHandlers = nil;
+    };
+};
+
 WHF_haloJump_mapHandlers = [];
 WHF_haloJump_mapHandlers pushBack ["Map", addMissionEventHandler ["Map", {
     params ["_opened"];
     if (_opened) exitWith {};
 
     hintSilent "";
-    {removeMissionEventHandler _x} forEach WHF_haloJump_mapHandlers;
-    {
-        _x params ["_unit", "_event"];
-        _unit removeEventHandler _event;
-    } forEach WHF_haloJump_mapUnitHandlers;
-    WHF_haloJump_mapHandlers = nil;
-    WHF_haloJump_mapUnitHandlers = nil;
+    call WHF_haloJump_removeHandlers;
 }]];
 WHF_haloJump_mapHandlers pushBack ["MapSingleClick", addMissionEventHandler ["MapSingleClick", {
     params ["", "_pos"];
@@ -43,8 +51,7 @@ WHF_haloJump_mapHandlers pushBack ["MapSingleClick", addMissionEventHandler ["Ma
     if (_reason isNotEqualTo "") exitWith {50 cutText [_reason, "PLAIN", 0.3]};
 
     hintSilent "";
-    {removeMissionEventHandler _x} forEach WHF_haloJump_mapHandlers;
-    WHF_haloJump_mapHandlers = nil;
+    call WHF_haloJump_removeHandlers;
 
     openMap false;
     _pos = _pos vectorAdd [random 100 - 50, random 100 - 50];
