@@ -71,10 +71,9 @@ addMissionEventHandler ["Draw3D", {
         };
 
         if (WHF_icons_3D_style isEqualTo 1) then {
-            switch (true) do {
+            private _icon = switch (true) do {
                 case (getPlayerChannel _x >= 0): {"\a3\ui_f\data\IGUI\RscIngameUI\RscDisplayVoiceChat\microphone_ca.paa"};
-                case (!alive _x): {["\A3\ui_f\data\igui\cfg\revive\overlayicons\d100_ca.paa", 0.25]};
-                case (!(lifeState _x in ["HEALTHY", "INJURED"])): {["\A3\ui_f\data\igui\cfg\revive\overlayicons\u100_ca.paa", 0.25]};
+                case !(lifeState _x in ["HEALTHY", "INJURED"]): {"\a3\ui_f\data\igui\cfg\actions\heal_ca.paa"};
                 default {
                     switch (rank _x) do {
                         case "PRIVATE": {"\a3\ui_f\data\GUI\cfg\Ranks\private_pr.paa"};
@@ -87,8 +86,7 @@ addMissionEventHandler ["Draw3D", {
                         default {"\a3\ui_f\data\GUI\cfg\Ranks\private_pr.paa"};
                     }
                 };
-            } params ["_icon", ["_sizeOffset", 0]];
-            private _size = _size + _sizeOffset;
+            };
 
             drawIcon3D [
                 _icon,
