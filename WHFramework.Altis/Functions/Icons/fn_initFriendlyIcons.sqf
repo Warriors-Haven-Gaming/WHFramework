@@ -60,15 +60,46 @@ addMissionEventHandler ["Draw3D", {
         };
         private _text = if (_x isNotEqualTo _cursorTarget) then {""} else {name _x};
 
-        drawIcon3D [
-            "a3\ui_f\data\igui\cfg\cursors\select_ca.paa",
-            _color + [_opacity],
-            _x modelToWorldVisual (_x selectionPosition "Spine3"),
-            _size,
-            _size,
-            0,
-            _text
-        ];
+        if (WHF_icons_3D_hex) then {
+            drawIcon3D [
+                "a3\ui_f\data\igui\cfg\cursors\select_ca.paa",
+                _color + [_opacity],
+                _x modelToWorldVisual (_x selectionPosition "Spine3"),
+                _size,
+                _size,
+                0,
+                _text
+            ];
+        };
+
+        if (WHF_icons_3D_overhead) then {
+            private _icon = switch (true) do {
+                case (!alive _x): {"\A3\ui_f\data\igui\cfg\revive\overlayicons\d100_ca.paa"};
+                case (!(lifeState _x in ["HEALTHY", "INJURED"])): {"\A3\ui_f\data\igui\cfg\revive\overlayicons\u100_ca.paa"};
+                case (getPlayerChannel _x >= 0): {"\a3\ui_f\data\IGUI\RscIngameUI\RscDisplayVoiceChat\microphone_ca.paa"};
+                default {
+                    switch (rank _x) do {
+                        case "PRIVATE": {"\a3\ui_f\data\GUI\cfg\Ranks\private_pr.paa"};
+                        case "CORPORAL": {"\a3\ui_f\data\GUI\cfg\Ranks\corporal_pr.paa"};
+                        case "SERGEANT": {"\a3\ui_f\data\GUI\cfg\Ranks\sergeant_pr.paa"};
+                        case "LIEUTENANT": {"\a3\ui_f\data\GUI\cfg\Ranks\lieutenant_pr.paa"};
+                        case "CAPTAIN": {"\a3\ui_f\data\GUI\cfg\Ranks\captain_pr.paa"};
+                        case "MAJOR": {"\a3\ui_f\data\GUI\cfg\Ranks\major_pr.paa"};
+                        case "COLONEL": {"\a3\ui_f\data\GUI\cfg\Ranks\colonel_pr.paa"};
+                        default {"\a3\ui_f\data\GUI\cfg\Ranks\private_pr.paa"};
+                    }
+                };
+            };
+            drawIcon3D [
+                _icon,
+                _color + [_opacity],
+                _x modelToWorldVisual (_x selectionPosition "Head") vectorAdd [0, 0, 0.5],
+                _size,
+                _size,
+                0,
+                if (!WHF_icons_3D_hex) then {_text} else {""}
+            ];
+        };
     } forEach _standaloneUnits;
 
     // Draw vehicle icons
@@ -109,15 +140,29 @@ addMissionEventHandler ["Draw3D", {
             ]
         };
 
-        drawIcon3D [
-            "a3\ui_f\data\igui\cfg\cursors\select_ca.paa",
-            _color + [_opacity],
-            _pos,
-            _size,
-            _size,
-            0,
-            _text
-        ];
+        if (WHF_icons_3D_hex) then {
+            drawIcon3D [
+                "a3\ui_f\data\igui\cfg\cursors\select_ca.paa",
+                _color + [_opacity],
+                _pos,
+                _size,
+                _size,
+                0,
+                _text
+            ];
+        };
+
+        if (WHF_icons_3D_vehicle) then {
+            drawIcon3D [
+                getText (_config >> "icon"),
+                _color + [_opacity],
+                _pos vectorAdd [0, 0, 2],
+                _size,
+                _size,
+                0,
+                if (!WHF_icons_3D_hex) then {_text} else {""}
+            ];
+        };
     } forEach _vehicles;
 }];
 
