@@ -185,7 +185,7 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
             _text,
             1,
             _textScale,
-            "TahomaB",
+            "RobotoCondensed",
             "right"
         ];
     } forEach _standaloneUnits;
@@ -209,7 +209,7 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
             groupId group _x,
             1,
             0.08,
-            "TahomaB",
+            "RobotoCondensed",
             "right"
         ];
     } forEach _leaders;
@@ -265,7 +265,7 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
             _text,
             1,
             _textScale,
-            "TahomaB",
+            "RobotoCondensed",
             "right"
         ];
     } forEach _vehicles;
