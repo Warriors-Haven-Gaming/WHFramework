@@ -466,7 +466,7 @@ Author:
     "COLOR",
     "STR_WHF_settings_icons_color_blufor",
     ["STR_WHF_settings", "STR_WHF_settings_icons_color"],
-    [0, 0.65, 0.9],
+    [0, 0.85, 1],
     false,
     {},
     false
@@ -476,7 +476,7 @@ Author:
     "COLOR",
     "STR_WHF_settings_icons_color_opfor",
     ["STR_WHF_settings", "STR_WHF_settings_icons_color"],
-    [0.75, 0, 0],
+    [0.85, 0, 0],
     false,
     {},
     false
@@ -486,7 +486,7 @@ Author:
     "COLOR",
     "STR_WHF_settings_icons_color_independent",
     ["STR_WHF_settings", "STR_WHF_settings_icons_color"],
-    [0, 0.75, 0],
+    [0, 0.85, 0],
     false,
     {},
     false
@@ -496,7 +496,7 @@ Author:
     "COLOR",
     "STR_WHF_settings_icons_color_civilian",
     ["STR_WHF_settings", "STR_WHF_settings_icons_color"],
-    [0.6, 0, 0.75],
+    [0.7, 0, 0.85],
     false,
     {},
     false
