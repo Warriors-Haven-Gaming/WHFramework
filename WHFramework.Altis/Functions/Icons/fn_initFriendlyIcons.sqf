@@ -32,7 +32,6 @@ addMissionEventHandler ["Draw3D", {
     } forEach _units;
 
     private _cameraPos = positionCameraToWorld [0, 0, 0];
-    private _cursorTarget = cursorTarget;
     private _sideColor = switch (_side) do {
         case blufor: {WHF_icons_color_blufor};
         case opfor: {WHF_icons_color_opfor};
@@ -56,7 +55,7 @@ addMissionEventHandler ["Draw3D", {
             case (!(lifeState _x in ["HEALTHY", "INJURED"])): {WHF_icons_color_incap};
             default {_sideColor};
         };
-        private _text = if (_x isNotEqualTo _cursorTarget) then {""} else {name _x};
+        private _text = if (_x isNotEqualTo cursorTarget) then {""} else {name _x};
 
         if (WHF_icons_3D_style isEqualTo 0) then {
             drawIcon3D [
@@ -128,7 +127,7 @@ addMissionEventHandler ["Draw3D", {
             _x modelToWorldVisual [0,0,0]
         };
 
-        private _text = if (_x isNotEqualTo _cursorTarget) then {""} else {
+        private _text = if (_x isNotEqualTo cursorTarget) then {""} else {
             format [
                 "%1 (%2)",
                 [_config] call BIS_fnc_displayName,
