@@ -434,7 +434,7 @@ Author:
     "LIST",
     ["STR_WHF_settings_icons_3D_style", "STR_WHF_settings_icons_3D_style_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_icons"],
-    [[0, 1], ["STR_WHF_settings_icons_3D_style_hex", "STR_WHF_settings_icons_3D_style_overhead"], 0],
+    [[0, 1], ["STR_WHF_settings_icons_3D_style_hex", "STR_WHF_settings_icons_3D_style_overhead"], 1],
     false,
     {},
     false
