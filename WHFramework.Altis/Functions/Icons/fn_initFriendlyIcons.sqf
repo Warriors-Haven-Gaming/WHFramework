@@ -116,7 +116,7 @@ addMissionEventHandler ["Draw3D", {
         private _aliveCrew = _crew select {alive _x};
         private _hasIncapped = _aliveCrew findIf {!(lifeState _x in ["HEALTHY", "INJURED"])} >= 0;
 
-        private _size = linearConversion [20, 200, _distance, 1, 0.5, true];
+        private _size = linearConversion [20, 600, _distance, 1, 0.5, true];
         private _opacity = linearConversion [_max - 1000 max _max / 10, _max, _distance, 1, 0, true];
         private _color = switch (true) do {
             case (_hasIncapped): {WHF_icons_color_incap};
