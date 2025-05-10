@@ -14,7 +14,7 @@ addMissionEventHandler ["Draw3D", {
 
     // Separate units from vehicles
     private _side = side group focusOn;
-    private _groups = if (WHF_icons_3D_group) then {group focusOn} else {groups _side};
+    private _groups = if (WHF_icons_3D_group) then {[group focusOn]} else {groups _side};
     private _units = flatten (
         _groups
         apply {units _x}
