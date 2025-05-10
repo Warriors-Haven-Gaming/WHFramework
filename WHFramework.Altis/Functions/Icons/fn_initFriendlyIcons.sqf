@@ -52,7 +52,7 @@ addMissionEventHandler ["Draw3D", {
         if (_distance >= _max) then {continue};
 
         private _size = linearConversion [2, 30, _distance, 1, 0.5, true];
-        private _opacity = linearConversion [_max - 1000 max 0, _max, _distance, 1, 0, true];
+        private _opacity = linearConversion [_max - 1000 max _max / 10, _max, _distance, 1, 0, true];
         private _color = switch (true) do {
             case (!alive _x): {_deadColor};
             case (!(lifeState _x in ["HEALTHY", "INJURED"])): {_incapColor};
@@ -116,7 +116,7 @@ addMissionEventHandler ["Draw3D", {
         private _hasIncapped = _aliveCrew findIf {!(lifeState _x in ["HEALTHY", "INJURED"])} >= 0;
 
         private _size = linearConversion [20, 200, _distance, 1, 0.5, true];
-        private _opacity = linearConversion [_max - 1000 max 0, _max, _distance, 1, 0, true];
+        private _opacity = linearConversion [_max - 1000 max _max / 10, _max, _distance, 1, 0, true];
         private _color = switch (true) do {
             case (_hasIncapped): {_incapColor};
             case (count _aliveCrew < 1): {_deadColor};
