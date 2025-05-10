@@ -31,6 +31,7 @@ addMissionEventHandler ["Draw3D", {
         };
     } forEach _units;
 
+    private _cameraPos = positionCameraToWorld [0, 0, 0];
     private _cursorTarget = cursorTarget;
     private _sideColor = switch (_side) do {
         case blufor: {WHF_icons_color_blufor};
@@ -44,7 +45,7 @@ addMissionEventHandler ["Draw3D", {
     {
         if (_x isEqualTo focusOn) then {continue};
 
-        private _distance = focusOn distance _x;
+        private _distance = _cameraPos distance _x;
         private _max = WHF_icons_3D_distance;
         if (_distance >= _max) then {continue};
 
@@ -103,7 +104,7 @@ addMissionEventHandler ["Draw3D", {
     {
         if (_x isEqualTo objectParent focusOn) then {continue};
 
-        private _distance = focusOn distance _x;
+        private _distance = _cameraPos distance _x;
         private _max = WHF_icons_3D_distance;
         if (_distance >= _max) then {continue};
 
