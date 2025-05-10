@@ -27,6 +27,7 @@ if (isNull _target) exitWith {false};
 if (isPlayer _target) exitWith {false};
 if (captive _target) exitWith {false};
 if !(_target isKindOf "Man") exitWith {false};
+if !(lifeState _caller in ["HEALTHY", "INJURED"]) exitWith {false};
 if !(lifeState _target in ["HEALTHY", "INJURED"]) exitWith {false};
 if (_caller distance _target > 10) exitWith {false};
 
