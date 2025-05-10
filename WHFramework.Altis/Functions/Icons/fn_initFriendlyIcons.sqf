@@ -33,15 +33,12 @@ addMissionEventHandler ["Draw3D", {
 
     private _cursorTarget = cursorTarget;
     private _sideColor = switch (_side) do {
-        // Preferably wouldn't hardcode this, but it's fast enough
-        case blufor: {[0, 0.65, 0.9]};
-        case opfor: {[0.75, 0, 0]};
-        case independent: {[0, 0.75, 0]};
-        case civilian: {[0.6, 0, 0.75]};
+        case blufor: {WHF_icons_color_blufor};
+        case opfor: {WHF_icons_color_opfor};
+        case independent: {WHF_icons_color_independent};
+        case civilian: {WHF_icons_color_civilian};
         default {[_side] call BIS_fnc_sideColor}
     };
-    private _incapColor = [1, 0.5, 0];
-    private _deadColor = [0.2, 0.2, 0.2];
 
     // Draw unit icons
     {
@@ -54,8 +51,8 @@ addMissionEventHandler ["Draw3D", {
         private _size = linearConversion [2, 30, _distance, 1, 0.5, true];
         private _opacity = linearConversion [_max - 1000 max _max / 10, _max, _distance, 1, 0, true];
         private _color = switch (true) do {
-            case (!alive _x): {_deadColor};
-            case (!(lifeState _x in ["HEALTHY", "INJURED"])): {_incapColor};
+            case (!alive _x): {WHF_icons_color_dead};
+            case (!(lifeState _x in ["HEALTHY", "INJURED"])): {WHF_icons_color_incap};
             default {_sideColor};
         };
         private _text = if (_x isNotEqualTo _cursorTarget) then {""} else {name _x};
@@ -118,8 +115,8 @@ addMissionEventHandler ["Draw3D", {
         private _size = linearConversion [20, 200, _distance, 1, 0.5, true];
         private _opacity = linearConversion [_max - 1000 max _max / 10, _max, _distance, 1, 0, true];
         private _color = switch (true) do {
-            case (_hasIncapped): {_incapColor};
-            case (count _aliveCrew < 1): {_deadColor};
+            case (_hasIncapped): {WHF_icons_color_incap};
+            case (count _aliveCrew < 1): {WHF_icons_color_dead};
             default {_sideColor};
         };
 
@@ -200,14 +197,13 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
         };
     } forEach _units;
 
-    private _getVibrantSideColor = {
+    private _getSideColor = {
         params ["_side"];
         switch (_side) do {
-            // Preferably wouldn't hardcode this, but it's fast enough
-            case blufor: {[0, 0.75, 1, 1]};
-            case opfor: {[0.85, 0, 0, 1]};
-            case independent: {[0, 0.85, 0, 1]};
-            case civilian: {[0.7, 0, 0.85, 1]};
+            case blufor: {WHF_icons_color_blufor};
+            case opfor: {WHF_icons_color_opfor};
+            case independent: {WHF_icons_color_independent};
+            case civilian: {WHF_icons_color_civilian};
             default {[_side] call BIS_fnc_sideColor}
         }
     };
@@ -233,15 +229,15 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
         private _config = configOf _x;
         private _side = side group _x;
         private _color = switch (true) do {
-            case (!alive _x): {[0.2, 0.2, 0.2, 1]};
-            case (lifeState _x in ["INCAPACITATED"]): {[1, 0.5, 0, 1]};
-            default {[_side] call _getVibrantSideColor};
+            case (!alive _x): {WHF_icons_color_dead};
+            case (lifeState _x in ["INCAPACITATED"]): {WHF_icons_color_incap};
+            default {[_side] call _getSideColor};
         };
         private _textScale = 0.045;
         private _text = if (_mapScale <= _textMinMapScale) then {name _x} else {""};
         _display drawIcon [
             getText (_config >> "icon"),
-            _color,
+            _color + [1],
             getPosWorldVisual _x,
             _iconScale,
             _iconScale,
@@ -265,7 +261,7 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
         ];
         _display drawIcon [
             getText (_config >> "icon"),
-            [side group _x] call _getVibrantSideColor,
+            ([side group _x] call _getSideColor) + [1],
             _offsetPos,
             _iconScale,
             _iconScale,
@@ -284,9 +280,9 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
         private _side = side group effectiveCommander _x;
         private _crew = crew _x select {_x in _units};
         private _color = switch (true) do {
-            case (_crew findIf {alive _x} < 0): {[0.2, 0.2, 0.2, 1]};
-            case (_crew findIf {lifeState _x isEqualTo "INCAPACITATED"} >= 0): {[1, 0.5, 0, 1]};
-            default {[_side] call _getVibrantSideColor};
+            case (_crew findIf {alive _x} < 0): {WHF_icons_color_dead};
+            case (_crew findIf {lifeState _x isEqualTo "INCAPACITATED"} >= 0): {WHF_icons_color_incap};
+            default {[_side] call _getSideColor};
         };
         private _pos = getPosWorldVisual _x;
         private _iconScale = _iconScale;
@@ -321,7 +317,7 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
 
         _display drawIcon [
             getText (_config >> "icon"),
-            _color,
+            _color + [1],
             _pos,
             _iconScale,
             _iconScale,

@@ -460,6 +460,68 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 
+// Icon Colors
+[
+    "WHF_icons_color_blufor",
+    "COLOR",
+    "STR_WHF_settings_icons_color_blufor",
+    ["STR_WHF_settings", "STR_WHF_settings_icons_color"],
+    [0, 0.65, 0.9],
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_icons_color_opfor",
+    "COLOR",
+    "STR_WHF_settings_icons_color_opfor",
+    ["STR_WHF_settings", "STR_WHF_settings_icons_color"],
+    [0.75, 0, 0],
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_icons_color_independent",
+    "COLOR",
+    "STR_WHF_settings_icons_color_independent",
+    ["STR_WHF_settings", "STR_WHF_settings_icons_color"],
+    [0, 0.75, 0],
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_icons_color_civilian",
+    "COLOR",
+    "STR_WHF_settings_icons_color_civilian",
+    ["STR_WHF_settings", "STR_WHF_settings_icons_color"],
+    [0.6, 0, 0.75],
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_icons_color_incap",
+    "COLOR",
+    "STR_WHF_settings_icons_color_incap",
+    ["STR_WHF_settings", "STR_WHF_settings_icons_color"],
+    [1, 0.5, 0],
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_icons_color_dead",
+    "COLOR",
+    "STR_WHF_settings_icons_color_dead",
+    ["STR_WHF_settings", "STR_WHF_settings_icons_color"],
+    [0.2, 0.2, 0.2],
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+
 // Loadouts
 [
     "WHF_loadout_collection",
