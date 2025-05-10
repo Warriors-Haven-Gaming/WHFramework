@@ -58,7 +58,7 @@ addMissionEventHandler ["Draw3D", {
         };
         private _text = if (_x isNotEqualTo _cursorTarget) then {""} else {name _x};
 
-        if (WHF_icons_3D_hex) then {
+        if (WHF_icons_3D_style isEqualTo 0) then {
             drawIcon3D [
                 "a3\ui_f\data\igui\cfg\cursors\select_ca.paa",
                 _color + [_opacity],
@@ -70,7 +70,7 @@ addMissionEventHandler ["Draw3D", {
             ];
         };
 
-        if (WHF_icons_3D_overhead) then {
+        if (WHF_icons_3D_style isEqualTo 1) then {
             switch (true) do {
                 case (getPlayerChannel _x >= 0): {"\a3\ui_f\data\IGUI\RscIngameUI\RscDisplayVoiceChat\microphone_ca.paa"};
                 case (!alive _x): {["\A3\ui_f\data\igui\cfg\revive\overlayicons\d100_ca.paa", 0.25]};
@@ -97,7 +97,7 @@ addMissionEventHandler ["Draw3D", {
                 _size,
                 _size,
                 0,
-                if (!WHF_icons_3D_hex) then {_text} else {""}
+                _text
             ];
         };
     } forEach _standaloneUnits;
@@ -140,7 +140,7 @@ addMissionEventHandler ["Draw3D", {
             ]
         };
 
-        if (WHF_icons_3D_hex) then {
+        if (WHF_icons_3D_style isEqualTo 0) then {
             drawIcon3D [
                 "a3\ui_f\data\igui\cfg\cursors\select_ca.paa",
                 _color + [_opacity],
@@ -152,7 +152,7 @@ addMissionEventHandler ["Draw3D", {
             ];
         };
 
-        if (WHF_icons_3D_vehicle) then {
+        if (WHF_icons_3D_style isEqualTo 1) then {
             private _icon = switch (true) do {
                 case (getPlayerChannel _commander >= 0): {"\a3\ui_f\data\IGUI\RscIngameUI\RscDisplayVoiceChat\microphone_ca.paa"};
                 default {getText (_config >> "icon")};
@@ -164,7 +164,7 @@ addMissionEventHandler ["Draw3D", {
                 _size,
                 _size,
                 0,
-                if (!WHF_icons_3D_hex) then {_text} else {""}
+                _text
             ];
         };
     } forEach _vehicles;
