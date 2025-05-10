@@ -31,6 +31,7 @@ addMissionEventHandler ["Draw3D", {
         };
     } forEach _units;
 
+    private _cursorTarget = cursorTarget;
     private _sideColor = switch (_side) do {
         // Preferably wouldn't hardcode this, but it's fast enough
         case blufor: {[0, 0.65, 0.9]};
@@ -42,6 +43,7 @@ addMissionEventHandler ["Draw3D", {
     private _incapColor = [1, 0.5, 0];
     private _deadColor = [0.2, 0.2, 0.2];
 
+    // Draw unit icons
     {
         if (_x isEqualTo focusOn) then {continue};
 
@@ -56,6 +58,7 @@ addMissionEventHandler ["Draw3D", {
             case (!(lifeState _x in ["HEALTHY", "INJURED"])): {_incapColor};
             default {_sideColor};
         };
+        private _text = if (_x isNotEqualTo _cursorTarget) then {""} else {name _x};
 
         drawIcon3D [
             "a3\ui_f\data\igui\cfg\cursors\select_ca.paa",
@@ -63,10 +66,12 @@ addMissionEventHandler ["Draw3D", {
             _x modelToWorldVisual (_x selectionPosition "Spine3"),
             _size,
             _size,
-            0
+            0,
+            _text
         ];
     } forEach _standaloneUnits;
 
+    // Draw vehicle icons
     {
         if (_x isEqualTo objectParent focusOn) then {continue};
 
@@ -74,7 +79,9 @@ addMissionEventHandler ["Draw3D", {
         private _max = WHF_icons_3D_distance;
         if (_distance >= _max) then {continue};
 
-        private _aliveCrew = crew _x select {alive _x};
+        private _config = configOf _x;
+        private _crew = crew _x;
+        private _aliveCrew = _crew select {alive _x};
         private _hasIncapped = _aliveCrew findIf {!(lifeState _x in ["HEALTHY", "INJURED"])} >= 0;
 
         private _size = linearConversion [20, 200, _distance, 1, 0.5, true];
@@ -91,13 +98,25 @@ addMissionEventHandler ["Draw3D", {
             _x modelToWorldVisual [0,0,0]
         };
 
+        private _text = if (_x isNotEqualTo _cursorTarget) then {""} else {
+            private _commander = effectiveCommander _x;
+            format [
+                "%1 (%2)",
+                [_config] call BIS_fnc_displayName,
+                if (count _crew < 2) then {name _commander} else {
+                    format ["%1 + %2", name _commander, count _crew - 1]
+                }
+            ]
+        };
+
         drawIcon3D [
             "a3\ui_f\data\igui\cfg\cursors\select_ca.paa",
             _color + [_opacity],
             _pos,
             _size,
             _size,
-            0
+            0,
+            _text
         ];
     } forEach _vehicles;
 }];
