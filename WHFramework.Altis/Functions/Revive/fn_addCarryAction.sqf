@@ -6,7 +6,7 @@ Description:
 
 Parameters:
     Object unit:
-        The unit to add revive actions to.
+        The unit to add carry actions to.
 
 Author:
     thegamecracks
