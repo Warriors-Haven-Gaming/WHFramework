@@ -444,7 +444,7 @@ Author:
     "CHECKBOX",
     ["STR_WHF_settings_icons_3D_overhead", "STR_WHF_settings_icons_3D_overhead_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_icons"],
-    true,
+    false,
     false,
     {},
     false
@@ -454,7 +454,7 @@ Author:
     "CHECKBOX",
     ["STR_WHF_settings_icons_3D_vehicle", "STR_WHF_settings_icons_3D_vehicle_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_icons"],
-    true,
+    false,
     false,
     {},
     false
