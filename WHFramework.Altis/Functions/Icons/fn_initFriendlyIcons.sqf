@@ -111,6 +111,7 @@ addMissionEventHandler ["Draw3D", {
         if (_distance >= _max) then {continue};
 
         private _config = configOf _x;
+        private _commander = effectiveCommander _x;
         private _crew = crew _x;
         private _aliveCrew = _crew select {alive _x};
         private _hasIncapped = _aliveCrew findIf {!(lifeState _x in ["HEALTHY", "INJURED"])} >= 0;
@@ -130,7 +131,6 @@ addMissionEventHandler ["Draw3D", {
         };
 
         private _text = if (_x isNotEqualTo _cursorTarget) then {""} else {
-            private _commander = effectiveCommander _x;
             format [
                 "%1 (%2)",
                 [_config] call BIS_fnc_displayName,
@@ -153,8 +153,12 @@ addMissionEventHandler ["Draw3D", {
         };
 
         if (WHF_icons_3D_vehicle) then {
+            private _icon = switch (true) do {
+                case (getPlayerChannel _commander >= 0): {"\a3\ui_f\data\IGUI\RscIngameUI\RscDisplayVoiceChat\microphone_ca.paa"};
+                default {getText (_config >> "icon")};
+            };
             drawIcon3D [
-                getText (_config >> "icon"),
+                _icon,
                 _color + [_opacity],
                 _pos vectorAdd [0, 0, 2],
                 _size,
