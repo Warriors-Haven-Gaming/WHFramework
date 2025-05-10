@@ -93,7 +93,7 @@ addMissionEventHandler ["Draw3D", {
             drawIcon3D [
                 _icon,
                 _color + [_opacity],
-                _x modelToWorldVisual (_x selectionPosition "Head") vectorAdd [0, 0, 0.5],
+                _x modelToWorldVisual (_x selectionPosition "Spine3") vectorAdd [0, 0, 0.6],
                 _size,
                 _size,
                 0,
