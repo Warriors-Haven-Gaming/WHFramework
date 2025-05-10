@@ -55,7 +55,10 @@ addMissionEventHandler ["Draw3D", {
             case (!(lifeState _x in ["HEALTHY", "INJURED"])): {WHF_icons_color_incap};
             default {_sideColor};
         };
-        private _text = if (_x isNotEqualTo cursorTarget) then {""} else {name _x};
+
+        private _config = configOf _x;
+        private _isTarget = _x isEqualTo cursorTarget;
+        private _text = if (_isTarget) then {name _x} else {""};
 
         if (WHF_icons_3D_style isEqualTo 0) then {
             drawIcon3D [
@@ -73,19 +76,22 @@ addMissionEventHandler ["Draw3D", {
             private _icon = switch (true) do {
                 case (getPlayerChannel _x >= 0): {"\a3\ui_f\data\IGUI\RscIngameUI\RscDisplayVoiceChat\microphone_ca.paa"};
                 case !(lifeState _x in ["HEALTHY", "INJURED"]): {"\a3\ui_f\data\igui\cfg\actions\heal_ca.paa"};
-                default {
-                    switch (rank _x) do {
-                        case "PRIVATE": {"\a3\ui_f\data\GUI\cfg\Ranks\private_pr.paa"};
-                        case "CORPORAL": {"\a3\ui_f\data\GUI\cfg\Ranks\corporal_pr.paa"};
-                        case "SERGEANT": {"\a3\ui_f\data\GUI\cfg\Ranks\sergeant_pr.paa"};
-                        case "LIEUTENANT": {"\a3\ui_f\data\GUI\cfg\Ranks\lieutenant_pr.paa"};
-                        case "CAPTAIN": {"\a3\ui_f\data\GUI\cfg\Ranks\captain_pr.paa"};
-                        case "MAJOR": {"\a3\ui_f\data\GUI\cfg\Ranks\major_pr.paa"};
-                        case "COLONEL": {"\a3\ui_f\data\GUI\cfg\Ranks\colonel_pr.paa"};
-                        default {"\a3\ui_f\data\GUI\cfg\Ranks\private_pr.paa"};
-                    }
-                };
+                case !(_isTarget): {""};
+                case (_x getUnitTrait "medic"): {"\a3\ui_f\data\map\vehicleicons\pictureHeal_ca.paa"};
+                case (_x getUnitTrait "engineer"): {"\a3\ui_f\data\igui\cfg\actions\repair_ca.paa"};
+                case (_x getUnitTrait "explosiveSpecialist"): {"\a3\ui_f\data\map\vehicleicons\pictureExplosive_ca.paa"};
+                default {""};
             };
+            if (_icon isEqualTo "") then {_icon = switch (rank _x) do {
+                case "PRIVATE": {"\a3\ui_f\data\GUI\cfg\Ranks\private_pr.paa"};
+                case "CORPORAL": {"\a3\ui_f\data\GUI\cfg\Ranks\corporal_pr.paa"};
+                case "SERGEANT": {"\a3\ui_f\data\GUI\cfg\Ranks\sergeant_pr.paa"};
+                case "LIEUTENANT": {"\a3\ui_f\data\GUI\cfg\Ranks\lieutenant_pr.paa"};
+                case "CAPTAIN": {"\a3\ui_f\data\GUI\cfg\Ranks\captain_pr.paa"};
+                case "MAJOR": {"\a3\ui_f\data\GUI\cfg\Ranks\major_pr.paa"};
+                case "COLONEL": {"\a3\ui_f\data\GUI\cfg\Ranks\colonel_pr.paa"};
+                default {"\a3\ui_f\data\GUI\cfg\Ranks\private_pr.paa"};
+            }};
 
             drawIcon3D [
                 _icon,
