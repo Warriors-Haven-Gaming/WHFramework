@@ -31,6 +31,7 @@ addMissionEventHandler ["Draw3D", {
         };
     } forEach _units;
 
+    private _selectedUnits = groupSelectedUnits focusOn;
     private _cameraPos = positionCameraToWorld [0, 0, 0];
     private _sideColor = switch (_side) do {
         case blufor: {WHF_icons_color_blufor};
@@ -57,7 +58,7 @@ addMissionEventHandler ["Draw3D", {
         };
 
         private _config = configOf _x;
-        private _isTarget = _x isEqualTo cursorTarget;
+        private _isTarget = _x isEqualTo cursorTarget || {_x in _selectedUnits};
         private _text = if (_isTarget) then {name _x} else {""};
 
         if (WHF_icons_3D_style isEqualTo 0) then {
@@ -133,12 +134,18 @@ addMissionEventHandler ["Draw3D", {
             _x modelToWorldVisual [0,0,0]
         };
 
-        private _text = if (_x isNotEqualTo cursorTarget) then {""} else {
+        private _selectedIndex = _selectedUnits findIf {_x in _crew};
+        private _target = switch (true) do {
+            case (_selectedIndex >= 0): {_selectedUnits # _selectedIndex};
+            case (_x isEqualTo cursorTarget): {_commander};
+            default {objNull};
+        };
+        private _text = if (isNull _target) then {""} else {
             format [
                 "%1 (%2)",
                 [_config] call BIS_fnc_displayName,
-                if (count _crew < 2) then {name _commander} else {
-                    format ["%1 + %2", name _commander, count _crew - 1]
+                if (count _crew < 2) then {name _target} else {
+                    format ["%1 + %2", name _target, count _crew - 1]
                 }
             ]
         };
