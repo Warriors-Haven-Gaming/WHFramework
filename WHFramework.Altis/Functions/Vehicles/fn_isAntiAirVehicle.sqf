@@ -24,7 +24,7 @@ if (_sensors findIf {_x # 1 in _allowedSensors} >= 0) exitWith {true};
 private _exceptions = [
     "APC_Wheeled_02_base_v2_F",
     "CUP_BMP1_base",
-    "CUP_BRDM2_ATGM_Base",
+    "CUP_BRDM2_Base",
     "CUP_BTR80_Common_Base",
     "CUP_BTR90_Base",
     "CUP_GAZ_Vodnik_Base",
