@@ -31,7 +31,13 @@ addMissionEventHandler ["Draw3D", {
         };
     } forEach _units;
 
-    private _selectedUnits = groupSelectedUnits focusOn;
+    // NOTE: this can return duplicate units and the focusOn unit which is
+    //       slightly inefficient, but this array is expected to remain
+    //       under a few dozen elements at most.
+    private _selectedUnits =
+        groupSelectedUnits focusOn
+        + (_units inAreaArray [focusOn, 7, 7, 0, false, 7]);
+
     private _cameraPos = positionCameraToWorld [0, 0, 0];
     private _sideColor = switch (_side) do {
         case blufor: {WHF_icons_color_blufor};
