@@ -27,6 +27,7 @@ private _exceptions = [
     "CUP_BRDM2_ATGM_Base",
     "CUP_BTR80_Common_Base",
     "CUP_BTR90_Base",
+    "CUP_Hilux_BMP1_base",
     "CUP_I_Hilux_metis_NAPA",
     "CUP_I_Hilux_MLRS_NAPA",
     "CUP_O_GAZ_Vodnik_BPPU_RU",
