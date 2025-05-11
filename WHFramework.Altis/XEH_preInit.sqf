@@ -187,13 +187,16 @@ Author:
         configSourceAddonList (configFile >> "CfgVehicles" >> typeOf cursorObject)
 */
 [
-    "WHF_factions_selected",
-    "LIST",
-    ["STR_WHF_settings_factions_selected", "STR_WHF_settings_factions_selected_tooltip"],
+    "WHF_factions_pool",
+    "EDITBOX",
+    ["STR_WHF_settings_factions_pool", "STR_WHF_settings_factions_pool_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_factions"],
-    [["random", "base", "csat", "csat_pacific", "rhsafrf", "cup_afrf", "cup_afrf_modern", "cup_npc"], ["STR_WHF_settings_factions_selected_random", "STR_WHF_factions_base", "STR_WHF_factions_csat", "STR_WHF_factions_csat_pacific", "STR_WHF_factions_rhsafrf", "STR_WHF_factions_cup_afrf", "STR_WHF_factions_cup_afrf_modern", "STR_WHF_factions_cup_npc"]],
+    '["base", "csat", "csat_pacific", "rhsafrf", "cup_afrf", "cup_afrf_modern", "cup_npc"]',
     true,
-    {call WHF_fnc_cycleFaction},
+    {
+        WHF_factions_pool = parseSimpleArray _this;
+        call WHF_fnc_cycleFaction;
+    },
     false
 ] call WHF_fnc_addSetting;
 
