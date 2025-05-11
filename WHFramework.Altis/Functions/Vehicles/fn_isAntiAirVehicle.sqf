@@ -32,8 +32,8 @@ private _exceptions = [
     "CUP_Kornet_Base",
     "CUP_Metis_Base",
     "CUP_T72_Base",
-    "I_G_Offroad_01_AT_F",
-    "I_C_Offroad_02_AT_F"
+    "Offroad_01_base_F",
+    "Offroad_02_base_F"
 ];
 if (_exceptions findIf {_vehicle isKindOf _x} >= 0) exitWith {false};
 
