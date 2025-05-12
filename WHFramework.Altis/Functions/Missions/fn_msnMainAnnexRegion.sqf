@@ -20,7 +20,7 @@ params [["_location", locationNull]];
 if (_location isEqualTo locationNull) then {
     private _locations = nearestLocations [
         [worldSize / 2, worldSize / 2],
-        ["Hill", "NameVillage", "NameCity", "NameCityCapital"],
+        ["Airport", "Hill", "NameVillage", "NameCity", "NameCityCapital", "NameLocal"],
         sqrt 2 / 2 * worldSize
     ];
     _locations = _locations call WHF_fnc_arrayShuffle;
