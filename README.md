@@ -72,14 +72,7 @@ For dedicated server hosters, you can either download the mission files from our
    };
    ```
 
-> [!WARNING]
-> As of now, some objectives and compositions depend on [CUP Terrains - Core]
-> and [CUP Vehicles] to spawn. Without these mods, WHF will be unable to generate
-> those particular objectives.
-
 [Releases]: https://github.com/Warriors-Haven-Gaming/WHFramework/releases
-[CUP Terrains - Core]: https://steamcommunity.com/sharedfiles/filedetails/?id=583496184
-[CUP Vehicles]: https://steamcommunity.com/sharedfiles/filedetails/?id=541888371
 
 ## CBA Settings
 
