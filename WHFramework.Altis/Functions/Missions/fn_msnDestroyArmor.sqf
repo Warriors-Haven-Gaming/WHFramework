@@ -49,11 +49,17 @@ private _terrain = [];
 private _groups = [];
 private _vehicles = [];
 
-private _centerComp = [["CamoNet_ghex_F",[0.000427246,0.00878906,0.5],268.016],["Land_HBarrier_01_big_4_green_F",[-4.03668,4.41309,0],90],["Land_HBarrier_01_big_4_green_F",[-4.211,-4.2959,0],90],["Land_HBarrier_01_line_3_green_F",[3.02679,7.91406,0],27.2651],["Land_HBarrier_01_line_3_green_F",[3.06683,-8.26172,0],338.379],["Land_HBarrier_01_big_tower_green_F",[-1.91608,-10.5459,0],0],["Land_HBarrier_01_big_tower_green_F",[-1.67633,10.666,0],180],["Land_BagFence_01_long_green_F",[2.77533,-15.6523,0],0],["Land_BagFence_01_long_green_F",[2.46088,15.7344,0],0],["CamoNet_ghex_F",[17.1284,-4.93555,0.5],87.55],["CamoNet_ghex_F",[16.9638,5.79102,0.5],87.55],["Land_HBarrier_01_big_4_green_F",[17.2783,-15.8945,0],0],["Land_HBarrier_01_big_4_green_F",[17.0004,16.5674,0],0],["Land_HBarrier_01_big_tower_green_F",[23.1601,-10.2598,0],0],["Land_HBarrier_01_big_tower_green_F",[23.3124,10.4678,0],180],["Land_HBarrier_01_big_4_green_F",[27.3178,-4.31641,0],90],["Land_HBarrier_01_big_4_green_F",[27.3408,4.52051,0],90]];
-private _centerService = [["B_Slingload_01_Fuel_F",[1.22894,-2.44824,0],179.719],["B_Slingload_01_Ammo_F",[15.9775,5.78711,0],0],["B_Slingload_01_Repair_F",[16.9716,-4.28516,0],0]];
-private _centerTurrets = [["CUP_O_KORD_high_RUS_M_Summer",[2.93109,-13.7754,0],206.313],["CUP_O_KORD_high_RUS_M_Summer",[3.11127,13.875,0],331.155]];
-private _missingClass = {!isClass (configFile >> "CfgVehicles" >> _x # 0)};
-if ([_centerComp, _centerService, _centerTurrets] findIf {_x findIf _missingClass >= 0} < 0) then {
+call {
+    private _turretTypes = [
+        "O_HMG_01_high_F",
+        "O_HMG_02_high_F",
+        "CUP_O_KORD_high_RUS_M_Summer"
+    ] select {isClass (configFile >> "CfgVehicles" >> _x)};
+
+    private _centerComp = [["CamoNet_ghex_F",[0.000427246,0.00878906,0.5],268.016],["Land_HBarrier_01_big_4_green_F",[-4.03668,4.41309,0],90],["Land_HBarrier_01_big_4_green_F",[-4.211,-4.2959,0],90],["Land_HBarrier_01_line_3_green_F",[3.02679,7.91406,0],27.2651],["Land_HBarrier_01_line_3_green_F",[3.06683,-8.26172,0],338.379],["Land_HBarrier_01_big_tower_green_F",[-1.91608,-10.5459,0],0],["Land_HBarrier_01_big_tower_green_F",[-1.67633,10.666,0],180],["Land_BagFence_01_long_green_F",[2.77533,-15.6523,0],0],["Land_BagFence_01_long_green_F",[2.46088,15.7344,0],0],["CamoNet_ghex_F",[17.1284,-4.93555,0.5],87.55],["CamoNet_ghex_F",[16.9638,5.79102,0.5],87.55],["Land_HBarrier_01_big_4_green_F",[17.2783,-15.8945,0],0],["Land_HBarrier_01_big_4_green_F",[17.0004,16.5674,0],0],["Land_HBarrier_01_big_tower_green_F",[23.1601,-10.2598,0],0],["Land_HBarrier_01_big_tower_green_F",[23.3124,10.4678,0],180],["Land_HBarrier_01_big_4_green_F",[27.3178,-4.31641,0],90],["Land_HBarrier_01_big_4_green_F",[27.3408,4.52051,0],90]];
+    private _centerService = [["B_Slingload_01_Fuel_F",[1.22894,-2.44824,0],179.719],["B_Slingload_01_Ammo_F",[15.9775,5.78711,0],0],["B_Slingload_01_Repair_F",[16.9716,-4.28516,0],0]];
+    private _centerTurrets = [[selectRandom _turretTypes,[2.93109,-13.7754,0],206.313],[selectRandom _turretTypes,[3.11127,13.875,0],331.155]];
+
     private _centerTerrain = nearestTerrainObjects [_center, [], 30, false, true];
     _centerTerrain apply {hideObjectGlobal _x};
     _terrain append _centerTerrain;
