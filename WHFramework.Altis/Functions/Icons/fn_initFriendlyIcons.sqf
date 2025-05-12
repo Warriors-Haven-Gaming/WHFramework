@@ -107,7 +107,8 @@ addMissionEventHandler ["Draw3D", {
                 _size,
                 _size,
                 0,
-                _text
+                _text,
+                2
             ];
         };
     } forEach _standaloneUnits;
@@ -180,7 +181,8 @@ addMissionEventHandler ["Draw3D", {
                 _size,
                 _size,
                 0,
-                _text
+                _text,
+                2
             ];
         };
     } forEach _vehicles;
