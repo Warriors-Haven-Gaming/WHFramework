@@ -74,7 +74,7 @@ player createDiaryRecord [
         "<img image='images\guide\summary.jpg' width='370' height='185' /><br/><br/>"
         + format [
             "$STR_WHF_diaryGuide_summary_description" call WHF_fnc_diaryLocalize,
-            worldName
+            getText (configFile >> "CfgWorlds" >> worldName >> "description")
         ]
     ]
 ];
