@@ -94,6 +94,7 @@ _target enableAIFeature ["PATH", false];
 _target setCaptive true;
 _target setUnitPos "UP";
 moveOut _target;
+unassignVehicle _target;
 
 [_target] remoteExec ["WHF_fnc_addPrisonerActions", 0, netId _target + ":addPrisonerActions"];
 _target action ["Surrender", _target];

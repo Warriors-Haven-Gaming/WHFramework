@@ -32,6 +32,7 @@ _unit addEventHandler ["GetInMan", {
     if (_reason isEqualTo "") exitWith {call _onAllowed};
 
     moveOut _unit;
+    unassignVehicle _unit;
     if (_unit isEqualTo focusOn) then {50 cutText [_reason, "PLAIN DOWN", 0.5]};
 }];
 
@@ -54,6 +55,7 @@ _unit addEventHandler ["SeatSwitchedMan", {
     if (_reason isEqualTo "") exitWith {call _onAllowed};
 
     moveOut _unit;
+    unassignVehicle _unit;
     if (_unit isEqualTo focusOn) then {50 cutText [_reason, "PLAIN DOWN", 0.5]};
 
     // It would be nice if we could cancel the seat switch directly...

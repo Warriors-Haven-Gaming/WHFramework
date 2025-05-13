@@ -20,6 +20,7 @@ private _unloadID = player addAction [
         if !("." in _sound) then {_sound = _sound + ".wss"};
         playSound3D [_sound, objNull, false, getPosASL _target];
         moveOut _target;
+        [_target] remoteExec ["unassignVehicle", _target];
     },
     nil,
     11,
