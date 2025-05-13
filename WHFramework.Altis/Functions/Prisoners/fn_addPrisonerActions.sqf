@@ -19,7 +19,8 @@ if (!isNil {_unit getVariable "WHF_prisoner_actionIDs"}) exitWith {};
 private _condition = "
     captive _originalTarget
     && {lifeState _originalTarget in ['HEALTHY', 'INJURED']
-    && {isNull attachedTo _originalTarget}}
+    && {isNull objectParent _originalTarget
+    && {isNull attachedTo _originalTarget}}}
 ";
 
 private _escortID = _unit addAction [
