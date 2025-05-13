@@ -53,6 +53,10 @@ _objects append _compVehicles; // Ensure GC area check happens per vehicle
 private _group = [opfor, _compVehicles] call WHF_fnc_spawnGunners;
 _groups pushBack _group;
 
+private _guardGroup = [opfor, "standard", selectRandom [4, 6, 8], _pos, 20] call WHF_fnc_spawnUnits;
+[_guardGroup, _pos] call BIS_fnc_taskDefend;
+_groups pushBack _guardGroup;
+
 private _repair = _compVehicles # 0;
 sleep (1.5 + random 2.5);
 if (!alive _repair) exitWith {};
