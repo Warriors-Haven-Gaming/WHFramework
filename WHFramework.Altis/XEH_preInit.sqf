@@ -187,18 +187,76 @@ Author:
         configSourceAddonList (configFile >> "CfgVehicles" >> typeOf cursorObject)
 */
 [
-    "WHF_factions_pool",
-    "EDITBOX",
-    ["STR_WHF_settings_factions_pool", "STR_WHF_settings_factions_pool_tooltip"],
+    "WHF_factions_base",
+    "CHECKBOX",
+    "STR_WHF_factions_base",
     ["STR_WHF_settings", "STR_WHF_settings_factions"],
-    '["base", "csat", "csat_pacific", "rhsafrf", "cup_afrf", "cup_afrf_modern", "cup_npc"]',
     true,
-    {
-        WHF_factions_pool = parseSimpleArray _this;
-        call WHF_fnc_cycleFaction;
-    },
+    true,
+    {},
     false
 ] call WHF_fnc_addSetting;
+[
+    "WHF_factions_csat",
+    "CHECKBOX",
+    "STR_WHF_factions_csat",
+    ["STR_WHF_settings", "STR_WHF_settings_factions"],
+    true,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_factions_csat_pacific",
+    "CHECKBOX",
+    "STR_WHF_factions_csat_pacific",
+    ["STR_WHF_settings", "STR_WHF_settings_factions"],
+    true,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_factions_rhsafrf",
+    "CHECKBOX",
+    "STR_WHF_factions_rhsafrf",
+    ["STR_WHF_settings", "STR_WHF_settings_factions"],
+    true,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_factions_cup_afrf",
+    "CHECKBOX",
+    "STR_WHF_factions_cup_afrf",
+    ["STR_WHF_settings", "STR_WHF_settings_factions"],
+    true,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_factions_cup_afrf_modern",
+    "CHECKBOX",
+    "STR_WHF_factions_cup_afrf_modern",
+    ["STR_WHF_settings", "STR_WHF_settings_factions"],
+    true,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_factions_cup_npc",
+    "CHECKBOX",
+    "STR_WHF_factions_cup_npc",
+    ["STR_WHF_settings", "STR_WHF_settings_factions"],
+    true,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+call WHF_fnc_cycleFaction;
 
 // Fitness
 [
