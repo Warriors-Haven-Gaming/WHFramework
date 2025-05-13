@@ -17,6 +17,11 @@ Author:
 */
 params [["_location", locationNull]];
 
+private _minRadius = 250 + count allPlayers * 10 min 650;
+private _maxRadius = 500 + count allPlayers * 15 min 1100;
+private _radius = selectMax size _location * 2 max _minRadius min _maxRadius;
+_radius = _radius * WHF_missions_annex_size;
+
 if (_location isEqualTo locationNull) then {
     private _locations = nearestLocations [
         [worldSize / 2, worldSize / 2],
@@ -25,7 +30,7 @@ if (_location isEqualTo locationNull) then {
     ];
     _locations = _locations call WHF_fnc_arrayShuffle;
     {
-        if ([locationPosition _x, 1200] call WHF_fnc_isNearRespawn) then {continue};
+        if ([locationPosition _x, _radius + 1000] call WHF_fnc_isNearRespawn) then {continue};
         _location = _x;
         break;
     } forEach _locations;
@@ -36,11 +41,6 @@ if (_location isEqualTo locationNull) exitWith {
 
 private _center = locationPosition _location vectorMultiply [1, 1, 0];
 _center = _center vectorAdd [50 - random 100, 50 - random 100];
-
-private _minRadius = 250 + count allPlayers * 10 min 650;
-private _maxRadius = 500 + count allPlayers * 15 min 1100;
-private _radius = selectMax size _location * 2 max _minRadius min _maxRadius;
-_radius = _radius * WHF_missions_annex_size;
 private _area = [_center, _radius, _radius, 0, false];
 
 [_center, _radius] call WHF_fnc_msnMainAnnexRegionCompositions
