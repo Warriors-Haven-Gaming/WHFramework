@@ -16,6 +16,7 @@ params ["_unit"];
 
 _unit addEventHandler ["GetInMan", {
     params ["_unit", "_role", "_vehicle"];
+    if (!local _unit) exitWith {};
 
     private _onAllowed = {
         _unit setVariable ["WHF_vehicleLock_lastSeat", switch (_role) do {
@@ -38,6 +39,7 @@ _unit addEventHandler ["GetInMan", {
 
 _unit addEventHandler ["SeatSwitchedMan", {
     params ["_unit", "", "_vehicle"];
+    if (!local _unit) exitWith {};
 
     private _onAllowed = {
         _unit setVariable ["WHF_vehicleLock_lastSeat", switch (_role # 0) do {
