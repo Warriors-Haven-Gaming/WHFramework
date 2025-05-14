@@ -25,7 +25,7 @@ private _findNearestMedic = {
         ceil (_unit distance _assigned)
     ]};
 
-    private _medics = units blufor select {
+    private _medics = units side group _unit select {
         _x getUnitTrait "medic"
         && {lifeState _x in ["HEALTHY", "INJURED"]
         && {isPlayer _x || {!isNil {_x getVariable "WHF_recruiter"}}}}
