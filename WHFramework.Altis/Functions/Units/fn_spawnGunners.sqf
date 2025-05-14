@@ -41,15 +41,16 @@ private _initTurrets = {
         _turret setVariable ["WHF_turret_side", _side];
         _turret addEventHandler ["Fired", {
             params ["_turret"];
-            if (someAmmo _turret) exitWith {};
-
             private _side = _turret getVariable "WHF_turret_side";
+            if (someAmmo _turret) exitWith {};
             if (isNil "_side") exitWith {};
-            if (side group gunner _turret isNotEqualTo _side) exitWith {};
-            if (isPlayer gunner _turret) exitWith {};
-            _turret spawn {
+
+            [_turret, _side] spawn {
+                params ["_turret", "_side"];
                 sleep (10 + random 20);
-                _this setVehicleAmmo 1;
+                if (side group gunner _turret isNotEqualTo _side) exitWith {};
+                if (isPlayer gunner _turret) exitWith {};
+                _turret setVehicleAmmo 1;
             };
         }];
 
