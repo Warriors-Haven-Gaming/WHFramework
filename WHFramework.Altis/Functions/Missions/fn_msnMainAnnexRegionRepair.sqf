@@ -69,7 +69,7 @@ private _taskID = [
     "CREATED",
     -1,
     false,
-    "destroy"
+    "repair"
 ] call WHF_fnc_taskCreate;
 
 waitUntil {sleep 3; !alive _repair};

@@ -130,7 +130,7 @@ private _taskID = [
     "CREATED",
     -1,
     true,
-    "destroy"
+    "rifle"
 ] call WHF_fnc_taskCreate;
 
 private _initialUnitCount = 0;

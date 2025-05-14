@@ -88,7 +88,7 @@ _areaMarker setMarkerAlpha 0.7;
 
 private _taskID = [blufor, "", "destroyAAA", _center, "CREATED", -1, true, "destroy"] call WHF_fnc_taskCreate;
 private _childTaskIDs = _aaTurrets apply {
-    [blufor, ["", _taskID], "destroyAAAEmplacement", objNull, "CREATED", -1, false, "destroy"] call WHF_fnc_taskCreate;
+    [blufor, ["", _taskID], "destroyAAAEmplacement", objNull, "CREATED", -1, false, ""] call WHF_fnc_taskCreate;
 };
 private _completedChildTaskIDs = [];
 

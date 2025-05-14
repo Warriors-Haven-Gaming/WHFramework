@@ -42,7 +42,7 @@ private _taskID = [
     "CREATED",
     -1,
     true,
-    "rifle"
+    ""
 ] call WHF_fnc_taskCreate;
 
 while {true} do {
