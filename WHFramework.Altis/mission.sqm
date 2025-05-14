@@ -20,7 +20,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=80;
+		nextID=85;
 	};
 	class Camera
 	{
@@ -353,7 +353,7 @@ class CustomAttributes
 		class Attribute0
 		{
 			property="ENH_AddObjectsToZeus";
-			expression="        if (!is3DEN && isServer && _value) then        {            private _objects = allMissionObjects '';            allCurators apply {_x addCuratorEditableObjects [_objects, true]};            addMissionEventHandler ['EntityCreated',            {                params ['_entity'];                allCurators apply {_x addCuratorEditableObjects [[_entity], true]};            }];        }";
+			expression="        if (_value isEqualType true) then {_value = 2};        if (!is3DEN && isServer && _value > 0) then        {            _value spawn" \n "            {" \n "                params ['_value'];" \n "                waitUntil {sleep 1; allCurators isNotEqualTo []};" \n "                if (_value == 1 || _value == 2) then                {                    allCurators apply {_x addCuratorEditableObjects [allMissionObjects '', true]};                };                if (_value == 2) then                {                    addMissionEventHandler ['EntityCreated',                    {                        params ['_entity'];                        allCurators apply {_x addCuratorEditableObjects [[_entity], true]};                    }];                };            };        }";
 			class Value
 			{
 				class data
@@ -8067,6 +8067,7 @@ class Mission
 					{
 					};
 					id=473;
+					atlOffset=185.97;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -8133,6 +8134,7 @@ class Mission
 					{
 					};
 					id=495;
+					atlOffset=185.97;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -8295,6 +8297,7 @@ class Mission
 					{
 					};
 					id=450;
+					atlOffset=185.97;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -8477,7 +8480,7 @@ class Mission
 					{
 					};
 					id=422;
-					atlOffset=0.00010490417;
+					atlOffset=185.97;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -8583,6 +8586,7 @@ class Mission
 					{
 					};
 					id=490;
+					atlOffset=185.97;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -8662,6 +8666,7 @@ class Mission
 					{
 					};
 					id=501;
+					atlOffset=185.97;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -8742,7 +8747,7 @@ class Mission
 					{
 					};
 					id=502;
-					atlOffset=1.9073486e-06;
+					atlOffset=185.97;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -8821,6 +8826,7 @@ class Mission
 					{
 					};
 					id=500;
+					atlOffset=185.97;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -8947,6 +8953,7 @@ class Mission
 					{
 					};
 					id=498;
+					atlOffset=185.97;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -9050,6 +9057,7 @@ class Mission
 					{
 					};
 					id=508;
+					atlOffset=185.97;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -9152,6 +9160,7 @@ class Mission
 					{
 					};
 					id=512;
+					atlOffset=185.97;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -9172,7 +9181,7 @@ class Mission
 				};
 			};
 			id=388;
-			atlOffset=-0.31363869;
+			atlOffset=185.97;
 		};
 		class Item2
 		{
