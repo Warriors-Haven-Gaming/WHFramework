@@ -74,10 +74,12 @@ private _reinforceArgs = [
 private _reinforceScripts = _reinforceArgs apply {_x spawn WHF_fnc_reinforceLoop};
 
 while {_this # 0} do {
-    sleep (5 + random 5);
+    sleep 1;
     if !(_this # 0) exitWith {};
 
     _reinforceArgs # 0 set [1, WHF_missions_annex_reinforce_frequency_units];
     _reinforceArgs # 1 set [1, WHF_missions_annex_reinforce_frequency_vehicles];
 };
+
 {_x set [0, false]} forEach _reinforceArgs;
+waitUntil {sleep 1; _reinforceScripts findIf {!scriptDone _x} < 0};

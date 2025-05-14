@@ -57,7 +57,7 @@ _groups append _compGroups;
 
 private _initialUnitCount = count flatten (_groups apply {units _x});
 private _reinforceArgs = [true, _center, _radius, _initialUnitCount, _groups, _vehicles];
-_reinforceArgs spawn WHF_fnc_msnMainAnnexRegionReinforcements;
+private _reinforceScript = _reinforceArgs spawn WHF_fnc_msnMainAnnexRegionReinforcements;
 
 private _areaMarker = [["WHF_mainMission"], _area, true] call WHF_fnc_createAreaMarker;
 _areaMarker setMarkerBrushLocal "FDiagonal";
@@ -94,11 +94,13 @@ call WHF_fnc_cycleFaction;
 call WHF_fnc_playMusicMissionEnd;
 
 deleteMarker _areaMarker;
-_reinforceArgs set [0, false];
 
-// Because the reinforcement script needs to count the number of vehicles
+_reinforceArgs set [0, false];
+waitUntil {sleep 1; scriptDone _reinforceScript};
+
+// Because the reinforcement script needed to count the number of vehicles
 // in the mission and append new vehicles to it, we've kept it separate
-// the from objects array.
+// from the objects array.
 _objects append _vehicles;
 
 {[_x] call WHF_fnc_queueGCDeletion} forEach _objects;
