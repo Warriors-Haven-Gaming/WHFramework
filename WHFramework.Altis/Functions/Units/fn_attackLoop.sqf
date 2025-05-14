@@ -48,10 +48,11 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
             && {!(waypointType (_waypoints # 0) in ["MOVE", "SAD"])}
         ) then {continue};
 
+        private _side = side _x;
         private _targets =
-            _leader targetsQuery [objNull, blufor, "", [], 180]
+            _leader targetsQuery [objNull, sideUnknown, "", [], 180]
             select {
-                _x # 2 isEqualTo blufor
+                [_side, _x # 2] call BIS_fnc_sideIsEnemy
                 && {isNil "_area"
                 || {_x # 4 vectorMultiply [1,1,0] inArea _area}}
             };
