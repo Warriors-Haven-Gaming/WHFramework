@@ -55,7 +55,7 @@ private _killedEH = ["Killed", _unit addEventHandler ["Killed", {
     _unit removeEventHandler [_thisEvent, _thisEventHandler];
 }]];
 
-while {alive _unit && {lifeState _unit isEqualTo "INCAPACITATED"}} do {
+while {lifeState _unit isEqualTo "INCAPACITATED"} do {
     private _vehicle = objectParent _unit;
     if (
         isNull _vehicle
