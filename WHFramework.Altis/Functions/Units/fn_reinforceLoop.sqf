@@ -30,13 +30,19 @@ Author:
     thegamecracks
 
 */
+private _isRunning = {
+    _this # 0
+};
+
 private _sleepIteration = {
     _frequency params ["_min", "_max"];
-    if (isNil "_max" || {_min > _max}) then {
-        sleep _min;
-    } else {
-        sleep (_min + random (_max - _min));
+
+    private _duration = if (isNil "_max" || {_min > _max}) then {_min} else {
+        _min + random (_max - _min)
     };
+    private _deadline = time + _duration;
+    waitUntil {sleep 1; !call _isRunning || {time >= _deadline}};
+    call _isRunning
 };
 
 private _countUnits = {
@@ -52,7 +58,7 @@ private _countUnits = {
     _total
 };
 
-while {_this # 0} do {
+while _isRunning do {
     params [
         "",
         "_frequency",
@@ -62,8 +68,7 @@ while {_this # 0} do {
         "_function"
     ];
 
-    call _sleepIteration;
-    if !(_this # 0) exitWith {};
+    if (!call _sleepIteration) exitWith {};
     if (call _countUnits >= _threshold) then {continue};
     _arguments call _function;
 };
