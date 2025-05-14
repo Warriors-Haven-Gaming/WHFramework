@@ -43,7 +43,6 @@ private _findNearestMedic = {
     format [localize "$STR_WHF_incapLoop_status_medic", name _medic, ceil _distance]
 };
 
-private _statusAfter = time + 3;
 private _actOfGod = if (random 1 < 0.1) then {time + 30 + random 60} else {-1};
 // NOTE: bleedout time is defined by each client and not synchronized
 private _bleedoutAt = time + WHF_revive_bleedout;
@@ -54,6 +53,29 @@ private _killedEH = ["Killed", _unit addEventHandler ["Killed", {
     if (_unit isEqualTo focusOn) then {hintSilent ""};
     _unit removeEventHandler [_thisEvent, _thisEventHandler];
 }]];
+
+[_unit, _findNearestMedic, _bleedoutAt] spawn {
+    params ["_unit", "_findNearestMedic", "_bleedoutAt"];
+    scriptName "WHF_fnc_incapLoop_status";
+
+    sleep 3;
+    while {lifeState _unit isEqualTo "INCAPACITATED"} do {
+        if (_unit isNotEqualTo focusOn) then {sleep (1 + random 1); continue};
+
+        private _status = [];
+        _status pushBack format [
+            localize "$STR_WHF_incapLoop_status_bleedout",
+            ceil ((_bleedoutAt - time) / 60)
+        ];
+        private _medic = call _findNearestMedic;
+        if (_medic isNotEqualTo "") then {_status pushBack _medic};
+        hintSilent (_status joinString "\n");
+
+        sleep 0.2;
+    };
+
+    if (_unit isEqualTo focusOn) then {hintSilent ""};
+};
 
 while {lifeState _unit isEqualTo "INCAPACITATED"} do {
     private _vehicle = objectParent _unit;
@@ -70,8 +92,7 @@ while {lifeState _unit isEqualTo "INCAPACITATED"} do {
 
     private _time = time;
 
-    private _bleedoutLeft = _bleedoutAt - _time;
-    if (_bleedoutLeft <= 0) exitWith {
+    if (_bleedoutAt - _time <= 0) exitWith {
         _unit setDamage 1;
         if (isPlayer _unit) then {[_unit] remoteExec ["WHF_fnc_incapBleedout"]};
     };
@@ -88,24 +109,9 @@ while {lifeState _unit isEqualTo "INCAPACITATED"} do {
         50 cutText [localize "$STR_WHF_incapLoop_actOfGod", "PLAIN", 0.5];
     };
 
-    if (_time >_statusAfter && {_unit isEqualTo focusOn}) then {
-        private _status = [];
-
-        _status pushBack format [
-            localize "$STR_WHF_incapLoop_status_bleedout",
-            ceil (_bleedoutLeft / 60)
-        ];
-
-        private _medic = call _findNearestMedic;
-        if (_medic isNotEqualTo "") then {_status pushBack _medic};
-
-        hintSilent (_status joinString "\n");
-    };
-
     if (!isNull _vehicle && {!alive _vehicle}) then {_unit moveOut _vehicle};
 
     sleep (1 + random 1);
 };
 
 _unit removeEventHandler _killedEH;
-if (_unit isEqualTo focusOn) then {hintSilent ""};
