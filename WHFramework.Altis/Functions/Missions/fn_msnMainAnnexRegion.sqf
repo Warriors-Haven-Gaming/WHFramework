@@ -17,10 +17,20 @@ Author:
 */
 params [["_location", locationNull]];
 
-private _minRadius = 250 + count allPlayers * 10 min 650;
-private _maxRadius = 500 + count allPlayers * 15 min 1100;
-private _radius = selectMax size _location * 2 max _minRadius min _maxRadius;
-_radius = _radius * WHF_missions_annex_size;
+private _getRadius = {
+    params ["_location"];
+
+    private _minRadius = 250 + count allPlayers * 10 min 650;
+    private _maxRadius = 500 + count allPlayers * 15 min 1100;
+
+    private _radius = selectMax size _location * 2;
+    _radius = _radius max _minRadius min _maxRadius;
+    _radius = _radius * WHF_missions_annex_size;
+
+    _radius
+};
+
+private _radius = [_location] call _getRadius;
 
 if (_location isEqualTo locationNull) then {
     private _locations = nearestLocations [
@@ -30,7 +40,9 @@ if (_location isEqualTo locationNull) then {
     ];
     _locations = _locations call WHF_fnc_arrayShuffle;
     {
+        _radius = [_x] call _getRadius;
         if ([locationPosition _x, _radius + 1000] call WHF_fnc_isNearRespawn) then {continue};
+
         _location = _x;
         break;
     } forEach _locations;
