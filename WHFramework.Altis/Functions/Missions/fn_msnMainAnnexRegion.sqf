@@ -44,7 +44,7 @@ if (_location isEqualTo locationNull) then {
     {
         private _pos = locationPosition _x;
         _radius = [_x] call _getRadius;
-        private _safeRadius = _radius + 1000;
+        private _safeRadius = _radius + 500;
 
         if ([_pos, _safeRadius] call WHF_fnc_isNearRespawn) then {continue};
 
