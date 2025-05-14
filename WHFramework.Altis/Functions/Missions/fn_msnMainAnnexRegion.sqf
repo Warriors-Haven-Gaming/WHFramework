@@ -39,9 +39,17 @@ if (_location isEqualTo locationNull) then {
         sqrt 2 / 2 * worldSize
     ];
     _locations = _locations call WHF_fnc_arrayShuffle;
+
+    private _units = units blufor;
     {
+        private _pos = locationPosition _x;
         _radius = [_x] call _getRadius;
-        if ([locationPosition _x, _radius + 1000] call WHF_fnc_isNearRespawn) then {continue};
+        private _safeRadius = _radius + 1000;
+
+        if ([_pos, _safeRadius] call WHF_fnc_isNearRespawn) then {continue};
+
+        private _area = [_pos, _safeRadius, _safeRadius, 0, false];
+        if ([_units, _area] call WHF_fnc_anyInArea) then {continue};
 
         _location = _x;
         break;
