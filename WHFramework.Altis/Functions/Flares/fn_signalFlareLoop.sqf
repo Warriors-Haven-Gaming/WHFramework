@@ -16,7 +16,7 @@ while {true} do {
     if (time < _lastSiren + WHF_signalFlareGlobalCooldown) then {continue};
 
     private _leadersOnAlert =
-        groups east + groups independent
+        groups opfor + groups independent
         select {
             _x getVariable ["WHF_siren_disabled", false] isNotEqualTo true
             && {isNil {_x getVariable "WHF_siren_lastFlare"}
@@ -35,7 +35,7 @@ while {true} do {
             && {stance _leader in ["STAND", "CROUCH"]
             && {["sniper", "ghillie"] findIf {_x in toLowerANSI typeOf _leader} < 0
             && {
-                _leader targets [true, WHF_signalFlareMaxDistance, [west], 30]
+                _leader targets [true, WHF_signalFlareMaxDistance, [blufor], 30]
                 select {_leader knowsAbout _x >= 1.5}
                 isNotEqualTo []
             && {
@@ -55,7 +55,7 @@ while {true} do {
     if (captive _siren) then {continue}; // Probably detained mid-signal, nice
     if (isNil {_siren getVariable "WHF_siren_startedAt"}) then {continue};
 
-    private _targets = _siren nearTargets WHF_signalFlareMaxDistance select {_x # 2 == west} apply {_x # 4};
+    private _targets = _siren nearTargets WHF_signalFlareMaxDistance select {_x # 2 == blufor} apply {_x # 4};
     private _allies = (
         groups opfor + groups independent
         apply {leader _x}
