@@ -17,7 +17,7 @@ Author:
 */
 params [["_center",[]]];
 
-private _radius = 150;
+private _radius = 250;
 
 if (_center isEqualTo []) then {
     private _options = selectBestPlaces [
