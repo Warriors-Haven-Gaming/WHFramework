@@ -20,4 +20,4 @@ waitUntil {ppEffectCommitted _blur};
 _blur ppEffectAdjust [0];
 _blur ppEffectCommit (1 + random 1.5);
 waitUntil {ppEffectCommitted _blur};
-_blur ppEffectEnable false;
+ppEffectDestroy _blur;
