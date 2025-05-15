@@ -5,6 +5,8 @@ import sys
 from pathlib import Path
 from typing import Iterable
 
+KEY_PATTERN = re.compile(r"""(?P<quote>['"])\$?(STR_WHF_.+?)(?P=quote)""")
+
 
 def find_mission_directories() -> Iterable[Path]:
     for path in Path().iterdir():
@@ -25,8 +27,8 @@ def find_used_keys(root: Path) -> set[str]:
     paths = [root / "description.ext", *root.rglob("*.sqf")]
     for path in paths:
         content = path.read_text("utf-8")
-        for m in re.finditer(r'"\$?(STR_WHF_[^"]+)"', content):
-            keys.add(m[1])
+        for m in KEY_PATTERN.finditer(content):
+            keys.add(m[2])
 
     return keys
 
