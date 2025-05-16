@@ -75,17 +75,26 @@ _spawner addAction [
             _loadouts get _role isNotEqualTo []
         };
 
-        {
+        private _scripts = _recruits apply {
             private _role = _x getVariable "WHF_role";
             private _loadout = _loadouts get _role;
-            _x setUnitLoadout _loadout;
-        } forEach _recruits;
 
-        if (count _recruits > 0) then {
-            hint format [
-                localize "$STR_WHF_rearmRecruits_completed",
-                count _recruits
-            ];
+            private _output = [];
+            private _script = [_x, _loadout, _output] spawn {
+                params ["_x", "_loadout", "_output"];
+                scriptName "WHF_fnc_initSpawnRecruitAction_rearmRecruit";
+                private _ret = [_x, _loadout] call WHF_fnc_setUnitLoadout;
+                _output pushBack _ret;
+            };
+
+            [_script, _output]
+        };
+
+        waitUntil {_scripts findIf {!scriptDone (_x # 0)} < 0};
+        private _rearmed = {_x # 1 # 0} count _scripts;
+
+        if (_rearmed > 0) then {
+            hint format [localize "$STR_WHF_rearmRecruits_completed", _rearmed];
         } else {
             hint localize "$STR_WHF_rearmRecruits_none";
         };

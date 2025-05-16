@@ -46,7 +46,7 @@ _arsenal addAction [
 
         private _loadout = [] call WHF_fnc_getLastLoadout;
         if (_loadout isEqualTo []) exitWith {};
-        _caller setUnitLoadout _loadout;
+        if !([_caller, _loadout] call WHF_fnc_setUnitLoadout) exitWith {};
 
         private _weapon = configFile >> "CfgWeapons" >> currentWeapon _caller;
         private _sound = getArray (_weapon >> "reloadMagazineSound") # 0;
