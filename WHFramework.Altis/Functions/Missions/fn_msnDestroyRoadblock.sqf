@@ -119,7 +119,7 @@ private _taskID = [
 
 private _initialUnitCount = 0;
 {_initialUnitCount = _initialUnitCount + count units _x} forEach _groups;
-private _threshold = _initialUnitCount * 0.4;
+private _threshold = _initialUnitCount * 0.3;
 
 while {true} do {
     sleep 10;
