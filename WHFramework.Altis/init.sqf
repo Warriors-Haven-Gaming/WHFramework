@@ -14,7 +14,8 @@ diag_log text format ["Initializing %1", briefingName];
 setMissionOptions createHashMapFromArray [
     ["IgnoreNoDamage", true],
     ["IgnoreFakeHeadHit", true],
-    ["IgnoreUpsideDownDamage", true]
+    ["IgnoreUpsideDownDamage", true],
+    ["AIThinkOnlyLocal", true]
 ];
 
 if (!isMultiplayer) then {
