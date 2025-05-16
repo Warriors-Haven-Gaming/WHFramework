@@ -97,9 +97,9 @@ switch (true) do {
         private _HE = "CUP_1Rnd_TE1_Red_Tracer_120mm_M908_M256_Cannon_M";
         _vehicle removeMagazinesTurret [_AP, [0]];
         _vehicle removeMagazinesTurret [_HT, [0]];
-        for "_i" from 1 to 15 do {_vehicle addMagazineTurret [_AP, [0]]};
-        for "_i" from 1 to 20 do {_vehicle addMagazineTurret [_HT, [0]]};
-        for "_i" from 1 to 10 do {_vehicle addMagazineTurret [_HE, [0]]};
+        _vehicle addMagazinesTurret [_AP, [0], 15];
+        _vehicle addMagazinesTurret [_HT, [0], 20];
+        _vehicle addMagazinesTurret [_HE, [0], 10];
     };
     case (_vehicle isKindOf "CUP_M2Bradley_Base"): {
         [_vehicle, WHF_aps_ammoAPC] call WHF_fnc_addAPS;
