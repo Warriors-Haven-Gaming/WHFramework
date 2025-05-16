@@ -28,7 +28,7 @@ if (isNil "_enabled") then {_enabled = !WHF_earplugs_isEnabled};
 if (_enabled isEqualTo WHF_earplugs_isEnabled) exitWith {};
 
 private _duration = 1;
-private _now = diag_tickTime;
+private _now = uiTime;
 if (isNil "WHF_earplugs_last") then {WHF_earplugs_last = _now - _duration};
 if (WHF_earplugs_last + _duration > _now) exitWith {};
 
