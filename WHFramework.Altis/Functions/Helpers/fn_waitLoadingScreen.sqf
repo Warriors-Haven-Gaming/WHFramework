@@ -24,6 +24,6 @@ params [["_timeout", 30]];
 private _isDone = {isNil "BIS_fnc_startLoadingScreen_ids" || {count BIS_fnc_startLoadingScreen_ids < 1}};
 if (call _isDone) exitWith {true};
 
-_timeout = diag_tickTime + _timeout;
-waitUntil {uiSleep 0.125; call _isDone || {diag_tickTime > _timeout}};
+_timeout = uiTime + _timeout;
+waitUntil {uiSleep 0.125; call _isDone || {uiTime > _timeout}};
 call _isDone
