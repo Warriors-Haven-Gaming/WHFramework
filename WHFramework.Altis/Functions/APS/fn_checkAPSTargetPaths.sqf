@@ -18,11 +18,18 @@ Author:
 
 */
 params ["_vehicle", "_projectiles"];
-// FIXME: after v2.20, use alternative syntax for parallel intersections
+
 private _scale = WHF_aps_rate * WHF_aps_distance;
-_projectiles select {
+private _vectors = _projectiles apply {
     private _begPos = getPosASL _x;
     private _endPos = _begPos vectorAdd (velocity _x vectorMultiply _scale);
-    private _objects = lineIntersectsObjs [_begPos, _endPos, _x, objNull, false, 16];
-    _vehicle in _objects
-}
+    [_begPos, _endPos, _x, objNull, false, 16]
+};
+
+private _threats = [];
+{
+    if !(_vehicle in _x) then {continue};
+    _threats pushBack _projectiles # _forEachIndex;
+} forEach lineIntersectsObjs [_vectors];
+
+_threats
