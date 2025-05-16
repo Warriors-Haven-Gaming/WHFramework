@@ -42,7 +42,7 @@ if (_center isEqualTo []) exitWith {
     diag_log text format ["%1: No center found", _fnc_scriptName];
 };
 
-private _area = [_center, _radius, _radius, 0, false];
+private _area = [_center, _radius, _radius];
 private _ruins = [];
 
 [opfor, 2 + floor random 3, _center, _radius, ["arty",1], _ruins] call WHF_fnc_createEmplacements

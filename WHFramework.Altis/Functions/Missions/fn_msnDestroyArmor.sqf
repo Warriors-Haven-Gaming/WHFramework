@@ -42,7 +42,7 @@ if (_center isEqualTo []) exitWith {
     diag_log text format ["%1: No center found", _fnc_scriptName];
 };
 
-private _area = [_center, _radius, _radius, 0, false];
+private _area = [_center, _radius, _radius];
 
 private _objects = [];
 private _terrain = [];
@@ -129,7 +129,7 @@ if (count _vehicles < 1) exitWith {
 };
 
 private _taskCenter = _center getPos [20 + random 20, random 360];
-private _taskArea = [_taskCenter, _radius, _radius, 0, false];
+private _taskArea = [_taskCenter, _radius, _radius];
 private _areaMarker = [["WHF_msnDestroyArmor_"], _taskArea, true] call WHF_fnc_createAreaMarker;
 _areaMarker setMarkerBrushLocal "FDiagonal";
 _areaMarker setMarkerColorLocal "ColorRed";
