@@ -28,7 +28,7 @@ private _showMessage = {
         _ammo,
         _vehicle getVariable ["WHF_aps_ammo_max", _ammo]
     ];
-    {_message remoteExec ["WHF_fnc_localizedCutText", _x]} forEach _players;
+    {[_message] remoteExec ["WHF_fnc_localizedCutText", _x]} forEach _players;
 };
 
 while {true} do {

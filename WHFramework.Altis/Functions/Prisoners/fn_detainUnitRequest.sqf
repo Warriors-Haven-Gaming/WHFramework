@@ -101,7 +101,7 @@ _target action ["Surrender", _target];
 [_target, ["", 0, 0, false]] remoteExec ["switchGesture"];
 
 if (isNil {_target getVariable "WHF_disableGC"}) then {
-    _target remoteExec ["WHF_fnc_queueGCDeletion", 2];
+    [_target] remoteExec ["WHF_fnc_queueGCDeletion", 2];
 };
 
 _target removeWeapon binocular _target;

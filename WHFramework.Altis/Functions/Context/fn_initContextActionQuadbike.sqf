@@ -23,7 +23,7 @@ if (!hasInterface) exitWith {};
         WHF_quadbike setVariable ["WHF_vehicleLock_driver", ["uid", [getPlayerUID focusOn]], true];
         // playSound3D ["", WHF_quadbike];
 
-        WHF_quadbike remoteExec ["WHF_fnc_queueGCDeletion", 2];
+        [WHF_quadbike] remoteExec ["WHF_fnc_queueGCDeletion", 2];
     },
     nil,
     true,

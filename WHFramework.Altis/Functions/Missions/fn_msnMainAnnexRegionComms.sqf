@@ -61,8 +61,8 @@ private _guardGroup = [opfor, "standard", selectRandom [4, 6, 8], _pos, 20] call
 _groups pushBack _guardGroup;
 
 private _towerFunction = "WHF_fnc_msnMainAnnexRegionCommsTower";
-{_x remoteExec [_towerFunction, WHF_globalPlayerTarget, _x]} forEach _tower;
-{_x remoteExec ["WHF_fnc_addIntelAction", WHF_globalPlayerTarget, _x]} forEach _intel;
+{[_x] remoteExec [_towerFunction, WHF_globalPlayerTarget, _x]} forEach _tower;
+{[_x] remoteExec ["WHF_fnc_addIntelAction", WHF_globalPlayerTarget, _x]} forEach _intel;
 [_officer, "variable"] remoteExec ["WHF_fnc_addIntelAction", WHF_globalPlayerTarget, _officer];
 
 private _taskID = [

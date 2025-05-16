@@ -20,7 +20,7 @@ params ["_player", "_timeOfDay"];
 if !([_player] call WHF_fnc_isPlayerRemoteExecuted) exitWith {};
 if (!WHF_requestSkipTime_enabled) exitWith {};
 if (!isNil "WHF_requestSkipTime_script" && {!scriptDone WHF_requestSkipTime_script}) exitWith {
-    "$STR_WHF_showSkipTimePending" remoteExec ["WHF_fnc_localizedHint", remoteExecutedOwner];
+    ["$STR_WHF_showSkipTimePending"] remoteExec ["WHF_fnc_localizedHint", remoteExecutedOwner];
 };
 
 private _last = missionNamespace getVariable ["WHF_requestSkipTime_last", time - WHF_requestSkipTime_cooldown];
