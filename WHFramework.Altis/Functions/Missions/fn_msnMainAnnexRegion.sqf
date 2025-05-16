@@ -51,7 +51,7 @@ if (_location isEqualTo locationNull) then {
 
         if ([_pos, _safeRadius] call WHF_fnc_isNearRespawn) then {continue};
 
-        private _area = [_pos, _safeRadius, _safeRadius, 0, false];
+        private _area = [_pos, _safeRadius, _safeRadius];
         if ([_units, _area] call WHF_fnc_anyInArea) then {continue};
 
         _location = _x;
@@ -64,7 +64,7 @@ if (_location isEqualTo locationNull) exitWith {
 
 private _center = locationPosition _location vectorMultiply [1, 1, 0];
 _center = _center vectorAdd [50 - random 100, 50 - random 100];
-private _area = [_center, _radius, _radius, 0, false];
+private _area = [_center, _radius, _radius];
 
 [_center, _radius, _faction] call WHF_fnc_msnMainAnnexRegionCompositions
     params ["_objects", "_terrain", "_compGroups"];

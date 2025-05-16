@@ -43,7 +43,7 @@ if (_center isEqualTo []) exitWith {
 if (_faction isEqualTo "") then {_faction = selectRandom WHF_factions_pool};
 private _standard = ["standard", _faction];
 
-private _area = [_center, _radius, _radius, 0, false];
+private _area = [_center, _radius, _radius];
 private _ruins = [];
 
 [opfor, [_standard], 2 + floor random 3, _center, _radius, ["arty",1], _ruins]

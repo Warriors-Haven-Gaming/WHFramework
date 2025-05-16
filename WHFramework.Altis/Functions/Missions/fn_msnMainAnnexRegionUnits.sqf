@@ -65,7 +65,7 @@ for "_i" from 1 to _vehicleCount do {
     _vehicles append assignedVehicles _group;
 };
 
-private _area = [_center, _radius, _radius, 0, false];
+private _area = [_center, _radius, _radius];
 [_groups, _area] spawn WHF_fnc_attackLoop;
 
 [_groups, _vehicles]
