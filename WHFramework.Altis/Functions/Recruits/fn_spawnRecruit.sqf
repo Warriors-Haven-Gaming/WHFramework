@@ -56,7 +56,7 @@ switch (_role) do {
 };
 
 private _loadout = [_role] call WHF_fnc_getLastLoadout;
-if (_loadout isNotEqualTo []) then {_unit setUnitLoadout _loadout};
+if (_loadout isNotEqualTo []) then {[_unit, _loadout] spawn WHF_fnc_setUnitLoadout};
 _unit call WHF_fnc_addRecruitLoadoutAction;
 
 private _target = WHF_globalPlayerTarget;
