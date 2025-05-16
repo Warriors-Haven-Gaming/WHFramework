@@ -16,7 +16,7 @@ Author:
 params ["_unit"];
 
 private _loadout = [] call WHF_fnc_getLastLoadout;
-if (_loadout isNotEqualTo []) then {_unit setUnitLoadout _loadout};
+if (_loadout isNotEqualTo []) then {[_unit, _loadout] spawn WHF_fnc_setUnitLoadout};
 
 private _respawns = [_unit] call WHF_fnc_respawnMarkers;
 if (count _respawns > 0) then {
