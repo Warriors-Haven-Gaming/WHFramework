@@ -25,7 +25,7 @@ private _processDiscreetQueue = {
         if (_time < _startAt) then {continue};
 
         private _center = _objects # 0;
-        private _area = [getPosATL _center, _minDistance, _minDistance, 0, false];
+        private _area = [getPosATL _center, _minDistance, _minDistance];
         if ([_units, _area] call WHF_fnc_anyInArea) then {continue};
 
         _callback forEach _objects;

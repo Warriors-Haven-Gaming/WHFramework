@@ -47,7 +47,7 @@ private _reinforceScript =
     spawn WHF_fnc_msnDefendAidSuppliesReinforcements;
 _scripts pushBack _reinforceScript;
 
-private _area = [_center, _radius * 1.5, _radius * 1.5, 0, false];
+private _area = [_center, _radius * 1.5, _radius * 1.5];
 private _areaMarker = [["WHF_msnDefendAidSupplies_"], _area, true] call WHF_fnc_createAreaMarker;
 _areaMarker setMarkerBrushLocal "FDiagonal";
 _areaMarker setMarkerColorLocal "ColorBlue";

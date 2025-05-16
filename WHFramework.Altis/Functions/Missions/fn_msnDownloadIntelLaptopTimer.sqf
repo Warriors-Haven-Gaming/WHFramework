@@ -26,7 +26,7 @@ if (!isNil "_interruptProgress") then {
 };
 
 private _duration = _laptop getVariable ["WHF_downloadProgress", [0, 120]];
-private _area = [getPosATL _laptop, 100, 100, 0, false];
+private _area = [getPosATL _laptop, 100, 100];
 private _condition = [[_laptop], "WHF_fnc_msnDownloadIntelLaptopTimerCondition"];
 private _hasElapsed = [_duration, nil, _area, _condition] call WHF_fnc_displayTimer;
 

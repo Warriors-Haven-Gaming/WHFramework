@@ -63,7 +63,7 @@ private _playersNearSupply = {
     params ["_supply"];
     allPlayers
         select {side group _x isEqualTo blufor}
-        inAreaArray [getPosATL _supply, _radius, _radius, 0, false]
+        inAreaArray [getPosATL _supply, _radius, _radius]
 };
 
 private _sideChat = {
@@ -86,7 +86,7 @@ while {true} do {
     {
         if (!alive _x) then {continue};
 
-        private _area = [getPosATL _x, 10, 10, 0, false];
+        private _area = [getPosATL _x, 10, 10];
         if !([_units, _area] call WHF_fnc_anyInArea) then {
             _supplyTheftAt set [_forEachIndex, -1];
             continue;

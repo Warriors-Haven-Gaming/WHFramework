@@ -17,7 +17,7 @@ private _isDeserted = {
     if (_object distanceSqr _pos < 1000) exitWith {false};
 
     private _radius = WHF_respawn_desertedDistance;
-    private _area = [getPosATL _object, _radius, _radius, 0, false];
+    private _area = [getPosATL _object, _radius, _radius];
     if ([_units, _area] call WHF_fnc_anyInArea) exitWith {false};
 
     true

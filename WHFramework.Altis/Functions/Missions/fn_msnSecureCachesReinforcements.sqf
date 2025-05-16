@@ -80,6 +80,6 @@ private _recon = [["recon", _factionA], ["recon", _factionB]];
 private _elite = [["elite", _factionA], ["elite", _factionB]];
 private _sniper = [["sniper", _factionA], ["sniper", _factionB]];
 
-private _targets = units blufor inAreaArray [_center, _radius, _radius, 0, false];
+private _targets = units blufor inAreaArray [_center, _radius, _radius];
 call _reinforceUnits;
 for "_i" from 1 to 1 + random 4 do {call _reinforceVehicles};

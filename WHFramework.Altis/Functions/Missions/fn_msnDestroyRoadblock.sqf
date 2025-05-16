@@ -57,7 +57,7 @@ if (_center isEqualTo []) exitWith {
 if (_faction isEqualTo "") then {_faction = selectRandom (WHF_factions_pool get opfor)};
 private _standard = ["standard", _faction];
 
-private _area = [_center, _radius, _radius, 0, false];
+private _area = [_center, _radius, _radius];
 private _ruins = [];
 
 private _terrain = nearestTerrainObjects [_center, [], 25, false, true];

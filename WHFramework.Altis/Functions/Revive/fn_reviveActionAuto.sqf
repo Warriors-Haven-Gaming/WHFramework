@@ -32,9 +32,9 @@ private _findNearestTarget = {
     };
 
     private _radius = WHF_recruits_revive_radius;
-    private _area = [getPosATL _unit, _radius, _radius, 0, false];
+    private _area = [getPosATL _unit, _radius, _radius];
     private _groupRadius = WHF_recruits_revive_radius_group;
-    private _groupArea = [getPosATL _unit, _groupRadius, _groupRadius, 0, false];
+    private _groupArea = [getPosATL _unit, _groupRadius, _groupRadius];
     private _targets = _units select {call _isTargetSuitable};
     if (count _targets < 1) exitWith {[objNull, 0]};
 

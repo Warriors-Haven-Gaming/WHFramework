@@ -50,7 +50,7 @@ if (_center isEqualTo []) then {
             if ([_pos, _safeRadius] call WHF_fnc_isNearRespawn) then {continue};
             if (_pos nearRoads _radius isEqualTo []) then {continue};
 
-            private _area = [_pos, _safeRadius, _safeRadius, 0, false];
+            private _area = [_pos, _safeRadius, _safeRadius];
             if ([_units, _area] call WHF_fnc_anyInArea) then {continue};
 
             _center = _pos;

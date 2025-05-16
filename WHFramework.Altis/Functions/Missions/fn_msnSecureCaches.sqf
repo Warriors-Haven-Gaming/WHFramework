@@ -43,7 +43,7 @@ if (_center isEqualTo []) then {
 if (_center isEqualTo []) exitWith {
     diag_log text format ["%1: No center found", _fnc_scriptName];
 };
-private _reinforceArea = [_center, _cacheRadius, _cacheRadius, 0, false];
+private _reinforceArea = [_center, _cacheRadius, _cacheRadius];
 
 if (_factionA isEqualTo "") then {_factionA = selectRandom (WHF_factions_pool get opfor)};
 if (_factionB isEqualTo "") then {

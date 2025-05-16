@@ -22,7 +22,7 @@ Returns:
 
 Examples:
     (begin example)
-        [[], [[0,0,0], 100, 100, 0, false]] call WHF_fnc_creaAreaMarker;
+        [[], [[0,0,0], 100, 100]] call WHF_fnc_creaAreaMarker;
     (end)
 
 Author:
@@ -30,7 +30,7 @@ Author:
 
 */
 params ["_randomMarkerIDParams", "_area", ["_local", false]];
-_area params ["_center", "_a", "_b", "_angle", "_isRectangle"];
+_area params ["_center", "_a", "_b", ["_angle", 0], ["_isRectangle", false]];
 
 private _marker = [_randomMarkerIDParams, _center] call WHF_fnc_createLocalMarker;
 if (_marker isEqualTo "") exitWith {_marker};
