@@ -42,7 +42,7 @@ if (_center isEqualTo []) exitWith {
     diag_log text format ["%1: No center found", _fnc_scriptName];
 };
 
-private _area = [_center, _radius, _radius, 0, false];
+private _area = [_center, _radius, _radius];
 private _ruins = [];
 
 private _aaTypes = WHF_missions_aaa_types;

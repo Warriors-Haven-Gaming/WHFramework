@@ -42,7 +42,7 @@ if (_center isEqualTo []) exitWith {
     diag_log text format ["%1: No center found", _fnc_scriptName];
 };
 
-private _area = [_center, _radius, _radius, 0, false];
+private _area = [_center, _radius, _radius];
 
 private _terrainObjects = nearestTerrainObjects [_center, [], 20, false, true];
 _terrainObjects apply {hideObjectGlobal _x};
@@ -116,7 +116,7 @@ _vehicles append assignedVehicles _vehicleGroup;
 [_groups, _area] spawn WHF_fnc_attackLoop;
 
 private _taskCenter = _center getPos [20 + random 20, random 360];
-private _taskArea = [_taskCenter, _radius, _radius, 0, false];
+private _taskArea = [_taskCenter, _radius, _radius];
 private _areaMarker = [["WHF_msnDestroyBarracks_"], _taskArea, true] call WHF_fnc_createAreaMarker;
 _areaMarker setMarkerBrushLocal "FDiagonal";
 _areaMarker setMarkerColorLocal "ColorRed";
