@@ -52,6 +52,11 @@ if (!isRemoteExecutedJIP) then {
     };
 };
 
+
+// If unit is remote, allow for some network delay before starting incap loop
+// so unit's unconscious state can be synchronized
+if (!isRemoteExecutedJIP && {!local _unit}) then {sleep 0.5};
+
 private _incapScript = _unit getVariable ["WHF_incapacitated_script", scriptNull];
 if (!scriptDone _incapScript) then {terminate _incapScript};
 _unit setVariable ["WHF_incapacitated_script", [_unit] spawn WHF_fnc_incapLoop];
