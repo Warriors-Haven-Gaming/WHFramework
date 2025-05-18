@@ -44,7 +44,7 @@ class CfgDisabledCommands
 
         class SYNTAX4
         {
-            targets[] = {0,0,0};
+            targets[] = {0,1,0}; // Only used for debug console, can be disabled
             args[] = {{},{"NAMESPACE"}};
         };
 
@@ -83,7 +83,7 @@ class CfgDisabledCommands
 
         class SYNTAX2
         {
-            targets[] = {0,0,0};
+            targets[] = {0,1,0}; // Only used for debug console, can be disabled
             args[] = {{"STRING"},{"ARRAY"}};
         };
     };
