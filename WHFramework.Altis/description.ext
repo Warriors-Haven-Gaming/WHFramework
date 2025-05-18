@@ -63,6 +63,8 @@ class Extended_PreInit_EventHandlers {
     };
 };
 
+#include "CfgDisabledCommands.hpp"
+
 // https://community.bistudio.com/wiki/Arma_3:_Functions_Library
 class CfgFunctions {
     class WHF {
@@ -170,6 +172,9 @@ class CfgFunctions {
         };
         class Icons {
             class initFriendlyIcons {};
+        };
+        class Init {
+            class setSideRelations { preInit = true; };
         };
         class Loading {
             class addLoadActions {};
