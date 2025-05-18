@@ -12,18 +12,18 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=997;
+		nextID=1016;
 	};
 	class LayerIndexProvider
 	{
-		nextID=54;
+		nextID=65;
 	};
 	class Camera
 	{
-		pos[]={1641.2587,84.993011,1973.2867};
-		dir[]={0.59914845,-0.30563954,0.74000865};
-		up[]={0.19232753,0.95214677,0.23754409};
-		aside[]={0.7772004,-5.1222742e-09,-0.62926042};
+		pos[]={1772.8326,135.65137,2019.5892};
+		dir[]={-0.049998507,-0.53825456,0.84131879};
+		up[]={-0.031932,0.84277332,0.53732324};
+		aside[]={0.99825329,4.4020999e-07,0.059325796};
 	};
 };
 binarizationWanted=0;
@@ -1827,7 +1827,7 @@ class Mission
 			name="MOB";
 			class Entities
 			{
-				items=6;
+				items=7;
 				class Item0
 				{
 					dataType="Layer";
@@ -1970,14 +1970,14 @@ class Mission
 							{
 								class Attribute0
 								{
-									property="F16VFontStyle";
-									expression="_this setVariable [""F16VFontStyle"", _value]; [_this, _value] call lala_peral_F16V_fnc_applyAircraftFontStyle; [_this,_this getVariable [""F16V_Squadron_Insignia"",""None""]] call Peral_F16V_fnc_Squadron_Insignia;";
+									property="F16V_Squadron_Insignia";
+									expression="_this setVariable [""F16V_Squadron_Insignia"", _value]; [_this,_value] call Peral_F16V_fnc_Squadron_Insignia;";
 									class Value
 									{
 										class data
 										{
 											singleType="STRING";
-											value="white_font";
+											value="None";
 										};
 									};
 								};
@@ -2035,14 +2035,14 @@ class Mission
 								};
 								class Attribute5
 								{
-									property="F16V_Squadron_Insignia";
-									expression="_this setVariable [""F16V_Squadron_Insignia"", _value]; [_this,_value] call Peral_F16V_fnc_Squadron_Insignia;";
+									property="F16VFontStyle";
+									expression="_this setVariable [""F16VFontStyle"", _value]; [_this, _value] call lala_peral_F16V_fnc_applyAircraftFontStyle; [_this,_this getVariable [""F16V_Squadron_Insignia"",""None""]] call Peral_F16V_fnc_Squadron_Insignia;";
 									class Value
 									{
 										class data
 										{
 											singleType="STRING";
-											value="None";
+											value="white_font";
 										};
 									};
 								};
@@ -16526,6 +16526,7 @@ class Mission
 				{
 					dataType="Layer";
 					name="Modules";
+					state=2;
 					class Entities
 					{
 						items=2;
@@ -16745,9 +16746,202 @@ class Mission
 					id=995;
 					atlOffset=0.089267731;
 				};
+				class Item6
+				{
+					dataType="Layer";
+					name="Markers";
+					class Entities
+					{
+						items=15;
+						class Item0
+						{
+							dataType="Marker";
+							position[]={1724,60.029999,2121};
+							name="marker_5";
+							text="APCs";
+							type="b_mech_inf";
+							alpha=0.69999999;
+							a=0.5;
+							b=0.5;
+							id=999;
+						};
+						class Item1
+						{
+							dataType="Marker";
+							position[]={1687,60.029999,2121};
+							name="marker_7";
+							text="Cars";
+							type="b_motor_inf";
+							alpha=0.69999999;
+							a=0.5;
+							b=0.5;
+							id=1000;
+						};
+						class Item2
+						{
+							dataType="Marker";
+							position[]={1795,60.030029,2044};
+							name="marker_11";
+							text="Gunships";
+							type="b_air";
+							alpha=0.69999999;
+							a=0.5;
+							b=0.5;
+							id=1001;
+							atlOffset=3.0517578e-05;
+						};
+						class Item3
+						{
+							dataType="Marker";
+							position[]={1742,60.029999,2044};
+							name="marker_10";
+							text="Helicopters";
+							type="b_air";
+							alpha=0.69999999;
+							a=0.5;
+							b=0.5;
+							id=1002;
+						};
+						class Item4
+						{
+							dataType="Marker";
+							position[]={1856,60.029999,2163};
+							name="marker_3";
+							text="IFVs";
+							type="b_mech_inf";
+							alpha=0.69999999;
+							a=0.5;
+							b=0.5;
+							id=1003;
+						};
+						class Item5
+						{
+							dataType="Marker";
+							position[]={1724,60.029999,2171};
+							name="marker_2";
+							text="Mortars";
+							type="b_mortar";
+							alpha=0.69999999;
+							a=0.5;
+							b=0.5;
+							id=1004;
+						};
+						class Item6
+						{
+							dataType="Marker";
+							position[]={1850,60.029999,2098};
+							name="marker_4";
+							text="Service";
+							type="b_service";
+							alpha=0.69999999;
+							a=0.5;
+							b=0.5;
+							id=1005;
+						};
+						class Item7
+						{
+							dataType="Marker";
+							position[]={1837,60.029999,1829};
+							name="marker_9";
+							text="Service";
+							type="b_service";
+							alpha=0.69999999;
+							a=0.5;
+							b=0.5;
+							id=1006;
+						};
+						class Item8
+						{
+							dataType="Marker";
+							position[]={1687,60.029999,2170};
+							name="marker_8";
+							text="Support";
+							type="b_support";
+							alpha=0.69999999;
+							a=0.5;
+							b=0.5;
+							id=1008;
+						};
+						class Item9
+						{
+							dataType="Marker";
+							position[]={1856,60.029999,2130};
+							name="marker_6";
+							text="Tanks";
+							type="b_mech_inf";
+							alpha=0.69999999;
+							a=0.5;
+							b=0.5;
+							id=1009;
+						};
+						class Item10
+						{
+							dataType="Marker";
+							position[]={1658,60.104553,1887};
+							name="marker_12";
+							text="VTOLs";
+							type="b_plane";
+							alpha=0.69999999;
+							a=0.5;
+							b=0.5;
+							id=1010;
+							atlOffset=0.0045547485;
+						};
+						class Item11
+						{
+							dataType="Marker";
+							position[]={1620,60.269997,2002};
+							name="marker_14";
+							text="Recruits";
+							type="b_inf";
+							alpha=0.69999999;
+							a=0.5;
+							b=0.5;
+							id=1011;
+						};
+						class Item12
+						{
+							dataType="Marker";
+							position[]={1786,60.029999,1939};
+							name="marker_15";
+							text="Fighter Jets";
+							type="b_plane";
+							alpha=0.69999999;
+							a=0.5;
+							b=0.5;
+							id=1012;
+						};
+						class Item13
+						{
+							dataType="Marker";
+							position[]={1808,60.029999,2033};
+							name="marker_16";
+							text="Service";
+							type="b_service";
+							alpha=0.69999999;
+							a=0.5;
+							b=0.5;
+							id=1013;
+						};
+						class Item14
+						{
+							dataType="Marker";
+							position[]={1764,60.029999,2121};
+							name="marker_13";
+							text="APCs";
+							type="b_mech_inf";
+							alpha=0.69999999;
+							a=0.5;
+							b=0.5;
+							id=1015;
+						};
+					};
+					id=998;
+					atlOffset=-8.4462013;
+				};
 			};
 			id=264;
-			atlOffset=0.25880051;
+			atlOffset=-4.0937004;
 		};
 		class Item2
 		{
