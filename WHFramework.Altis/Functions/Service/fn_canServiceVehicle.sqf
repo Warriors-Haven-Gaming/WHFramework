@@ -18,7 +18,7 @@ if (!alive _vehicle) exitWith {false};
 if (_distance > 7) exitWith {false};
 if (["LandVehicle", "Air", "Ship"] findIf {_vehicle isKindOf _x} < 0) exitWith {false};
 
-private _lastService = _vehicle getVariable "WHF_lastService";
+private _lastService = _vehicle getVariable "WHF_service_last";
 private _cooldown = 60;
 if (!isNil "_lastService" && {time - _lastService < _cooldown}) exitWith {};
 

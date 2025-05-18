@@ -22,18 +22,28 @@ private _actionID = [
     "true",
     {
         [player, ["InBaseMoves_assemblingVehicleErc", random 0.5, 0, false]] remoteExec ["switchMove"];
-        [cursorObject] call WHF_fnc_playServiceSounds;
-    },
-    {},
-    {
-        [player, ["", 0, 0, false]] remoteExec ["switchMove"];
-        call WHF_fnc_stopServiceSounds;
-        [cursorObject] remoteExec ["WHF_fnc_serviceVehicle", cursorObject];
-        cursorObject setVariable ["WHF_lastService", time];
     },
     {
+        [cursorObject] call WHF_fnc_playServiceSound;
+    },
+    {
+        private _vehicle = cursorObject;
         [player, ["", 0, 0, false]] remoteExec ["switchMove"];
-        call WHF_fnc_stopServiceSounds;
+        [_vehicle] remoteExec ["WHF_fnc_serviceVehicle", _vehicle];
+        _vehicle setVariable ["WHF_service_last", time];
+
+        sleep 0.35;
+        playSound3D [
+            selectRandom [
+                "a3\sounds_f\vehicles\boat\noises\metal_boat_crash_armor_01.wss",
+                "a3\sounds_f\vehicles\boat\noises\metal_boat_crash_armor_02.wss",
+                "a3\sounds_f\vehicles\boat\noises\metal_boat_crash_armor_03.wss"
+            ],
+            _vehicle
+        ];
+    },
+    {
+        [player, ["", 0, 0, false]] remoteExec ["switchMove"];
     },
     [],
     10,
