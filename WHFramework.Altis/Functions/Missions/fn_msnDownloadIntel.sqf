@@ -85,13 +85,13 @@ private _downloadStartedOnce = false;
 while {true} do {
     sleep 3;
     if (!alive _laptop) exitWith {[_taskID, "FAILED"] spawn WHF_fnc_taskEnd};
-    if (_laptop getVariable ["downloadStarted", false] isEqualTo true) then {
+    if (_laptop getVariable ["WHF_downloadStarted", false] isEqualTo true) then {
         if (!_downloadStartedOnce) then {
             _downloadStartedOnce = true;
             [_laptop, _groups, _vehicles] call WHF_fnc_msnDownloadIntelReinforcements;
         };
     };
-    if (_laptop getVariable ["downloadEnded", false] isEqualTo true) exitWith {
+    if (_laptop getVariable ["WHF_downloadEnded", false] isEqualTo true) exitWith {
         [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
     };
 };

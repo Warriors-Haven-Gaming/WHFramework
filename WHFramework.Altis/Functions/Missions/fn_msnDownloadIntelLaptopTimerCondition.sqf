@@ -16,11 +16,11 @@ params ["_elapsed", "_duration", "_args"];
 _args params ["_laptop"];
 
 // Server might be interrupting us to synchronize the progress
-private _interruptProgress = _laptop getVariable "downloadInterruptProgress";
+private _interruptProgress = _laptop getVariable "WHF_downloadInterruptProgress";
 if (!isNil "_interruptProgress") exitWith {false};
 
 private _area = [getPosATL _laptop, 5, 5, 0, false, 5];
 private _units = units blufor select {lifeState _x in ["HEALTHY", "INJURED"]};
 private _bluforInArea = [_units, _area] call WHF_fnc_anyInArea;
-if (_bluforInArea) then {_laptop setVariable ["downloadProgress", [_elapsed, _duration]]};
+if (_bluforInArea) then {_laptop setVariable ["WHF_downloadProgress", [_elapsed, _duration]]};
 _bluforInArea
