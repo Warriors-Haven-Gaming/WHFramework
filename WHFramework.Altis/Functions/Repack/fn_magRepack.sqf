@@ -36,6 +36,12 @@ if (_unit isEqualTo focusOn) then {
 _unit setAnimSpeedCoef (_animSpeed / 2);
 _unit setVariable ["WHF_magRepack", true];
 
+// Preload the completion sound so Arma can play it with the intended offset.
+// For some reason, waitUntil {preloadSound _x} doesn't do this, so we're
+// playing it at an inaudible volume instead.
+private _completedSound = "a3\sounds_f\arsenal\weapons\machineguns\mk200\reload_mk200.wss";
+playSoundUI [_completedSound, 0, 1, true];
+
 private _addMagazine = {
     params ["_type", "_count"];
     // TODO: queue magazines to be reloaded while repacking is in progress
@@ -129,12 +135,11 @@ private _soundPlayed = false;
 
 if (_completed) then {
     if (_soundPlayed) then {sleep 0.5};
-    private _sound = "a3\sounds_f\arsenal\weapons\machineguns\mk200\reload_mk200.wss";
     if (_unit isEqualTo focusOn) then {
-        playSoundUI [_sound, 3, 1, true, 4.2];
+        playSoundUI [_completedSound, 3, 1, true, 4.2];
     } else {
         private _pos = _unit modelToWorldVisualWorld [0, 0.5, 0.5];
-        playSound3D [_sound, objNull, false, _pos, 3, 1, 0, 4.2, true];
+        playSound3D [_completedSound, objNull, false, _pos, 3, 1, 0, 4.2, true];
     };
 };
 
