@@ -65,8 +65,9 @@ private _soundPlayed = false;
     // Since we can't delete a specific magazine from the unit's inventory,
     // we'll delete all inventory magazines upfront, plus partial weapon magazines
     private _fullLoaded = [];
+    private _removeTypes = [];
     {
-        if (_x # 3 isEqualTo -1) then {_unit removeMagazine _x # 0; continue};
+        if (_x # 3 isEqualTo -1) then {_removeTypes pushBackUnique _x # 0; continue};
         private _capacity = getNumber (configFile >> "CfgMagazines" >> _x # 0 >> "count");
         if (_x # 1 >= _capacity) then {_fullLoaded pushBack _forEachIndex; continue};
         switch (_x # 3) do {
@@ -78,6 +79,7 @@ private _soundPlayed = false;
 
     // Skip magazines that we've left in the unit's guns
     {_magazines deleteAt _x} forEachReversed _fullLoaded;
+    {_unit removeMagazines _x} forEach _removeTypes;
 
     while _canRepack do {
         private _first = _magazines # 0;
