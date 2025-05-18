@@ -3680,6 +3680,7 @@ class Mission
 							{
 								position[]={1624.7936,60.34573,2030.7258};
 							};
+							init="if (!isServer) exitWith {}; " \n "_filter = [ " \n "    ""BUILDING"",""HOUSE"",""CHURCH"",""CHAPEL"",""FUELSTATION"",""HOSPITAL"",""RUIN"",""BUNKER"", " \n "    ""TREE"",""SMALL TREE"",""BUSH"", " \n "    ""WALL"",""FENCE"", " \n "    ""ROCK"",""ROCKS"",""FOREST BORDER"",""FOREST TRIANGLE"",""FOREST SQUARE"",""CROSS"",""FORTRESS"",""FOUNTAIN"",""VIEW-TOWER"",""LIGHTHOUSE"",""QUAY"",""HIDE"",""BUSSTOP"",""ROAD"",""FOREST"",""TRANSMITTER"",""STACK"",""TOURISM"",""WATERTOWER"",""TRACK"",""MAIN ROAD"",""POWER LINES"",""RAILWAY"",""POWERSOLAR"",""POWERWAVE"",""POWERWIND"",""SHIPWRECK"",""TRAIL"" " \n "]; " \n "_area = [getPosATL this] + (this getVariable [""objectarea"",[]]); " \n "_area params ["""",""_a"",""_b""]; " \n "_radius = (_a max _b) * sqrt 2; " \n "_objects = nearestTerrainObjects [this,_filter,_radius,false] inAreaArray _area; " \n "{_x hideObjectGlobal true; _x allowDamage false} forEach _objects;";
 							areaSize[]={40.020874,0,38.182861};
 							areaIsRectangle=1;
 							flags=1;
@@ -3724,6 +3725,7 @@ class Mission
 							{
 								position[]={1801.6885,63.457626,2029.7902};
 							};
+							init="if (!isServer) exitWith {}; " \n "_filter = [ " \n "    ""BUILDING"",""HOUSE"",""CHURCH"",""CHAPEL"",""FUELSTATION"",""HOSPITAL"",""RUIN"",""BUNKER"", " \n "    ""TREE"",""SMALL TREE"",""BUSH"", " \n "    ""WALL"",""FENCE"", " \n "    ""ROCK"",""ROCKS"",""FOREST BORDER"",""FOREST TRIANGLE"",""FOREST SQUARE"",""CROSS"",""FORTRESS"",""FOUNTAIN"",""VIEW-TOWER"",""LIGHTHOUSE"",""QUAY"",""HIDE"",""BUSSTOP"",""ROAD"",""FOREST"",""TRANSMITTER"",""STACK"",""TOURISM"",""WATERTOWER"",""TRACK"",""MAIN ROAD"",""POWER LINES"",""RAILWAY"",""POWERSOLAR"",""POWERWAVE"",""POWERWIND"",""SHIPWRECK"",""TRAIL"" " \n "]; " \n "_area = [getPosATL this] + (this getVariable [""objectarea"",[]]); " \n "_area params ["""",""_a"",""_b""]; " \n "_radius = (_a max _b) * sqrt 2; " \n "_objects = nearestTerrainObjects [this,_filter,_radius,false] inAreaArray _area; " \n "{_x hideObjectGlobal true; _x allowDamage false} forEach _objects;";
 							areaSize[]={23.581482,0,29.140381};
 							areaIsRectangle=1;
 							flags=1;
@@ -3768,6 +3770,7 @@ class Mission
 							{
 								position[]={1718.0313,63,2170};
 							};
+							init="if (!isServer) exitWith {}; " \n "_filter = [ " \n "    ""BUILDING"",""HOUSE"",""CHURCH"",""CHAPEL"",""FUELSTATION"",""HOSPITAL"",""RUIN"",""BUNKER"", " \n "    ""TREE"",""SMALL TREE"",""BUSH"", " \n "    ""WALL"",""FENCE"", " \n "    ""ROCK"",""ROCKS"",""FOREST BORDER"",""FOREST TRIANGLE"",""FOREST SQUARE"",""CROSS"",""FORTRESS"",""FOUNTAIN"",""VIEW-TOWER"",""LIGHTHOUSE"",""QUAY"",""HIDE"",""BUSSTOP"",""ROAD"",""FOREST"",""TRANSMITTER"",""STACK"",""TOURISM"",""WATERTOWER"",""TRACK"",""MAIN ROAD"",""POWER LINES"",""RAILWAY"",""POWERSOLAR"",""POWERWAVE"",""POWERWIND"",""SHIPWRECK"",""TRAIL"" " \n "]; " \n "_area = [getPosATL this] + (this getVariable [""objectarea"",[]]); " \n "_area params ["""",""_a"",""_b""]; " \n "_radius = (_a max _b) * sqrt 2; " \n "_objects = nearestTerrainObjects [this,_filter,_radius,false] inAreaArray _area; " \n "{_x hideObjectGlobal true; _x allowDamage false} forEach _objects;";
 							areaSize[]={44.057739,0,10.414063};
 							areaIsRectangle=1;
 							flags=1;
@@ -3812,6 +3815,7 @@ class Mission
 							{
 								position[]={1852,63,2031};
 							};
+							init="if (!isServer) exitWith {}; " \n "_filter = [ " \n "    ""BUILDING"",""HOUSE"",""CHURCH"",""CHAPEL"",""FUELSTATION"",""HOSPITAL"",""RUIN"",""BUNKER"", " \n "    ""TREE"",""SMALL TREE"",""BUSH"", " \n "    ""WALL"",""FENCE"", " \n "    ""ROCK"",""ROCKS"",""FOREST BORDER"",""FOREST TRIANGLE"",""FOREST SQUARE"",""CROSS"",""FORTRESS"",""FOUNTAIN"",""VIEW-TOWER"",""LIGHTHOUSE"",""QUAY"",""HIDE"",""BUSSTOP"",""ROAD"",""FOREST"",""TRANSMITTER"",""STACK"",""TOURISM"",""WATERTOWER"",""TRACK"",""MAIN ROAD"",""POWER LINES"",""RAILWAY"",""POWERSOLAR"",""POWERWAVE"",""POWERWIND"",""SHIPWRECK"",""TRAIL"" " \n "]; " \n "_area = [getPosATL this] + (this getVariable [""objectarea"",[]]); " \n "_area params ["""",""_a"",""_b""]; " \n "_radius = (_a max _b) * sqrt 2; " \n "_objects = nearestTerrainObjects [this,_filter,_radius,false] inAreaArray _area; " \n "{_x hideObjectGlobal true; _x allowDamage false} forEach _objects;";
 							areaSize[]={23.581482,0,29.140381};
 							areaIsRectangle=1;
 							flags=1;
