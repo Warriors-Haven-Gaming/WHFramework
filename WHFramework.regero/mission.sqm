@@ -12,18 +12,18 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1084;
+		nextID=1090;
 	};
 	class LayerIndexProvider
 	{
-		nextID=110;
+		nextID=120;
 	};
 	class Camera
 	{
-		pos[]={1646.6074,62.955925,2017.2213};
-		dir[]={0.90357631,-0.22726861,0.36322328};
-		up[]={0.2109378,0.97381252,0.084793635};
-		aside[]={0.37298259,1.0291114e-07,-0.92785251};
+		pos[]={1688.5645,71.169411,2038.5471};
+		dir[]={0.8845526,-0.41209242,0.21864903};
+		up[]={0.40011832,0.91110522,0.098903976};
+		aside[]={0.23997162,-3.1414675e-07,-0.97080863};
 	};
 };
 binarizationWanted=0;
@@ -74,7 +74,6 @@ addons[]=
 	"A3_Structures_F_EPC_Items_Electronics",
 	"CUP_Misc_e_Config",
 	"A3_Structures_F_Mil_Flags",
-	"ibr_yulakia_objects",
 	"A3_Modules_F",
 	"A3_Structures_F_Civ_Lamps",
 	"A3_Armor_F_Gamma_APC_Wheeled_03",
@@ -105,7 +104,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=59;
+		items=58;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -360,96 +359,90 @@ class AddonsMetaData
 		};
 		class Item44
 		{
-			className="ibr_yulakia_objects";
-			name="ibr_yulakia_objects";
-			author="IceBreakr";
-		};
-		class Item45
-		{
 			className="A3_Modules_F";
 			name="Arma 3 Alpha - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item46
+		class Item45
 		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item47
+		class Item46
 		{
 			className="A3_Armor_F_Gamma";
 			name="Arma 3 - Armored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item48
+		class Item47
 		{
 			className="A3_Soft_F";
 			name="Arma 3 Alpha - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item49
+		class Item48
 		{
 			className="A3_Soft_F_Beta";
 			name="Arma 3 Beta - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item50
+		class Item49
 		{
 			className="A3_Structures_F_Exp";
 			name="Arma 3 Apex - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item51
+		class Item50
 		{
 			className="A3_Structures_F_Ind";
 			name="Arma 3 - Industrial Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item52
+		class Item51
 		{
 			className="CUP_Buildings_Config";
 			name="CUP_Buildings_Config";
 		};
-		class Item53
+		class Item52
 		{
 			className="CUP_CAMisc";
 			name="CUP_CAMisc";
 		};
-		class Item54
+		class Item53
 		{
 			className="A3_Structures_F_Argo";
 			name="Arma 3 Malden - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item55
+		class Item54
 		{
 			className="CUP_Editor_A1_Roads_Config";
 			name="CUP_Editor_A1_Roads_Config";
 		};
-		class Item56
+		class Item55
 		{
 			className="A3_Structures_F_Orange";
 			name="Arma 3 Orange - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item57
+		class Item56
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item58
+		class Item57
 		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
@@ -2000,14 +1993,14 @@ class Mission
 							{
 								class Attribute0
 								{
-									property="F16V_Squadron_Insignia";
-									expression="_this setVariable [""F16V_Squadron_Insignia"", _value]; [_this,_value] call Peral_F16V_fnc_Squadron_Insignia;";
+									property="F16VFontStyle";
+									expression="_this setVariable [""F16VFontStyle"", _value]; [_this, _value] call lala_peral_F16V_fnc_applyAircraftFontStyle; [_this,_this getVariable [""F16V_Squadron_Insignia"",""None""]] call Peral_F16V_fnc_Squadron_Insignia;";
 									class Value
 									{
 										class data
 										{
 											singleType="STRING";
-											value="None";
+											value="white_font";
 										};
 									};
 								};
@@ -2065,14 +2058,14 @@ class Mission
 								};
 								class Attribute5
 								{
-									property="F16VFontStyle";
-									expression="_this setVariable [""F16VFontStyle"", _value]; [_this, _value] call lala_peral_F16V_fnc_applyAircraftFontStyle; [_this,_this getVariable [""F16V_Squadron_Insignia"",""None""]] call Peral_F16V_fnc_Squadron_Insignia;";
+									property="F16V_Squadron_Insignia";
+									expression="_this setVariable [""F16V_Squadron_Insignia"", _value]; [_this,_value] call Peral_F16V_fnc_Squadron_Insignia;";
 									class Value
 									{
 										class data
 										{
 											singleType="STRING";
-											value="white_font";
+											value="None";
 										};
 									};
 								};
@@ -3009,7 +3002,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={1663,60.952423,2024};
-								angles[]={-0,4.712389,0};
+								angles[]={0,4.712389,0};
 							};
 							side="Empty";
 							flags=4;
@@ -3070,7 +3063,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={1650.025,60.992073,2011};
-								angles[]={-0,0,6.2671909};
+								angles[]={0,0,6.2671909};
 							};
 							side="Empty";
 							flags=4;
@@ -3081,6 +3074,7 @@ class Mission
 							};
 							id=855;
 							type="B_supplyCrate_F";
+							atlOffset=-6.1035156e-05;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -4052,13 +4046,13 @@ class Mission
 								angles[]={0,4.712389,0};
 							};
 							side="Empty";
-							flags=5;
+							flags=4;
 							class Attributes
 							{
 								init="[this,[0,5,0]] call WHF_fnc_initSpawnRecruitAction;";
 							};
-							id=1083;
-							type="Flag_Yulakia_F";
+							id=1089;
+							type="FlagCarrierCzechRepublic_EP1";
 							class CustomAttributes
 							{
 								class Attribute0
@@ -4079,7 +4073,7 @@ class Mission
 						};
 					};
 					id=471;
-					atlOffset=0.016693115;
+					atlOffset=0.00025939941;
 				};
 				class Item2
 				{
@@ -17812,7 +17806,7 @@ class Mission
 				};
 			};
 			id=264;
-			atlOffset=0.12854004;
+			atlOffset=0.12828827;
 		};
 		class Item2
 		{
@@ -17829,7 +17823,7 @@ class Mission
 					text="Main Operating Base";
 					type="respawn_unknown";
 					colorName="ColorWEST";
-					angle=59.999889;
+					angle=59.999882;
 					id=479;
 				};
 				class Item1
