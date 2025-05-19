@@ -125,7 +125,7 @@ class CfgDisabledCommands
     {
         class SYNTAX1
         {
-            targets[] = {0,0,0};
+            targets[] = {0,1,0};
             args[] = {{},{"CONTROL"}};
         };
     };
