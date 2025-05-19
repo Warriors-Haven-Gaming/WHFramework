@@ -4,6 +4,18 @@ class CfgRemoteExec : CfgRemoteExecMod {
     class Functions {
         mode = 2;
         jip = 0;
+
+        class AR_Client_Rappel_From_Heli {};
+        class AR_Enable_Rappelling_Animation { allowedTargets = 2; };
+        class AR_Hide_Object_Global { allowedTargets = 2; };
+        class AR_Hint { allowedTargets = 1; };
+        class AR_Rappel_From_Heli { allowedTargets = 2; };
+
+        class AUR_Enable_Rappelling_Animation_Global { allowedTargets = 2; };
+        class AUR_Hide_Object_Global { allowedTargets = 2; };
+        class AUR_Hint { allowedTargets = 1; };
+        class AUR_Play_Rappelling_Sounds_Global { allowedTargets = 2; };
+
         class BIS_fnc_callScriptedEventHandler {};
         class BIS_fnc_curatorRespawn {};
         class BIS_fnc_debugConsoleExec {};
@@ -25,6 +37,17 @@ class CfgRemoteExec : CfgRemoteExecMod {
         class BIS_fnc_setTaskLocal { jip = 1; };
         class BIS_fnc_sharedObjectives {};
         class BIS_fnc_showNotification { allowedTargets = 1; };
+
+        class SA_Attach_Tow_Ropes {};
+        class SA_Drop_Tow_Ropes {};
+        class SA_Hide_Object_Global { allowedTargets = 2; };
+        class SA_Hint { allowedTargets = 1; };
+        class SA_Pickup_Tow_Ropes {};
+        class SA_Put_Away_Tow_Ropes {};
+        class SA_Set_Owner { allowedTargets = 2; };
+        class SA_Simulate_Towing {};
+        class SA_Take_Tow_Ropes {};
+
         class WHF_fnc_addIntelAction { allowedTargets = 1; jip = 1; };
         class WHF_fnc_addPrisonerActions { jip = 1; };
         class WHF_fnc_detainUnitRequest {};
