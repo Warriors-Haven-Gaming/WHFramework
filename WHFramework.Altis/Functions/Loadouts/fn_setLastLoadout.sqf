@@ -18,7 +18,7 @@ Author:
 
 */
 params ["_loadout", ["_role", player getVariable ["WHF_role", ""]]];
-if (WHF_loadout_collection isEqualTo "default") exitWith {};
+if (WHF_loadout_collection in ["", "default"]) exitWith {};
 if (_role isEqualTo "") exitWith {};
 
 private _loadouts = missionProfileNamespace getVariable ["WHF_last_loadouts", createHashMap];
