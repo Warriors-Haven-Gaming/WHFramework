@@ -1,0 +1,51 @@
+import CfgRemoteExec as CfgRemoteExecMod;
+
+class CfgRemoteExec : CfgRemoteExecMod {
+    class Functions {
+        mode = 2;
+        jip = 0;
+        class BIS_fnc_debugConsoleExec {};
+        class BIS_fnc_effectKilledAirDestruction {};
+        class BIS_fnc_effectKilledSecondaries {};
+        class BIS_fnc_fire {};
+        class BIS_fnc_objectVar {};
+        class BIS_fnc_setCustomSoundController {};
+        class WHF_fnc_addIntelAction { allowedTargets = 1; jip = 1; };
+        class WHF_fnc_addPrisonerActions { jip = 1; };
+        class WHF_fnc_detainUnitRequest {};
+        class WHF_fnc_freeUnit {};
+        class WHF_fnc_haloJumpCut {};
+        class WHF_fnc_incapBleedout {};
+        class WHF_fnc_incapUnit { jip = 1; };
+        class WHF_fnc_localChat { allowedTargets = 1; };
+        class WHF_fnc_localizedCutText { allowedTargets = 1; };
+        class WHF_fnc_localizedHint { allowedTargets = 1; };
+        class WHF_fnc_msnDownloadIntelLaptop { jip = 1; };
+        class WHF_fnc_msnDownloadIntelLaptopTimer {};
+        class WHF_fnc_msnMainAnnexRegionCommsTower { allowedTargets = 1; jip = 1; };
+        class WHF_fnc_playMusicSnippet { allowedTargets = 1; };
+        class WHF_fnc_queueGCDeletion { allowedTargets = 2; };
+        class WHF_fnc_removePrisonerActions {};
+        class WHF_fnc_requestSkipTime { allowedTargets = 2; };
+        class WHF_fnc_reviveUnit {};
+        class WHF_fnc_serviceVehicle {};
+        class WHF_fnc_setPhysicsCollisions { jip = 1; };
+        class WHF_fnc_setSpeaker { allowedTargets = 1; jip = 1; };
+        class WHF_fnc_signalFlareBegin {};
+        class WHF_fnc_signalFlareInterrupt {};
+        class WHF_fnc_signalFlareReveal {};
+        class WHF_fnc_unflipVehicle {};
+        class WHF_fnc_vehSpawnGUIServer { allowedTargets = 2; };
+        class WHF_fnc_vehSpawnRequest { allowedTargets = 2; };
+    };
+
+    class Commands {
+        mode = 2;
+        jip = 0;
+        class enableDynamicSimulation {};
+        class moveInCargo {};
+        class switchGesture {};
+        class switchMove {};
+        class unassignVehicle {};
+    };
+};
