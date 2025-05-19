@@ -4,12 +4,27 @@ class CfgRemoteExec : CfgRemoteExecMod {
     class Functions {
         mode = 2;
         jip = 0;
+        class BIS_fnc_callScriptedEventHandler {};
+        class BIS_fnc_curatorRespawn {};
         class BIS_fnc_debugConsoleExec {};
+        class BIS_fnc_deleteTask { jip = 1; };
+        class BIS_fnc_dynamicGroups {};
+        class BIS_fnc_effectKilled {};
         class BIS_fnc_effectKilledAirDestruction {};
+        class BIS_fnc_effectKilledAirDestructionStage2 {};
         class BIS_fnc_effectKilledSecondaries {};
+        class BIS_fnc_error {};
         class BIS_fnc_fire {};
+        class BIS_fnc_initIntelObject { jip = 1; };
         class BIS_fnc_objectVar {};
+        class BIS_fnc_playSound { allowedTargets = 1; };
+        class BIS_fnc_sayMessage { allowedTargets = 1; };
         class BIS_fnc_setCustomSoundController {};
+        class BIS_fnc_setIdentity {};
+        class BIS_fnc_setTask { jip = 1; };
+        class BIS_fnc_setTaskLocal { jip = 1; };
+        class BIS_fnc_sharedObjectives {};
+        class BIS_fnc_showNotification { allowedTargets = 1; };
         class WHF_fnc_addIntelAction { allowedTargets = 1; jip = 1; };
         class WHF_fnc_addPrisonerActions { jip = 1; };
         class WHF_fnc_detainUnitRequest {};
