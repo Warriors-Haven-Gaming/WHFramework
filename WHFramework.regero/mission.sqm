@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=120;
+		nextID=130;
 	};
 	class Camera
 	{
-		pos[]={1688.5645,71.169411,2038.5471};
-		dir[]={0.8845526,-0.41209242,0.21864903};
-		up[]={0.40011832,0.91110522,0.098903976};
-		aside[]={0.23997162,-3.1414675e-07,-0.97080863};
+		pos[]={1629.577,79.504128,2011.6122};
+		dir[]={0.85141498,-0.32082707,0.41494277};
+		up[]={0.28840548,0.94713295,0.14055656};
+		aside[]={0.43810019,1.3620593e-07,-0.8989327};
 	};
 };
 binarizationWanted=0;
@@ -1993,14 +1993,14 @@ class Mission
 							{
 								class Attribute0
 								{
-									property="F16VFontStyle";
-									expression="_this setVariable [""F16VFontStyle"", _value]; [_this, _value] call lala_peral_F16V_fnc_applyAircraftFontStyle; [_this,_this getVariable [""F16V_Squadron_Insignia"",""None""]] call Peral_F16V_fnc_Squadron_Insignia;";
+									property="F16V_Squadron_Insignia";
+									expression="_this setVariable [""F16V_Squadron_Insignia"", _value]; [_this,_value] call Peral_F16V_fnc_Squadron_Insignia;";
 									class Value
 									{
 										class data
 										{
 											singleType="STRING";
-											value="white_font";
+											value="None";
 										};
 									};
 								};
@@ -2058,14 +2058,14 @@ class Mission
 								};
 								class Attribute5
 								{
-									property="F16V_Squadron_Insignia";
-									expression="_this setVariable [""F16V_Squadron_Insignia"", _value]; [_this,_value] call Peral_F16V_fnc_Squadron_Insignia;";
+									property="F16VFontStyle";
+									expression="_this setVariable [""F16VFontStyle"", _value]; [_this, _value] call lala_peral_F16V_fnc_applyAircraftFontStyle; [_this,_this getVariable [""F16V_Squadron_Insignia"",""None""]] call Peral_F16V_fnc_Squadron_Insignia;";
 									class Value
 									{
 										class data
 										{
 											singleType="STRING";
-											value="None";
+											value="white_font";
 										};
 									};
 								};
@@ -4073,7 +4073,7 @@ class Mission
 						};
 					};
 					id=471;
-					atlOffset=0.00025939941;
+					atlOffset=0.016693115;
 				};
 				class Item2
 				{
@@ -4286,7 +4286,6 @@ class Mission
 							class Attributes
 							{
 								skill=0.35000002;
-								disableSimulation=1;
 							};
 							id=414;
 							type="Land_LampHalogen_F";
@@ -4321,7 +4320,6 @@ class Mission
 							class Attributes
 							{
 								skill=0.35000002;
-								disableSimulation=1;
 							};
 							id=417;
 							type="Land_LampHalogen_F";
@@ -4356,7 +4354,6 @@ class Mission
 							class Attributes
 							{
 								skill=0.35000002;
-								disableSimulation=1;
 							};
 							id=443;
 							type="Land_LampHalogen_F";
@@ -4391,7 +4388,6 @@ class Mission
 							class Attributes
 							{
 								skill=0.35000002;
-								disableSimulation=1;
 							};
 							id=856;
 							type="Land_LampHalogen_F";
@@ -4427,7 +4423,6 @@ class Mission
 							class Attributes
 							{
 								skill=0.35000002;
-								disableSimulation=1;
 							};
 							id=857;
 							type="Land_LampHalogen_F";
@@ -4462,7 +4457,6 @@ class Mission
 							class Attributes
 							{
 								skill=0.35000002;
-								disableSimulation=1;
 							};
 							id=858;
 							type="Land_LampHalogen_F";
@@ -4498,7 +4492,6 @@ class Mission
 							class Attributes
 							{
 								skill=0.35000002;
-								disableSimulation=1;
 							};
 							id=859;
 							type="Land_LampHalogen_F";
@@ -4533,7 +4526,6 @@ class Mission
 							class Attributes
 							{
 								skill=0.35000002;
-								disableSimulation=1;
 							};
 							id=860;
 							type="Land_LampHalogen_F";
@@ -4568,7 +4560,6 @@ class Mission
 							class Attributes
 							{
 								skill=0.35000002;
-								disableSimulation=1;
 							};
 							id=861;
 							type="Land_LampHalogen_F";
@@ -4604,7 +4595,6 @@ class Mission
 							class Attributes
 							{
 								skill=0.35000002;
-								disableSimulation=1;
 							};
 							id=862;
 							type="Land_LampHalogen_F";
@@ -4640,7 +4630,6 @@ class Mission
 							class Attributes
 							{
 								skill=0.35000002;
-								disableSimulation=1;
 							};
 							id=863;
 							type="Land_LampHalogen_F";
@@ -4676,7 +4665,6 @@ class Mission
 							class Attributes
 							{
 								skill=0.35000002;
-								disableSimulation=1;
 							};
 							id=864;
 							type="Land_LampHalogen_F";
@@ -4712,7 +4700,6 @@ class Mission
 							class Attributes
 							{
 								skill=0.35000002;
-								disableSimulation=1;
 							};
 							id=865;
 							type="Land_LampHalogen_F";
@@ -4747,7 +4734,6 @@ class Mission
 							class Attributes
 							{
 								skill=0.35000002;
-								disableSimulation=1;
 							};
 							id=866;
 							type="Land_LampHalogen_F";
@@ -4782,7 +4768,6 @@ class Mission
 							class Attributes
 							{
 								skill=0.35000002;
-								disableSimulation=1;
 							};
 							id=867;
 							type="Land_LampHalogen_F";
@@ -4817,7 +4802,6 @@ class Mission
 							class Attributes
 							{
 								skill=0.35000002;
-								disableSimulation=1;
 							};
 							id=868;
 							type="Land_LampHalogen_F";
@@ -4852,7 +4836,6 @@ class Mission
 							class Attributes
 							{
 								skill=0.35000002;
-								disableSimulation=1;
 							};
 							id=869;
 							type="Land_LampHalogen_F";
@@ -4887,7 +4870,6 @@ class Mission
 							class Attributes
 							{
 								skill=0.35000002;
-								disableSimulation=1;
 							};
 							id=870;
 							type="Land_LampHalogen_F";
@@ -4922,7 +4904,6 @@ class Mission
 							class Attributes
 							{
 								skill=0.35000002;
-								disableSimulation=1;
 							};
 							id=986;
 							type="Land_LampHalogen_F";
@@ -17806,7 +17787,7 @@ class Mission
 				};
 			};
 			id=264;
-			atlOffset=0.12828827;
+			atlOffset=0.12854004;
 		};
 		class Item2
 		{
@@ -17823,7 +17804,7 @@ class Mission
 					text="Main Operating Base";
 					type="respawn_unknown";
 					colorName="ColorWEST";
-					angle=59.999882;
+					angle=59.999874;
 					id=479;
 				};
 				class Item1
