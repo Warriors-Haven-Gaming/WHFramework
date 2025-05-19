@@ -92,7 +92,7 @@ class CfgDisabledCommands
     {
         class SYNTAX1
         {
-            targets[] = {1,0,1};
+            targets[] = {1,1,1};
             args[] = {{},{"ARRAY"}};
         };
     };
