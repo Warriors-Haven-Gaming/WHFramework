@@ -631,6 +631,16 @@ call WHF_fnc_cycleFaction;
     false
 ] call WHF_fnc_addSetting;
 [
+    "WHF_missions_annex_forts",
+    "SLIDER",
+    ["STR_WHF_settings_missions_annex_forts", "STR_WHF_settings_missions_annex_forts_tooltip"],
+    ["STR_WHF_settings_missions", "STR_WHF_settings_missions_annex"],
+    [0, 2, 1, 0, true],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_missions_annex_units",
     "SLIDER",
     ["STR_WHF_settings_missions_annex_units", "STR_WHF_settings_missions_annex_units_tooltip"],

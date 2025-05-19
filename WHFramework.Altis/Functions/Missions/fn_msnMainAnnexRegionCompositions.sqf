@@ -27,7 +27,7 @@ private _objects = [];
 private _terrain = [];
 private _groups = [];
 
-private _fortCount = floor (_radius / 20);
+private _fortCount = floor (_radius / 20 * WHF_missions_annex_forts);
 private _fortTypes = ["camp", 0.5, "outpost", 0.4, "tower", 0.1];
 [opfor, _fortCount, _center, _radius, _fortTypes, _objects] call WHF_fnc_createEmplacements
     params ["_fortObjects", "_fortTerrain", "_fortGroups"];
