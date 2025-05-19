@@ -58,6 +58,7 @@ class CfgRemoteExec : CfgRemoteExecMod {
         mode = 2;
         jip = 0;
         class enableDynamicSimulation {};
+        class lockTurret {}; // CUP?
         class moveInCargo {};
         class switchGesture {};
         class switchMove {};
