@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=130;
+		nextID=140;
 	};
 	class Camera
 	{
@@ -97,7 +97,6 @@ addons[]=
 	"A3_Structures_F_Mil_TentHangar",
 	"A3_Structures_F_Civ_Camping",
 	"A3_Modules_F_Curator_Curator",
-	"A3_Modules_F_Multiplayer",
 	"A3_Ui_F"
 };
 class AddonsMetaData
@@ -1863,38 +1862,39 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={1835.9905,62.407406,1935.1233};
-								angles[]={0,3.2060909,0};
+								position[]={1835.99,62.407455,1935.1232};
+								angles[]={0,3.2060826,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas""]];";
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=546;
 							type="B_Plane_CAS_01_dynamicLoadout_F";
-							atlOffset=-0.0030479431;
+							atlOffset=-0.0029983521;
 						};
 						class Item1
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={1852.9275,62.616028,2122.1035};
-								angles[]={0,4.7118759,0};
+								position[]={1852.927,62.616112,2122.104};
+								angles[]={0,4.7118831,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 								reportRemoteTargets=1;
 								receiveRemoteTargets=1;
 								reportOwnPosition=1;
 							};
 							id=525;
 							type="qav_abramsx_tusk";
-							atlOffset=-0.0030822754;
+							atlOffset=-0.0029983521;
 						};
 						class Item2
 						{
@@ -1908,7 +1908,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas""]];";
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 								reportRemoteTargets=1;
 								receiveRemoteTargets=1;
 								reportOwnPosition=1;
@@ -1929,7 +1929,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas""]];";
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=548;
 							type="CUP_B_AH6M_USA";
@@ -1940,17 +1940,18 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={1720.9236,62.761883,2121.0874};
-								angles[]={0,3.2658067,0};
+								position[]={1720.9231,62.762348,2121.0869};
+								angles[]={0,3.2658079,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=545;
 							type="CUP_B_Dingo_GER_Wdl";
-							atlOffset=-0.0024642944;
+							atlOffset=-0.0019989014;
 						};
 						class Item5
 						{
@@ -1958,13 +1959,13 @@ class Mission
 							class PositionInfo
 							{
 								position[]={1883.9974,60.029892,1894.0732};
-								angles[]={0,4.7145448,0};
+								angles[]={0,4.7145529,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas""]];";
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 								reportRemoteTargets=1;
 								receiveRemoteTargets=1;
 								reportOwnPosition=1;
@@ -1984,7 +1985,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas""]];";
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=542;
 							type="Peral_F16V";
@@ -1993,14 +1994,14 @@ class Mission
 							{
 								class Attribute0
 								{
-									property="F16V_Squadron_Insignia";
-									expression="_this setVariable [""F16V_Squadron_Insignia"", _value]; [_this,_value] call Peral_F16V_fnc_Squadron_Insignia;";
+									property="F16VFontStyle";
+									expression="_this setVariable [""F16VFontStyle"", _value]; [_this, _value] call lala_peral_F16V_fnc_applyAircraftFontStyle; [_this,_this getVariable [""F16V_Squadron_Insignia"",""None""]] call Peral_F16V_fnc_Squadron_Insignia;";
 									class Value
 									{
 										class data
 										{
 											singleType="STRING";
-											value="None";
+											value="white_font";
 										};
 									};
 								};
@@ -2058,14 +2059,14 @@ class Mission
 								};
 								class Attribute5
 								{
-									property="F16VFontStyle";
-									expression="_this setVariable [""F16VFontStyle"", _value]; [_this, _value] call lala_peral_F16V_fnc_applyAircraftFontStyle; [_this,_this getVariable [""F16V_Squadron_Insignia"",""None""]] call Peral_F16V_fnc_Squadron_Insignia;";
+									property="F16V_Squadron_Insignia";
+									expression="_this setVariable [""F16V_Squadron_Insignia"", _value]; [_this,_value] call Peral_F16V_fnc_Squadron_Insignia;";
 									class Value
 									{
 										class data
 										{
 											singleType="STRING";
-											value="white_font";
+											value="None";
 										};
 									};
 								};
@@ -2084,7 +2085,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas""]];";
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 								reportRemoteTargets=1;
 								receiveRemoteTargets=1;
 								reportOwnPosition=1;
@@ -2105,6 +2106,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=539;
 							type="CUP_B_Challenger2_Woodland_BAF";
@@ -2122,6 +2124,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=540;
 							type="CUP_B_FV432_GB_Ambulance";
@@ -2132,13 +2135,13 @@ class Mission
 							class PositionInfo
 							{
 								position[]={1724.0505,60.969997,2173.0847};
-								angles[]={0,3.2281566,0};
+								angles[]={0,3.2281611,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""arty""]];" \n "this setVariable [""WHF_vehicleLock_gunner"", [""role"", ""arty""]];";
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""arty""]];" \n "this setVariable [""WHF_vehicleLock_gunner"", [""role"", ""arty""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=541;
 							type="CUP_B_FV432_Mortar";
@@ -2155,6 +2158,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=535;
 							type="B_Truck_01_ammo_F";
@@ -2171,6 +2175,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=536;
 							type="B_Truck_01_fuel_F";
@@ -2187,6 +2192,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=537;
 							type="B_Truck_01_medical_F";
@@ -2203,6 +2209,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=538;
 							type="B_Truck_01_Repair_F";
@@ -2219,6 +2226,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=534;
 							type="CUP_I_Hilux_unarmed_NAPA";
@@ -2236,6 +2244,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=532;
 							type="CUP_B_LR_Special_GMG_GB_W";
@@ -2253,6 +2262,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=533;
 							type="CUP_B_LR_Special_M2_GB_W";
@@ -2270,6 +2280,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=504;
 							type="CUP_B_nM1025_SOV_M2_USA_WDL";
@@ -2286,6 +2297,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=508;
 							type="CUP_B_nM1036_TOW_DF_USA_WDL";
@@ -2302,6 +2314,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=509;
 							type="CUP_B_nM1038_4s_DF_USA_WDL";
@@ -2318,6 +2331,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=510;
 							type="CUP_B_nM1038_Ammo_DF_USA_WDL";
@@ -2334,6 +2348,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=511;
 							type="CUP_B_nM1038_Repair_DF_USA_WDL";
@@ -2350,6 +2365,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=512;
 							type="CUP_B_nM1097_AVENGER_USA_WDL";
@@ -2367,6 +2383,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=513;
 							type="CUP_B_M1126_ICV_MK19_Woodland";
@@ -2384,6 +2401,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=514;
 							type="CUP_B_M1128_MGS_Woodland";
@@ -2411,18 +2429,18 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={1717.0356,60.225979,2172.4644};
-								angles[]={0,3.2300718,0};
+								position[]={1717.0361,60.226326,2172.4641};
+								angles[]={0,3.2300634,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""arty""]];" \n "this setVariable [""WHF_vehicleLock_gunner"", [""role"", ""arty""]];";
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""arty""]];" \n "this setVariable [""WHF_vehicleLock_gunner"", [""role"", ""arty""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=515;
 							type="CUP_B_M1129_MC_MK19_Woodland";
-							atlOffset=0.028652191;
+							atlOffset=0.028999329;
 						};
 						class Item27
 						{
@@ -2436,6 +2454,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 								reportRemoteTargets=1;
 								receiveRemoteTargets=1;
 								reportOwnPosition=1;
@@ -2456,6 +2475,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=517;
 							type="CUP_B_M1133_MEV_Woodland";
@@ -2472,6 +2492,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=518;
 							type="CUP_B_M1135_ATGMV_Woodland";
@@ -2489,6 +2510,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=519;
 							type="CUP_B_nM1151_ogpk_m2_USA_WDL";
@@ -2505,6 +2527,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=520;
 							type="CUP_B_nM1151_ogpk_m2_DF_USA_WDL";
@@ -2521,6 +2544,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=521;
 							type="CUP_B_M163_Vulcan_USA";
@@ -2538,10 +2562,41 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=522;
 							type="CUP_B_M1A2C_TUSK_II_Woodland_US_Army";
 							atlOffset=-0.00052642822;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="CUP_M1Abrams_ShellLoadout";
+									expression="[_this, _value, [0]] call CUP_fnc_TankShellLoadoutImplement;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[<null>]";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="CUP_M1Abrams_TankNumber";
+									expression="_this setVariable ['CUP_M1Abrams_TankNumber', _value, true]; _this call CUP_fnc_M1AbramsDecals;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=-1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
 						};
 						class Item34
 						{
@@ -2555,6 +2610,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=523;
 							type="CUP_B_M2Bradley_USA_W";
@@ -2572,6 +2628,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=524;
 							type="CUP_B_M2A3Bradley_USA_W";
@@ -2589,6 +2646,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=526;
 							type="CUP_B_M6LineBacker_USA_W";
@@ -2606,6 +2664,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=527;
 							type="qav_ripsaw_Mk44";
@@ -2623,6 +2682,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=528;
 							type="qav_ripsaw_c";
@@ -2640,6 +2700,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=529;
 							type="qav_ripsaw_c";
@@ -2657,6 +2718,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=530;
 							type="CUP_B_M7Bradley_USA_W";
@@ -2674,6 +2736,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=531;
 							type="CUP_B_nM997_DF_USA_WDL";
@@ -2690,6 +2753,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=503;
 							type="CUP_B_Mastiff_GMG_GB_W";
@@ -2701,17 +2765,17 @@ class Mission
 							class PositionInfo
 							{
 								position[]={1756,61.272678,2019.0901};
-								angles[]={0,6.2792215,0};
+								angles[]={0,6.2792234,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_transport""]];";
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_transport""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 								reportRemoteTargets=1;
 								receiveRemoteTargets=1;
 								reportOwnPosition=1;
-								pylons="PylonRack_12Rnd_PG_missiles[1];PylonRack_12Rnd_PG_missiles[1];[1];[1];";
+								pylons="PylonRack_12Rnd_PG_missiles[0];PylonRack_12Rnd_PG_missiles[0];[0];[0];";
 							};
 							id=502;
 							type="Valor_Turret_Transport_CrewGun_F";
@@ -2722,12 +2786,13 @@ class Mission
 							class PositionInfo
 							{
 								position[]={1668,61.629597,2017};
-								angles[]={0,0.78475106,0};
+								angles[]={0,0.78475243,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=501;
 							type="C_Offroad_02_unarmed_F";
@@ -2744,7 +2809,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_transport""]];";
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_transport""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=498;
 							type="CUP_B_MH47E_USA";
@@ -2761,7 +2826,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_transport""]];";
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_transport""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=499;
 							type="CUP_B_MH60L_DAP_2x_US";
@@ -2778,7 +2843,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_transport""]];";
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_transport""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=500;
 							type="CUP_B_MH6M_USA";
@@ -2795,7 +2860,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_transport""]];";
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_transport""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=497;
 							type="CUP_B_MV22_VIV_USMC";
@@ -2813,6 +2878,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=496;
 							type="B_GEN_Offroad_01_comms_F";
@@ -2829,6 +2895,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=491;
 							type="CUP_B_RG31E_M2_OD_USA";
@@ -2846,6 +2913,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=492;
 							type="CUP_B_RG31_M2_OD_USA";
@@ -2863,6 +2931,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=490;
 							type="CUP_B_Ridgback_HMG_GB_W";
@@ -2880,6 +2949,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=487;
 							type="CUP_B_T810_Reammo_CZ_WDL";
@@ -2896,6 +2966,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=488;
 							type="CUP_B_T810_Refuel_CZ_WDL";
@@ -2912,6 +2983,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=489;
 							type="CUP_B_T810_Repair_CZ_WDL";
@@ -2928,7 +3000,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_transport""]];";
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_transport""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 								reportRemoteTargets=1;
 								receiveRemoteTargets=1;
 								reportOwnPosition=1;
@@ -2949,6 +3021,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=485;
 							type="B_GEN_Van_02_transport_F";
@@ -2965,6 +3038,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=961;
 							type="CUP_B_M1030_USA";
@@ -2981,6 +3055,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=962;
 							type="CUP_B_M1030_USA";
@@ -17372,10 +17447,9 @@ class Mission
 				{
 					dataType="Layer";
 					name="Modules";
-					state=2;
 					class Entities
 					{
-						items=2;
+						items=1;
 						class Item0
 						{
 							dataType="Logic";
@@ -17441,151 +17515,6 @@ class Mission
 									};
 								};
 								nAttributes=4;
-							};
-						};
-						class Item1
-						{
-							dataType="Logic";
-							class PositionInfo
-							{
-								position[]={1802,60.029999,2016};
-								angles[]={0,3.9269907,0};
-							};
-							id=470;
-							type="ModuleRespawnVehicle_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ModuleRespawnVehicle_F_ForcedRespawn";
-									expression="_this setVariable ['ForcedRespawn',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="0";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="ModuleRespawnVehicle_F_Init";
-									expression="_this setVariable ['Init',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="";
-										};
-									};
-								};
-								class Attribute2
-								{
-									property="ModuleRespawnVehicle_F_RespawnWhenDisabled";
-									expression="_this setVariable ['RespawnWhenDisabled',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=1;
-										};
-									};
-								};
-								class Attribute3
-								{
-									property="ModuleRespawnVehicle_F_DesertedDistance";
-									expression="_this setVariable ['DesertedDistance',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="200";
-										};
-									};
-								};
-								class Attribute4
-								{
-									property="ModuleRespawnVehicle_F_PositionType";
-									expression="_this setVariable ['PositionType',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="0";
-										};
-									};
-								};
-								class Attribute5
-								{
-									property="ModuleRespawnVehicle_F_RespawnCount";
-									expression="_this setVariable ['RespawnCount',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="";
-										};
-									};
-								};
-								class Attribute6
-								{
-									property="ModuleRespawnVehicle_F_Position";
-									expression="_this setVariable ['Position',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="0";
-										};
-									};
-								};
-								class Attribute7
-								{
-									property="ModuleRespawnVehicle_F_Wreck";
-									expression="_this setVariable ['Wreck',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="1";
-										};
-									};
-								};
-								class Attribute8
-								{
-									property="ModuleRespawnVehicle_F_Delay";
-									expression="_this setVariable ['Delay',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="30";
-										};
-									};
-								};
-								class Attribute9
-								{
-									property="ModuleRespawnVehicle_F_ShowNotification";
-									expression="_this setVariable ['ShowNotification',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="0";
-										};
-									};
-								};
-								nAttributes=10;
 							};
 						};
 					};
@@ -17804,7 +17733,7 @@ class Mission
 					text="Main Operating Base";
 					type="respawn_unknown";
 					colorName="ColorWEST";
-					angle=59.999874;
+					angle=59.99987;
 					id=479;
 				};
 				class Item1
@@ -17837,617 +17766,6 @@ class Mission
 			};
 			id=996;
 			atlOffset=0.0037498474;
-		};
-	};
-	class Connections
-	{
-		class LinkIDProvider
-		{
-			nextID=60;
-		};
-		class Links
-		{
-			items=60;
-			class Item0
-			{
-				linkID=0;
-				item0=546;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item1
-			{
-				linkID=1;
-				item0=525;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item2
-			{
-				linkID=2;
-				item0=547;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item3
-			{
-				linkID=3;
-				item0=548;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item4
-			{
-				linkID=4;
-				item0=545;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item5
-			{
-				linkID=5;
-				item0=544;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item6
-			{
-				linkID=6;
-				item0=542;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item7
-			{
-				linkID=7;
-				item0=543;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item8
-			{
-				linkID=8;
-				item0=539;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item9
-			{
-				linkID=9;
-				item0=540;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item10
-			{
-				linkID=10;
-				item0=541;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item11
-			{
-				linkID=11;
-				item0=535;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item12
-			{
-				linkID=12;
-				item0=536;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item13
-			{
-				linkID=13;
-				item0=537;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item14
-			{
-				linkID=14;
-				item0=538;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item15
-			{
-				linkID=15;
-				item0=534;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item16
-			{
-				linkID=16;
-				item0=532;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item17
-			{
-				linkID=17;
-				item0=533;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item18
-			{
-				linkID=18;
-				item0=508;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item19
-			{
-				linkID=19;
-				item0=509;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item20
-			{
-				linkID=20;
-				item0=510;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item21
-			{
-				linkID=21;
-				item0=511;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item22
-			{
-				linkID=22;
-				item0=512;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item23
-			{
-				linkID=23;
-				item0=513;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item24
-			{
-				linkID=24;
-				item0=514;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item25
-			{
-				linkID=25;
-				item0=515;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item26
-			{
-				linkID=26;
-				item0=516;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item27
-			{
-				linkID=27;
-				item0=517;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item28
-			{
-				linkID=28;
-				item0=518;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item29
-			{
-				linkID=29;
-				item0=519;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item30
-			{
-				linkID=30;
-				item0=520;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item31
-			{
-				linkID=31;
-				item0=521;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item32
-			{
-				linkID=32;
-				item0=522;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item33
-			{
-				linkID=33;
-				item0=523;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item34
-			{
-				linkID=34;
-				item0=524;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item35
-			{
-				linkID=35;
-				item0=526;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item36
-			{
-				linkID=36;
-				item0=527;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item37
-			{
-				linkID=37;
-				item0=528;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item38
-			{
-				linkID=38;
-				item0=529;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item39
-			{
-				linkID=39;
-				item0=530;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item40
-			{
-				linkID=40;
-				item0=531;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item41
-			{
-				linkID=41;
-				item0=503;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item42
-			{
-				linkID=42;
-				item0=501;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item43
-			{
-				linkID=43;
-				item0=498;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item44
-			{
-				linkID=44;
-				item0=499;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item45
-			{
-				linkID=45;
-				item0=500;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item46
-			{
-				linkID=46;
-				item0=497;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item47
-			{
-				linkID=47;
-				item0=496;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item48
-			{
-				linkID=48;
-				item0=491;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item49
-			{
-				linkID=49;
-				item0=492;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item50
-			{
-				linkID=50;
-				item0=490;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item51
-			{
-				linkID=51;
-				item0=487;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item52
-			{
-				linkID=52;
-				item0=488;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item53
-			{
-				linkID=53;
-				item0=489;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item54
-			{
-				linkID=54;
-				item0=486;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item55
-			{
-				linkID=55;
-				item0=485;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item56
-			{
-				linkID=56;
-				item0=363;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item57
-			{
-				linkID=57;
-				item0=364;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item58
-			{
-				linkID=58;
-				item0=961;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item59
-			{
-				linkID=59;
-				item0=962;
-				item1=470;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
 		};
 	};
 };
