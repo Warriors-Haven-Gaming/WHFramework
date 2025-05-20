@@ -253,6 +253,12 @@ class CfgFunctions {
             class initMagRepackKeybind {};
             class magRepack {};
         };
+        class Respawn {
+            class addRespawnVehicle {};
+            class initRespawnSystem { preInit = true; };
+            class nearObjectsRespawn {};
+            class respawnLoop {};
+        };
         class Revive {
             class addCarryAction {};
             class carryUnit {};
