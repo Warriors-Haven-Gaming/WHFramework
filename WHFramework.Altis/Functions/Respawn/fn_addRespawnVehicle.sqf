@@ -3,8 +3,8 @@ Function: WHF_fnc_addRespawnVehicle
 
 Description:
     Add a vehicle to the respawn system.
-    When adding to an object's init field, all variables defined before it
-    will be persisted globally.
+    When adding to an object's init field, all WHF variables
+    defined before it will be persisted globally.
 
 Parameters:
     Array vehicle:
@@ -26,7 +26,10 @@ private _objects = [_pos, _radius, [_vehicle]] call WHF_fnc_nearObjectsRespawn;
 {_radius = _radius min ((_pos distance _x) - 1)} forEach _objects;
 _radius = _radius max 0;
 
-private _vars = allVariables _vehicle apply {[_x, _vehicle getVariable _x, true]};
+private _vars =
+    allVariables _vehicle
+    select {[_x, "WHF_"] call WHF_fnc_stringStartsWith}
+    apply {[_x, _vehicle getVariable _x, true]};
 
 private _record = createHashMapFromArray [
     ["_type", typeOf _vehicle],
