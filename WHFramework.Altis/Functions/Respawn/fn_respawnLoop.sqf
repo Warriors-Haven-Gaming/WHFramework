@@ -23,12 +23,8 @@ private _isDeserted = {
     true
 };
 
-private _isPosEmpty = {
-    private _radius = _record get "_radius";
-    [_pos, _radius] call WHF_fnc_nearObjectsRespawn isEqualTo []
-};
-
 private _respawnVehicle = {
+    {deleteVehicle _x} forEach _obstructions;
     if (alive _object) exitWith _restoreVehicle;
 
     deleteVehicle _object;
@@ -91,7 +87,10 @@ while {true} do {
             default {false};
         };
         if (!_shouldRespawn) then {sleep 0.125; continue};
-        if (!call _isPosEmpty) then {sleep 0.125; continue};
+
+        private _radius = _record get "_radius";
+        private _obstructions = [_pos, _radius] call WHF_fnc_nearObjectsRespawn;
+        if (_obstructions findIf {alive _x} >= 0) then {sleep 0.125; continue};
 
         _object = call _respawnVehicle;
         _record set ["_object", _object];
