@@ -55,6 +55,7 @@ private _group = [opfor, "officer", 1, _pos, 0] call WHF_fnc_spawnUnits;
 private _officer = leader _group;
 _groups pushBack _group;
 [_group, [_building]] call WHF_fnc_garrisonBuildings;
+_officer setPosATL (_building modelToWorld [-2 + random 4, 1.1 + random 2, 0.05]);
 
 private _guardGroup = [opfor, "standard", selectRandom [4, 6, 8], _pos, 20] call WHF_fnc_spawnUnits;
 [_guardGroup, _pos] call BIS_fnc_taskDefend;
