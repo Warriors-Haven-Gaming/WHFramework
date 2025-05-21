@@ -24,10 +24,14 @@ private _isDeserted = {
 };
 
 private _respawnVehicle = {
+    private _isLocallyObstructed = _obstructions findIf {!isNull _x && {!local _x}} < 0;
     {deleteVehicle _x} forEach _obstructions;
     if (alive _object) exitWith _restoreVehicle;
 
+    private _isLocal = local _object;
     deleteVehicle _object;
+
+    if (!_isLocal || {!_isLocallyObstructed}) then {sleep 0.5}; // Allow for some network delay
     private _type = _record get "_type";
     private _dir = _record get "_dir";
     private _vars = _record get "_vars";
