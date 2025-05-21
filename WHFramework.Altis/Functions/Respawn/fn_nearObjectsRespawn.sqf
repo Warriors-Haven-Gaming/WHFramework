@@ -20,8 +20,9 @@ Author:
 params ["_pos", "_radius", ["_ignore", []]];
 private _objects = _pos nearObjects ["All", _radius];
 _objects = _objects select {
-    boundingBoxReal [_x, "Geometry"] select 2 > 0
-    && {!(_x isKindOf "Animal")}
+    private _obj = _x;
+    boundingBoxReal [_obj, "Geometry"] select 2 > 0
+    && {["Animal", "WeaponHolder", "WeaponHolderSimulated"] findIf {_obj isKindOf _x} < 0}
 };
 _objects = _objects - _ignore;
 _objects
