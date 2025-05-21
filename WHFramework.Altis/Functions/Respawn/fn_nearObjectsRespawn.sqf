@@ -18,11 +18,16 @@ Author:
 
 */
 params ["_pos", "_radius", ["_ignore", []]];
+private _exceptions = ["Animal", "WeaponHolder", "WeaponHolderSimulated"];
 private _objects = _pos nearObjects ["All", _radius];
 _objects = _objects select {
     private _obj = _x;
-    boundingBoxReal [_obj, "Geometry"] select 2 > 0
-    && {["Animal", "WeaponHolder", "WeaponHolderSimulated"] findIf {_obj isKindOf _x} < 0}
+    switch (true) do {
+        case (_obj isKindOf "Man"): {alive _obj || {isAwake _obj}};
+        case (boundingBoxReal [_obj, "Geometry"] select 2 <= 0): {false};
+        case (_exceptions findIf {_obj isKindOf _x} >= 0): {false};
+        default {true};
+    }
 };
 _objects = _objects - _ignore;
 _objects
