@@ -12,7 +12,7 @@ Author:
 if (!isServer) exitWith {};
 
 private _isDeserted = {
-    if (isNull _object) exitWith {false};
+    if (!alive _object) exitWith {false};
     if (crew _object findIf {alive _x} >= 0) exitWith {false};
     if (_object distanceSqr _pos < 1000) exitWith {false};
 
