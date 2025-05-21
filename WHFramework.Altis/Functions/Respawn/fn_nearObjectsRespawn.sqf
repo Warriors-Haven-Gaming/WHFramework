@@ -20,7 +20,8 @@ Author:
 params ["_pos", "_radius", ["_ignore", []]];
 private _objects = _pos nearObjects ["All", _radius];
 _objects = _objects select {
-    !("helipad" in toLowerANSI typeOf _x)
+    private _type = toLowerANSI typeOf _x;
+    ["floor", "helipad"] findIf {_x in _type} < 0
     && {!(_x isKindOf "Animal")}
 };
 _objects = _objects - _ignore;
