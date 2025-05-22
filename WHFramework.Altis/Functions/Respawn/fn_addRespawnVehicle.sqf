@@ -28,7 +28,7 @@ _radius = _radius max 0;
 
 private _vars =
     allVariables _vehicle
-    select {[_x, "WHF_"] call WHF_fnc_stringStartsWith}
+    select {[_x, "whf_"] call WHF_fnc_stringStartsWith}
     apply {[_x, _vehicle getVariable _x, true]};
 
 private _record = createHashMapFromArray [
