@@ -166,14 +166,14 @@ class CfgDisabledCommands
         };
     };
 
-    class FORCEADDUNIFORM
-    {
-        class SYNTAX1
-        {
-            targets[] = {0,0,0};
-            args[] = {{"OBJECT"},{"STRING"}};
-        };
-    };
+    // class FORCEADDUNIFORM
+    // {
+    //     class SYNTAX1
+    //     {
+    //         targets[] = {0,0,0};
+    //         args[] = {{"OBJECT"},{"STRING"}};
+    //     };
+    // };
 
     class LOADFILE
     {
@@ -226,14 +226,14 @@ class CfgDisabledCommands
         };
     };
 
-    class REMOVEALLITEMS
-    {
-        class SYNTAX1
-        {
-            targets[] = {0,0,0};
-            args[] = {{},{"OBJECT"}};
-        };
-    };
+    // class REMOVEALLITEMS
+    // {
+    //     class SYNTAX1
+    //     {
+    //         targets[] = {0,0,0};
+    //         args[] = {{},{"OBJECT"}};
+    //     };
+    // };
 
     class REMOVEALLMISSIONEVENTHANDLERS
     {
