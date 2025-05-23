@@ -59,7 +59,7 @@ addMissionEventHandler ["Draw3D", {
         private _opacity = linearConversion [_max - 1000 max _max / 10, _max, _distance, 1, 0, true];
         private _color = switch (true) do {
             case (!alive _x): {WHF_icons_color_dead};
-            case (!(lifeState _x in ["HEALTHY", "INJURED"])): {WHF_icons_color_incap};
+            case (lifeState _x isEqualTo "INCAPACITATED"): {WHF_icons_color_incap};
             default {_sideColor};
         };
 
@@ -125,7 +125,7 @@ addMissionEventHandler ["Draw3D", {
         private _commander = effectiveCommander _x;
         private _crew = crew _x;
         private _aliveCrew = _crew select {alive _x};
-        private _hasIncapped = _aliveCrew findIf {!(lifeState _x in ["HEALTHY", "INJURED"])} >= 0;
+        private _hasIncapped = _aliveCrew findIf {lifeState _x isEqualTo "INCAPACITATED"} >= 0;
 
         private _size = linearConversion [20, 600, _distance, 1, 0.5, true];
         private _opacity = linearConversion [_max - 1000 max _max / 10, _max, _distance, 1, 0, true];
