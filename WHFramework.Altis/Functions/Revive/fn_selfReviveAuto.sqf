@@ -32,7 +32,8 @@ params [
 
 private _isAssigned = {
     !isNil {_unit getVariable "WHF_reviveActionAuto_assigned"}
-    || {!isNull attachedTo _unit}
+    || {!isNil {_unit getVariable "WHF_carry_caller"}
+    || {!isNull attachedTo _unit}}
 };
 private _beforeHoldAssigned = {
     _time < _incappedAt + WHF_recruits_incap_hold_assigned min _mustRevive
