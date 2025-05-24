@@ -90,6 +90,13 @@ private _resolvedTypes = _this apply {
         case ["ifv",      "cup_usa_woodland"]: {["CUP_B_M2Bradley_USA_W","CUP_B_M2A3Bradley_USA_W","CUP_B_M7Bradley_USA_W"]};
         case ["mbt",      "cup_usa_woodland"]: {["CUP_B_M1A1SA_Woodland_US_Army","CUP_B_M1A1SA_TUSK_Woodland_US_Army","CUP_B_M1A2SEP_Woodland_US_Army","CUP_B_M1A2SEP_TUSK_II_Woodland_US_Army","CUP_B_M1A2SEP_TUSK_Woodland_US_Army","CUP_B_M1A2C_Woodland_US_Army","CUP_B_M1A2C_TUSK_II_Woodland_US_Army","CUP_B_M1A2C_TUSK_Woodland_US_Army"]};
         case ["aa",       "cup_usa_woodland"]: {["CUP_B_nM1097_AVENGER_USA_WDL","CUP_B_M6LineBacker_USA_W"]};
+        case ["standard", "cup_usmc_woodland"]: {["CUP_B_nM1025_M2_USMC_WDL","CUP_B_nM1025_M240_USMC_WDL","CUP_B_nM1025_Mk19_USMC_WDL","CUP_B_nM1025_Unarmed_USMC_WDL","CUP_B_nM1025_SOV_M2_USMC_WDL","CUP_B_nM1025_SOV_Mk19_USMC_WDL","CUP_B_nM1036_TOW_USMC_WDL","CUP_B_nM1038_4s_USMC_WDL","CUP_B_nM1151_mctags_m2_USMC_WDL","CUP_B_nM1151_mctags_m240_USMC_WDL","CUP_B_nM1151_mctags_mk19_USMC_WDL","CUP_B_nM1151_Unarmed_USMC_WDL"]};
+        case ["supply",   "cup_usmc_woodland"]: {["CUP_B_MTVR_Ammo_USMC","CUP_B_MTVR_Refuel_USMC","CUP_B_MTVR_Repair_USMC","CUP_B_nM997_USMC_WDL"]};
+        case ["mrap",     "cup_usmc_woodland"]: {["CUP_B_RG31_Mk19_OD_USMC","CUP_B_RG31E_M2_OD_USMC","CUP_B_RG31_M2_OD_USMC"]};
+        case ["apc",      "cup_usmc_woodland"]: {["CUP_B_AAV_USMC","CUP_B_LAV25_USMC","CUP_B_LAV25_HQ_USMC"]};
+        case ["ifv",      "cup_usmc_woodland"]: {["CUP_B_M2Bradley_USA_W","CUP_B_M2A3Bradley_USA_W","CUP_B_M7Bradley_USA_W"]};
+        case ["mbt",      "cup_usmc_woodland"]: {["CUP_B_M1A1FEP_OD_USMC","CUP_B_M1A1EP_TUSK_OD_USMC","CUP_B_M1A1FEP_Woodland_USMC","CUP_B_M1A1EP_TUSK_Woodland_USMC"]};
+        case ["aa",       "cup_usmc_woodland"]: {["CUP_B_nM1097_AVENGER_USMC_WDL"]};
         default {
             if !(_x # 0 in ["civilians", "standard"]) exitWith {[["standard", _x # 1]] call WHF_fnc_getVehicleTypes};
             if (_x # 1 isNotEqualTo "base") exitWith {[[_x # 0, "base"]] call WHF_fnc_getVehicleTypes};
