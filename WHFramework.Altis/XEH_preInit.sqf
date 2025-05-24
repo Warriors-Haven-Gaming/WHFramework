@@ -826,6 +826,26 @@ call WHF_fnc_cycleFaction;
 
 // Recruits
 [
+    "WHF_recruits_identity",
+    "LIST",
+    ["STR_WHF_settings_recruits_identity", "STR_WHF_settings_recruits_identity_tooltip"],
+    "STR_WHF_settings_recruits",
+    [["american", "british", "chinese", "french", "polish", "russian"], ["STR_WHF_settings_recruits_identity_american", "STR_WHF_settings_recruits_identity_british", "STR_WHF_settings_recruits_identity_chinese", "STR_WHF_settings_recruits_identity_french", "STR_WHF_settings_recruits_identity_polish", "STR_WHF_settings_recruits_identity_russian"], 0],
+    false,
+    {
+        WHF_recruits_speaker_types = switch (_this) do {
+            case "american": {["Male01ENG","Male02ENG","Male03ENG","Male04ENG","Male05ENG","Male06ENG","Male07ENG","Male08ENG","Male09ENG","Male10ENG","Male11ENG","Male12ENG"]};
+            case "british": {["Male01ENGB","Male02ENGB","Male03ENGB","Male04ENGB","Male05ENGB"]};
+            case "chinese": {["Male01CHI","Male02CHI","Male03CHI"]};
+            case "french": {["Male01FRE","Male02FRE","Male03FRE"]};
+            case "polish": {["Male01POL","Male02POL","Male03POL"]};
+            case "russian": {["Male01RUS","Male02RUS","Male03RUS"]};
+            default {["NoVoice"]};
+        };
+    },
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_recruits_speaker",
     "LIST",
     ["STR_WHF_settings_recruits_speaker", "STR_WHF_settings_recruits_speaker_tooltip"],
