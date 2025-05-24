@@ -33,6 +33,7 @@ private _resolvedTypes = _this apply {
         case ["standard", "cup_npc"]: {["CUP_I_GUE_Soldier_AA","CUP_I_GUE_Ammobearer","CUP_I_GUE_Soldier_AR","CUP_I_GUE_Officer","CUP_I_GUE_Soldier_GL","CUP_I_GUE_Soldier_MG","CUP_I_GUE_Engineer","CUP_I_GUE_Medic","CUP_I_GUE_Soldier_AKS74","CUP_I_GUE_Soldier_AKM","CUP_I_GUE_Soldier_AKSU","CUP_I_GUE_Soldier_LAT","CUP_I_GUE_Soldier_AT","CUP_I_GUE_Soldier_AA2","CUP_I_GUE_Saboteur","CUP_I_GUE_Commander"]};
         case ["standard", "nato"]: {["B_Soldier_A_F","B_soldier_AAA_F","B_soldier_AAT_F","B_soldier_AR_F","B_medic_F","B_engineer_F","B_soldier_exp_F","B_Soldier_GL_F","B_HeavyGunner_F","B_soldier_M_F","B_soldier_mine_F","B_soldier_AA_F","B_soldier_AT_F","B_soldier_repair_F","B_Soldier_F","B_soldier_LAT_F","B_Soldier_lite_F","B_soldier_LAT2_F","B_Sharpshooter_F","B_Soldier_SL_F","B_Soldier_TL_F","B_soldier_UAV_F"]};
         case ["standard", "nato_pacific"]: {["B_T_Soldier_A_F","B_T_Soldier_AAA_F","B_T_Soldier_AAT_F","B_T_soldier_AR_F","B_T_medic_F","B_T_engineer_F","B_T_soldier_exp_F","B_T_Soldier_GL_F","B_T_soldier_M_F","B_T_soldier_mine_F","B_T_Soldier_AA_F","B_T_Soldier_AT_F","B_T_soldier_repair_F","B_T_Soldier_F","B_T_Soldier_LAT_F","B_T_Soldier_LAT2_F","B_T_soldier_SL_F","B_T_soldier_TL_F","B_T_soldier_UAV_F"]};
+        case ["standard", "cup_usa_woodland"]: {["CUP_B_US_Soldier_AAT_OEFCP","CUP_B_US_Soldier_AHAT_OEFCP","CUP_B_US_Soldier_AT_OEFCP","CUP_B_US_Soldier_HAT_OEFCP","CUP_B_US_Soldier_AR_OEFCP","CUP_B_US_Soldier_Engineer_OEFCP","CUP_B_US_Soldier_Engineer_EOD_OEFCP","CUP_B_US_Soldier_GL_OEFCP","CUP_B_US_Soldier_MG_OEFCP","CUP_B_US_Soldier_Marksman_OEFCP","CUP_B_US_Soldier_Marksman_EBR_OEFCP","CUP_B_US_Medic_OEFCP","CUP_B_US_Soldier_AA_OEFCP","CUP_B_US_Soldier_OEFCP","CUP_B_US_Soldier_ACOG_OEFCP","CUP_B_US_Soldier_LAT_OEFCP","CUP_B_US_Soldier_Light_OEFCP","CUP_B_US_Soldier_Engineer_Sapper_OEFCP","CUP_B_US_Soldier_SL_OEFCP","CUP_B_US_Soldier_TL_OEFCP","CUP_B_US_Soldier_UAV_OEFCP"]};
         case ["officer", "base"]: {["I_G_Soldier_SL_F"]};
         case ["officer", "csat"]: {["O_officer_F"]};
         case ["officer", "csat_pacific"]: {["O_T_officer_F"]};
@@ -42,6 +43,7 @@ private _resolvedTypes = _this apply {
         case ["officer", "cup_npc"]: {["CUP_I_GUE_Commander"]};
         case ["officer", "nato"]: {["B_officer_F"]};
         case ["officer", "nato_pacific"]: {["B_T_officer_F"]};
+        case ["officer", "cup_usa_woodland"]: {["CUP_B_US_Officer_OEFCP"]};
         default {
             if !(_x # 0 in ["civilians", "standard"]) exitWith {[["standard", _x # 1]] call WHF_fnc_getUnitTypes};
             if (_x # 1 isNotEqualTo "base") exitWith {[[_x # 0, "base"]] call WHF_fnc_getUnitTypes};

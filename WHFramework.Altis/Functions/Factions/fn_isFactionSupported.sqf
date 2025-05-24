@@ -27,6 +27,7 @@ private _patches = switch (_faction) do {
     case "cup_npc": {["CUP_Creatures_Military_NAPA", "CUP_WheeledVehicles_Hilux"]};
     case "nato": {[]};
     case "nato_pacific": {[]};
+    case "cup_usa_woodland": {["CUP_Creatures_Military_USArmy","CUP_WheeledVehicles_NewM1097"]};
     default {-1};
 };
 if (_patches isEqualTo -1) exitWith {false};

@@ -83,6 +83,13 @@ private _resolvedTypes = _this apply {
         case ["ifv",      "nato_pacific"]: {["B_T_AFV_Wheeled_01_cannon_F","B_T_AFV_Wheeled_01_up_cannon_F"]};
         case ["mbt",      "nato_pacific"]: {["B_T_MBT_01_cannon_F","B_T_MBT_01_TUSK_F"]};
         case ["aa",       "nato_pacific"]: {["B_T_APC_Tracked_01_AA_F"]};
+        case ["standard", "cup_usa_woodland"]: {["CUP_B_nM1025_M2_USA_WDL","CUP_B_nM1025_M240_USA_WDL","CUP_B_nM1025_Mk19_USA_WDL","CUP_B_nM1025_Unarmed_USA_WDL","CUP_B_nM1025_SOV_M2_USA_WDL","CUP_B_nM1025_SOV_Mk19_USA_WDL","CUP_B_nM1036_TOW_USA_WDL","CUP_B_nM1038_4s_USA_WDL","CUP_B_nM1151_ogpk_m2_USA_WDL","CUP_B_nM1151_ogpk_m240_DF_USA_WDL","CUP_B_nM1151_ogpk_mk19_USA_WDL","CUP_B_nM1151_Unarmed_USA_WDL"]};
+        case ["supply",   "cup_usa_woodland"]: {["CUP_B_MTVR_Ammo_USMC","CUP_B_MTVR_Refuel_USMC","CUP_B_MTVR_Repair_USMC","CUP_B_nM997_USMC_WDL"]};
+        case ["mrap",     "cup_usa_woodland"]: {["CUP_B_RG31_Mk19_OD_USA","CUP_B_RG31E_M2_OD_USA","CUP_B_RG31_M2_OD_USA"]};
+        case ["apc",      "cup_usa_woodland"]: {["CUP_B_M1126_ICV_M2_Woodland","CUP_B_M1126_ICV_MK19_Woodland","CUP_B_M113A1_USA","CUP_B_M113A3_USA"]};
+        case ["ifv",      "cup_usa_woodland"]: {["CUP_B_M2Bradley_USA_W","CUP_B_M2A3Bradley_USA_W","CUP_B_M7Bradley_USA_W"]};
+        case ["mbt",      "cup_usa_woodland"]: {["CUP_B_M1A1SA_Woodland_US_Army","CUP_B_M1A1SA_TUSK_Woodland_US_Army","CUP_B_M1A2SEP_Woodland_US_Army","CUP_B_M1A2SEP_TUSK_II_Woodland_US_Army","CUP_B_M1A2SEP_TUSK_Woodland_US_Army","CUP_B_M1A2C_Woodland_US_Army","CUP_B_M1A2C_TUSK_II_Woodland_US_Army","CUP_B_M1A2C_TUSK_Woodland_US_Army"]};
+        case ["aa",       "cup_usa_woodland"]: {["CUP_B_nM1097_AVENGER_USA_WDL","CUP_B_M6LineBacker_USA_W"]};
         default {
             if !(_x # 0 in ["civilians", "standard"]) exitWith {[["standard", _x # 1]] call WHF_fnc_getVehicleTypes};
             if (_x # 1 isNotEqualTo "base") exitWith {[[_x # 0, "base"]] call WHF_fnc_getVehicleTypes};

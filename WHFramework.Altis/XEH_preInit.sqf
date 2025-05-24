@@ -276,6 +276,16 @@ Author:
     {},
     false
 ] call WHF_fnc_addSetting;
+[
+    "WHF_factions_cup_usa_woodland",
+    "CHECKBOX",
+    "STR_WHF_factions_cup_usa_woodland",
+    "STR_WHF_settings_factions",
+    false,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
 call WHF_fnc_cycleFaction;
 
 // Fitness

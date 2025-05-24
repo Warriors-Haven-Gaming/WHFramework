@@ -20,6 +20,7 @@ private _factions = [
     "cup_afrf_modern",
     "cup_npc",
     "nato",
-    "nato_pacific"
+    "nato_pacific",
+    "cup_usa_woodland"
 ];
 _factions select {[_x] call WHF_fnc_isFactionSupported}
