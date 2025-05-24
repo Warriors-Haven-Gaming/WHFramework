@@ -256,6 +256,16 @@ Author:
     {},
     false
 ] call WHF_fnc_addSetting;
+[
+    "WHF_factions_nato",
+    "CHECKBOX",
+    "STR_WHF_factions_nato",
+    ["STR_WHF_settings", "STR_WHF_settings_factions"],
+    false,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
 call WHF_fnc_cycleFaction;
 
 // Fitness

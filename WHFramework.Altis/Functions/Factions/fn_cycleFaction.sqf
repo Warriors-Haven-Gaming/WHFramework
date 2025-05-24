@@ -18,7 +18,8 @@ private _factions = [
     ["rhsafrf", WHF_factions_rhsafrf],
     ["cup_afrf", WHF_factions_cup_afrf],
     ["cup_afrf_modern", WHF_factions_cup_afrf_modern],
-    ["cup_npc", WHF_factions_cup_npc]
+    ["cup_npc", WHF_factions_cup_npc],
+    ["nato", WHF_factions_nato]
 ] select {_x # 1} apply {_x # 0};
 _factions = _factions arrayIntersect call WHF_fnc_supportedFactions;
 if (count _factions > 1 && {!isNil "WHF_factions_current"}) then {

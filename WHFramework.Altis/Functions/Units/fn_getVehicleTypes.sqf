@@ -69,6 +69,13 @@ private _resolvedTypes = _this apply {
         case ["ifv",      "cup_npc"]: {["CUP_I_BMP2_NAPA","CUP_I_BMP_HQ_NAPA"]};
         case ["mbt",      "cup_npc"]: {["CUP_I_M60A3_RACS","CUP_I_M60A3_TTS_RACS","CUP_B_M1A2SEP_RACS","CUP_B_M1A2SEP_TUSK_RACS","CUP_I_T72_RACS"]};
         case ["aa",       "cup_npc"]: {["CUP_I_Datsun_AA_Random","CUP_I_Ural_ZU23_NAPA"]};
+        case ["standard", "nato"]: {["B_LSV_01_unarmed_F","B_LSV_01_armed_F","B_LSV_01_AT_F"]};
+        case ["supply",   "nato"]: {["B_Truck_01_ammo_F","B_Truck_01_fuel_F","B_Truck_01_medical_F","B_Truck_01_Repair_F"]};
+        case ["mrap",     "nato"]: {["B_MRAP_01_F","B_MRAP_01_gmg_F","B_MRAP_01_hmg_F"]};
+        case ["apc",      "nato"]: {["B_APC_Wheeled_01_cannon_F","B_APC_Tracked_01_rcws_F"]};
+        case ["ifv",      "nato"]: {["B_AFV_Wheeled_01_cannon_F","B_AFV_Wheeled_01_up_cannon_F"]};
+        case ["mbt",      "nato"]: {["B_MBT_01_cannon_F","B_MBT_01_TUSK_F"]};
+        case ["aa",       "nato"]: {["B_APC_Tracked_01_AA_F"]};
         default {
             if !(_x # 0 in ["civilians", "standard"]) exitWith {[["standard", _x # 1]] call WHF_fnc_getVehicleTypes};
             if (_x # 1 isNotEqualTo "base") exitWith {[[_x # 0, "base"]] call WHF_fnc_getVehicleTypes};
