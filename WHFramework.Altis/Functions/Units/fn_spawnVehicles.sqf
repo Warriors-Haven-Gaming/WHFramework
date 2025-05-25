@@ -10,6 +10,9 @@ Parameters:
     Array types:
         One or more group types to spawn vehicles from.
         See WHF_fnc_getVehicleTypes for allowed values.
+    Array unitTypes:
+        One or more group types to spawn units from.
+        See WHF_fnc_getUnitTypes for allowed values.
     Number quantity:
         The number of vehicles to spawn.
     PositionATL center:
@@ -25,7 +28,7 @@ Author:
     thegamecracks
 
 */
-params ["_side", "_types", "_quantity", "_center", "_radius"];
+params ["_side", "_types", "_unitTypes", "_quantity", "_center", "_radius"];
 if (_quantity < 1) exitWith {grpNull};
 
 private _group = createGroup [_side, true];
@@ -56,7 +59,8 @@ for "_i" from 1 to _quantity do {
     private _vehicle = _x;
     private _seats = _vehicle emptyPositions "";
     private _quantity = selectRandom [3, 5, 7] min _seats;
-    private _units = [_group, "standard", _quantity, [-random 500, -random 500, 0], 0] call WHF_fnc_spawnUnits;
+    private _pos = [-random 500, -random 500, 0];
+    private _units = [_group, _unitTypes, _quantity, _pos, 0] call WHF_fnc_spawnUnits;
     {_x moveInAny _vehicle} forEach _units;
     {if (isNull objectParent _x) then {deleteVehicle _x}} forEach _units;
 } forEach _vehicles;

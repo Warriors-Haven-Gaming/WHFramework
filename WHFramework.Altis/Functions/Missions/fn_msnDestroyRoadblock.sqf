@@ -99,7 +99,9 @@ private _garrisonGroup = [opfor, "standard", _garrisonCount, _center, 50] call W
 _groups pushBack _garrisonGroup;
 
 private _vehicleCount = 4 + floor random 5;
-private _vehicleGroup = [opfor, "standard", _vehicleCount, _center, _radius] call WHF_fnc_spawnVehicles;
+private _vehicleGroup =
+    [opfor, "standard", "standard", _vehicleCount, _center, _radius]
+    call WHF_fnc_spawnVehicles;
 private _vehicles = assignedVehicles _vehicleGroup;
 [_vehicleGroup, _center, _radius] call BIS_fnc_taskPatrol;
 _groups pushBack _vehicleGroup;

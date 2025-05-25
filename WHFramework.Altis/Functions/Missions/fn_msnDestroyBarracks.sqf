@@ -108,7 +108,7 @@ private _garrisonGroup = [opfor, "standard", _garrisonCount, _center, 50] call W
 [[_garrisonGroup], _groups] spawn WHF_fnc_ungarrisonLoop;
 _groups pushBack _garrisonGroup;
 
-private _vehicleArgs = [opfor, "standard", 4 + floor random 5, _center, _radius];
+private _vehicleArgs = [opfor, "standard", "standard", 4 + floor random 5, _center, _radius];
 private _vehicleGroup = _vehicleArgs call WHF_fnc_spawnVehicles;
 _groups pushBack _vehicleGroup;
 _vehicles append assignedVehicles _vehicleGroup;

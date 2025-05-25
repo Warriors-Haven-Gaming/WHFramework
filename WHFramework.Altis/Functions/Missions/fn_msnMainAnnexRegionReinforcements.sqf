@@ -59,7 +59,7 @@ private _reinforceVehicles = {
     if (_pos isEqualTo [0,0]) then {continue};
 
     private _types = WHF_missions_annex_vehicles_types;
-    private _group = [opfor, _types, 1, _pos, 10] call WHF_fnc_spawnVehicles;
+    private _group = [opfor, _types, "standard", 1, _pos, 10] call WHF_fnc_spawnVehicles;
     [_group, getPosATL leader _group, 200] call BIS_fnc_taskPatrol;
 
     _groups pushBack _group;

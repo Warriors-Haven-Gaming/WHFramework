@@ -85,7 +85,7 @@ call {
     private _pos = [_center, [30, _radius]] call WHF_fnc_randomPos;
     if (_pos isEqualTo [0,0]) then {continue};
 
-    private _vehicleArgs = [opfor, _vehicleType, _vehicleQuantity, _pos, 30];
+    private _vehicleArgs = [opfor, _vehicleType, "standard", _vehicleQuantity, _pos, 30];
     private _vehicleGroup = _vehicleArgs call WHF_fnc_spawnVehicles;
     [_vehicleGroup, _pos] call BIS_fnc_taskDefend;
     _groups pushBack _vehicleGroup;

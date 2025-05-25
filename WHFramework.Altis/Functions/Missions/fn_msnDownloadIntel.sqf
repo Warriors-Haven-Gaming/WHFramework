@@ -64,7 +64,9 @@ _groups pushBack _group;
 [_group, _center] call BIS_fnc_taskDefend;
 
 private _vehicleCount = 1 + floor random 4;
-private _vehicleGroup = [opfor, "standard", _vehicleCount, _center, 100] call WHF_fnc_spawnVehicles;
+private _vehicleGroup =
+    [opfor, "standard", "standard", _vehicleCount, _center, 100]
+    call WHF_fnc_spawnVehicles;
 _groups pushBack _vehicleGroup;
 _vehicles append assignedVehicles _vehicleGroup;
 [_vehicleGroup, _center] call BIS_fnc_taskDefend;

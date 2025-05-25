@@ -78,7 +78,7 @@ private _groups = _artyTurrets apply {
 
 private _vehicleTypes = ["standard", "supply", "mrap", "apc", "ifv", "aa"];
 private _vehicleCount = 6 + floor random 7;
-private _vehicleGroup = [opfor, _vehicleTypes, _vehicleCount, _center, _radius] call WHF_fnc_spawnVehicles;
+private _vehicleGroup = [opfor, _vehicleTypes, "standard", _vehicleCount, _center, _radius] call WHF_fnc_spawnVehicles;
 private _vehicles = assignedVehicles _vehicleGroup;
 [_vehicleGroup, _center] call BIS_fnc_taskDefend;
 
