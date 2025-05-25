@@ -89,7 +89,7 @@ for "_i" from 1 to 4 + random 5 do {
     _groups pushBack _group;
 };
 
-private _turretGroup = [opfor, _turrets] call WHF_fnc_spawnGunners;
+private _turretGroup = [opfor, "standard", _turrets] call WHF_fnc_spawnGunners;
 _groups pushBack _turretGroup;
 
 private _garrisonCount = 10 + floor random 21;

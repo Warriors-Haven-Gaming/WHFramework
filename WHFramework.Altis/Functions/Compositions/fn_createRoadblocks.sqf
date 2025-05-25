@@ -82,5 +82,5 @@ for "_i" from 1 to _quantity * 2 do {
     _turrets pushBack _turret;
 };
 
-private _group = [_side, _turrets] call WHF_fnc_spawnGunners;
+private _group = [_side, "standard", _turrets] call WHF_fnc_spawnGunners;
 [_turrets, [], [_group]]

@@ -99,7 +99,7 @@ while {_infCount > 0} do {
     _infCount = _infCount - _quantity;
 };
 
-private _turretGroup = [opfor, _turrets] call WHF_fnc_spawnGunners;
+private _turretGroup = [opfor, "standard", _turrets] call WHF_fnc_spawnGunners;
 _groups pushBack _turretGroup;
 
 private _garrisonCount = 20 + floor random 21;

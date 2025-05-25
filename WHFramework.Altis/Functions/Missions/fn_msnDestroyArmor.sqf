@@ -76,7 +76,7 @@ call {
     [_group, _center] call BIS_fnc_taskDefend;
     _groups pushBack _group;
 
-    private _turretGroup = [opfor, _centerTurrets] call WHF_fnc_spawnGunners;
+    private _turretGroup = [opfor, "standard", _centerTurrets] call WHF_fnc_spawnGunners;
     _groups pushBack _turretGroup;
 };
 

@@ -87,7 +87,7 @@ private _compositionGroups = [];
         _objects append _parts;
     } forEach _compData;
 
-    private _group = [_side, _objects] call WHF_fnc_spawnGunners;
+    private _group = [_side, "standard", _objects] call WHF_fnc_spawnGunners;
     if (_group isNotEqualTo grpNull) then {_compositionGroups pushBack _group};
 
     _compositionObjects pushBack _objects;

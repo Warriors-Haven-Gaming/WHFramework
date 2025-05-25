@@ -50,7 +50,7 @@ _compVehicles = [_compVehicles, _pos, _dir, ["normal"], _objects] call WHF_fnc_o
 _objects pushBack _compProps;
 _objects append _compVehicles; // Ensure GC area check happens per vehicle
 
-private _group = [opfor, _compVehicles] call WHF_fnc_spawnGunners;
+private _group = [opfor, "standard", _compVehicles] call WHF_fnc_spawnGunners;
 _groups pushBack _group;
 
 private _guardGroup = [opfor, "standard", selectRandom [4, 6, 8], _pos, 20] call WHF_fnc_spawnUnits;

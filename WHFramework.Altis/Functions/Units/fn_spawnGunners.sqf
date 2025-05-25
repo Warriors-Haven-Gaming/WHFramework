@@ -7,6 +7,9 @@ Description:
 Parameters:
     Side side:
         The group's side.
+    Array unitTypes:
+        One or more group types to spawn units from.
+        See WHF_fnc_getUnitTypes for allowed values.
     Array turrets:
         An array of turrets to spawn gunners for.
         All turrets must be local.
@@ -19,7 +22,7 @@ Author:
     thegamecracks
 
 */
-params ["_side", "_turrets"];
+params ["_side", "_unitTypes", "_turrets"];
 
 _turrets = _turrets select {
     alive _x
@@ -67,7 +70,8 @@ private _registerArtillery = {
     [_group] call lambs_wp_fnc_taskartilleryregister;
 };
 
-private _group = [_side, "standard", count _turrets, [-random 500, -random 500, 0], 0, false] call WHF_fnc_spawnUnits;
+private _pos = [-random 500, -random 500, 0];
+private _group = [_side, _unitTypes, count _turrets, _pos, 0, false] call WHF_fnc_spawnUnits;
 {
     private _turret = _turrets # _forEachIndex;
     _group addVehicle _turret;
