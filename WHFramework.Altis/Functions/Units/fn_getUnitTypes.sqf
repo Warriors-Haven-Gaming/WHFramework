@@ -21,6 +21,24 @@ if !(_this isEqualType []) then {_this = [_this]};
 _this = _this apply {if (_x isEqualType "") then {[_x]} else {_x}};
 {_x pushBack WHF_factions_current} forEach (_this select {count _x isEqualTo 1});
 
+private _factions = call WHF_fnc_allFactions;
+{
+    _x params ["_type", "_faction"];
+    // If this throws an exception, you probably did something like this:
+    //     ["standard", "base"] call WHF_fnc_getUnitTypes;
+    // When specifying both the unit type and faction, it must be its own
+    // element in another array:
+    //     [["standard", "base"]] call WHF_fnc_getUnitTypes;
+    // If you're not sure where this occurred, run Arma with the -debug flag
+    // and you should receive a traceback indicating which scripts led to this
+    // ambiguous input.
+    if (_type in _factions) then {throw format [
+        "Misuse of faction name '%1' as unit type at index %2",
+        _type,
+        _forEachIndex
+    ]};
+} forEach _this;
+
 private _resolvedTypes = _this apply {
     switch (_x) do {
         case ["civilians", "base"]: {["C_man_1","C_Man_casual_1_F","C_Man_casual_2_F","C_Man_casual_3_F","C_man_sport_1_F","C_man_sport_2_F","C_man_sport_3_F","C_Man_casual_4_F","C_Man_casual_5_F","C_Man_casual_6_F","C_man_polo_1_F","C_man_polo_2_F","C_man_polo_3_F","C_man_polo_4_F","C_man_polo_5_F","C_man_polo_6_F","C_Man_ConstructionWorker_01_Black_F","C_Man_ConstructionWorker_01_Blue_F","C_Man_ConstructionWorker_01_Red_F","C_Man_ConstructionWorker_01_Vrana_F","C_Man_Fisherman_01_F","C_man_hunter_1_F","C_Man_Paramedic_01_F","C_scientist_F","C_Man_UtilityWorker_01_F","C_man_w_worker_F"]};

@@ -21,6 +21,24 @@ if !(_this isEqualType []) then {_this = [_this]};
 _this = _this apply {if (_x isEqualType "") then {[_x]} else {_x}};
 {_x pushBack WHF_factions_current} forEach (_this select {count _x isEqualTo 1});
 
+private _factions = call WHF_fnc_allFactions;
+{
+    _x params ["_type", "_faction"];
+    // If this throws an exception, you probably did something like this:
+    //     ["standard", "base"] call WHF_fnc_getVehicleTypes;
+    // When specifying both the vehicle type and faction, it must be its own
+    // element in another array:
+    //     [["standard", "base"]] call WHF_fnc_getVehicleTypes;
+    // If you're not sure where this occurred, run Arma with the -debug flag
+    // and you should receive a traceback indicating which scripts led to this
+    // ambiguous input.
+    if (_type in _factions) then {throw format [
+        "Misuse of faction name '%1' as vehicle type at index %2",
+        _type,
+        _forEachIndex
+    ]};
+} forEach _this;
+
 private _resolvedTypes = _this apply {
     switch (_x) do {
         case ["civilians", "base"]: {["C_Van_01_fuel_F","C_Hatchback_01_F","C_Hatchback_01_sport_F","C_Offroad_02_unarmed_F","C_Offroad_01_F","C_Offroad_01_comms_F","C_Offroad_01_covered_F","C_Offroad_01_repair_F","C_Quadbike_01_F","C_SUV_01_F","C_Tractor_01_F","C_Van_01_transport_F","C_Van_01_box_F","C_Van_02_medevac_F","C_Van_02_vehicle_F","C_Van_02_service_F","C_Van_02_transport_F","C_Truck_02_fuel_F","C_Truck_02_box_F","C_Truck_02_transport_F","C_Truck_02_covered_F"]};
