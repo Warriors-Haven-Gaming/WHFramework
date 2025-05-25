@@ -11,17 +11,4 @@ Author:
     thegamecracks
 
 */
-private _factions = [
-    "base",
-    "csat",
-    "csat_pacific",
-    "rhsafrf",
-    "cup_afrf",
-    "cup_afrf_modern",
-    "cup_npc",
-    "nato",
-    "nato_pacific",
-    "cup_usa_woodland",
-    "cup_usmc_woodland"
-];
-_factions select {[_x] call WHF_fnc_isFactionSupported}
+call WHF_fnc_allFactions select {[_x] call WHF_fnc_isFactionSupported}
