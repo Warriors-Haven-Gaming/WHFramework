@@ -6,7 +6,7 @@ Description:
     Function must be ran in scheduled environment.
 
 Parameters:
-    PositionATL intelCenter:
+    PositionATL center:
         (Optional, default [])
         If specified, the given position is used for the intel instead of
         attempting to find a suitable location.
@@ -15,10 +15,9 @@ Author:
     thegamecracks
 
 */
-params [["_intelCenter",[]]];
+params [["_center",[]]];
 
-private _intelDir = random 360;
-if (_intelCenter isEqualTo []) then {
+if (_center isEqualTo []) then {
     private _options = selectBestPlaces [[worldSize / 2, worldSize / 2], sqrt 2 / 2 * worldSize, "forest", 100, 50];
     {
         _x params ["_pos"];
@@ -27,18 +26,18 @@ if (_intelCenter isEqualTo []) then {
         if (_pos isFlatEmpty [-1, -1, 0.45, 12] isEqualTo []) then {continue};
         if (_pos nearRoads 50 isNotEqualTo []) then {continue};
         if ([_pos, 100] call WHF_fnc_isNearUsedPosition) then {continue};
-        _intelCenter = _pos;
+        _center = _pos;
         break;
     } forEach _options;
 };
-if (_intelCenter isEqualTo []) exitWith {
+if (_center isEqualTo []) exitWith {
     diag_log text format ["%1: No center found", _fnc_scriptName];
 };
 
-private _terrainObjects = nearestTerrainObjects [_intelCenter, [], 20, false, true];
-_terrainObjects apply {hideObjectGlobal _x};
+private _terrain = nearestTerrainObjects [_center, [], 20, false, true];
+_terrain apply {hideObjectGlobal _x};
 
-private _intelBuilding = [
+private _intel = [
     [
         ["Land_Cargo_House_V4_F",[0.0126953,-0.00585938,0],0],
         ["MapBoard_Tanoa_F",[-0.496094,1.24414,0.592813],172.602],
@@ -49,32 +48,32 @@ private _intelBuilding = [
         ["Land_PCSet_Intel_01_F",[-1.20313,2.55273,1.62502],201.424],
         ["Land_OfficeChair_01_F",[-1.6875,3.28906,0.728849],0]
     ],
-    _intelCenter,
-    _intelDir,
+    _center,
+    random 360,
     ["frozen", "normal"]
 ] call WHF_fnc_objectsMapper;
-private _laptop = _intelBuilding # 5;
+private _laptop = _intel # 5;
 [_laptop] remoteExec ["WHF_fnc_msnDownloadIntelLaptop", 0, _laptop];
 
 private _groups = [];
 private _vehicles = [];
 
 private _quantity = 10 + floor random (count allPlayers min 20);
-private _group = [opfor, "standard", _quantity, _intelCenter, 100] call WHF_fnc_spawnUnits;
+private _group = [opfor, "standard", _quantity, _center, 100] call WHF_fnc_spawnUnits;
 _groups pushBack _group;
-[_group, _intelCenter] call BIS_fnc_taskDefend;
+[_group, _center] call BIS_fnc_taskDefend;
 
 private _vehicleCount = 1 + floor random 4;
-private _vehicleGroup = [opfor, "standard", _vehicleCount, _intelCenter, 100] call WHF_fnc_spawnVehicles;
+private _vehicleGroup = [opfor, "standard", _vehicleCount, _center, 100] call WHF_fnc_spawnVehicles;
 _groups pushBack _vehicleGroup;
 _vehicles append assignedVehicles _vehicleGroup;
-[_vehicleGroup, _intelCenter] call BIS_fnc_taskDefend;
+[_vehicleGroup, _center] call BIS_fnc_taskDefend;
 
 private _taskID = [
     blufor,
     "",
     "downloadIntel",
-    _intelCenter getPos [50 + random 100, random 360],
+    _center getPos [50 + random 100, random 360],
     "CREATED",
     -1,
     true,
@@ -96,7 +95,7 @@ while {true} do {
     };
 };
 
-[_intelBuilding] call WHF_fnc_queueGCDeletion;
-[_terrainObjects] call WHF_fnc_queueGCUnhide;
+[_intel] call WHF_fnc_queueGCDeletion;
+[_terrain] call WHF_fnc_queueGCUnhide;
 {[units _x] call WHF_fnc_queueGCDeletion} forEach _groups;
 {[_x] call WHF_fnc_queueGCDeletion} forEach _vehicles;
