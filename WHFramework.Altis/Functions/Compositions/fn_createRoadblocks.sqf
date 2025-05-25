@@ -26,7 +26,7 @@ Author:
     thegamecracks
 
 */
-params ["_side", "_quantity", "_roads", "_center"];
+params ["_side", "_unitTypes", "_quantity", "_roads", "_center"];
 
 _roads = _roads apply {
     if (_x isEqualType objNull) then {getRoadInfo _x} else {_x}
@@ -82,5 +82,5 @@ for "_i" from 1 to _quantity * 2 do {
     _turrets pushBack _turret;
 };
 
-private _group = [_side, "standard", _turrets] call WHF_fnc_spawnGunners;
+private _group = [_side, _unitTypes, _turrets] call WHF_fnc_spawnGunners;
 [_turrets, [], [_group]]

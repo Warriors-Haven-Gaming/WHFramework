@@ -50,7 +50,7 @@ private _roads = _center nearRoads _radius apply {getRoadInfo _x} select {
     _x # 0 in ["ROAD", "MAIN ROAD", "TRACK"] && {!(_x # 2)}
 };
 private _roadblockCount = floor (count _roads / 30 * WHF_missions_annex_vehicles);
-[opfor, _roadblockCount, _roads, _center] call WHF_fnc_createRoadblocks
+[opfor, "standard", _roadblockCount, _roads, _center] call WHF_fnc_createRoadblocks
     params ["_roadblockObjects", "_roadblockTerrain", "_roadblockGroups"];
 _objects append _roadblockObjects;
 _terrain append _roadblockTerrain;
