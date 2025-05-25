@@ -10,12 +10,16 @@ Parameters:
         (Optional, default [])
         If specified, the given position is used for the intel instead of
         attempting to find a suitable location.
+    String faction:
+        (Optional, default "")
+        The faction to spawn units from.
+        If not provided, a random faction is selected from WHF_factions_pool.
 
 Author:
     thegamecracks
 
 */
-params [["_center",[]]];
+params [["_center", []], ["_faction", ""]];
 
 if (_center isEqualTo []) then {
     private _options = selectBestPlaces [[worldSize / 2, worldSize / 2], sqrt 2 / 2 * worldSize, "forest", 100, 50];
@@ -33,6 +37,9 @@ if (_center isEqualTo []) then {
 if (_center isEqualTo []) exitWith {
     diag_log text format ["%1: No center found", _fnc_scriptName];
 };
+
+if (_faction isEqualTo "") then {_faction = selectRandom WHF_factions_pool};
+private _standard = ["standard", _faction];
 
 private _terrain = nearestTerrainObjects [_center, [], 20, false, true];
 _terrain apply {hideObjectGlobal _x};
@@ -59,13 +66,13 @@ private _groups = [];
 private _vehicles = [];
 
 private _quantity = 10 + floor random (count allPlayers min 20);
-private _group = [opfor, "standard", _quantity, _center, 100] call WHF_fnc_spawnUnits;
+private _group = [opfor, [_standard], _quantity, _center, 100] call WHF_fnc_spawnUnits;
 _groups pushBack _group;
 [_group, _center] call BIS_fnc_taskDefend;
 
 private _vehicleCount = 1 + floor random 4;
 private _vehicleGroup =
-    [opfor, "standard", "standard", _vehicleCount, _center, 100]
+    [opfor, [_standard], [_standard], _vehicleCount, _center, 100]
     call WHF_fnc_spawnVehicles;
 _groups pushBack _vehicleGroup;
 _vehicles append assignedVehicles _vehicleGroup;
@@ -89,7 +96,7 @@ while {true} do {
     if (_laptop getVariable ["WHF_downloadStarted", false] isEqualTo true) then {
         if (!_downloadStartedOnce) then {
             _downloadStartedOnce = true;
-            [_laptop, _groups, _vehicles] call WHF_fnc_msnDownloadIntelReinforcements;
+            [_laptop, _faction, _groups, _vehicles] call WHF_fnc_msnDownloadIntelReinforcements;
         };
     };
     if (_laptop getVariable ["WHF_downloadEnded", false] isEqualTo true) exitWith {

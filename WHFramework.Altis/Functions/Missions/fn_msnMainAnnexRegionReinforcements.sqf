@@ -14,6 +14,8 @@ Parameters:
         The center of the mission area.
     Number radius:
         The radius of the mission area.
+    String faction:
+        The faction to spawn units from.
     Number thresholdUnits:
         The maximum number of units allowed.
     Array groups:
@@ -32,6 +34,7 @@ params [
     "",
     "_center",
     "_radius",
+    "_faction",
     "_thresholdUnits",
     "_groups",
     "_vehicles"
@@ -39,12 +42,14 @@ params [
 if !(_this # 0) exitWith {};
 
 private _reinforceUnits = {
-    params ["_center", "_radius", "_groups"];
+    params ["_center", "_radius", "_faction", "_groups"];
 
     private _pos = [_center, _radius] call WHF_fnc_randomPosHidden;
     if (_pos isEqualTo [0,0]) then {continue};
 
     private _types = WHF_missions_annex_units_types;
+    _types = _types apply {[_x, _faction]};
+
     private _quantity = selectRandom [2, 4, 6, 8];
     private _group = [opfor, _types, _quantity, _pos, 10] call WHF_fnc_spawnUnits;
     [_group, getPosATL leader _group, 200] call BIS_fnc_taskPatrol;
@@ -53,13 +58,17 @@ private _reinforceUnits = {
 };
 
 private _reinforceVehicles = {
-    params ["_center", "_radius", "_groups", "_vehicles"];
+    params ["_center", "_radius", "_faction", "_groups", "_vehicles"];
 
     private _pos = [_center, _radius] call WHF_fnc_randomPosHidden;
     if (_pos isEqualTo [0,0]) then {continue};
 
     private _types = WHF_missions_annex_vehicles_types;
-    private _group = [opfor, _types, "standard", 1, _pos, 10] call WHF_fnc_spawnVehicles;
+    private _unitTypes = WHF_missions_annex_units_types;
+    _types = _types apply {[_x, _faction]};
+    _unitTypes = _unitTypes apply {[_x, _faction]};
+
+    private _group = [opfor, _types, _unitTypes, 1, _pos, 10] call WHF_fnc_spawnVehicles;
     [_group, getPosATL leader _group, 200] call BIS_fnc_taskPatrol;
 
     _groups pushBack _group;
@@ -68,8 +77,8 @@ private _reinforceVehicles = {
 
 private _thresholdVehicles = count _vehicles;
 private _reinforceArgs = [
-    [true, 30, _thresholdUnits, _groups, [_center, _radius, _groups], _reinforceUnits],
-    [true, 30, _thresholdVehicles, _vehicles, [_center, _radius, _groups, _vehicles], _reinforceVehicles]
+    [true, 30, _thresholdUnits, _groups, [_center, _radius, _faction, _groups], _reinforceUnits],
+    [true, 30, _thresholdVehicles, _vehicles, [_center, _radius, _faction, _groups, _vehicles], _reinforceVehicles]
 ];
 private _reinforceScripts = _reinforceArgs apply {_x spawn WHF_fnc_reinforceLoop};
 

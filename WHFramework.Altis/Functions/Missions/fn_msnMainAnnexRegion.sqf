@@ -10,12 +10,15 @@ Parameters:
         (Optional, default locationNull)
         If specified, the given location is used for the mission instead of
         attempting to find a suitable location.
+    String faction:
+        (Optional, default WHF_factions_current)
+        The faction to spawn units from.
 
 Author:
     thegamecracks
 
 */
-params [["_location", locationNull]];
+params [["_location", locationNull], ["_faction", WHF_factions_current]];
 
 private _getRadius = {
     params ["_location"];
@@ -63,11 +66,11 @@ private _center = locationPosition _location vectorMultiply [1, 1, 0];
 _center = _center vectorAdd [50 - random 100, 50 - random 100];
 private _area = [_center, _radius, _radius, 0, false];
 
-[_center, _radius] call WHF_fnc_msnMainAnnexRegionCompositions
+[_center, _radius, _faction] call WHF_fnc_msnMainAnnexRegionCompositions
     params ["_objects", "_terrain", "_compGroups"];
 
 private _buildings = flatten _objects select {simulationEnabled _x};
-[_center, _radius, _buildings] call WHF_fnc_msnMainAnnexRegionUnits
+[_center, _radius, _faction, _buildings] call WHF_fnc_msnMainAnnexRegionUnits
     params ["_groups", "_vehicles"];
 
 // Note that unlike _compGroups, the above function will dynamically append
@@ -76,7 +79,7 @@ private _buildings = flatten _objects select {simulationEnabled _x};
 _groups append _compGroups;
 
 private _initialUnitCount = count flatten (_groups apply {units _x});
-private _reinforceArgs = [true, _center, _radius, _initialUnitCount, _groups, _vehicles];
+private _reinforceArgs = [true, _center, _radius, _faction, _initialUnitCount, _groups, _vehicles];
 private _reinforceScript = _reinforceArgs spawn WHF_fnc_msnMainAnnexRegionReinforcements;
 
 private _areaMarker = [["WHF_mainMission"], _area, true] call WHF_fnc_createAreaMarker;
@@ -93,7 +96,7 @@ private _description = [
 ];
 private _taskID = [blufor, "", _description, _area # 0, "AUTOASSIGNED", -1, true, "attack"] call WHF_fnc_taskCreate;
 
-private _subObjectiveArgs = [_center, _radius, _taskID, _objects, _terrain, _groups];
+private _subObjectiveArgs = [_center, _radius, _faction, _taskID, _objects, _terrain, _groups];
 private _subObjectives = [
     [_subObjectiveArgs, WHF_fnc_msnMainAnnexRegionCommand],
     [_subObjectiveArgs, WHF_fnc_msnMainAnnexRegionComms],

@@ -10,12 +10,16 @@ Parameters:
         (Optional, default [])
         If specified, the given position is used for the intel instead of
         attempting to find a suitable location.
+    String faction:
+        (Optional, default "")
+        The faction to spawn units from.
+        If not provided, a random faction is selected from WHF_factions_pool.
 
 Author:
     thegamecracks
 
 */
-params [["_center",[]]];
+params [["_center", []], ["_faction", ""]];
 
 private _radius = 100;
 
@@ -41,6 +45,9 @@ if (_center isEqualTo []) then {
 if (_center isEqualTo []) exitWith {
     diag_log text format ["%1: No center found", _fnc_scriptName];
 };
+
+if (_faction isEqualTo "") then {_faction = selectRandom WHF_factions_pool};
+private _standard = ["standard", _faction];
 
 private _area = [_center, _radius, _radius, 0, false];
 
@@ -92,24 +99,25 @@ while {_infCount > 0} do {
     if (_pos isEqualTo [0,0]) then {break};
 
     private _quantity = selectRandom [2, 4, 6, 8];
-    private _group = [opfor, "standard", _quantity, _pos, 10] call WHF_fnc_spawnUnits;
+    private _group = [opfor, [_standard], _quantity, _pos, 10] call WHF_fnc_spawnUnits;
     [_group, getPosATL leader _group, 50] call BIS_fnc_taskPatrol;
 
     _groups pushBack _group;
     _infCount = _infCount - _quantity;
 };
 
-private _turretGroup = [opfor, "standard", _turrets] call WHF_fnc_spawnGunners;
+private _turretGroup = [opfor, [_standard], _turrets] call WHF_fnc_spawnGunners;
 _groups pushBack _turretGroup;
 
 private _garrisonCount = 20 + floor random 21;
-private _garrisonGroup = [opfor, "standard", _garrisonCount, _center, 50] call WHF_fnc_spawnUnits;
+private _garrisonGroup = [opfor, [_standard], _garrisonCount, _center, 50] call WHF_fnc_spawnUnits;
 [_garrisonGroup, _center, _radius, true] call WHF_fnc_garrisonUnits;
 [[_garrisonGroup], _groups] spawn WHF_fnc_ungarrisonLoop;
 _groups pushBack _garrisonGroup;
 
-private _vehicleArgs = [opfor, "standard", "standard", 4 + floor random 5, _center, _radius];
-private _vehicleGroup = _vehicleArgs call WHF_fnc_spawnVehicles;
+private _vehicleGroup =
+    [opfor, [_standard], [_standard], 4 + floor random 5, _center, _radius]
+    call WHF_fnc_spawnVehicles;
 _groups pushBack _vehicleGroup;
 _vehicles append assignedVehicles _vehicleGroup;
 

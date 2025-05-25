@@ -10,12 +10,16 @@ Parameters:
         (Optional, default [])
         If specified, the given position is used for the AA battery instead of
         attempting to find a suitable location.
+    String faction:
+        (Optional, default "")
+        The faction to spawn units from.
+        If not provided, a random faction is selected from WHF_factions_pool.
 
 Author:
     thegamecracks
 
 */
-params [["_center",[]]];
+params [["_center", []], ["_faction", ""]];
 
 private _radius = 300;
 
@@ -42,11 +46,15 @@ if (_center isEqualTo []) exitWith {
     diag_log text format ["%1: No center found", _fnc_scriptName];
 };
 
+if (_faction isEqualTo "") then {_faction = selectRandom WHF_factions_pool};
+private _standard = ["standard", _faction];
+private _supply = ["supply", _faction];
+
 private _area = [_center, _radius, _radius, 0, false];
 private _ruins = [];
 
 private _aaTypes = WHF_missions_aaa_types;
-[opfor, "standard", 2 + floor random 3, _center, _radius, _aaTypes, _ruins]
+[opfor, [_standard], 2 + floor random 3, _center, _radius, _aaTypes, _ruins]
     call WHF_fnc_createEmplacements
     params ["_aaObjects", "_aaTerrain", "_aaGroups"];
 
@@ -72,14 +80,14 @@ if (count _aaTurrets < 1) exitWith {
 
 private _groups = _aaTurrets apply {
     private _pos = getPosATL selectRandom _x;
-    private _group = [opfor, "standard", 8 + floor random 13, _pos, 50] call WHF_fnc_spawnUnits;
+    private _group = [opfor, [_standard], 8 + floor random 13, _pos, 50] call WHF_fnc_spawnUnits;
     [_group, _pos] call BIS_fnc_taskDefend;
     _group
 };
 
 private _vehicleCount = 6 + floor random 7;
 private _vehicleGroup =
-    [opfor, ["standard", "supply"], "standard", _vehicleCount, _center, _radius]
+    [opfor, [_standard, _supply], [_standard], _vehicleCount, _center, _radius]
     call WHF_fnc_spawnVehicles;
 private _vehicles = assignedVehicles _vehicleGroup;
 [_vehicleGroup, _center] call BIS_fnc_taskDefend;

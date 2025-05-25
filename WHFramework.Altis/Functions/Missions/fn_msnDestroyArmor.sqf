@@ -10,12 +10,16 @@ Parameters:
         (Optional, default [])
         If specified, the given position is used for the intel instead of
         attempting to find a suitable location.
+    String faction:
+        (Optional, default "")
+        The faction to spawn units from.
+        If not provided, a random faction is selected from WHF_factions_pool.
 
 Author:
     thegamecracks
 
 */
-params [["_center",[]]];
+params [["_center", []], ["_faction", ""]];
 
 private _radius = 250;
 
@@ -41,6 +45,9 @@ if (_center isEqualTo []) then {
 if (_center isEqualTo []) exitWith {
     diag_log text format ["%1: No center found", _fnc_scriptName];
 };
+
+if (_faction isEqualTo "") then {_faction = selectRandom WHF_factions_pool};
+private _standard = ["standard", _faction];
 
 private _area = [_center, _radius, _radius, 0, false];
 
@@ -72,11 +79,11 @@ call {
     _objects append _centerService;
     _objects append _centerTurrets;
 
-    private _group = [opfor, "standard", selectRandom [8, 12, 16], _center, 20] call WHF_fnc_spawnUnits;
+    private _group = [opfor, [_standard], selectRandom [8, 12, 16], _center, 20] call WHF_fnc_spawnUnits;
     [_group, _center] call BIS_fnc_taskDefend;
     _groups pushBack _group;
 
-    private _turretGroup = [opfor, "standard", _centerTurrets] call WHF_fnc_spawnGunners;
+    private _turretGroup = [opfor, [_standard], _centerTurrets] call WHF_fnc_spawnGunners;
     _groups pushBack _turretGroup;
 };
 
@@ -85,14 +92,14 @@ call {
     private _pos = [_center, [30, _radius]] call WHF_fnc_randomPos;
     if (_pos isEqualTo [0,0]) then {continue};
 
-    private _vehicleArgs = [opfor, _vehicleType, "standard", _vehicleQuantity, _pos, 30];
+    private _vehicleArgs = [opfor, [_vehicleType], [_standard], _vehicleQuantity, _pos, 30];
     private _vehicleGroup = _vehicleArgs call WHF_fnc_spawnVehicles;
     [_vehicleGroup, _pos] call BIS_fnc_taskDefend;
     _groups pushBack _vehicleGroup;
     _vehicles append assignedVehicles _vehicleGroup;
 
     private _infantryQuantity = selectRandom [8, 12, 16];
-    private _infantryArgs = [opfor, "standard", _infantryQuantity, _pos, 30];
+    private _infantryArgs = [opfor, [_standard], _infantryQuantity, _pos, 30];
     private _infantryGroup = _infantryArgs call WHF_fnc_spawnUnits;
     [_infantryGroup, _pos] call BIS_fnc_taskDefend;
     _groups pushBack _infantryGroup;
@@ -113,12 +120,12 @@ call {
         _objects append _depot;
     };
 } forEach [
-    ["standard", 4 + floor random 5],
-    ["supply", 3 + floor random 4],
-    ["mrap", 2 + floor random 3],
-    ["apc", 2 + floor random 3],
-    ["ifv", 2 + floor random 3],
-    ["mbt", 2 + floor random 3]
+    [["standard", _faction], 4 + floor random 5],
+    [["supply", _faction],   3 + floor random 4],
+    [["mrap", _faction],     2 + floor random 3],
+    [["apc", _faction],      2 + floor random 3],
+    [["ifv", _faction],      2 + floor random 3],
+    [["mbt", _faction],      2 + floor random 3]
 ];
 
 if (count _vehicles < 1) exitWith {

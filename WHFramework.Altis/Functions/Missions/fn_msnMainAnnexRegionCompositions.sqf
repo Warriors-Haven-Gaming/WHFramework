@@ -9,6 +9,8 @@ Parameters:
         The center of the mission area.
     Number radius:
         The radius of the mission area.
+    String faction:
+        The faction to spawn units from.
 
 Returns:
     Array
@@ -21,7 +23,9 @@ Author:
     thegamecracks
 
 */
-params ["_center", "_radius"];
+params ["_center", "_radius", "_faction"];
+
+private _standard = ["standard", _faction];
 
 private _objects = [];
 private _terrain = [];
@@ -29,7 +33,7 @@ private _groups = [];
 
 private _fortCount = floor (_radius / 20 * WHF_missions_annex_forts);
 private _fortTypes = ["camp", 0.5, "outpost", 0.4, "tower", 0.1];
-[opfor, "standard", _fortCount, _center, _radius, _fortTypes, _objects]
+[opfor, [_standard], _fortCount, _center, _radius, _fortTypes, _objects]
     call WHF_fnc_createEmplacements
     params ["_fortObjects", "_fortTerrain", "_fortGroups"];
 _objects append _fortObjects;
@@ -38,7 +42,7 @@ _groups append _fortGroups;
 
 private _mortarCount = floor (_radius / 350);
 private _mortarTypes = ["mortar", 1];
-[opfor, "standard", _mortarCount, _center, _radius, _mortarTypes, _objects]
+[opfor, [_standard], _mortarCount, _center, _radius, _mortarTypes, _objects]
     call WHF_fnc_createEmplacements
     params ["_mortarObjects", "_mortarTerrain", "_mortarGroups"];
 _objects append _mortarObjects;
@@ -50,7 +54,7 @@ private _roads = _center nearRoads _radius apply {getRoadInfo _x} select {
     _x # 0 in ["ROAD", "MAIN ROAD", "TRACK"] && {!(_x # 2)}
 };
 private _roadblockCount = floor (count _roads / 30 * WHF_missions_annex_vehicles);
-[opfor, "standard", _roadblockCount, _roads, _center] call WHF_fnc_createRoadblocks
+[opfor, [_standard], _roadblockCount, _roads, _center] call WHF_fnc_createRoadblocks
     params ["_roadblockObjects", "_roadblockTerrain", "_roadblockGroups"];
 _objects append _roadblockObjects;
 _terrain append _roadblockTerrain;

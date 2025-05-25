@@ -14,12 +14,16 @@ Parameters:
         (Optional, default 0)
         If specified, the given direction is used for the roadblock.
         Has no effect if center is left unspecified.
+    String faction:
+        (Optional, default "")
+        The faction to spawn units from.
+        If not provided, a random faction is selected from WHF_factions_pool.
 
 Author:
     thegamecracks
 
 */
-params [["_center", []], ["_direction", 0]];
+params [["_center", []], ["_direction", 0], ["_faction", ""]];
 
 private _radius = 100;
 
@@ -57,6 +61,9 @@ if (_center isEqualTo []) exitWith {
     diag_log text format ["%1: No center found", _fnc_scriptName];
 };
 
+if (_faction isEqualTo "") then {_faction = selectRandom WHF_factions_pool};
+private _standard = ["standard", _faction];
+
 private _area = [_center, _radius, _radius, 0, false];
 private _ruins = [];
 
@@ -84,23 +91,23 @@ for "_i" from 1 to 4 + random 5 do {
     if (_pos isEqualTo [0,0]) then {continue};
 
     private _quantity = selectRandom [2, 4, 6, 8];
-    private _group = [opfor, "standard", _quantity, _pos, 10] call WHF_fnc_spawnUnits;
+    private _group = [opfor, [_standard], _quantity, _pos, 10] call WHF_fnc_spawnUnits;
     [_group, getPosATL leader _group, 50] call BIS_fnc_taskPatrol;
     _groups pushBack _group;
 };
 
-private _turretGroup = [opfor, "standard", _turrets] call WHF_fnc_spawnGunners;
+private _turretGroup = [opfor, [_standard], _turrets] call WHF_fnc_spawnGunners;
 _groups pushBack _turretGroup;
 
 private _garrisonCount = 10 + floor random 21;
-private _garrisonGroup = [opfor, "standard", _garrisonCount, _center, 50] call WHF_fnc_spawnUnits;
+private _garrisonGroup = [opfor, [_standard], _garrisonCount, _center, 50] call WHF_fnc_spawnUnits;
 [_garrisonGroup, _center, 50, true] call WHF_fnc_garrisonUnits;
 [[_garrisonGroup], _groups] spawn WHF_fnc_ungarrisonLoop;
 _groups pushBack _garrisonGroup;
 
 private _vehicleCount = 4 + floor random 5;
 private _vehicleGroup =
-    [opfor, "standard", "standard", _vehicleCount, _center, _radius]
+    [opfor, [_standard], [_standard], _vehicleCount, _center, _radius]
     call WHF_fnc_spawnVehicles;
 private _vehicles = assignedVehicles _vehicleGroup;
 [_vehicleGroup, _center, _radius] call BIS_fnc_taskPatrol;

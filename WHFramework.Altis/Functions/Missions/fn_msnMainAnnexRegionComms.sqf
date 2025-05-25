@@ -10,6 +10,8 @@ Parameters:
         The center of the mission.
     Number radius:
         The radius of the mission.
+    String faction:
+        The faction to spawn units from.
     String parent:
         The parent task ID.
     Array objects:
@@ -26,7 +28,7 @@ Author:
     thegamecracks
 
 */
-params ["_center", "_radius", "_parent", "_objects", "_terrain", "_groups"];
+params ["_center", "_radius", "_faction", "_parent", "_objects", "_terrain", "_groups"];
 
 private _isPosSuitable = {
     params ["_pos"];
@@ -35,6 +37,9 @@ private _isPosSuitable = {
 
 private _pos = [_center, [30, _radius], [0, _isPosSuitable]] call WHF_fnc_randomPos;
 if (_pos isEqualTo [0,0]) exitWith {};
+
+private _standard = ["standard", _faction];
+private _officer = ["officer", _faction];
 
 private _posTerrain = nearestTerrainObjects [_pos, [], 25, false, true];
 {hideObjectGlobal _x} forEach _posTerrain;
@@ -51,13 +56,13 @@ _intel = [_intel, _pos, _dir, ["frozen", "normal"], _objects] call WHF_fnc_objec
 _objects pushBack (_props + _tower + _intel);
 
 private _building = _props # 0;
-private _group = [opfor, "officer", 1, _pos, 0] call WHF_fnc_spawnUnits;
+private _group = [opfor, [_officer], 1, _pos, 0] call WHF_fnc_spawnUnits;
 private _officer = leader _group;
 _groups pushBack _group;
 [_group, [_building]] call WHF_fnc_garrisonBuildings;
 _officer setPosATL (_building modelToWorld [-2 + random 4, 1.1 + random 2, 0.05]);
 
-private _guardGroup = [opfor, "standard", selectRandom [4, 6, 8], _pos, 20] call WHF_fnc_spawnUnits;
+private _guardGroup = [opfor, [_standard], selectRandom [4, 6, 8], _pos, 20] call WHF_fnc_spawnUnits;
 [_guardGroup, _pos] call BIS_fnc_taskDefend;
 _groups pushBack _guardGroup;
 

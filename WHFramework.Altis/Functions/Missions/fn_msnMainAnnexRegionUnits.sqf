@@ -9,6 +9,8 @@ Parameters:
         The center of the mission area.
     Number radius:
         The radius of the mission area.
+    String faction:
+        The faction to spawn units from.
     Array buildings:
         (Optional, default [])
         An array of buildings to prioritize garrisoning units io first.
@@ -23,8 +25,9 @@ Author:
     thegamecracks
 
 */
-params ["_center", "_radius", ["_buildings", []]];
+params ["_center", "_radius", "_faction", ["_buildings", []]];
 
+private _standard = ["standard", _faction];
 private _unitTypes = WHF_missions_annex_units_types;
 private _vehicleTypes = WHF_missions_annex_vehicles_types;
 
@@ -57,7 +60,7 @@ _groups pushBack _garrisonGroup;
 private _vehicleCount = 4 + floor (_radius / 70);
 _vehicleCount = floor (_vehicleCount * WHF_missions_annex_vehicles);
 for "_i" from 1 to _vehicleCount do {
-    private _group = [opfor, _vehicleTypes, "standard", 1, _center, _radius] call WHF_fnc_spawnVehicles;
+    private _group = [opfor, _vehicleTypes, [_standard], 1, _center, _radius] call WHF_fnc_spawnVehicles;
     [_group, getPosATL leader _group, 200] call BIS_fnc_taskPatrol;
     _groups pushBack _group;
     _vehicles append assignedVehicles _group;
