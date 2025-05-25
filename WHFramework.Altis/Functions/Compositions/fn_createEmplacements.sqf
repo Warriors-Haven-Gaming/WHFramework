@@ -7,6 +7,9 @@ Description:
 Parameters:
     Side side:
         The emplacement groups' side.
+    Array unitTypes:
+        One or more group types to spawn units from.
+        See WHF_fnc_getUnitTypes for allowed values.
     Number quantity:
         The number of emplacements to attempt spawning.
     Position2D center:
@@ -42,7 +45,7 @@ Author:
     thegamecracks
 
 */
-params ["_side", "_quantity", "_center", "_radius", "_types", ["_ruins", -1]];
+params ["_side", "_unitTypes", "_quantity", "_center", "_radius", "_types", ["_ruins", -1]];
 
 private _availableCompositions = [];
 for "_i" from 0 to count _types - 1 step 2 do {
@@ -87,7 +90,7 @@ private _compositionGroups = [];
         _objects append _parts;
     } forEach _compData;
 
-    private _group = [_side, "standard", _objects] call WHF_fnc_spawnGunners;
+    private _group = [_side, _unitTypes, _objects] call WHF_fnc_spawnGunners;
     if (_group isNotEqualTo grpNull) then {_compositionGroups pushBack _group};
 
     _compositionObjects pushBack _objects;

@@ -28,7 +28,8 @@ Author:
 */
 params ["_center", "_radius", "_parent", "_objects", "_terrain", "_groups"];
 
-[opfor, 1, _center, _radius, ["hq", 1], _objects] call WHF_fnc_createEmplacements
+[opfor, "standard", 1, _center, _radius, ["hq", 1], _objects]
+    call WHF_fnc_createEmplacements
     params ["_compObjects", "_compTerrain", "_compGroups"];
 if (count _compObjects < 1) exitWith {};
 

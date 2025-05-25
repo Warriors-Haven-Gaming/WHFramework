@@ -45,7 +45,8 @@ if (_center isEqualTo []) exitWith {
 private _area = [_center, _radius, _radius, 0, false];
 private _ruins = [];
 
-[opfor, 2 + floor random 3, _center, _radius, ["arty",1], _ruins] call WHF_fnc_createEmplacements
+[opfor, "standard", 2 + floor random 3, _center, _radius, ["arty",1], _ruins]
+    call WHF_fnc_createEmplacements
     params ["_artyObjects", "_artyTerrain", "_artyGroups"];
 
 sleep (1.5 + random 2.5);
