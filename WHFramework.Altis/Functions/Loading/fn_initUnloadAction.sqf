@@ -23,9 +23,9 @@ private _unloadID = player addAction [
         [_target] remoteExec ["unassignVehicle", _target];
     },
     nil,
-    11,
+    5,
     true,
-    true,
+    false,
     "",
     "
     getCursorObjectParams params ['_vehicle', '', '_distance'];
