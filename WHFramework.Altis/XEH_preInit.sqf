@@ -257,6 +257,16 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 [
+    "WHF_factions_cup_tk_ins",
+    "CHECKBOX",
+    "STR_WHF_factions_cup_tk_ins",
+    "STR_WHF_settings_factions",
+    true,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_factions_nato",
     "CHECKBOX",
     "STR_WHF_factions_nato",

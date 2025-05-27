@@ -20,6 +20,7 @@ Author:
     "cup_afrf",
     "cup_afrf_modern",
     "cup_npc",
+    "cup_tk_ins",
     "nato",
     "nato_pacific",
     "cup_usa_woodland",
