@@ -36,6 +36,11 @@ private _respawnVehicle = {
 
     private _object = createVehicle [_type, [-random 500, -random 500, random 500], [], 0, "CAN_COLLIDE"];
     {_object setVariable _x} forEach _vars;
+
+    // TODO: parameterize UAV side
+    private _isUAV = getNumber (configOf _object >> "isUAV") > 0;
+    if (_isUAV) then {blufor createVehicleCrew _object};
+
     _object setDir _dir;
     _object setPosATL _pos;
 
