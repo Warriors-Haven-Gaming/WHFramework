@@ -87,6 +87,13 @@ private _resolvedTypes = _this apply {
         case ["ifv",      "cup_npc"]: {["CUP_I_BMP2_NAPA","CUP_I_BMP_HQ_NAPA"]};
         case ["mbt",      "cup_npc"]: {["CUP_I_M60A3_RACS","CUP_I_M60A3_TTS_RACS","CUP_B_M1A2SEP_RACS","CUP_B_M1A2SEP_TUSK_RACS","CUP_I_T72_RACS"]};
         case ["aa",       "cup_npc"]: {["CUP_I_Datsun_AA_Random","CUP_I_Ural_ZU23_NAPA"]};
+        case ["standard", "cup_tk"]: {["CUP_O_LR_MG_TKA","CUP_O_LR_SPG9_TKA","CUP_O_LR_Transport_TKA","CUP_O_SUV_TKA","CUP_O_UAZ_Unarmed_TKA","CUP_O_UAZ_AGS30_TKA","CUP_O_UAZ_MG_TKA","CUP_O_UAZ_METIS_TKA","CUP_O_UAZ_Open_TKA","CUP_O_UAZ_SPG9_TKA"]};
+        case ["supply",   "cup_tk"]: {["CUP_O_V3S_Rearm_TKA","CUP_O_V3S_Refuel_TKA","CUP_O_V3S_Repair_TKA","CUP_O_Ural_Reammo_TKA","CUP_O_Ural_Refuel_TKA","CUP_O_Ural_Repair_TKA"]};
+        case ["mrap",     "cup_tk"]: {["CUP_O_BTR40_MG_TKA","CUP_O_Tigr_233014_PK_TKA","CUP_O_Tigr_M_233114_KORD_TKA"]};
+        case ["apc",      "cup_tk"]: {["CUP_O_BRDM2_TKA","CUP_O_BRDM2_ATGM_TKA","CUP_O_BTR60_TK","CUP_O_BTR80_TK","CUP_O_BTR80A_TK","CUP_O_M113A3_TKA","CUP_O_MTLB_pk_TKA"]};
+        case ["ifv",      "cup_tk"]: {["CUP_O_BMP1_TKA","CUP_O_BMP1P_TKA","CUP_O_BMP2_TKA","CUP_O_BMP_HQ_TKA"]};
+        case ["mbt",      "cup_tk"]: {["CUP_O_T34_TKA","CUP_O_T55_TK","CUP_O_T72_TKA"]};
+        case ["aa",       "cup_tk"]: {["CUP_O_LR_AA_TKA","CUP_O_UAZ_AA_TKA","CUP_O_Ural_ZU23_TKA","CUP_O_ZSU23_TK","CUP_O_ZSU23_Afghan_TK","CUP_O_BMP2_ZU_TKA"]};
         case ["standard", "cup_tk_ins"]: {["CUP_O_Hilux_unarmed_TK_INS","CUP_O_Hilux_AGS30_TK_INS","CUP_O_Hilux_BMP1_TK_INS","CUP_O_Hilux_btr60_TK_INS","CUP_O_Hilux_DSHKM_TK_INS","CUP_O_Hilux_M2_TK_INS","CUP_O_Hilux_metis_TK_INS","CUP_O_Hilux_MLRS_TK_INS","CUP_O_Hilux_podnos_TK_INS","CUP_O_Hilux_SPG9_TK_INS","CUP_O_LR_MG_TKM","CUP_O_LR_SPG9_TKM","CUP_O_LR_Transport_TKM"]};
         case ["supply",   "cup_tk_ins"]: {["CUP_O_V3S_Rearm_TKM","CUP_O_V3S_Refuel_TKM","CUP_O_V3S_Repair_TKM"]};
         case ["mrap",     "cup_tk_ins"]: {["CUP_O_Hilux_armored_AGS30_TK_INS","CUP_O_Hilux_armored_BMP1_TK_INS","CUP_O_Hilux_armored_BTR60_TK_INS","CUP_O_Hilux_armored_DSHKM_TK_INS","CUP_O_Hilux_armored_M2_TK_INS","CUP_O_Hilux_armored_metis_TK_INS","CUP_O_Hilux_armored_MLRS_TK_INS","CUP_O_Hilux_armored_podnos_TK_INS","CUP_O_Hilux_armored_SPG9_TK_INS","CUP_O_Hilux_armored_unarmed_TK_INS"]};

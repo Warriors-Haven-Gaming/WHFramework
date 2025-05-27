@@ -19,6 +19,7 @@ private _factions = [
     ["cup_afrf", WHF_factions_cup_afrf],
     ["cup_afrf_modern", WHF_factions_cup_afrf_modern],
     ["cup_npc", WHF_factions_cup_npc],
+    ["cup_tk", WHF_factions_cup_tk],
     ["cup_tk_ins", WHF_factions_cup_tk_ins],
     ["nato", WHF_factions_nato],
     ["nato_pacific", WHF_factions_nato_pacific],
