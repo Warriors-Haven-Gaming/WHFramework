@@ -226,7 +226,7 @@ Author:
     "CHECKBOX",
     "STR_WHF_factions_base",
     "STR_WHF_settings_factions",
-    true,
+    false,
     true,
     {},
     false
@@ -236,7 +236,7 @@ Author:
     "CHECKBOX",
     "STR_WHF_factions_csat",
     "STR_WHF_settings_factions",
-    true,
+    false,
     true,
     {},
     false
@@ -246,7 +246,7 @@ Author:
     "CHECKBOX",
     "STR_WHF_factions_csat_pacific",
     "STR_WHF_settings_factions",
-    true,
+    false,
     true,
     {},
     false
@@ -276,7 +276,7 @@ Author:
     "CHECKBOX",
     "STR_WHF_factions_rhsafrf",
     "STR_WHF_settings_factions",
-    true,
+    false,
     true,
     {},
     false
@@ -286,7 +286,7 @@ Author:
     "CHECKBOX",
     "STR_WHF_factions_cup_afrf",
     "STR_WHF_settings_factions",
-    true,
+    false,
     true,
     {},
     false
@@ -296,7 +296,7 @@ Author:
     "CHECKBOX",
     "STR_WHF_factions_cup_afrf_modern",
     "STR_WHF_settings_factions",
-    true,
+    false,
     true,
     {},
     false
@@ -306,7 +306,7 @@ Author:
     "CHECKBOX",
     "STR_WHF_factions_cup_npc",
     "STR_WHF_settings_factions",
-    true,
+    false,
     true,
     {},
     false
