@@ -281,7 +281,9 @@ private _categories = [
             "CHECKBOX",
             format ["STR_%1", _faction],
             ["STR_WHF_settings_factions", _category],
-            _factionSide isEqualTo _categorySide,
+            _factionSide isEqualTo _categorySide
+                && {_side isNotEqualTo opfor
+                || {"cup_tk" in _faction}},
             true,
             {},
             false
