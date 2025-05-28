@@ -54,12 +54,12 @@ Additional factions are supported with the following mods:
 
 ## How do I play?
 
-You can find this mission published on the Steam Workshop:
+You can find this gamemode published on the Steam Workshop:
 
 - [Warriors Haven Framework (Altis)](https://steamcommunity.com/sharedfiles/filedetails/?id=3455424755), ID 3455424755
 - [Warriors Haven Framework (Yulakia)](https://steamcommunity.com/sharedfiles/filedetails/?id=3455426168), ID 3455426168
 
-Once subscribed, you can host the mission by going to Server Browser > Host Server,
+Once subscribed, you can host the gamemode by going to Server Browser > Host Server,
 and then select Warriors Haven Framework from the appropriate map.
 You may choose to host LAN if you want to play alone.
 
