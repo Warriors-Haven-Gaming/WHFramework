@@ -27,18 +27,27 @@ down in a line of parachutes.
 
 ## Factions
 
-The following vanilla factions are always available for OPFOR:
+The following vanilla factions are always available for opposing forces:
 - CSAT
 - CSAT (Pacific)
 - Syndikat
+- NATO \*
+- NATO (Pacific) \*
 
 Additional factions are supported with the following mods:
 - [CUP Vehicles] and Units
   - National Party of Chernarus
   - Armed Forces of the Russian Federation
   - AFRF (Modern)
+  - Takistani Army
+  - Takistani Militia
+  - US Army (Woodland) \*
+  - USMC (Woodland) \*
 - [RHSAFRF]
   - Also... Armed Forces of the Russian Federation
+
+\* To fight against BLUFOR factions, you must enable them in the gamemode's [CBA Settings](#cba-settings).
+   These factions are converted to the OPFOR side when spawned.
 
 [CUP Vehicles]: https://steamcommunity.com/sharedfiles/filedetails/?id=541888371
 [RHSAFRF]: https://steamcommunity.com/sharedfiles/filedetails/?id=843425103
