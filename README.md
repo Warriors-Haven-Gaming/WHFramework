@@ -87,9 +87,9 @@ For dedicated server hosters, you can either download the mission files from our
 
 Installing [CBA_A3] allows server hosters and players to customize the gamemode
 to their liking in the Configure Addons menu. Various settings are provided for
-OPFOR skill levels, max recruits, vehicle Active Protection Systems, self-reviving,
-number of objectives, and more. Without CBA_A3, these settings will be unavailable
-and the gamemode will fallback to default values.
+OPFOR factions, skill levels, max recruits, vehicle Active Protection Systems,
+self-reviving, number of objectives, and more. Without CBA_A3, the default settings
+are always used.
 
 [CBA_A3]: https://steamcommunity.com/sharedfiles/filedetails/?id=450814997
 
