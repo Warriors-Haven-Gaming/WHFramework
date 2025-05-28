@@ -82,7 +82,12 @@ For dedicated server hosters, you can either download the mission files from our
    };
    ```
 
+Dedicated server hosters may also consider using our suggested [BattlEye filters]
+to improve security. See this [DayZ BattlEye Guide] for more information.
+
 [Releases]: https://github.com/Warriors-Haven-Gaming/WHFramework/releases
+[BattlEye filters]: https://github.com/Warriors-Haven-Gaming/WHFramework/tree/main/BattlEye
+[DayZ BattlEye Guide]: https://opendayz.net/threads/a-guide-to-battleye-filters.21066/
 
 ## CBA Settings
 
