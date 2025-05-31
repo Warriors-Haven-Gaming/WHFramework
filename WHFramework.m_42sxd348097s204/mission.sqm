@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=80;
+		nextID=103;
 	};
 	class Camera
 	{
@@ -544,6 +544,27 @@ randomSeed=8434741;
 class ScenarioData
 {
 	author="thegamecracks";
+};
+class CustomAttributes
+{
+	class Category0
+	{
+		name="Scenario";
+		class Attribute0
+		{
+			property="cba_settings_hasSettingsFile";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					singleType="BOOL";
+					value=1;
+				};
+			};
+		};
+		nAttributes=1;
+	};
 };
 class Mission
 {
@@ -56168,7 +56189,7 @@ class Mission
 					text="Main Operating Base";
 					type="respawn_unknown";
 					colorName="ColorWEST";
-					angle=107.99998;
+					angle=107.99997;
 					id=2020;
 				};
 				class Item1
@@ -56177,7 +56198,7 @@ class Mission
 					position[]={18353,563.34796,17384};
 					name="respawn_west_pilot_cas";
 					type="Empty";
-					angle=150.00002;
+					angle=150;
 					id=2039;
 				};
 				class Item2
@@ -56195,7 +56216,7 @@ class Mission
 					position[]={18483,564.29193,17383};
 					name="respawn_west_uav";
 					type="Empty";
-					angle=195;
+					angle=194.99998;
 					id=2041;
 				};
 			};
