@@ -98,9 +98,9 @@ private _infGroups = [
     opfor,
     [
         [[["standard", _faction]], 2, 8, 0], 0.6,
-        [[[   "recon", _faction]], 2, 8, 0], 0.2,
+        [[[   "recon", _faction]], 2, 8, 1], 0.2,
         [[[   "elite", _faction]], 4, 8, 2], 0.1,
-        [[[  "sniper", _faction]], 2, 2, 2], 0.1
+        [[[  "sniper", _faction]], 2, 2, 3], 0.1
     ],
     _infCount,
     _center,
