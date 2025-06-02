@@ -94,17 +94,20 @@ _objects append _turrets;
 _objects append _forts;
 
 private _infCount = 40 + floor random 41;
-while {_infCount > 0} do {
-    private _pos = [_center, _radius] call WHF_fnc_randomPos;
-    if (_pos isEqualTo [0,0]) then {break};
-
-    private _quantity = selectRandom [2, 4, 6, 8];
-    private _group = [opfor, [_standard], _quantity, _pos, 10] call WHF_fnc_spawnUnits;
-    [_group, getPosATL leader _group, 50] call BIS_fnc_taskPatrol;
-
-    _groups pushBack _group;
-    _infCount = _infCount - _quantity;
-};
+private _infGroups = [
+    opfor,
+    [
+        [[["standard", _faction]], 2, 8, 0], 0.6,
+        [[[   "recon", _faction]], 2, 8, 0], 0.2,
+        [[[   "elite", _faction]], 4, 8, 2], 0.1,
+        [[[  "sniper", _faction]], 2, 2, 2], 0.1
+    ],
+    _infCount,
+    _center,
+    _radius
+] call WHF_fnc_spawnUnitGroups;
+{[_x, getPosATL leader _x, 50] call BIS_fnc_taskPatrol} forEach _infGroups;
+_groups append _infGroups;
 
 private _turretGroup = [opfor, [_standard], _turrets] call WHF_fnc_spawnGunners;
 _groups pushBack _turretGroup;
