@@ -30,6 +30,8 @@ down in a line of parachutes.
 The following vanilla factions are always available for opposing forces:
 - CSAT
 - CSAT (Pacific)
+- AAF
+- LDF
 - Syndikat
 - NATO \*
 - NATO (Pacific) \*
