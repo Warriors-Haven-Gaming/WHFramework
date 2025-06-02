@@ -42,7 +42,7 @@ private _factions = call WHF_fnc_allFactions;
 private _resolvedTypes = _this apply {
     switch (_x) do {
         case ["civilians", "base"]: {["C_Van_01_fuel_F","C_Hatchback_01_F","C_Hatchback_01_sport_F","C_Offroad_02_unarmed_F","C_Offroad_01_F","C_Offroad_01_comms_F","C_Offroad_01_covered_F","C_Offroad_01_repair_F","C_Quadbike_01_F","C_SUV_01_F","C_Tractor_01_F","C_Van_01_transport_F","C_Van_01_box_F","C_Van_02_medevac_F","C_Van_02_vehicle_F","C_Van_02_service_F","C_Van_02_transport_F","C_Truck_02_fuel_F","C_Truck_02_box_F","C_Truck_02_transport_F","C_Truck_02_covered_F"]};
-        case ["standard", "base"]: {["I_G_Offroad_01_AT_F","I_G_Offroad_01_armed_F","I_C_Offroad_02_AT_F","I_C_Offroad_02_LMG_F"]};
+        case ["standard", "base"]: {["I_G_Offroad_01_F","I_G_Offroad_01_AT_F","I_G_Offroad_01_armed_F","I_C_Offroad_02_unarmed_F","I_C_Offroad_02_AT_F","I_C_Offroad_02_LMG_F"]};
         case ["supply",   "base"]: {["I_E_Truck_02_Ammo_F","I_E_Truck_02_fuel_F","I_E_Truck_02_Medical_F","I_E_Truck_02_Box_F"]};
         case ["mrap",     "base"]: {["I_E_Offroad_01_F","I_E_Offroad_01_comms_F","I_E_Offroad_01_covered_F","I_E_Truck_02_transport_F","I_E_Truck_02_F","I_C_Van_01_transport_F","I_E_Van_02_transport_F"]};
         case ["apc",      "base"]: {["I_E_Offroad_01_F","I_E_Offroad_01_comms_F","I_E_Offroad_01_covered_F","I_E_Truck_02_transport_F","I_E_Truck_02_F","I_C_Van_01_transport_F","I_E_Van_02_transport_F"]};
