@@ -36,6 +36,7 @@ for "_i" from 0 to (count _unitTypes - 1) step 2 do {
     private _type = _unitTypes # _i # 0;
     _unitTypes # _i set [0, [[_type, _faction]]];
 };
+_vehicleTypes = _vehicleTypes apply {[_x, _faction]};
 
 private _groups = [];
 private _vehicles = [];
