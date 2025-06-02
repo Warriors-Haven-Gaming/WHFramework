@@ -47,11 +47,12 @@ private _reinforceUnits = {
     private _pos = [_center, _radius] call WHF_fnc_randomPosHidden;
     if (_pos isEqualTo [0,0]) then {continue};
 
-    private _types = WHF_missions_annex_units_types;
-    _types = _types apply {[_x, _faction]};
+    private _unitTypes = WHF_missions_annex_units_types;
+    selectRandomWeighted _unitTypes params ["_type", "_quantity", "_skill"];
+    _type = [[_type, _faction]];
+    _quantity = floor random (_quantity / 2) * 2 + 2;
 
-    private _quantity = selectRandom [2, 4, 6, 8];
-    private _group = [opfor, _types, _quantity, _pos, 10] call WHF_fnc_spawnUnits;
+    private _group = [opfor, _type, _quantity, _pos, 10, _skill] call WHF_fnc_spawnUnits;
     [_group, getPosATL leader _group, 200] call BIS_fnc_taskPatrol;
 
     _groups pushBack _group;
@@ -64,9 +65,8 @@ private _reinforceVehicles = {
     if (_pos isEqualTo [0,0]) then {continue};
 
     private _types = WHF_missions_annex_vehicles_types;
-    private _unitTypes = WHF_missions_annex_units_types;
+    private _unitTypes = [["standard", _faction]];
     _types = _types apply {[_x, _faction]};
-    _unitTypes = _unitTypes apply {[_x, _faction]};
 
     private _group = [opfor, _types, _unitTypes, 1, _pos, 10] call WHF_fnc_spawnVehicles;
     [_group, getPosATL leader _group, 200] call BIS_fnc_taskPatrol;

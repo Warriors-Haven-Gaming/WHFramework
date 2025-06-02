@@ -30,6 +30,7 @@ params ["_center", "_radius", "_faction", ["_buildings", []]];
 private _standard = ["standard", _faction];
 private _unitTypes = WHF_missions_annex_units_types;
 private _vehicleTypes = WHF_missions_annex_vehicles_types;
+private _garrisonTypes = [[_unitTypes # 0 # 0, _faction]];
 
 private _groups = [];
 private _vehicles = [];
@@ -40,8 +41,10 @@ while {_infCount > 0} do {
     private _pos = [_center, _radius] call WHF_fnc_randomPos;
     if (_pos isEqualTo [0,0]) then {break};
 
-    private _quantity = selectRandom [2, 4, 6, 8];
-    private _group = [opfor, _unitTypes, _quantity, _pos, 10] call WHF_fnc_spawnUnits;
+    selectRandomWeighted _unitTypes params ["_type", "_quantity", "_skill"];
+    _type = [[_type, _faction]];
+    _quantity = floor random (_quantity / 2) * 2 + 2;
+    private _group = [opfor, _type, _quantity, _pos, 10, _skill] call WHF_fnc_spawnUnits;
     [_group, getPosATL leader _group, 200] call BIS_fnc_taskPatrol;
 
     _groups pushBack _group;
@@ -51,7 +54,7 @@ while {_infCount > 0} do {
 // NOTE: may result in positions being double garrisoned
 private _garrisonCount = 30 + floor (_radius / 15);
 _garrisonCount = floor (_garrisonCount * WHF_missions_annex_units);
-private _garrisonGroup = [opfor, _unitTypes, _garrisonCount, _center, _radius min 100] call WHF_fnc_spawnUnits;
+private _garrisonGroup = [opfor, _garrisonTypes, _garrisonCount, _center, _radius min 100] call WHF_fnc_spawnUnits;
 [units _garrisonGroup select [0, floor (_garrisonCount / 2)], _buildings] call WHF_fnc_garrisonBuildings;
 [_garrisonGroup, _center, _radius, true] call WHF_fnc_garrisonUnits;
 [[_garrisonGroup], _groups] spawn WHF_fnc_ungarrisonLoop;
