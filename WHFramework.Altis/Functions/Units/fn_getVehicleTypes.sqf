@@ -60,6 +60,13 @@ private _resolvedTypes = _this apply {
         case ["ifv",      "csat_pacific"]: {["O_T_APC_Tracked_02_cannon_ghex_F"]};
         case ["mbt",      "csat_pacific"]: {["O_T_MBT_02_cannon_ghex_F","O_T_MBT_04_cannon_F","O_T_MBT_04_command_F"]};
         case ["aa",       "csat_pacific"]: {["O_T_APC_Tracked_02_AA_ghex_F"]};
+        case ["standard", "aaf"]: {["I_G_Offroad_01_F","I_G_Offroad_01_AT_F","I_G_Offroad_01_armed_F","I_C_Offroad_02_unarmed_F","I_C_Offroad_02_AT_F","I_C_Offroad_02_LMG_F"]};
+        case ["supply",   "aaf"]: {["I_Truck_02_ammo_F","I_Truck_02_fuel_F","I_Truck_02_medical_F","I_Truck_02_box_F"]};
+        case ["mrap",     "aaf"]: {["I_MRAP_03_F","I_MRAP_03_gmg_F","I_MRAP_03_hmg_F"]};
+        case ["apc",      "aaf"]: {["I_APC_Wheeled_03_cannon_F","I_APC_tracked_03_cannon_F"]};
+        case ["ifv",      "aaf"]: {["I_LT_01_AT_F","I_LT_01_cannon_F"]};
+        case ["mbt",      "aaf"]: {["I_MBT_03_cannon_F"]};
+        case ["aa",       "aaf"]: {["I_LT_01_AA_F"]};
         case ["standard", "rhsafrf"]: {["rhs_tigr_sts_vdv","rhs_uaz_vdv","rhs_uaz_open_vdv"]};
         case ["supply",   "rhsafrf"]: {["rhs_ural_vdv_01","rhs_ural_open_vdv_01"]};
         case ["apc",      "rhsafrf"]: {["rhs_btr60_vdv","rhs_btr70_vdv","rhs_btr80_vdv","rhs_btr80a_vdv"]};
