@@ -17,6 +17,7 @@ Author:
     "csat",
     "csat_pacific",
     "aaf",
+    "ldf",
     "rhsafrf",
     "cup_afrf",
     "cup_afrf_modern",

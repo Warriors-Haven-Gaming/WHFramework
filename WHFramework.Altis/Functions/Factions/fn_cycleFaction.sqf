@@ -16,6 +16,7 @@ private _factions = [
     ["csat", WHF_factions_csat],
     ["csat_pacific", WHF_factions_csat_pacific],
     ["aaf", WHF_factions_aaf],
+    ["ldf", WHF_factions_ldf],
     ["rhsafrf", WHF_factions_rhsafrf],
     ["cup_afrf", WHF_factions_cup_afrf],
     ["cup_afrf_modern", WHF_factions_cup_afrf_modern],

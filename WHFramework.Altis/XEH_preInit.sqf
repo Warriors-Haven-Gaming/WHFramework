@@ -227,6 +227,16 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 [
+    "WHF_factions_ldf",
+    "CHECKBOX",
+    "STR_WHF_factions_ldf",
+    "STR_WHF_settings_factions",
+    true,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_factions_rhsafrf",
     "CHECKBOX",
     "STR_WHF_factions_rhsafrf",
