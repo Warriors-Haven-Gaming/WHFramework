@@ -715,7 +715,7 @@ call WHF_fnc_cycleFaction;
     "EDITBOX",
     ["STR_WHF_settings_missions_annex_units_types", "STR_WHF_settings_missions_annex_units_types_tooltip"],
     ["STR_WHF_settings_missions", "STR_WHF_settings_missions_annex"],
-    '[["standard", 8, 0], 0.8, ["recon", 8, 0], 0.1, ["elite", 8, 2], 0.05, ["sniper", 2, 2], 0.05]',
+    '[["standard", 2, 8, 0], 0.8, ["recon", 2, 8, 0], 0.1, ["elite", 4, 8, 2], 0.05, ["sniper", 2, 2, 2], 0.05]',
     true,
     {WHF_missions_annex_units_types = parseSimpleArray _this},
     false

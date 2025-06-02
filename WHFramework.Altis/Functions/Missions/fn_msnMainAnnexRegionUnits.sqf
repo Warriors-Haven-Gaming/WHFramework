@@ -28,28 +28,23 @@ Author:
 params ["_center", "_radius", "_faction", ["_buildings", []]];
 
 private _standard = ["standard", _faction];
-private _unitTypes = WHF_missions_annex_units_types;
+private _unitTypes = +WHF_missions_annex_units_types;
 private _vehicleTypes = WHF_missions_annex_vehicles_types;
 private _garrisonTypes = [[_unitTypes # 0 # 0, _faction]];
+
+for "_i" from 0 to (count _unitTypes - 1) step 2 do {
+    private _type = _unitTypes # _i # 0;
+    _unitTypes # _i set [0, [[_type, _faction]]];
+};
 
 private _groups = [];
 private _vehicles = [];
 
 private _infCount = 40 + floor (_radius / 8);
 _infCount = floor (_infCount * WHF_missions_annex_units);
-while {_infCount > 0} do {
-    private _pos = [_center, _radius] call WHF_fnc_randomPos;
-    if (_pos isEqualTo [0,0]) then {break};
-
-    selectRandomWeighted _unitTypes params ["_type", "_quantity", "_skill"];
-    _type = [[_type, _faction]];
-    _quantity = floor random (_quantity / 2) * 2 + 2;
-    private _group = [opfor, _type, _quantity, _pos, 10, _skill] call WHF_fnc_spawnUnits;
-    [_group, getPosATL leader _group, 200] call BIS_fnc_taskPatrol;
-
-    _groups pushBack _group;
-    _infCount = _infCount - _quantity;
-};
+private _infGroups = [opfor, _unitTypes, _infCount, _center, _radius] call WHF_fnc_spawnUnitGroups;
+{[_x, getPosATL leader _x, 200] call BIS_fnc_taskPatrol} forEach _infGroups;
+_groups append _infGroups;
 
 // NOTE: may result in positions being double garrisoned
 private _garrisonCount = 30 + floor (_radius / 15);
