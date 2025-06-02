@@ -71,7 +71,7 @@ private _registerArtillery = {
 };
 
 private _pos = [-random 500, -random 500, 0];
-private _group = [_side, _unitTypes, count _turrets, _pos, 0, false] call WHF_fnc_spawnUnits;
+private _group = [_side, _unitTypes, count _turrets, _pos, 0, 0, false] call WHF_fnc_spawnUnits;
 {
     private _turret = _turrets # _forEachIndex;
     _group addVehicle _turret;

@@ -17,6 +17,10 @@ Parameters:
         The position at which units will spawn around.
     Number radius:
         The radius around the position at which units will spawn around.
+    Number skill:
+        (Optional, default 0)
+        The skill offset of units spawned.
+        See WHF_fnc_setUnitSkill for allowed values.
     Boolean dynamicSimulation:
         (Optional, default true)
         If true, the group will be subject to the dynamic simulation system.
@@ -42,6 +46,7 @@ params [
     "_quantity",
     "_center",
     "_radius",
+    ["_skill", 0],
     ["_dynamicSimulation", true],
     ["_equipment", WHF_units_equipment]
 ];
@@ -57,7 +62,7 @@ for "_i" from 1 to _quantity do {
     [_unit] joinSilent _group;
     _unit enableStamina false;
     _unit triggerDynamicSimulation false;
-    [_unit] call WHF_fnc_setUnitSkill;
+    [_unit, _skill] call WHF_fnc_setUnitSkill;
 
     if ("flashlights" in _equipment) then {
         _unit addPrimaryWeaponItem "acc_flashlight";
