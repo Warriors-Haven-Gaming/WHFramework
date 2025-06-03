@@ -643,6 +643,28 @@ call WHF_fnc_cycleFaction;
     false
 ] call WHF_fnc_addSetting;
 
+// JTAC
+[
+    "WHF_jtac_tasks_max",
+    "LIST",
+    ["STR_WHF_settings_jtac_tasks_max", "STR_WHF_settings_jtac_tasks_max_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_jtac"],
+    [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], ["STR_A3_Disabled"], 5],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_jtac_tasks_cooldown",
+    "SLIDER",
+    ["STR_WHF_settings_jtac_tasks_cooldown", "STR_WHF_settings_jtac_tasks_cooldown_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_jtac"],
+    [0, 300, 15, 1, false],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+
 // Loadouts
 [
     "WHF_loadout_collection",

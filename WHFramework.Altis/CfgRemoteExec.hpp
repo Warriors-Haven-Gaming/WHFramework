@@ -64,6 +64,7 @@ class CfgRemoteExec : CfgRemoteExecMod {
         class WHF_fnc_playMusicSnippet { allowedTargets = 1; };
         class WHF_fnc_queueGCDeletion { allowedTargets = 2; };
         class WHF_fnc_removePrisonerActions {};
+        class WHF_fnc_reportJTACTarget { allowedTargets = 2; };
         class WHF_fnc_requestSkipTime { allowedTargets = 2; };
         class WHF_fnc_reviveUnit {};
         class WHF_fnc_serviceVehicle {};

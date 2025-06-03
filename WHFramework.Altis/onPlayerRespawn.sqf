@@ -34,6 +34,7 @@ if (!isNil {_unit getVariable "WHF_incapUnit_wasCaptive"}) then {
 };
 
 // Unit actions
+call WHF_fnc_initJTACAction;
 call WHF_fnc_initParachuteAction;
 call WHF_fnc_initReviveCancelAction;
 

@@ -178,6 +178,13 @@ class CfgFunctions {
         class Init {
             class setSideRelations { preInit = true; };
         };
+        class JTAC {
+            class canReportJTACTarget {};
+            class completeJTACTask {};
+            class initJTACAction {};
+            class initJTACTasks { preInit = true; };
+            class reportJTACTarget {};
+        };
         class Loading {
             class addLoadActions {};
             class initUnloadAction {};
@@ -437,6 +444,14 @@ class CfgTaskDescriptions {
     class downloadIntel {
         title       = "STR_WHF_downloadIntel_title";
         description = "STR_WHF_downloadIntel_description";
+    };
+    class jtacParent {
+        title       = "STR_WHF_jtacParent_title";
+        description = "STR_WHF_jtacParent_description";
+    };
+    class jtacTarget {
+        title       = "STR_WHF_jtacTarget_title";
+        description = "STR_WHF_jtacTarget_description";
     };
     class mainAnnexRegionCommand {
         title       = "STR_WHF_mainAnnexRegionCommand_title";

@@ -56,6 +56,18 @@
         <Key ID="STR_WHF_downloadIntel_description">
             <Original>A military research building has been found containing intel. Secure it!</Original>
         </Key>
+        <Key ID="STR_WHF_jtacParent_title">
+            <Original>JTAC Targets</Original>
+        </Key>
+        <Key ID="STR_WHF_jtacParent_description">
+            <Original>A list of targets that have been reported by JTACs.</Original>
+        </Key>
+        <Key ID="STR_WHF_jtacTarget_title">
+            <Original>Target %1</Original>
+        </Key>
+        <Key ID="STR_WHF_jtacTarget_description">
+            <Original>This vehicle has been reported by %2. Destroy it!</Original>
+        </Key>
         <Key ID="STR_WHF_mainAnnexRegion_title">
             <Original>Annex %1</Original>
         </Key>
@@ -392,6 +404,14 @@
     <Container name="Helpers">
         <Key ID="STR_WHF_defaultTimer">
             <Original>Time left: %3/%2</Original>
+        </Key>
+    </Container>
+    <Container name="JTAC">
+        <Key ID="STR_WHF_initJTACAction_report">
+            <Original>Report</Original>
+        </Key>
+        <Key ID="STR_WHF_initJTACAction_cooldown">
+            <Original>Next report allowed in %1 seconds...</Original>
         </Key>
     </Container>
     <Container name="Loadouts">
@@ -927,6 +947,21 @@
         </Key>
         <Key ID="STR_WHF_settings_icons_color_dead">
             <Original>Dead</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_jtac">
+            <Original>JTAC</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_jtac_tasks_max">
+            <Original>Max Tasks</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_jtac_tasks_max_tooltip">
+            <Original>The maximum number of JTAC tasks that can be active. When this is exceeded, the oldest JTAC task is automatically cleared.\nIf disabled, JTACs will not be able to report targets.</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_jtac_tasks_cooldown">
+            <Original>Task Cooldown</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_jtac_tasks_cooldown_tooltip">
+            <Original>The cooldown in seconds between JTAC reports.</Original>
         </Key>
         <Key ID="STR_WHF_settings_loadouts">
             <Original>Loadouts</Original>
