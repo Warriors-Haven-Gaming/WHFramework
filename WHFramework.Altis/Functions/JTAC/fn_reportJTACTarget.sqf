@@ -3,7 +3,7 @@ Function: WHF_fnc_reportJTACTarget
 
 Description:
     Report the given target for the JTAC's side.
-    Function must be executed on server.
+    Function must be executed on server in scheduled environment.
 
 Parameters:
     Object unit:
