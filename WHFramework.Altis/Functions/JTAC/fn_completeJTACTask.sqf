@@ -58,17 +58,23 @@ if (_silent) then {
     [_taskID, "SUCCEEDED"] call WHF_fnc_taskEnd;
 };
 
-if (!isNil "WHF_jtac_parentTasks") then {isNil {
-    // If all child tasks are deleted, we can delete the parent task.
-    private _parentID = WHF_jtac_parentTasks get _side;
-    if (isNil "_parentID") exitWith {};
+if (!isNil "WHF_jtac_parentTasks") then {
+    // Don't ask me why, but BIS_fnc_taskExists might incorrectly return true
+    // on a just-deleted task in multiplayer.
+    if (isMultiplayer) then {sleep 0.5};
 
-    private _childIDs = _parentID call BIS_fnc_taskChildren;
-    if (_childIDs isEqualTo objNull) exitWith {};
+    isNil {
+        // If all child tasks are deleted, we can delete the parent task.
+        private _parentID = WHF_jtac_parentTasks get _side;
+        if (isNil "_parentID") exitWith {};
 
-    // Annoyingly, BIS_fnc_taskChildren can return task IDs that were deleted...
-    if ({[_x] call BIS_fnc_taskExists} count _childIDs > 0) exitWith {};
+        private _childIDs = _parentID call BIS_fnc_taskChildren;
+        if (_childIDs isEqualTo objNull) exitWith {};
 
-    [_parentID, _side, true] call BIS_fnc_deleteTask;
-    WHF_jtac_parentTasks deleteAt _side;
-}};
+        // Annoyingly, BIS_fnc_taskChildren can return task IDs that were deleted...
+        if ({[_x] call BIS_fnc_taskExists} count _childIDs > 0) exitWith {};
+
+        [_parentID, _side, true] call BIS_fnc_deleteTask;
+        WHF_jtac_parentTasks deleteAt _side;
+    };
+};
