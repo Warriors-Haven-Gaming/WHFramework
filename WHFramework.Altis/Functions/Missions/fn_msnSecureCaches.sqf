@@ -27,7 +27,7 @@ Author:
 params [["_center", []], ["_factionA", ""], ["_factionB", ""]];
 
 private _radius = 100;
-private _cacheRadius = 50;
+private _cacheRadius = 30;
 
 if (_center isEqualTo []) then {
     private _options = selectBestPlaces [
