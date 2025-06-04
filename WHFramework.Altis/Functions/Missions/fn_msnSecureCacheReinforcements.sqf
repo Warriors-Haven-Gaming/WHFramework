@@ -5,8 +5,10 @@ Description:
     Spawn reinforcements around the cache.
 
 Parameters:
-    Object cache:
-        The weapons cache.
+    Position2D center:
+        The center of the mission.
+    Number radius:
+        The radius of the mission.
     String factionA:
         The first faction to spawn units from.
     String factionB:
@@ -22,10 +24,10 @@ Author:
     thegamecracks
 
 */
-params ["_cache", "_factionA", "_factionB", "_groups", "_vehicles"];
+params ["_center", "_radius", "_factionA", "_factionB", "_groups", "_vehicles"];
 
 private _reinforceUnits = {
-    private _pos = [_center, _radius] call WHF_fnc_randomPosHidden;
+    private _pos = [_center, [_radius, _radius * 2]] call WHF_fnc_randomPosHidden;
     if (_pos isEqualTo [0,0]) exitWith {};
 
     // TODO: use WHF_fnc_spawnUnitGroups
@@ -37,7 +39,7 @@ private _reinforceUnits = {
 };
 
 private _reinforceVehicles = {
-    private _pos = [_center, _radius] call WHF_fnc_randomPosHidden;
+    private _pos = [_center, [_radius, _radius * 2]] call WHF_fnc_randomPosHidden;
     if (_pos isEqualTo [0,0]) exitWith {};
 
     private _group = [opfor, _standard, _standard, 1, _pos, 10] call WHF_fnc_spawnVehicles;
@@ -48,24 +50,20 @@ private _reinforceVehicles = {
 };
 
 private _attackWaypoint = {
+    _group setBehaviourStrong "AWARE";
+    _group setSpeedMode "FULL";
+
+    if (count _targets < 1) exitWith {};
     private _target = selectRandom _targets;
     _group reveal [_target, 4];
 
     private _waypoint = _group addWaypoint [_target, -1];
     _waypoint waypointAttachObject _target;
     _waypoint setWaypointType "DESTROY";
-    _group setBehaviourStrong "AWARE";
-    _group setSpeedMode "FULL";
 };
 
 private _standard = [["standard", _factionA], ["standard", _factionB]];
 
-// NOTE: radius duplicated from WHF_fnc_msnSecureCache
-private _radius = 100;
-private _targets = units blufor inAreaArray [getPosATL _cache, _radius, _radius, 0, false];
-if (count _targets < 1) then {_targets = [_cache]};
-
-private _center = getPosATL _cache vectorMultiply [1,1,0];
-private _radius = [40, 200];
+private _targets = units blufor inAreaArray [_center, _radius, _radius, 0, false];
 for "_i" from 1 to 3 + random 5 do {call _reinforceUnits};
 for "_i" from 1 to 1 + random 4 do {call _reinforceVehicles};

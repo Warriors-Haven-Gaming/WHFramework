@@ -122,7 +122,8 @@ while {true} do {
     sleep 3;
     if (!alive _cache) exitWith {[_taskID, "FAILED"] spawn WHF_fnc_taskEnd};
     if (!_reinforced && {[units blufor, _reinforceArea] call WHF_fnc_anyInArea}) then {
-        [_cache, _factionA, _factionB, _groups, _vehicles] call WHF_fnc_msnSecureCacheReinforcements;
+        [_center, _radius, _factionA, _factionB, _groups, _vehicles]
+            call WHF_fnc_msnSecureCacheReinforcements;
         _reinforced = true;
     };
     if (_cache getVariable ["WHF_cache_secured", false] isEqualTo true) exitWith {
