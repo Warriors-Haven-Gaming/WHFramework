@@ -48,7 +48,6 @@ class CfgRemoteExec : CfgRemoteExecMod {
         class SA_Simulate_Towing {};
         class SA_Take_Tow_Ropes {};
 
-        class WHF_fnc_addIntelAction { allowedTargets = 1; jip = 1; };
         class WHF_fnc_addPrisonerActions { jip = 1; };
         class WHF_fnc_detainUnitRequest {};
         class WHF_fnc_freeUnit {};
@@ -58,9 +57,7 @@ class CfgRemoteExec : CfgRemoteExecMod {
         class WHF_fnc_localChat { allowedTargets = 1; };
         class WHF_fnc_localizedCutText { allowedTargets = 1; };
         class WHF_fnc_localizedHint { allowedTargets = 1; };
-        class WHF_fnc_msnDownloadIntelLaptop { jip = 1; };
         class WHF_fnc_msnDownloadIntelLaptopTimer {};
-        class WHF_fnc_msnMainAnnexRegionCommsTower { allowedTargets = 1; jip = 1; };
         class WHF_fnc_playMusicSnippet { allowedTargets = 1; };
         class WHF_fnc_queueGCDeletion { allowedTargets = 2; };
         class WHF_fnc_removePrisonerActions {};
