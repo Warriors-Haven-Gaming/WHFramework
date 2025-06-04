@@ -82,7 +82,7 @@ private _initialUnitCount = count flatten (_groups apply {units _x});
 private _reinforceArgs = [true, _center, _radius, _faction, _initialUnitCount, _groups, _vehicles];
 private _reinforceScript = _reinforceArgs spawn WHF_fnc_msnMainAnnexRegionReinforcements;
 
-private _areaMarker = [["WHF_mainMission"], _area, true] call WHF_fnc_createAreaMarker;
+private _areaMarker = [["WHF_msnMainAnnexRegion_"], _area, true] call WHF_fnc_createAreaMarker;
 _areaMarker setMarkerBrushLocal "FDiagonal";
 _areaMarker setMarkerColorLocal "ColorRed";
 _areaMarker setMarkerAlpha 0.7;
