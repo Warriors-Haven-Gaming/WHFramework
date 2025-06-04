@@ -100,6 +100,14 @@ private _garrisonGroup = [opfor, _standard, _quantity, _center, 100] call WHF_fn
 [[_garrisonGroup], _groups] spawn WHF_fnc_ungarrisonLoop;
 _groups pushBack _garrisonGroup;
 
+// WHF_fnc_garrisonUnits doesn't filter obstructed positions.
+// As a workaround, delete any units that spawn inside our caches.
+{
+    private _unit = _x;
+    if (_caches findIf {_unit distance _x < 2.5} < 0) then {continue};
+    deleteVehicle _unit;
+} forEach units _garrisonGroup;
+
 private _vehicleCount = 1 + floor random 4;
 private _vehicleGroup =
     [opfor, _supply, _standard, _vehicleCount, _center, 100]
