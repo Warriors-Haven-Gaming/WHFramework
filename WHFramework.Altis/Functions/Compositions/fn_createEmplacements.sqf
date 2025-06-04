@@ -76,7 +76,7 @@ private _compositionGroups = [];
     private _compData = _x;
 
     private _pos = [_center, [30, _radius], [_clearRadius, _isPosSuitable]] call WHF_fnc_randomPos;
-    if (_pos isEqualTo [0,0]) then {continue};
+    if (_pos isEqualTo [0,0]) then {break};
     _pos = _pos vectorAdd [0,0,0];
 
     private _terrain = nearestTerrainObjects [_pos, [], _clearRadius, false, true];

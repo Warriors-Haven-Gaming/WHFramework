@@ -85,10 +85,11 @@ private _turrets = [
 ] call WHF_fnc_objectsMapper;
 _objects append _turrets;
 
+// TODO: replace with WHF_fnc_spawnUnitGroups
 private _groups = [];
 for "_i" from 1 to 4 + random 5 do {
     private _pos = [_center, _radius] call WHF_fnc_randomPos;
-    if (_pos isEqualTo [0,0]) then {continue};
+    if (_pos isEqualTo [0,0]) then {break};
 
     private _quantity = selectRandom [2, 4, 6, 8];
     private _group = [opfor, [_standard], _quantity, _pos, 10] call WHF_fnc_spawnUnits;

@@ -90,7 +90,7 @@ call {
 {
     _x params ["_vehicleType", "_vehicleQuantity"];
     private _pos = [_center, [30, _radius]] call WHF_fnc_randomPos;
-    if (_pos isEqualTo [0,0]) then {continue};
+    if (_pos isEqualTo [0,0]) then {break};
 
     private _vehicleArgs = [opfor, [_vehicleType], [_standard], _vehicleQuantity, _pos, 30];
     private _vehicleGroup = _vehicleArgs call WHF_fnc_spawnVehicles;

@@ -43,7 +43,7 @@ private _atMines = ["ATMine"];
 private _objects = [];
 for "_i" from 1 to _quantity do {
     private _pos = [_center, _radius] call WHF_fnc_randomPos;
-    if (_pos isEqualTo [0,0]) then {continue};
+    if (_pos isEqualTo [0,0]) then {break};
 
     if (_type in ["AT", "ATAP"]) then {
         private _roads = _pos nearRoads 20 apply {getRoadInfo _x} select {
