@@ -114,7 +114,32 @@ private _vehicleGroup =
     call WHF_fnc_spawnVehicles;
 _groups pushBack _vehicleGroup;
 _vehicles append assignedVehicles _vehicleGroup;
-[_vehicleGroup, _center] call BIS_fnc_taskDefend;
+
+call {
+    private _vehicles = assignedVehicles _vehicleGroup;
+    if (count _vehicles < 1) exitWith {};
+
+    private _roads = _center nearRoads _cacheRadius * 1.5 apply {getRoadInfo _x} select {
+        _x # 0 in ["ROAD", "MAIN ROAD", "TRACK"] && {!(_x # 2)}
+    };
+    _roads = _roads call WHF_fnc_arrayShuffle;
+
+    private _index = 0;
+    {
+        if (_index >= count _vehicles) then {break};
+        private _vehicle = _vehicles # _index;
+
+        private _pos = [_x, random 1, 0.3 - random 0.6] call WHF_fnc_getRoadPos;
+        if (_pos nearObjects 5 isNotEqualTo []) then {continue};
+
+        _x params ["", "", "", "", "", "", "_begPos", "_endPos"];
+        private _dir = _begPos getDir _endPos;
+        _vehicle setDir _dir;
+        _vehicle setPosATL _pos;
+
+        _index = _index + 1;
+    } forEach _roads;
+};
 
 private _taskID = [
     blufor,
