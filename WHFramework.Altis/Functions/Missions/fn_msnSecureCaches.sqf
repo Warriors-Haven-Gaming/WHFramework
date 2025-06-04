@@ -108,7 +108,7 @@ _groups pushBack _garrisonGroup;
     deleteVehicle _unit;
 } forEach units _garrisonGroup;
 
-private _vehicleCount = 1 + floor random 4;
+private _vehicleCount = 2 + floor random 4;
 private _vehicleGroup =
     [opfor, _supply, _standard, _vehicleCount, _center, 100]
     call WHF_fnc_spawnVehicles;
