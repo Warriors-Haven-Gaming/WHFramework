@@ -69,7 +69,7 @@ private _positions = call {
 };
 
 private _caches = [];
-for "_i" from 2 to 3 + random 3 do {
+for "_i" from 0 to 1 + random 4 do {
     private _pos = if (_i < count _positions) then {_positions # _i} else {
         [_center, [3, _cacheRadius]] call WHF_fnc_randomPos
     };
