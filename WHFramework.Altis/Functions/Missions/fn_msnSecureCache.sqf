@@ -120,7 +120,7 @@ private _taskID = [
 private _reinforced = false;
 while {true} do {
     sleep 3;
-    if (!alive _cache) exitWith {[_taskID, "FAILED"] spawn WHF_fnc_taskEnd};
+    if (!alive _cache) exitWith {[_taskID, "CANCELED"] spawn WHF_fnc_taskEnd};
     if (!_reinforced && {[units blufor, _reinforceArea] call WHF_fnc_anyInArea}) then {
         [_center, _radius, _factionA, _factionB, _groups, _vehicles]
             call WHF_fnc_msnSecureCacheReinforcements;
