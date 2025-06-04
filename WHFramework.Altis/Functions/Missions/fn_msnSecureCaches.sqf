@@ -1,5 +1,5 @@
 /*
-Function: WHF_fnc_msnSecureCache
+Function: WHF_fnc_msnSecureCaches
 
 Description:
     Players must secure a weapons cache between two factions.
@@ -79,7 +79,7 @@ for "_i" from 2 to 3 + random 3 do {
     _cache enableSimulationGlobal false;
     _cache setDir random 360;
     _cache setPosATL _pos;
-    [_cache] remoteExec ["WHF_fnc_msnSecureCacheAction", 0, _cache];
+    [_cache] remoteExec ["WHF_fnc_msnSecureCachesAction", 0, _cache];
     _caches pushBack _cache;
 };
 
@@ -113,11 +113,11 @@ private _taskID = [
     "",
     [
         [
-            "STR_WHF_secureCache_description",
+            "STR_WHF_secureCaches_description",
             [_factionA] call WHF_fnc_localizeFaction,
             [_factionB] call WHF_fnc_localizeFaction
         ],
-        "STR_WHF_secureCache_title"
+        "STR_WHF_secureCaches_title"
     ],
     _center,
     "CREATED",
@@ -141,7 +141,7 @@ while {true} do {
     };
     if (!_reinforced && {[units blufor, _reinforceArea] call WHF_fnc_anyInArea}) then {
         [_center, _radius, _factionA, _factionB, _groups, _vehicles]
-            call WHF_fnc_msnSecureCacheReinforcements;
+            call WHF_fnc_msnSecureCachesReinforcements;
         _reinforced = true;
     };
 };

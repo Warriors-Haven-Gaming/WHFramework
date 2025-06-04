@@ -1,5 +1,5 @@
 /*
-Function: WHF_fnc_msnSecureCacheAction
+Function: WHF_fnc_msnSecureCachesAction
 
 Description:
     Add an action to the cache.
@@ -15,7 +15,7 @@ Author:
 params ["_cache"];
 [
     _cache,
-    localize "$STR_WHF_secureCache_action",
+    localize "$STR_WHF_secureCaches_action",
     "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa",
     "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa",
     "

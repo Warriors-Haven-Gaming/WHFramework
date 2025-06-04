@@ -1,5 +1,5 @@
 /*
-Function: WHF_fnc_msnSecureCacheReinforcements
+Function: WHF_fnc_msnSecureCachesReinforcements
 
 Description:
     Spawn reinforcements around the cache.

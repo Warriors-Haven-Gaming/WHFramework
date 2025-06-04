@@ -55,7 +55,7 @@ WHF_sideMissionLoop_script = [
         "WHF_fnc_msnDestroyBarracks",
         "WHF_fnc_msnDestroyRoadblock",
         "WHF_fnc_msnDownloadIntel",
-        "WHF_fnc_msnSecureCache"
+        "WHF_fnc_msnSecureCaches"
     ],
     {if (WHF_missions_side_enabled) then {WHF_missions_side_min} else {0}},
     {if (WHF_missions_side_enabled) then {WHF_missions_side_max} else {0}}
