@@ -34,12 +34,17 @@ private _reinforceUnits = {
 };
 
 private _reinforceVehicles = {
-    private _pos = [_center, _radius] call WHF_fnc_randomPosHidden;
-    if (_pos isEqualTo [0,0]) exitWith {};
+    private _group = [
+        opfor,
+        [_standard],
+        [_standard],
+        1,
+        _center,
+        _radius,
+        ["hidden"]
+    ] call WHF_fnc_spawnVehicles;
 
-    private _group = [opfor, [_standard], [_standard], 1, _pos, 10] call WHF_fnc_spawnVehicles;
     call _attackWaypoint;
-
     _groups pushBack _group;
     _vehicles append assignedVehicles _group;
 };

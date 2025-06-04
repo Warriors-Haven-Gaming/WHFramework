@@ -61,16 +61,21 @@ private _reinforceUnits = {
 private _reinforceVehicles = {
     params ["_center", "_radius", "_faction", "_groups", "_vehicles"];
 
-    private _pos = [_center, _radius] call WHF_fnc_randomPosHidden;
-    if (_pos isEqualTo [0,0]) exitWith {};
-
     private _types = WHF_missions_annex_vehicles_types;
     private _unitTypes = [["standard", _faction]];
     _types = _types apply {[_x, _faction]};
 
-    private _group = [opfor, _types, _unitTypes, 1, _pos, 10] call WHF_fnc_spawnVehicles;
-    [_group, getPosATL leader _group, 200] call BIS_fnc_taskPatrol;
+    private _group = [
+        opfor,
+        _types,
+        _unitTypes,
+        1,
+        _center,
+        _radius,
+        ["hidden"]
+    ] call WHF_fnc_spawnVehicles;
 
+    [_group, getPosATL leader _group, 200] call BIS_fnc_taskPatrol;
     _groups pushBack _group;
     _vehicles append assignedVehicles _group;
 };
