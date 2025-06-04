@@ -24,7 +24,7 @@ params ["_laptop", "_faction", "_groups", "_vehicles"];
 
 private _reinforceUnits = {
     private _pos = [_center, _radius] call WHF_fnc_randomPosHidden;
-    if (_pos isEqualTo [0,0]) then {continue};
+    if (_pos isEqualTo [0,0]) exitWith {};
 
     private _quantity = selectRandom [2, 4, 6, 8];
     private _group = [opfor, [_standard], _quantity, _pos, 10] call WHF_fnc_spawnUnits;
@@ -35,7 +35,7 @@ private _reinforceUnits = {
 
 private _reinforceVehicles = {
     private _pos = [_center, _radius] call WHF_fnc_randomPosHidden;
-    if (_pos isEqualTo [0,0]) then {continue};
+    if (_pos isEqualTo [0,0]) exitWith {};
 
     private _group = [opfor, [_standard], [_standard], 1, _pos, 10] call WHF_fnc_spawnVehicles;
     call _attackWaypoint;

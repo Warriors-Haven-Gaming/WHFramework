@@ -45,7 +45,7 @@ private _reinforceUnits = {
     params ["_center", "_radius", "_faction", "_groups"];
 
     private _pos = [_center, _radius] call WHF_fnc_randomPosHidden;
-    if (_pos isEqualTo [0,0]) then {continue};
+    if (_pos isEqualTo [0,0]) exitWith {};
 
     private _unitTypes = WHF_missions_annex_units_types;
     selectRandomWeighted _unitTypes params ["_type", "_quantity", "_skill"];
@@ -62,7 +62,7 @@ private _reinforceVehicles = {
     params ["_center", "_radius", "_faction", "_groups", "_vehicles"];
 
     private _pos = [_center, _radius] call WHF_fnc_randomPosHidden;
-    if (_pos isEqualTo [0,0]) then {continue};
+    if (_pos isEqualTo [0,0]) exitWith {};
 
     private _types = WHF_missions_annex_vehicles_types;
     private _unitTypes = [["standard", _faction]];
