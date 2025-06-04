@@ -234,6 +234,9 @@ class CfgFunctions {
             class msnMainAnnexRegionRepair {};
             class msnMainAnnexRegionThreshold {};
             class msnMainAnnexRegionUnits {};
+            class msnSecureCache {};
+            class msnSecureCacheAction {};
+            class msnSecureCacheReinforcements {};
         };
         class Music {
             class playMusicMissionEnd {};
@@ -464,5 +467,9 @@ class CfgTaskDescriptions {
     class mainAnnexRegionRepair {
         title       = "STR_WHF_mainAnnexRegionRepair_title";
         description = "STR_WHF_mainAnnexRegionRepair_description";
+    };
+    class secureCache {
+        title       = "STR_WHF_secureCache_title";
+        description = "STR_WHF_secureCache_description";
     };
 };
