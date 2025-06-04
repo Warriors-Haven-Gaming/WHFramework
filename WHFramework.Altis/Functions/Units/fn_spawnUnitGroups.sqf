@@ -23,9 +23,11 @@ Parameters:
         The position at which unit groups will spawn around.
     Number radius:
         The radius around the position at which unit groups will spawn around.
-    Boolean dynamicSimulation:
-        (Optional, default true)
-        If true, the group will be subject to the dynamic simulation system.
+    Array flags:
+        (Optional, default [])
+        An array containing any of the following flags:
+            "hidden": Find hidden positions to spawn groups.
+            "noDynamicSimulation": Disable dynamic simulation on groups.
 
 Returns:
     Array
@@ -56,12 +58,17 @@ params [
     "_quantity",
     "_center",
     "_radius",
-    ["_dynamicSimulation", true]
+    ["_flags", []]
 ];
+
+private _randomPos =
+    [WHF_fnc_randomPos, WHF_fnc_randomPosHidden]
+    select ("hidden" in _flags);
+private _dynamicSimulation = !("noDynamicSimulation" in _flags);
 
 private _groups = [];
 while {_quantity > 0} do {
-    private _pos = [_center, _radius] call WHF_fnc_randomPos;
+    private _pos = [_center, _radius] call _randomPos;
     if (_pos isEqualTo [0,0]) then {break};
 
     selectRandomWeighted _types params [
