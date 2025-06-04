@@ -23,33 +23,42 @@ Author:
 params ["_laptop", "_faction", "_groups", "_vehicles"];
 
 private _reinforceUnits = {
-    private _pos = [_center, _radius] call WHF_fnc_randomPosHidden;
-    if (_pos isEqualTo [0,0]) exitWith {};
+    private _newGroups = [
+        opfor,
+        [
+            [_standard, 2, 8, 0], 0.60,
+            [   _recon, 2, 8, 1], 0.20,
+            [   _elite, 4, 8, 2], 0.10,
+            [  _sniper, 2, 2, 3], 0.10
+        ],
+        20 + floor random 41,
+        _center,
+        _radius,
+        ["hidden"]
+    ] call WHF_fnc_spawnUnitGroups;
 
-    private _quantity = selectRandom [2, 4, 6, 8];
-    private _group = [opfor, [_standard], _quantity, _pos, 10] call WHF_fnc_spawnUnits;
-    call _attackWaypoint;
-
-    _groups pushBack _group;
+    {[_x] call _attackWaypoint} forEach _newGroups;
+    _groups append _newGroups;
 };
 
 private _reinforceVehicles = {
     private _group = [
         opfor,
-        [_standard],
-        [_standard],
+        _standard,
+        _standard,
         1,
         _center,
         _radius,
         ["hidden"]
     ] call WHF_fnc_spawnVehicles;
 
-    call _attackWaypoint;
+    [_group] call _attackWaypoint;
     _groups pushBack _group;
     _vehicles append assignedVehicles _group;
 };
 
 private _attackWaypoint = {
+    params ["_group"];
     private _target = selectRandom _targets;
     _group reveal [_target, 4];
 
@@ -60,12 +69,15 @@ private _attackWaypoint = {
     _group setSpeedMode "FULL";
 };
 
-private _standard = ["standard", _faction];
+private _standard = [["standard", _faction]];
+private _recon = [["recon", _faction]];
+private _elite = [["elite", _faction]];
+private _sniper = [["sniper", _faction]];
 
 private _targets = units blufor inAreaArray [getPosATL _laptop, 5, 5, 0, false, 5];
 if (count _targets < 1) then {_targets = [_laptop]};
 
 private _center = getPosATL _laptop vectorMultiply [1,1,0];
 private _radius = [40, 200];
-for "_i" from 1 to 3 + random 5 do {call _reinforceUnits};
+call _reinforceUnits;
 for "_i" from 1 to 1 + random 4 do {call _reinforceVehicles};

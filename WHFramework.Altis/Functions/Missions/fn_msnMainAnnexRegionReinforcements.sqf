@@ -44,18 +44,24 @@ if !(_this # 0) exitWith {};
 private _reinforceUnits = {
     params ["_center", "_radius", "_faction", "_groups"];
 
-    private _pos = [_center, _radius] call WHF_fnc_randomPosHidden;
-    if (_pos isEqualTo [0,0]) exitWith {};
+    private _unitTypes = +WHF_missions_annex_units_types;
+    for "_i" from 0 to (count _unitTypes - 1) step 2 do {
+        private _type = _unitTypes # _i # 0;
+        _unitTypes # _i set [0, [[_type, _faction]]];
+    };
 
-    private _unitTypes = WHF_missions_annex_units_types;
-    selectRandomWeighted _unitTypes params ["_type", "_quantity", "_skill"];
-    _type = [[_type, _faction]];
-    _quantity = floor random (_quantity / 2) * 2 + 2;
+    private _quantity = 2 + floor random 7;
+    private _newGroups = [
+        opfor,
+        _unitTypes,
+        _quantity,
+        _center,
+        _radius,
+        ["hidden"]
+    ] call WHF_fnc_spawnUnitGroups;
 
-    private _group = [opfor, _type, _quantity, _pos, 10, _skill] call WHF_fnc_spawnUnits;
-    [_group, getPosATL leader _group, 200] call BIS_fnc_taskPatrol;
-
-    _groups pushBack _group;
+    {[_x, getPosATL leader _x, 200] call BIS_fnc_taskPatrol} forEach _newGroups;
+    _groups append _newGroups;
 };
 
 private _reinforceVehicles = {

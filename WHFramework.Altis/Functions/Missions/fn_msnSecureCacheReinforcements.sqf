@@ -27,15 +27,22 @@ Author:
 params ["_center", "_radius", "_factionA", "_factionB", "_groups", "_vehicles"];
 
 private _reinforceUnits = {
-    private _pos = [_center, [_radius, _radius * 2]] call WHF_fnc_randomPosHidden;
-    if (_pos isEqualTo [0,0]) exitWith {};
+    private _newGroups = [
+        opfor,
+        [
+            [_standard, 2, 8, 0], 0.60,
+            [   _recon, 2, 8, 1], 0.20,
+            [   _elite, 4, 8, 2], 0.10,
+            [  _sniper, 2, 2, 3], 0.10
+        ],
+        20 + floor random 41,
+        _center,
+        _radius,
+        ["hidden"]
+    ] call WHF_fnc_spawnUnitGroups;
 
-    // TODO: use WHF_fnc_spawnUnitGroups
-    private _quantity = selectRandom [2, 4, 6, 8];
-    private _group = [opfor, _standard, _quantity, _pos, 10] call WHF_fnc_spawnUnits;
-    call _attackWaypoint;
-
-    _groups pushBack _group;
+    {[_x] call _attackWaypoint} forEach _newGroups;
+    _groups append _newGroups;
 };
 
 private _reinforceVehicles = {
@@ -49,12 +56,13 @@ private _reinforceVehicles = {
         ["hidden"]
     ] call WHF_fnc_spawnVehicles;
 
-    call _attackWaypoint;
+    [_group] call _attackWaypoint;
     _groups pushBack _group;
     _vehicles append assignedVehicles _group;
 };
 
 private _attackWaypoint = {
+    params ["_group"];
     _group setBehaviourStrong "AWARE";
     _group setSpeedMode "FULL";
 
@@ -68,7 +76,10 @@ private _attackWaypoint = {
 };
 
 private _standard = [["standard", _factionA], ["standard", _factionB]];
+private _recon = [["recon", _factionA], ["recon", _factionB]];
+private _elite = [["elite", _factionA], ["elite", _factionB]];
+private _sniper = [["sniper", _factionA], ["sniper", _factionB]];
 
 private _targets = units blufor inAreaArray [_center, _radius, _radius, 0, false];
-for "_i" from 1 to 3 + random 5 do {call _reinforceUnits};
+call _reinforceUnits;
 for "_i" from 1 to 1 + random 4 do {call _reinforceVehicles};
