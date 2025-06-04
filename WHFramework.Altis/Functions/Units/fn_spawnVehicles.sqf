@@ -17,8 +17,9 @@ Parameters:
         The number of vehicles to spawn.
     PositionATL center:
         The position at which vehicles will spawn around.
-    Number radius:
+    Array | Number radius:
         The radius around the position at which vehicles will spawn around.
+        An array can be passed to specify the minimum and maximum radius.
     Array flags:
         (Optional, default [])
         An array containing any of the following flags:
@@ -54,7 +55,7 @@ for "_i" from 1 to _quantity do {
     // TODO: add support for random water positions with Ship vehicles
     private _pos = _center;
     private _special = "NONE";
-    if (_radius > 0) then {
+    if (_radius isEqualType [] || {_radius > 0}) then {
         private _empty = [_center, _radius] call _randomPos;
         if (_empty isEqualTo [0,0]) exitWith {};
         _pos = _empty;
