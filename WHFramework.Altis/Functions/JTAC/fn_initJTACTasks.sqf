@@ -42,10 +42,11 @@ private _clearJTACTask = {
     if (!isNil {_target getVariable "WHF_jtac_cleared"}) exitWith {};
     _target setVariable ["WHF_jtac_cleared", true];
 
+    private _silent = _thisEvent isEqualTo "EntityDeleted";
     {
         private _side = _x;
         private _taskID = _tasks get _side;
-        [_side, _taskID] spawn WHF_fnc_completeJTACTask;
+        [_side, _taskID, _silent] spawn WHF_fnc_completeJTACTask;
     } forEach keys _tasks;
 };
 
