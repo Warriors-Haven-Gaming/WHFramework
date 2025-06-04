@@ -539,6 +539,16 @@ call WHF_fnc_cycleFaction;
     false
 ] call WHF_fnc_addSetting;
 [
+    "WHF_halo_mission_exfil",
+    "CHECKBOX",
+    ["STR_WHF_settings_halo_mission_exfil", "STR_WHF_settings_halo_mission_exfil_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_halo"],
+    false,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_halo_limit_player",
     "SLIDER",
     ["STR_WHF_settings_halo_limit_player", "STR_WHF_settings_halo_limit_player_tooltip"],
