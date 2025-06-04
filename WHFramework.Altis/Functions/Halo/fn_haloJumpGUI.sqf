@@ -15,7 +15,20 @@ if (_vehicles findIf {[_x, focusOn] call WHF_fnc_isEnemyAntiAir} >= 0) exitWith 
     50 cutText [localize "$STR_WHF_haloJumpGUI_antiair", "PLAIN DOWN", 0.3];
 };
 
-// TODO: add combat restrictions
+private _isEnemy = {
+    !unitIsUAV _x
+    && {!captive _x
+    && {lifeState _x in ["HEALTHY", "INJURED"]
+    && {[_side, side group _x] call BIS_fnc_sideIsEnemy}}}
+};
+private _side = side group focusOn;
+private _radius = WHF_halo_enemy_distance;
+private _area = [getPosATL focusOn, _radius, _radius, 0, false];
+private _units = _area nearEntities [["CAManBase"], false, false, true];
+if (_units findIf _isEnemy >= 0) exitWith {
+    50 cutText [localize "$STR_WHF_haloJumpGUI_enemy", "PLAIN DOWN", 0.3];
+};
+
 // TODO: add halo jump cooldown
 if (!openMap true) exitWith {};
 

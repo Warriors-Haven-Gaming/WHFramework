@@ -529,6 +529,16 @@ call WHF_fnc_cycleFaction;
     false
 ] call WHF_fnc_addSetting;
 [
+    "WHF_halo_enemy_distance",
+    "SLIDER",
+    ["STR_WHF_settings_halo_enemy_distance", "STR_WHF_settings_halo_enemy_distance_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_halo"],
+    [0, 500, 100, 0, false],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_halo_limit_player",
     "SLIDER",
     ["STR_WHF_settings_halo_limit_player", "STR_WHF_settings_halo_limit_player_tooltip"],
