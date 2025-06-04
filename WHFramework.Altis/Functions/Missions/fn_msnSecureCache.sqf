@@ -27,6 +27,7 @@ Author:
 params [["_center", []], ["_factionA", ""], ["_factionB", ""]];
 
 private _radius = 100;
+private _cacheRadius = 50;
 
 if (_center isEqualTo []) then {
     private _options = selectBestPlaces [
@@ -49,18 +50,7 @@ if (_center isEqualTo []) then {
 if (_center isEqualTo []) exitWith {
     diag_log text format ["%1: No center found", _fnc_scriptName];
 };
-
-// Find a suitable position for the cache, and adjust the center to match it
-_center = call {
-    private _buildings = _center nearObjects _radius select {!isObjectHidden _x};
-    _buildings = _buildings select {_x buildingPos 0 isNotEqualTo [0,0,0]};
-    if (count _buildings > 0) exitWith {
-        private _positions = selectRandom _buildings buildingPos -1;
-        selectRandom _positions
-    };
-    [_center, [3, _radius]] call WHF_fnc_randomPos
-};
-private _reinforceArea = [_center, _radius / 2, _radius / 2, 0, false];
+private _reinforceArea = [_center, _cacheRadius, _cacheRadius, 0, false];
 
 if (_factionA isEqualTo "") then {_factionA = selectRandom WHF_factions_pool};
 if (_factionB isEqualTo "") then {
@@ -71,12 +61,31 @@ if (_factionB isEqualTo "") then {
 private _standard = [["standard", _factionA], ["standard", _factionB]];
 private _supply = [["supply", _factionA], ["supply", _factionB]];
 
-// TODO: add multiple caches
-private _cache = createVehicle ["Box_FIA_Ammo_F", [-random 500, -random 500, 500], [], 0, "CAN_COLLIDE"];
-_cache enableSimulationGlobal false;
-_cache setDir random 360;
-_cache setPosATL _center;
-[_cache] remoteExec ["WHF_fnc_msnSecureCacheAction", 0, _cache];
+private _positions = call {
+    private _positions = [];
+    private _objects = _center nearObjects _cacheRadius select {!isObjectHidden _x};
+    {_positions append (_x buildingPos -1)} forEach _objects;
+    _positions call WHF_fnc_arrayShuffle
+};
+
+private _caches = [];
+for "_i" from 2 to 3 + random 3 do {
+    private _pos = if (_i < count _positions) then {_positions # _i} else {
+        [_center, [3, _cacheRadius]] call WHF_fnc_randomPos
+    };
+    if (_pos isEqualTo [0,0]) then {break};
+
+    private _cache = createVehicle ["Box_FIA_Ammo_F", [-random 500, -random 500, 500], [], 0, "CAN_COLLIDE"];
+    _cache enableSimulationGlobal false;
+    _cache setDir random 360;
+    _cache setPosATL _pos;
+    [_cache] remoteExec ["WHF_fnc_msnSecureCacheAction", 0, _cache];
+    _caches pushBack _cache;
+};
+
+if (count _caches < 1) exitWith {
+    diag_log text format ["%1: center %2 not clear to spawn caches", _fnc_scriptName, _center];
+};
 
 private _groups = [];
 private _vehicles = [];
@@ -110,27 +119,33 @@ private _taskID = [
         ],
         "STR_WHF_secureCache_title"
     ],
-    _center getPos [25 + random 50, random 360],
+    _center,
     "CREATED",
     -1,
     true,
     "rifle"
 ] call WHF_fnc_taskCreate;
 
+private _allCachesSecured = {
+    _caches findIf {
+        !isNull _x
+        && {_x getVariable ["WHF_cache_secured", false] isNotEqualTo true}
+    } < 0
+};
+
 private _reinforced = false;
 while {true} do {
     sleep 3;
-    if (!alive _cache) exitWith {[_taskID, "CANCELED"] spawn WHF_fnc_taskEnd};
+    if (call _allCachesSecured) exitWith {
+        [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
+    };
     if (!_reinforced && {[units blufor, _reinforceArea] call WHF_fnc_anyInArea}) then {
         [_center, _radius, _factionA, _factionB, _groups, _vehicles]
             call WHF_fnc_msnSecureCacheReinforcements;
         _reinforced = true;
     };
-    if (_cache getVariable ["WHF_cache_secured", false] isEqualTo true) exitWith {
-        [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
-    };
 };
 
-[_cache] call WHF_fnc_queueGCDeletion;
+[_caches] call WHF_fnc_queueGCDeletion;
 {[units _x] call WHF_fnc_queueGCDeletion} forEach _groups;
 {[_x] call WHF_fnc_queueGCDeletion} forEach _vehicles;

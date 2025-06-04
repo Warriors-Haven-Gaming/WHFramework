@@ -15,7 +15,7 @@ Author:
 params ["_cache"];
 [
     _cache,
-    localize "$STR_WHF_secureCache_title",
+    localize "$STR_WHF_secureCache_action",
     "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa",
     "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa",
     "
