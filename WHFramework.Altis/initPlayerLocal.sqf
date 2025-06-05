@@ -30,6 +30,7 @@ if (isMultiplayer) then {["InitializePlayer", [player]] call BIS_fnc_dynamicGrou
 call WHF_fnc_initArsenalLoadoutHandlers;
 call WHF_fnc_initContextActionCruise;
 call WHF_fnc_initContextActionDetain;
+call WHF_fnc_initContextActionFPV;
 call WHF_fnc_initContextActionHaloJump;
 call WHF_fnc_initContextActionMagRepack;
 call WHF_fnc_initContextActionQuadbike;

@@ -98,6 +98,7 @@ class CfgFunctions {
             class contextMenuShow {};
             class initContextActionCruise {};
             class initContextActionDetain {};
+            class initContextActionFPV {};
             class initContextActionHaloJump {};
             class initContextActionMagRepack {};
             class initContextActionQuadbike {};
@@ -124,8 +125,10 @@ class CfgFunctions {
             class initDiary {};
         };
         class Drones {
+            class assembleFPVDrone {};
             class combatDroneLoop {};
             class FPVDroneLoop {};
+            class getBackpackDrone {};
         };
         class Earplugs {
             class initEarplugsKeybind {};
