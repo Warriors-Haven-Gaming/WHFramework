@@ -17,5 +17,6 @@ if (!hasInterface) exitWith {};
     nil,
     true,
     "",
+    // TODO: require explosive charge to assemble FPV drone
     "[backpack focusOn] call WHF_fnc_getBackpackDrone isNotEqualTo ''"
 ] call WHF_fnc_contextMenuAdd;
