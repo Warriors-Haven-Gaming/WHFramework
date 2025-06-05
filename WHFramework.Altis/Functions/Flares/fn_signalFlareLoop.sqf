@@ -36,8 +36,7 @@ while {true} do {
             && {["sniper", "ghillie"] findIf {_x in toLowerANSI typeOf _leader} < 0
             && {
                 _leader targets [true, WHF_signalFlareMaxDistance, [blufor], 30]
-                select {_leader knowsAbout _x >= 1.5}
-                isNotEqualTo []
+                findIf {_leader knowsAbout _x >= 1.5} >= 0
             && {
                 private _pos = getPosASL _leader;
                 !lineIntersects [_pos, _pos vectorAdd [0, 0, 50], _leader]
