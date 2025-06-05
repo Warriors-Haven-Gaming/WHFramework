@@ -25,7 +25,6 @@ if (!isMultiplayer) then {
     };
 
     call WHF_fnc_initEmplacementCatalog;
-    call WHF_fnc_initVehicleHandlers;
     WHF_usedPositions = [];
 
     // HACK: onPlayerRespawn.sqf can sometimes run before initServer.sqf
@@ -33,7 +32,6 @@ if (!isMultiplayer) then {
 };
 
 if (isMultiplayer && {!isServer}) then {
-    call WHF_fnc_initVehicleHandlers;
     WHF_usedPositions = [];
 };
 

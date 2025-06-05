@@ -176,6 +176,7 @@ class CfgFunctions {
         };
         class Init {
             class initDynamicSimulation { preInit = true; };
+            class initVehicleHandlers { postInit = true; };
             class setSideRelations { preInit = true; };
         };
         class JTAC {
@@ -338,7 +339,6 @@ class CfgFunctions {
             class ungarrisonLoop {};
         };
         class Vehicles {
-            class initVehicleHandlers {};
             class isAntiAirVehicle {};
             class isArtilleryVehicle {};
             class isEnemyAntiAir {};
