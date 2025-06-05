@@ -34,6 +34,7 @@ private _lastMove = time - _moveDelay;
 driver _drone setBehaviour "CARELESS";
 driver _drone setSkill 1;
 _drone flyInHeight [_searchAltitude, true];
+_drone doMove (_drone getRelPos [500, 0]);
 
 private _charge = createVehicle ["DemoCharge_Remote_Ammo", [0,0,0], [], 0, "CAN_COLLIDE"];
 _charge attachTo [_drone, [0, 0, -0.1]];
