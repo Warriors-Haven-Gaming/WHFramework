@@ -30,13 +30,7 @@ private _radius = 100;
 private _cacheRadius = 30;
 
 if (_center isEqualTo []) then {
-    private _options = selectBestPlaces [
-        [worldSize / 2, worldSize / 2],
-        sqrt 2 / 2 * worldSize,
-        "meadow + houses - forest - trees",
-        100,
-        50
-    ];
+    private _options = ["houses + meadow - forest - trees"] call WHF_fnc_selectBestPlaces;
     {
         _x params ["_pos"];
         _pos pushBack 0;

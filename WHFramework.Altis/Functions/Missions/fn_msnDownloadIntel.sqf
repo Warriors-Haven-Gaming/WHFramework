@@ -22,7 +22,7 @@ Author:
 params [["_center", []], ["_faction", ""]];
 
 if (_center isEqualTo []) then {
-    private _options = selectBestPlaces [[worldSize / 2, worldSize / 2], sqrt 2 / 2 * worldSize, "forest", 100, 50];
+    private _options = ["forest"] call WHF_fnc_selectBestPlaces;
     {
         _x params ["_pos"];
         _pos pushBack 0;
