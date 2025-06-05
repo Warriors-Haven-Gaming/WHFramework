@@ -85,7 +85,7 @@ class CfgFunctions {
             class createMinefield {};
             class createRoadblocks {};
             class getRoadPos {};
-            class initEmplacementCatalog {};
+            class initEmplacementCatalog { preInit = true; };
             class isNearUsedPosition {};
             class objectsGrabber {};
             class objectsMapper {};

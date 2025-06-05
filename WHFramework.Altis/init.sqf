@@ -24,7 +24,6 @@ if (!isMultiplayer) then {
         call compileScript ["XEH_preInit.sqf"];
     };
 
-    call WHF_fnc_initEmplacementCatalog;
     WHF_usedPositions = [];
 
     // HACK: onPlayerRespawn.sqf can sometimes run before initServer.sqf

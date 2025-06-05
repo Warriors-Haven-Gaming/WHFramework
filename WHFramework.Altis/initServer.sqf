@@ -21,7 +21,6 @@ if (isMultiplayer) then {
         call compileScript ["XEH_preInit.sqf"];
     };
 
-    call WHF_fnc_initEmplacementCatalog;
     WHF_usedPositions = [];
 };
 
