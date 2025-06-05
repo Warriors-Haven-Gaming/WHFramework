@@ -30,6 +30,8 @@ private _isPiloted = !isNull _pilot;
 private _searchAltitude = 20 + random 30;
 private _moveDelay = 5;
 private _lastMove = time - _moveDelay;
+private _linkDelay = 10;
+private _lastLink = time - _linkDelay;
 
 driver _drone setBehaviour "CARELESS";
 driver _drone setSkill 1;
@@ -49,6 +51,13 @@ while {alive _drone} do {
         _drone setDamage [1, false];
     };
 
+    private _time = time;
+    if (_time >= _lastLink + _linkDelay) then {
+        private _targets = _pilot targets [true];
+        {_drone reveal [_x, 4]} forEach _targets;
+        _lastLink = _time;
+    };
+
     private _target = _drone findNearestEnemy _drone;
     if (isNull _target) then {continue};
 
@@ -59,7 +68,6 @@ while {alive _drone} do {
     private _distance2D = _drone distance2D _target;
     _drone flyInHeight [call _nextAltitude, true];
 
-    private _time = time;
     if (_time >= _lastMove + _moveDelay) then {
         private _dir = _drone getDir _target;
         private _aimPos = _hidePos getPos [10, _dir];

@@ -33,9 +33,6 @@ if (isNull _group) then {continue};
 removeBackpack _unit;
 _unit disableUAVConnectability [_drone, true];
 
-private _targets = _unit targets [true, 500, [], 30];
-{_group reveal _x} forEach _targets;
-
 [_drone, _unit] spawn WHF_fnc_FPVDroneLoop;
 
 [_drone] remoteExec ["WHF_fnc_queueGCDeletion", 2];
