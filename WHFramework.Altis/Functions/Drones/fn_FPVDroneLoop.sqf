@@ -50,7 +50,7 @@ while {alive _drone} do {
     if (isNull _target) then {continue};
 
     private _distance = _drone distance _target;
-    if (_distance < 10) exitWith {triggerAmmo _charge};
+    if (_distance < 10) exitWith {triggerAmmo _charge; sleep 1};
 
     private _hidePos = _drone getHideFrom _target;
     private _distance2D = _drone distance2D _target;
