@@ -11,13 +11,6 @@ Author:
 */
 diag_log text format ["Initializing %1", briefingName];
 
-setMissionOptions createHashMapFromArray [
-    ["IgnoreNoDamage", true],
-    ["IgnoreFakeHeadHit", true],
-    ["IgnoreUpsideDownDamage", true],
-    ["AIThinkOnlyLocal", true]
-];
-
 if (!isMultiplayer) then {
     // Will run before initPlayerLocal.sqf and initServer.sqf
     if (!isClass (configFile >> "CfgPatches" >> "cba_xeh")) then {

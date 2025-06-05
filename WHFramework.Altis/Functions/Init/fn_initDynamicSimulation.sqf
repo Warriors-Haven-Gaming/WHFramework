@@ -14,3 +14,11 @@ enableDynamicSimulationSystem true;
 "Prop"         setDynamicSimulationDistance 50;
 "EmptyVehicle" setDynamicSimulationDistance 250;
 "IsMoving"     setDynamicSimulationDistanceCoef 2;
+
+// FIXME: weird place to define this
+setMissionOptions createHashMapFromArray [
+    ["IgnoreNoDamage", true],
+    ["IgnoreFakeHeadHit", true],
+    ["IgnoreUpsideDownDamage", true],
+    ["AIThinkOnlyLocal", true]
+];
