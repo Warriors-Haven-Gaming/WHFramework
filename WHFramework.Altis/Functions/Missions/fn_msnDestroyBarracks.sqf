@@ -24,7 +24,7 @@ params [["_center", []], ["_faction", ""]];
 private _radius = 100;
 
 if (_center isEqualTo []) then {
-    private _options = ["forest + houses"] call WHF_fnc_selectBestPlaces;
+    private _options = ["forest + houses - sea"] call WHF_fnc_selectBestPlaces;
     {
         _x params ["_pos"];
         _pos pushBack 0;
