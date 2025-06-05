@@ -24,14 +24,8 @@ if (!isMultiplayer) then {
         call compileScript ["XEH_preInit.sqf"];
     };
 
-    WHF_usedPositions = [];
-
     // HACK: onPlayerRespawn.sqf can sometimes run before initServer.sqf
     WHF_globalPlayerTarget = 0;
-};
-
-if (isMultiplayer && {!isServer}) then {
-    WHF_usedPositions = [];
 };
 
 WHF_findAPSLoop_script = 0 spawn WHF_fnc_findAPSLoop;

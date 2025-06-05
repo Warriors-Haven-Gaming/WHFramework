@@ -20,8 +20,6 @@ if (isMultiplayer) then {
     if (!isClass (configFile >> "CfgPatches" >> "cba_xeh")) then {
         call compileScript ["XEH_preInit.sqf"];
     };
-
-    WHF_usedPositions = [];
 };
 
 if (isMultiplayer) then {

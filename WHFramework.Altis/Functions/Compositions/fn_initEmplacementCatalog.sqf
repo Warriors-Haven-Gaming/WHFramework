@@ -253,3 +253,4 @@ if (_discarded > 0) then {diag_log text format [
 ]};
 
 WHF_emplacements = compileFinal _catalog;
+WHF_usedPositions = []; // FIXME: weird place to define this
