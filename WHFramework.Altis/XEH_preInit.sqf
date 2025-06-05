@@ -142,6 +142,21 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 
+// Drones
+[
+    "WHF_drones_combat_enabled",
+    "CHECKBOX",
+    ["STR_WHF_settings_drones_combat_enabled", "STR_WHF_settings_drones_combat_enabled_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_drones"],
+    true,
+    true,
+    {
+        if (!isNil "WHF_combatDroneLoop_script") then {terminate WHF_combatDroneLoop_script};
+        if (_this) then {WHF_combatDroneLoop_script = 0 spawn WHF_fnc_combatDroneLoop};
+    },
+    false
+] call WHF_fnc_addSetting;
+
 // Earplugs
 [
     "WHF_earplugs_volume",
