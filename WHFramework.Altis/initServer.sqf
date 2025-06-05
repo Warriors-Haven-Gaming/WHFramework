@@ -22,7 +22,6 @@ if (isMultiplayer) then {
     };
 
     call WHF_fnc_initEmplacementCatalog;
-    call WHF_fnc_initDynamicSimulation;
     call WHF_fnc_initVehicleHandlers;
     WHF_usedPositions = [];
 };

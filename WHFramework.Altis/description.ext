@@ -159,7 +159,6 @@ class CfgFunctions {
             class anyInArea {};
             class arrayShuffle {};
             class displayTimer {};
-            class initDynamicSimulation {};
             class isPlayerRemoteExecuted {};
             class isRemoteExecutedByAdmin {};
             class localChat {};
@@ -176,6 +175,7 @@ class CfgFunctions {
             class initFriendlyIcons {};
         };
         class Init {
+            class initDynamicSimulation { preInit = true; };
             class setSideRelations { preInit = true; };
         };
         class JTAC {
