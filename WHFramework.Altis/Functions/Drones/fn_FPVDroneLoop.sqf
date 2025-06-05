@@ -43,7 +43,6 @@ while {alive _drone} do {
 
     if (!alive _charge) exitWith {_drone setDamage [1, false]};
     if (_isPiloted && {!(lifeState _pilot in ["HEALTHY", "INJURED"])}) exitWith {
-        deleteVehicle _charge;
         _drone setDamage [1, false];
     };
 
@@ -67,3 +66,5 @@ while {alive _drone} do {
         _lastMove = _time;
     };
 };
+
+if (alive _charge) then {deleteVehicle _charge};
