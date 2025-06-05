@@ -54,9 +54,7 @@ while {alive _drone} do {
 
     private _hidePos = _drone getHideFrom _target;
     private _distance2D = _drone distance2D _target;
-    private _alt = call _nextAltitude;
-    _drone flyInHeight [_alt, true];
-    systemChat str [_hidePos, _drone distance _target, _alt];
+    _drone flyInHeight [call _nextAltitude, true];
 
     private _time = time;
     if (_time >= _lastMove + _moveDelay) then {
