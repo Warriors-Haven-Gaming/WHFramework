@@ -37,6 +37,7 @@ _drone flyInHeight [_searchAltitude, true];
 
 private _charge = createVehicle ["DemoCharge_Remote_Ammo", [0,0,0], [], 0, "CAN_COLLIDE"];
 _charge attachTo [_drone, [0, 0, -0.1]];
+_charge setDir 90;
 if (alive _pilot) then {side group _pilot revealMine _charge};
 
 while {alive _drone} do {
