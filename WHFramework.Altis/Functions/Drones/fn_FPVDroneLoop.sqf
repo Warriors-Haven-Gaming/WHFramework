@@ -20,7 +20,6 @@ Author:
 params ["_drone", ["_pilot", objNull]];
 
 private _nextAltitude = {
-    params ["_target"];
     if (!alive _target) exitWith {_searchAltitude};
     private _targetAltitude = _hidePos # 2 max 1;
     linearConversion [30, 150, _distance2D, _targetAltitude, _searchAltitude, true]
