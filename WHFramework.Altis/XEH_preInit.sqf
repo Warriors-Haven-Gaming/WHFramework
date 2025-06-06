@@ -156,6 +156,16 @@ Author:
     },
     false
 ] call WHF_fnc_addSetting;
+[
+    "WHF_drones_combat_uavOnly",
+    "CHECKBOX",
+    ["STR_WHF_settings_drones_combat_uavOnly", "STR_WHF_settings_drones_combat_uavOnly_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_drones"],
+    false,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
 
 // Earplugs
 [
