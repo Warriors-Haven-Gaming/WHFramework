@@ -3,11 +3,12 @@ Function: WHF_fnc_reportJTACTarget
 
 Description:
     Report the given target for the JTAC's side.
-    Function must be executed on server in scheduled environment.
+    Function must be remote executed on server from a client.
 
 Parameters:
     Object unit:
         The unit reporting the target.
+        Must be owned by the client remote executing this function.
     Object target:
         The target to be reported.
 
@@ -15,14 +16,17 @@ Author:
     thegamecracks
 
 */
+params ["_player", "_target"];
 if (!isServer) exitWith {};
-params ["_unit", "_target"];
-if !([_unit, _target] call WHF_fnc_canReportJTACTarget) exitWith {};
+if (!isPlayer _player) exitWith {};
+if (isMultiplayer && {!isRemoteExecuted}) exitWith {};
+if (owner _player isNotEqualTo remoteExecutedOwner) exitWith {};
+if !([_player, _target] call WHF_fnc_canReportJTACTarget) exitWith {};
 
 private _tasks = _target getVariable "WHF_jtac_tasks";
 if (isNil "_tasks") then {_tasks = createHashMap};
 
-private _side = side group _unit;
+private _side = side group _player;
 if (_side in _tasks) exitWith {};
 
 if (isNil "WHF_jtac_parentTasks") then {WHF_jtac_parentTasks = createHashMap};
@@ -38,8 +42,8 @@ private _taskID = [
     _side,
     ["", _parentID],
     [
-        ["STR_WHF_jtacTarget_description", _targetName, name _unit],
-        ["STR_WHF_jtacTarget_title", _targetName, name _unit]
+        ["STR_WHF_jtacTarget_description", _targetName, name _player],
+        ["STR_WHF_jtacTarget_title", _targetName, name _player]
     ],
     [_target, true],
     "CREATED",
