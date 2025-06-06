@@ -70,7 +70,7 @@ while {alive _drone} do {
     if (isNull _target) then {continue};
 
     private _distance = _drone distance _target;
-    if (_distance < 10) exitWith {triggerAmmo _charge; sleep 1};
+    if (_distance < 10) exitWith {triggerAmmo _charge};
 
     private _hidePos = _drone getHideFrom _target;
     private _distance2D = _drone distance2D _target;
@@ -84,4 +84,8 @@ while {alive _drone} do {
     };
 };
 
+// If the drone was killed just before a new iteration started,
+// the explosive charge might still be in the middle of triggering.
+// Wait a second first, then check to see if it needs to be deleted.
+sleep 1;
 if (alive _charge) then {deleteVehicle _charge};
