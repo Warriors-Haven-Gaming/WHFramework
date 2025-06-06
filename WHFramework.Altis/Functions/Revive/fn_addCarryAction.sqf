@@ -14,6 +14,8 @@ Author:
 */
 params ["_unit"];
 
+if (isClass (configFile >> "CfgPatches" >> "ace_dragging")) exitWith {};
+
 [_unit, _unit getVariable ["WHF_revive_carryID", -1]] call BIS_fnc_holdActionRemove;
 private _carryID = [
     _unit,
