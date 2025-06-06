@@ -72,6 +72,7 @@ _drone addEventHandler ["Killed", {
 while {alive _drone} do {
     sleep 1;
 
+    if (!local _drone) then {continue};
     if (!alive _charge) exitWith {_drone setDamage [1, false]};
     if (_isPiloted && {!(lifeState _pilot in ["HEALTHY", "INJURED"])}) exitWith {
         _drone setDamage [1, false];
