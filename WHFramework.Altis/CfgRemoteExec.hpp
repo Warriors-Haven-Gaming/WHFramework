@@ -50,6 +50,7 @@ class CfgRemoteExec : CfgRemoteExecMod {
 
         class WHF_fnc_addPrisonerActions { jip = 1; };
         class WHF_fnc_detainUnitRequest {};
+        class WHF_fnc_disableUAVConnectability { allowedTargets = 1; jip = 1; };
         class WHF_fnc_freeUnit {};
         class WHF_fnc_haloJumpCut {};
         class WHF_fnc_incapBleedout {};

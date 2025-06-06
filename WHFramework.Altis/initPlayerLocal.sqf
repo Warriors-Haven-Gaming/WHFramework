@@ -38,6 +38,7 @@ call WHF_fnc_initContextActionSelfDestruct;
 call WHF_fnc_initContextHandlers;
 call WHF_fnc_initDamageHandlers;
 call WHF_fnc_initDiary;
+call WHF_fnc_initDroneHandlers;
 call WHF_fnc_initCruiseKeybind;
 call WHF_fnc_initDetainKeybind;
 call WHF_fnc_initEarplugsKeybind;

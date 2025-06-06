@@ -31,8 +31,8 @@ private _group = side group _unit createVehicleCrew _drone;
 if (isNull _group) exitWith {};
 
 removeBackpack _unit;
-_unit disableUAVConnectability [_drone, true];
 
 [_drone, _unit] spawn WHF_fnc_FPVDroneLoop;
 
+[_drone] remoteExec ["WHF_fnc_disableUAVConnectability", WHF_globalPlayerTarget, _drone];
 [_drone] remoteExec ["WHF_fnc_queueGCDeletion", 2];
