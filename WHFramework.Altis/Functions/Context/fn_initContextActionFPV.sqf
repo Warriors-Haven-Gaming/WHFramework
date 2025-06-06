@@ -18,5 +18,8 @@ if (!hasInterface) exitWith {};
     true,
     "",
     // TODO: require explosive charge to assemble FPV drone
-    "[backpack focusOn] call WHF_fnc_getBackpackDrone isNotEqualTo ''"
+    "
+        WHF_drones_combat_enabled
+        && {[backpack focusOn] call WHF_fnc_getBackpackDrone isNotEqualTo ''}
+    "
 ] call WHF_fnc_contextMenuAdd;
