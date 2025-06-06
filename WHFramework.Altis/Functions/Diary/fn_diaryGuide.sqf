@@ -15,6 +15,14 @@ player createDiarySubject [_fnc_scriptName, localize "$STR_WHF_diaryGuide_subjec
 player createDiaryRecord [
     _fnc_scriptName,
     [
+        localize "$STR_WHF_diaryGuide_fpv_title",
+        "<img image='images\guide\fpv.jpg' width='370' height='185' /><br/><br/>"
+        + ("$STR_WHF_diaryGuide_fpv_description" call WHF_fnc_diaryLocalize)
+    ]
+];
+player createDiaryRecord [
+    _fnc_scriptName,
+    [
         localize "$STR_WHF_diaryGuide_vehSpawn_title",
         "<img image='images\guide\vehspawn.jpg' width='370' height='185' /><br/><br/>"
         + ("$STR_WHF_diaryGuide_vehSpawn_description" call WHF_fnc_diaryLocalize)
