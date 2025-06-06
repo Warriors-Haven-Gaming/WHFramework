@@ -8,6 +8,7 @@ Author:
     thegamecracks
 
 */
+if (isClass (configFile >> "CfgPatches" >> "ace_dragging")) exitWith {};
 player removeAction (player getVariable ["WHF_load_unloadID", -1]);
 private _unloadID = player addAction [
     localize "$STR_VIV_UNLOAD",
