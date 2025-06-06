@@ -635,6 +635,16 @@ call WHF_fnc_cycleFaction;
     {},
     false
 ] call WHF_fnc_addSetting;
+[
+    "WHF_icons_map",
+    "CHECKBOX",
+    ["STR_WHF_settings_icons_map", "STR_WHF_settings_icons_map_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_icons"],
+    true,
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
 
 // Icon Colors
 [

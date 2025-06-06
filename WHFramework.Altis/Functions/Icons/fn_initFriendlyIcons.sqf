@@ -192,6 +192,8 @@ waitUntil {sleep 1; !isNull (findDisplay 12 displayCtrl 51)};
 findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
     params ["_display"];
 
+    if (!WHF_icons_map) exitWith {};
+
     private _mapScale = ctrlMapScale _display;
     private _iconScale = linearConversion [0.05, 0.002, _mapScale, 20, 32, true];
     private _textMinMapScale = 0.062;
