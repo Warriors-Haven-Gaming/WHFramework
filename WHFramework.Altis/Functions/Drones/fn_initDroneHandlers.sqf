@@ -28,7 +28,7 @@ player addEventHandler ["WeaponAssembled", {
     _drone setVariable ["WHF_drones_owner", _unit, true];
     _unit enableUAVConnectability [_drone, true];
 
-    if (isMultiplayer) then {
+    if (isMultiplayer && {WHF_drones_owned}) then {
         [_drone] remoteExec ["WHF_fnc_disableUAVConnectability", -clientOwner, _drone];
     };
 }];
