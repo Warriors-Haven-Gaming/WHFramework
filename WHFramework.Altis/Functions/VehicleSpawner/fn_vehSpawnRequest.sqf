@@ -85,4 +85,9 @@ if (isMultiplayer) then {
 
 if (unitIsUAV _vehicle) then {
     [side group _player, _vehicle] remoteExec ["createVehicleCrew", _vehicle];
+
+    _vehicle setVariable ["WHF_drones_owner", _player, true];
+    if (isMultiplayer) then {
+        [_vehicle] remoteExec ["WHF_fnc_disableUAVConnectability", -owner _player, _vehicle];
+    };
 };
