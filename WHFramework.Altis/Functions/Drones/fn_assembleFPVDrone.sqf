@@ -35,4 +35,4 @@ removeBackpack _unit;
 [_drone, _unit] spawn WHF_fnc_FPVDroneLoop;
 
 [_drone] remoteExec ["WHF_fnc_disableUAVConnectability", WHF_globalPlayerTarget, _drone];
-[_drone] remoteExec ["WHF_fnc_queueGCDeletion", 2];
+[_drone, -1, 300] remoteExec ["WHF_fnc_queueGCDeletion", 2];
