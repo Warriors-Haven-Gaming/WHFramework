@@ -9,9 +9,10 @@ Parameters:
         The array of objects to be unhidden. The first object is used
         as the center to determine if players are present.
     Number minDistance:
-        (Optional, default WHF_gcUnhideDistance)
+        (Optional, default -1)
         The first object's minimum distance to other players before
-        objects can be unhidden.
+        objects can be unhidden. If negative, the unhide distance
+        setting is used.
 
 Examples:
     (begin example)
@@ -26,6 +27,7 @@ Author:
 
 */
 if (!isServer) exitWith {};
-params ["_objects", ["_minDistance", WHF_gcUnhideDistance]];
+params ["_objects", ["_minDistance", -1]];
 if !(_objects isEqualType []) then {_objects = [_objects]};
+if (_minDistance < 0) then {_minDistance = WHF_gcUnhideDistance};
 WHF_gcUnhideQueue pushBack [_objects, _minDistance];
