@@ -20,3 +20,15 @@ player addEventHandler ["SlotItemChanged", {
     {if (!alive _x) then {_disabled deleteAt _forEachIndex}} forEachReversed _disabled;
     {_unit disableUAVConnectability [_x, true]} forEach _disabled;
 }];
+player addEventHandler ["WeaponAssembled", {
+    params ["_unit", "_drone"];
+    if (!unitIsUAV _drone) exitWith {};
+    if (!isNull (_drone getVariable ["WHF_drones_owner", objNull])) exitWith {};
+
+    _drone setVariable ["WHF_drones_owner", _unit, true];
+    _unit enableUAVConnectability [_drone, true];
+
+    if (isMultiplayer) then {
+        [_drone] remoteExec ["WHF_fnc_disableUAVConnectability", -clientOwner, _drone];
+    };
+}];

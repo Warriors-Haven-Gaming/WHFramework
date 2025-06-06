@@ -166,6 +166,16 @@ Author:
     {},
     false
 ] call WHF_fnc_addSetting;
+[
+    "WHF_drones_owned",
+    "CHECKBOX",
+    ["STR_WHF_settings_drones_owned", "STR_WHF_settings_drones_owned_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_drones"],
+    true,
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
 
 // Earplugs
 [
