@@ -10,15 +10,19 @@ Author:
 */
 private _processDiscreetQueue = {
     params ["_queue", "_units", "_callback"];
+    private _time = time;
     private _queueProcessed = [];
     {
-        _x params ["_objects", "_minDistance"];
+        _x params ["_objects", "_minDistance", "_startAt"];
+
         _objects = _objects select {!isNull _x};
         if (count _objects < 1) then {
             _queueProcessed pushBack _forEachIndex;
             continue;
         };
         _x set [0, _objects];
+
+        if (_time < _startAt) then {continue};
 
         private _center = _objects # 0;
         private _area = [getPosATL _center, _minDistance, _minDistance, 0, false];
