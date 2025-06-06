@@ -43,6 +43,13 @@ _charge attachTo [_drone, [0, 0, -0.1]];
 _charge setDir 90;
 if (alive _pilot) then {side group _pilot revealMine _charge};
 
+_drone setVariable ["WHF_fpv_charge", _charge];
+_drone addEventHandler ["Killed", {
+    params ["_drone"];
+    private _charge = _drone getVariable ["WHF_fpv_charge", objNull];
+    triggerAmmo _charge;
+}];
+
 while {alive _drone} do {
     sleep 1;
 
