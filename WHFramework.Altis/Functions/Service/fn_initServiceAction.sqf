@@ -9,6 +9,7 @@ Author:
 
 */
 if (!hasInterface) exitWith {};
+if (isClass (configFile >> "CfgPatches" >> "ace_repair")) exitWith {};
 if (!isNil "WHF_serviceActionID") then {
     WHF_serviceActionID call BIS_fnc_holdActionRemove;
 };
