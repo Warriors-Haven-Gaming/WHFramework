@@ -25,8 +25,27 @@ private _nextAltitude = {
     linearConversion [30, 150, _distance2D, _targetAltitude, _searchAltitude, true]
 };
 
+// NOTE: WHF_fpv_targeted is shared between sides, so a drone from BLUFOR and OPFOR
+//       would avoid targeting the same unit, even though they shouldn't be communicating
+//       with each other.
+// NOTE: WHF_fpv_targeted is not broadcasted, so drones from different clients
+//       can still end up targeting the same unit.
+private _switchTarget = {
+    params [["_newTarget", objNull]];
+    if (_target isEqualTo _newTarget) exitWith {};
+
+    private _targeted = _target getVariable ["WHF_fpv_targeted", objNull];
+    if (_targeted isEqualTo _drone) then {_target setVariable ["WHF_fpv_targeted", nil]};
+
+    _target = _newTarget;
+    _target setVariable ["WHF_fpv_targeted", _drone];
+};
+
 private _isPiloted = !isNull _pilot;
 private _searchAltitude = 20 + random 30;
+private _target = objNull;
+private _targetDelay = 5;
+private _lastTarget = time - _targetDelay;
 private _moveDelay = 5;
 private _lastMove = time - _moveDelay;
 private _linkDelay = 10;
@@ -65,8 +84,30 @@ while {alive _drone} do {
         _lastLink = _time;
     };
 
-    private _target = _drone findNearestEnemy _drone;
-    if (isNull _target) then {continue};
+    if (_time >= _lastTarget + _targetDelay) then {
+        private _targets =
+            driver _drone targetsQuery [objNull, sideUnknown, "", [], 0]
+            select {
+                [side group _drone, _x # 2] call BIS_fnc_sideIsEnemy
+                && {_x # 1 getVariable ["WHF_fpv_targeted", objNull] in [objNull, _drone]}
+            }
+            apply {_x # 1};
+        if (count _targets < 1) then {[] call _switchTarget; continue};
+
+        private _distanceTargets = [];
+        {
+            _distanceTargets pushBack [
+                _drone distance _x,
+                _forEachIndex,
+                _x
+            ];
+        } forEach _targets;
+
+        _distanceTargets sort true;
+        [_distanceTargets # 0 # 2] call _switchTarget;
+        _lastTarget = _time;
+    };
+    if (!alive _target) then {continue};
 
     private _distance = _drone distance _target;
     if (_distance < 10) exitWith {triggerAmmo _charge};
@@ -83,6 +124,7 @@ while {alive _drone} do {
     };
 };
 
+[] call _switchTarget;
 // If the drone was killed just before a new iteration started,
 // the explosive charge might still be in the middle of triggering.
 // Wait a second first, then check to see if it needs to be deleted.
