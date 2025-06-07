@@ -113,7 +113,7 @@ class CfgFunctions {
         class Curators {
             class createCurator {};
             class deleteCurator {};
-            class initCuratorHandlers {};
+            class initCuratorHandlers { postInit = true; };
             class initCuratorModule {};
             class refreshCurators {};
         };

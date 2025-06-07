@@ -9,9 +9,14 @@ Author:
     thegamecracks
 
 */
-if (!isServer) exitWith {};
 if (isRemoteExecuted) exitWith {};
 if (!isNil "WHF_initCuratorHandlers") exitWith {};
+WHF_initCuratorHandlers = true;
+
+// Initialize pre-placed curator modules
+{[_x] call WHF_fnc_initCuratorModule} forEach allCurators;
+
+if (!isServer) exitWith {};
 
 // Ensure curators can edit mission objects
 private _objects = allMissionObjects "" select {!(_x isKindOf "Logic")};
@@ -50,5 +55,3 @@ WHF_refreshCurators_script = 0 spawn {while {true} do {
     sleep (25 + random 10);
     call WHF_fnc_refreshCurators;
 }};
-
-WHF_initCuratorHandlers = true;
