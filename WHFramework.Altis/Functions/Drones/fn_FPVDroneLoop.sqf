@@ -140,7 +140,7 @@ while {alive _drone} do {
 
     if (call _canMove) then {
         private _dir = _drone getDir _target;
-        private _aimPos = _hidePos getPos [10, _dir];
+        private _aimPos = _hidePos getPos [15, _dir];
         [_aimPos] call _doMove;
     };
 };
