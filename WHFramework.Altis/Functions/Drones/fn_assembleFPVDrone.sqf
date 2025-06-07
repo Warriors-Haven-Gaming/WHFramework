@@ -27,6 +27,7 @@ sleep ([0.75, 1.25] select (stance _unit isEqualTo "PRONE"));
 private _pos = _unit getRelPos [2, 0] vectorAdd [0, 0, getPosATL _unit # 2];
 _drone = createVehicle [_drone, _pos, [], 0, "CAN_COLLIDE"];
 _drone setDir getDir _unit;
+_drone setVectorUp surfaceNormal _pos;
 private _group = side group _unit createVehicleCrew _drone;
 if (isNull _group) exitWith {};
 
