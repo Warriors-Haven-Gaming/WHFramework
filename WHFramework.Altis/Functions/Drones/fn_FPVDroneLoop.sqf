@@ -19,6 +19,9 @@ Author:
 */
 params ["_drone", ["_pilot", objNull]];
 
+if (!isNull (_drone getVariable ["WHF_fpv_script", scriptNull])) exitWith {};
+_drone setVariable ["WHF_fpv_script", _thisScript];
+
 private _nextAltitude = {
     private _targetAltitude = _hidePos # 2 max 1;
     linearConversion [30, 150, _distance2D, _targetAltitude, _searchAltitude, true]
