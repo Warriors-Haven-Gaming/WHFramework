@@ -42,6 +42,7 @@ private _respawnVehicle = {
     if (_isUAV) then {blufor createVehicleCrew _object};
 
     _object setDir _dir;
+    _object setVectorUp surfaceNormal _pos;
     _object setPosATL _pos;
 
     _object
