@@ -20,7 +20,6 @@ Author:
 params ["_drone", ["_pilot", objNull]];
 
 private _nextAltitude = {
-    if (!alive _target) exitWith {_searchAltitude};
     private _targetAltitude = _hidePos # 2 max 1;
     linearConversion [30, 150, _distance2D, _targetAltitude, _searchAltitude, true]
 };
@@ -41,21 +40,32 @@ private _switchTarget = {
     _target setVariable ["WHF_fpv_targeted", _drone];
 };
 
+private _canMove = {_time >= _lastMove + _moveDelay};
+private _doMove = {
+    params ["_pos"];
+    _drone doMove _pos;
+    _lastMove = _time;
+    _lastPos = _pos;
+};
+
 private _isPiloted = !isNull _pilot;
 private _searchAltitude = 20 + random 30;
+private _time = time;
+
+private _linkDelay = 10;
+private _lastLink = _time - _linkDelay;
+
 private _target = objNull;
 private _targetDelay = 5;
-private _lastTarget = time - _targetDelay;
+private _lastTarget = _time - _targetDelay;
+
 private _moveDelay = 5;
-private _lastMove = time - _moveDelay;
-private _linkDelay = 10;
-private _lastLink = time - _linkDelay;
+private _lastMove = _time;
+private _lastPos = getPosATL _drone;
 
 driver _drone setBehaviour "CARELESS";
 {_x setSkill 1} forEach crew _drone;
 _drone setUnitTrait ["camouflageCoef", 0.02];
-_drone flyInHeight [_searchAltitude, true];
-_drone doMove (_drone getRelPos [500, 0]);
 _drone enableWeaponDisassembly false;
 
 private _charge = createVehicle ["DemoCharge_Remote_Ammo", [0,0,0], [], 0, "CAN_COLLIDE"];
@@ -70,8 +80,12 @@ _drone addEventHandler ["Killed", {
     triggerAmmo _charge;
 }];
 
+_drone flyInHeight [_searchAltitude, true];
+[_drone getRelPos [500, 0]] call _doMove;
+
 while {alive _drone} do {
     sleep 1;
+    _time = time;
 
     if (!local _drone) then {continue};
     if (!alive _charge) exitWith {_drone setDamage [1, false]};
@@ -79,7 +93,6 @@ while {alive _drone} do {
         _drone setDamage [1, false];
     };
 
-    private _time = time;
     if (_time >= _lastLink + _linkDelay) then {
         private _targets = _pilot targets [true];
         {_drone reveal [_x, 4]} forEach _targets;
@@ -94,7 +107,7 @@ while {alive _drone} do {
                 && {_x # 1 getVariable ["WHF_fpv_targeted", objNull] in [objNull, _drone]}
             }
             apply {_x # 1};
-        if (count _targets < 1) then {[] call _switchTarget; continue};
+        if (count _targets < 1) exitWith {[] call _switchTarget};
 
         private _distanceTargets = [];
         {
@@ -109,7 +122,14 @@ while {alive _drone} do {
         [_distanceTargets # 0 # 2] call _switchTarget;
         _lastTarget = _time;
     };
-    if (!alive _target) then {continue};
+    if (!alive _target) then {
+        if (call _canMove && {vectorMagnitude velocity _drone < 1}) then {
+            _drone flyInHeight [_searchAltitude, true];
+            private _searchPos = _lastPos getPos [50 + random 100, random 360];
+            [_searchPos] call _doMove;
+        };
+        continue;
+    };
 
     private _distance = _drone distance _target;
     if (_distance < 10) exitWith {triggerAmmo _charge};
@@ -118,11 +138,10 @@ while {alive _drone} do {
     private _distance2D = _drone distance2D _target;
     _drone flyInHeight [call _nextAltitude, true];
 
-    if (_time >= _lastMove + _moveDelay) then {
+    if (call _canMove) then {
         private _dir = _drone getDir _target;
         private _aimPos = _hidePos getPos [10, _dir];
-        _drone doMove _aimPos;
-        _lastMove = _time;
+        [_aimPos] call _doMove;
     };
 };
 
