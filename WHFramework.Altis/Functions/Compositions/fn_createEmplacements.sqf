@@ -68,7 +68,7 @@ private _isPosSuitable = {
     && {_pos isFlatEmpty [-1, -1, 0.5, 20] isNotEqualTo []}
 };
 
-private _clearRadius = 40;
+private _clearRadius = 20;
 private _compositionObjects = [];
 private _compositionTerrain = [];
 private _compositionGroups = [];
