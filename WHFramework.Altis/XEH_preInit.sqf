@@ -111,7 +111,7 @@ Author:
     "EDITBOX",
     ["STR_WHF_settings_curators_uids", "STR_WHF_settings_curators_uids_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_curators"],
-    "[]",
+    '["_SP_PLAYER_"]',
     true,
     {
         WHF_curators_uids = parseSimpleArray _this;
