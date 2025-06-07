@@ -22,7 +22,7 @@ private _drone = [backpack _unit] call WHF_fnc_getBackpackDrone;
 if (_drone isEqualTo "") exitWith {};
 
 _unit playActionNow "PutDown";
-sleep 1.25;
+sleep ([0.75, 1.25] select (stance _unit isEqualTo "PRONE"));
 
 private _pos = _unit getRelPos [2, 0] vectorAdd [0, 0, getPosATL _unit # 2];
 _drone = createVehicle [_drone, _pos, [], 0, "CAN_COLLIDE"];
