@@ -72,6 +72,7 @@ for "_i" from 0 to 1 + random 4 do {
     private _cache = createVehicle ["Box_FIA_Ammo_F", [-random 500, -random 500, 500], [], 0, "CAN_COLLIDE"];
     _cache enableSimulationGlobal false;
     _cache setDir random 360;
+    _cache setVectorUp surfaceNormal _pos;
     _cache setPosATL _pos;
     [_cache] remoteExec ["WHF_fnc_msnSecureCachesAction", 0, _cache];
     _caches pushBack _cache;
