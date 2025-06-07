@@ -35,6 +35,7 @@ if (_index >= 0) exitWith {
         _uid
     ];
 
+    [_module] remoteExec ["WHF_fnc_initCuratorModule", _player];
     unassignCurator _module;
     unassignCurator _current;
     _player assignCurator _module;
@@ -58,6 +59,7 @@ diag_log text format [
     _uid
 ];
 
+[_module] remoteExec ["WHF_fnc_initCuratorModule", _player];
 unassignCurator getAssignedCuratorLogic _player;
 _player assignCurator _module;
 
