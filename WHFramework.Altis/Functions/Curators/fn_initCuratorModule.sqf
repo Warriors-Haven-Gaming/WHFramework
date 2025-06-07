@@ -14,7 +14,7 @@ Author:
 */
 params ["_module"];
 
-if (!isNil (_module getVariable "WHF_curators_init")) exitWith {};
+if (!isNil {_module getVariable "WHF_curators_init"}) exitWith {};
 _module setVariable ["WHF_curators_init", true];
 
 _module addEventHandler ["CuratorObjectPlaced", {
