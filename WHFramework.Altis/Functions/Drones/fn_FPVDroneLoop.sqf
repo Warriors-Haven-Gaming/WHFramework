@@ -53,6 +53,7 @@ private _lastLink = time - _linkDelay;
 
 driver _drone setBehaviour "CARELESS";
 driver _drone setSkill 1;
+_drone setUnitTrait ["camouflageCoef", 0.02];
 _drone flyInHeight [_searchAltitude, true];
 _drone doMove (_drone getRelPos [500, 0]);
 _drone enableWeaponDisassembly false;
