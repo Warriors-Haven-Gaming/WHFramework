@@ -32,7 +32,7 @@ params ["_center", "_radius", "_faction", "_parent", "_objects", "_terrain", "_g
 
 private _isPosSuitable = {
     params ["_pos"];
-    _pos isFlatEmpty [-1, -1, 1, 20] isNotEqualTo []
+    _pos isFlatEmpty [-1, -1, 0.5, 20] isNotEqualTo []
 };
 
 private _pos = [_center, [30, _radius], [0, _isPosSuitable]] call WHF_fnc_randomPos;
