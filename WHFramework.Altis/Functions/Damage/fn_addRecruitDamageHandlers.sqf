@@ -23,7 +23,7 @@ _recruit addEventHandler ["HandleDamage", {call {
         // if (isPlayer _instigator) exitWith {_damage};
 
         private _old = if (_hitIndex >= 0) then {_unit getHitIndex _hitIndex} else {damage _unit};
-        private _diff = [_damage - _old, WHF_playerDamageScale] call WHF_fnc_scaleDamage;
+        private _diff = [_damage - _old, WHF_recruitDamageScale] call WHF_fnc_scaleDamage;
         _old + _diff
     } min 0.95;
 
