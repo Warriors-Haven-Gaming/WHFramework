@@ -15,17 +15,18 @@ player addEventHandler ["HandleDamage", {call {
 
     _damage = call {
         if (isNull _instigator) exitWith {_damage};
-        if (!isDamageAllowed _unit) exitWith {_damage};
-        if (lifeState _unit isEqualTo "INCAPACITATED") exitWith {_damage};
         // if (isPlayer _instigator) exitWith {_damage};
 
         private _old = if (_hitIndex >= 0) then {_unit getHitIndex _hitIndex} else {damage _unit};
         private _diff = [_damage - _old, WHF_playerDamageScale] call WHF_fnc_scaleDamage;
         _old + _diff
-    };
+    } min 0.95;
+
+    if (!isDamageAllowed _unit) exitWith {_damage};
+    if (lifeState _unit isEqualTo "INCAPACITATED") exitWith {_damage};
 
     // Check for fatal wounds to body, head, or unknown part
-    if !(_hitIndex in [7, 2, -1]) exitWith {_damage min 0.95};
+    if !(_hitIndex in [7, 2, -1]) exitWith {_damage};
     if (_damage < 0.95) exitWith {_damage};
 
     _unit allowDamage false;
