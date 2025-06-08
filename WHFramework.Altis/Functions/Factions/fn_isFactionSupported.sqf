@@ -23,6 +23,7 @@ private _patches = switch (_faction) do {
     case "csat_pacific": {[]};
     case "aaf": {[]};
     case "ldf": {[]};
+    case "ws_tura": {["Characters_f_lxWS", "Vehicles_F_lxWS_Truck_02"]};
     case "rhsafrf": {["rhs_main"]};
     case "cup_afrf": {["CUP_Creatures_Military_Russia", "CUP_WheeledVehicles_UAZ"]};
     case "cup_afrf_modern": {["CUP_Creatures_Military_RussiaModern_Units", "CUP_WheeledVehicles_GAZTigr"]};
