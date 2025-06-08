@@ -72,8 +72,7 @@ if (!isClass (configFile >> "CfgPatches" >> "ace_medical")) then {
         params ["_unit", "", "_damage", "", "", "_hitIndex", "_instigator"];
         if (isNull _instigator) exitWith {};
         private _old = if (_hitIndex >= 0) then {_unit getHitIndex _hitIndex} else {damage _unit};
-        private _diff = _damage - _old;
-        private _diff = _diff * WHF_recruitDamageScale;
+        private _diff = [_damage - _old, WHF_recruitDamageScale] call WHF_fnc_scaleDamage;
         _old + _diff
     }}];
 
