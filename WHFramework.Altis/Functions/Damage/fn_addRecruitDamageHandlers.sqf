@@ -18,7 +18,7 @@ _recruit addEventHandler ["HandleDamage", {call {
     params ["_unit", "", "_damage", "_source", "", "_hitIndex", "_instigator"];
 
     _damage = call {
-        if (isNull _instigator) exitWith {_damage};
+        if (!isNull _source && {isNull _instigator}) exitWith {_damage};
         // if (isPlayer _instigator) exitWith {_damage};
 
         private _old = if (_hitIndex >= 0) then {_unit getHitIndex _hitIndex} else {damage _unit};
