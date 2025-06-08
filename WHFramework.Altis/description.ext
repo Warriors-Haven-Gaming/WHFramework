@@ -118,7 +118,8 @@ class CfgFunctions {
             class refreshCurators {};
         };
         class Damage {
-            class initDamageHandlers {};
+            class addPlayerDamageHandlers {};
+            class addRecruitDamageHandlers {};
             class scaleDamage {};
         };
         class Diary {
@@ -292,7 +293,6 @@ class CfgFunctions {
             class headshotEffects {};
             class incapLoop {};
             class incapUnit {};
-            class initIncapacitatedHandlers {};
             class initReviveCancelAction {};
             class reviveAction {};
             class reviveActionAdd {};

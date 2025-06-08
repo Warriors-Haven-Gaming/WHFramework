@@ -68,39 +68,7 @@ private _speakerJIPID = netId _unit + ":WHF_setSpeaker";
 
 [_unit] call WHF_fnc_initVehicleLockHandlers;
 if (!isClass (configFile >> "CfgPatches" >> "ace_medical")) then {
-    _unit addEventHandler ["HandleDamage", {call {
-        params ["_unit", "", "_damage", "", "", "_hitIndex", "_instigator"];
-        if (isNull _instigator) exitWith {};
-        private _old = if (_hitIndex >= 0) then {_unit getHitIndex _hitIndex} else {damage _unit};
-        private _diff = [_damage - _old, WHF_recruitDamageScale] call WHF_fnc_scaleDamage;
-        _old + _diff
-    }}];
-
-    _unit addEventHandler ["HandleDamage", {call {
-        params ["_unit", "", "_damage", "", "", "_hitIndex"];
-        if (!isDamageAllowed _unit) exitWith {};
-        if (lifeState _unit isEqualTo "INCAPACITATED") exitWith {};
-
-        // Check for fatal wounds to body, head, or unknown part
-        if !(_hitIndex in [7, 2, -1]) exitWith {_damage min 0.95};
-        if (_damage < 0.95) exitWith {};
-
-        private _canIncap = {
-            if (WHF_recruits_incap_noFAKs) exitWith {true};
-            if (WHF_recruits_incap_FAKs < 1) exitWith {false};
-            count ([items _unit] call WHF_fnc_filterFAKs) >= WHF_recruits_incap_FAKs
-        };
-        if !(call _canIncap) exitWith {};
-
-        _unit allowDamage false;
-        private _jipID = netId _unit + ":incapUnit";
-        [_unit, _instigator] remoteExec ["WHF_fnc_incapUnit", 0, _jipID];
-        if (WHF_recruits_incap_FAKs > 0) then {
-            [_unit, WHF_recruits_incap_FAKs] spawn WHF_fnc_selfReviveAuto;
-        };
-        0.95
-    }}];
-
+    [_unit] call WHF_fnc_addRecruitDamageHandlers;
     _unit setVariable ["WHF_reviveActionAuto_script", _unit spawn WHF_fnc_reviveActionAuto];
 
     _unit spawn {
