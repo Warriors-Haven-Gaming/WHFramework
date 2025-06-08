@@ -11,7 +11,6 @@ Author:
 if (isClass (configFile >> "CfgPatches" >> "ace_medical")) exitWith {};
 player addEventHandler ["HandleDamage", {call {
     params ["_unit", "", "_damage", "_source", "", "_hitIndex", "_instigator"];
-    if (isNull _instigator) then {_instigator = effectiveCommander _source};
 
     _damage = call {
         if (isNull _instigator) exitWith {_damage};
@@ -31,6 +30,7 @@ player addEventHandler ["HandleDamage", {call {
 
     _unit allowDamage false;
     private _jipID = netId _unit + ":incapUnit";
+    if (isNull _instigator) then {_instigator = effectiveCommander _source};
     if (_instigator isEqualTo _unit) then {_instigator = objNull};
     [_unit, _instigator] remoteExec ["WHF_fnc_incapUnit", 0, _jipID];
 
