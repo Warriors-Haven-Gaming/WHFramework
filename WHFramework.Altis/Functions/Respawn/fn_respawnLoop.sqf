@@ -103,6 +103,5 @@ while {true} do {
         _object = call _respawnVehicle;
         _record set ["_object", _object];
         _record set ["_respawnAt", -1];
-        sleep 0.125;
     } forEach WHF_respawn_records;
 };
