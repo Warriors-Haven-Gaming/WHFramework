@@ -15,4 +15,6 @@ Author:
 
 */
 params ["_diff", "_scale"];
+// For rounds like .408 and .50cal, heavily reduce their damage.
+if (_diff > 1 && {_diff < 12}) exitWith {_diff * _scale ^ 4};
 _diff * _scale
