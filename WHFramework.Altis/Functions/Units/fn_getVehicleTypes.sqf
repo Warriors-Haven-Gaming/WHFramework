@@ -81,9 +81,9 @@ private _resolvedTypes = _this apply {
         case ["ifv",      "ws_sfia"]: {["O_SFIA_APC_Tracked_02_cannon_lxWS","O_SFIA_APC_Tracked_02_30mm_lxWS"]};
         case ["mbt",      "ws_sfia"]: {["O_SFIA_MBT_02_cannon_lxWS"]};
         case ["aa",       "ws_sfia"]: {["O_SFIA_Truck_02_aa_lxWS","O_SFIA_APC_Tracked_02_AA_lxWS"]};
-        case ["standard", "ws_tura"]: {["O_Tura_Offroad_armor_lxWS","O_Tura_Offroad_armor_AT_lxWS","O_Tura_Offroad_armor_armed_lxWS","O_Tura_Pickup_01_RF","O_Tura_Pickup_01_fuel_RF","O_Tura_Pickup_01_hmg_RF","O_Tura_Pickup_01_Rocket_rf"]};
+        case ["standard", "ws_tura"]: {["O_Tura_Offroad_armor_lxWS","O_Tura_Offroad_armor_AT_lxWS","O_Tura_Offroad_armor_armed_lxWS"]};
         case ["supply",   "ws_tura"]: {["O_Truck_02_Ammo_F","O_Truck_02_fuel_F","O_Truck_02_medical_F","O_Truck_02_box_F"]};
-        case ["mrap",     "ws_tura"]: {["O_Tura_Offroad_armor_lxWS","O_Tura_Offroad_armor_AT_lxWS","O_Tura_Offroad_armor_armed_lxWS","O_Tura_Pickup_01_RF","O_Tura_Pickup_01_fuel_RF","O_Tura_Pickup_01_hmg_RF","O_Tura_Pickup_01_Rocket_rf"]};
+        case ["mrap",     "ws_tura"]: {["O_Tura_Offroad_armor_lxWS","O_Tura_Offroad_armor_AT_lxWS","O_Tura_Offroad_armor_armed_lxWS"]};
         case ["apc",      "ws_tura"]: {["O_APC_Wheeled_02_hmg_lxWS"]};
         case ["ifv",      "ws_tura"]: {["O_APC_Tracked_02_30mm_lxWS"]};
         case ["mbt",      "ws_tura"]: {["O_MBT_02_cannon_F"]};
