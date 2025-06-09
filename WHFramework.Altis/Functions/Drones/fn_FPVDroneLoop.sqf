@@ -24,7 +24,7 @@ _drone setVariable ["WHF_fpv_script", _thisScript];
 
 private _nextAltitude = {
     private _targetAltitude = _hidePos # 2 max 1;
-    linearConversion [30, 150, _distance2D, _targetAltitude, _searchAltitude, true]
+    linearConversion [30, 200, _distance2D, _targetAltitude, _searchAltitude, true]
 };
 
 // NOTE: WHF_fpv_targeted is shared between sides, so a drone from BLUFOR and OPFOR
