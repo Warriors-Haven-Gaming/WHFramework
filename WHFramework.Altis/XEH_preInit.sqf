@@ -392,6 +392,16 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 [
+    "WHF_factions_ws_una",
+    "CHECKBOX",
+    "STR_WHF_factions_ws_una",
+    "STR_WHF_settings_factions",
+    false,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_factions_cup_usa_woodland",
     "CHECKBOX",
     "STR_WHF_factions_cup_usa_woodland",

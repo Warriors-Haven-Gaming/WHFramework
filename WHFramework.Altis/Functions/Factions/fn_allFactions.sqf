@@ -31,6 +31,7 @@ Author:
     "ef_mjtf_desert",
     "ef_mjtf_woodland",
     "ws_ion",
+    "ws_una",
     "cup_usa_woodland",
     "cup_usmc_woodland"
 ]

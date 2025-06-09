@@ -164,6 +164,13 @@ private _resolvedTypes = _this apply {
         case ["ifv",      "ws_ion"]: {["B_D_APC_Wheeled_01_cannon_lxWS","B_D_APC_Wheeled_01_atgm_lxWS"]};
         case ["mbt",      "ws_ion"]: {["B_D_MBT_01_cannon_lxWS","B_D_MBT_01_TUSK_lxWS"]};
         case ["aa",       "ws_ion"]: {["B_D_APC_Tracked_01_aa_lxWS"]};
+        case ["standard", "ws_una"]: {["B_UN_Offroad_lxWS","B_UN_Offroad_Armor_lxWS"]};
+        case ["supply",   "ws_una"]: {["B_UN_Truck_01_ammo_lxWS","B_UN_Truck_01_fuel_lxWS","B_UN_Truck_01_medical_lxWS","B_UN_Truck_01_Repair_lxWS"]};
+        case ["mrap",     "ws_una"]: {["B_D_MRAP_01_lxWS","B_D_MRAP_01_gmg_lxWS","B_D_MRAP_01_hmg_lxWS"]};
+        case ["apc",      "ws_una"]: {["B_UN_APC_Wheeled_01_command_lxWS","B_UNA_APC_Wheeled_02_hmg_lxWS"]};
+        case ["ifv",      "ws_una"]: {["B_D_APC_Wheeled_01_cannon_lxWS","B_D_APC_Wheeled_01_atgm_lxWS"]};
+        case ["mbt",      "ws_una"]: {["B_MBT_03_cannon_lxWS"]};
+        case ["aa",       "ws_una"]: {["B_D_APC_Tracked_01_aa_lxWS"]};
         case ["standard", "cup_usa_woodland"]: {["CUP_B_nM1025_M2_USA_WDL","CUP_B_nM1025_M240_USA_WDL","CUP_B_nM1025_Mk19_USA_WDL","CUP_B_nM1025_Unarmed_USA_WDL","CUP_B_nM1025_SOV_M2_USA_WDL","CUP_B_nM1025_SOV_Mk19_USA_WDL","CUP_B_nM1036_TOW_USA_WDL","CUP_B_nM1038_4s_USA_WDL","CUP_B_nM1151_ogpk_m2_USA_WDL","CUP_B_nM1151_ogpk_m240_DF_USA_WDL","CUP_B_nM1151_ogpk_mk19_USA_WDL","CUP_B_nM1151_Unarmed_USA_WDL"]};
         case ["supply",   "cup_usa_woodland"]: {["CUP_B_MTVR_Ammo_USMC","CUP_B_MTVR_Refuel_USMC","CUP_B_MTVR_Repair_USMC","CUP_B_nM997_USMC_WDL"]};
         case ["mrap",     "cup_usa_woodland"]: {["CUP_B_RG31_Mk19_OD_USA","CUP_B_RG31E_M2_OD_USA","CUP_B_RG31_M2_OD_USA"]};
