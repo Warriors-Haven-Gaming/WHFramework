@@ -93,7 +93,10 @@ while {alive _drone} do {
 
     if (!local _drone) then {continue};
     if (!alive _charge) exitWith {_drone setDamage [1, false]};
-    if (_isPiloted && {!alive _pilot}) exitWith {_drone setDamage [1, false]};
+    if (_isPiloted && {!alive _pilot}) exitWith {
+        sleep random 3;
+        _drone setDamage [1, false];
+    };
 
     if (_time >= _lastLink + _linkDelay) then {
         private _targets = _pilot targets [true];
