@@ -2,7 +2,7 @@
 Function: WHF_fnc_initJTACAction
 
 Description:
-    Adds an action to unflip vehicles.
+    Add JTAC actions to the player.
     Function must be executed on client.
 
 Author:
