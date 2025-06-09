@@ -37,7 +37,7 @@ private _reinforceUnits = {
         ],
         20 + floor random 41,
         _center,
-        _radius,
+        [_radius, _radius * 2],
         ["hidden"]
     ] call WHF_fnc_spawnUnitGroups;
 
