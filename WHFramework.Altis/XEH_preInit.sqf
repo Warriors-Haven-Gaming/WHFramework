@@ -262,6 +262,16 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 [
+    "WHF_factions_ws_sfia",
+    "CHECKBOX",
+    "STR_WHF_factions_ws_sfia",
+    "STR_WHF_settings_factions",
+    true,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_factions_ws_tura",
     "CHECKBOX",
     "STR_WHF_factions_ws_tura",
