@@ -161,13 +161,19 @@ private _allCachesSecured = {
     } < 0
 };
 
+private _playersInArea = {
+    private _players = allPlayers select {side group _x isEqualTo blufor};
+    [_players, _reinforceArea] call WHF_fnc_anyInArea
+};
+
 private _reinforced = false;
 while {true} do {
     sleep 3;
     if (call _allCachesSecured) exitWith {
         [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
     };
-    if (!_reinforced && {[units blufor, _reinforceArea] call WHF_fnc_anyInArea}) then {
+
+    if (!_reinforced && _playersInArea) then {
         [_center, _radius, _factionA, _factionB, _groups, _vehicles]
             call WHF_fnc_msnSecureCachesReinforcements;
         _reinforced = true;
