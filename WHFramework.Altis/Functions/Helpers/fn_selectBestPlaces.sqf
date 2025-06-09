@@ -46,7 +46,7 @@ if (isNil "_cache") then {
 };
 
 _cache params ["_results", "_index"];
-if (_index + _sourcesCount >= count _cache) then {_index = 0};
+if (_index + _sourcesCount >= count _results) then {_index = 0};
 _cache set [1, _index + _sourcesCount];
 
 +(_results select [_index, _sourcesCount])
