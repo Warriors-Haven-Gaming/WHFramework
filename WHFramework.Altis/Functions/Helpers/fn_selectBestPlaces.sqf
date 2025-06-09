@@ -18,8 +18,9 @@ Parameters:
     String expression:
         The simple expression to evaluate.
     Number sourcesCount:
-        (Optional, default 50)
+        (Optional, default -1)
         The number of sources to return.
+        If negative, a number between 30 to 50 is used.
         May return fewer sources if larger than cache.
 
 Returns:
@@ -29,7 +30,8 @@ Author:
     thegamecracks
 
 */
-params ["_expression", ["_sourcesCount", 50]];
+params ["_expression", ["_sourcesCount", -1]];
+if (_sourcesCount < 0) then {_sourcesCount = 30 + floor random 21};
 if (isNil "WHF_selectBestPlaces_cache") then {WHF_selectBestPlaces_cache = createHashMap};
 
 private _cache = WHF_selectBestPlaces_cache get _expression;
