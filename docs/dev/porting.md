@@ -17,7 +17,7 @@ for any given map.
   - [11. Adding vehicle spawners](#11-adding-vehicle-spawners)
   - [12. (Optional) Setting default loadouts](#12-optional-setting-default-loadouts)
   - [13. (Optional) Adding time skip actions](#13-optional-adding-time-skip-actions)
-  - [13. Other tips](#13-other-tips)
+  - [14. Other tips](#14-other-tips)
 
 ## 1. Creating the scenario
 
@@ -223,7 +223,7 @@ As of now, these actions do not provide a system for players to vote
 on time skip requests. We do **NOT** recommend adding this action in
 public servers.
 
-## 13. Other tips
+## 14. Other tips
 
 When building your scenario, here are a few more tips we recommend following
 to make sure the base works as expected:
