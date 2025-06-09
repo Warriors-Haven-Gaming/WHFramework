@@ -30,6 +30,7 @@ Author:
     "nato_pacific",
     "ef_mjtf_desert",
     "ef_mjtf_woodland",
+    "ws_ion",
     "cup_usa_woodland",
     "cup_usmc_woodland"
 ]

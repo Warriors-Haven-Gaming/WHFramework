@@ -35,6 +35,7 @@ private _patches = switch (_faction) do {
     case "nato_pacific": {[]};
     case "ef_mjtf_desert": {["EF_Marines", "EF_Hunter"]};
     case "ef_mjtf_woodland": {["EF_Marines", "EF_Hunter"]};
+    case "ws_ion": {["Characters_f_lxWS", "Vehicles_F_lxWS"]};
     case "cup_usa_woodland": {["CUP_Creatures_Military_USArmy","CUP_WheeledVehicles_NewM1097"]};
     case "cup_usmc_woodland": {["CUP_Creatures_Military_USMC","CUP_WheeledVehicles_NewM1097"]};
     default {-1};
