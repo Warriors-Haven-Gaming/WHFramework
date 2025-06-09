@@ -25,7 +25,7 @@ while {true} do {
             && {isNull objectParent _unit
             && {!captive _unit
             && {eyePos _unit select 2 >= 0
-            && {[backpack _unit] call WHF_fnc_getBackpackDrone isNotEqualTo ""
+            && {[_unit] call WHF_fnc_canAssembleFPVDrone
             && {
                 _unit targets [true, _detectDistance, [], 30]
                 findIf {[side group _unit, side group _x] call BIS_fnc_sideIsEnemy} >= 0
