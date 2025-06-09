@@ -30,10 +30,9 @@ private _clearJTACTask = {
     // we'll loop through all JTAC targets to ensure the object is removed.
     if (isNil "WHF_jtac_targets") then {WHF_jtac_targets = createHashMap};
     {
-        private _side = _x;
-        private _targets = WHF_jtac_targets get _side;
+        private _targets = _y;
         _targets deleteAt (_targets find _target);
-    } forEach keys WHF_jtac_targets;
+    } forEach WHF_jtac_targets;
 
     private _tasks = _target getVariable "WHF_jtac_tasks";
     if (isNil "_tasks") exitWith {};

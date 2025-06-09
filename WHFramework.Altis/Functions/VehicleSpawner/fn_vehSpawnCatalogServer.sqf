@@ -45,7 +45,7 @@ private _isVehicleAllowed = {
 };
 
 {
-    private _category = WHF_vehSpawnCatalog_server get _x;
+    private _category = _y;
     private _vehicles = _category get "_vehicles";
     {
         private _y = _vehicles get _x;
@@ -53,7 +53,7 @@ private _isVehicleAllowed = {
             _vehicles deleteAt _x;
         };
     } forEach keys _vehicles;
-} forEach keys WHF_vehSpawnCatalog_server;
+} forEach WHF_vehSpawnCatalog_server;
 
 WHF_vehSpawnCatalog_server = [WHF_vehSpawnCatalog_server] call WHF_fnc_vehSpawnCatalogCleanup;
 WHF_vehSpawnCatalog_server = compileFinal WHF_vehSpawnCatalog_server;

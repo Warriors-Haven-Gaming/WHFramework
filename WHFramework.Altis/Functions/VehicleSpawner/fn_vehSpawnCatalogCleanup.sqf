@@ -19,12 +19,12 @@ params ["_catalog"];
 
 _catalog = +_catalog;
 {
-    private _category = _catalog get _x;
+    private _category = _y;
     private _vehicles = _category get "_vehicles";
     {
         if (!isClass (configFile >> "CfgVehicles" >> _x)) then {
             _vehicles deleteAt _x;
         };
     } forEach keys _vehicles;
-} forEach keys _catalog;
+} forEach _catalog;
 _catalog
