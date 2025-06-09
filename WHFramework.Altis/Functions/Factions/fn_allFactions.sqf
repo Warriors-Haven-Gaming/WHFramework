@@ -28,6 +28,8 @@ Author:
     "cup_tk_ins",
     "nato",
     "nato_pacific",
+    "ef_mjtf_desert",
+    "ef_mjtf_woodland",
     "cup_usa_woodland",
     "cup_usmc_woodland"
 ]

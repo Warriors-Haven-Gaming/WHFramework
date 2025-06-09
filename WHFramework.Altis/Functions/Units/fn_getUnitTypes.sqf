@@ -57,6 +57,8 @@ private _resolvedTypes = _this apply {
         case ["standard", "cup_tk_ins"]: {["CUP_O_TK_INS_Soldier_AA","CUP_O_TK_INS_Soldier_AR","CUP_O_TK_INS_Guerilla_Medic","CUP_O_TK_INS_Soldier_MG","CUP_O_TK_INS_Bomber","CUP_O_TK_INS_Mechanic","CUP_O_TK_INS_Soldier_GL","CUP_O_TK_INS_Soldier","CUP_O_TK_INS_Soldier_FNFAL","CUP_O_TK_INS_Soldier_Enfield","CUP_O_TK_INS_Soldier_AAT","CUP_O_TK_INS_Soldier_AT","CUP_O_TK_INS_Sniper","CUP_O_TK_INS_Soldier_TL","O_soldier_UAV_F"]};
         case ["standard", "nato"]: {["B_Soldier_A_F","B_soldier_AAA_F","B_soldier_AAT_F","B_soldier_AR_F","B_medic_F","B_engineer_F","B_soldier_exp_F","B_Soldier_GL_F","B_HeavyGunner_F","B_soldier_M_F","B_soldier_mine_F","B_soldier_AA_F","B_soldier_AT_F","B_soldier_repair_F","B_Soldier_F","B_soldier_LAT_F","B_Soldier_lite_F","B_soldier_LAT2_F","B_Sharpshooter_F","B_Soldier_SL_F","B_Soldier_TL_F","B_soldier_UAV_F"]};
         case ["standard", "nato_pacific"]: {["B_T_Soldier_A_F","B_T_Soldier_AAA_F","B_T_Soldier_AAT_F","B_T_soldier_AR_F","B_T_medic_F","B_T_engineer_F","B_T_soldier_exp_F","B_T_Soldier_GL_F","B_T_soldier_M_F","B_T_soldier_mine_F","B_T_Soldier_AA_F","B_T_Soldier_AT_F","B_T_soldier_repair_F","B_T_Soldier_F","B_T_Soldier_LAT_F","B_T_Soldier_LAT2_F","B_T_soldier_SL_F","B_T_soldier_TL_F","B_T_soldier_UAV_F"]};
+        case ["standard", "ef_mjtf_desert"]: {["EF_B_Marine_AAA_Des","EF_B_Marine_AAT_Des","EF_B_Marine_AR_Des","EF_B_Marine_Medic_Des","EF_B_Marine_Eng_Des","EF_B_Marine_Exp_Des","EF_B_Marine_GL_Des","EF_B_Marine_JTAC_Des","EF_B_Marine_Mark_Des","EF_B_Marine_AA_Des","EF_B_Marine_AT_Des","EF_B_Marine_Repair_Des","EF_B_Marine_R_Des","EF_B_Marine_LAT_Des","EF_B_Marine_LAT2_Des","EF_B_Marine_SL_Des","EF_B_Marine_TL_Des","EF_B_Marine_UAV_Des"]};
+        case ["standard", "ef_mjtf_woodland"]: {["EF_B_Marine_AAA_Wdl","EF_B_Marine_AAT_Wdl","EF_B_Marine_AR_Wdl","EF_B_Marine_Medic_Wdl","EF_B_Marine_Eng_Wdl","EF_B_Marine_Exp_Wdl","EF_B_Marine_GL_Wdl","EF_B_Marine_JTAC_Wdl","EF_B_Marine_Mark_Wdl","EF_B_Marine_AA_Wdl","EF_B_Marine_AT_Wdl","EF_B_Marine_Repair_Wdl","EF_B_Marine_R_Wdl","EF_B_Marine_LAT_Wdl","EF_B_Marine_LAT2_Wdl","EF_B_Marine_SL_Wdl","EF_B_Marine_TL_Wdl","EF_B_Marine_UAV_Wdl"]};
         case ["standard", "cup_usa_woodland"]: {["CUP_B_US_Soldier_AAT_OEFCP","CUP_B_US_Soldier_AHAT_OEFCP","CUP_B_US_Soldier_AT_OEFCP","CUP_B_US_Soldier_HAT_OEFCP","CUP_B_US_Soldier_AR_OEFCP","CUP_B_US_Soldier_Engineer_OEFCP","CUP_B_US_Soldier_Engineer_EOD_OEFCP","CUP_B_US_Soldier_GL_OEFCP","CUP_B_US_Soldier_MG_OEFCP","CUP_B_US_Soldier_Marksman_OEFCP","CUP_B_US_Soldier_Marksman_EBR_OEFCP","CUP_B_US_Medic_OEFCP","CUP_B_US_Soldier_AA_OEFCP","CUP_B_US_Soldier_OEFCP","CUP_B_US_Soldier_ACOG_OEFCP","CUP_B_US_Soldier_LAT_OEFCP","CUP_B_US_Soldier_Light_OEFCP","CUP_B_US_Soldier_Engineer_Sapper_OEFCP","CUP_B_US_Soldier_SL_OEFCP","CUP_B_US_Soldier_TL_OEFCP","CUP_B_US_Soldier_UAV_OEFCP","B_soldier_UAV_F"]};
         case ["standard", "cup_usmc_woodland"]: {["CUP_B_USMC_Soldier_HAT","CUP_B_USMC_Soldier_AT","CUP_B_USMC_Soldier_AR","CUP_B_USMC_Medic","CUP_B_USMC_Engineer","CUP_B_USMC_Soldier_GL","CUP_B_USMC_Soldier_MG","CUP_B_USMC_Soldier_Marksman","CUP_B_USMC_Soldier_AA","CUP_B_USMC_Soldier","CUP_B_USMC_SpecOps_SD","CUP_B_USMC_Soldier_LAT","CUP_B_USMC_SpecOps","CUP_B_USMC_Soldier_SL","CUP_B_USMC_Soldier_TL","B_T_soldier_UAV_F"]};
         case ["officer", "base"]: {["I_G_Soldier_SL_F"]};
@@ -74,6 +76,8 @@ private _resolvedTypes = _this apply {
         case ["officer", "cup_tk_ins"]: {["CUP_O_TK_INS_Commander"]};
         case ["officer", "nato"]: {["B_officer_F"]};
         case ["officer", "nato_pacific"]: {["B_T_officer_F"]};
+        case ["officer", "ef_mjtf_desert"]: {["EF_B_Marine_Officer_Des"]};
+        case ["officer", "ef_mjtf_woodland"]: {["EF_B_Marine_Officer_Wdl"]};
         case ["officer", "cup_usa_woodland"]: {["CUP_B_US_Officer_OEFCP"]};
         case ["officer", "cup_usmc_woodland"]: {["CUP_B_USMC_Officer"]};
         case ["crew", "base"]: {["I_C_Soldier_Para_7_F","I_C_Soldier_Para_2_F","I_C_Soldier_Para_1_F"]};
@@ -91,6 +95,8 @@ private _resolvedTypes = _this apply {
         case ["crew", "cup_tk_ins"]: {["CUP_O_TK_INS_Soldier","CUP_O_TK_INS_Soldier_FNFAL","CUP_O_TK_INS_Soldier_Enfield"]};
         case ["crew", "nato"]: {["B_crew_F"]};
         case ["crew", "nato_pacific"]: {["B_T_Crew_F"]};
+        case ["crew", "ef_mjtf_desert"]: {["EF_B_Marine_Crew_Des"]};
+        case ["crew", "ef_mjtf_woodland"]: {["EF_B_Marine_Crew_Wdl"]};
         case ["crew", "cup_usa_woodland"]: {["CUP_B_US_Crew_OEFCP"]};
         case ["crew", "cup_usmc_woodland"]: {["CUP_B_USMC_Crew"]};
         case ["diver", "base"]: {["O_diver_F","O_diver_exp_F","O_diver_TL_F"]};
@@ -108,6 +114,8 @@ private _resolvedTypes = _this apply {
         case ["diver", "cup_tk_ins"]: {["O_diver_F","O_diver_exp_F","O_diver_TL_F"]};
         case ["diver", "nato"]: {["O_diver_F","O_diver_exp_F","O_diver_TL_F"]};
         case ["diver", "nato_pacific"]: {["O_diver_F","O_diver_exp_F","O_diver_TL_F"]};
+        case ["diver", "ef_mjtf_desert"]: {["EF_B_Marine_Diver_Des","EF_B_Marine_Diver_Eng_Des","EF_B_Marine_Diver_Pointman_Des","EF_B_Marine_Diver_Scout_Des","EF_B_Marine_Diver_TL_Des"]};
+        case ["diver", "ef_mjtf_woodland"]: {["EF_B_Marine_Diver_Wdl","EF_B_Marine_Diver_Eng_Wdl","EF_B_Marine_Diver_Pointman_Wdl","EF_B_Marine_Diver_Scout_Wdl","EF_B_Marine_Diver_TL_Wdl"]};
         case ["diver", "cup_usa_woodland"]: {["O_diver_F","O_diver_exp_F","O_diver_TL_F"]};
         case ["diver", "cup_usmc_woodland"]: {["O_diver_F","O_diver_exp_F","O_diver_TL_F"]};
         case ["recon", "base"]: {["I_C_Soldier_Bandit_7_F","I_C_Soldier_Bandit_3_F","I_C_Soldier_Bandit_2_F","I_C_Soldier_Bandit_5_F","I_C_Soldier_Bandit_6_F","I_C_Soldier_Bandit_1_F","I_C_Soldier_Bandit_8_F","I_C_Soldier_Bandit_4_F"]};
@@ -125,6 +133,8 @@ private _resolvedTypes = _this apply {
         case ["recon", "cup_tk_ins"]: {["CUP_O_TK_INS_Soldier_AR","CUP_O_TK_INS_Guerilla_Medic","CUP_O_TK_INS_Soldier","CUP_O_TK_INS_Soldier_FNFAL","CUP_O_TK_INS_Soldier_Enfield","CUP_O_TK_INS_Soldier_AT","CUP_O_TK_INS_Sniper"]};
         case ["recon", "nato"]: {["B_recon_exp_F","B_recon_JTAC_F","B_recon_M_F","B_recon_medic_F","B_recon_F","B_recon_LAT_F","B_Recon_Sharpshooter_F","B_recon_TL_F"]};
         case ["recon", "nato_pacific"]: {["B_T_Recon_Exp_F","B_T_Recon_JTAC_F","B_T_Recon_M_F","B_T_Recon_Medic_F","B_T_Recon_F","B_T_Recon_LAT_F","B_T_Recon_TL_F"]};
+        case ["recon", "ef_mjtf_desert"]: {["EF_B_Marine_Recon_Exp_Des","EF_B_Marine_Recon_JTAC_Des","EF_B_Marine_Recon_M_Des","EF_B_Marine_Recon_Medic_Des","EF_B_Marine_Recon_Des","EF_B_Marine_Recon_LAT_Des","EF_B_Marine_Recon_TL_Des"]};
+        case ["recon", "ef_mjtf_woodland"]: {["EF_B_Marine_Recon_Exp_Wdl","EF_B_Marine_Recon_JTAC_Wdl","EF_B_Marine_Recon_M_Wdl","EF_B_Marine_Recon_Medic_Wdl","EF_B_Marine_Recon_Wdl","EF_B_Marine_Recon_LAT_Wdl","EF_B_Marine_Recon_TL_Wdl"]};
         case ["recon", "cup_usa_woodland"]: {["CUP_B_US_Soldier_AAT_UCP","CUP_B_US_Soldier_AHAT_UCP","CUP_B_US_Soldier_AAR_UCP","CUP_B_US_Soldier_AMG_UCP","CUP_B_US_Soldier_AT_UCP","CUP_B_US_Soldier_HAT_UCP","CUP_B_US_Soldier_AR_UCP","CUP_B_US_Soldier_Engineer_UCP","CUP_B_US_Soldier_Engineer_EOD_UCP","CUP_B_US_Soldier_GL_UCP","CUP_B_US_Soldier_MG_UCP","CUP_B_US_Soldier_Marksman_UCP","CUP_B_US_Soldier_Marksman_EBR_UCP","CUP_B_US_Medic_UCP","CUP_B_US_Soldier_AA_UCP","CUP_B_US_Soldier_UCP","CUP_B_US_Soldier_ACOG_UCP","CUP_B_US_Soldier_LAT_UCP","CUP_B_US_Soldier_Backpack_UCP","CUP_B_US_Soldier_Engineer_Sapper_UCP","CUP_B_US_Soldier_SL_UCP","CUP_B_US_Soldier_TL_UCP","CUP_B_US_Soldier_UAV_UCP"]};
         case ["recon", "cup_usmc_woodland"]: {["CUP_B_FR_Soldier_Assault_GL","CUP_B_FR_Soldier_Assault","CUP_B_FR_Medic","CUP_B_FR_Soldier_Exp","CUP_B_FR_Soldier_Operator","CUP_B_FR_Soldier_GL","CUP_B_FR_Soldier_AR","CUP_B_FR_Soldier_Marksman","CUP_B_FR_Saboteur","CUP_B_FR_Soldier_TL","CUP_B_FR_Soldier_UAV"]};
         case ["elite", "base"]: {["I_G_Soldier_A_F","I_G_Soldier_AR_F","I_G_medic_F","I_G_engineer_F","I_G_Soldier_exp_F","I_G_Soldier_GL_F","I_G_Soldier_M_F","I_G_Soldier_F","I_G_Soldier_LAT_F","I_G_Soldier_lite_F","I_G_Soldier_LAT2_F","I_G_Sharpshooter_F","I_G_Soldier_SL_F","I_G_Soldier_TL_F"]};
@@ -142,6 +152,8 @@ private _resolvedTypes = _this apply {
         case ["elite", "cup_tk_ins"]: {["CUP_O_TK_INS_Soldier_FNFAL","CUP_O_TK_INS_Sniper","CUP_O_TK_INS_Soldier_Enfield"]};
         case ["elite", "nato"]: {["B_Patrol_Soldier_A_F","B_Patrol_Soldier_AR_F","B_Patrol_Medic_F","B_Patrol_Engineer_F","B_Patrol_HeavyGunner_F","B_Patrol_Soldier_MG_F","B_Patrol_Soldier_M_F","B_Patrol_Soldier_AT_F","B_Patrol_Soldier_TL_F","B_Patrol_Soldier_UAV_F"]};
         case ["elite", "nato_pacific"]: {["B_W_Soldier_A_F","B_W_Soldier_AAR_F","B_W_Soldier_AAA_F","B_W_Soldier_AAT_F","B_W_soldier_AR_F","B_W_Soldier_CBRN_F","B_W_medic_F","B_W_engineer_F","B_W_soldier_exp_F","B_W_Soldier_GL_F","B_W_soldier_M_F","B_W_soldier_mine_F","B_W_Soldier_AA_F","B_W_Soldier_AT_F","B_W_RadioOperator_F","B_W_soldier_repair_F","B_W_Soldier_F","B_W_Soldier_LAT_F","B_W_Soldier_LAT2_F","B_W_soldier_SL_F","B_W_soldier_TL_F","B_W_soldier_UAV_F"]};
+        case ["elite", "ef_mjtf_desert"]: {["EF_B_Marine_Diver_Des","EF_B_Marine_Diver_Eng_Des","EF_B_Marine_Diver_Pointman_Des","EF_B_Marine_Diver_Scout_Des","EF_B_Marine_Diver_TL_Des"]};
+        case ["elite", "ef_mjtf_woodland"]: {["EF_B_Marine_Diver_Wdl","EF_B_Marine_Diver_Eng_Wdl","EF_B_Marine_Diver_Pointman_Wdl","EF_B_Marine_Diver_Scout_Wdl","EF_B_Marine_Diver_TL_Wdl"]};
         case ["elite", "cup_usa_woodland"]: {["CUP_B_US_SpecOps_AR","CUP_B_US_SpecOps_JTAC","CUP_B_US_SpecOps_MG","CUP_B_US_SpecOps_M","CUP_B_US_SpecOps_Medic","CUP_B_US_SpecOps","CUP_B_US_SpecOps_Assault","CUP_B_US_SpecOps_Night","CUP_B_US_SpecOps_SD","CUP_B_US_SpecOps_TL","CUP_B_US_SpecOps_UAV"]};
         case ["elite", "cup_usmc_woodland"]: {["CUP_B_USMC_MARSOC_AR_DA","CUP_B_USMC_MARSOC_AR","CUP_B_USMC_MARSOC_CC","CUP_B_USMC_MARSOC_CC_DA","CUP_B_USMC_MARSOC_EL","CUP_B_USMC_MARSOC_EL_DA","CUP_B_USMC_MARSOC_Marksman","CUP_B_USMC_MARSOC_Marksman_DA","CUP_B_USMC_MARSOC_OC","CUP_B_USMC_MARSOC_OC_DA","CUP_B_USMC_MARSOC","CUP_B_USMC_MARSOC_DA","CUP_B_USMC_MARSOC_TC","CUP_B_USMC_MARSOC_TC_DA","CUP_B_USMC_MARSOC_TL","CUP_B_USMC_MARSOC_TL_DA","CUP_B_USMC_MARSOC_Medic","CUP_B_USMC_MARSOC_Medic_DA"]};
         case ["sniper", "base"]: {["I_L_Hunter_F","I_L_Looter_Rifle_F"]};
@@ -159,6 +171,8 @@ private _resolvedTypes = _this apply {
         case ["sniper", "cup_tk_ins"]: {["CUP_O_TK_INS_Sniper"]};
         case ["sniper", "nato"]: {["B_sniper_F","B_ghillie_ard_F","B_ghillie_lsh_F","B_ghillie_sard_F"]};
         case ["sniper", "nato_pacific"]: {["B_ghillie_lsh_F","B_ghillie_sard_F","B_T_Sniper_F","B_T_ghillie_tna_F"]};
+        case ["sniper", "ef_mjtf_desert"]: {["B_sniper_F","B_ghillie_ard_F","B_ghillie_lsh_F","B_ghillie_sard_F"]};
+        case ["sniper", "ef_mjtf_woodland"]: {["B_ghillie_lsh_F","B_ghillie_sard_F","B_T_Sniper_F","B_T_ghillie_tna_F"]};
         case ["sniper", "cup_usa_woodland"]: {["CUP_B_US_Sniper_OEFCP","CUP_B_US_Sniper_M107_OEFCP","CUP_B_US_Sniper_M110_TWS_OCP"]};
         case ["sniper", "cup_usmc_woodland"]: {["CUP_B_USMC_Sniper_M40A3_des","CUP_B_USMC_Sniper_M107_des"]};
         case ["pilot_heli", "base"]: {["I_C_Pilot_F","I_C_Helipilot_F"]};
@@ -176,6 +190,8 @@ private _resolvedTypes = _this apply {
         case ["pilot_heli", "cup_tk_ins"]: {["CUP_O_TK_Pilot"]};
         case ["pilot_heli", "nato"]: {["B_helicrew_F","B_Helipilot_F"]};
         case ["pilot_heli", "nato_pacific"]: {["B_T_Helicrew_F","B_T_Helipilot_F"]};
+        case ["pilot_heli", "ef_mjtf_desert"]: {["B_helicrew_F","B_Helipilot_F"]};
+        case ["pilot_heli", "ef_mjtf_woodland"]: {["B_T_Helicrew_F","B_T_Helipilot_F"]};
         case ["pilot_heli", "cup_usa_woodland"]: {["CUP_B_US_Pilot"]};
         case ["pilot_heli", "cup_usmc_woodland"]: {["CUP_B_USMC_Pilot"]};
         case ["pilot_jet", "base"]: {["I_C_Pilot_F","I_C_Helipilot_F"]};
@@ -193,6 +209,8 @@ private _resolvedTypes = _this apply {
         case ["pilot_jet", "cup_tk_ins"]: {["CUP_O_TK_Pilot"]};
         case ["pilot_jet", "nato"]: {["B_Pilot_F"]};
         case ["pilot_jet", "nato_pacific"]: {["B_T_Pilot_F"]};
+        case ["pilot_jet", "ef_mjtf_desert"]: {["B_Pilot_F"]};
+        case ["pilot_jet", "ef_mjtf_woodland"]: {["B_T_Pilot_F"]};
         case ["pilot_jet", "cup_usa_woodland"]: {["CUP_B_US_Pilot"]};
         case ["pilot_jet", "cup_usmc_woodland"]: {["CUP_B_USMC_Pilot"]};
         default {

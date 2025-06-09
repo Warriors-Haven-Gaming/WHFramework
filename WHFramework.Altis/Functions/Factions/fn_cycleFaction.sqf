@@ -27,6 +27,8 @@ private _factions = [
     ["cup_tk_ins", WHF_factions_cup_tk_ins],
     ["nato", WHF_factions_nato],
     ["nato_pacific", WHF_factions_nato_pacific],
+    ["ef_mjtf_desert", WHF_factions_ef_mjtf_desert],
+    ["ef_mjtf_woodland", WHF_factions_ef_mjtf_woodland],
     ["cup_usa_woodland", WHF_factions_cup_usa_woodland],
     ["cup_usmc_woodland", WHF_factions_cup_usmc_woodland]
 ] select {_x # 1} apply {_x # 0};
