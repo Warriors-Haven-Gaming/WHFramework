@@ -83,6 +83,7 @@ _drone addEventHandler ["Killed", {
     triggerAmmo _charge;
 }];
 
+_drone flyInHeightASL [0, 0, 0];
 _drone flyInHeight [_searchAltitude, true];
 [_drone getRelPos [500, 0]] call _doMove;
 
