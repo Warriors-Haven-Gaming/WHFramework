@@ -26,20 +26,10 @@ Author:
 // APS
 [
     "WHF_aps_enabled",
-    "CHECKBOX",
+    "LIST",
     ["STR_WHF_settings_aps_enabled", "STR_WHF_settings_aps_enabled_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_aps"],
-    true,
-    true,
-    {},
-    false
-] call WHF_fnc_addSetting;
-[
-    "WHF_aps_enabled_ai",
-    "CHECKBOX",
-    ["STR_WHF_settings_aps_enabled_ai", "STR_WHF_settings_aps_enabled_ai_tooltip"],
-    ["STR_WHF_settings", "STR_WHF_settings_aps"],
-    true,
+    [[0, 1, 2, 3], ["STR_A3_Disabled", "STR_WHF_settings_aps_enabled_players", "STR_WHF_settings_aps_enabled_recruits", "STR_WHF_settings_aps_enabled_everyone"], 3],
     true,
     {},
     false
