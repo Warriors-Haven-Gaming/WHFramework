@@ -16,7 +16,7 @@ Parameters:
         The minimum distance allowed from a player.
     Number maxPlayerDistance:
         (Optional, default viewDistance)
-        The distance where visibility checks will be skipped.
+        The maximum distance where visibility will be checked.
 
 Returns:
     Array
@@ -50,7 +50,7 @@ private _condition = {
     {
         private _eyePos = eyePos _x;
         private _distanceSqr = _eyePos distanceSqr _posASL;
-        if (_distanceSqr < _minPlayerDistanceSqr) then {continueWith false};
+        if (_distanceSqr < _minPlayerDistanceSqr) exitWith {false};
         if (_distanceSqr > _maxPlayerDistanceSqr) then {continueWith true};
 
         private _surfaces = lineIntersectsSurfaces [_eyePos, _posASL, _x];
