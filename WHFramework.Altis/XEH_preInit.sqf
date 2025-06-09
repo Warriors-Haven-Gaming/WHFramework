@@ -29,7 +29,7 @@ Author:
     "LIST",
     ["STR_WHF_settings_aps_enabled", "STR_WHF_settings_aps_enabled_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_aps"],
-    [[0, 1, 2, 3], ["STR_A3_Disabled", "STR_WHF_settings_aps_enabled_players", "STR_WHF_settings_aps_enabled_recruits", "STR_WHF_settings_aps_enabled_everyone"], 3],
+    [[0, 1, 2, 3], ["STR_A3_Disabled", "STR_WHF_settings_aps_enabled_players", "STR_WHF_settings_aps_enabled_recruits", "STR_WHF_settings_aps_enabled_everyone"], 2],
     true,
     {},
     false
