@@ -207,6 +207,14 @@ Then in the corresponding role of fn_getLastLoadout.sqf, replace `[]`
 with the text that you copied. Repeat this for each role. You may skip
 adding a loadout for the `default {[]}` clause.
 
+We also recommend changing the default value for `WHF_loadout_collection` in
+[XEH_preInit.sqf] with the world name, e.g. `altis`, so players have a unique
+collection for that map. Preferably this setting would be replaced with an
+in-game loadout collection UI, but for now, this is the only way to store
+separate role loadouts per map.
+
+[XEH_preInit.sqf]: https://github.com/Warriors-Haven-Gaming/WHFramework/blob/main/WHFramework.Altis/XEH_preInit.sqf
+
 ## 13. (Optional) Adding time skip actions
 
 To allow players to skip time on demand, you should add the following line
