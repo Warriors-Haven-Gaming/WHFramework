@@ -19,7 +19,7 @@ Author:
 if (isNil "_this") exitWith {[]};
 if !(_this isEqualType []) then {_this = [_this]};
 _this = _this apply {if (_x isEqualType "") then {[_x]} else {_x}};
-{_x pushBack WHF_factions_current} forEach (_this select {count _x isEqualTo 1});
+{_x pushBack (WHF_factions_current get opfor)} forEach (_this select {count _x isEqualTo 1});
 
 private _factions = call WHF_fnc_allFactions;
 {

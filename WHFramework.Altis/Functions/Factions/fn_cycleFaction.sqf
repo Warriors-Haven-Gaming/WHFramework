@@ -11,45 +11,73 @@ Author:
 */
 if (!isServer) exitWith {};
 
-private _factions = [
-    ["base", WHF_factions_base],
-    ["csat", WHF_factions_csat],
-    ["csat_pacific", WHF_factions_csat_pacific],
-    ["aaf", WHF_factions_aaf],
-    ["ldf", WHF_factions_ldf],
-    ["ws_sfia", WHF_factions_ws_sfia],
-    ["ws_tura", WHF_factions_ws_tura],
-    ["rhsafrf", WHF_factions_rhsafrf],
-    ["cup_afrf", WHF_factions_cup_afrf],
-    ["cup_afrf_modern", WHF_factions_cup_afrf_modern],
-    ["cup_npc", WHF_factions_cup_npc],
-    ["cup_tk", WHF_factions_cup_tk],
-    ["cup_tk_ins", WHF_factions_cup_tk_ins],
-    ["nato", WHF_factions_nato],
-    ["nato_pacific", WHF_factions_nato_pacific],
-    ["ef_mjtf_desert", WHF_factions_ef_mjtf_desert],
-    ["ef_mjtf_woodland", WHF_factions_ef_mjtf_woodland],
-    ["ws_ion", WHF_factions_ws_ion],
-    ["ws_una", WHF_factions_ws_una],
-    ["cup_usa_woodland", WHF_factions_cup_usa_woodland],
-    ["cup_usmc_woodland", WHF_factions_cup_usmc_woodland]
-] select {_x # 1} apply {_x # 0};
+private _isFactionEnabled = {
+    params ["_faction", "_suffix"];
+    private _key = format ["WHF_factions_%1_%2", _faction, _suffix];
+    missionNamespace getVariable _key
+};
 
+private _factions = [
+    "base",
+    "csat",
+    "csat_pacific",
+    "aaf",
+    "ldf",
+    "ws_sfia",
+    "ws_tura",
+    "rhsafrf",
+    "cup_afrf",
+    "cup_afrf_modern",
+    "cup_npc",
+    "cup_tk",
+    "cup_tk_ins",
+    "nato",
+    "nato_pacific",
+    "ef_mjtf_desert",
+    "ef_mjtf_woodland",
+    "ws_ion",
+    "ws_una",
+    "cup_usa_woodland",
+    "cup_usmc_woodland"
+];
 _factions = _factions arrayIntersect call WHF_fnc_supportedFactions;
 
-if (count _factions < 1) then {
-    private _faction = "base";
-    private _name = _faction call WHF_fnc_localizeFaction;
-    private _message = format [localize "$STR_WHF_cycleFaction_unsupported", _name];
-    diag_log text _message;
-    systemChat _message;
-    _factions pushBack _faction;
+private _categories = [
+    ["blufor", "str_west", blufor],
+    ["opfor", "str_east", opfor]
+] apply {
+    _x params ["_suffix"];
+    private _factions = _factions select {[_x, _suffix] call _isFactionEnabled};
+    _x + [_factions]
 };
 
-private _skipCurrent = count _factions > 1 && {!isNil "WHF_factions_current"};
-private _faction = if (!_skipCurrent) then {selectRandom _factions} else {
-    selectRandom (_factions - [WHF_factions_current])
-};
+if (isNil "WHF_factions_current") then {WHF_factions_current = createHashMap};
+WHF_factions_pool = createHashMap;
 
-missionNamespace setVariable ["WHF_factions_current", _faction, true];
-missionNamespace setVariable ["WHF_factions_pool", _factions, true];
+{
+    _x params ["", "_name", "_side", "_factions"];
+
+    if (count _factions < 1) then {
+        private _faction = "base";
+        private _message = format [
+            localize "$STR_WHF_cycleFaction_unsupported",
+            localize _name,
+            _faction call WHF_fnc_localizeFaction
+        ];
+        diag_log text _message;
+        systemChat _message;
+        _factions pushBack _faction;
+    };
+
+    private _current = WHF_factions_current get _side;
+    private _skipCurrent = count _factions > 1 && {!isNil "_current"};
+    private _faction = if (!_skipCurrent) then {selectRandom _factions} else {
+        selectRandom (_factions - [_current])
+    };
+
+    WHF_factions_current set [_side, _faction];
+    WHF_factions_pool set [_side, _factions];
+} forEach _categories;
+
+publicVariable "WHF_factions_current";
+publicVariable "WHF_factions_pool";

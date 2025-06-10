@@ -211,216 +211,55 @@ Author:
     - Patches:
         configSourceAddonList (configFile >> "CfgVehicles" >> typeOf cursorObject)
 */
-[
-    "WHF_factions_base",
-    "CHECKBOX",
-    "STR_WHF_factions_base",
-    "STR_WHF_settings_factions",
-    true,
-    true,
-    {},
-    false
-] call WHF_fnc_addSetting;
-[
-    "WHF_factions_csat",
-    "CHECKBOX",
-    "STR_WHF_factions_csat",
-    "STR_WHF_settings_factions",
-    true,
-    true,
-    {},
-    false
-] call WHF_fnc_addSetting;
-[
-    "WHF_factions_csat_pacific",
-    "CHECKBOX",
-    "STR_WHF_factions_csat_pacific",
-    "STR_WHF_settings_factions",
-    true,
-    true,
-    {},
-    false
-] call WHF_fnc_addSetting;
-[
-    "WHF_factions_aaf",
-    "CHECKBOX",
-    "STR_WHF_factions_aaf",
-    "STR_WHF_settings_factions",
-    true,
-    true,
-    {},
-    false
-] call WHF_fnc_addSetting;
-[
-    "WHF_factions_ldf",
-    "CHECKBOX",
-    "STR_WHF_factions_ldf",
-    "STR_WHF_settings_factions",
-    true,
-    true,
-    {},
-    false
-] call WHF_fnc_addSetting;
-[
-    "WHF_factions_ws_sfia",
-    "CHECKBOX",
-    "STR_WHF_factions_ws_sfia",
-    "STR_WHF_settings_factions",
-    true,
-    true,
-    {},
-    false
-] call WHF_fnc_addSetting;
-[
-    "WHF_factions_ws_tura",
-    "CHECKBOX",
-    "STR_WHF_factions_ws_tura",
-    "STR_WHF_settings_factions",
-    true,
-    true,
-    {},
-    false
-] call WHF_fnc_addSetting;
-[
-    "WHF_factions_rhsafrf",
-    "CHECKBOX",
-    "STR_WHF_factions_rhsafrf",
-    "STR_WHF_settings_factions",
-    true,
-    true,
-    {},
-    false
-] call WHF_fnc_addSetting;
-[
-    "WHF_factions_cup_afrf",
-    "CHECKBOX",
-    "STR_WHF_factions_cup_afrf",
-    "STR_WHF_settings_factions",
-    true,
-    true,
-    {},
-    false
-] call WHF_fnc_addSetting;
-[
-    "WHF_factions_cup_afrf_modern",
-    "CHECKBOX",
-    "STR_WHF_factions_cup_afrf_modern",
-    "STR_WHF_settings_factions",
-    true,
-    true,
-    {},
-    false
-] call WHF_fnc_addSetting;
-[
-    "WHF_factions_cup_npc",
-    "CHECKBOX",
-    "STR_WHF_factions_cup_npc",
-    "STR_WHF_settings_factions",
-    true,
-    true,
-    {},
-    false
-] call WHF_fnc_addSetting;
-[
-    "WHF_factions_cup_tk",
-    "CHECKBOX",
-    "STR_WHF_factions_cup_tk",
-    "STR_WHF_settings_factions",
-    true,
-    true,
-    {},
-    false
-] call WHF_fnc_addSetting;
-[
-    "WHF_factions_cup_tk_ins",
-    "CHECKBOX",
-    "STR_WHF_factions_cup_tk_ins",
-    "STR_WHF_settings_factions",
-    true,
-    true,
-    {},
-    false
-] call WHF_fnc_addSetting;
-[
+private _blufor = [
     "WHF_factions_nato",
-    "CHECKBOX",
-    "STR_WHF_factions_nato",
-    "STR_WHF_settings_factions",
-    false,
-    true,
-    {},
-    false
-] call WHF_fnc_addSetting;
-[
     "WHF_factions_nato_pacific",
-    "CHECKBOX",
-    "STR_WHF_factions_nato_pacific",
-    "STR_WHF_settings_factions",
-    false,
-    true,
-    {},
-    false
-] call WHF_fnc_addSetting;
-[
     "WHF_factions_ef_mjtf_desert",
-    "CHECKBOX",
-    "STR_WHF_factions_ef_mjtf_desert",
-    "STR_WHF_settings_factions",
-    false,
-    true,
-    {},
-    false
-] call WHF_fnc_addSetting;
-[
     "WHF_factions_ef_mjtf_woodland",
-    "CHECKBOX",
-    "STR_WHF_factions_ef_mjtf_woodland",
-    "STR_WHF_settings_factions",
-    false,
-    true,
-    {},
-    false
-] call WHF_fnc_addSetting;
-[
     "WHF_factions_ws_ion",
-    "CHECKBOX",
-    "STR_WHF_factions_ws_ion",
-    "STR_WHF_settings_factions",
-    false,
-    true,
-    {},
-    false
-] call WHF_fnc_addSetting;
-[
     "WHF_factions_ws_una",
-    "CHECKBOX",
-    "STR_WHF_factions_ws_una",
-    "STR_WHF_settings_factions",
-    false,
-    true,
-    {},
-    false
-] call WHF_fnc_addSetting;
-[
     "WHF_factions_cup_usa_woodland",
-    "CHECKBOX",
-    "STR_WHF_factions_cup_usa_woodland",
-    "STR_WHF_settings_factions",
-    false,
-    true,
-    {},
-    false
-] call WHF_fnc_addSetting;
-[
-    "WHF_factions_cup_usmc_woodland",
-    "CHECKBOX",
-    "STR_WHF_factions_cup_usmc_woodland",
-    "STR_WHF_settings_factions",
-    false,
-    true,
-    {},
-    false
-] call WHF_fnc_addSetting;
+    "WHF_factions_cup_usmc_woodland"
+] apply {[_x, blufor]};
+
+private _opfor = [
+    "WHF_factions_base",
+    "WHF_factions_csat",
+    "WHF_factions_csat_pacific",
+    "WHF_factions_aaf",
+    "WHF_factions_ldf",
+    "WHF_factions_ws_sfia",
+    "WHF_factions_ws_tura",
+    "WHF_factions_rhsafrf",
+    "WHF_factions_cup_afrf",
+    "WHF_factions_cup_afrf_modern",
+    "WHF_factions_cup_npc",
+    "WHF_factions_cup_tk",
+    "WHF_factions_cup_tk_ins"
+] apply {[_x, opfor]};
+
+private _categories = [
+    ["opfor", "str_east", opfor],
+    ["blufor", "str_west", blufor]
+];
+
+{
+    _x params ["_faction", "_factionSide"];
+    {
+        _x params ["_side", "_category", "_categorySide"];
+        [
+            format ["%1_%2", _faction, _side],
+            "CHECKBOX",
+            format ["STR_%1", _faction],
+            ["STR_WHF_settings_factions", _category],
+            _factionSide isEqualTo _categorySide,
+            true,
+            {},
+            false
+        ] call WHF_fnc_addSetting;
+    } forEach _categories;
+} forEach _blufor + _opfor;
+
 call WHF_fnc_cycleFaction;
 
 // Fitness

@@ -13,7 +13,7 @@ Parameters:
     String faction:
         (Optional, default "")
         The faction to spawn units from.
-        If not provided, a random faction is selected from WHF_factions_pool.
+        If not provided, a random OPFOR faction is selected from WHF_factions_pool.
 
 Author:
     thegamecracks
@@ -38,7 +38,7 @@ if (_center isEqualTo []) exitWith {
     diag_log text format ["%1: No center found", _fnc_scriptName];
 };
 
-if (_faction isEqualTo "") then {_faction = selectRandom WHF_factions_pool};
+if (_faction isEqualTo "") then {_faction = selectRandom (WHF_factions_pool get opfor)};
 private _standard = ["standard", _faction];
 
 private _terrain = nearestTerrainObjects [_center, [], 20, false, true];

@@ -11,14 +11,16 @@ Parameters:
         If specified, the given location is used for the mission instead of
         attempting to find a suitable location.
     String faction:
-        (Optional, default WHF_factions_current)
+        (Optional, default "")
         The faction to spawn units from.
+        If empty, the current OPFOR faction in WHF_factions_current
+        will be used.
 
 Author:
     thegamecracks
 
 */
-params [["_location", locationNull], ["_faction", WHF_factions_current]];
+params [["_location", locationNull], ["_faction", ""]];
 
 private _getRadius = {
     params ["_location"];
@@ -61,6 +63,8 @@ if (_location isEqualTo locationNull) then {
 if (_location isEqualTo locationNull) exitWith {
     diag_log text format ["%1: No location found", _fnc_scriptName];
 };
+
+if (_faction isEqualTo "") then {_faction = WHF_factions_current get opfor};
 
 private _center = locationPosition _location vectorMultiply [1, 1, 0];
 _center = _center vectorAdd [50 - random 100, 50 - random 100];

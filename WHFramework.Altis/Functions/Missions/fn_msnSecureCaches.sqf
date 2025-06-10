@@ -13,11 +13,11 @@ Parameters:
     String factionA:
         (Optional, default "")
         The first faction to spawn units from.
-        If not provided, a random faction is selected from WHF_factions_pool.
+        If not provided, a random OPFOR faction is selected from WHF_factions_pool.
     String factionB:
         (Optional, default "")
         The second faction to spawn units from.
-        If not provided, a random faction is selected from WHF_factions_pool,
+        If not provided, a random OPFOR faction is selected from WHF_factions_pool,
         preferring a different one from factionA if possible.
 
 Author:
@@ -46,9 +46,9 @@ if (_center isEqualTo []) exitWith {
 };
 private _reinforceArea = [_center, _cacheRadius, _cacheRadius, 0, false];
 
-if (_factionA isEqualTo "") then {_factionA = selectRandom WHF_factions_pool};
+if (_factionA isEqualTo "") then {_factionA = selectRandom (WHF_factions_pool get opfor)};
 if (_factionB isEqualTo "") then {
-    private _factions = WHF_factions_pool;
+    private _factions = (WHF_factions_pool get opfor);
     if (count _factions > 1) then {_factions = _factions - [_factionA]};
     _factionB = selectRandom _factions;
 };
