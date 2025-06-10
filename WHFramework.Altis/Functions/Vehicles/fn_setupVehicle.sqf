@@ -67,6 +67,10 @@ switch (true) do {
     case (_vehicle isKindOf "MRAP_03_base_F"): {
         [_vehicle, WHF_aps_ammoMRAP] call WHF_fnc_addAPS;
     };
+    // Expeditionary Forces
+    case (_vehicle isKindOf "EF_AAV9_Base"): {
+        [_vehicle, WHF_aps_ammoAPC] call WHF_fnc_addAPS;
+    };
     // CUP
     case (_vehicle isKindOf "CUP_AAV_Base"): {
         [_vehicle, WHF_aps_ammoAPC] call WHF_fnc_addAPS;
