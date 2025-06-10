@@ -17,10 +17,6 @@ Author:
 */
 params ["_vehicle"];
 
-private _sensors = listVehicleSensors _vehicle;
-private _allowedSensors = ["IRSensorComponent", "ActiveRadarSensorComponent"];
-if (_sensors findIf {_x # 1 in _allowedSensors} >= 0) exitWith {true};
-
 private _allowed = [
     "CUP_B_M6LineBacker_USA_W",
     "CUP_nM1097_Avenger_Base",
@@ -52,6 +48,10 @@ private _exceptions = [
     "Offroad_02_base_F"
 ];
 if (_exceptions findIf {_vehicle isKindOf _x} >= 0) exitWith {false};
+
+private _sensors = listVehicleSensors _vehicle;
+private _allowedSensors = ["IRSensorComponent", "ActiveRadarSensorComponent"];
+if (_sensors findIf {_x # 1 in _allowedSensors} >= 0) exitWith {true};
 
 private _weapons = _vehicle weaponsTurret [0];
 _weapons findIf {"launcher" in toLowerANSI _x} >= 0
