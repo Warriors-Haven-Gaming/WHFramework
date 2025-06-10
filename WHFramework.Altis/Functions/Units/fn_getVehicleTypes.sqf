@@ -17,12 +17,19 @@ Author:
 
 */
 if (isNil "_this") exitWith {[]};
-if !(_this isEqualType []) then {_this = [_this]};
-_this = _this apply {if (_x isEqualType "") then {[_x]} else {_x}};
-{_x pushBack (WHF_factions_current get opfor)} forEach (_this select {count _x isEqualTo 1});
+if !(_this isEqualType []) then {throw format [
+    "Expected [[type, faction], ...] array, got %1",
+    _this
+]};
 
 private _factions = call WHF_fnc_allFactions;
 {
+    if !(_x isEqualType [] || {count _x < 2}) then {throw format [
+        "Expected [type, faction] at index %1, got %2",
+        _forEachIndex,
+        _x
+    ]};
+
     _x params ["_type", "_faction"];
     // If this throws an exception, you probably did something like this:
     //     ["standard", "base"] call WHF_fnc_getVehicleTypes;
