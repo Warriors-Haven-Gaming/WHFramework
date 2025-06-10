@@ -834,7 +834,7 @@ call WHF_fnc_cycleFaction;
     "EDITBOX",
     ["STR_WHF_settings_loadout_collection", "STR_WHF_settings_loadout_collection_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_loadouts"],
-    "main",
+    "regero",
     false,
     {},
     false
