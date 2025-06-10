@@ -24,6 +24,7 @@ if (_sensors findIf {_x # 1 in _allowedSensors} >= 0) exitWith {true};
 private _allowed = [
     "CUP_B_M6LineBacker_USA_W",
     "CUP_nM1097_Avenger_Base",
+    "EF_MRAP_01_LAAD_base",
     "I_LT_01_AA_F"
 ];
 if (_allowed findIf {_vehicle isKindOf _x} >= 0) exitWith {true};
@@ -45,6 +46,7 @@ private _exceptions = [
     "CUP_StrykerBase",
     "CUP_T72_Base",
     "LT_01_base_F",
+    "MRAP_01_base_F",
     "MRAP_03_base_F",
     "Offroad_01_base_F",
     "Offroad_02_base_F"
