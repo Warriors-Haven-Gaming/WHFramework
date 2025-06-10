@@ -36,7 +36,15 @@ The following vanilla factions are always available for opposing forces:
 - NATO \*
 - NATO (Pacific) \*
 
-Additional factions are supported with the following mods:
+Additional factions are supported with the following CDLC and mods:
+- Expeditionary Forces
+  - MJTF (Desert)
+  - MJTF (Woodland)
+- Western Sahara
+  - ION Services
+  - SFIA
+  - Tura
+  - UNA
 - [CUP Vehicles] and Units
   - National Party of Chernarus
   - Armed Forces of the Russian Federation
