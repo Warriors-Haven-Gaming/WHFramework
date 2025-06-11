@@ -43,6 +43,24 @@ done and submitted more simply by using the [web-based editor].
   be worsened by line breaks
 - SQF functions should be documented
 - Strings should use double quotes
+- Local variables should only be made private with `private _var = ...`
+  or `privateAll`, not with the array syntax, `private ["_var", ...]`
+- Class names should always be written in `PascalCase`
+- Function names should always be written in `camelCase`
+- Variable names can use a mix of `snake_case` and `camelCase` as appropriate:
+
+  ```sqf
+  // Good:
+  WHF_findAPSLoop_script = 0 spawn WHF_fnc_findAPSLoop;
+  WHF_earplugs_music_last = 1;
+  WHF_earplugs_radio_last = 1;
+  private _uid = "";
+  private _isPiloted = false;
+  private _atMines = ["ATMine"];
+  private _initialUnitCount = 0;
+  private _getNextPos = {...};
+  ```
+
 - Open curly braces should be on the same line as the defining construct:
 
   ```cpp
@@ -77,10 +95,31 @@ done and submitted more simply by using the [web-based editor].
 
 ## SQF Best Practices
 
-- Declaring functions in [`CfgFunctions`] should be preferred over compiling
-  or running script files directly, e.g. `compileScript` / `execVM`
+- Declaring functions in [`CfgFunctions`] should always be preferred over
+  compiling or running script files directly, e.g. `compileScript` / `execVM`.
 - To help with localization, [stringtable.xml] declarations should be used
-  for any strings that are seen by users
+  for any strings that are seen by users.
+- Local variables should always be marked with the `private` keyword,
+  unless it is intentionally using/overwriting variables from an outer scope.
+- When possible, use [guard statements] to simplify conditional expressions
+  and reduce indentation.
+- When possible, refactor code into loops and functions to reduce code duplication.
+- When writing loops in scheduled environment, consider using `sleep` to avoid
+  unnecessary hot loops, such as when continuously checking objective conditions
+  or the presence of players in an area.
+- If there is a non-obvious reason to write something, add a comment explaining
+  *why* the code is written as such. Avoid adding comments explaining *what* the
+  code does, especially if it can be understood from reading a few lines.
+- Commands should be executed in the correct locality to avoid unnecessary
+  network traffic. For example, a globally executed function shouldn't call
+  a global effect command like `createVehicle` unless the function ensures that
+  only one machine runs it, for example, by using an `isServer` condition.
+- Variables should not be broadcasted over network if it can be hardcoded in
+  the mission, such as composition data.
+- Avoid performing critical actions on clients such as broadcasting temporary variables,
+  since clients can disconnect mid-execution and fail to cleanup after themselves.
+  If possible, rely on the server for cleanup, or keep variables local to each client.
 
 [`CfgFunctions`]: https://community.bistudio.com/wiki/Arma_3:_Functions_Library
 [stringtable.xml]: https://community.bistudio.com/wiki/Stringtable.xml
+[guard statements]: https://en.wikipedia.org/wiki/Guard_(computer_science)
