@@ -984,6 +984,18 @@ call WHF_fnc_cycleFaction;
     false
 ] call WHF_fnc_addSetting;
 
+// Repack
+[
+    "WHF_repack_prefer_capacity",
+    "CHECKBOX",
+    ["STR_WHF_settings_repack_prefer_capacity", "STR_WHF_settings_repack_prefer_capacity_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_repack"],
+    true,
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+
 // Revive
 [
     "WHF_selfRevive_minTime",

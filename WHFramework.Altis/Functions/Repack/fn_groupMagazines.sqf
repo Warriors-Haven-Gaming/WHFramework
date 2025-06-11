@@ -38,7 +38,7 @@ private _magazineGroups = values _compatible apply {
     _x = _x apply {
         private _count = _x # 1;
         private _capacity = getNumber (configFile >> "CfgMagazines" >> _x # 0 >> "count");
-        private _isFull = if (_count >= _capacity) then {1} else {0};
+        private _isFull = if (WHF_repack_prefer_capacity || {_count >= _capacity}) then {1} else {0};
         [_isFull, _capacity, _count, _x]
     };
     _x sort false;
@@ -48,7 +48,7 @@ if (!_canRepack) exitWith {_magazineGroups};
 
 private _hasPartialMagazines = {
     if (count _this < 2) exitWith {false};
-    _this # -1 call _isPartialMagazine && {_this # -2 call _isPartialMagazine}
+    {_x call _isPartialMagazine} count _this > 1
 };
 
 private _isPartialMagazine = {
