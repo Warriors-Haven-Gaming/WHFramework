@@ -114,8 +114,8 @@ done and submitted more simply by using the [web-based editor].
   network traffic. For example, a globally executed function shouldn't call
   a global effect command like `createVehicle` unless the function ensures that
   only one machine runs it, for example, by using an `isServer` condition.
-- Variables should not be broadcasted over network if it can be hardcoded in
-  the mission, such as composition data.
+- Variables should not be broadcasted over network if it can be easily computed
+  on all clients, such as composition data.
 - Avoid performing critical actions on clients such as broadcasting temporary variables,
   since clients can disconnect mid-execution and fail to cleanup after themselves.
   If possible, rely on the server for cleanup, or keep variables local to each client.
