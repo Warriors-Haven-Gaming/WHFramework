@@ -39,7 +39,7 @@ done and submitted more simply by using the [web-based editor].
 - All indentation should use 4 spaces
 - Lines should not contain any trailing whitespace except a newline
 - All files should end with a single trailing newline
-- Lines should avoid exceeding 80 characters unless its readability would
+- Lines should avoid exceeding 100 characters unless its readability would
   be worsened by line breaks
 - SQF functions should be documented
 - Strings should use double quotes
