@@ -106,25 +106,15 @@ while {alive _drone} do {
 
     if (_time >= _lastTarget + _targetDelay) then {
         private _targets =
-            driver _drone targetsQuery [objNull, sideUnknown, "", [], 0]
-            select {
-                [side group _drone, _x # 2] call BIS_fnc_sideIsEnemy
-                && {_x # 1 getVariable ["WHF_fpv_targeted", objNull] in [objNull, _drone]}
-            }
-            apply {_x # 1};
+            _drone targets [true]
+            select {_drone targetKnowledge _x select 4 isNotEqualTo sideUnknown}
+            select {_x getVariable ["WHF_fpv_targeted", objNull] in [objNull, _drone]};
         if (count _targets < 1) exitWith {[] call _switchTarget};
 
-        private _distanceTargets = [];
-        {
-            _distanceTargets pushBack [
-                _drone distance _x,
-                _forEachIndex,
-                _x
-            ];
-        } forEach _targets;
+        private _distances = _targets apply {_drone distance _x};
+        private _target = _targets select (_distances find selectMin _distances);
 
-        _distanceTargets sort true;
-        [_distanceTargets # 0 # 2] call _switchTarget;
+        [_target] call _switchTarget;
         _lastTarget = _time;
     };
     if (!alive _target) then {

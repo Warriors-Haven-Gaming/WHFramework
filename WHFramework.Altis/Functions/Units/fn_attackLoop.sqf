@@ -48,20 +48,20 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
             && {!(waypointType (_waypoints # 0) in ["MOVE", "SAD"])}
         ) then {continue};
 
-        private _side = side _x;
         private _targets =
-            _leader targetsQuery [objNull, sideUnknown, "", [], 180]
-            select {
-                [_side, _x # 2] call BIS_fnc_sideIsEnemy
-                && {isNil "_area"
-                || {_x # 4 vectorMultiply [1,1,0] inArea _area}}
-            };
+            _leader targets [true, 0, [], 180]
+            apply {_leader targetKnowledge _x}
+            select {_x # 4 isNotEqualTo sideUnknown}
+            apply {_x # 6 vectorMultiply [1,1,0]};
+        if (!isNil "_area") then {_targets = _targets inAreaArray _area};
 
         sleep 0.125;
         if (count _targets < 1) then {continue};
 
+        private _distances = _targets apply {_leader distance2D _x};
+        private _position = _targets select (_distances find selectMin _distances);
+
         {deleteWaypoint _x} forEachReversed _waypoints;
-        _targets # 0 params ["", "", "", "", "_position"];
         private _waypoint = _x addWaypoint [_position vectorMultiply [1,1,0], 50];
         _waypoint setWaypointType "SAD";
         _waypoint setWaypointCompletionRadius 20;

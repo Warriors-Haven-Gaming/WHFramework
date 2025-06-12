@@ -23,11 +23,7 @@ while {true} do {
         select {isNull objectParent _x}
         select {!captive _x}
         select {eyePos _x select 2 >= 0}
-        select {
-            private _unit = _x;
-            _unit targets [true, _detectDistance, [], 30]
-            findIf {[side group _unit, side group _x] call BIS_fnc_sideIsEnemy} >= 0
-        }
+        select {count (_x targets [true, _detectDistance, [], 30]) > 0}
         select {[_x] call WHF_fnc_canAssembleFPVDrone}
         select {!lineIntersects [getPosASL _x, getPosASL _x vectorAdd [0, 0, 50], _x]};
     if (count _operatorsOnAlert < 1) then {continue};
