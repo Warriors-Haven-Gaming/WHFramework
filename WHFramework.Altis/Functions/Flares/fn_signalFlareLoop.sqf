@@ -27,6 +27,7 @@ while {true} do {
         select {simulationEnabled _x}
         select {isNull objectParent _x}
         select {!captive _x}
+        select {!isPlayer _x}
         select {lifeState _x in ["HEALTHY", "INJURED"]}
         select {eyePos _x select 2 >= 0}
         select {currentWeapon _x isNotEqualTo ""}
