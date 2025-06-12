@@ -36,7 +36,7 @@ while {true} do {
         select {
             private _leader = _x;
             _leader targets [true, WHF_signalFlareMaxDistance, [blufor], 30]
-            findIf {_leader knowsAbout _x >= 1.5} >= 0
+            findIf {_leader knowsAbout _x >= 2.5} >= 0
         }
         select {!lineIntersects [getPosASL _x, getPosASL _x vectorAdd [0, 0, 50], _x]};
     if (count _leadersOnAlert < 1) then {continue};
