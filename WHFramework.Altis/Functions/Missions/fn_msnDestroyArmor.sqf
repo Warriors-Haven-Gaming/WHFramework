@@ -140,7 +140,7 @@ private _activeVehicles = {_vehicles select {alive _x} inAreaArray _area};
 private _current = count call _activeVehicles;
 
 private _getDescription = {[
-    ["STR_WHF_destroyArmor_description", _current],
+    ["STR_WHF_destroyArmor_description", _current, _areaMarker],
     "STR_WHF_destroyArmor_title"
 ]};
 
