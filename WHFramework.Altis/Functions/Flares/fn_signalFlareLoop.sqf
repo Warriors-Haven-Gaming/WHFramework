@@ -24,10 +24,10 @@ while {true} do {
         }
         apply {leader _x}
         select {local _x}
-        select {alive _x}
         select {simulationEnabled _x}
         select {isNull objectParent _x}
         select {!captive _x}
+        select {lifeState _x in ["HEALTHY", "INJURED"]}
         select {eyePos _x select 2 >= 0}
         select {currentWeapon _x isNotEqualTo ""}
         select {stance _x in ["STAND", "CROUCH"]}
@@ -47,8 +47,8 @@ while {true} do {
 
     // NOTE: conditions duplicated in WHF_fnc_signalFlareBegin
     sleep 2;
-    if (!alive _siren) then {continue};
     if (captive _siren) then {continue}; // Probably detained mid-signal, nice
+    if !(lifeState _siren in ["HEALTHY", "INJURED"]) then {continue};
     if (isNil {_siren getVariable "WHF_siren_startedAt"}) then {continue};
 
     private _targets = _siren nearTargets WHF_signalFlareMaxDistance select {_x # 2 == blufor} apply {_x # 4};

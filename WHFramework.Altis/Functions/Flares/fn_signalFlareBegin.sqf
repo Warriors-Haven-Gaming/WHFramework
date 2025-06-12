@@ -41,8 +41,8 @@ if (local _siren) then {
 
 // NOTE: conditions duplicated in WHF_fnc_signalFlareLoop
 sleep 2;
-if (!alive _siren) exitWith {};
 if (captive _siren) exitWith {}; // Probably detained mid-signal, nice
+if !(lifeState _siren in ["HEALTHY", "INJURED"]) exitWith {};
 if (isNil {_siren getVariable "WHF_siren_startedAt"}) exitWith {};
 
 _flareDir = getDir _siren + _flareDir;
