@@ -36,7 +36,7 @@ while {true} do {
         select {!("ghillie" in toLowerANSI typeOf _x)}
         select {
             private _leader = _x;
-            _leader targets [true, WHF_signalFlareMaxDistance, [blufor], 30]
+            _leader targets [true, WHF_signalFlareMaxDistance, [], 30]
             findIf {_leader knowsAbout _x >= 2.5} >= 0
         }
         select {!lineIntersects [getPosASL _x, getPosASL _x vectorAdd [0, 0, 50], _x]};
@@ -52,9 +52,9 @@ while {true} do {
     if !(lifeState _siren in ["HEALTHY", "INJURED"]) then {continue};
     if (isNil {_siren getVariable "WHF_siren_startedAt"}) then {continue};
 
-    private _targets = _siren nearTargets WHF_signalFlareMaxDistance select {_x # 2 == blufor} apply {_x # 4};
+    private _targets = _siren targets [true, WHF_signalFlareMaxDistance];
     private _allies = (
-        groups opfor + groups independent
+        groups side group _siren
         apply {leader _x}
         inAreaArray [getPosATL _siren, WHF_signalFlareRevealDistance, WHF_signalFlareRevealDistance]
     ) - [_siren];
