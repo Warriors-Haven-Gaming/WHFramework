@@ -1,5 +1,5 @@
 /*
-Function: WHF_fnc_isBackpackDrone
+Function: WHF_fnc_getBackpackDrone
 
 Description:
     Return the flying drone that can be assembled from the given backpack type.
@@ -9,7 +9,7 @@ Parameters:
         The type to check.
 
 Returns:
-    Boolean
+    String
 
 Author:
     thegamecracks
