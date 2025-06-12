@@ -17,31 +17,28 @@ while {true} do {
 
     private _leadersOnAlert =
         groups opfor + groups independent
+        select {_x getVariable ["WHF_siren_disabled", false] isNotEqualTo true}
         select {
-            _x getVariable ["WHF_siren_disabled", false] isNotEqualTo true
-            && {isNil {_x getVariable "WHF_siren_lastFlare"}
-            || {time - (_x getVariable "WHF_siren_lastFlare") > WHF_signalFlareGroupCooldown}}
+            isNil {_x getVariable "WHF_siren_lastFlare"}
+            || {time - (_x getVariable "WHF_siren_lastFlare") > WHF_signalFlareGroupCooldown}
         }
         apply {leader _x}
+        select {local _x}
+        select {alive _x}
+        select {simulationEnabled _x}
+        select {isNull objectParent _x}
+        select {!captive _x}
+        select {eyePos _x select 2 >= 0}
+        select {currentWeapon _x isNotEqualTo ""}
+        select {stance _x in ["STAND", "CROUCH"]}
+        select {!("sniper" in toLowerANSI typeOf _x)}
+        select {!("ghillie" in toLowerANSI typeOf _x)}
         select {
             private _leader = _x;
-            local _leader
-            && {alive _leader
-            && {simulationEnabled _leader
-            && {isNull objectParent _leader
-            && {!captive _leader
-            && {eyePos _leader select 2 >= 0
-            && {currentWeapon _leader isNotEqualTo ""
-            && {stance _leader in ["STAND", "CROUCH"]
-            && {["sniper", "ghillie"] findIf {_x in toLowerANSI typeOf _leader} < 0
-            && {
-                _leader targets [true, WHF_signalFlareMaxDistance, [blufor], 30]
-                findIf {_leader knowsAbout _x >= 1.5} >= 0
-            && {
-                private _pos = getPosASL _leader;
-                !lineIntersects [_pos, _pos vectorAdd [0, 0, 50], _leader]
-            }}}}}}}}}}
-        };
+            _leader targets [true, WHF_signalFlareMaxDistance, [blufor], 30]
+            findIf {_leader knowsAbout _x >= 1.5} >= 0
+        }
+        select {!lineIntersects [getPosASL _x, getPosASL _x vectorAdd [0, 0, 50], _x]};
     if (count _leadersOnAlert < 1) then {continue};
 
     // TODO: prioritize leaders closer to targets

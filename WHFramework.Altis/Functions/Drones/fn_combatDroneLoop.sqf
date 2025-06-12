@@ -16,24 +16,20 @@ while {true} do {
 
     private _operatorsOnAlert =
         allUnits
+        select {local _x}
+        select {simulationEnabled _x}
+        select {!isPlayer _x}
+        select {lifeState _x in ["HEALTHY", "INJURED"]}
+        select {isNull objectParent _x}
+        select {!captive _x}
+        select {eyePos _x select 2 >= 0}
         select {
             private _unit = _x;
-            local _unit
-            && {simulationEnabled _unit
-            && {!isPlayer _unit
-            && {lifeState _unit in ["HEALTHY", "INJURED"]
-            && {isNull objectParent _unit
-            && {!captive _unit
-            && {eyePos _unit select 2 >= 0
-            && {[_unit] call WHF_fnc_canAssembleFPVDrone
-            && {
-                _unit targets [true, _detectDistance, [], 30]
-                findIf {[side group _unit, side group _x] call BIS_fnc_sideIsEnemy} >= 0
-            && {
-                private _pos = getPosASL _unit;
-                !lineIntersects [_pos, _pos vectorAdd [0, 0, 50], _unit]
-            }}}}}}}}}
-        };
+            _unit targets [true, _detectDistance, [], 30]
+            findIf {[side group _unit, side group _x] call BIS_fnc_sideIsEnemy} >= 0
+        }
+        select {[_x] call WHF_fnc_canAssembleFPVDrone}
+        select {!lineIntersects [getPosASL _x, getPosASL _x vectorAdd [0, 0, 50], _x]};
     if (count _operatorsOnAlert < 1) then {continue};
 
     private _unit = selectRandom _operatorsOnAlert;

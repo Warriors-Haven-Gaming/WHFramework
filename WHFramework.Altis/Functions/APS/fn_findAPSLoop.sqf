@@ -27,11 +27,11 @@ while {true} do {
     sleep 5;
     if (WHF_aps_enabled isEqualTo 0) then {WHF_aps_vehicles = nil; continue};
 
-    WHF_aps_vehicles = vehicles select {
-        alive _x
-        && {simulationEnabled _x
-        && {_x getVariable ["WHF_aps_ammo", 0] > 0
-        && {alive effectiveCommander _x
-        && {_x call _vehicleAPSEnabled}}}}
-    };
+    WHF_aps_vehicles =
+        vehicles
+        select {alive _x}
+        select {simulationEnabled _x}
+        select {_x getVariable ["WHF_aps_ammo", 0] > 0}
+        select {alive effectiveCommander _x}
+        select {_x call _vehicleAPSEnabled};
 };
