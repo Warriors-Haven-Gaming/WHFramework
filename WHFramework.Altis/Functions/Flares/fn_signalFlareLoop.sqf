@@ -15,8 +15,12 @@ while {true} do {
 
     if (time < _lastSiren + WHF_signalFlareGlobalCooldown) then {continue};
 
+    private _allowedSides = [opfor, independent];
+    if (WHF_signalFlareBLUFOR) then {_allowedSides pushBack blufor};
+
     private _leadersOnAlert =
-        groups opfor + groups independent
+        allGroups
+        select {side _x in _allowedSides}
         select {_x getVariable ["WHF_siren_disabled", false] isNotEqualTo true}
         select {
             isNil {_x getVariable "WHF_siren_lastFlare"}

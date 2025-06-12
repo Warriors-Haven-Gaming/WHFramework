@@ -299,6 +299,16 @@ call WHF_fnc_cycleFaction;
     false
 ] call WHF_fnc_addSetting;
 [
+    "WHF_signalFlareBLUFOR",
+    "CHECKBOX",
+    ["STR_WHF_settings_flares_blufor", "STR_WHF_settings_flares_blufor_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_flares"],
+    false,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_signalFlareCheckInterval",
     "SLIDER",
     ["STR_WHF_settings_flares_interval", "STR_WHF_settings_flares_interval_tooltip"],
