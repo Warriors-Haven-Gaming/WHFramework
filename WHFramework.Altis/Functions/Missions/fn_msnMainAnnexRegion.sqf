@@ -95,7 +95,7 @@ private _name = if (text _location isNotEqualTo "") then {text _location} else {
     localize "$STR_WHF_mainAnnexRegion_region"
 };
 private _description = [
-    ["STR_WHF_mainAnnexRegion_description", _name],
+    ["STR_WHF_mainAnnexRegion_description", _areaMarker, _name],
     ["STR_WHF_mainAnnexRegion_title", _name]
 ];
 private _taskID = [blufor, "", _description, _area # 0, "AUTOASSIGNED", -1, true, "attack"] call WHF_fnc_taskCreate;
