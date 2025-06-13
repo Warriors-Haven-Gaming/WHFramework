@@ -17,9 +17,10 @@ private _id = [
     "\A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_revive_ca.paa",
     "\A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_revive_ca.paa",
     "
-    lifeState _target isEqualTo 'INCAPACITATED'
+    count allPlayers <= WHF_selfRevive_maxPlayers
+    && {lifeState _target isEqualTo 'INCAPACITATED'
     && {isNil {_target getVariable 'WHF_revive_caller'}
-    && {time - (_target getVariable ['WHF_incapacitated_at',0]) > WHF_selfRevive_minTime}}
+    && {time - (_target getVariable ['WHF_incapacitated_at',0]) > WHF_selfRevive_minTime}}}
     ",
     "[_target, _caller, _actionId, _arguments] call WHF_fnc_selfReviveConditionProgress",
     {},

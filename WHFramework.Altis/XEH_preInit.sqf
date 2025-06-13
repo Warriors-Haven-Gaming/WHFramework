@@ -1008,6 +1008,16 @@ call WHF_fnc_cycleFaction;
 
 // Revive
 [
+    "WHF_selfRevive_maxPlayers",
+    "SLIDER",
+    ["STR_WHF_settings_revive_self_maxPlayers", "STR_WHF_settings_revive_self_maxPlayers_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_revive"],
+    [0, 100, 20, 0, false],
+    true,
+    {WHF_selfRevive_maxPlayers = round _this},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_selfRevive_minTime",
     "SLIDER",
     ["STR_WHF_settings_revive_self_minTime", "STR_WHF_settings_revive_self_minTime_tooltip"],

@@ -54,6 +54,12 @@ while {local _unit && {lifeState _unit isEqualTo "INCAPACITATED"}} do {
         continue;
     };
 
+    // Indefinitely suspend self-reviving when over the player limit
+    if (count allPlayers > WHF_selfRevive_maxPlayers) then {
+        _startedAt = -1;
+        continue;
+    };
+
     // Give some time for carrying, or for AI medics to arrive
     private _time = time;
     if (call _isAssigned && _beforeHoldAssigned) then {

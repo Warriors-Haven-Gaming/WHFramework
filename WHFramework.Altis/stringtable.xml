@@ -271,7 +271,8 @@
                 &lt;br/&gt;
                 For self-reviving, this option typically appears after three seconds,
                 and allows any player with at least three First Aid Kits to self-revive
-                themselves.
+                themselves. Depending on server settings, self-reviving may become hidden
+                after a certain number of players have joined.
             </Original>
         </Key>
         <Key ID="STR_WHF_diaryGuide_recruits_title">
@@ -1111,6 +1112,12 @@
         </Key>
         <Key ID="STR_WHF_settings_revive">
             <Original>Revive</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_revive_self_maxPlayers">
+            <Original>Self-Revive Player Limit</Original>
+        </Key>
+        <Key ID="STR_WHF_settings_revive_self_maxPlayers_tooltip">
+            <Original>The maximum number of players allowed before the Self-Revive action is hidden.\nThis also affects recruits, whom will remain incapacitated until bleedout.\nIf set to 0, self-reviving will be disabled.</Original>
         </Key>
         <Key ID="STR_WHF_settings_revive_self_minTime">
             <Original>Self-Revive Delay</Original>
