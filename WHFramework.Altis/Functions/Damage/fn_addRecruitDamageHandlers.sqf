@@ -37,6 +37,7 @@ _recruit addEventHandler ["HandleDamage", {call {
     private _canIncap = {
         if (WHF_recruits_incap_noFAKs) exitWith {true};
         if (WHF_recruits_incap_FAKs < 1) exitWith {false};
+        if (count allPlayers > WHF_selfRevive_maxPlayers) exitWith {false};
         count ([items _unit] call WHF_fnc_filterFAKs) >= WHF_recruits_incap_FAKs
     };
     if !(call _canIncap) exitWith {_damage}; // Fatal damage
