@@ -5,6 +5,7 @@ Description:
     A simple proxy for BIS_fnc_taskCreate except that the taskID is randomly
     generated and returned. This is safe from race conditions even when
     ran in scheduled environment.
+    If a non-empty string is passed for the task ID, it is used as a prefix.
     See also: https://community.bistudio.com/wiki/BIS_fnc_taskCreate
 
 Returns:
@@ -25,9 +26,9 @@ Author:
 private _ret = "";
 isNil {
     if (_this # 1 isEqualType []) then {
-        _this # 1 set [0, call WHF_fnc_randomTaskID];
+        _this # 1 set [0, [_this # 1 # 0] call WHF_fnc_randomTaskID];
     } else {
-        _this set [1, call WHF_fnc_randomTaskID];
+        _this set [1, [_this # 1] call WHF_fnc_randomTaskID];
     };
     _ret = _this call BIS_fnc_taskCreate;
 };

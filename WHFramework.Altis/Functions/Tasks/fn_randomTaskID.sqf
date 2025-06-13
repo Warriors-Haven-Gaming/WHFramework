@@ -9,6 +9,11 @@ Description:
     alongside the task creation would be preferable.
     See also: WHF_fnc_taskCreate
 
+Parameters:
+    String prefix:
+        (Optional, default "")
+        A prefix to add in front of the random task ID.
+
 Returns:
     String
         A unique task ID, or an empty string if unsuccessful.
@@ -17,10 +22,11 @@ Author:
     thegamecracks
 
 */
+params [["_prefix", ""]];
 private _taskID = "";
 for "_i" from 1 to 100 do {
     // NOTE: as per documentation, string should be below 15 characters
-    private _id = [6] call WHF_fnc_randomString;
+    private _id = _prefix + ([6] call WHF_fnc_randomString);
     if !([_id] call BIS_fnc_taskExists) exitWith {_taskID = _id};
 };
 _taskID
