@@ -24,14 +24,15 @@ _recruit addEventHandler ["HandleDamage", {call {
         private _old = if (_hitIndex >= 0) then {_unit getHitIndex _hitIndex} else {damage _unit};
         private _diff = [_damage - _old, WHF_recruitDamageScale] call WHF_fnc_scaleDamage;
         _old + _diff
-    } min 0.95;
+    };
+    private _capped = _damage min 0.95;
 
-    if (!isDamageAllowed _unit) exitWith {_damage};
-    if (lifeState _unit isEqualTo "INCAPACITATED") exitWith {_damage};
+    if (!isDamageAllowed _unit) exitWith {_capped};
+    if (lifeState _unit isEqualTo "INCAPACITATED") exitWith {_capped};
 
     // Check for fatal wounds to body, head, or unknown part
-    if !(_hitIndex in [7, 2, -1]) exitWith {_damage};
-    if (_damage < 0.95) exitWith {_damage};
+    if !(_hitIndex in [7, 2, -1]) exitWith {_capped};
+    if (_damage < 0.95) exitWith {_capped};
 
     private _canIncap = {
         if (WHF_recruits_incap_noFAKs) exitWith {true};
@@ -48,5 +49,5 @@ _recruit addEventHandler ["HandleDamage", {call {
     if (WHF_recruits_incap_FAKs > 0) then {
         [_unit, WHF_recruits_incap_FAKs] spawn WHF_fnc_selfReviveAuto;
     };
-    0.95
+    _capped
 }}];
