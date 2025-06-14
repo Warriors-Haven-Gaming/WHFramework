@@ -76,10 +76,14 @@ private _expired = [];
 } forEach WHF_usedPositions;
 {WHF_usedPositions deleteAt _x} forEachReversed _expired;
 
+private _half = worldSize / 2;
+private _worldArea = [[_half, _half], _half, _half, 0, true];
+
 private _ret = [0,0];
 for "_i" from 1 to 30 do {
     private _pos = [[[_center, _maxRadius]], _blacklist] call BIS_fnc_randomPos;
     if (_pos isEqualTo [0,0]) then {continue};
+    if !(_pos inArea _worldArea) then {continue};
 
     private _empty = _pos findEmptyPosition [0, 50, _type];
     if (_empty isEqualTo []) then {continue};

@@ -24,8 +24,7 @@ params [["_center", []], ["_faction", ""]];
 if (_center isEqualTo []) then {
     private _options = ["forest - sea"] call WHF_fnc_selectBestPlaces;
     {
-        _x params ["_pos"];
-        _pos pushBack 0;
+        private _pos = _x;
         if ([_pos, 500] call WHF_fnc_isNearRespawn) then {continue};
         if (_pos isFlatEmpty [-1, -1, 0.45, 12] isEqualTo []) then {continue};
         if (_pos nearRoads 50 isNotEqualTo []) then {continue};

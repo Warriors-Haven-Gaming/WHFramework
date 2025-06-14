@@ -25,6 +25,7 @@ Parameters:
 
 Returns:
     Array
+        An array of PositionAGL arrays.
 
 Author:
     thegamecracks
@@ -36,13 +37,15 @@ if (isNil "WHF_selectBestPlaces_cache") then {WHF_selectBestPlaces_cache = creat
 
 private _cache = WHF_selectBestPlaces_cache get _expression;
 if (isNil "_cache") then {
+    private _half = worldSize / 2;
+    private _center = [_half, _half];
     private _results = selectBestPlaces [
-        [worldSize / 2, worldSize / 2],
+        _center,
         sqrt 2 / 2 * worldSize,
         _expression,
         200,
         2000
-    ];
+    ] apply {_x # 0 vectorAdd [0,0,0]} inAreaArray [_center, _half, _half, 0, true];
     _cache = [_results, 0];
     WHF_selectBestPlaces_cache set [_expression, _cache];
 };

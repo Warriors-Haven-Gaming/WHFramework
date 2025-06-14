@@ -30,8 +30,7 @@ private _radius = 100;
 if (_center isEqualTo []) then {
     private _options = ["houses + meadow - forest - sea - trees"] call WHF_fnc_selectBestPlaces;
     {
-        _x params ["_pos"];
-        _pos pushBack 0;
+        private _pos = _x;
         if ([_pos, _radius + 1000] call WHF_fnc_isNearRespawn) then {continue};
         if (_pos isFlatEmpty [-1, -1, 1, 12] isEqualTo []) then {continue};
         if ([_pos, _radius + 200] call WHF_fnc_isNearUsedPosition) then {continue};
