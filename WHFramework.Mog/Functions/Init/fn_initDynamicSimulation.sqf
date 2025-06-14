@@ -9,11 +9,11 @@ Author:
 
 */
 enableDynamicSimulationSystem true;
-"Group"        setDynamicSimulationDistance 500;
-"Vehicle"      setDynamicSimulationDistance 350;
+"Group"        setDynamicSimulationDistance 750;
+"Vehicle"      setDynamicSimulationDistance 750;
 "Prop"         setDynamicSimulationDistance 50;
 "EmptyVehicle" setDynamicSimulationDistance 250;
-"IsMoving"     setDynamicSimulationDistanceCoef 2;
+"IsMoving"     setDynamicSimulationDistanceCoef 2.5;
 
 // FIXME: weird place to define this
 setMissionOptions createHashMapFromArray [
