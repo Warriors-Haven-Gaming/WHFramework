@@ -39,6 +39,11 @@ _arsenal addAction [
     localize "$STR_WHF_initArsenal_loadLastLoadout",
     {
         params ["", "_caller"];
+
+        if (!isClass (configFile >> "CfgPatches" >> "ace_medical")) then {
+            _caller setDamage 0;
+        };
+
         private _loadout = [] call WHF_fnc_getLastLoadout;
         if (_loadout isEqualTo []) exitWith {};
         _caller setUnitLoadout _loadout;
