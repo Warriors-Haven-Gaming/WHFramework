@@ -231,6 +231,7 @@ class CfgFunctions {
         class Missions {
             class addIntelAction {};
             class missionLoop {};
+            class msnDefendAidSupplies {};
             class msnDestroyAAA {};
             class msnDestroyArmor {};
             class msnDestroyArtillery {};
@@ -435,6 +436,10 @@ class CfgRadio {};
 
 // https://community.bistudio.com/wiki/Description.ext#Tasks
 class CfgTaskDescriptions {
+    class defendAidSupplies {
+        title       = "STR_WHF_defendAidSupplies_title";
+        description = "STR_WHF_defendAidSupplies_description";
+    };
     class destroyAAA {
         title       = "STR_WHF_destroyAAA_title";
         description = "STR_WHF_destroyAAA_description";

@@ -43,6 +43,7 @@ WHF_mainMissionLoop_script = [
 ] spawn WHF_fnc_missionLoop;
 WHF_sideMissionLoop_script = [
     [
+        // "WHF_fnc_msnDefendAidSupplies",
         "WHF_fnc_msnDestroyAAA",
         "WHF_fnc_msnDestroyArmor",
         "WHF_fnc_msnDestroyArtillery",
