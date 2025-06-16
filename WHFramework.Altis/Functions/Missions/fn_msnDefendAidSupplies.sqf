@@ -154,12 +154,18 @@ call {
         [_source, _message] remoteExec ["WHF_fnc_localizedSideChat", _x];
     } forEach call _playersInArea;
 
-    // TODO: spawn script to show status of supplies
+    sleep 3;
+    private _signal = [true];
+    private _statusScript = [_signal, _supplies, _taskID] spawn WHF_fnc_msnDefendAidSuppliesStatus;
     // TODO: spawn script to generate waves of raiders
 
     while {true} do {
         sleep 3;
-        // TODO: fail if all crates are stolen
+        if (scriptDone _statusScript) exitWith {
+            sleep 3;
+            [_taskID, "FAILED"] spawn WHF_fnc_taskEnd;
+            breakOut "main";
+        };
         // TODO: succeed after a certain duration from start of defense
     };
 };
