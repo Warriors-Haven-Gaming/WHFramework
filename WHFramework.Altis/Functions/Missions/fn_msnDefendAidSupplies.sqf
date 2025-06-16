@@ -159,6 +159,8 @@ call {
     private _statusScript = [_signal, _supplies, _taskID] spawn WHF_fnc_msnDefendAidSuppliesStatus;
     // TODO: spawn script to generate waves of raiders
 
+    {[_x, false] remoteExec ["enableDynamicSimulation"]} forEach _groups;
+
     while {true} do {
         sleep 3;
         if (scriptDone _statusScript) exitWith {
