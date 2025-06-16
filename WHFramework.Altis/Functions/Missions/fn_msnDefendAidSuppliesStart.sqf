@@ -72,9 +72,9 @@ while {true} do {
     };
 };
 
+_signal set [0, false];
+waitUntil {sleep 1; _scripts findIf {!scriptDone _x} < 0};
+
 deleteMarker _areaMarker;
 _groups append _reinforceGroups;
 _vehicles append _reinforceVehicles;
-
-_signal set [0, false];
-waitUntil {sleep 1; _scripts findIf {!scriptDone _x} < 0};
