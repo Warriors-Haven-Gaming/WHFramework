@@ -35,13 +35,15 @@ private _index = 0;
     private _obj = _objects # _index;
 
     // TODO: parameterize x and y coefficients?
-    private _pos = [_x, random 1, 0.8 - random 1.6] call WHF_fnc_getRoadPos;
+    private _y = 0.8 - random 1.6;
+    private _pos = [_x, random 1, _y] call WHF_fnc_getRoadPos;
     // FIXME: use bounding box?
     if (_pos nearObjects 5 isNotEqualTo []) then {continue};
 
-    // TODO: randomize direction?
+    // TODO: parameterize LHD/RHD directions?
     _x params ["", "", "", "", "", "", "_begPos", "_endPos"];
     private _dir = _begPos getDir _endPos;
+    if (_y < 0) then {_dir = _dir + 180};
 
     _obj setDir _dir;
     _obj setVectorUp surfaceNormal _pos;
