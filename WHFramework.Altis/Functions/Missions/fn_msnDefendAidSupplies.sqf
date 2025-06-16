@@ -134,6 +134,12 @@ private _playersInArea = {
         inAreaArray [_center, _radius, _radius, 0, false, 20]
 };
 
+private _sideChat = {
+    params ["_source", "_message", ["_params", []]];
+    private _players = call _playersInArea;
+    [_source, _message, _params] remoteExec ["WHF_fnc_localizedSideChat", _players];
+};
+
 private _scripts = [];
 private _signal = [true];
 call {
@@ -150,11 +156,7 @@ call {
         if (count call _playersInArea > 0) exitWith {};
     };
 
-    {
-        private _source = [side group _x, "HQ"];
-        private _message = "$STR_WHF_defendAidSupplies_start";
-        [_source, _message] remoteExec ["WHF_fnc_localizedSideChat", _x];
-    } forEach call _playersInArea;
+    [[blufor, "HQ"], "$STR_WHF_defendAidSupplies_start"] call _sideChat;
 
     sleep 3;
 
