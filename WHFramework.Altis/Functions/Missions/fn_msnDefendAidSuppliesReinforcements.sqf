@@ -56,11 +56,11 @@ private _reinforceUnits = {
             _x disableAI "COVER";
             _x disableAI "SUPPRESSION";
         } forEach units _x;
+        _x addWaypoint [ATLToASL _pos, -1];
+        _x addWaypoint [getPosASL leader _x, -1];
         _x enableAttack false;
         _x setBehaviourStrong "AWARE";
         _x setSpeedMode "FULL";
-        _x addWaypoint [ATLToASL _pos, -1];
-        _x addWaypoint [getPosASL leader _x, -1];
     } forEach _newGroups;
     _groups append _newGroups;
 };
@@ -88,10 +88,10 @@ private _reinforceVehicles = {
         _x disableAI "COVER";
         _x disableAI "SUPPRESSION";
     } forEach units _group;
-    _group enableAttack false;
-    _group setBehaviourStrong "AWARE";
     _group addWaypoint [ATLToASL _pos, -1];
     _group addWaypoint [getPosASL leader _group, -1];
+    _group enableAttack false;
+    _group setBehaviourStrong "AWARE";
     _groups pushBack _group;
     _vehicles append assignedVehicles _group;
 };
