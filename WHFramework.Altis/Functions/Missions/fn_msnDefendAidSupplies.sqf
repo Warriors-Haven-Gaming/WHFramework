@@ -128,6 +128,12 @@ private _taskID = [
     "heal"
 ] call WHF_fnc_taskCreate;
 
+private _playersInArea = {
+    allPlayers
+        select {side group _x isEqualTo blufor}
+        inAreaArray [_center, _radius, _radius, 0, false, 20]
+};
+
 call {
     scopeName "main";
 
@@ -139,8 +145,17 @@ call {
             breakOut "main";
         };
 
-        // TODO: trigger defense when players are in proximity
+        if (count call _playersInArea > 0) exitWith {};
     };
+
+    {
+        private _source = [side group _x, "HQ"];
+        private _message = "$STR_WHF_defendAidSupplies_start";
+        [_source, _message] remoteExec ["WHF_fnc_localizedSideChat", _x];
+    } forEach call _playersInArea;
+
+    // TODO: spawn script to show status of supplies
+    // TODO: spawn script to generate waves of raiders
 
     while {true} do {
         sleep 3;
