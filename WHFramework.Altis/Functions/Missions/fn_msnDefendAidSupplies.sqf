@@ -103,9 +103,19 @@ for "_i" from 0 to 4 + random 6 do {
 };
 [_vehicles, _center, _radius] call WHF_fnc_setPosOnRoads;
 
-// TODO: spawn guards
-// TODO: spawn civilians
 private _groups = [];
+{
+    private _center = getPosATL _x getPos [5, random 360];
+    private _quantity = 4 + floor random 5;
+
+    private _guardGroup = [blufor, [_standardAid], _quantity, _center, 100, 1] call WHF_fnc_spawnUnits;
+    [_guardGroup, _center, 50] call BIS_fnc_taskPatrol;
+    _groups pushBack _guardGroup;
+
+    private _civGroup = [civilian, [_civiliansAid], _quantity, _center, 100] call WHF_fnc_spawnUnits;
+    [_civGroup, _center] call BIS_fnc_taskDefend;
+    _groups pushBack _civGroup;
+} forEach _supplies;
 
 private _taskID = [
     blufor,
