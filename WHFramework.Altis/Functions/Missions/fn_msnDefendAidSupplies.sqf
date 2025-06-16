@@ -84,9 +84,9 @@ for "_i" from 0 to 4 + random 6 do {
     private _type = selectRandom _supplyTypes;
     private _supply = createVehicle [_type, _center, [], _radius, "NONE"];
     _supply setDir random 360;
-    _supply setVectorUp surfaceNormal getPosATL _supply;
+    _supply setPos (getPosATL _supply vectorMultiply [1,1,0]);
     _supply allowDamage false;
-    _supply enableSimulationGlobal false;
+    _supply spawn {sleep 1; _this enableSimulationGlobal false};
     _supplies pushBack _supply;
 };
 [_supplies, _center, _radius] call WHF_fnc_setPosOnRoads;
@@ -98,8 +98,8 @@ for "_i" from 0 to 4 + random 6 do {
     private _vehicle = createVehicle [_type, _center, [], _radius, "NONE"];
     _vehicle setFuel (0.2 + random 0.6);
     _vehicle setDir random 360;
-    _vehicle setVectorUp surfaceNormal getPosATL _vehicle;
-    _vehicle enableDynamicSimulation true;
+    _vehicle setPos (getPosATL _vehicle vectorMultiply [1,1,0]);
+    _vehicle spawn {sleep 1; _this enableDynamicSimulation true};
     _vehicles pushBack _vehicle;
 };
 [_vehicles, _center, _radius] call WHF_fnc_setPosOnRoads;
