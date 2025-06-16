@@ -105,4 +105,11 @@ private _reinforceScripts = _reinforceArgs apply {_x spawn WHF_fnc_reinforceLoop
 waitUntil {sleep 1; !(_signal # 0)};
 {_x set [0, false]} forEach _reinforceArgs;
 waitUntil {sleep 1; _reinforceScripts findIf {!scriptDone _x} < 0};
-// TODO: make units retreat
+
+{
+    {deleteWaypoint _x} forEachReversed waypoints _x;
+    private _dir = _center getDir leader _x;
+    private _pos = _center getPos [1000, _dir];
+    _x move _pos;
+    _x setCombatMode "WHITE";
+} forEach _groups;
