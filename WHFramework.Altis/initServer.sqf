@@ -23,9 +23,9 @@ if (isMultiplayer) then {
 };
 
 if (isMultiplayer) then {
-    {deleteVehicle _x} forEach (playableUnits select {!isPlayer _x});
+    deleteVehicle (playableUnits select {!isPlayer _x});
 } else {
-    {deleteVehicle _x} forEach (switchableUnits select {!isPlayer _x});
+    deleteVehicle (switchableUnits select {!isPlayer _x});
     [player] execVM "onPlayerRespawn.sqf";
 };
 

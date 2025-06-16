@@ -24,7 +24,7 @@ private _isDeserted = {
 };
 
 private _respawnVehicle = {
-    {deleteVehicle _x} forEach _obstructions;
+    deleteVehicle _obstructions;
     if (alive _object) exitWith _restoreVehicle;
 
     deleteVehicle _object;

@@ -97,6 +97,6 @@ with uiNamespace do {
             && {local _x
             && {_x getVariable ["WHF_recruiter", ""] isEqualTo getPlayerUID player}}
         };
-        {deleteVehicle _x} forEach _recruits;
+        deleteVehicle _recruits;
     }];
 };
