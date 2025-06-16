@@ -66,6 +66,8 @@ if (_factionAid isEqualTo "") then {
     _factions = _factions select {_x call WHF_fnc_isFactionSupported};
     _factionAid = _factions # 0;
 };
+private _civiliansAid = ["civilians", _factionAid];
+private _standardAid = ["standard", _factionAid];
 if (_factionRaid isEqualTo "") then {_factionRaid = selectRandom (WHF_factions_pool get opfor)};
 
 private _supplyTypes = [
@@ -77,15 +79,33 @@ private _supplyTypes = [
 ];
 
 private _supplies = [];
-for "_i" from 0 to 6 + random 6 do {
-    // TODO: spawn supplies on roads
+for "_i" from 0 to 4 + random 6 do {
+    private _type = selectRandom _supplyTypes;
+    private _supply = createVehicle [_type, _center, [], _radius, "NONE"];
+    _supply setDir random 360;
+    _supply setVectorUp surfaceNormal getPosATL _supply;
+    _supply allowDamage false;
+    _supply enableSimulationGlobal false;
+    _supplies pushBack _supply;
 };
+[_supplies, _center, _radius] call WHF_fnc_setPosOnRoads;
 
-// TODO: spawn vehicles on roads
+private _vehicleTypes = [_civiliansAid, _standardAid] call WHF_fnc_getVehicleTypes;
+private _vehicles = [];
+for "_i" from 0 to 4 + random 6 do {
+    private _type = selectRandom _vehicleTypes;
+    private _vehicle = createVehicle [_type, _center, [], _radius, "NONE"];
+    _vehicle setFuel (0.2 + random 0.6);
+    _vehicle setDir random 360;
+    _vehicle setVectorUp surfaceNormal getPosATL _vehicle;
+    _vehicle enableDynamicSimulation true;
+    _vehicles pushBack _vehicle;
+};
+[_vehicles, _center, _radius] call WHF_fnc_setPosOnRoads;
+
 // TODO: spawn guards
 // TODO: spawn civilians
 private _groups = [];
-private _vehicles = [];
 
 private _taskID = [
     blufor,
