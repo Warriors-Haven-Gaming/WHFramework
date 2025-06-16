@@ -55,6 +55,7 @@ while {true} do {
     sleep 3;
 
     if (scriptDone _statusScript) exitWith {
+        // TODO: show message that too many supplies have been stolen
         sleep 3;
         [_parent, "FAILED"] spawn WHF_fnc_taskEnd;
     };

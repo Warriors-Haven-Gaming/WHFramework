@@ -56,17 +56,17 @@ private _taskID = [
 while {true} do {
     sleep 5;
 
+    private _description = call _getDescription;
+    if (_taskDescription isNotEqualTo _description) then {
+        [_taskID, nil, _description] call BIS_fnc_setTask;
+        _taskDescription = _description;
+    };
+
     if !(_signal # 0) exitWith {
         [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
     };
 
     if (call _aliveSupplies < _threshold) exitWith {
         [_taskID, "FAILED"] spawn WHF_fnc_taskEnd;
-    };
-
-    private _description = call _getDescription;
-    if (_taskDescription isNotEqualTo _description) then {
-        [_taskID, nil, _description] call BIS_fnc_setTask;
-        _taskDescription = _description;
     };
 };
