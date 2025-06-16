@@ -161,8 +161,15 @@ call {
     private _endAt = time + 600 + random 300;
     private _statusScript = [_signal, _supplies, _taskID, _endAt] spawn WHF_fnc_msnDefendAidSuppliesStatus;
     _scripts pushBack _statusScript;
+
     // TODO: spawn script to mark crates and let attackers steal them
-    // TODO: spawn script to generate waves of raiders
+
+    private _reinforceGroups = [];
+    private _reinforceVehicles = [];
+    private _reinforceScript =
+        [_signal, _center, _supplies, _factionRaid, _reinforceGroups, _reinforceVehicles]
+        spawn WHF_fnc_msnDefendAidSuppliesReinforcements;
+    _scripts pushBack _reinforceScript;
 
     {[_x, false] remoteExec ["enableDynamicSimulation"]} forEach _groups;
 
@@ -175,6 +182,9 @@ call {
             false
         };
 
+        // TODO: add message on first contact by guards
+        // TODO: add message when close to completion
+
         if (time >= _endAt) exitWith {
             _signal set [0, false];
             waitUntil {sleep 1; scriptDone _statusScript};
@@ -184,6 +194,9 @@ call {
             [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
         };
     };
+
+    _groups append _reinforceGroups;
+    _vehicles append _reinforceVehicles;
 };
 
 [_supplies] call WHF_fnc_queueGCDeletion;
