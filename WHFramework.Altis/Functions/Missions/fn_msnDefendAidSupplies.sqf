@@ -43,8 +43,9 @@ if (_center isEqualTo []) then {
         private _locationPosition = locationPosition _x;
         private _locationRadius = selectMax size _x * 0.75;
         for "_i" from 1 to 5 do {
-            private _pos = [_locationPosition, _locationRadius] call WHF_fnc_randomPos;
+            private _pos = [[[_locationPosition, _locationRadius]]] call BIS_fnc_randomPos;
             if (_pos isEqualTo [0,0]) exitWith {};
+            _pos = _pos vectorMultiply [1,1,0];
 
             if ([_pos, _safeRadius] call WHF_fnc_isNearRespawn) then {continue};
             if (_pos nearRoads _radius isEqualTo []) then {continue};
