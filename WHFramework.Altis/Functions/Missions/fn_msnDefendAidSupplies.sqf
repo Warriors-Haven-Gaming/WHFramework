@@ -132,7 +132,7 @@ private _taskID = [
 private _playersInArea = {
     allPlayers
         select {side group _x isEqualTo blufor}
-        inAreaArray [_center, _radius, _radius, 0, false, 20]
+        inAreaArray [_center, _radius, _radius, 0, false, 50]
 };
 
 private _sideChat = {
