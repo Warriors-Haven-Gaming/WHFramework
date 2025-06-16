@@ -201,9 +201,9 @@ call {
     _vehicles append _reinforceVehicles;
 };
 
+_signal set [0, false];
+waitUntil {sleep 1; _scripts findIf {!scriptDone _x} < 0};
+
 [_supplies] call WHF_fnc_queueGCDeletion;
 {[units _x] call WHF_fnc_queueGCDeletion} forEach _groups;
 {[_x] call WHF_fnc_queueGCDeletion} forEach _vehicles;
-
-_signal set [0, false];
-waitUntil {sleep 1; _scripts findIf {!scriptDone _x} < 0};
