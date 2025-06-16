@@ -181,7 +181,6 @@ call {
         if (scriptDone _statusScript) exitWith {
             sleep 3;
             [_taskID, "FAILED"] spawn WHF_fnc_taskEnd;
-            false
         };
 
         // TODO: add message on first contact by guards
