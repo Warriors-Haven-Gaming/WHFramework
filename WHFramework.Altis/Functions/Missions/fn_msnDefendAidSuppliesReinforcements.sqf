@@ -60,6 +60,7 @@ private _reinforceUnits = {
         _x addWaypoint [getPosASL leader _x, -1];
         _x enableAttack false;
         _x setBehaviourStrong "AWARE";
+        _x setCombatMode "WHITE";
         _x setSpeedMode "FULL";
     } forEach _newGroups;
     _groups append _newGroups;
@@ -92,6 +93,7 @@ private _reinforceVehicles = {
     _group addWaypoint [getPosASL leader _group, -1];
     _group enableAttack false;
     _group setBehaviourStrong "AWARE";
+    _group setCombatMode "WHITE";
     _group setSpeedMode "FULL";
     _groups pushBack _group;
     _vehicles append assignedVehicles _group;
@@ -112,5 +114,4 @@ waitUntil {sleep 1; _reinforceScripts findIf {!scriptDone _x} < 0};
     private _dir = _center getDir leader _x;
     private _pos = _center getPos [1000, _dir];
     _x move _pos;
-    _x setCombatMode "WHITE";
 } forEach _groups;
