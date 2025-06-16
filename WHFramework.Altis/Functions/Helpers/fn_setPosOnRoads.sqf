@@ -35,7 +35,7 @@ private _index = 0;
     private _obj = _objects # _index;
 
     // TODO: parameterize x and y coefficients?
-    private _pos = [_x, random 1, 0.3 - random 0.6] call WHF_fnc_getRoadPos;
+    private _pos = [_x, random 1, 0.8 - random 1.6] call WHF_fnc_getRoadPos;
     // FIXME: use bounding box?
     if (_pos nearObjects 5 isNotEqualTo []) then {continue};
 
