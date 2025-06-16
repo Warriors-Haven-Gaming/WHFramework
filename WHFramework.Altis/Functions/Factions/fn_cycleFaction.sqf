@@ -17,31 +17,7 @@ private _isFactionEnabled = {
     missionNamespace getVariable _key
 };
 
-private _factions = [
-    "base",
-    "csat",
-    "csat_pacific",
-    "aaf",
-    "ldf",
-    "ws_sfia",
-    "ws_tura",
-    "rhsafrf",
-    "cup_afrf",
-    "cup_afrf_modern",
-    "cup_npc",
-    "cup_tk",
-    "cup_tk_ins",
-    "nato",
-    "nato_pacific",
-    "ef_mjtf_desert",
-    "ef_mjtf_woodland",
-    "ws_ion",
-    "ws_una",
-    "cup_usa_woodland",
-    "cup_usmc_woodland"
-];
-_factions = _factions arrayIntersect call WHF_fnc_supportedFactions;
-
+private _factions = call WHF_fnc_supportedFactions;
 private _categories = [
     ["blufor", "str_west", blufor],
     ["opfor", "str_east", opfor]
