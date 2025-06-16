@@ -175,6 +175,12 @@ call {
 
     {[_x, false] remoteExec ["enableDynamicSimulation"]} forEach _groups;
 
+    private _area = [_center, _radius * 2, _radius * 2, 0, false];
+    private _areaMarker = [["WHF_msnDefendAidSupplies_"], _area, true] call WHF_fnc_createAreaMarker;
+    _areaMarker setMarkerBrushLocal "FDiagonal";
+    _areaMarker setMarkerColorLocal "ColorBlue";
+    _areaMarker setMarkerAlpha 0.7;
+
     while {true} do {
         sleep 3;
 
@@ -196,6 +202,7 @@ call {
         };
     };
 
+    deleteMarker _areaMarker;
     _groups append _reinforceGroups;
     _vehicles append _reinforceVehicles;
 };
