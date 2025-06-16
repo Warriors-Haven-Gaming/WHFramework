@@ -135,6 +135,7 @@ private _playersInArea = {
 };
 
 private _scripts = [];
+private _signal = [true];
 call {
     scopeName "main";
 
@@ -156,7 +157,6 @@ call {
     } forEach call _playersInArea;
 
     sleep 3;
-    private _signal = [true];
     private _statusScript = [_signal, _supplies, _taskID] spawn WHF_fnc_msnDefendAidSuppliesStatus;
     _scripts pushBack _statusScript;
     // TODO: spawn script to generate waves of raiders
@@ -177,4 +177,6 @@ call {
 [_supplies] call WHF_fnc_queueGCDeletion;
 {[units _x] call WHF_fnc_queueGCDeletion} forEach _groups;
 {[_x] call WHF_fnc_queueGCDeletion} forEach _vehicles;
+
+_signal set [0, false];
 waitUntil {sleep 1; _scripts findIf {!scriptDone _x} < 0};
