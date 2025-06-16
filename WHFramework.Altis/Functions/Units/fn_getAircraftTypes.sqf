@@ -127,6 +127,12 @@ private _resolvedTypes = _this apply {
         case ["heli_medium",  "cup_tk_ins"]: {["CUP_O_MI6T_TKA"]};
         case ["jet_cap",      "cup_tk_ins"]: {[]};
         case ["jet_cas",      "cup_tk_ins"]: {["CUP_O_Su25_Dyn_TKA","CUP_O_L39_TK"]};
+        case ["heli_attack",  "gendarmerie"]: {[]};
+        case ["heli_gunship", "gendarmerie"]: {[]};
+        case ["heli_light",   "gendarmerie"]: {["B_Heli_Light_01_F"]};
+        case ["heli_medium",  "gendarmerie"]: {["B_Heli_Transport_01_F","B_Heli_Transport_03_F"]};
+        case ["jet_cap",      "gendarmerie"]: {[]};
+        case ["jet_cas",      "gendarmerie"]: {[]};
         case ["heli_attack",  "nato"]: {["B_Heli_Light_01_dynamicLoadout_F"]};
         case ["heli_gunship", "nato"]: {["B_Heli_Attack_01_dynamicLoadout_F"]};
         case ["heli_light",   "nato"]: {["B_Heli_Light_01_F"]};

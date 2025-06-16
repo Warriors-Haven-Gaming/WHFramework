@@ -26,6 +26,7 @@ Author:
     "cup_npc",
     "cup_tk",
     "cup_tk_ins",
+    // "gendarmerie", // Hidden faction
     "nato",
     "nato_pacific",
     "ef_mjtf_desert",

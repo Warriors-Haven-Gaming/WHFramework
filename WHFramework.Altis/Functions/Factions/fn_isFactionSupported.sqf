@@ -31,6 +31,7 @@ private _patches = switch (_faction) do {
     case "cup_npc": {["CUP_Creatures_Military_NAPA", "CUP_WheeledVehicles_Hilux"]};
     case "cup_tk": {["CUP_Creatures_Military_Taki", "CUP_WheeledVehicles_Hilux"]};
     case "cup_tk_ins": {["CUP_Creatures_Military_TakiInsurgents", "CUP_WheeledVehicles_Hilux"]};
+    case "gendarmerie": {[]};
     case "nato": {[]};
     case "nato_pacific": {[]};
     case "ef_mjtf_desert": {["EF_Marines", "EF_Hunter"]};

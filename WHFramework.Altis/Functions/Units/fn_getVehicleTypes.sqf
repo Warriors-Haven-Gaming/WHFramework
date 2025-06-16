@@ -136,6 +136,13 @@ private _resolvedTypes = _this apply {
         case ["ifv",      "cup_tk_ins"]: {["CUP_O_BTR40_MG_TKM","CUP_O_MTLB_pk_TK_MILITIA"]};
         case ["mbt",      "cup_tk_ins"]: {["CUP_O_T34_TKA","CUP_O_T55_TK","CUP_O_T72_TKA"]};
         case ["aa",       "cup_tk_ins"]: {["CUP_O_LR_AA_TKM","CUP_O_Ural_ZU23_TKM","CUP_O_Hilux_igla_TK_INS","CUP_O_Hilux_zu23_TK_INS"]};
+        case ["standard", "gendarmerie"]: {["B_GEN_Offroad_01_gen_F","B_GEN_Offroad_01_comms_F","B_GEN_Offroad_01_covered_F","B_GEN_Van_02_transport_F"]};
+        case ["supply",   "gendarmerie"]: {["B_GEN_Van_02_vehicle_F"]};
+        case ["mrap",     "gendarmerie"]: {["B_GEN_Van_02_transport_F"]};
+        case ["apc",      "gendarmerie"]: {["B_GEN_Van_02_transport_F"]};
+        case ["ifv",      "gendarmerie"]: {["B_GEN_Offroad_01_gen_F"]};
+        case ["mbt",      "gendarmerie"]: {["B_MBT_01_cannon_F"]};
+        case ["aa",       "gendarmerie"]: {["B_APC_Tracked_01_AA_F"]};
         case ["standard", "nato"]: {["B_LSV_01_unarmed_F","B_LSV_01_armed_F","B_LSV_01_AT_F"]};
         case ["supply",   "nato"]: {["B_Truck_01_ammo_F","B_Truck_01_fuel_F","B_Truck_01_medical_F","B_Truck_01_Repair_F"]};
         case ["mrap",     "nato"]: {["B_MRAP_01_F","B_MRAP_01_gmg_F","B_MRAP_01_hmg_F"]};
