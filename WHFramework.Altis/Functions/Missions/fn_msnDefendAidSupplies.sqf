@@ -140,71 +140,73 @@ private _sideChat = {
     [_source, _message, _params] remoteExec ["WHF_fnc_localizedSideChat", _players];
 };
 
+private _canDefend = while {true} do {
+    sleep 10;
+
+    if (_supplies findIf {alive _x} < 0) exitWith {
+        [_taskID, "CANCELED"] spawn WHF_fnc_taskEnd;
+        false
+    };
+
+    if (count call _playersInArea > 0) exitWith {true};
+};
+
+if (!_canDefend) exitWith {
+    [_supplies] call WHF_fnc_queueGCDeletion;
+    {[units _x] call WHF_fnc_queueGCDeletion} forEach _groups;
+    {[_x] call WHF_fnc_queueGCDeletion} forEach _vehicles;
+};
+
+[[blufor, "HQ"], "$STR_WHF_defendAidSupplies_start"] call _sideChat;
+{[_x, false] remoteExec ["enableDynamicSimulation"]} forEach _groups;
+sleep 3;
+
 private _scripts = [];
 private _signal = [true];
-call {
-    private _success = while {true} do {
-        sleep 10;
 
-        if (_supplies findIf {alive _x} < 0) exitWith {
-            [_taskID, "CANCELED"] spawn WHF_fnc_taskEnd;
-            false
-        };
+private _endAt = time + 600 + random 300;
+private _statusScript = [_signal, _supplies, _taskID, _endAt] spawn WHF_fnc_msnDefendAidSuppliesStatus;
+_scripts pushBack _statusScript;
 
-        if (count call _playersInArea > 0) exitWith {true};
-    };
-    if (!_success) exitWith {};
+// TODO: spawn script to mark crates and let attackers steal them
 
-    [[blufor, "HQ"], "$STR_WHF_defendAidSupplies_start"] call _sideChat;
+private _reinforceGroups = [];
+private _reinforceVehicles = [];
+private _reinforceScript =
+    [_signal, _center, _supplies, _factionRaid, _reinforceGroups, _reinforceVehicles]
+    spawn WHF_fnc_msnDefendAidSuppliesReinforcements;
+_scripts pushBack _reinforceScript;
 
+private _area = [_center, _radius * 2, _radius * 2, 0, false];
+private _areaMarker = [["WHF_msnDefendAidSupplies_"], _area, true] call WHF_fnc_createAreaMarker;
+_areaMarker setMarkerBrushLocal "FDiagonal";
+_areaMarker setMarkerColorLocal "ColorBlue";
+_areaMarker setMarkerAlpha 0.7;
+
+while {true} do {
     sleep 3;
 
-    private _endAt = time + 600 + random 300;
-    private _statusScript = [_signal, _supplies, _taskID, _endAt] spawn WHF_fnc_msnDefendAidSuppliesStatus;
-    _scripts pushBack _statusScript;
-
-    // TODO: spawn script to mark crates and let attackers steal them
-
-    private _reinforceGroups = [];
-    private _reinforceVehicles = [];
-    private _reinforceScript =
-        [_signal, _center, _supplies, _factionRaid, _reinforceGroups, _reinforceVehicles]
-        spawn WHF_fnc_msnDefendAidSuppliesReinforcements;
-    _scripts pushBack _reinforceScript;
-
-    {[_x, false] remoteExec ["enableDynamicSimulation"]} forEach _groups;
-
-    private _area = [_center, _radius * 2, _radius * 2, 0, false];
-    private _areaMarker = [["WHF_msnDefendAidSupplies_"], _area, true] call WHF_fnc_createAreaMarker;
-    _areaMarker setMarkerBrushLocal "FDiagonal";
-    _areaMarker setMarkerColorLocal "ColorBlue";
-    _areaMarker setMarkerAlpha 0.7;
-
-    while {true} do {
+    if (scriptDone _statusScript) exitWith {
         sleep 3;
-
-        if (scriptDone _statusScript) exitWith {
-            sleep 3;
-            [_taskID, "FAILED"] spawn WHF_fnc_taskEnd;
-        };
-
-        // TODO: add message on first contact by guards
-        // TODO: add message when close to completion
-
-        if (time >= _endAt) exitWith {
-            _signal set [0, false];
-            waitUntil {sleep 1; scriptDone _statusScript};
-            // TODO: show message that raiders are retreating
-            sleep 10;
-            // TODO: show message of gratitude for players
-            [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
-        };
+        [_taskID, "FAILED"] spawn WHF_fnc_taskEnd;
     };
 
-    deleteMarker _areaMarker;
-    _groups append _reinforceGroups;
-    _vehicles append _reinforceVehicles;
+    // TODO: add message on first contact by guards
+    // TODO: add message when close to completion
+
+    if (time >= _endAt) exitWith {
+        _signal set [0, false];
+        waitUntil {sleep 1; scriptDone _statusScript};
+        // TODO: show message that raiders are retreating
+        sleep 10;
+        // TODO: show message of gratitude for players
+        [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
+    };
 };
+
+deleteMarker _areaMarker;
+_groups append _reinforceGroups;
+_vehicles append _reinforceVehicles;
 
 _signal set [0, false];
 waitUntil {sleep 1; _scripts findIf {!scriptDone _x} < 0};
