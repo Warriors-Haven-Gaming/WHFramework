@@ -110,8 +110,19 @@ waitUntil {sleep 1; !(_signal # 0)};
 waitUntil {sleep 1; _reinforceScripts findIf {!scriptDone _x} < 0};
 
 {
-    {deleteWaypoint _x} forEachReversed waypoints _x;
-    private _dir = _center getDir leader _x;
-    private _pos = _center getPos [1000, _dir];
-    _x move _pos;
+    [_x, _center] spawn {
+        scriptName "WHF_fnc_msnDefendAidSuppliesReinforcements_retreat";
+        params ["_group", "_center"];
+        if (currentWaypoint _group > 0) then {
+            [_group, currentWaypoint _group] setWaypointPosition [getPosASL leader _group, -1];
+            sleep (0.1 + random 5);
+            {deleteWaypoint _x} forEachReversed waypoints _group;
+        };
+        private _dir = _center getDir leader _group;
+        private _pos = _center getPos [1000, _dir];
+        _group addWaypoint [_pos, 0];
+        _group allowFleeing 1;
+        _group setCombatMode "WHITE";
+        {_x setUnitPos "AUTO"} forEach units _group;
+    };
 } forEach _groups;
