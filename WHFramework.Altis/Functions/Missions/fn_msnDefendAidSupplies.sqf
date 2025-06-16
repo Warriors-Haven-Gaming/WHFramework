@@ -143,18 +143,17 @@ private _sideChat = {
 private _scripts = [];
 private _signal = [true];
 call {
-    scopeName "main";
-
-    while {true} do {
+    private _success = while {true} do {
         sleep 10;
 
         if (_supplies findIf {alive _x} < 0) exitWith {
             [_taskID, "CANCELED"] spawn WHF_fnc_taskEnd;
-            breakOut "main";
+            false
         };
 
-        if (count call _playersInArea > 0) exitWith {};
+        if (count call _playersInArea > 0) exitWith {true};
     };
+    if (!_success) exitWith {};
 
     [[blufor, "HQ"], "$STR_WHF_defendAidSupplies_start"] call _sideChat;
 
