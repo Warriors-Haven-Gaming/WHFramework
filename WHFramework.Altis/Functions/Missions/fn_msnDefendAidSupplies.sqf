@@ -140,7 +140,7 @@ call {
     scopeName "main";
 
     while {true} do {
-        sleep 3;
+        sleep 10;
 
         if (_supplies findIf {alive _x} < 0) exitWith {
             [_taskID, "CANCELED"] spawn WHF_fnc_taskEnd;
