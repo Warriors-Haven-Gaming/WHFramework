@@ -44,6 +44,7 @@ private _index = 0;
     private _dir = _begPos getDir _endPos;
 
     _obj setDir _dir;
+    _obj setVectorUp surfaceNormal _pos;
     _obj setPosATL _pos;
 
     _index = _index + 1;
