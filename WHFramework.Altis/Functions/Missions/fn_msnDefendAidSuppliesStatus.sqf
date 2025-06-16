@@ -26,14 +26,15 @@ Author:
 params ["_signal", "_supplies", "_parent", "_endAt"];
 
 private _initialSupplies = count _supplies;
+private _threshold = ceil (_initialSupplies / 4);
 private _aliveSupplies = {{alive _x} count _supplies};
-if (call _aliveSupplies < 1) exitWith {};
+if (call _aliveSupplies < _threshold) exitWith {};
 
 private _getDescription = {
     private _duration = (_endAt - time) * timeMultiplier;
     private _dayTime = (dayTime + _duration / 3600) % 24;
     private _timeOfDay = [_dayTime, "HH:MM"] call BIS_fnc_timeToString;
-    private _args = [call _aliveSupplies, _initialSupplies, _timeOfDay];
+    private _args = [call _aliveSupplies, _initialSupplies, _threshold, _timeOfDay];
     [
         ["STR_WHF_defendAidSupplies_status_description"] + _args,
         ["STR_WHF_defendAidSupplies_status_title"] + _args
@@ -59,7 +60,7 @@ while {true} do {
         [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
     };
 
-    if (call _aliveSupplies < 1) exitWith {
+    if (call _aliveSupplies < _threshold) exitWith {
         [_taskID, "FAILED"] spawn WHF_fnc_taskEnd;
     };
 
