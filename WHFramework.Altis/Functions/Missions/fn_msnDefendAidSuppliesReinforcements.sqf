@@ -92,6 +92,7 @@ private _reinforceVehicles = {
     _group addWaypoint [getPosASL leader _group, -1];
     _group enableAttack false;
     _group setBehaviourStrong "AWARE";
+    _group setSpeedMode "FULL";
     _groups pushBack _group;
     _vehicles append assignedVehicles _group;
 };
