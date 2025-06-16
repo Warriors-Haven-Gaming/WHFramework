@@ -157,20 +157,32 @@ call {
     } forEach call _playersInArea;
 
     sleep 3;
-    private _statusScript = [_signal, _supplies, _taskID] spawn WHF_fnc_msnDefendAidSuppliesStatus;
+
+    private _endAt = time + 600 + random 300;
+    private _statusScript = [_signal, _supplies, _taskID, _endAt] spawn WHF_fnc_msnDefendAidSuppliesStatus;
     _scripts pushBack _statusScript;
+    // TODO: spawn script to mark crates and let attackers steal them
     // TODO: spawn script to generate waves of raiders
 
     {[_x, false] remoteExec ["enableDynamicSimulation"]} forEach _groups;
 
     while {true} do {
         sleep 3;
+
         if (scriptDone _statusScript) exitWith {
             sleep 3;
             [_taskID, "FAILED"] spawn WHF_fnc_taskEnd;
-            breakOut "main";
+            false
         };
-        // TODO: succeed after a certain duration from start of defense
+
+        if (time >= _endAt) exitWith {
+            _signal set [0, false];
+            waitUntil {sleep 1; scriptDone _statusScript};
+            // TODO: show message that raiders are retreating
+            sleep 10;
+            // TODO: show message of gratitude for players
+            [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
+        };
     };
 };
 

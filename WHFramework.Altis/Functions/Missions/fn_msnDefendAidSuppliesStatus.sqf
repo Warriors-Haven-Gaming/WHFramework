@@ -15,21 +15,30 @@ Parameters:
         The supplies being defended.
     String parent:
         The parent task ID.
+    Number endAt:
+        The time at which the mission is expected to end.
+        This is only displayed to players and not used in flow control.
 
 Author:
     thegamecracks
 
 */
-params ["_signal", "_supplies", "_parent"];
+params ["_signal", "_supplies", "_parent", "_endAt"];
 
 private _initialSupplies = count _supplies;
 private _aliveSupplies = {{alive _x} count _supplies};
 if (call _aliveSupplies < 1) exitWith {};
 
-private _getDescription = {[
-    ["STR_WHF_defendAidSupplies_status_description", call _aliveSupplies, _initialSupplies],
-    ["STR_WHF_defendAidSupplies_status_title", call _aliveSupplies, _initialSupplies]
-]};
+private _getDescription = {
+    private _duration = (_endAt - time) * timeMultiplier;
+    private _dayTime = (dayTime + _duration / 3600) % 24;
+    private _timeOfDay = [_dayTime, "HH:MM"] call BIS_fnc_timeToString;
+    private _args = [call _aliveSupplies, _initialSupplies, _timeOfDay];
+    [
+        ["STR_WHF_defendAidSupplies_status_description"] + _args,
+        ["STR_WHF_defendAidSupplies_status_title"] + _args
+    ]
+};
 
 private _taskDescription = call _getDescription;
 private _taskID = [
