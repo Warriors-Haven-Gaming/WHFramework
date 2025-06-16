@@ -128,13 +128,25 @@ private _taskID = [
     "heal"
 ] call WHF_fnc_taskCreate;
 
-// TODO: cancel if crates are deleted before starting
-// TODO: trigger defense when players are in proximity
-// TODO: fail if all crates are stolen
-// TODO: succeed after a certain duration from start of defense
-// NOTE: above tasks can be broken down into multiple while loops.
-while {true} do {
-    sleep 3;
+call {
+    scopeName "main";
+
+    while {true} do {
+        sleep 3;
+
+        if (_supplies findIf {alive _x} < 0) exitWith {
+            [_taskID, "CANCELED"] spawn WHF_fnc_taskEnd;
+            breakOut "main";
+        };
+
+        // TODO: trigger defense when players are in proximity
+    };
+
+    while {true} do {
+        sleep 3;
+        // TODO: fail if all crates are stolen
+        // TODO: succeed after a certain duration from start of defense
+    };
 };
 
 [_supplies] call WHF_fnc_queueGCDeletion;
