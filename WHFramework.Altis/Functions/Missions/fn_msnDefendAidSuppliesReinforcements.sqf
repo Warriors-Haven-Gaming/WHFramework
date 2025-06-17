@@ -60,6 +60,21 @@ private _reinforceUnits = {
         _x setBehaviourStrong "AWARE";
         _x setCombatMode "WHITE";
         _x setSpeedMode "FULL";
+
+        if (random 1 < 0.75) then {
+            private _enableTargeting = {
+                params ["_unit"];
+                _unit removeEventHandler [_thisEvent, _thisEventHandler];
+                _unit enableAI "AUTOTARGET";
+                _unit enableAI "TARGET";
+            };
+            {
+                _x addEventHandler ["FiredNear", _enableTargeting];
+                _x addEventHandler ["Hit", _enableTargeting];
+                _x disableAI "AUTOTARGET";
+                _x disableAI "TARGET";
+            } forEach units _x;
+        };
     } forEach _newGroups;
     _groups append _newGroups;
 };
