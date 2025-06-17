@@ -81,7 +81,7 @@ while {true} do {
 
     if !(_signal # 0) exitWith {};
 
-    private _units = units opfor;
+    private _units = units opfor select {!unitIsUAV _x};
     private _time = time;
     {
         if (!alive _x) then {continue};
