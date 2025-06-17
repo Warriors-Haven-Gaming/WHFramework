@@ -20,7 +20,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=100;
+		nextID=105;
 	};
 	class Camera
 	{
@@ -8558,7 +8558,7 @@ class Mission
 								class Attribute0
 								{
 									property="ENH_unitTraits_camouflage";
-									expression="[_this, ['CamouflageCoef', _value]] remoteExec ['setUnitTrait', _this]";
+									expression="if !(isClass (configFile >> 'CfgPatches' >> 'ace_common')) then {[_this, ['CamouflageCoef', _value]] remoteExec ['setUnitTrait', _this]}";
 									class Value
 									{
 										class data
@@ -8571,7 +8571,7 @@ class Mission
 								class Attribute1
 								{
 									property="ENH_unitTraits_audibleCoef";
-									expression="[_this, ['AudibleCoef', _value]] remoteExec ['setUnitTrait', _this]";
+									expression="if !(isClass (configFile >> 'CfgPatches' >> 'ace_common')) then {[_this, ['AudibleCoef', _value]] remoteExec ['setUnitTrait', _this]}";
 									class Value
 									{
 										class data
@@ -8607,7 +8607,7 @@ class Mission
 								class Attribute0
 								{
 									property="ENH_unitTraits_camouflage";
-									expression="[_this, ['CamouflageCoef', _value]] remoteExec ['setUnitTrait', _this]";
+									expression="if !(isClass (configFile >> 'CfgPatches' >> 'ace_common')) then {[_this, ['CamouflageCoef', _value]] remoteExec ['setUnitTrait', _this]}";
 									class Value
 									{
 										class data
@@ -8620,7 +8620,7 @@ class Mission
 								class Attribute1
 								{
 									property="ENH_unitTraits_audibleCoef";
-									expression="[_this, ['AudibleCoef', _value]] remoteExec ['setUnitTrait', _this]";
+									expression="if !(isClass (configFile >> 'CfgPatches' >> 'ace_common')) then {[_this, ['AudibleCoef', _value]] remoteExec ['setUnitTrait', _this]}";
 									class Value
 									{
 										class data
