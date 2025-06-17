@@ -35,7 +35,7 @@ private _reinforceUnits = {
     private _pos = getPosATL selectRandom (_supplies select {alive _x});
     if (isNil "_pos") exitWith {};
 
-    private _quantity = 8 + floor random 9;
+    private _quantity = 4 + floor random 5;
     private _newGroups = [
         opfor,
         [
