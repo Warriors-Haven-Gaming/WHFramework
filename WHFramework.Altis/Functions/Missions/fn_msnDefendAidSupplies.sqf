@@ -26,7 +26,7 @@ Author:
 */
 params [["_center", []], ["_factionAid", ""], ["_factionRaid", ""]];
 
-private _radius = 100;
+private _radius = 200;
 
 if (_center isEqualTo []) then {
     private _locations = nearestLocations [

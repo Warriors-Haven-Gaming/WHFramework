@@ -10,6 +10,8 @@ Parameters:
         An array that should contain a single boolean.
         By setting this to false, the function can be safely terminated
         during execution. The status task will count as completed.
+    Number radius:
+        The radius of the mission area.
     Array supplies:
         The supplies being defended.
 
@@ -17,7 +19,7 @@ Author:
     thegamecracks
 
 */
-params ["_signal", "_supplies"];
+params ["_signal", "_radius", "_supplies"];
 
 // We don't expect new supplies to appear during the mission, but just in case
 // the array gets modified, we're copying it.
@@ -61,7 +63,7 @@ private _playersNearSupply = {
     params ["_supply"];
     allPlayers
         select {side group _x isEqualTo blufor}
-        inAreaArray [getPosATL _supply, 100, 100, 0, false]
+        inAreaArray [getPosATL _supply, _radius, _radius, 0, false]
 };
 
 private _sideChat = {

@@ -36,7 +36,7 @@ private _endAt = time + 600 + random 300;
 private _statusScript = [_signal, _supplies, _parent, _endAt] spawn WHF_fnc_msnDefendAidSuppliesStatus;
 _scripts pushBack _statusScript;
 
-private _theftScript = [_signal, _supplies] spawn WHF_fnc_msnDefendAidSuppliesTheft;
+private _theftScript = [_signal, _radius, _supplies] spawn WHF_fnc_msnDefendAidSuppliesTheft;
 _scripts pushBack _theftScript;
 
 private _reinforceGroups = [];
@@ -46,7 +46,7 @@ private _reinforceScript =
     spawn WHF_fnc_msnDefendAidSuppliesReinforcements;
 _scripts pushBack _reinforceScript;
 
-private _area = [_center, _radius * 2, _radius * 2, 0, false];
+private _area = [_center, _radius * 1.5, _radius * 1.5, 0, false];
 private _areaMarker = [["WHF_msnDefendAidSupplies_"], _area, true] call WHF_fnc_createAreaMarker;
 _areaMarker setMarkerBrushLocal "FDiagonal";
 _areaMarker setMarkerColorLocal "ColorBlue";
