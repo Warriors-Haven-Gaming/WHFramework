@@ -56,10 +56,6 @@ private _reinforceUnits = {
             _x disableAI "COVER";
             _x disableAI "SUPPRESSION";
         } forEach units _x;
-        private _destination = _x addWaypoint [getPosASL _supply, -1];
-        _destination setWaypointCompletionRadius 10;
-        _destination setWaypointTimeout [30, 30, 30];
-        _x addWaypoint [getPosASL leader _x, -1];
         _x enableAttack false;
         _x setBehaviourStrong "AWARE";
         _x setCombatMode "WHITE";
@@ -91,10 +87,6 @@ private _reinforceVehicles = {
         _x disableAI "COVER";
         _x disableAI "SUPPRESSION";
     } forEach units _group;
-    private _destination = _group addWaypoint [getPosASL _supply, -1];
-    _destination setWaypointCompletionRadius 10;
-    _destination setWaypointTimeout [30, 30, 30];
-    _group addWaypoint [getPosASL leader _group, -1];
     _group enableAttack false;
     _group setBehaviourStrong "AWARE";
     _group setCombatMode "WHITE";
@@ -109,7 +101,23 @@ private _reinforceArgs = [
 ];
 private _reinforceScripts = _reinforceArgs apply {_x spawn WHF_fnc_reinforceLoop};
 
-waitUntil {sleep 1; !(_signal # 0)};
+while {true} do {
+    sleep 3;
+    if !(_signal # 0) exitWith {};
+
+    {
+        if (units _x findIf {alive _x} < 0) then {continue};
+        if (currentWaypoint _x < count waypoints _x) then {continue};
+
+        private _supply = selectRandom (_supplies select {alive _x});
+        if (isNil "_supply") then {break};
+
+        private _waypoint = _x addWaypoint [getPosASL _supply, -1];
+        _waypoint setWaypointCompletionRadius 10;
+        _waypoint setWaypointTimeout [30, 30, 30];
+    } forEach _groups;
+};
+
 {_x set [0, false]} forEach _reinforceArgs;
 waitUntil {sleep 1; _reinforceScripts findIf {!scriptDone _x} < 0};
 
