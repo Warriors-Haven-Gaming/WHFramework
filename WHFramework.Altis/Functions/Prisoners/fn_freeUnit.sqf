@@ -3,7 +3,7 @@ Function: WHF_fnc_freeUnit
 
 Description:
     Make a unit free a prisoner.
-    Function must be executed where the unit is local.
+    Function must be executed in scheduled environment where the unit is local.
 
 Parameters:
     Object caller:
@@ -44,7 +44,7 @@ if (side _group isNotEqualTo civilian || {count units _group > 1}) then {
     _group = createGroup [civilian, true];
     [_target] joinSilent _group;
 } else {
-    {deleteWaypoint _x} forEachReversed waypoints _group;
+    [_group] call WHF_fnc_clearWaypoints;
 };
 
 private _dir = getPosATL _caller getDir getPosATL _target;

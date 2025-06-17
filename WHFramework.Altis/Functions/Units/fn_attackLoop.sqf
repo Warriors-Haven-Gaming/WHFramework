@@ -55,10 +55,10 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
             apply {_x # 6 vectorMultiply [1,1,0]};
         if (!isNil "_area") then {_targets = _targets inAreaArray _area};
 
-        sleep 0.125;
-        if (count _targets < 1) then {continue};
 
-        {deleteWaypoint _x} forEachReversed _waypoints;
+        if (count _targets < 1) then {sleep 0.125; continue};
+
+        [_x] call WHF_fnc_clearWaypoints;
         private _position = [_leader, _targets] call WHF_fnc_nearestPosition;
         private _waypoint = _x addWaypoint [_position vectorMultiply [1,1,0], 50];
         _waypoint setWaypointType "SAD";
