@@ -113,6 +113,13 @@ private _hasNearestSupplyWaypoint = {
     _pos distance _supply < 5
 };
 
+private _clearWaypoints = {
+    params ["_group"];
+    [_group, currentWaypoint _group] setWaypointPosition [getPosASL leader _group, -1];
+    sleep 0.1;
+    {deleteWaypoint _x} forEachReversed waypoints _group;
+};
+
 while {true} do {
     sleep 3;
     if !(_signal # 0) exitWith {};
@@ -126,6 +133,7 @@ while {true} do {
         private _supply = [leader _x, _supplies] call WHF_fnc_nearestPosition;
         if ([_x, _supply] call _hasNearestSupplyWaypoint) then {continue};
 
+        [_x] call _clearWaypoints;
         private _waypoint = _x addWaypoint [getPosASL _supply, -1];
         _waypoint setWaypointCompletionRadius 5;
         _waypoint setWaypointTimeout [30, 30, 30];
@@ -137,14 +145,11 @@ while {true} do {
 waitUntil {sleep 1; _reinforceScripts findIf {!scriptDone _x} < 0};
 
 {
-    [_x, _center] spawn {
+    [_x, _center, _clearWaypoints] spawn {
         scriptName "WHF_fnc_msnDefendAidSuppliesReinforcements_retreat";
-        params ["_group", "_center"];
-        if (currentWaypoint _group > 0) then {
-            [_group, currentWaypoint _group] setWaypointPosition [getPosASL leader _group, -1];
-            sleep (0.1 + random 5);
-            {deleteWaypoint _x} forEachReversed waypoints _group;
-        };
+        params ["_group", "_center", "_clearWaypoints"];
+        [_group] call _clearWaypoints;
+        sleep random 5;
         private _dir = _center getDir leader _group;
         private _pos = _center getPos [1000, _dir];
         _group addWaypoint [_pos, 0];
