@@ -47,6 +47,7 @@ if (_quantity < 1) exitWith {grpNull};
 private _randomPos =
     [WHF_fnc_randomPos, WHF_fnc_randomPosHidden]
     select ("hidden" in _flags);
+private _dynamicSimulation = !("noDynamicSimulation" in _flags);
 
 private _group = createGroup [_side, true];
 private _vehicleTypes = _types call WHF_fnc_getVehicleTypes;
@@ -65,7 +66,7 @@ for "_i" from 1 to _quantity do {
     private _vehicle = createVehicle [selectRandom _vehicleTypes, _pos, [], 0, _special];
     _vehicle setDir random 360;
     _vehicle setVectorUp surfaceNormal getPosATL _vehicle;
-    _vehicle enableDynamicSimulation true;
+    _vehicle enableDynamicSimulation _dynamicSimulation;
     _group addVehicle _vehicle;
     _vehicles pushBack _vehicle;
 
@@ -85,5 +86,10 @@ for "_i" from 1 to _quantity do {
 _group allowFleeing 0;
 _group setBehaviourStrong "SAFE";
 _group setCombatMode "RED";
-_group spawn {sleep 1; [_this, true] remoteExec ["enableDynamicSimulation"]};
+
+if (_dynamicSimulation) then {_group spawn {
+    sleep 1;
+    [_this, true] remoteExec ["enableDynamicSimulation"];
+}};
+
 _group
