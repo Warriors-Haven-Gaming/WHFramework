@@ -114,6 +114,7 @@ while {true} do {
         private _waypoint = _x addWaypoint [getPosASL _supply, -1];
         _waypoint setWaypointCompletionRadius 10;
         _waypoint setWaypointTimeout [30, 30, 30];
+        {_x doMove getPosATL _supply} forEach units _x;
     } forEach _groups;
 };
 
@@ -133,6 +134,6 @@ waitUntil {sleep 1; _reinforceScripts findIf {!scriptDone _x} < 0};
         private _pos = _center getPos [1000, _dir];
         _group addWaypoint [_pos, 0];
         _group setCombatMode "WHITE";
-        {_x setUnitPos "AUTO"} forEach units _group;
+        {_x setUnitPos "AUTO"; _x doMove _pos} forEach units _group;
     };
 } forEach _groups;
