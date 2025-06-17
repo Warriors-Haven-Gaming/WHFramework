@@ -9,7 +9,7 @@ Parameters:
     Array signal:
         An array that should contain a single boolean.
         By setting this to false, the function can be safely terminated
-        during execution. The status task will count as completed.
+        during execution. Units will be ordered to retreat.
     Position2D center:
         The center of the mission area.
     Array supplies:
