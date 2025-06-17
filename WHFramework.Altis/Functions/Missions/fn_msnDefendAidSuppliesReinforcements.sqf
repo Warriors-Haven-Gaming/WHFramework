@@ -103,17 +103,28 @@ private _reinforceArgs = [
 ];
 private _reinforceScripts = _reinforceArgs apply {_x spawn WHF_fnc_reinforceLoop};
 
+private _hasNearestSupplyWaypoint = {
+    params ["_group", "_supply"];
+    private _current = currentWaypoint _group;
+    private _waypoints = waypoints _x;
+    if (_current >= count _waypoints) exitWith {false};
+
+    private _pos = waypointPosition (_waypoints # _current);
+    _pos distance _supply < 5
+};
+
 while {true} do {
     sleep 3;
     if !(_signal # 0) exitWith {};
 
+    private _supplies = _supplies select {alive _x};
+    if (count _supplies < 1) exitWith {};
+
     {
         if (units _x findIf {alive _x} < 0) then {continue};
-        if (currentWaypoint _x < count waypoints _x) then {continue};
 
-        private _supplies = _supplies select {alive _x};
         private _supply = [leader _x, _supplies] call WHF_fnc_nearestPosition;
-        if (isNil "_supply") then {break};
+        if ([_x, _supply] call _hasNearestSupplyWaypoint) then {continue};
 
         private _waypoint = _x addWaypoint [getPosASL _supply, -1];
         _waypoint setWaypointCompletionRadius 5;
