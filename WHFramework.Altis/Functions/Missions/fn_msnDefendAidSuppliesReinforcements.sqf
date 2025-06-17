@@ -111,7 +111,8 @@ while {true} do {
         if (units _x findIf {alive _x} < 0) then {continue};
         if (currentWaypoint _x < count waypoints _x) then {continue};
 
-        private _supply = selectRandom (_supplies select {alive _x});
+        private _supplies = _supplies select {alive _x};
+        private _supply = [leader _x, _supplies] call WHF_fnc_nearestPosition;
         if (isNil "_supply") then {break};
 
         private _waypoint = _x addWaypoint [getPosASL _supply, -1];
