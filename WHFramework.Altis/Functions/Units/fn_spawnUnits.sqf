@@ -24,6 +24,7 @@ Parameters:
     Boolean dynamicSimulation:
         (Optional, default true)
         If true, the group will be subject to the dynamic simulation system.
+        Has no effect if a group is passed.
     Array equipment:
         (Optional, default WHF_units_equipment)
         A list of equipment types to add to each unit.
@@ -83,11 +84,11 @@ if (_sideProvided) then {
     _group allowFleeing 0;
     _group setBehaviourStrong "SAFE";
     _group setCombatMode "RED";
-};
 
-if (_dynamicSimulation) then {_group spawn {
-    sleep 1;
-    [_this, true] remoteExec ["enableDynamicSimulation"];
-}};
+    if (_dynamicSimulation) then {_group spawn {
+        sleep 1;
+        [_this, true] remoteExec ["enableDynamicSimulation"];
+    }};
+};
 
 if (_sideProvided) then {_group} else {_units}
