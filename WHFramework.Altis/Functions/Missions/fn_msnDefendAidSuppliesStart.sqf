@@ -36,7 +36,8 @@ private _endAt = time + 600 + random 300;
 private _statusScript = [_signal, _supplies, _parent, _endAt] spawn WHF_fnc_msnDefendAidSuppliesStatus;
 _scripts pushBack _statusScript;
 
-// TODO: spawn script to mark crates and let attackers steal them
+private _theftScript = [_signal, _supplies] spawn WHF_fnc_msnDefendAidSuppliesTheft;
+_scripts pushBack _theftScript;
 
 private _reinforceGroups = [];
 private _reinforceVehicles = [];
