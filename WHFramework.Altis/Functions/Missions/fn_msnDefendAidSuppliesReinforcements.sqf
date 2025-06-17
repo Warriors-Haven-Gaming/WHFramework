@@ -32,8 +32,8 @@ params ["_signal", "_center", "_supplies", "_factionRaid", "_groups", "_vehicles
 private _reinforceUnits = {
     params ["_center", "_supplies", "_factionRaid", "_groups"];
 
-    private _pos = getPosATL selectRandom (_supplies select {alive _x});
-    if (isNil "_pos") exitWith {};
+    private _supply = selectRandom (_supplies select {alive _x});
+    if (isNil "_supply") exitWith {};
 
     private _quantity = 4 + floor random 5;
     private _newGroups = [
@@ -56,7 +56,9 @@ private _reinforceUnits = {
             _x disableAI "COVER";
             _x disableAI "SUPPRESSION";
         } forEach units _x;
-        _x addWaypoint [ATLToASL _pos, -1];
+        private _destination = _x addWaypoint [getPosASL _supply, -1];
+        _destination setWaypointCompletionRadius 10;
+        _destination setWaypointTimeout [30, 30, 30];
         _x addWaypoint [getPosASL leader _x, -1];
         _x enableAttack false;
         _x setBehaviourStrong "AWARE";
@@ -69,8 +71,8 @@ private _reinforceUnits = {
 private _reinforceVehicles = {
     params ["_center", "_supplies", "_factionRaid", "_groups", "_vehicles"];
 
-    private _pos = getPosATL selectRandom (_supplies select {alive _x});
-    if (isNil "_pos") exitWith {};
+    private _supply = selectRandom (_supplies select {alive _x});
+    if (isNil "_supply") exitWith {};
 
     private _standard = ["standard", _factionRaid];
     // TODO: disable dynamic simulation on vehicles
@@ -89,7 +91,9 @@ private _reinforceVehicles = {
         _x disableAI "COVER";
         _x disableAI "SUPPRESSION";
     } forEach units _group;
-    _group addWaypoint [ATLToASL _pos, -1];
+    private _destination = _group addWaypoint [getPosASL _supply, -1];
+    _destination setWaypointCompletionRadius 10;
+    _destination setWaypointTimeout [30, 30, 30];
     _group addWaypoint [getPosASL leader _group, -1];
     _group enableAttack false;
     _group setBehaviourStrong "AWARE";
