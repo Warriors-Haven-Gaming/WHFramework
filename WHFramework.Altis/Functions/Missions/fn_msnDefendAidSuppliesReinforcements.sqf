@@ -45,8 +45,8 @@ private _reinforceUnits = {
             [[[  "sniper", _factionRaid]], 2, 2, 3], 0.05
         ],
         _quantity,
-        _center getPos [500 + random 250, random 360],
-        200,
+        _center getPos [600, random 360],
+        400,
         ["hidden", "noDynamicSimulation"]
     ] call WHF_fnc_spawnUnitGroups;
 
