@@ -51,11 +51,6 @@ private _reinforceUnits = {
     ] call WHF_fnc_spawnUnitGroups;
 
     {
-        {
-            _x disableAI "AUTOCOMBAT";
-            _x disableAI "COVER";
-            _x disableAI "SUPPRESSION";
-        } forEach units _x;
         _x enableAttack false;
         _x setBehaviourStrong "AWARE";
         _x setCombatMode "WHITE";
@@ -96,11 +91,6 @@ private _reinforceVehicles = {
         ["hidden", "noDynamicSimulation"]
     ] call WHF_fnc_spawnVehicles;
 
-    {
-        _x disableAI "AUTOCOMBAT";
-        _x disableAI "COVER";
-        _x disableAI "SUPPRESSION";
-    } forEach units _group;
     _group enableAttack false;
     _group setBehaviourStrong "AWARE";
     _group setCombatMode "WHITE";
