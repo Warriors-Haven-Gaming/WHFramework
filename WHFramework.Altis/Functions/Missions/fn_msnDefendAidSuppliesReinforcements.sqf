@@ -71,7 +71,6 @@ private _reinforceVehicles = {
     if (isNil "_supply") exitWith {};
 
     private _standard = ["standard", _factionRaid];
-    // TODO: disable dynamic simulation on vehicles
     private _group = [
         opfor,
         [_standard],
@@ -79,7 +78,7 @@ private _reinforceVehicles = {
         1,
         _center,
         [300, 750],
-        ["hidden"]
+        ["hidden", "noDynamicSimulation"]
     ] call WHF_fnc_spawnVehicles;
 
     {
