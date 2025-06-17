@@ -32,7 +32,8 @@ params ["_center", "_radius", "_supplies", "_factionRaid", "_parent", "_groups",
 private _scripts = [];
 private _signal = [true];
 
-private _endAt = time + 600 + random 300;
+private _duration = 600 + random 300;
+private _endAt = time + _duration;
 private _statusScript = [_signal, _supplies, _parent, _endAt] spawn WHF_fnc_msnDefendAidSuppliesStatus;
 _scripts pushBack _statusScript;
 
@@ -81,11 +82,14 @@ private _getFirstContact = {
     [_group, _group call _getTargets]
 };
 
+private _halfAt = time + _duration / 2;
+private _reachedHalf = false;
+
 while {true} do {
     sleep 3;
 
     if (scriptDone _statusScript) exitWith {
-        // TODO: show message that too many supplies have been stolen
+        [[blufor, "HQ"], "$STR_WHF_defendAidSupplies_failed"] call _sideChat;
         sleep 3;
         [_parent, "FAILED"] spawn WHF_fnc_taskEnd;
     };
@@ -107,14 +111,16 @@ while {true} do {
         _firstContact = true;
     };
 
-    // TODO: add message when close to completion
+    if (time >= _halfAt && {!_reachedHalf}) then {
+        [[blufor, "HQ"], "$STR_WHF_defendAidSupplies_half"] call _sideChat;
+        _reachedHalf = true;
+    };
 
     if (time >= _endAt) exitWith {
         _signal set [0, false];
         waitUntil {sleep 1; scriptDone _statusScript};
-        // TODO: show message that raiders are retreating
+        [[blufor, "HQ"], "$STR_WHF_defendAidSupplies_success"] call _sideChat;
         sleep 10;
-        // TODO: show message of gratitude for players
         [_parent, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
     };
 };
