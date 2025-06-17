@@ -107,7 +107,7 @@ for "_i" from 0 to 4 + random 6 do {
 private _groups = [];
 {
     private _center = getPosATL _x getPos [5, random 360];
-    private _quantity = 4 + floor random 5;
+    private _quantity = 4 + floor random 2;
 
     private _guardGroup = [blufor, [_standardAid], _quantity, _center, 100, 1] call WHF_fnc_spawnUnits;
     [_guardGroup, _center, 50] call BIS_fnc_taskPatrol;
