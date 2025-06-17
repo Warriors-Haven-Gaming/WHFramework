@@ -125,7 +125,6 @@ waitUntil {sleep 1; _reinforceScripts findIf {!scriptDone _x} < 0};
         private _dir = _center getDir leader _group;
         private _pos = _center getPos [1000, _dir];
         _group addWaypoint [_pos, 0];
-        _group allowFleeing 1;
         _group setCombatMode "WHITE";
         {_x setUnitPos "AUTO"} forEach units _group;
     };
