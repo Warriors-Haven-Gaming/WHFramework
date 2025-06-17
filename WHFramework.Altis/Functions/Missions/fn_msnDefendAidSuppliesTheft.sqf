@@ -44,13 +44,13 @@ private _updateMarkerByIndex = {
         case (!alive _supply): {deleteMarker _marker};
         case (_theftAt >= 0): {
             if (_color isEqualTo "ColorRed") exitWith {};
-            // _marker setMarkerPosLocal getPosATL _supply;
+            _marker setMarkerPosLocal getPosATL _supply;
             _marker setMarkerColorLocal "ColorRed";
             _marker setMarkerType "mil_warning";
         };
         default {
             if (_color isEqualTo "ColorGreen") exitWith {};
-            // _marker setMarkerPosLocal getPosATL _supply;
+            _marker setMarkerPosLocal getPosATL _supply;
             _marker setMarkerColorLocal "ColorGreen";
             _marker setMarkerType "mil_box";
         };
