@@ -112,9 +112,9 @@ while {alive _drone} do {
         if (count _targets < 1) exitWith {[] call _switchTarget};
 
         private _distances = _targets apply {_drone distance _x};
-        private _target = _targets select (_distances find selectMin _distances);
+        private _newTarget = _targets select (_distances find selectMin _distances);
 
-        [_target] call _switchTarget;
+        [_newTarget] call _switchTarget;
         _lastTarget = _time;
     };
     if (!alive _target) then {
