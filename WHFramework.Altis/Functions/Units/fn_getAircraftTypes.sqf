@@ -133,14 +133,14 @@ private _resolvedTypes = _this apply {
         case ["heli_medium",  "gendarmerie"]: {["B_Heli_Transport_01_F","B_Heli_Transport_03_F"]};
         case ["jet_cap",      "gendarmerie"]: {[]};
         case ["jet_cas",      "gendarmerie"]: {[]};
-        case ["heli_attack",  "nato"]: {["B_Heli_Light_01_dynamicLoadout_F"]};
-        case ["heli_gunship", "nato"]: {["B_Heli_Attack_01_dynamicLoadout_F"]};
+        case ["heli_attack",  "nato"]: {["B_Heli_Light_01_dynamicLoadout_F","B_Heli_Transport_01_pylons_F"]};
+        case ["heli_gunship", "nato"]: {["B_Heli_Attack_01_dynamicLoadout_F","B_Heli_Attack_01_pylons_dynamicLoadout_F"]};
         case ["heli_light",   "nato"]: {["B_Heli_Light_01_F"]};
         case ["heli_medium",  "nato"]: {["B_Heli_Transport_01_F","B_Heli_Transport_03_F"]};
         case ["jet_cap",      "nato"]: {["B_Plane_Fighter_01_F"]};
         case ["jet_cas",      "nato"]: {["B_Plane_CAS_01_dynamicLoadout_F"]};
-        case ["heli_attack",  "nato_pacific"]: {["B_Heli_Light_01_dynamicLoadout_F"]};
-        case ["heli_gunship", "nato_pacific"]: {["B_Heli_Attack_01_dynamicLoadout_F"]};
+        case ["heli_attack",  "nato_pacific"]: {["B_Heli_Light_01_dynamicLoadout_F","B_Heli_Transport_01_pylons_F"]};
+        case ["heli_gunship", "nato_pacific"]: {["B_Heli_Attack_01_dynamicLoadout_F","B_Heli_Attack_01_pylons_dynamicLoadout_F"]};
         case ["heli_light",   "nato_pacific"]: {["B_Heli_Light_01_F"]};
         case ["heli_medium",  "nato_pacific"]: {["B_Heli_Transport_01_F","B_Heli_Transport_03_F"]};
         case ["jet_cap",      "nato_pacific"]: {["B_Plane_Fighter_01_F"]};
