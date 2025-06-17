@@ -51,6 +51,35 @@ _areaMarker setMarkerBrushLocal "FDiagonal";
 _areaMarker setMarkerColorLocal "ColorBlue";
 _areaMarker setMarkerAlpha 0.7;
 
+private _playersInArea = {
+    allPlayers
+        select {side group _x isEqualTo blufor}
+        inAreaArray _area
+};
+
+private _sideChat = {
+    params ["_source", "_message", ["_params", []]];
+    private _players = call _playersInArea;
+    [_source, _message, _params] remoteExec ["WHF_fnc_localizedSideChat", _players];
+};
+
+private _guardGroups = _groups select {side _x isEqualTo blufor};
+private _firstContact = false;
+private _getFirstContact = {
+    private _getTargets = {
+        leader _this targets [true]
+            select {leader _this targetKnowledge _x select 4 isNotEqualTo sideUnknown}
+    };
+
+    private _index =
+        _guardGroups
+        findIf {_x call _getTargets isNotEqualTo []};
+    if (_index < 0) exitWith {[grpNull, []]};
+
+    private _group = _guardGroups # _index;
+    [_group, _group call _getTargets]
+};
+
 while {true} do {
     sleep 3;
 
@@ -60,7 +89,23 @@ while {true} do {
         [_parent, "FAILED"] spawn WHF_fnc_taskEnd;
     };
 
-    // TODO: add message on first contact by guards
+    if (!_firstContact && {!isNull (call _getFirstContact # 0)}) then {
+        call _getFirstContact params ["_group", "_targets"];
+        private _leader = leader _group;
+        if (!alive _leader) exitWith {};
+
+        private _dir = _center getDir _targets # 0;
+        _dir = round (_dir / 10) * 10;
+        [_leader, "$STR_WHF_defendAidSupplies_contact", [_dir]] call _sideChat;
+
+        {
+            private _group = _x;
+            {_group reveal _x} forEach _targets;
+        } forEach _guardGroups;
+
+        _firstContact = true;
+    };
+
     // TODO: add message when close to completion
 
     if (time >= _endAt) exitWith {
