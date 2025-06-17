@@ -112,7 +112,7 @@ while {true} do {
         if (isNil "_supply") then {break};
 
         private _waypoint = _x addWaypoint [getPosASL _supply, -1];
-        _waypoint setWaypointCompletionRadius 10;
+        _waypoint setWaypointCompletionRadius 5;
         _waypoint setWaypointTimeout [30, 30, 30];
         {_x doMove getPosATL _supply} forEach units _x;
     } forEach _groups;
