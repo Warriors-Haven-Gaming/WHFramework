@@ -20,7 +20,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=236;
+		nextID=248;
 	};
 	class Camera
 	{
@@ -25618,7 +25618,7 @@ class Mission
 							};
 							id=2651;
 							type="Land_GuardHouse_02_F";
-							atlOffset=0.375;
+							atlOffset=0.37500024;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -25639,7 +25639,7 @@ class Mission
 						};
 					};
 					id=870;
-					atlOffset=0.51445317;
+					atlOffset=0.51445341;
 				};
 				class Item4
 				{
@@ -31384,14 +31384,14 @@ class Mission
 										};
 										class Attribute2
 										{
-											property="enableStamina";
-											expression="_this enablestamina _value;";
+											property="ENH_doStop";
+											expression="if (!is3DEN && _value) then {doStop _this}";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=0;
+													value=1;
 												};
 											};
 										};
@@ -31423,14 +31423,14 @@ class Mission
 										};
 										class Attribute5
 										{
-											property="ENH_doStop";
-											expression="if (!is3DEN && _value) then {doStop _this}";
+											property="enableStamina";
+											expression="_this enablestamina _value;";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=1;
+													value=0;
 												};
 											};
 										};
@@ -32174,14 +32174,14 @@ class Mission
 										};
 										class Attribute2
 										{
-											property="enableStamina";
-											expression="_this enablestamina _value;";
+											property="ENH_doStop";
+											expression="if (!is3DEN && _value) then {doStop _this}";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=0;
+													value=1;
 												};
 											};
 										};
@@ -32213,14 +32213,14 @@ class Mission
 										};
 										class Attribute5
 										{
-											property="ENH_doStop";
-											expression="if (!is3DEN && _value) then {doStop _this}";
+											property="enableStamina";
+											expression="_this enablestamina _value;";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=1;
+													value=0;
 												};
 											};
 										};
@@ -34298,14 +34298,14 @@ class Mission
 										};
 										class Attribute2
 										{
-											property="ENH_doStop";
-											expression="if (!is3DEN && _value) then {doStop _this}";
+											property="enableStamina";
+											expression="_this enablestamina _value;";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=1;
+													value=0;
 												};
 											};
 										};
@@ -34337,14 +34337,14 @@ class Mission
 										};
 										class Attribute5
 										{
-											property="enableStamina";
-											expression="_this enablestamina _value;";
+											property="ENH_doStop";
+											expression="if (!is3DEN && _value) then {doStop _this}";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=0;
+													value=1;
 												};
 											};
 										};
@@ -34575,14 +34575,14 @@ class Mission
 										};
 										class Attribute2
 										{
-											property="ENH_doStop";
-											expression="if (!is3DEN && _value) then {doStop _this}";
+											property="enableStamina";
+											expression="_this enablestamina _value;";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=1;
+													value=0;
 												};
 											};
 										};
@@ -34614,14 +34614,14 @@ class Mission
 										};
 										class Attribute5
 										{
-											property="enableStamina";
-											expression="_this enablestamina _value;";
+											property="ENH_doStop";
+											expression="if (!is3DEN && _value) then {doStop _this}";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=0;
+													value=1;
 												};
 											};
 										};
@@ -34752,14 +34752,14 @@ class Mission
 										};
 										class Attribute2
 										{
-											property="ENH_doStop";
-											expression="if (!is3DEN && _value) then {doStop _this}";
+											property="enableStamina";
+											expression="_this enablestamina _value;";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=1;
+													value=0;
 												};
 											};
 										};
@@ -34791,14 +34791,14 @@ class Mission
 										};
 										class Attribute5
 										{
-											property="enableStamina";
-											expression="_this enablestamina _value;";
+											property="ENH_doStop";
+											expression="if (!is3DEN && _value) then {doStop _this}";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=0;
+													value=1;
 												};
 											};
 										};
@@ -34922,14 +34922,14 @@ class Mission
 										};
 										class Attribute2
 										{
-											property="ENH_doStop";
-											expression="if (!is3DEN && _value) then {doStop _this}";
+											property="enableStamina";
+											expression="_this enablestamina _value;";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=1;
+													value=0;
 												};
 											};
 										};
@@ -34961,14 +34961,14 @@ class Mission
 										};
 										class Attribute5
 										{
-											property="enableStamina";
-											expression="_this enablestamina _value;";
+											property="ENH_doStop";
+											expression="if (!is3DEN && _value) then {doStop _this}";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=0;
+													value=1;
 												};
 											};
 										};
@@ -35096,14 +35096,14 @@ class Mission
 										};
 										class Attribute2
 										{
-											property="ENH_doStop";
-											expression="if (!is3DEN && _value) then {doStop _this}";
+											property="enableStamina";
+											expression="_this enablestamina _value;";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=1;
+													value=0;
 												};
 											};
 										};
@@ -35135,14 +35135,14 @@ class Mission
 										};
 										class Attribute5
 										{
-											property="enableStamina";
-											expression="_this enablestamina _value;";
+											property="ENH_doStop";
+											expression="if (!is3DEN && _value) then {doStop _this}";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=0;
+													value=1;
 												};
 											};
 										};
@@ -35270,14 +35270,14 @@ class Mission
 										};
 										class Attribute2
 										{
-											property="ENH_doStop";
-											expression="if (!is3DEN && _value) then {doStop _this}";
+											property="enableStamina";
+											expression="_this enablestamina _value;";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=1;
+													value=0;
 												};
 											};
 										};
@@ -35309,14 +35309,14 @@ class Mission
 										};
 										class Attribute5
 										{
-											property="enableStamina";
-											expression="_this enablestamina _value;";
+											property="ENH_doStop";
+											expression="if (!is3DEN && _value) then {doStop _this}";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=0;
+													value=1;
 												};
 											};
 										};
@@ -35414,14 +35414,14 @@ class Mission
 										};
 										class Attribute2
 										{
-											property="ENH_doStop";
-											expression="if (!is3DEN && _value) then {doStop _this}";
+											property="enableStamina";
+											expression="_this enablestamina _value;";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=1;
+													value=0;
 												};
 											};
 										};
@@ -35453,14 +35453,14 @@ class Mission
 										};
 										class Attribute5
 										{
-											property="enableStamina";
-											expression="_this enablestamina _value;";
+											property="ENH_doStop";
+											expression="if (!is3DEN && _value) then {doStop _this}";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=0;
+													value=1;
 												};
 											};
 										};
@@ -35569,14 +35569,14 @@ class Mission
 										};
 										class Attribute2
 										{
-											property="ENH_doStop";
-											expression="if (!is3DEN && _value) then {doStop _this}";
+											property="enableStamina";
+											expression="_this enablestamina _value;";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=1;
+													value=0;
 												};
 											};
 										};
@@ -35608,14 +35608,14 @@ class Mission
 										};
 										class Attribute5
 										{
-											property="enableStamina";
-											expression="_this enablestamina _value;";
+											property="ENH_doStop";
+											expression="if (!is3DEN && _value) then {doStop _this}";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=0;
+													value=1;
 												};
 											};
 										};
@@ -35895,14 +35895,14 @@ class Mission
 										};
 										class Attribute2
 										{
-											property="ENH_doStop";
-											expression="if (!is3DEN && _value) then {doStop _this}";
+											property="enableStamina";
+											expression="_this enablestamina _value;";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=1;
+													value=0;
 												};
 											};
 										};
@@ -35934,14 +35934,14 @@ class Mission
 										};
 										class Attribute5
 										{
-											property="enableStamina";
-											expression="_this enablestamina _value;";
+											property="ENH_doStop";
+											expression="if (!is3DEN && _value) then {doStop _this}";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=0;
+													value=1;
 												};
 											};
 										};
@@ -36042,14 +36042,14 @@ class Mission
 										};
 										class Attribute2
 										{
-											property="ENH_doStop";
-											expression="if (!is3DEN && _value) then {doStop _this}";
+											property="enableStamina";
+											expression="_this enablestamina _value;";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=1;
+													value=0;
 												};
 											};
 										};
@@ -36081,14 +36081,14 @@ class Mission
 										};
 										class Attribute5
 										{
-											property="enableStamina";
-											expression="_this enablestamina _value;";
+											property="ENH_doStop";
+											expression="if (!is3DEN && _value) then {doStop _this}";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=0;
+													value=1;
 												};
 											};
 										};
@@ -36666,7 +36666,6 @@ class Mission
 											{
 												name="ef_arifle_mxar_gl_coy";
 												optics="ef_optic_mbs_remote_coy";
-												muzzle="";
 												flashlight="EF_acc_pointer_IR_coy";
 												class primaryMuzzleMag
 												{
@@ -36930,14 +36929,14 @@ class Mission
 										};
 										class Attribute2
 										{
-											property="ENH_doStop";
-											expression="if (!is3DEN && _value) then {doStop _this}";
+											property="enableStamina";
+											expression="_this enablestamina _value;";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=1;
+													value=0;
 												};
 											};
 										};
@@ -36969,14 +36968,14 @@ class Mission
 										};
 										class Attribute5
 										{
-											property="enableStamina";
-											expression="_this enablestamina _value;";
+											property="ENH_doStop";
+											expression="if (!is3DEN && _value) then {doStop _this}";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=0;
+													value=1;
 												};
 											};
 										};
@@ -37002,7 +37001,6 @@ class Mission
 											{
 												name="ef_arifle_mxar_gl_coy";
 												optics="ef_optic_mbs_remote_coy";
-												muzzle="";
 												flashlight="EF_acc_pointer_IR_coy";
 												class primaryMuzzleMag
 												{
@@ -37266,14 +37264,14 @@ class Mission
 										};
 										class Attribute2
 										{
-											property="ENH_doStop";
-											expression="if (!is3DEN && _value) then {doStop _this}";
+											property="enableStamina";
+											expression="_this enablestamina _value;";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=1;
+													value=0;
 												};
 											};
 										};
@@ -37305,14 +37303,14 @@ class Mission
 										};
 										class Attribute5
 										{
-											property="enableStamina";
-											expression="_this enablestamina _value;";
+											property="ENH_doStop";
+											expression="if (!is3DEN && _value) then {doStop _this}";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=0;
+													value=1;
 												};
 											};
 										};
@@ -37338,7 +37336,6 @@ class Mission
 											{
 												name="ef_arifle_mxar_gl_coy";
 												optics="ef_optic_mbs_remote_coy";
-												muzzle="";
 												flashlight="EF_acc_pointer_IR_coy";
 												class primaryMuzzleMag
 												{
@@ -37602,14 +37599,14 @@ class Mission
 										};
 										class Attribute2
 										{
-											property="ENH_doStop";
-											expression="if (!is3DEN && _value) then {doStop _this}";
+											property="enableStamina";
+											expression="_this enablestamina _value;";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=1;
+													value=0;
 												};
 											};
 										};
@@ -37641,14 +37638,14 @@ class Mission
 										};
 										class Attribute5
 										{
-											property="enableStamina";
-											expression="_this enablestamina _value;";
+											property="ENH_doStop";
+											expression="if (!is3DEN && _value) then {doStop _this}";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=0;
+													value=1;
 												};
 											};
 										};
@@ -37674,7 +37671,6 @@ class Mission
 											{
 												name="ef_arifle_mxar_gl_coy";
 												optics="ef_optic_mbs_remote_coy";
-												muzzle="";
 												flashlight="EF_acc_pointer_IR_coy";
 												class primaryMuzzleMag
 												{
@@ -37938,14 +37934,14 @@ class Mission
 										};
 										class Attribute2
 										{
-											property="ENH_doStop";
-											expression="if (!is3DEN && _value) then {doStop _this}";
+											property="enableStamina";
+											expression="_this enablestamina _value;";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=1;
+													value=0;
 												};
 											};
 										};
@@ -37977,14 +37973,14 @@ class Mission
 										};
 										class Attribute5
 										{
-											property="enableStamina";
-											expression="_this enablestamina _value;";
+											property="ENH_doStop";
+											expression="if (!is3DEN && _value) then {doStop _this}";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=0;
+													value=1;
 												};
 											};
 										};
@@ -38010,7 +38006,6 @@ class Mission
 											{
 												name="ef_arifle_mxar_gl_coy";
 												optics="ef_optic_mbs_remote_coy";
-												muzzle="";
 												flashlight="EF_acc_pointer_IR_coy";
 												class primaryMuzzleMag
 												{
@@ -38274,14 +38269,14 @@ class Mission
 										};
 										class Attribute2
 										{
-											property="ENH_doStop";
-											expression="if (!is3DEN && _value) then {doStop _this}";
+											property="enableStamina";
+											expression="_this enablestamina _value;";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=1;
+													value=0;
 												};
 											};
 										};
@@ -38313,14 +38308,14 @@ class Mission
 										};
 										class Attribute5
 										{
-											property="enableStamina";
-											expression="_this enablestamina _value;";
+											property="ENH_doStop";
+											expression="if (!is3DEN && _value) then {doStop _this}";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=0;
+													value=1;
 												};
 											};
 										};
@@ -38346,7 +38341,6 @@ class Mission
 											{
 												name="ef_arifle_mxar_gl_coy";
 												optics="ef_optic_mbs_remote_coy";
-												muzzle="";
 												flashlight="EF_acc_pointer_IR_coy";
 												class primaryMuzzleMag
 												{
@@ -38610,14 +38604,14 @@ class Mission
 										};
 										class Attribute2
 										{
-											property="ENH_doStop";
-											expression="if (!is3DEN && _value) then {doStop _this}";
+											property="enableStamina";
+											expression="_this enablestamina _value;";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=1;
+													value=0;
 												};
 											};
 										};
@@ -38649,14 +38643,14 @@ class Mission
 										};
 										class Attribute5
 										{
-											property="enableStamina";
-											expression="_this enablestamina _value;";
+											property="ENH_doStop";
+											expression="if (!is3DEN && _value) then {doStop _this}";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=0;
+													value=1;
 												};
 											};
 										};
@@ -38682,7 +38676,6 @@ class Mission
 											{
 												name="ef_arifle_mxar_gl_coy";
 												optics="ef_optic_mbs_remote_coy";
-												muzzle="";
 												flashlight="EF_acc_pointer_IR_coy";
 												class primaryMuzzleMag
 												{
@@ -38946,14 +38939,14 @@ class Mission
 										};
 										class Attribute2
 										{
-											property="ENH_doStop";
-											expression="if (!is3DEN && _value) then {doStop _this}";
+											property="enableStamina";
+											expression="_this enablestamina _value;";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=1;
+													value=0;
 												};
 											};
 										};
@@ -38985,14 +38978,14 @@ class Mission
 										};
 										class Attribute5
 										{
-											property="enableStamina";
-											expression="_this enablestamina _value;";
+											property="ENH_doStop";
+											expression="if (!is3DEN && _value) then {doStop _this}";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=0;
+													value=1;
 												};
 											};
 										};
@@ -39018,7 +39011,6 @@ class Mission
 											{
 												name="ef_arifle_mxar_gl_coy";
 												optics="ef_optic_mbs_coy";
-												muzzle="";
 												flashlight="EF_acc_pointer_IR_coy";
 												class primaryMuzzleMag
 												{
@@ -39255,14 +39247,14 @@ class Mission
 										};
 										class Attribute2
 										{
-											property="ENH_doStop";
-											expression="if (!is3DEN && _value) then {doStop _this}";
+											property="enableStamina";
+											expression="_this enablestamina _value;";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=1;
+													value=0;
 												};
 											};
 										};
@@ -39294,14 +39286,14 @@ class Mission
 										};
 										class Attribute5
 										{
-											property="enableStamina";
-											expression="_this enablestamina _value;";
+											property="ENH_doStop";
+											expression="if (!is3DEN && _value) then {doStop _this}";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=0;
+													value=1;
 												};
 											};
 										};
@@ -39327,7 +39319,6 @@ class Mission
 											{
 												name="ef_arifle_mxar_gl_coy";
 												optics="ef_optic_mbs_coy";
-												muzzle="";
 												flashlight="EF_acc_pointer_IR_coy";
 												class primaryMuzzleMag
 												{
@@ -39564,14 +39555,14 @@ class Mission
 										};
 										class Attribute2
 										{
-											property="ENH_doStop";
-											expression="if (!is3DEN && _value) then {doStop _this}";
+											property="enableStamina";
+											expression="_this enablestamina _value;";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=1;
+													value=0;
 												};
 											};
 										};
@@ -39603,14 +39594,14 @@ class Mission
 										};
 										class Attribute5
 										{
-											property="enableStamina";
-											expression="_this enablestamina _value;";
+											property="ENH_doStop";
+											expression="if (!is3DEN && _value) then {doStop _this}";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=0;
+													value=1;
 												};
 											};
 										};
@@ -39636,7 +39627,6 @@ class Mission
 											{
 												name="ef_arifle_mxar_gl_coy";
 												optics="ef_optic_mbs_coy";
-												muzzle="";
 												flashlight="EF_acc_pointer_IR_coy";
 												class primaryMuzzleMag
 												{
@@ -39873,14 +39863,14 @@ class Mission
 										};
 										class Attribute2
 										{
-											property="ENH_doStop";
-											expression="if (!is3DEN && _value) then {doStop _this}";
+											property="enableStamina";
+											expression="_this enablestamina _value;";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=1;
+													value=0;
 												};
 											};
 										};
@@ -39912,14 +39902,14 @@ class Mission
 										};
 										class Attribute5
 										{
-											property="enableStamina";
-											expression="_this enablestamina _value;";
+											property="ENH_doStop";
+											expression="if (!is3DEN && _value) then {doStop _this}";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=0;
+													value=1;
 												};
 											};
 										};
@@ -39945,7 +39935,6 @@ class Mission
 											{
 												name="ef_arifle_mxar_gl_coy";
 												optics="ef_optic_mbs_coy";
-												muzzle="";
 												flashlight="EF_acc_pointer_IR_coy";
 												class primaryMuzzleMag
 												{
@@ -40182,14 +40171,14 @@ class Mission
 										};
 										class Attribute2
 										{
-											property="ENH_doStop";
-											expression="if (!is3DEN && _value) then {doStop _this}";
+											property="enableStamina";
+											expression="_this enablestamina _value;";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=1;
+													value=0;
 												};
 											};
 										};
@@ -40221,14 +40210,14 @@ class Mission
 										};
 										class Attribute5
 										{
-											property="enableStamina";
-											expression="_this enablestamina _value;";
+											property="ENH_doStop";
+											expression="if (!is3DEN && _value) then {doStop _this}";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=0;
+													value=1;
 												};
 											};
 										};
@@ -40254,7 +40243,6 @@ class Mission
 											{
 												name="ef_arifle_mxar_gl_coy";
 												optics="ef_optic_mbs_coy";
-												muzzle="";
 												flashlight="EF_acc_pointer_IR_coy";
 												class primaryMuzzleMag
 												{
@@ -40491,14 +40479,14 @@ class Mission
 										};
 										class Attribute2
 										{
-											property="ENH_doStop";
-											expression="if (!is3DEN && _value) then {doStop _this}";
+											property="enableStamina";
+											expression="_this enablestamina _value;";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=1;
+													value=0;
 												};
 											};
 										};
@@ -40530,14 +40518,14 @@ class Mission
 										};
 										class Attribute5
 										{
-											property="enableStamina";
-											expression="_this enablestamina _value;";
+											property="ENH_doStop";
+											expression="if (!is3DEN && _value) then {doStop _this}";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=0;
+													value=1;
 												};
 											};
 										};
@@ -40563,7 +40551,6 @@ class Mission
 											{
 												name="ef_arifle_mxar_gl_coy";
 												optics="ef_optic_mbs_coy";
-												muzzle="";
 												flashlight="EF_acc_pointer_IR_coy";
 												class primaryMuzzleMag
 												{
@@ -40800,14 +40787,14 @@ class Mission
 										};
 										class Attribute2
 										{
-											property="ENH_doStop";
-											expression="if (!is3DEN && _value) then {doStop _this}";
+											property="enableStamina";
+											expression="_this enablestamina _value;";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=1;
+													value=0;
 												};
 											};
 										};
@@ -40839,14 +40826,14 @@ class Mission
 										};
 										class Attribute5
 										{
-											property="enableStamina";
-											expression="_this enablestamina _value;";
+											property="ENH_doStop";
+											expression="if (!is3DEN && _value) then {doStop _this}";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=0;
+													value=1;
 												};
 											};
 										};
@@ -40872,7 +40859,6 @@ class Mission
 											{
 												name="ef_arifle_mxar_gl_coy";
 												optics="ef_optic_mbs_coy";
-												muzzle="";
 												flashlight="EF_acc_pointer_IR_coy";
 												class primaryMuzzleMag
 												{
@@ -41109,14 +41095,14 @@ class Mission
 										};
 										class Attribute2
 										{
-											property="ENH_doStop";
-											expression="if (!is3DEN && _value) then {doStop _this}";
+											property="enableStamina";
+											expression="_this enablestamina _value;";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=1;
+													value=0;
 												};
 											};
 										};
@@ -41148,14 +41134,14 @@ class Mission
 										};
 										class Attribute5
 										{
-											property="enableStamina";
-											expression="_this enablestamina _value;";
+											property="ENH_doStop";
+											expression="if (!is3DEN && _value) then {doStop _this}";
 											class Value
 											{
 												class data
 												{
 													singleType="BOOL";
-													value=0;
+													value=1;
 												};
 											};
 										};
@@ -41187,11 +41173,11 @@ class Mission
 						};
 					};
 					id=2276;
-					atlOffset=1.0585337;
+					atlOffset=1.3164697;
 				};
 			};
 			id=874;
-			atlOffset=2.6547203;
+			atlOffset=0.69599009;
 		};
 		class Item1
 		{
