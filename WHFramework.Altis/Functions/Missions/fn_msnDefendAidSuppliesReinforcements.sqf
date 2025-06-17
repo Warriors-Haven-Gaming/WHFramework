@@ -32,8 +32,7 @@ params ["_signal", "_center", "_supplies", "_factionRaid", "_groups", "_vehicles
 private _reinforceUnits = {
     params ["_center", "_supplies", "_factionRaid", "_groups"];
 
-    private _supply = selectRandom (_supplies select {alive _x});
-    if (isNil "_supply") exitWith {};
+    if (_supplies findIf {alive _x} < 0) exitWith {};
 
     private _quantity = 4 + floor random 5;
     private _newGroups = [
@@ -77,8 +76,7 @@ private _reinforceUnits = {
 private _reinforceVehicles = {
     params ["_center", "_supplies", "_factionRaid", "_groups", "_vehicles"];
 
-    private _supply = selectRandom (_supplies select {alive _x});
-    if (isNil "_supply") exitWith {};
+    if (_supplies findIf {alive _x} < 0) exitWith {};
 
     private _standard = ["standard", _factionRaid];
     private _group = [
