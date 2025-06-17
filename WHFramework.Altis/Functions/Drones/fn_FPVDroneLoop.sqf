@@ -111,9 +111,7 @@ while {alive _drone} do {
             select {_x getVariable ["WHF_fpv_targeted", objNull] in [objNull, _drone]};
         if (count _targets < 1) exitWith {[] call _switchTarget};
 
-        private _distances = _targets apply {_drone distance _x};
-        private _newTarget = _targets select (_distances find selectMin _distances);
-
+        private _newTarget = [_drone, _targets] call WHF_fnc_nearestPosition;
         [_newTarget] call _switchTarget;
         _lastTarget = _time;
     };

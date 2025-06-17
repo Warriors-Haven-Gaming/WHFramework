@@ -58,10 +58,8 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
         sleep 0.125;
         if (count _targets < 1) then {continue};
 
-        private _distances = _targets apply {_leader distance2D _x};
-        private _position = _targets select (_distances find selectMin _distances);
-
         {deleteWaypoint _x} forEachReversed _waypoints;
+        private _position = [_leader, _targets] call WHF_fnc_nearestPosition;
         private _waypoint = _x addWaypoint [_position vectorMultiply [1,1,0], 50];
         _waypoint setWaypointType "SAD";
         _waypoint setWaypointCompletionRadius 20;
