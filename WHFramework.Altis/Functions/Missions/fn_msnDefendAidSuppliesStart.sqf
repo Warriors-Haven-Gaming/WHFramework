@@ -74,7 +74,7 @@ private _sideChat = {
 };
 
 private _halfAt = time + _duration / 2;
-private _reachedHalf = false;
+private _closeAt = time + _duration - 60;
 
 private _state = while {true} do {
     sleep 3;
@@ -84,9 +84,14 @@ private _state = while {true} do {
         "FAILED"
     };
 
-    if (time >= _halfAt && {!_reachedHalf}) then {
+    if (_halfAt >= 0 && {time >= _halfAt}) then {
         [[blufor, "HQ"], "$STR_WHF_defendAidSupplies_half"] call _sideChat;
-        _reachedHalf = true;
+        _halfAt = -1;
+    };
+
+    if (_closeAt >= 0 && {time >= _closeAt}) then {
+        [[blufor, "HQ"], "$STR_WHF_defendAidSupplies_close"] call _sideChat;
+        _closeAt = -1;
     };
 
     if (time >= _endAt) exitWith {
