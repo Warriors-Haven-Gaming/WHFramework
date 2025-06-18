@@ -39,6 +39,9 @@ private _endAt = time + _duration;
 private _statusScript = [_signal, _supplies, _parent, _endAt] spawn WHF_fnc_msnDefendAidSuppliesStatus;
 _scripts pushBack _statusScript;
 
+private _contactScript = [_signal, _center, _radius, _groups] spawn WHF_fnc_msnDefendAidSuppliesContact;
+_scripts pushBack _contactScript;
+
 private _theftScript = [_signal, _radius, _supplies] spawn WHF_fnc_msnDefendAidSuppliesTheft;
 _scripts pushBack _theftScript;
 
@@ -67,23 +70,6 @@ private _sideChat = {
     [_source, _message, _params] remoteExec ["WHF_fnc_localizedSideChat", _players];
 };
 
-private _guardGroups = _groups select {side _x isEqualTo blufor};
-private _firstContact = false;
-private _getFirstContact = {
-    private _getTargets = {
-        leader _this targets [true]
-            select {leader _this targetKnowledge _x select 4 isNotEqualTo sideUnknown}
-    };
-
-    private _index =
-        _guardGroups
-        findIf {_x call _getTargets isNotEqualTo []};
-    if (_index < 0) exitWith {[grpNull, []]};
-
-    private _group = _guardGroups # _index;
-    [_group, _group call _getTargets]
-};
-
 private _halfAt = time + _duration / 2;
 private _reachedHalf = false;
 
@@ -94,23 +80,6 @@ while {true} do {
         [[blufor, "HQ"], "$STR_WHF_defendAidSupplies_failed"] call _sideChat;
         sleep 3;
         [_parent, "FAILED"] spawn WHF_fnc_taskEnd;
-    };
-
-    if (!_firstContact && {!isNull (call _getFirstContact # 0)}) then {
-        call _getFirstContact params ["_group", "_targets"];
-        private _leader = leader _group;
-        if (!alive _leader) exitWith {};
-
-        private _dir = _center getDir _targets # 0;
-        _dir = round (_dir / 10) * 10;
-        [_leader, "$STR_WHF_defendAidSupplies_contact", [_dir]] call _sideChat;
-
-        {
-            private _group = _x;
-            {_group reveal _x} forEach _targets;
-        } forEach _guardGroups;
-
-        _firstContact = true;
     };
 
     if (time >= _halfAt && {!_reachedHalf}) then {
