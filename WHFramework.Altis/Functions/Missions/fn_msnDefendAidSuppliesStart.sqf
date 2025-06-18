@@ -32,7 +32,7 @@ params ["_center", "_radius", "_supplies", "_factionRaid", "_parent", "_groups",
 private _scripts = [];
 private _signal = [true];
 
-private _duration = 600 + random 300;
+private _duration = 900 + random 300;
 private _endAt = time + _duration;
 private _statusScript = [_signal, _supplies, _parent, _endAt] spawn WHF_fnc_msnDefendAidSuppliesStatus;
 _scripts pushBack _statusScript;
