@@ -42,6 +42,9 @@ _scripts pushBack _statusScript;
 private _contactScript = [_signal, _center, _radius, _groups] spawn WHF_fnc_msnDefendAidSuppliesContact;
 _scripts pushBack _contactScript;
 
+private _shelterScript = [_signal, _groups, _parent] spawn WHF_fnc_msnDefendAidSuppliesShelter;
+_scripts pushBack _shelterScript;
+
 private _theftScript = [_signal, _radius, _supplies] spawn WHF_fnc_msnDefendAidSuppliesTheft;
 _scripts pushBack _theftScript;
 
