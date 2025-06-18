@@ -38,18 +38,23 @@ private _updateMarkerByIndex = {
     private _supply = _supplies # _i;
     private _theftAt = _supplyTheftAt # _i;
 
-    private _color = markerColor _marker;
+    private _type = markerType _marker;
     switch (true) do {
-        case (_color isEqualTo ""): {};
-        case (!alive _supply): {deleteMarker _marker};
+        case (markerColor _marker isEqualTo ""): {};
+        case (!alive _supply): {
+            if (_type isEqualTo "mil_destroy_noShadow") exitWith {};
+            _marker setMarkerColorLocal "ColorRed";
+            _marker setMarkerDirLocal 45;
+            _marker setMarkerType "mil_destroy_noShadow";
+        };
         case (_theftAt >= 0): {
-            if (_color isEqualTo "ColorRed") exitWith {};
+            if (_type isEqualTo "mil_warning") exitWith {};
             _marker setMarkerPosLocal getPosATL _supply;
             _marker setMarkerColorLocal "ColorRed";
             _marker setMarkerType "mil_warning";
         };
         default {
-            if (_color isEqualTo "ColorGreen") exitWith {};
+            if (_type isEqualTo "mil_box") exitWith {};
             _marker setMarkerPosLocal getPosATL _supply;
             _marker setMarkerColorLocal "ColorGreen";
             _marker setMarkerType "mil_box";
