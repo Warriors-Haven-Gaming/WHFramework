@@ -50,6 +50,7 @@ private _reinforceUnits = {
     ] call WHF_fnc_spawnUnitGroups;
 
     {
+        [_x] call WHF_fnc_disableModdedAI;
         _x enableAttack false;
         _x setBehaviourStrong "AWARE";
         _x setCombatMode "WHITE";
