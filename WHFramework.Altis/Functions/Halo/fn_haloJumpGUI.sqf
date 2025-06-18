@@ -30,7 +30,7 @@ private _isEnemy = {
 };
 private _side = side group focusOn;
 private _radius = WHF_halo_enemy_distance;
-private _area = [getPosATL focusOn, _radius, _radius];
+private _area = [getPosATL focusOn, _radius, _radius, 0, false];
 private _units = _area nearEntities [["CAManBase"], false, false, true];
 if (_units findIf _isEnemy >= 0) exitWith {
     50 cutText [localize "$STR_WHF_haloJumpGUI_enemy", "PLAIN DOWN", 0.3];
