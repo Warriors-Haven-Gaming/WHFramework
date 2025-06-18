@@ -73,8 +73,8 @@ private _sideChat = {
     [_source, _message, _params] remoteExec ["WHF_fnc_localizedSideChat", _players];
 };
 
-private _halfAt = _endAt + _duration / 2;
-private _closeAt = _endAt + _duration - 60;
+private _halfAt = _endAt - _duration / 2;
+private _closeAt = _endAt - 60;
 
 private _state = while {true} do {
     sleep 3;
