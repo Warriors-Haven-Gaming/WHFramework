@@ -48,7 +48,7 @@ if (_center isEqualTo []) then {
             _pos = _pos vectorMultiply [1,1,0];
 
             if ([_pos, _safeRadius] call WHF_fnc_isNearRespawn) then {continue};
-            if (_pos nearRoads _radius isEqualTo []) then {continue};
+            if (count (_pos nearRoads _radius) < 20) then {continue};
 
             private _area = [_pos, _safeRadius, _safeRadius];
             if ([_units, _area] call WHF_fnc_anyInArea) then {continue};
