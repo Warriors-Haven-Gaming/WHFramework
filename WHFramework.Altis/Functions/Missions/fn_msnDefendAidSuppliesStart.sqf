@@ -73,8 +73,8 @@ private _sideChat = {
     [_source, _message, _params] remoteExec ["WHF_fnc_localizedSideChat", _players];
 };
 
-private _halfAt = time + _duration / 2;
-private _closeAt = time + _duration - 60;
+private _halfAt = _endAt + _duration / 2;
+private _closeAt = _endAt + _duration - 60;
 
 private _state = while {true} do {
     sleep 3;
@@ -84,17 +84,18 @@ private _state = while {true} do {
         "FAILED"
     };
 
-    if (_halfAt >= 0 && {time >= _halfAt}) then {
+    private _time = time;
+    if (_halfAt >= 0 && {_time >= _halfAt}) then {
         [[blufor, "HQ"], "$STR_WHF_defendAidSupplies_half"] call _sideChat;
         _halfAt = -1;
     };
 
-    if (_closeAt >= 0 && {time >= _closeAt}) then {
+    if (_closeAt >= 0 && {_time >= _closeAt}) then {
         [[blufor, "HQ"], "$STR_WHF_defendAidSupplies_close"] call _sideChat;
         _closeAt = -1;
     };
 
-    if (time >= _endAt) exitWith {
+    if (_time >= _endAt) exitWith {
         [[blufor, "HQ"], "$STR_WHF_defendAidSupplies_success"] call _sideChat;
         "SUCCEEDED"
     };
