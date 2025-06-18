@@ -76,13 +76,12 @@ private _sideChat = {
 private _halfAt = time + _duration / 2;
 private _reachedHalf = false;
 
-while {true} do {
+private _state = while {true} do {
     sleep 3;
 
     if (scriptDone _statusScript) exitWith {
         [[blufor, "HQ"], "$STR_WHF_defendAidSupplies_failed"] call _sideChat;
-        sleep 3;
-        [_parent, "FAILED"] spawn WHF_fnc_taskEnd;
+        "FAILED"
     };
 
     if (time >= _halfAt && {!_reachedHalf}) then {
@@ -91,17 +90,16 @@ while {true} do {
     };
 
     if (time >= _endAt) exitWith {
-        _signal set [0, false];
-        waitUntil {sleep 1; scriptDone _statusScript};
         [[blufor, "HQ"], "$STR_WHF_defendAidSupplies_success"] call _sideChat;
-        sleep 10;
-        [_parent, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
+        "SUCCEEDED"
     };
 };
 
 _signal set [0, false];
 waitUntil {sleep 1; _scripts findIf {!scriptDone _x} < 0};
+sleep 3;
 
 deleteMarker _areaMarker;
 _groups append _reinforceGroups;
 _vehicles append _reinforceVehicles;
+[_parent, _state] spawn WHF_fnc_taskEnd;
