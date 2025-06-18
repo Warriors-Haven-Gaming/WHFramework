@@ -135,7 +135,7 @@ waitUntil {sleep 1; _reinforceScripts findIf {!scriptDone _x} < 0};
         private _dir = _center getDir leader _group;
         private _pos = _center getPos [1000, _dir];
         _group addWaypoint [_pos, 0];
-        [_group] call WHF_fnc_orderHoldFire;
+        [_group, 2] call WHF_fnc_orderHoldFire;
         {_x setUnitPos "AUTO"; _x doMove _pos} forEach units _group;
     };
 } forEach _groups;
