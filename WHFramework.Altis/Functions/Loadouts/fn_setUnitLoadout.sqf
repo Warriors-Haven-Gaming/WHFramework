@@ -31,5 +31,4 @@ if (!isSwitchingWeapon _unit) exitWith {
 
 private _timeout = time + 5;
 waitUntil {sleep 0.1; !isSwitchingWeapon _unit || {time > _timeout}};
-_unit setUnitLoadout _loadout;
-!isSwitchingWeapon _unit
+if (!isSwitchingWeapon _unit) then {_unit setUnitLoadout _loadout; true} else {false}
