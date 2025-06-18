@@ -45,7 +45,7 @@ _scripts pushBack _theftScript;
 private _reinforceGroups = [];
 private _reinforceVehicles = [];
 private _reinforceScript =
-    [_signal, _center, _supplies, _factionRaid, _reinforceGroups, _reinforceVehicles]
+    [_signal, _center, _radius, _supplies, _factionRaid, _reinforceGroups, _reinforceVehicles]
     spawn WHF_fnc_msnDefendAidSuppliesReinforcements;
 _scripts pushBack _reinforceScript;
 

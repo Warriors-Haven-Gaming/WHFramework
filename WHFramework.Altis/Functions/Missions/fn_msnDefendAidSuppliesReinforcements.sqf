@@ -12,6 +12,8 @@ Parameters:
         during execution. Units will be ordered to retreat.
     Position2D center:
         The center of the mission area.
+    Number radius:
+        The radius of the mission area.
     Array supplies:
         The supplies being defended.
     String factionRaid:
@@ -27,10 +29,10 @@ Author:
     thegamecracks
 
 */
-params ["_signal", "_center", "_supplies", "_factionRaid", "_groups", "_vehicles"];
+params ["_signal", "_center", "_radius", "_supplies", "_factionRaid", "_groups", "_vehicles"];
 
 private _reinforceUnits = {
-    params ["_center", "_supplies", "_factionRaid", "_groups"];
+    params ["_center", "_radius", "_supplies", "_factionRaid", "_groups"];
 
     if (_supplies findIf {alive _x} < 0) exitWith {};
 
@@ -44,8 +46,8 @@ private _reinforceUnits = {
             [[[  "sniper", _factionRaid]], 2, 2, 3], 0.05
         ],
         _quantity,
-        _center getPos [600, random 360],
-        400,
+        _center getPos [_radius * 2, random 360],
+        _radius * 4 / 3,
         ["hidden", "noDynamicSimulation"]
     ] call WHF_fnc_spawnUnitGroups;
 
@@ -75,7 +77,7 @@ private _reinforceUnits = {
 };
 
 private _reinforceVehicles = {
-    params ["_center", "_supplies", "_factionRaid", "_groups", "_vehicles"];
+    params ["_center", "_radius", "_supplies", "_factionRaid", "_groups", "_vehicles"];
 
     if (_supplies findIf {alive _x} < 0) exitWith {};
 
@@ -86,7 +88,7 @@ private _reinforceVehicles = {
         [_standard],
         1,
         _center,
-        [300, 750],
+        [_radius, _radius * 2.5],
         ["hidden", "noDynamicSimulation"]
     ] call WHF_fnc_spawnVehicles;
 
@@ -98,9 +100,10 @@ private _reinforceVehicles = {
     _vehicles append assignedVehicles _group;
 };
 
+private _spawnArgs = [_center, _radius, _supplies, _factionRaid, _groups, _vehicles];
 private _reinforceArgs = [
-    [true, 30, 64, _groups, [_center, _supplies, _factionRaid, _groups], _reinforceUnits],
-    [true, 120, 10, _vehicles, [_center, _supplies, _factionRaid, _groups, _vehicles], _reinforceVehicles]
+    [true, 30, 64, _groups, _spawnArgs, _reinforceUnits],
+    [true, 120, 10, _vehicles, _spawnArgs, _reinforceVehicles]
 ];
 private _reinforceScripts = _reinforceArgs apply {_x spawn WHF_fnc_reinforceLoop};
 
