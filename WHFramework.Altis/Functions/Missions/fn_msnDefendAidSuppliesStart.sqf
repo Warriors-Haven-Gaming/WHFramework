@@ -29,6 +29,8 @@ Author:
 */
 params ["_center", "_radius", "_supplies", "_factionRaid", "_parent", "_groups", "_vehicles"];
 
+_radius = _radius * 1.5;
+
 private _scripts = [];
 private _signal = [true];
 
@@ -47,7 +49,7 @@ private _reinforceScript =
     spawn WHF_fnc_msnDefendAidSuppliesReinforcements;
 _scripts pushBack _reinforceScript;
 
-private _area = [_center, _radius * 1.5, _radius * 1.5];
+private _area = [_center, _radius, _radius];
 private _areaMarker = [["WHF_msnDefendAidSupplies_"], _area, true] call WHF_fnc_createAreaMarker;
 _areaMarker setMarkerBrushLocal "FDiagonal";
 _areaMarker setMarkerColorLocal "ColorBlue";
