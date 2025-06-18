@@ -55,23 +55,8 @@ private _reinforceUnits = {
         [_x] call WHF_fnc_disableModdedAI;
         _x enableAttack false;
         _x setBehaviourStrong "AWARE";
-        _x setCombatMode "WHITE";
         _x setSpeedMode "FULL";
-
-        if (random 1 < 0.75) then {
-            private _enableTargeting = {
-                params ["_unit"];
-                _unit removeEventHandler [_thisEvent, _thisEventHandler];
-                _unit enableAI "AUTOTARGET";
-                _unit enableAI "TARGET";
-            };
-            {
-                _x addEventHandler ["FiredNear", _enableTargeting];
-                _x addEventHandler ["Hit", _enableTargeting];
-                _x disableAI "AUTOTARGET";
-                _x disableAI "TARGET";
-            } forEach units _x;
-        };
+        if (random 1 < 0.75) then {[_x] call WHF_fnc_orderHoldFire};
     } forEach _newGroups;
     _groups append _newGroups;
 };
@@ -150,7 +135,7 @@ waitUntil {sleep 1; _reinforceScripts findIf {!scriptDone _x} < 0};
         private _dir = _center getDir leader _group;
         private _pos = _center getPos [1000, _dir];
         _group addWaypoint [_pos, 0];
-        _group setCombatMode "WHITE";
+        [_group] call WHF_fnc_orderHoldFire;
         {_x setUnitPos "AUTO"; _x doMove _pos} forEach units _group;
     };
 } forEach _groups;
