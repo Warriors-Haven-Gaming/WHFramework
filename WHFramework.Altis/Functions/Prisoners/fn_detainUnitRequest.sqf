@@ -42,6 +42,7 @@ if !(_target checkAIFeature "PATH") then {_target enableAIFeature ["PATH", true]
 sleep (1.5 + random 1);
 
 if !(lifeState _target in ["HEALTHY", "INJURED"]) exitWith {};
+if (captive _target) exitWith {};
 
 private _intimidated = switch (true) do {
     case !(lifeState _caller in ["HEALTHY", "INJURED"]): {false};
