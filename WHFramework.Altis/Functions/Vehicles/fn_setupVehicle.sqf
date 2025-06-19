@@ -24,52 +24,10 @@ if (!isNil {_vehicle getVariable "WHF_setupVehicle_called"}) exitWith {};
 _vehicle setVariable ["WHF_setupVehicle_called", true];
 
 switch (true) do {
-    // Vanilla
-    case (_vehicle isKindOf "AFV_Wheeled_01_base_F"): {
-        [_vehicle, WHF_aps_ammoAPC] call WHF_fnc_addAPS;
-    };
-    case (_vehicle isKindOf "APC_Tracked_01_base_F"): {
-        [_vehicle, WHF_aps_ammoAPC] call WHF_fnc_addAPS;
-    };
-    case (_vehicle isKindOf "APC_Tracked_02_base_F"): {
-        [_vehicle, WHF_aps_ammoAPC] call WHF_fnc_addAPS;
-    };
-    case (_vehicle isKindOf "APC_Tracked_03_base_F"): {
-        [_vehicle, WHF_aps_ammoAPC] call WHF_fnc_addAPS;
-    };
-    case (_vehicle isKindOf "APC_Wheeled_01_base_F"): {
-        [_vehicle, WHF_aps_ammoAPC] call WHF_fnc_addAPS;
-    };
-    case (_vehicle isKindOf "APC_Wheeled_02_base_F"): {
-        [_vehicle, WHF_aps_ammoAPC] call WHF_fnc_addAPS;
-    };
-    case (_vehicle isKindOf "APC_Wheeled_03_base_F"): {
-        [_vehicle, WHF_aps_ammoAPC] call WHF_fnc_addAPS;
-    };
-    case (_vehicle isKindOf "MBT_01_base_F"): {
+    // QAV - AbramsX
+    case (_vehicle isKindOf "qav_abramsx_base"): {
         [_vehicle, WHF_aps_ammoMBT] call WHF_fnc_addAPS;
-    };
-    case (_vehicle isKindOf "MBT_02_base_F"): {
-        [_vehicle, WHF_aps_ammoMBT] call WHF_fnc_addAPS;
-    };
-    case (_vehicle isKindOf "MBT_03_base_F"): {
-        [_vehicle, WHF_aps_ammoMBT] call WHF_fnc_addAPS;
-    };
-    case (_vehicle isKindOf "MBT_04_base_F"): {
-        [_vehicle, WHF_aps_ammoMBT] call WHF_fnc_addAPS;
-    };
-    case (_vehicle isKindOf "MRAP_01_base_F"): {
-        [_vehicle, WHF_aps_ammoMRAP] call WHF_fnc_addAPS;
-    };
-    case (_vehicle isKindOf "MRAP_02_base_F"): {
-        [_vehicle, WHF_aps_ammoMRAP] call WHF_fnc_addAPS;
-    };
-    case (_vehicle isKindOf "MRAP_03_base_F"): {
-        [_vehicle, WHF_aps_ammoMRAP] call WHF_fnc_addAPS;
-    };
-    // Expeditionary Forces
-    case (_vehicle isKindOf "EF_AAV9_Base"): {
-        [_vehicle, WHF_aps_ammoAPC] call WHF_fnc_addAPS;
+        _vehicle addMagazineTurret ["16Rnd_120mm_HE_shells_Tracer_Red", [0]];
     };
     // CUP
     case (_vehicle isKindOf "CUP_AAV_Base"): {
@@ -122,9 +80,51 @@ switch (true) do {
     case (_vehicle isKindOf "CUP_T90M_Base"): {
         [_vehicle, WHF_aps_ammoMBT] call WHF_fnc_addAPS;
     };
-    // QAV - AbramsX
-    case (_vehicle isKindOf "qav_abramsx_base"): {
+    // Expeditionary Forces
+    case (_vehicle isKindOf "EF_AAV9_Base"): {
+        [_vehicle, WHF_aps_ammoAPC] call WHF_fnc_addAPS;
+    };
+    // Vanilla
+    case (_vehicle isKindOf "AFV_Wheeled_01_base_F"): {
+        [_vehicle, WHF_aps_ammoAPC] call WHF_fnc_addAPS;
+    };
+    case (_vehicle isKindOf "APC_Tracked_01_base_F"): {
+        [_vehicle, WHF_aps_ammoAPC] call WHF_fnc_addAPS;
+    };
+    case (_vehicle isKindOf "APC_Tracked_02_base_F"): {
+        [_vehicle, WHF_aps_ammoAPC] call WHF_fnc_addAPS;
+    };
+    case (_vehicle isKindOf "APC_Tracked_03_base_F"): {
+        [_vehicle, WHF_aps_ammoAPC] call WHF_fnc_addAPS;
+    };
+    case (_vehicle isKindOf "APC_Wheeled_01_base_F"): {
+        [_vehicle, WHF_aps_ammoAPC] call WHF_fnc_addAPS;
+    };
+    case (_vehicle isKindOf "APC_Wheeled_02_base_F"): {
+        [_vehicle, WHF_aps_ammoAPC] call WHF_fnc_addAPS;
+    };
+    case (_vehicle isKindOf "APC_Wheeled_03_base_F"): {
+        [_vehicle, WHF_aps_ammoAPC] call WHF_fnc_addAPS;
+    };
+    case (_vehicle isKindOf "MBT_01_base_F"): {
         [_vehicle, WHF_aps_ammoMBT] call WHF_fnc_addAPS;
-        _vehicle addMagazineTurret ["16Rnd_120mm_HE_shells_Tracer_Red", [0]];
+    };
+    case (_vehicle isKindOf "MBT_02_base_F"): {
+        [_vehicle, WHF_aps_ammoMBT] call WHF_fnc_addAPS;
+    };
+    case (_vehicle isKindOf "MBT_03_base_F"): {
+        [_vehicle, WHF_aps_ammoMBT] call WHF_fnc_addAPS;
+    };
+    case (_vehicle isKindOf "MBT_04_base_F"): {
+        [_vehicle, WHF_aps_ammoMBT] call WHF_fnc_addAPS;
+    };
+    case (_vehicle isKindOf "MRAP_01_base_F"): {
+        [_vehicle, WHF_aps_ammoMRAP] call WHF_fnc_addAPS;
+    };
+    case (_vehicle isKindOf "MRAP_02_base_F"): {
+        [_vehicle, WHF_aps_ammoMRAP] call WHF_fnc_addAPS;
+    };
+    case (_vehicle isKindOf "MRAP_03_base_F"): {
+        [_vehicle, WHF_aps_ammoMRAP] call WHF_fnc_addAPS;
     };
 };
