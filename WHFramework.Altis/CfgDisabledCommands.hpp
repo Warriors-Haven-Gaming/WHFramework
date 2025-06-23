@@ -121,14 +121,14 @@ class CfgDisabledCommands
         };
     };
 
-    class CTRLCLASSNAME
-    {
-        class SYNTAX1
-        {
-            targets[] = {0,1,0};
-            args[] = {{},{"CONTROL"}};
-        };
-    };
+    // class CTRLCLASSNAME
+    // {
+    //     class SYNTAX1
+    //     {
+    //         targets[] = {0,1,0};
+    //         args[] = {{},{"CONTROL"}};
+    //     };
+    // };
 
     class CTRLMODEL
     {
