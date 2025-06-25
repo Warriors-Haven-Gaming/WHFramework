@@ -15,6 +15,5 @@ if (isClass (configFile >> "CfgPatches" >> "ace_magazinerepack")) exitWith {fals
     {[focusOn] spawn WHF_fnc_magRepack},
     nil,
     true,
-    "",
     "[_this] call WHF_fnc_canMagRepack"
 ] call WHF_fnc_contextMenuAdd;

@@ -16,10 +16,6 @@ Parameters:
     Anything hideOnUse:
         (Optional, default true)
         If true, the player's actions are hidden after the action is used.
-    String shortcut:
-        (Optional, default "")
-        An optional shortcut key defined in
-        https://community.bistudio.com/wiki/inputAction/actions.
     String condition:
         (Optional, default "true")
         The condition needed for the action to be shown.
@@ -38,7 +34,6 @@ params [
     "_script",
     "_arguments",
     ["_hideOnUse", true],
-    ["_shortcut", ""],
     ["_condition", "true"],
     ["_unconscious", false]
 ];
@@ -50,7 +45,6 @@ WHF_contextMenu_entries pushBack [
     _script,
     if (!isNil "_arguments") then {_arguments} else {nil},
     _hideOnUse,
-    _shortcut,
     _condition,
     _unconscious
 ];
@@ -63,7 +57,7 @@ if (!isNil "WHF_contextMenu_actionIDs") then {
         13,
         true,
         _hideOnUse,
-        _shortcut,
+        "",
         _condition,
         50,
         _unconscious

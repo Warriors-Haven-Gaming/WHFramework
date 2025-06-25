@@ -14,6 +14,5 @@ if (!hasInterface) exitWith {};
     {objectParent focusOn setDamage [1, false]},
     nil,
     true,
-    "",
     "unitIsUAV focusOn && {!isNull objectParent focusOn && {local focusOn}}"
 ] call WHF_fnc_contextMenuAdd;

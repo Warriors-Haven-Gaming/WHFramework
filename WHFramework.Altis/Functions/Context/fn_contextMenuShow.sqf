@@ -14,7 +14,7 @@ if (!isNil "WHF_contextMenu_actionIDs") exitWith {};
 WHF_contextMenu_actionIDs = [];
 if (isNil "WHF_contextMenu_entries") exitWith {};
 {
-    _x params ["_title", "_script", "_arguments", "_hideOnUse", "_shortcut", "_condition", "_unconscious"];
+    _x params ["_title", "_script", "_arguments", "_hideOnUse", "_condition", "_unconscious"];
     private _actionID = focusOn addAction [
         _title,
         _script,
@@ -22,7 +22,7 @@ if (isNil "WHF_contextMenu_entries") exitWith {};
         13,
         true,
         _hideOnUse,
-        _shortcut,
+        "",
         _condition,
         50,
         _unconscious

@@ -29,7 +29,6 @@ if (!hasInterface) exitWith {};
     },
     nil,
     true,
-    "",
     "
     isNull objectParent _this
     && {isTouchingGround _this

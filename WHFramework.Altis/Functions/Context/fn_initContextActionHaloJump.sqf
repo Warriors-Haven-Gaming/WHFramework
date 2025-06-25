@@ -14,7 +14,6 @@ if (!hasInterface) exitWith {};
     {call WHF_fnc_haloJumpGUI},
     nil,
     true,
-    "",
     "
     count allPlayers <= WHF_halo_limit_player
     && {

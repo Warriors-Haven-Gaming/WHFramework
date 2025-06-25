@@ -15,7 +15,6 @@ if (isClass (configFile >> "CfgPatches" >> "ace_vehicles")) exitWith {};
     WHF_fnc_cruiseAction,
     nil,
     true,
-    "",
     "
     private _vehicle = objectParent focusOn;
     (_vehicle isKindOf 'LandVehicle' || {_vehicle isKindOf 'Ship'})
@@ -29,7 +28,6 @@ if (isClass (configFile >> "CfgPatches" >> "ace_vehicles")) exitWith {};
     {true call WHF_fnc_cruiseActionAdjust},
     nil,
     false,
-    "",
     "
     currentPilot objectParent focusOn isEqualTo focusOn
     && {getCruiseControl objectParent focusOn # 0 > 0}
@@ -40,7 +38,6 @@ if (isClass (configFile >> "CfgPatches" >> "ace_vehicles")) exitWith {};
     {false call WHF_fnc_cruiseActionAdjust},
     nil,
     false,
-    "",
     "
     currentPilot objectParent focusOn isEqualTo focusOn
     && {getCruiseControl objectParent focusOn # 0 > 5}
@@ -51,7 +48,6 @@ if (isClass (configFile >> "CfgPatches" >> "ace_vehicles")) exitWith {};
     WHF_fnc_cruiseAction,
     nil,
     true,
-    "",
     "
     currentPilot objectParent focusOn isEqualTo focusOn
     && {getCruiseControl objectParent focusOn # 0 > 0}

@@ -16,6 +16,5 @@ if (!hasInterface) exitWith {};
     },
     nil,
     true,
-    "",
     "focusOn isNotEqualTo player && {[focusOn] call WHF_fnc_canAssembleFPVDrone}"
 ] call WHF_fnc_contextMenuAdd;
