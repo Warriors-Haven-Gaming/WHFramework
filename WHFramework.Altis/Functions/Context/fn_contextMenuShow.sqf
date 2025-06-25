@@ -23,7 +23,7 @@ if (isNil "WHF_contextMenu_entries") exitWith {};
         true,
         _hideOnUse,
         "",
-        _condition,
+        toString _condition,
         50,
         _unconscious
     ];

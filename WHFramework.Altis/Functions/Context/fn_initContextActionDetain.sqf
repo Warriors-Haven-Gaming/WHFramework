@@ -14,5 +14,5 @@ if (!hasInterface) exitWith {};
     WHF_fnc_detainAction,
     nil,
     true,
-    "[focusOn, cursorObject] call WHF_fnc_canDetainUnit"
+    {[focusOn, cursorObject] call WHF_fnc_canDetainUnit}
 ] call WHF_fnc_contextMenuAdd;

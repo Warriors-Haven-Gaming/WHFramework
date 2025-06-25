@@ -16,8 +16,8 @@ Parameters:
     Anything hideOnUse:
         (Optional, default true)
         If true, the player's actions are hidden after the action is used.
-    String condition:
-        (Optional, default "true")
+    Code condition:
+        (Optional, default {true})
         The condition needed for the action to be shown.
         The same variables in addAction will be defined here.
     Boolean unconscious:
@@ -34,7 +34,7 @@ params [
     "_script",
     "_arguments",
     ["_hideOnUse", true],
-    ["_condition", "true"],
+    ["_condition", {true}],
     ["_unconscious", false]
 ];
 
@@ -58,7 +58,7 @@ if (!isNil "WHF_contextMenu_actionIDs") then {
         true,
         _hideOnUse,
         "",
-        _condition,
+        toString _condition,
         50,
         _unconscious
     ];

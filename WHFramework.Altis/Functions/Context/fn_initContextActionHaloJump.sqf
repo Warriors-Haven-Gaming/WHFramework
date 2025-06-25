@@ -14,14 +14,14 @@ if (!hasInterface) exitWith {};
     {call WHF_fnc_haloJumpGUI},
     nil,
     true,
-    "
-    count allPlayers <= WHF_halo_limit_player
-    && {
-        (
-            isTouchingGround vehicle _this
-            || {private _z = getPos vehicle _this # 2; _z <= 0 && {_z > -3}}
-        )
-        && {!(objectParent _this isKindOf 'Air')}
+    {
+        count allPlayers <= WHF_halo_limit_player
+        && {
+            (
+                isTouchingGround vehicle _this
+                || {private _z = getPos vehicle _this # 2; _z <= 0 && {_z > -3}}
+            )
+            && {!(objectParent _this isKindOf 'Air')}
+        }
     }
-    "
 ] call WHF_fnc_contextMenuAdd;

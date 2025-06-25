@@ -15,41 +15,41 @@ if (isClass (configFile >> "CfgPatches" >> "ace_vehicles")) exitWith {};
     WHF_fnc_cruiseAction,
     nil,
     true,
-    "
-    private _vehicle = objectParent focusOn;
-    (_vehicle isKindOf 'LandVehicle' || {_vehicle isKindOf 'Ship'})
-    && {currentPilot _vehicle isEqualTo focusOn
-    && {getCruiseControl _vehicle # 0 <= 0
-    && {vectorMagnitude velocity _vehicle > 1.39}}}
-    "
+    {
+        private _vehicle = objectParent focusOn;
+        (_vehicle isKindOf 'LandVehicle' || {_vehicle isKindOf 'Ship'})
+        && {currentPilot _vehicle isEqualTo focusOn
+        && {getCruiseControl _vehicle # 0 <= 0
+        && {vectorMagnitude velocity _vehicle > 1.39}}}
+    }
 ] call WHF_fnc_contextMenuAdd;
 [
     localize "$STR_WHF_context_action_cruise_up",
     {true call WHF_fnc_cruiseActionAdjust},
     nil,
     false,
-    "
-    currentPilot objectParent focusOn isEqualTo focusOn
-    && {getCruiseControl objectParent focusOn # 0 > 0}
-    "
+    {
+        currentPilot objectParent focusOn isEqualTo focusOn
+        && {getCruiseControl objectParent focusOn # 0 > 0}
+    }
 ] call WHF_fnc_contextMenuAdd;
 [
     localize "$STR_WHF_context_action_cruise_down",
     {false call WHF_fnc_cruiseActionAdjust},
     nil,
     false,
-    "
-    currentPilot objectParent focusOn isEqualTo focusOn
-    && {getCruiseControl objectParent focusOn # 0 > 5}
-    "
+    {
+        currentPilot objectParent focusOn isEqualTo focusOn
+        && {getCruiseControl objectParent focusOn # 0 > 5}
+    }
 ] call WHF_fnc_contextMenuAdd;
 [
     localize "$STR_WHF_context_action_cruise_off",
     WHF_fnc_cruiseAction,
     nil,
     true,
-    "
-    currentPilot objectParent focusOn isEqualTo focusOn
-    && {getCruiseControl objectParent focusOn # 0 > 0}
-    "
+    {
+        currentPilot objectParent focusOn isEqualTo focusOn
+        && {getCruiseControl objectParent focusOn # 0 > 0}
+    }
 ] call WHF_fnc_contextMenuAdd;
