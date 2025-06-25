@@ -11,6 +11,7 @@ Author:
 if (!hasInterface) exitWith {};
 if (isClass (configFile >> "CfgPatches" >> "ace_vehicles")) exitWith {};
 [
+    "WHF_context_action_cruise_on",
     localize "$STR_WHF_context_action_cruise_on",
     WHF_fnc_cruiseAction,
     nil,
@@ -24,6 +25,7 @@ if (isClass (configFile >> "CfgPatches" >> "ace_vehicles")) exitWith {};
     }
 ] call WHF_fnc_contextMenuAdd;
 [
+    "WHF_context_action_cruise_up",
     localize "$STR_WHF_context_action_cruise_up",
     {true call WHF_fnc_cruiseActionAdjust},
     nil,
@@ -34,6 +36,7 @@ if (isClass (configFile >> "CfgPatches" >> "ace_vehicles")) exitWith {};
     }
 ] call WHF_fnc_contextMenuAdd;
 [
+    "WHF_context_action_cruise_down",
     localize "$STR_WHF_context_action_cruise_down",
     {false call WHF_fnc_cruiseActionAdjust},
     nil,
@@ -44,6 +47,7 @@ if (isClass (configFile >> "CfgPatches" >> "ace_vehicles")) exitWith {};
     }
 ] call WHF_fnc_contextMenuAdd;
 [
+    "WHF_context_action_cruise_off",
     localize "$STR_WHF_context_action_cruise_off",
     WHF_fnc_cruiseAction,
     nil,

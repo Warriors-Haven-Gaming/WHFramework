@@ -10,6 +10,7 @@ Author:
 */
 if (!hasInterface) exitWith {};
 [
+    "WHF_context_action_fpv",
     localize "$STR_WHF_context_action_fpv",
     {
         [focusOn] call WHF_fnc_assembleFPVDrone;

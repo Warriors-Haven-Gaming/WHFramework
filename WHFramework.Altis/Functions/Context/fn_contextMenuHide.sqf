@@ -11,7 +11,7 @@ Author:
 if (!hasInterface) exitWith {};
 if (isNil "WHF_contextMenu_actionIDs") exitWith {};
 {
-    _x params ["_unit", "_actionID"];
+    _y params ["_unit", "_actionID"];
     _unit removeAction _actionID;
 } forEach WHF_contextMenu_actionIDs;
 WHF_contextMenu_actionIDs = nil;

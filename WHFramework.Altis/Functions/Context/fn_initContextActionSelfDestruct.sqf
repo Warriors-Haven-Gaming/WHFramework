@@ -10,6 +10,7 @@ Author:
 */
 if (!hasInterface) exitWith {};
 [
+    "WHF_context_action_selfdestruct",
     localize "$STR_WHF_context_action_selfdestruct",
     {objectParent focusOn setDamage [1, false]},
     nil,

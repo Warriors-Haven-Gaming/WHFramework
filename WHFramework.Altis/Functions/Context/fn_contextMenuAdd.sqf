@@ -5,6 +5,8 @@ Description:
     Add an action to the context menu.
 
 Parameters:
+    String key:
+        A unique identifier for the action.
     String title:
         The title of the action.
     Code | String script:
@@ -30,6 +32,7 @@ Author:
 */
 if (!hasInterface) exitWith {};
 params [
+    "_key",
     "_title",
     "_script",
     "_arguments",
@@ -38,15 +41,19 @@ params [
     ["_unconscious", false]
 ];
 
-if (isNil "WHF_contextMenu_entries") then {WHF_contextMenu_entries = []};
+if (isNil "WHF_contextMenu_entries") then {WHF_contextMenu_entries = createHashMap};
 
-WHF_contextMenu_entries pushBack [
-    _title,
-    _script,
-    if (!isNil "_arguments") then {_arguments} else {nil},
-    _hideOnUse,
-    _condition,
-    _unconscious
+[_key] call WHF_fnc_contextMenuRemove;
+WHF_contextMenu_entries set [
+    _key,
+    [
+        _title,
+        _script,
+        if (!isNil "_arguments") then {_arguments} else {nil},
+        _hideOnUse,
+        _condition,
+        _unconscious
+    ]
 ];
 
 if (!isNil "WHF_contextMenu_actionIDs") then {
@@ -62,5 +69,5 @@ if (!isNil "WHF_contextMenu_actionIDs") then {
         50,
         _unconscious
     ];
-    WHF_contextMenu_actionIDs pushBack [focusOn, _actionID];
+    WHF_contextMenu_actionIDs set [_key, [focusOn, _actionID]];
 };

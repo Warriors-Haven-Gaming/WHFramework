@@ -11,10 +11,12 @@ Author:
 if (!hasInterface) exitWith {};
 if (isNull focusOn) exitWith {};
 if (!isNil "WHF_contextMenu_actionIDs") exitWith {};
-WHF_contextMenu_actionIDs = [];
+
+WHF_contextMenu_actionIDs = createHashMap;
+
 if (isNil "WHF_contextMenu_entries") exitWith {};
 {
-    _x params ["_title", "_script", "_arguments", "_hideOnUse", "_condition", "_unconscious"];
+    _y params ["_title", "_script", "_arguments", "_hideOnUse", "_condition", "_unconscious"];
     private _actionID = focusOn addAction [
         _title,
         _script,
@@ -27,5 +29,5 @@ if (isNil "WHF_contextMenu_entries") exitWith {};
         50,
         _unconscious
     ];
-    WHF_contextMenu_actionIDs pushBack [focusOn, _actionID];
+    WHF_contextMenu_actionIDs set [_x, [focusOn, _actionID]];
 } forEach WHF_contextMenu_entries;

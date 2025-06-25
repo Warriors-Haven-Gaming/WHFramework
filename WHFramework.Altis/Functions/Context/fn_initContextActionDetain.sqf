@@ -10,6 +10,7 @@ Author:
 */
 if (!hasInterface) exitWith {};
 [
+    "WHF_context_action_detain",
     localize "$STR_WHF_context_action_detain",
     WHF_fnc_detainAction,
     nil,

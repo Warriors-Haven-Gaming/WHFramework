@@ -10,6 +10,7 @@ Author:
 */
 if (!hasInterface) exitWith {};
 [
+    "WHF_context_action_quadbike",
     localize "$STR_WHF_context_action_quadbike",
     {
         private _pos = focusOn getPos [4, getDir focusOn] findEmptyPosition [0, 0, "B_Quadbike_01_F"];

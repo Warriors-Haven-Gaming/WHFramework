@@ -10,6 +10,7 @@ Author:
 */
 if (!hasInterface) exitWith {};
 [
+    "WHF_context_action_haloJump",
     localize "$STR_WHF_context_action_haloJump",
     {call WHF_fnc_haloJumpGUI},
     nil,

@@ -11,6 +11,7 @@ Author:
 if (!hasInterface) exitWith {};
 if (isClass (configFile >> "CfgPatches" >> "ace_magazinerepack")) exitWith {false};
 [
+    "WHF_context_action_magrepack",
     localize "$STR_WHF_context_action_magrepack",
     {[focusOn] spawn WHF_fnc_magRepack},
     nil,
