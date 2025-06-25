@@ -19,10 +19,10 @@ if (!hasInterface) exitWith {};
         count allPlayers <= WHF_halo_limit_player
         && {
             (
-                isTouchingGround vehicle _this
-                || {private _z = getPos vehicle _this # 2; _z <= 0 && {_z > -3}}
+                isTouchingGround vehicle focusOn
+                || {private _z = getPos vehicle focusOn # 2; _z <= 0 && {_z > -3}}
             )
-            && {!(objectParent _this isKindOf 'Air')}
+            && {!(objectParent focusOn isKindOf 'Air')}
         }
     }
 ] call WHF_fnc_contextMenuAdd;

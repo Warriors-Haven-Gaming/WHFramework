@@ -31,8 +31,8 @@ if (!hasInterface) exitWith {};
     nil,
     true,
     {
-        isNull objectParent _this
-        && {isTouchingGround _this
+        isNull objectParent focusOn
+        && {isTouchingGround focusOn
         && {focusOn getVariable ['WHF_role', ''] in ['medic', 'sniper']}}
             && {isNil 'WHF_quadbike' || {!alive WHF_quadbike}}
     }
