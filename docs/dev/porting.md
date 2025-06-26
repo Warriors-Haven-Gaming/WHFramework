@@ -229,7 +229,9 @@ for the action to appear.
 
 As of now, these actions do not provide a system for players to vote
 on time skip requests. We do **NOT** recommend adding this action in
-public servers.
+public servers unless all players have CBA_A3 loaded, in which case
+the action can be hidden instead by disabling the `Enable Skip Time?`
+CBA setting.
 
 ## 14. Other tips
 
