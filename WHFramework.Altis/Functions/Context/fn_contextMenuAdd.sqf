@@ -25,6 +25,9 @@ Parameters:
     Boolean unconscious:
         (Optional, default false)
         If true, the action will show up while incapacitated.
+    String icon:
+        (Optional, default "")
+        The icon to show in ACE interactions.
 
 Author:
     thegamecracks
@@ -38,7 +41,8 @@ params [
     "_arguments",
     ["_hideOnUse", true],
     ["_condition", {true}],
-    ["_unconscious", false]
+    ["_unconscious", false],
+    ["_icon", ""]
 ];
 
 if (isNil "WHF_contextMenu_entries") then {WHF_contextMenu_entries = createHashMap};
@@ -70,4 +74,20 @@ if (!isNil "WHF_contextMenu_actionIDs") then {
         _unconscious
     ];
     WHF_contextMenu_actionIDs set [_key, [focusOn, _actionID]];
+};
+
+if (isClass (configFile >> "CfgPatches" >> "ace_interact_menu")) then {
+    if (isNil "WHF_contextMenu_ace_entries") then {WHF_contextMenu_ace_entries = createHashMap};
+
+    private _action = [
+        _key,
+        _title,
+        _icon,
+        _script,
+        _condition
+    ] call ace_interact_menu_fnc_createAction;
+
+    [focusOn, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+
+    WHF_contextMenu_ace_entries set [_key, _action];
 };

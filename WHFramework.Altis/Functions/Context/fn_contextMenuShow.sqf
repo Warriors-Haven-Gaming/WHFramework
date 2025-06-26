@@ -11,6 +11,7 @@ Author:
 if (!hasInterface) exitWith {};
 if (isNull focusOn) exitWith {};
 if (!isNil "WHF_contextMenu_actionIDs") exitWith {};
+if (isClass (configFile >> "CfgPatches" >> "ace_interact_menu")) exitWith {};
 
 WHF_contextMenu_actionIDs = createHashMap;
 

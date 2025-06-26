@@ -15,5 +15,7 @@ if (!hasInterface) exitWith {};
     {objectParent focusOn setDamage [1, false]},
     nil,
     true,
-    {unitIsUAV focusOn && {!isNull objectParent focusOn && {local focusOn}}}
+    {unitIsUAV focusOn && {!isNull objectParent focusOn && {local focusOn}}},
+    false,
+    getTextRaw (configFile >> "CfgVehicles" >> "CAManBase" >> "ACE_SelfActions" >> "ACE_Explosives" >> "icon")
 ] call WHF_fnc_contextMenuAdd;

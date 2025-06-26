@@ -24,5 +24,7 @@ if (!hasInterface) exitWith {};
             )
             && {!(objectParent focusOn isKindOf 'Air')}
         }
-    }
+    },
+    false,
+    "\a3\ui_f\data\map\vehicleicons\iconParachute_ca.paa"
 ] call WHF_fnc_contextMenuAdd;
