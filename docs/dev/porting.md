@@ -187,17 +187,22 @@ for the action to appear.
 
 ## 12. (Optional) Setting default loadouts
 
-Default loadouts can be defined in two ways:
-1. Editing the loadouts of player units directly
-2. Defining them in [fn_getLastLoadout.sqf]
+Default loadouts can be defined in [fn_getLastLoadout.sqf], and are applied to
+all players that don't have a pre-existing loadout in their current collection.
+Assuming stamina will be disabled and self-reviving will be enabled, we recommend including:
+- Consistent facewear
+- Binoculars (or Rangefinder for snipers, and Laser Designator for JTACs)
+- GPS
+- A Carryall (or equivalent sized) backpack
+- 20-35 First Aid Kits
+- Additional ammunition, if possible
+- No DLC or modded items, unless all players are expected to have access to them
 
 [fn_getLastLoadout.sqf]: https://github.com/Warriors-Haven-Gaming/WHFramework/blob/main/WHFramework.Altis/Functions/Loadouts/fn_getLastLoadout.sqf
 
-We recommend option 2 since it takes priority over editor-defined loadouts,
-and works more consistently with our Load Last Loadout action. In the same
-or a separate scenario, you can spawn in a unit, edit their loadout, then
-play as that unit and open the debug console. Run the following code to copy
-your loadout:
+In the same or a separate scenario, you can spawn in a unit and edit their loadout.
+Start playing as that unit, then open the debug console and run the following code
+to copy your loadout:
 
 ```sqf
 copyToClipboard str getUnitLoadout player;
