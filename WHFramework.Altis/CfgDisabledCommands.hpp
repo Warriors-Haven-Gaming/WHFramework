@@ -83,7 +83,7 @@ class CfgDisabledCommands
 
         class SYNTAX2
         {
-            targets[] = {0,1,0}; // Only used for debug console, can be disabled
+            targets[] = {1,1,1}; // Required for ACE and Advanced Developer Tools
             args[] = {{"STRING"},{"ARRAY"}};
         };
     };
