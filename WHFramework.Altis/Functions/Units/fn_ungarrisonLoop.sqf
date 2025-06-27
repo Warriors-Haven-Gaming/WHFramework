@@ -66,10 +66,9 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
             _waypoint setWaypointType "SAD";
             _waypoint setWaypointCompletionRadius 5;
 
-            if (_dynamicSimulation) then {_group spawn {
-                sleep 1;
-                [_this, true] remoteExec ["enableDynamicSimulation"];
-            }};
+            if (_dynamicSimulation) then {
+                [_group, true, 1] spawn WHF_fnc_enableDynamicSimulation;
+            };
 
             if (!isNil "_outputGroups") then {_outputGroups pushBack _group};
         } forEach units _x;

@@ -66,7 +66,6 @@ for "_i" from 1 to _quantity do {
     private _vehicle = createVehicle [selectRandom _vehicleTypes, _pos, [], 0, _special];
     _vehicle setDir random 360;
     _vehicle setVectorUp surfaceNormal getPosATL _vehicle;
-    _vehicle enableDynamicSimulation _dynamicSimulation;
     _group addVehicle _vehicle;
     _vehicles pushBack _vehicle;
 
@@ -87,9 +86,9 @@ _group allowFleeing 0;
 _group setBehaviourStrong "SAFE";
 _group setCombatMode "RED";
 
-if (_dynamicSimulation) then {_group spawn {
-    sleep 1;
-    [_this, true] remoteExec ["enableDynamicSimulation"];
-}};
+if (_dynamicSimulation) then {
+    private _objects = _vehicles + [_group];
+    [_objects, true, 1] spawn WHF_fnc_enableDynamicSimulation;
+};
 
 _group

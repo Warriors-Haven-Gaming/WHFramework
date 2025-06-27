@@ -51,6 +51,7 @@ class CfgRemoteExec : CfgRemoteExecMod {
         class WHF_fnc_addPrisonerActions { jip = 1; };
         class WHF_fnc_detainUnitRequest {};
         class WHF_fnc_disableUAVConnectability { allowedTargets = 1; jip = 1; };
+        class WHF_fnc_enableDynamicSimulation { allowedTargets = 2; };
         class WHF_fnc_freeUnit {};
         class WHF_fnc_haloJumpCut {};
         class WHF_fnc_incapBleedout {};
@@ -80,11 +81,12 @@ class CfgRemoteExec : CfgRemoteExecMod {
     class Commands {
         mode = 2;
         jip = 0;
-        class enableDynamicSimulation {};
+        class enableDynamicSimulation {}; // Should be server-only
         class lockTurret {}; // CUP?
         class moveInCargo {};
         class switchGesture {};
         class switchMove {};
+        class triggerDynamicSimulation {}; // Should be server-only
         class unassignVehicle {};
     };
 };

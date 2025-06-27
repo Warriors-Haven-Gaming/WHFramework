@@ -62,8 +62,14 @@ for "_i" from 1 to _quantity do {
     private _unit = _group createUnit [selectRandom _unitTypes, _center, [], _radius, "NONE"];
     [_unit] joinSilent _group;
     _unit enableStamina false;
-    _unit triggerDynamicSimulation false;
     [_unit, _skill] call WHF_fnc_setUnitSkill;
+
+    // FIXME: maybe remoteExec this in one call?
+    if (isServer) then {
+        _unit triggerDynamicSimulation false;
+    } else {
+        [_unit, false] remoteExec ["triggerDynamicSimulation", 2];
+    };
 
     if ("flashlights" in _equipment) then {
         _unit addPrimaryWeaponItem "acc_flashlight";
@@ -84,11 +90,7 @@ if (_sideProvided) then {
     _group allowFleeing 0;
     _group setBehaviourStrong "SAFE";
     _group setCombatMode "RED";
-
-    if (_dynamicSimulation) then {_group spawn {
-        sleep 1;
-        [_this, true] remoteExec ["enableDynamicSimulation"];
-    }};
+    if (_dynamicSimulation) then {[_group, true, 1] spawn WHF_fnc_enableDynamicSimulation};
 };
 
 if (_sideProvided) then {_group} else {_units}

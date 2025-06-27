@@ -99,10 +99,10 @@ for "_i" from 0 to 4 + random 6 do {
     _vehicle setFuel (0.2 + random 0.6);
     _vehicle setDir random 360;
     _vehicle setPos (getPosATL _vehicle vectorMultiply [1,1,0]);
-    _vehicle spawn {sleep 1; _this enableDynamicSimulation true};
     _vehicles pushBack _vehicle;
 };
 [_vehicles, _center, _radius] call WHF_fnc_setPosOnRoads;
+[_vehicles, true, 1] spawn WHF_fnc_enableDynamicSimulation;
 
 private _groups = [];
 {
@@ -159,7 +159,7 @@ if (!_canDefend) exitWith {
 };
 
 [[blufor, "HQ"], "$STR_WHF_defendAidSupplies_start"] call _sideChat;
-{[_x, false] remoteExec ["enableDynamicSimulation"]} forEach _groups;
+[_groups, false] call WHF_fnc_enableDynamicSimulation;
 sleep 3;
 [_center, _radius, _supplies, _factionRaid, _taskID, _groups, _vehicles]
     call WHF_fnc_msnDefendAidSuppliesStart;
