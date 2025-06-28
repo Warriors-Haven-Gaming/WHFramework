@@ -88,7 +88,9 @@ if (isClass (configFile >> "CfgPatches" >> "ace_interact_menu")) then {
         _title,
         _icon,
         _script,
-        _condition
+        _condition,
+        {},
+        if (!isNil "_arguments") then {_arguments} else {nil}
     ] call ace_interact_menu_fnc_createAction;
 
     [focusOn, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
