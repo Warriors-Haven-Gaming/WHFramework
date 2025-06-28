@@ -9,7 +9,7 @@ Parameters:
         A unique identifier for the action.
     String title:
         The title of the action.
-    Code | String script:
+    Code script:
         The script to run when the action is selected.
         The same arguments in addAction will be passed here.
     Anything arguments:
