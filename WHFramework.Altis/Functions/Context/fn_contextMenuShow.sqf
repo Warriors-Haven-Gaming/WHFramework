@@ -26,7 +26,7 @@ if (isNil "WHF_contextMenu_entries") exitWith {};
         true,
         _hideOnUse,
         "",
-        toString _condition,
+        "_this = [_originalTarget, _this]; " + toString _condition,
         50,
         _unconscious
     ];

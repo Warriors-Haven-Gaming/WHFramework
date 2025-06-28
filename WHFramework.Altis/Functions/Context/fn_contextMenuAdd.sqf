@@ -21,7 +21,11 @@ Parameters:
     Code condition:
         (Optional, default {true})
         The condition needed for the action to be shown.
-        The same variables in addAction will be defined here.
+        This code will called with the following array of arguments:
+            Object target:
+                The target that has the attached action.
+            Object caller:
+                The unit to whom the action will be shown to.
     Boolean unconscious:
         (Optional, default false)
         If true, the action will show up while incapacitated.
@@ -69,7 +73,7 @@ if (!isNil "WHF_contextMenu_actionIDs") then {
         true,
         _hideOnUse,
         "",
-        toString _condition,
+        "_this = [_originalTarget, _this]; " + toString _condition,
         50,
         _unconscious
     ];
