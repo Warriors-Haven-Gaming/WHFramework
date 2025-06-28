@@ -17,6 +17,7 @@ params ["_unit"];
 
 private _loadout = [] call WHF_fnc_getLastLoadout;
 if (_loadout isNotEqualTo []) then {[_unit, _loadout] spawn WHF_fnc_setUnitLoadout};
+[_unit] call WHF_fnc_setRoleTraits;
 
 private _respawns = [_unit] call WHF_fnc_respawnMarkers;
 if (count _respawns > 0) then {

@@ -43,17 +43,7 @@ _unit setDir (_position getDir focusOn);
 _unit setSkill WHF_recruits_skill;
 _unit setVariable ["WHF_recruiter", getPlayerUID player, true];
 _unit setVariable ["WHF_role", _role, true];
-
-// TODO: extract role traits into function
-switch (_role) do {
-    case "engineer": {
-        _unit setUnitTrait ["engineer", true];
-        _unit setUnitTrait ["explosiveSpecialist", true];
-    };
-    case "medic": {
-        _unit setUnitTrait ["medic", true];
-    };
-};
+[_unit, _role] call WHF_fnc_setRoleTraits;
 
 private _loadout = [_role] call WHF_fnc_getLastLoadout;
 if (_loadout isNotEqualTo []) then {[_unit, _loadout] spawn WHF_fnc_setUnitLoadout};
