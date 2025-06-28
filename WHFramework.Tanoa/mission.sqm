@@ -52,8 +52,8 @@ addons[]=
 	"A3_Air_F_Heli_Light_01",
 	"A3_Air_F_Beta_Heli_Attack_01",
 	"A3_Air_F_Heli_Heli_Transport_03",
-	"A3_Air_F_Beta_Heli_Transport_01",
 	"A3_Air_F_Exp_VTOL_01",
+	"A3_Air_F_Exp_Heli_Transport_01",
 	"A3_Ui_F",
 	"A3_Structures_F_Mil_Helipads",
 	"A3_Structures_F_EPA_Mil_Scrapyard",
@@ -1754,7 +1754,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={10954,354.35681,11479};
-								angles[]={-0,1.5707974,0};
+								angles[]={0,1.5707974,0};
 							};
 							side="Empty";
 							flags=4;
@@ -2435,42 +2435,6 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={10990.028,352.53891,11486.972};
-								angles[]={6.256525,4.7120337,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
-							};
-							id=2027;
-							type="B_Heli_Transport_01_F";
-							atlOffset=-0.00039672852;
-						};
-						class Item26
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10989.943,352.5444,11502.943};
-								angles[]={0.013327583,4.7120337,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
-							};
-							id=2034;
-							type="B_Heli_Transport_01_F";
-							atlOffset=-0.0024719238;
-						};
-						class Item27
-						{
-							dataType="Object";
-							class PositionInfo
-							{
 								position[]={11074,357.06958,11552};
 								angles[]={0,4.7123895,0};
 							};
@@ -2486,9 +2450,45 @@ class Mission
 							id=2039;
 							type="B_T_VTOL_01_infantry_F";
 						};
+						class Item26
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={10990.028,352.53891,11486.972};
+								angles[]={6.256525,4.7120337,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+							};
+							id=2098;
+							type="B_CTRG_Heli_Transport_01_tropic_F";
+							atlOffset=-0.00039672852;
+						};
+						class Item27
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={10989.943,352.5444,11502.943};
+								angles[]={0.013327583,4.7120337,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+							};
+							id=2099;
+							type="B_CTRG_Heli_Transport_01_tropic_F";
+							atlOffset=-0.0024719238;
+						};
 					};
 					id=673;
-					atlOffset=-0.11868286;
+					atlOffset=0.0042724609;
 				};
 				class Item2
 				{
@@ -9530,7 +9530,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={10916,362.79907,11468};
-								angles[]={0,1.4835298,-0};
+								angles[]={0,1.4835298,0};
 							};
 							side="Empty";
 							flags=5;
@@ -9563,7 +9563,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={11058,362.81238,11489};
-								angles[]={0,6.195919,-0};
+								angles[]={0,6.195919,0};
 							};
 							side="Empty";
 							flags=5;
@@ -9597,7 +9597,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={11174,362.79907,11481};
-								angles[]={0,4.7996559,-0};
+								angles[]={0,4.7996559,0};
 							};
 							side="Empty";
 							flags=5;
@@ -9630,7 +9630,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={11135.739,362.79907,11557.607};
-								angles[]={0,3.1415925,-0};
+								angles[]={0,3.1415925,0};
 							};
 							side="Empty";
 							flags=5;
@@ -9663,7 +9663,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={11009,362.79907,11567};
-								angles[]={0,2.4434609,-0};
+								angles[]={0,2.4434609,0};
 							};
 							side="Empty";
 							flags=5;
@@ -9696,7 +9696,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={11029,362.93903,11493};
-								angles[]={0,5.1487217,-0};
+								angles[]={0,5.1487217,0};
 							};
 							side="Empty";
 							flags=5;
@@ -9729,7 +9729,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={10962,362.79907,11522};
-								angles[]={0,2.1816623,-0};
+								angles[]={0,2.1816623,0};
 							};
 							side="Empty";
 							flags=5;
@@ -9762,7 +9762,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={10978,362.79907,11454};
-								angles[]={0,5.3644186e-07,-0};
+								angles[]={0,5.3644186e-07,0};
 							};
 							side="Empty";
 							flags=5;
@@ -9916,7 +9916,7 @@ class Mission
 				};
 			};
 			id=671;
-			atlOffset=-0.047119141;
+			atlOffset=-0.021392822;
 		};
 		class Item2
 		{
