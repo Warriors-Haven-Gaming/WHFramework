@@ -61,3 +61,15 @@ _arsenal addAction [
     "true",
     5
 ];
+
+_arsenal addAction [
+    localize "$STR_WHF_roleSelectionGUI_title",
+    WHF_fnc_roleSelectionGUI,
+    nil,
+    1.5,
+    true,
+    true,
+    "",
+    "true",
+    5
+];
