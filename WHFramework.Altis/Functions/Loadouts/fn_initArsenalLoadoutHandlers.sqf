@@ -8,7 +8,6 @@ Author:
     thegamecracks
 
 */
-// FIXME: redundancy between vanilla and ACE handlers, maybe worth refactoring?
 [missionNamespace, "arsenalPreOpen", {
     params ["", "_center"];
     [_center] call WHF_fnc_onArsenalOpened;
