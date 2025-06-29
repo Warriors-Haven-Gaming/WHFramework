@@ -28,7 +28,7 @@ with uiNamespace do {
     createDialog "RscDisplayEmpty";
     private _display = findDisplay -1;
 
-    WHF_fnc_localizeRole = missionNamespace getVariable "WHF_fnc_localizeRole";
+    if (isNil "WHF_fnc_localizeRole") then {WHF_fnc_localizeRole = missionNamespace getVariable "WHF_fnc_localizeRole"};
 
     WHF_roleSelectionGUI_currentRole = {focusOn getVariable ["WHF_role", "rifleman"]};
     WHF_roleSelectionGUI_selectedRole = {
