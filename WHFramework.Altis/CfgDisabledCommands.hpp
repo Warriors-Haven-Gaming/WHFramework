@@ -262,14 +262,14 @@ class CfgDisabledCommands
         };
     };
 
-    class SETAMMO
-    {
-        class SYNTAX1
-        {
-            targets[] = {0,0,0};
-            args[] = {{"OBJECT"},{"ARRAY"}};
-        };
-    };
+    // class SETAMMO
+    // {
+    //     class SYNTAX1
+    //     {
+    //         targets[] = {0,0,0};
+    //         args[] = {{"OBJECT"},{"ARRAY"}};
+    //     };
+    // };
 
     class SETDAMMAGE
     {
