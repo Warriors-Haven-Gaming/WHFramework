@@ -84,9 +84,9 @@ addMissionEventHandler ["Draw3D", {
                 case (getPlayerChannel _x >= 0): {"\a3\ui_f\data\IGUI\RscIngameUI\RscDisplayVoiceChat\microphone_ca.paa"};
                 case !(lifeState _x in ["HEALTHY", "INJURED"]): {"\a3\ui_f\data\igui\cfg\actions\heal_ca.paa"};
                 case !(_isTarget): {""};
-                case (_x getUnitTrait "medic"): {"\a3\ui_f\data\map\vehicleicons\pictureHeal_ca.paa"};
-                case (_x getUnitTrait "engineer"): {"\a3\ui_f\data\igui\cfg\actions\repair_ca.paa"};
-                case (_x getUnitTrait "explosiveSpecialist"): {"\a3\ui_f\data\map\vehicleicons\pictureExplosive_ca.paa"};
+                case (_x call WHF_fnc_isMedic): {"\a3\ui_f\data\map\vehicleicons\pictureHeal_ca.paa"};
+                case (_x call WHF_fnc_isEngineer): {"\a3\ui_f\data\igui\cfg\actions\repair_ca.paa"};
+                case (_x call WHF_fnc_isEOD): {"\a3\ui_f\data\map\vehicleicons\pictureExplosive_ca.paa"};
                 default {""};
             };
             if (_icon isEqualTo "") then {_icon = switch (rank _x) do {
