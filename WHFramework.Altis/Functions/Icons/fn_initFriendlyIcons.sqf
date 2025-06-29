@@ -253,7 +253,6 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
 
     // Draw unit icons
     {
-        private _config = configOf _x;
         private _side = side group _x;
         private _color = switch (true) do {
             case (!alive _x): {WHF_icons_color_dead};
@@ -263,7 +262,7 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
         private _textScale = 0.045;
         private _text = if (_mapScale <= _textMinMapScale) then {name _x} else {""};
         _display drawIcon [
-            getText (_config >> "icon"),
+            [_x] call WHF_fnc_getUnitIcon,
             _color + [1],
             getPosWorldVisual _x,
             _iconScale,
