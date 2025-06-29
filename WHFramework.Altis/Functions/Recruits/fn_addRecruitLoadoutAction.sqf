@@ -15,14 +15,17 @@ Author:
 if (!hasInterface) exitWith {};
 params ["_recruit"];
 
+// TODO: consider replacing with equivalent ACE interaction
 _recruit removeAction (_recruit getVariable ["WHF_recruitLoadout_actionID", -1]);
 private _actionID = _recruit addAction [
     localize "$STR_WHF_addRecruitLoadoutAction_edit",
     {
         params ["_recruit"];
-        // TODO: add compatibility with ACE arsenal, also consider adding
-        //       an equivalent ACE interaciton
-        ["Open", [true, _recruit, _recruit]] call BIS_fnc_arsenal;
+        if (isClass (configFile >> "CfgPatches" >> "ace_arsenal")) then {
+            [_recruit, _recruit, true] call ace_arsenal_fnc_openBox;
+        } else {
+            ["Open", [true, _recruit, _recruit]] call BIS_fnc_arsenal;
+        };
     },
     nil,
     12,
