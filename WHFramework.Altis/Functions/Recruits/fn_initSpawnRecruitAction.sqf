@@ -66,7 +66,9 @@ _spawner addAction [
             [_x, [_x] call WHF_fnc_getLastLoadout]
         });
 
-        if (!isClass (configFile >> "CfgPatches" >> "ace_medical")) then {
+        if (isClass (configFile >> "CfgPatches" >> "ace_medical")) then {
+            {_x call ace_medical_fnc_fullHeal} forEach _recruits;
+        } else {
             {_x setDamage 0} forEach _recruits;
         };
 

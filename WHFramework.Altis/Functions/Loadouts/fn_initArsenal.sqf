@@ -40,7 +40,9 @@ _arsenal addAction [
     {
         params ["", "_caller"];
 
-        if (!isClass (configFile >> "CfgPatches" >> "ace_medical")) then {
+        if (isClass (configFile >> "CfgPatches" >> "ace_medical")) then {
+            _caller call ace_medical_fnc_fullHeal;
+        } else {
             _caller setDamage 0;
         };
 
