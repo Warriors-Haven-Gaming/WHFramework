@@ -64,7 +64,7 @@ private _laptop = _intel # 5;
 private _groups = [];
 private _vehicles = [];
 
-private _quantity = 10 + floor random (count allPlayers min 20);
+private _quantity = [10, 20] call WHF_fnc_scaleUnitsSide;
 private _group = [opfor, [_standard], _quantity, _center, 100] call WHF_fnc_spawnUnits;
 _groups pushBack _group;
 [_group, _center] call BIS_fnc_taskDefend;

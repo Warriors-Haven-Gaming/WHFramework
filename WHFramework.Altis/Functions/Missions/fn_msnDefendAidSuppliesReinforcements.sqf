@@ -87,8 +87,8 @@ private _reinforceVehicles = {
 
 private _spawnArgs = [_center, _radius, _supplies, _factionRaid, _groups, _vehicles];
 private _reinforceArgs = [
-    [true, 30, 64, _groups, _spawnArgs, _reinforceUnits],
-    [true, 120, 10, _vehicles, _spawnArgs, _reinforceVehicles]
+    [true, 30, 64 call WHF_fnc_scaleUnitsSide, _groups, _spawnArgs, _reinforceUnits],
+    [true, 120, 10 call WHF_fnc_scaleUnitsSide, _vehicles, _spawnArgs, _reinforceVehicles]
 ];
 private _reinforceScripts = _reinforceArgs apply {_x spawn WHF_fnc_reinforceLoop};
 

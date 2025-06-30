@@ -707,16 +707,6 @@ call WHF_fnc_cycleFaction;
     false
 ] call WHF_fnc_addSetting;
 [
-    "WHF_missions_annex_units",
-    "SLIDER",
-    ["STR_WHF_settings_missions_annex_units", "STR_WHF_settings_missions_annex_units_tooltip"],
-    ["STR_WHF_settings_missions", "STR_WHF_settings_missions_annex"],
-    [0.5, 2, 1, 0, true],
-    true,
-    {},
-    false
-] call WHF_fnc_addSetting;
-[
     "WHF_missions_annex_units_types",
     "EDITBOX",
     ["STR_WHF_settings_missions_annex_units_types", "STR_WHF_settings_missions_annex_units_types_tooltip"],
@@ -807,6 +797,16 @@ call WHF_fnc_cycleFaction;
     {WHF_missions_main_max = round _this},
     false
 ] call WHF_fnc_addSetting;
+[
+    "WHF_missions_main_units",
+    "SLIDER",
+    ["STR_WHF_settings_missions_main_units", "STR_WHF_settings_missions_main_units_tooltip"],
+    ["STR_WHF_settings_missions", "STR_WHF_settings_missions_main"],
+    [0.25, 2, 1, 0, true],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
 
 [
     "WHF_missions_music_main",
@@ -847,6 +847,16 @@ call WHF_fnc_cycleFaction;
     [1, 10, 3, 0, false],
     true,
     {WHF_missions_side_max = round _this},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_missions_side_units",
+    "SLIDER",
+    ["STR_WHF_settings_missions_side_units", "STR_WHF_settings_missions_side_units_tooltip"],
+    ["STR_WHF_settings_missions", "STR_WHF_settings_missions_side"],
+    [0.25, 2, 1, 0, true],
+    true,
+    {},
     false
 ] call WHF_fnc_addSetting;
 

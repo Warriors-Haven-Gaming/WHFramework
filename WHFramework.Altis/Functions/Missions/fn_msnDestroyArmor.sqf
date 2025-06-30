@@ -72,7 +72,8 @@ call {
     _objects append _centerService;
     _objects append _centerTurrets;
 
-    private _group = [opfor, [_standard], selectRandom [8, 12, 16], _center, 20] call WHF_fnc_spawnUnits;
+    private _quantity = [8, 16] call WHF_fnc_scaleUnitsSide;
+    private _group = [opfor, [_standard], _quantity, _center, 20] call WHF_fnc_spawnUnits;
     [_group, _center] call BIS_fnc_taskDefend;
     _groups pushBack _group;
 
@@ -91,7 +92,7 @@ call {
     _groups pushBack _vehicleGroup;
     _vehicles append assignedVehicles _vehicleGroup;
 
-    private _infantryQuantity = selectRandom [8, 12, 16];
+    private _infantryQuantity = [8, 16] call WHF_fnc_scaleUnitsSide;
     private _infantryArgs = [opfor, [_standard], _infantryQuantity, _pos, 30];
     private _infantryGroup = _infantryArgs call WHF_fnc_spawnUnits;
     [_infantryGroup, _pos] call BIS_fnc_taskDefend;
@@ -113,12 +114,12 @@ call {
         _objects append _depot;
     };
 } forEach [
-    [["standard", _faction], 4 + floor random 5],
-    [["supply", _faction],   3 + floor random 4],
-    [["mrap", _faction],     2 + floor random 3],
-    [["apc", _faction],      2 + floor random 3],
-    [["ifv", _faction],      2 + floor random 3],
-    [["mbt", _faction],      2 + floor random 3]
+    [["standard", _faction], [4, 8] call WHF_fnc_scaleUnitsSide],
+    [["supply", _faction],   [3, 6] call WHF_fnc_scaleUnitsSide],
+    [["mrap", _faction],     [2, 4] call WHF_fnc_scaleUnitsSide],
+    [["apc", _faction],      [2, 4] call WHF_fnc_scaleUnitsSide],
+    [["ifv", _faction],      [2, 4] call WHF_fnc_scaleUnitsSide],
+    [["mbt", _faction],      [2, 4] call WHF_fnc_scaleUnitsSide]
 ];
 
 if (count _vehicles < 1) exitWith {

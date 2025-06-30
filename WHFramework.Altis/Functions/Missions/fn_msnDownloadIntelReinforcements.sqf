@@ -31,7 +31,7 @@ private _reinforceUnits = {
             [   _elite, 4, 8, 2], 0.10,
             [  _sniper, 2, 2, 3], 0.10
         ],
-        20 + floor random 41,
+        [20, 60] call WHF_fnc_scaleUnitsSide,
         _center,
         _radius,
         ["hidden"]
@@ -80,4 +80,5 @@ if (count _targets < 1) then {_targets = [_laptop]};
 private _center = getPosATL _laptop vectorMultiply [1,1,0];
 private _radius = [40, 200];
 call _reinforceUnits;
-for "_i" from 1 to 1 + random 4 do {call _reinforceVehicles};
+private _vehicleCount = [1, 4] call WHF_fnc_scaleUnitsSide;
+for "_i" from 1 to _vehicleCount do {call _reinforceVehicles};

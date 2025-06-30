@@ -84,7 +84,7 @@ if (count _caches < 1) exitWith {
 private _groups = [];
 private _vehicles = [];
 
-private _quantity = 10 + floor random (count allPlayers min 10);
+private _quantity = [10, 20] call WHF_fnc_scaleUnitsSide;
 private _group = [opfor, _standard, _quantity, _center, _radius] call WHF_fnc_spawnUnits;
 _groups pushBack _group;
 [_group, _center] call BIS_fnc_taskDefend;
@@ -102,7 +102,7 @@ _groups pushBack _garrisonGroup;
     deleteVehicle _unit;
 } forEach units _garrisonGroup;
 
-private _vehicleCount = 2 + floor random 4;
+private _vehicleCount = [2, 5] call WHF_fnc_scaleUnitsSide;
 private _vehicleGroup =
     [opfor, _supply, _standard, _vehicleCount, _center, 100]
     call WHF_fnc_spawnVehicles;

@@ -73,12 +73,13 @@ if (count _aaTurrets < 1) exitWith {
 
 private _groups = _aaTurrets apply {
     private _pos = getPosATL selectRandom _x;
-    private _group = [opfor, [_standard], 8 + floor random 13, _pos, 50] call WHF_fnc_spawnUnits;
+    private _quantity = [8, 20] call WHF_fnc_scaleUnitsSide;
+    private _group = [opfor, [_standard], _quantity, _pos, 50] call WHF_fnc_spawnUnits;
     [_group, _pos] call BIS_fnc_taskDefend;
     _group
 };
 
-private _vehicleCount = 6 + floor random 7;
+private _vehicleCount = [6, 12] call WHF_fnc_scaleUnitsSide;
 private _vehicleGroup =
     [opfor, [_standard, _supply], [_standard], _vehicleCount, _center, _radius]
     call WHF_fnc_spawnVehicles;

@@ -86,7 +86,7 @@ private _groups = [
         [[[   "elite", _faction]], 4, 6, 2], 0.05,
         [[[  "sniper", _faction]], 2, 2, 3], 0.05
     ],
-    24 + floor random 41,
+    [24, 64] call WHF_fnc_scaleUnitsSide,
     _center,
     _radius
 ] call WHF_fnc_spawnUnitGroups;
@@ -95,13 +95,13 @@ private _groups = [
 private _turretGroup = [opfor, [_standard], _turrets] call WHF_fnc_spawnGunners;
 _groups pushBack _turretGroup;
 
-private _garrisonCount = 10 + floor random 21;
+private _garrisonCount = [10, 30] call WHF_fnc_scaleUnitsSide;
 private _garrisonGroup = [opfor, [_standard], _garrisonCount, _center, 50] call WHF_fnc_spawnUnits;
 [_garrisonGroup, _center, 50, true] call WHF_fnc_garrisonUnits;
 [[_garrisonGroup], _groups] spawn WHF_fnc_ungarrisonLoop;
 _groups pushBack _garrisonGroup;
 
-private _vehicleCount = 4 + floor random 5;
+private _vehicleCount = [4, 8] call WHF_fnc_scaleUnitsSide;
 private _vehicleGroup =
     [opfor, [_standard], [_standard], _vehicleCount, _center, _radius]
     call WHF_fnc_spawnVehicles;

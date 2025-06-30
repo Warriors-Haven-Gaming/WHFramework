@@ -41,15 +41,13 @@ _vehicleTypes = _vehicleTypes apply {[_x, _faction]};
 private _groups = [];
 private _vehicles = [];
 
-private _infCount = 40 + floor (_radius / 8);
-_infCount = floor (_infCount * WHF_missions_annex_units);
+private _infCount = 40 + floor (_radius / 8) call WHF_fnc_scaleUnitsMain;
 private _infGroups = [opfor, _unitTypes, _infCount, _center, _radius] call WHF_fnc_spawnUnitGroups;
 {[_x, getPosATL leader _x, 200] call BIS_fnc_taskPatrol} forEach _infGroups;
 _groups append _infGroups;
 
 // NOTE: may result in positions being double garrisoned
-private _garrisonCount = 30 + floor (_radius / 15);
-_garrisonCount = floor (_garrisonCount * WHF_missions_annex_units);
+private _garrisonCount = 30 + floor (_radius / 15) call WHF_fnc_scaleUnitsMain;
 private _garrisonGroup = [opfor, _garrisonTypes, _garrisonCount, _center, _radius min 100] call WHF_fnc_spawnUnits;
 [units _garrisonGroup select [0, floor (_garrisonCount / 2)], _buildings] call WHF_fnc_garrisonBuildings;
 [_garrisonGroup, _center, _radius, true] call WHF_fnc_garrisonUnits;
@@ -57,7 +55,7 @@ private _garrisonGroup = [opfor, _garrisonTypes, _garrisonCount, _center, _radiu
 _groups pushBack _garrisonGroup;
 
 private _vehicleCount = 4 + floor (_radius / 70);
-_vehicleCount = floor (_vehicleCount * WHF_missions_annex_vehicles);
+_vehicleCount = _vehicleCount * WHF_missions_annex_vehicles call WHF_fnc_scaleUnitsMain;
 for "_i" from 1 to _vehicleCount do {
     private _group = [opfor, _vehicleTypes, [_standard], 1, _center, _radius] call WHF_fnc_spawnVehicles;
     [_group, getPosATL leader _group, 200] call BIS_fnc_taskPatrol;
