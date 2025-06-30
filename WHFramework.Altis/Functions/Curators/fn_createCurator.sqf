@@ -16,6 +16,7 @@ Author:
 params ["_player"];
 if (!isServer) exitWith {};
 if (isRemoteExecuted) exitWith {};
+if (canSuspend) exitWith {isNil WHF_fnc_createCurator};
 
 private _uid = getPlayerUID _player;
 if (_uid isEqualTo "") exitWith {};
