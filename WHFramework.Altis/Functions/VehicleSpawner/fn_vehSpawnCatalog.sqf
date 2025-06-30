@@ -58,6 +58,9 @@ private _trucks = [
 
 private _MRAPsCooldown = 300;
 private _MRAPs = [
+    ["b_mrap_01_f",               [-1,  []]],
+    ["b_mrap_01_gmg_f",           [-1,  []]],
+    ["b_mrap_01_hmg_f",           [-1,  []]],
     ["cup_b_rg31e_m2_od_usa",     [-1,  []]],
     ["cup_b_rg31_m2_od_usa",      [-1,  []]],
     ["cup_b_dingo_ger_wdl",       [-1,  []]],
@@ -80,6 +83,7 @@ private _APCs = [
     ["b_apc_wheeled_01_atgm_lxws",     [-1,  []]],
     ["b_d_apc_wheeled_01_cannon_lxws", [-1,  []]],
     ["b_apc_wheeled_01_command_lxws",  [-1,  []]],
+    ["b_apc_wheeled_01_cannon_f",      [-1,  []]],
     ["b_apc_tracked_01_rcws_f",        [-1,  []]],
     ["", []]
 ];
@@ -197,6 +201,7 @@ private _planes = [
     ["fa_emb312_at27m35_nato",           [-1, ["pilot_cas"]]],
     ["cup_b_gr9_dyn_gb",                 [-1, ["pilot_cas"]]],
     ["b_plane_cas_01_dynamicloadout_f",  [-1, ["pilot_cas"]]],
+    ["b_plane_fighter_01_f",             [-1, ["pilot_cas"]]],
     ["cup_b_mv22_viv_usmc",              [600, ["pilot_transport"]]],
     ["cup_b_c130j_gb",                   [600, ["pilot_transport"]]],
     ["cup_b_c130j_cargo_gb",             [600, ["pilot_transport"]]],
@@ -211,6 +216,8 @@ private _drones = [
     ["cup_b_ah6x_usa",              [-1, ["uav"]]],
     ["cup_b_seafox_usv_usmc",       [-1, ["uav"]]],
     ["b_t_uav_03_dynamicloadout_f", [-1, ["uav"]]],
+    ["b_t_ugv_01_olive_f",          [-1, ["uav"]]],
+    ["b_t_ugv_01_rcws_olive_f",     [-1, ["uav"]]],
     ["ef_b_ugv_01_mjtf_des",        [-1, ["uav"]]],
     ["ef_b_ugv_01_rcws_mjtf_des",   [-1, ["uav"]]],
     ["b_uav_05_f",                  [-1, ["uav"]]],
@@ -220,6 +227,12 @@ private _drones = [
 
 private _shipsCooldown = 300;
 private _ships = [
+    ["b_boat_transport_01_f",               [-1,  []]],
+    ["b_lifeboat",                          [-1,  []]],
+    ["b_boat_armed_01_minigun_f",           [-1,  []]],
+    ["c_boat_civil_01_f",                   [-1,  []]],
+    ["c_boat_transport_02_f",               [-1,  []]],
+    ["c_scooter_transport_01_f",            [-1,  []]],
     ["cup_b_rhib_usmc",                     [-1,  []]],
     ["cup_b_zodiac_usmc",                   [-1,  []]],
     ["bae_fic",                             [-1,  []]],
