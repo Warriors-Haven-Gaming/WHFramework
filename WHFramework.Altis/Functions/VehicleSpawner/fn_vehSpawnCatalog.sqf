@@ -153,6 +153,8 @@ private _tanks = [
     ["cup_b_challenger2_woodland_baf",       [-1,   ["engineer"]]],
     ["cup_o_t90m_ru",                        [-1,   ["engineer"]]],
     ["b_d_mbt_01_tusk_lxws",                 [1000, ["engineer"]]],
+    ["b_mbt_01_cannon_f",                    [-1,   ["engineer"]]],
+    ["b_mbt_01_tusk_f",                      [-1,   ["engineer"]]],
     ["b_afv_wheeled_01_up_cannon_f",         [900,  ["engineer"]]],
     ["", []]
 ];
