@@ -69,6 +69,7 @@ You can find this gamemode published on the Steam Workshop:
 - [Warriors Haven Framework (Altis)](https://steamcommunity.com/sharedfiles/filedetails/?id=3455424755), ID 3455424755
 - [Warriors Haven Framework (Mogadishu)](https://steamcommunity.com/sharedfiles/filedetails/?id=3500539207), ID 3500539207
 - [Warriors Haven Framework (Regero)](https://steamcommunity.com/sharedfiles/filedetails/?id=3484096450), ID 3484096450
+- [Warriors Haven Framework (Tanoa)](https://steamcommunity.com/sharedfiles/filedetails/?id=3511439205), ID 3511439205
 - [Warriors Haven Framework (Yulakia)](https://steamcommunity.com/sharedfiles/filedetails/?id=3455426168), ID 3455426168
 
 Once subscribed, you can host the gamemode by going to Server Browser > Host Server,
@@ -81,7 +82,7 @@ For dedicated server hosters, you can either download the mission files from our
    where itemID corresponds to the workshop map you downloaded above.
 2. Copy the `<numbers>_legacy.bin` file into your server's `MPMissions` directory.
 3. Rename it to `WHFramework.<terrain>.pbo`, where terrain is the name
-   of the map (`Altis`, `Mog`, `regero`, or `yulakia`).
+   of the map (`Altis`, `Mog`, `regero`, `Tanoa`, or `yulakia`).
 4. In your server.cfg, use `WHFramework.<terrain>` as the template name,
    for example:
 
