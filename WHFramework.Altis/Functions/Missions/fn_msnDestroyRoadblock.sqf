@@ -78,17 +78,19 @@ private _turrets = [
 ] call WHF_fnc_objectsMapper;
 _objects append _turrets;
 
-// TODO: replace with WHF_fnc_spawnUnitGroups
-private _groups = [];
-for "_i" from 1 to 4 + random 5 do {
-    private _pos = [_center, _radius] call WHF_fnc_randomPos;
-    if (_pos isEqualTo [0,0]) then {break};
-
-    private _quantity = selectRandom [2, 4, 6, 8];
-    private _group = [opfor, [_standard], _quantity, _pos, 10] call WHF_fnc_spawnUnits;
-    [_group, getPosATL leader _group, 50] call BIS_fnc_taskPatrol;
-    _groups pushBack _group;
-};
+private _groups = [
+    opfor,
+    [
+        [[["standard", _faction]], 2, 8, 0], 0.80,
+        [[[   "recon", _faction]], 2, 8, 1], 0.10,
+        [[[   "elite", _faction]], 4, 6, 2], 0.05,
+        [[[  "sniper", _faction]], 2, 2, 3], 0.05
+    ],
+    24 + floor random 41,
+    _center,
+    _radius
+] call WHF_fnc_spawnUnitGroups;
+{[_x, getPosATL leader _x, 50] call BIS_fnc_taskPatrol} forEach _groups;
 
 private _turretGroup = [opfor, [_standard], _turrets] call WHF_fnc_spawnGunners;
 _groups pushBack _turretGroup;
