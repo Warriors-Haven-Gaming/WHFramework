@@ -23,9 +23,9 @@ private _cars = [
     ["ef_b_pickup_mjtf_des",            [120, []]],
     ["ef_b_pickup_comms_mjtf_des",      [120, []]],
     ["ef_b_pickup_mmg_mjtf_des",        [180, []]],
-    ["b_lsv_01_unarmed_f",              [120, []]],
-    ["b_lsv_01_armed_f",                [-1,  []]],
-    ["b_lsv_01_at_f",                   [-1,  []]],
+    ["b_t_lsv_01_unarmed_f",            [120, []]],
+    ["b_t_lsv_01_armed_f",              [-1,  []]],
+    ["b_t_lsv_01_at_f",                 [-1,  []]],
     ["", []] // Dummy element to assist with VCS tooling, may be removed
 ];
 
@@ -45,22 +45,22 @@ private _trucks = [
     ["cup_b_t810_refuel_cz_wdl",     [-1, []]],
     ["cup_b_t810_reammo_cz_wdl",     [-1, []]],
     ["cup_b_nm1038_ammo_df_usa_wdl", [-1, []]],
-    ["b_truck_01_ammo_f",            [-1, []]],
-    ["b_truck_01_fuel_f",            [-1, []]],
-    ["b_truck_01_fft_rf",            [-1, []]],
-    ["b_truck_01_cargo_f",           [-1, []]],
-    ["b_truck_01_flatbed_f",         [-1, []]],
-    ["b_truck_01_transport_f",       [-1, []]],
-    ["b_truck_01_covered_f",         [-1, []]],
-    ["b_truck_01_box_f",             [-1, []]],
+    ["b_t_truck_01_ammo_f",          [-1, []]],
+    ["b_t_truck_01_fuel_f",          [-1, []]],
+    ["b_t_truck_01_fft_rf",          [-1, []]],
+    ["b_t_truck_01_cargo_f",         [-1, []]],
+    ["b_t_truck_01_flatbed_f",       [-1, []]],
+    ["b_t_truck_01_transport_f",     [-1, []]],
+    ["b_t_truck_01_covered_f",       [-1, []]],
+    ["b_t_truck_01_box_f",           [-1, []]],
     ["", []]
 ];
 
 private _MRAPsCooldown = 300;
 private _MRAPs = [
-    ["b_mrap_01_f",               [-1,  []]],
-    ["b_mrap_01_gmg_f",           [-1,  []]],
-    ["b_mrap_01_hmg_f",           [-1,  []]],
+    ["b_t_mrap_01_f",             [-1,  []]],
+    ["b_t_mrap_01_gmg_f",         [-1,  []]],
+    ["b_t_mrap_01_hmg_f",         [-1,  []]],
     ["cup_b_rg31e_m2_od_usa",     [-1,  []]],
     ["cup_b_rg31_m2_od_usa",      [-1,  []]],
     ["cup_b_dingo_ger_wdl",       [-1,  []]],
@@ -83,8 +83,8 @@ private _APCs = [
     ["b_apc_wheeled_01_atgm_lxws",     [-1,  []]],
     ["b_d_apc_wheeled_01_cannon_lxws", [-1,  []]],
     ["b_apc_wheeled_01_command_lxws",  [-1,  []]],
-    ["b_apc_wheeled_01_cannon_f",      [-1,  []]],
-    ["b_apc_tracked_01_rcws_f",        [-1,  []]],
+    ["b_t_apc_wheeled_01_cannon_f",    [-1,  []]],
+    ["b_t_apc_tracked_01_rcws_f",      [-1,  []]],
     ["", []]
 ];
 
@@ -110,8 +110,8 @@ private _utilityCooldown = 300;
 private _utility = [
     ["cup_b_t810_repair_cz_wdl",       [-1,  ["engineer"]]],
     ["cup_b_nm1038_repair_df_usa_wdl", [-1,  ["engineer"]]],
-    ["b_truck_01_repair_f",            [-1,  ["engineer"]]],
-    ["b_apc_tracked_01_crv_f",         [600, ["engineer"]]],
+    ["b_t_truck_01_repair_f",          [-1,  ["engineer"]]],
+    ["b_t_apc_tracked_01_crv_f",       [600, ["engineer"]]],
     ["cup_b_nm997_df_usa_wdl",         [-1,  ["medic"]]],
     ["cup_b_m1133_mev_woodland",       [-1,  ["medic"]]],
     ["cup_b_fv432_gb_ambulance",       [-1,  ["medic"]]],
@@ -123,12 +123,12 @@ private _artilleryCooldown = 1800;
 private _artillery = [
     ["cup_b_fv432_mortar",             [1200, ["arty"]]],
     ["cup_b_m1129_mc_mk19_woodland",   [1200, ["arty"]]],
-    ["b_mbt_01_arty_f",                [-1,   ["arty"]]],
+    ["b_t_mbt_01_arty_f",              [-1,   ["arty"]]],
     ["cup_b_m270_he_baf_wood",         [-1,   ["arty"]]],
     ["cup_b_m270_dpicm_baf_wood",      [-1,   ["arty"]]],
     ["b_d_apc_wheeled_01_mortar_lxws", [1200, ["arty"]]],
     ["b_twinmortar_rf",                [2100, ["arty"]]],
-    ["b_mbt_01_mlrs_f",                [-1,   ["arty"]]],
+    ["b_t_mbt_01_mlrs_f",              [-1,   ["arty"]]],
     ["b_mbt_01_mlrs_cluster",          [-1,   ["arty"]]],
     ["", []]
 ];
@@ -140,7 +140,7 @@ private _airdefense = [
     ["cup_b_nm1097_avenger_usa_wdl", [-1,   []]],
     ["b_pickup_aat_rf",              [300,  []]],
     ["ef_b_mrap_01_laad_mjtf_des",   [-1,   []]],
-    ["b_apc_tracked_01_aa_f",        [1200, []]],
+    ["b_t_apc_tracked_01_aa_f",      [1200, []]],
     ["", []]
 ];
 
@@ -153,9 +153,9 @@ private _tanks = [
     ["cup_b_challenger2_woodland_baf",       [-1,   ["engineer"]]],
     ["cup_o_t90m_ru",                        [-1,   ["engineer"]]],
     ["b_d_mbt_01_tusk_lxws",                 [1000, ["engineer"]]],
-    ["b_mbt_01_cannon_f",                    [-1,   ["engineer"]]],
-    ["b_mbt_01_tusk_f",                      [-1,   ["engineer"]]],
-    ["b_afv_wheeled_01_up_cannon_f",         [900,  ["engineer"]]],
+    ["b_t_mbt_01_cannon_f",                  [-1,   ["engineer"]]],
+    ["b_t_mbt_01_tusk_f",                    [-1,   ["engineer"]]],
+    ["b_t_afv_wheeled_01_up_cannon_f",       [900,  ["engineer"]]],
     ["", []]
 ];
 
