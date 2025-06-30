@@ -64,5 +64,8 @@ diag_log text format [
 unassignCurator getAssignedCuratorLogic _player;
 _player assignCurator _module;
 
-private _objects = allMissionObjects "" select {!(_x isKindOf "Logic")};
-{_x addCuratorEditableObjects [_objects, true]} forEach allCurators;
+_module spawn {
+    scriptName "WHF_fnc_createCurator_addCuratorEditableObjects";
+    private _objects = allMissionObjects "" select {!(_x isKindOf "Logic")};
+    _this addCuratorEditableObjects [_objects, true];
+};
