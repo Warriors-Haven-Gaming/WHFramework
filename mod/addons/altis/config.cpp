@@ -14,7 +14,7 @@ class CfgPatches {
 
 class CfgMissions {
     class MPMissions {
-        class WHFrameworkAltis {
+        class WHFramework_Altis {
             briefingName = "Warriors Haven Framework";
             directory = "z\whf\addons\altis\WHFramework_Altis.Altis";
         };

@@ -14,7 +14,7 @@ class CfgPatches {
 
 class CfgMissions {
     class MPMissions {
-        class WHFrameworkTanoa {
+        class WHFramework_Tanoa {
             briefingName = "Warriors Haven Framework";
             directory = "z\whf\addons\tanoa\WHFramework_Tanoa.Tanoa";
         };

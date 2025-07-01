@@ -24,7 +24,7 @@ class CfgPatches {
 
 class CfgMissions {
     class MPMissions {
-        class WHFrameworkRegero {
+        class WHFramework_Regero {
             briefingName = "Warriors Haven Framework";
             directory = "z\whf\addons\regero\WHFramework_Regero.Regero";
         };

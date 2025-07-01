@@ -47,7 +47,7 @@ class CfgPatches {
 
 class CfgMissions {
     class MPMissions {
-        class WHFrameworkMog {
+        class WHFramework_Mog {
             briefingName = "Warriors Haven Framework";
             directory = "z\whf\addons\mog\WHFramework_Mog.Mog";
         };
