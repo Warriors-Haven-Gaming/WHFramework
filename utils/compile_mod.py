@@ -2,6 +2,10 @@
 
 Requires Git to run. Index and working directory must be clean.
 
+After running this script, you can build the mod using HEMTT:
+    /    $ cd mod
+    /mod $ hemtt build
+
 """
 
 import argparse
