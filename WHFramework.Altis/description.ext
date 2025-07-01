@@ -85,7 +85,7 @@ class CfgFunctions {
             class createMinefield {};
             class createRoadblocks {};
             class getRoadPos {};
-            class initEmplacementCatalog { preInit = true; };
+            class initEmplacementCatalog { preInit = 1; };
             class isNearUsedPosition {};
             class objectsGrabber {};
             class objectsMapper {};
@@ -113,7 +113,7 @@ class CfgFunctions {
         class Curators {
             class createCurator {};
             class deleteCurator {};
-            class initCuratorHandlers { postInit = true; };
+            class initCuratorHandlers { postInit = 1; };
             class initCuratorModule {};
             class refreshCurators {};
         };
@@ -194,15 +194,15 @@ class CfgFunctions {
             class initFriendlyIcons {};
         };
         class Init {
-            class initDynamicSimulation { preInit = true; };
-            class initVehicleHandlers { postInit = true; };
-            class setSideRelations { preInit = true; };
+            class initDynamicSimulation { preInit = 1; };
+            class initVehicleHandlers { postInit = 1; };
+            class setSideRelations { preInit = 1; };
         };
         class JTAC {
             class canReportJTACTarget {};
             class completeJTACTask {};
             class initJTACAction {};
-            class initJTACTasks { preInit = true; };
+            class initJTACTasks { preInit = 1; };
             class reportJTACTarget {};
         };
         class Loading {
@@ -297,7 +297,7 @@ class CfgFunctions {
         };
         class Respawn {
             class addRespawnVehicle {};
-            class initRespawnSystem { preInit = true; };
+            class initRespawnSystem { preInit = 1; };
             class nearObjectsRespawn {};
             class respawnLoop {};
         };
@@ -401,7 +401,7 @@ class CfgFunctions {
             class vehSpawnObstructed {};
             class vehSpawnRequest {};
         };
-    }
+    };
 };
 
 // https://community.bistudio.com/wiki/Arma_3:_Advanced_Hints_(Field_Manual)

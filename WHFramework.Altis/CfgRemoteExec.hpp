@@ -1,6 +1,4 @@
-import CfgRemoteExec as CfgRemoteExecMod;
-
-class CfgRemoteExec : CfgRemoteExecMod {
+class CfgRemoteExec {
     class Functions {
         mode = 2;
         jip = 0;

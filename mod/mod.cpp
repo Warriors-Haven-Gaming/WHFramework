@@ -1,0 +1,11 @@
+name = "Warriors Haven Framework";
+author = "thegamecracks";
+tooltip = "Warriors Haven Framework";
+tooltipOwned = "Warriors Haven Framework";
+actionName = "GitHub";
+action = "https://github.com/Warriors-Haven-Gaming/WHFramework";
+overview = "Our own Invade &amp; Annex gamemode inspired from Quiksilver, written from the ground up with the goal of improving stability, mod compatibility, and ease of development.";
+logo = "icon.jpg";
+logoOver = "icon.jpg";
+logoSmall = "icon.jpg";
+picture = "icon.jpg";

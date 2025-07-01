@@ -1,1609 +1,1611 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="WHFramework">
-    <Container name="APS">
-        <Key ID="STR_WHF_simulateAPSLoop_intercept">
-            <Original>APS intercepted!\nCharges: %1/%2</Original>
-        </Key>
-    </Container>
-    <Container name="CfgHints">
-        <Key ID="STR_WHF_hint_intro_title">
-            <Original>Introduction</Original>
-        </Key>
-        <Key ID="STR_WHF_hint_intro_description">
-            <Original>Welcome to Warriors Haven Framework!%1If you're new to this gamemode, you should check out the Getting Started guide on your map journal.</Original>
-        </Key>
-    </Container>
-    <Container name="CfgTaskDescriptions">
-        <Key ID="STR_WHF_defendAidSupplies_title">
-            <Original>Defend Aid Supplies</Original>
-        </Key>
-        <Key ID="STR_WHF_defendAidSupplies_description">
-            <Original>Enemies are planning to to steal medical and food supplies from a distribution center. You must assist local security in defending the supplies and maintaining civil order.</Original>
-        </Key>
-        <Key ID="STR_WHF_defendAidSupplies_shelter_title">
-            <Original>Civilian Casualties (%3/%4)</Original>
-        </Key>
-        <Key ID="STR_WHF_defendAidSupplies_shelter_description">
-            <Original>%1 out of %2 civilians are alive. While not required, we should protect most of them during this defense. This objective will be canceled if there are %4 casualties or more.&lt;br/&gt;Hint: Use the Detain keybind to escort them to safety!</Original>
-        </Key>
-        <Key ID="STR_WHF_defendAidSupplies_status_title">
-            <Original>Remaining Supply Crates (%1)</Original>
-        </Key>
-        <Key ID="STR_WHF_defendAidSupplies_status_description">
-            <Original>%1 out of %2 supply crates are being distributed. At least %3 crates must remain until %4, otherwise this mission will fail.</Original>
-        </Key>
-        <Key ID="STR_WHF_destroyAAA_title">
-            <Original>Destroy Anti-Air Artillery</Original>
-        </Key>
-        <Key ID="STR_WHF_destroyAAA_description">
-            <Original>Enemies have set up AA batteries at this location. Destroy them!</Original>
-        </Key>
-        <Key ID="STR_WHF_destroyAAAEmplacement_title">
-            <Original>AA Emplacement</Original>
-        </Key>
-        <Key ID="STR_WHF_destroyAAAEmplacement_description">
-            <Original>There is an AA battery in this area.</Original>
-        </Key>
-        <Key ID="STR_WHF_destroyArmor_title">
-            <Original>Destroy Armor Depot</Original>
-        </Key>
-        <Key ID="STR_WHF_destroyArmor_description">
-            <Original>Enemies are staging armor and support vehicles for their next operation. We know of %1 vehicles that are present in &lt;marker name="%2"&gt;this area&lt;/marker&gt;. You must conduct a preemptive strike and destroy all vehicles at this location.</Original>
-        </Key>
-        <Key ID="STR_WHF_destroyArtillery_title">
-            <Original>Destroy Artillery</Original>
-        </Key>
-        <Key ID="STR_WHF_destroyArtillery_description">
-            <Original>Enemies have established field artillery sites at this location. You must destroy all cannons in the area.</Original>
-        </Key>
-        <Key ID="STR_WHF_destroyBarracks_title">
-            <Original>Destroy Barracks</Original>
-        </Key>
-        <Key ID="STR_WHF_destroyBarracks_description">
-            <Original>Enemies have deployed a field barracks to house additional personnel for reinforcements. Eradicate them with extreme prejudice.</Original>
-        </Key>
-        <Key ID="STR_WHF_destroyRoadblock_title">
-            <Original>Destroy Roadblock</Original>
-        </Key>
-        <Key ID="STR_WHF_destroyRoadblock_description">
-            <Original>Enemies have set up a roadblock at this location. Destroy them!</Original>
-        </Key>
-        <Key ID="STR_WHF_downloadIntel_title">
-            <Original>Secure Intel</Original>
-        </Key>
-        <Key ID="STR_WHF_downloadIntel_description">
-            <Original>A military research building has been found containing intel. Secure it!</Original>
-        </Key>
-        <Key ID="STR_WHF_jtacParent_title">
-            <Original>JTAC Targets</Original>
-        </Key>
-        <Key ID="STR_WHF_jtacParent_description">
-            <Original>A list of targets that have been reported by JTACs.</Original>
-        </Key>
-        <Key ID="STR_WHF_jtacTarget_title">
-            <Original>Target %1</Original>
-        </Key>
-        <Key ID="STR_WHF_jtacTarget_description">
-            <Original>This vehicle has been reported by %2. Destroy it!</Original>
-        </Key>
-        <Key ID="STR_WHF_mainAnnexRegion_title">
-            <Original>Annex %1</Original>
-        </Key>
-        <Key ID="STR_WHF_mainAnnexRegion_description">
-            <Original>Enemy forces have established their presence at &lt;marker name="%1"&gt;%2&lt;/marker&gt; to host their operations. We are to complete all sub-objectives and eliminate a majority of their units to force a retreat. Expect garrisons, turrets, minefields, and patrols sweeping the region.</Original>
-        </Key>
-        <Key ID="STR_WHF_mainAnnexRegionCommand_title">
-            <Original>Neutralize Commander</Original>
-        </Key>
-        <Key ID="STR_WHF_mainAnnexRegionCommand_description">
-            <Original>We've identified the approximate location of their Command &amp;amp; Control facility. Capture or eliminate the OPFOR commander.</Original>
-        </Key>
-        <Key ID="STR_WHF_mainAnnexRegionComms_title">
-            <Original>Disrupt Communications</Original>
-        </Key>
-        <Key ID="STR_WHF_mainAnnexRegionComms_description">
-            <Original>We've identified the approximate location of their communications hub. You must disable the radio transmitter, seize their servers, and extract intelligence from their officer.</Original>
-        </Key>
-        <Key ID="STR_WHF_mainAnnexRegionRepair_title">
-            <Original>Destroy Repair Depot</Original>
-        </Key>
-        <Key ID="STR_WHF_mainAnnexRegionRepair_description">
-            <Original>We've identified the approximate location of their service depot. Destroy it!</Original>
-        </Key>
-        <Key ID="STR_WHF_mainAnnexRegionThreshold_title">
-            <Original>Eliminate Remaining Forces (%1)</Original>
-        </Key>
-        <Key ID="STR_WHF_mainAnnexRegionThreshold_description">
-            <Original>A majority of their forces still remain in this area. We need to neutralize at least %1 more units before this mission is complete, including any reinforcements that have arrived.</Original>
-        </Key>
-        <Key ID="STR_WHF_secureCaches_title">
-            <Original>Secure Caches</Original>
-        </Key>
-        <Key ID="STR_WHF_secureCaches_description">
-            <Original>%1 are exchanging weapons and munitions with %2 at this location. We need to disrupt this transfer and secure their caches.</Original>
-        </Key>
-    </Container>
-    <Container name="Context">
-        <Key ID="STR_WHF_context_action_cruise_on">
-            <Original>Set Cruise Control</Original>
-        </Key>
-        <Key ID="STR_WHF_context_action_cruise_up">
-            <Original>Cruise Up</Original>
-        </Key>
-        <Key ID="STR_WHF_context_action_cruise_down">
-            <Original>Cruise Down</Original>
-        </Key>
-        <Key ID="STR_WHF_context_action_cruise_off">
-            <Original>Unset Cruise Control</Original>
-        </Key>
-        <Key ID="STR_WHF_context_action_detain">
-            <Original>Detain</Original>
-        </Key>
-        <Key ID="STR_WHF_context_action_fpv">
-            <Original>Assemble FPV Drone</Original>
-        </Key>
-        <Key ID="STR_WHF_context_action_haloJump">
-            <Original>Halo Jump</Original>
-        </Key>
-        <Key ID="STR_WHF_context_action_magrepack">
-            <Original>Repack Magazines</Original>
-        </Key>
-        <Key ID="STR_WHF_context_action_quadbike">
-            <Original>Deploy Quadbike</Original>
-        </Key>
-        <Key ID="STR_WHF_context_action_quadbike_obstructed">
-            <Original>There is not enough space to deploy your quadbike.</Original>
-        </Key>
-        <Key ID="STR_WHF_context_action_selfdestruct">
-            <Original>Self-Destruct UAV</Original>
-        </Key>
-        <Key ID="STR_WHF_context_keybind">
-            <Original>Context Menu</Original>
-        </Key>
-        <Key ID="STR_WHF_context_keybind_tooltip">
-            <Original>Hold this key to reveal any contextual actions from the mission. Disabled when ACE is loaded.</Original>
-        </Key>
-    </Container>
-    <Container name="Cruise">
-        <Key ID="STR_WHF_cruise_keybind">
-            <Original>Cruise Control</Original>
-        </Key>
-        <Key ID="STR_WHF_cruise_keybind_tooltip">
-            <Original>Toggle cruise control when driving.\nDisabled when ACE is loaded.</Original>
-        </Key>
-        <Key ID="STR_WHF_cruise_up_keybind">
-            <Original>Cruise Up</Original>
-        </Key>
-        <Key ID="STR_WHF_cruise_up_keybind_tooltip">
-            <Original>Increase set speed while cruise control is enabled.\nDisabled when ACE is loaded.</Original>
-        </Key>
-        <Key ID="STR_WHF_cruise_down_keybind">
-            <Original>Cruise Down</Original>
-        </Key>
-        <Key ID="STR_WHF_cruise_down_keybind_tooltip">
-            <Original>Decrease set speed while cruise control is enabled.\nDisabled when ACE is loaded.</Original>
-        </Key>
-    </Container>
-    <Container name="Diary">
-        <Key ID="STR_WHF_diaryGuide_subject">
-            <Original>Getting Started</Original>
-        </Key>
-        <Key ID="STR_WHF_diaryGuide_summary_title">
-            <Original>Summary</Original>
-        </Key>
-        <Key ID="STR_WHF_diaryGuide_summary_description">
-            <Original>
-                This is a persistent, Invade &amp;amp; Annex-like mission where
-                players are working together to complete procedurally generated
-                objectives across the map of %1.
-                &lt;br/&gt;
-                &lt;br/&gt;
-                This mission was developed by thegamecracks and Vicious Resilience
-                as part of the Warriors Haven community. This took a lot of hard
-                work to make, so thank you for playing!
-                &lt;br/&gt;
-                &lt;br/&gt;
-                Playing solo and want a taste of combat? Grab yourself your
-                favorite gun and a lot of first aid kits, then recruit some AI
-                and halo jump into the main objective!
-            </Original>
-        </Key>
-        <Key ID="STR_WHF_diaryGuide_keybinds_title">
-            <Original>Keybinds</Original>
-        </Key>
-        <Key ID="STR_WHF_diaryGuide_keybinds_description">
-            <Original>
-                The following keybinds are provided by this mission:
-                &lt;br/&gt;
-                - Detain: [T]
-                  &lt;br/&gt;
-                - Earplugs: [End]
-                  &lt;br/&gt;
-                &lt;br/&gt;
-                The following keybinds are also available when ACE is not loaded:
-                &lt;br/&gt;
-                - Context Menu: [Left Windows]
-                  &lt;br/&gt;
-                - Repack Magazines: [Ctrl+R]
-                  &lt;br/&gt;
-                - Cruise Control: [Insert]
-                  &lt;br/&gt;
-                - Cruise Up: [Ctrl+Mouse wheel up]
-                  &lt;br/&gt;
-                - Cruise Down: [Ctrl+Mouse wheel down]
-                  &lt;br/&gt;
-                &lt;br/&gt;
-                If you have CBA loaded, these keybinds can be changed by going
-                to your Controls &amp;gt; Configure Addons menu.
-            </Original>
-        </Key>
-        <Key ID="STR_WHF_diaryGuide_halo_title">
-            <Original>Halo Jumping</Original>
-        </Key>
-        <Key ID="STR_WHF_diaryGuide_halo_description">
-            <Original>
-                When available, halo jumping may be accessed from anywhere by
-                holding the Context Menu keybind. This allows you to drop over
-                any location of your choosing, as long as it is not within coverage
-                of enemy anti-air vehicles. Halo jumps can carry along AI recruits
-                and vehicles.
-                &lt;br/&gt;
-                &lt;br/&gt;
-                If you have CBA installed, you can customize how high you want
-                to be dropped off, when recruit/vehicle parachutes automatically
-                deploy, and the separation between your units.
-                &lt;br/&gt;
-                &lt;br/&gt;
-                Depending on server settings, halo jumping may become hidden
-                after a certain number of players have joined.
-            </Original>
-        </Key>
-        <Key ID="STR_WHF_diaryGuide_incapacitation_title">
-            <Original>Incapacitation</Original>
-        </Key>
-        <Key ID="STR_WHF_diaryGuide_incapacitation_description">
-            <Original>
-                NOTE: this section does not apply if ACE Medical is loaded.
-                &lt;br/&gt;
-                &lt;br/&gt;
-                Once you have been significantly wounded, you will become incapacitated
-                and unable to move. There are four ways to recover from incapacitation:
-                &lt;br/&gt;
-                1. Press Escape and respawn back at base;
-                   &lt;br/&gt;
-                2. Pray for an act of god;
-                   &lt;br/&gt;
-                3. Wait for a player medic to revive you, or;
-                   &lt;br/&gt;
-                4. Perform a self-revive.
-                   &lt;br/&gt;
-                &lt;br/&gt;
-                Depending on server settings, options (3) and (4) may have different
-                requirements to succeed. By default, players can only revive units
-                when they are a Medic, have a Medkit on hand, and have one First Aid Kit
-                to be consumed. The last two item requirements will check the
-                incapacitated unit's inventory first, so medics that have forgotten
-                their medkit or have ran out of first aid kits can still perform
-                revives on anyone that has the necessary items themselves.
-                &lt;br/&gt;
-                &lt;br/&gt;
-                For self-reviving, this option typically appears after three seconds,
-                and allows any player with at least three First Aid Kits to self-revive
-                themselves. Depending on server settings, self-reviving may become hidden
-                after a certain number of players have joined.
-            </Original>
-        </Key>
-        <Key ID="STR_WHF_diaryGuide_recruits_title">
-            <Original>Recruits</Original>
-        </Key>
-        <Key ID="STR_WHF_diaryGuide_recruits_description">
-            <Original>
-                Certain objects around the base, typically flag poles, may serve
-                as places for group leaders to request AI recruits. Recruits can
-                be spawned for a subset of player roles, including AT Specialists,
-                Engineers, and Medics.
-                &lt;br/&gt;
-                &lt;br/&gt;
-                Each time you select a role for your next recruit, they will
-                receive the last loadout you used in that role. If you have yet
-                to play as that role, or have not yet made a loadout for it,
-                they will receive a default loadout. In this case, you can edit
-                their loadout by looking at them and using the Edit Recruit Loadout
-                action. The loadout you give them will be saved to the role,
-                allowing you to reuse the loadout for future recruits.
-                &lt;br/&gt;
-                &lt;br/&gt;
-                Depending on server settings, recruit actions may become hidden
-                after a certain number of players have joined.
-            </Original>
-        </Key>
-        <Key ID="STR_WHF_diaryGuide_service_title">
-            <Original>Vehicle Servicing</Original>
-        </Key>
-        <Key ID="STR_WHF_diaryGuide_service_description">
-            <Original>
-                Repair depots provide service capabilities to all players within
-                range. You must park your vehicle near the depot, exit it, and
-                look at the vehicle to service it. This will repair, refuel, and
-                rearm your vehicle, including its Active Protection System if
-                it has one.
-            </Original>
-        </Key>
-        <Key ID="STR_WHF_diaryGuide_locks_title">
-            <Original>Vehicle Locks</Original>
-        </Key>
-        <Key ID="STR_WHF_diaryGuide_locks_description">
-            <Original>
-                Depending on server settings, certain vehicles will be locked
-                to a specific role or owner. These locks typically apply to the
-                driver seat only, but may also apply to gunner and passenger seats.
-                Aircraft provided by Vehicle Spawners will have their pilot
-                seats locked to the owner.
-            </Original>
-        </Key>
-        <Key ID="STR_WHF_diaryGuide_vehSpawn_title">
-            <Original>Vehicle Spawners</Original>
-        </Key>
-        <Key ID="STR_WHF_diaryGuide_vehSpawn_description">
-            <Original>
-                Certain objects around the base, typically laptops, may serve as
-                vehicle spawners and can provide various types of vehicles. Some
-                vehicle types, like Artillery, Tanks, and Helicopters, are only available for
-                certain roles like Artillery Gunner, Engineer, and Transport Pilot respectively.
-                &lt;br/&gt;
-                &lt;br/&gt;
-                Once you spawn a vehicle, all Vehicle Spawners will enter
-                a cooldown based on the specific vehicle you have chosen.
-            </Original>
-        </Key>
-        <Key ID="STR_WHF_diaryGuide_fpv_title">
-            <Original>FPV Drones</Original>
-        </Key>
-        <Key ID="STR_WHF_diaryGuide_fpv_description">
-            <Original>
-                Depending on server settings, players and AI with backpack drones
-                may be able to assemble them as FPV drones. After placing these
-                drones on the ground, they will autonomously target enemies and
-                attempt to explode within proximity of them. Shooting the drone
-                or killing the pilot will also cause the drone to detonate.
-                &lt;br/&gt;
-                &lt;br/&gt;
-                You can assemble your own FPV drones by wearing a backpack drone
-                and selecting Assemble FPV Drone.
-                If this option does not show up, either the server has FPV drones
-                disabled, or FPV drones can only be assembled by Drone Operators.
-                Beware, these drones cannot be disassembled or remote controlled,
-                and can explode themselves even when there are friendlies nearby!
-            </Original>
-        </Key>
-    </Container>
-    <Container name="Earplugs">
-        <Key ID="STR_WHF_earplugs_keybind">
-            <Original>Toggle Earplugs</Original>
-        </Key>
-        <Key ID="STR_WHF_earplugs_keybind_tooltip">
-            <Original>Press this key to enable and disable earplugs.</Original>
-        </Key>
-    </Container>
-    <Container name="Factions">
-        <Key ID="STR_WHF_cycleFaction_unsupported">
-            <Original>No supported factions in faction pool for %1. Using %2 faction as fallback.</Original>
-        </Key>
-        <Key ID="STR_WHF_factions_base">
-            <Original>Syndikat</Original>
-        </Key>
-        <Key ID="STR_WHF_factions_csat">
-            <Original>CSAT</Original>
-        </Key>
-        <Key ID="STR_WHF_factions_csat_pacific">
-            <Original>CSAT (Pacific)</Original>
-        </Key>
-        <Key ID="STR_WHF_factions_aaf">
-            <Original>AAF</Original>
-        </Key>
-        <Key ID="STR_WHF_factions_ldf">
-            <Original>LDF</Original>
-        </Key>
-        <Key ID="STR_WHF_factions_Ws_sfia">
-            <Original>WS SFIA</Original>
-        </Key>
-        <Key ID="STR_WHF_factions_ws_tura">
-            <Original>WS Tura</Original>
-        </Key>
-        <Key ID="STR_WHF_factions_rhsafrf">
-            <Original>RHSAFRF</Original>
-        </Key>
-        <Key ID="STR_WHF_factions_cup_afrf">
-            <Original>CUP AFRF</Original>
-        </Key>
-        <Key ID="STR_WHF_factions_cup_afrf_modern">
-            <Original>CUP AFRF (Modern)</Original>
-        </Key>
-        <Key ID="STR_WHF_factions_cup_npc">
-            <Original>CUP National Party of Chernarus</Original>
-        </Key>
-        <Key ID="STR_WHF_factions_cup_tk">
-            <Original>CUP Takistani Army</Original>
-        </Key>
-        <Key ID="STR_WHF_factions_cup_tk_ins">
-            <Original>CUP Takistani Militia</Original>
-        </Key>
-        <Key ID="STR_WHF_factions_nato">
-            <Original>NATO</Original>
-        </Key>
-        <Key ID="STR_WHF_factions_nato_pacific">
-            <Original>NATO (Pacific)</Original>
-        </Key>
-        <Key ID="STR_WHF_factions_ef_mjtf_desert">
-            <Original>EF MJTF (Desert)</Original>
-        </Key>
-        <Key ID="STR_WHF_factions_ef_mjtf_woodland">
-            <Original>EF MJTF (Woodland)</Original>
-        </Key>
-        <Key ID="STR_WHF_factions_ws_ion">
-            <Original>WS ION Services</Original>
-        </Key>
-        <Key ID="STR_WHF_factions_ws_una">
-            <Original>WS UNA</Original>
-        </Key>
-        <Key ID="STR_WHF_factions_cup_usa_woodland">
-            <Original>CUP US Army (Woodland)</Original>
-        </Key>
-        <Key ID="STR_WHF_factions_cup_usmc_woodland">
-            <Original>CUP USMC (Woodland)</Original>
-        </Key>
-    </Container>
-    <Container name="Halo">
-        <Key ID="STR_WHF_checkHaloJump_antiair">
-            <Original>Area within AA coverage</Original>
-        </Key>
-        <Key ID="STR_WHF_checkHaloJump_restricted">
-            <Original>Area is restricted</Original>
-        </Key>
-        <Key ID="STR_WHF_haloJumpGUI_antiair">
-            <Original>Blocked by AA coverage</Original>
-        </Key>
-        <Key ID="STR_WHF_haloJumpGUI_enemy">
-            <Original>Blocked by nearby hostiles</Original>
-        </Key>
-        <Key ID="STR_WHF_haloJumpGUI_mission">
-            <Original>Blocked in mission area</Original>
-        </Key>
-        <Key ID="STR_WHF_haloJumpGUI_description">
-            <Original>Select a point on the map to halo jump to.</Original>
-        </Key>
-    </Container>
-    <Container name="Helpers">
-        <Key ID="STR_WHF_defaultTimer">
-            <Original>Time left: %3/%2</Original>
-        </Key>
-    </Container>
-    <Container name="JTAC">
-        <Key ID="STR_WHF_initJTACAction_report">
-            <Original>Report</Original>
-        </Key>
-        <Key ID="STR_WHF_initJTACAction_cooldown">
-            <Original>Next report allowed in %1 seconds...</Original>
-        </Key>
-    </Container>
-    <Container name="Loadouts">
-        <Key ID="STR_WHF_initArsenal_loadLastLoadout">
-            <Original>Load Last Loadout</Original>
-        </Key>
-        <Key ID="STR_WHF_initArsenalLoadoutHandlers_role">
-            <Original>Editing loadout for: %1</Original>
-        </Key>
-        <Key ID="STR_WHF_initVehicleArsenalAction">
-            <Original>Edit Vehicle Inventory</Original>
-        </Key>
-    </Container>
-    <Container name="Locks">
-        <Key ID="STR_WHF_vehicleLock">
-            <Original>This seat is locked!</Original>
-        </Key>
-        <Key ID="STR_WHF_vehicleLock_copilot">
-            <Original>You cannot take control of this vehicle!</Original>
-        </Key>
-    </Container>
-    <Container name="Missions">
-        <Key ID="STR_WHF_addIntelAction_title">
-            <Original>Collect Intel</Original>
-        </Key>
-        <Key ID="STR_WHF_defendAidSupplies_start">
-            <Original>You've arrived! The raiders are about to attack soon. Take your positions!</Original>
-        </Key>
-        <Key ID="STR_WHF_defendAidSupplies_contact">
-            <Original>Hey, they're hitting us now! Bearing %1!</Original>
-        </Key>
-        <Key ID="STR_WHF_defendAidSupplies_theft">
-            <Original>A supply crate is being stolen!</Original>
-        </Key>
-        <Key ID="STR_WHF_defendAidSupplies_stolen">
-            <Original>We've lost a supply crate!</Original>
-        </Key>
-        <Key ID="STR_WHF_defendAidSupplies_failed">
-            <Original>Enemies have taken majority of the supplies!</Original>
-        </Key>
-        <Key ID="STR_WHF_defendAidSupplies_half">
-            <Original>We're halfway there. Keep holding them off!</Original>
-        </Key>
-        <Key ID="STR_WHF_defendAidSupplies_close">
-            <Original>Just one minute left, we're almost done!</Original>
-        </Key>
-        <Key ID="STR_WHF_defendAidSupplies_success">
-            <Original>The humanitarian supplies have been successfully defended. Good work!</Original>
-        </Key>
-        <Key ID="STR_WHF_downloadIntelLaptop_action">
-            <Original>Download Intel</Original>
-        </Key>
-        <Key ID="STR_WHF_downloadIntelLaptop_start">
-            <Original>Intel is being downloaded...</Original>
-        </Key>
-        <Key ID="STR_WHF_downloadIntelLaptop_interrupted">
-            <Original>Someone needs to stay near the intel laptop!</Original>
-        </Key>
-        <Key ID="STR_WHF_downloadIntelLaptop_ended">
-            <Original>Intel has been downloaded!</Original>
-        </Key>
-        <Key ID="STR_WHF_downloadIntelLaptop_ended_inArea">
-            <Original>Intel has been downloaded! Time for you to move out!</Original>
-        </Key>
-        <Key ID="STR_WHF_mainAnnexRegion_region">
-            <Original>Region</Original>
-        </Key>
-        <Key ID="STR_WHF_secureCaches_action">
-            <Original>Secure Cache</Original>
-        </Key>
-    </Container>
-    <Container name="Prisoners">
-        <Key ID="STR_WHF_detain_keybind">
-            <Original>Detain</Original>
-        </Key>
-        <Key ID="STR_WHF_detain_keybind_tooltip">
-            <Original>Press this key while looking at an enemy to command them to surrender.</Original>
-        </Key>
-        <Key ID="STR_WHF_detain_request_generic_1">
-            <Original>Hands in the air!</Original>
-        </Key>
-        <Key ID="STR_WHF_detain_request_generic_2">
-            <Original>Surrender now!</Original>
-        </Key>
-        <Key ID="STR_WHF_detain_request_generic_3">
-            <Original>Get down on the ground!</Original>
-        </Key>
-        <Key ID="STR_WHF_detain_request_generic_4">
-            <Original>Stop right there!</Original>
-        </Key>
-        <Key ID="STR_WHF_detain_request_stop_1">
-            <Original>Freeze!</Original>
-        </Key>
-        <Key ID="STR_WHF_detain_request_stop_2">
-            <Original>Don't move!</Original>
-        </Key>
-        <Key ID="STR_WHF_detain_request_gun_1">
-            <Original>Drop your weapon!</Original>
-        </Key>
-        <Key ID="STR_WHF_detain_failed_1">
-            <Original>Fuck you!</Original>
-        </Key>
-        <Key ID="STR_WHF_detain_failed_2">
-            <Original>Screw you!</Original>
-        </Key>
-        <Key ID="STR_WHF_detain_failed_3">
-            <Original>No way I'm doing that!</Original>
-        </Key>
-        <Key ID="STR_WHF_detain_failed_4">
-            <Original>I'm not giving up!</Original>
-        </Key>
-        <Key ID="STR_WHF_detain_failed_5">
-            <Original>You're not going to stop me!</Original>
-        </Key>
-        <Key ID="STR_WHF_detain_failed_6">
-            <Original>Never!</Original>
-        </Key>
-        <Key ID="STR_WHF_detain_failed_7">
-            <Original>Not a chance!</Original>
-        </Key>
-        <Key ID="STR_WHF_detain_failed_8">
-            <Original>I'm not backing down!</Original>
-        </Key>
-        <Key ID="STR_WHF_detain_failed_9">
-            <Original>I'm not afraid of you!</Original>
-        </Key>
-        <Key ID="STR_WHF_detain_failed_kill_1">
-            <Original>You're dead!</Original>
-        </Key>
-        <Key ID="STR_WHF_detain_failed_kill_2">
-            <Original>I'll kill you!</Original>
-        </Key>
-        <Key ID="STR_WHF_detain_failed_kill_3">
-            <Original>I fight to the end!</Original>
-        </Key>
-        <Key ID="STR_WHF_detain_failed_kill_4">
-            <Original>Over my dead body!</Original>
-        </Key>
-        <Key ID="STR_WHF_detain_success_1">
-            <Original>Okay, okay! I surrender!</Original>
-        </Key>
-        <Key ID="STR_WHF_detain_success_2">
-            <Original>I yield, I yield!</Original>
-        </Key>
-        <Key ID="STR_WHF_detain_success_3">
-            <Original>Okay, I give up!</Original>
-        </Key>
-        <Key ID="STR_WHF_detain_success_gun_1">
-            <Original>Okay, okay! I surrender! Don't shoot!</Original>
-        </Key>
-        <Key ID="STR_WHF_detain_success_gun_2">
-            <Original>I dropped my gun, don't shoot!</Original>
-        </Key>
-        <Key ID="STR_WHF_detain_success_gun_3">
-            <Original>I surrender! Don't kill me, please!</Original>
-        </Key>
-        <Key ID="STR_WHF_detain_success_gun_4">
-            <Original>I give up! Don't kill me, please!</Original>
-        </Key>
-        <Key ID="STR_WHF_detain_success_gun_5">
-            <Original>My gun's on the ground! Don't shoot me!</Original>
-        </Key>
-        <Key ID="STR_WHF_prisoner_escort">
-            <Original>Escort</Original>
-        </Key>
-        <Key ID="STR_WHF_prisoner_free">
-            <Original>Set Free</Original>
-        </Key>
-        <Key ID="STR_WHF_prisoner_release">
-            <Original>Release</Original>
-        </Key>
-    </Container>
-    <Container name="Recruits">
-        <Key ID="STR_WHF_addRecruitLoadoutAction_edit">
-            <Original>Edit Recruit Loadout</Original>
-        </Key>
-        <Key ID="STR_WHF_spawnRecruit">
-            <Original>Request Recruit</Original>
-        </Key>
-        <Key ID="STR_WHF_spawnRecruit_leader">
-            <Original>You must be a group leader to manage your recruits.</Original>
-        </Key>
-        <Key ID="STR_WHF_spawnRecruit_limit">
-            <Original>You have reached the recruit limit of %1.</Original>
-        </Key>
-        <Key ID="STR_WHF_spawnRecruit_limit_global">
-            <Original>The global limit of %1 recruits has been reached.</Original>
-        </Key>
-        <Key ID="STR_WHF_spawnRecruit_limit_player">
-            <Original>The player limit of %1 players has been reached.</Original>
-        </Key>
-        <Key ID="STR_WHF_spawnRecruitGUI_clear">
-            <Original>Dismiss Recruits</Original>
-        </Key>
-        <Key ID="STR_WHF_rearmRecruits">
-            <Original>Rearm Recruits</Original>
-        </Key>
-        <Key ID="STR_WHF_rearmRecruits_completed">
-            <Original>Rearmed loadouts for %1 recruit(s)!</Original>
-        </Key>
-        <Key ID="STR_WHF_rearmRecruits_none">
-            <Original>No recruits in range to rearm.</Original>
-        </Key>
-    </Container>
-    <Container name="Repack">
-        <Key ID="STR_WHF_repack_keybind">
-            <Original>Repack Magazines</Original>
-        </Key>
-        <Key ID="STR_WHF_repack_keybind_tooltip">
-            <Original>Press this key while on foot or in a vehicle to repack your magazines.\nIgnored if magazines are already repacked.</Original>
-        </Key>
-    </Container>
-    <Container name="Revive">
-        <Key ID="STR_WHF_addCarryAction_action">
-            <Original>Carry</Original>
-        </Key>
-        <Key ID="STR_WHF_checkRevive_generic">
-            <Original>Unable to revive!</Original>
-        </Key>
-        <Key ID="STR_WHF_checkRevive_medic">
-            <Original>Must be a medic to revive!</Original>
-        </Key>
-        <Key ID="STR_WHF_checkRevive_medkit">
-            <Original>Missing medkit to revive!</Original>
-        </Key>
-        <Key ID="STR_WHF_checkRevive_FAKs">
-            <Original>Missing %1 first aid kit(s)</Original>
-        </Key>
-        <Key ID="STR_WHF_selfReviveCompleted">
-            <Original>%1 first aid kits consumed (%2 left)</Original>
-        </Key>
-        <Key ID="STR_WHF_selfReviveConditionProgress_noFirstAidKits">
-            <Original>You need %1 first aid kits to self-revive! (%2 missing)</Original>
-        </Key>
-        <Key ID="STR_WHF_selfReviveAdd_action">
-            <Original>Self-Revive</Original>
-        </Key>
-        <Key ID="STR_WHF_incapBleedout">
-            <Original>%1 bled out</Original>
-        </Key>
-        <Key ID="STR_WHF_incapLoop_actOfGod">
-            <Original>Revived by an act of god!</Original>
-        </Key>
-        <Key ID="STR_WHF_incapLoop_status_bleedout">
-            <Original>Bleedout in: %1min</Original>
-        </Key>
-        <Key ID="STR_WHF_incapLoop_status_assigned">
-            <Original>Assigned medic: %1 (%2m)</Original>
-        </Key>
-        <Key ID="STR_WHF_incapLoop_status_medic">
-            <Original>Nearest medic: %1 (%2m)</Original>
-        </Key>
-        <Key ID="STR_WHF_incapUnit_chat">
-            <Original>%1 was incapacitated</Original>
-        </Key>
-        <Key ID="STR_WHF_incapUnit_friendly">
-            <Original>%1 was incapacitated by %2 (friendly fire)</Original>
-        </Key>
-    </Container>
-    <Container name="Roles">
-        <Key ID="STR_WHF_roles_arty">
-            <Original>Artillery Gunner</Original>
-        </Key>
-        <Key ID="STR_WHF_roles_at">
-            <Original>AT Specialist</Original>
-        </Key>
-        <Key ID="STR_WHF_roles_medic">
-            <Original>Medic</Original>
-        </Key>
-        <Key ID="STR_WHF_roles_pilot_transport">
-            <Original>Transport Pilot</Original>
-        </Key>
-        <Key ID="STR_WHF_roleSelectionGUI_title">
-            <Original>Role Selection</Original>
-        </Key>
-        <Key ID="STR_WHF_roleSelectionGUI_roles">
-            <Original>Roles:</Original>
-        </Key>
-        <Key ID="STR_WHF_roleSelectionGUI_players">
-            <Original>Players in role:</Original>
-        </Key>
-    </Container>
-    <Container name="Service">
-        <Key ID="STR_WHF_initServiceAction">
-            <Original>Service</Original>
-        </Key>
-    </Container>
-    <Container name="Settings">
-        <Key ID="STR_WHF_settings">
-            <Original>Warriors Haven Framework</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_aps">
-            <Original>Active Protection System</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_aps_enabled">
-            <Original>Enable APS?</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_aps_enabled_tooltip">
-            <Original>Toggles APS usage and simulation. Can be disabled to improve performance.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_aps_enabled_players">
-            <Original>Players Only</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_aps_enabled_recruits">
-            <Original>Players and Recruits</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_aps_enabled_everyone">
-            <Original>Everyone</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_aps_radius">
-            <Original>Scan Radius</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_aps_radius_tooltip">
-            <Original>The distance in metres from which threats are considered for intercept.\nHigher distances can improve reliability against faster projectiles, but may worsen performance.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_aps_rate">
-            <Original>Scan Rate</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_aps_rate_tooltip">
-            <Original>How frequently threats are scanned around APS-enabled vehicles every second.\nHigher scan rates can improve reliability against faster projectiles, but may worsen performance.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_aps_distance">
-            <Original>Intercept Distance</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_aps_distance_tooltip">
-            <Original>The distance factor at which threats are intercepted.\nActual intercept distance is determined by the projectile's speed and the scan rate.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_aps_ammoMRAP">
-            <Original>MRAP Charges</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_aps_ammoMRAP_tooltip">
-            <Original>The number of APS charges loaded on MRAPs.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_aps_ammoAPC">
-            <Original>APC Charges</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_aps_ammoAPC_tooltip">
-            <Original>The number of APS charges loaded on APCs and IFVs.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_aps_ammoMBT">
-            <Original>MBT Charges</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_aps_ammoMBT_tooltip">
-            <Original>The number of APS charges loaded on MBTs.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_curators">
-            <Original>Curators</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_curators_uids">
-            <Original>Curator UIDs</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_curators_uids_tooltip">
-            <Original>A list of steamID64 strings to automatically assign curator modules to.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_damage">
-            <Original>Damage</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_damage_scale">
-            <Original>Player Damage Scale</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_damage_scale_tooltip">
-            <Original>The percentage of damage that players receive.\nHas no effect when ACE Medical is loaded.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_damage_scale_recruit">
-            <Original>Recruit Damage Scale</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_damage_scale_recruit_tooltip">
-            <Original>The percentage of damage that AI recruits receive.\nHas no effect when ACE Medical is loaded.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_drones">
-            <Original>Drones</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_drones_combat_enabled">
-            <Original>Enable Combat Drones?</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_drones_combat_enabled_tooltip">
-            <Original>Toggles the ability for players and AI to assemble combat drones.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_drones_combat_uavOnly">
-            <Original>Require UAV Role?</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_drones_combat_uavOnly_tooltip">
-            <Original>If enabled, players must be a Drone Operator to assemble combat drones.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_drones_owned">
-            <Original>Own Assembled Drones?</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_drones_owned_tooltip">
-            <Original>If enabled, other players will be prevented from connecting to drones you assemble.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_earplugs">
-            <Original>Earplugs</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_earplugs_volume">
-            <Original>Volume Reduction</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_earplugs_volume_tooltip">
-            <Original>The percentage volume reduction. Setting to 100% will mute most sounds.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_earplugs_radio">
-            <Original>Affect Radio?</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_earplugs_radio_tooltip">
-            <Original>Toggles effect of earplugs on radio callouts from players and AI.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_earplugs_music">
-            <Original>Affect Music?</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_earplugs_music_tooltip">
-            <Original>Toggles effect of earplugs on ingame music.</Original>
-        </Key>
+    <Package name="Main">
+        <Container name="APS">
+            <Key ID="STR_WHF_simulateAPSLoop_intercept">
+                <Original>APS intercepted!\nCharges: %1/%2</Original>
+            </Key>
+        </Container>
+        <Container name="CfgHints">
+            <Key ID="STR_WHF_hint_intro_title">
+                <Original>Introduction</Original>
+            </Key>
+            <Key ID="STR_WHF_hint_intro_description">
+                <Original>Welcome to Warriors Haven Framework!%1If you're new to this gamemode, you should check out the Getting Started guide on your map journal.</Original>
+            </Key>
+        </Container>
+        <Container name="CfgTaskDescriptions">
+            <Key ID="STR_WHF_defendAidSupplies_title">
+                <Original>Defend Aid Supplies</Original>
+            </Key>
+            <Key ID="STR_WHF_defendAidSupplies_description">
+                <Original>Enemies are planning to to steal medical and food supplies from a distribution center. You must assist local security in defending the supplies and maintaining civil order.</Original>
+            </Key>
+            <Key ID="STR_WHF_defendAidSupplies_shelter_title">
+                <Original>Civilian Casualties (%3/%4)</Original>
+            </Key>
+            <Key ID="STR_WHF_defendAidSupplies_shelter_description">
+                <Original>%1 out of %2 civilians are alive. While not required, we should protect most of them during this defense. This objective will be canceled if there are %4 casualties or more.&lt;br/&gt;Hint: Use the Detain keybind to escort them to safety!</Original>
+            </Key>
+            <Key ID="STR_WHF_defendAidSupplies_status_title">
+                <Original>Remaining Supply Crates (%1)</Original>
+            </Key>
+            <Key ID="STR_WHF_defendAidSupplies_status_description">
+                <Original>%1 out of %2 supply crates are being distributed. At least %3 crates must remain until %4, otherwise this mission will fail.</Original>
+            </Key>
+            <Key ID="STR_WHF_destroyAAA_title">
+                <Original>Destroy Anti-Air Artillery</Original>
+            </Key>
+            <Key ID="STR_WHF_destroyAAA_description">
+                <Original>Enemies have set up AA batteries at this location. Destroy them!</Original>
+            </Key>
+            <Key ID="STR_WHF_destroyAAAEmplacement_title">
+                <Original>AA Emplacement</Original>
+            </Key>
+            <Key ID="STR_WHF_destroyAAAEmplacement_description">
+                <Original>There is an AA battery in this area.</Original>
+            </Key>
+            <Key ID="STR_WHF_destroyArmor_title">
+                <Original>Destroy Armor Depot</Original>
+            </Key>
+            <Key ID="STR_WHF_destroyArmor_description">
+                <Original>Enemies are staging armor and support vehicles for their next operation. We know of %1 vehicles that are present in &lt;marker name="%2"&gt;this area&lt;/marker&gt;. You must conduct a preemptive strike and destroy all vehicles at this location.</Original>
+            </Key>
+            <Key ID="STR_WHF_destroyArtillery_title">
+                <Original>Destroy Artillery</Original>
+            </Key>
+            <Key ID="STR_WHF_destroyArtillery_description">
+                <Original>Enemies have established field artillery sites at this location. You must destroy all cannons in the area.</Original>
+            </Key>
+            <Key ID="STR_WHF_destroyBarracks_title">
+                <Original>Destroy Barracks</Original>
+            </Key>
+            <Key ID="STR_WHF_destroyBarracks_description">
+                <Original>Enemies have deployed a field barracks to house additional personnel for reinforcements. Eradicate them with extreme prejudice.</Original>
+            </Key>
+            <Key ID="STR_WHF_destroyRoadblock_title">
+                <Original>Destroy Roadblock</Original>
+            </Key>
+            <Key ID="STR_WHF_destroyRoadblock_description">
+                <Original>Enemies have set up a roadblock at this location. Destroy them!</Original>
+            </Key>
+            <Key ID="STR_WHF_downloadIntel_title">
+                <Original>Secure Intel</Original>
+            </Key>
+            <Key ID="STR_WHF_downloadIntel_description">
+                <Original>A military research building has been found containing intel. Secure it!</Original>
+            </Key>
+            <Key ID="STR_WHF_jtacParent_title">
+                <Original>JTAC Targets</Original>
+            </Key>
+            <Key ID="STR_WHF_jtacParent_description">
+                <Original>A list of targets that have been reported by JTACs.</Original>
+            </Key>
+            <Key ID="STR_WHF_jtacTarget_title">
+                <Original>Target %1</Original>
+            </Key>
+            <Key ID="STR_WHF_jtacTarget_description">
+                <Original>This vehicle has been reported by %2. Destroy it!</Original>
+            </Key>
+            <Key ID="STR_WHF_mainAnnexRegion_title">
+                <Original>Annex %1</Original>
+            </Key>
+            <Key ID="STR_WHF_mainAnnexRegion_description">
+                <Original>Enemy forces have established their presence at &lt;marker name="%1"&gt;%2&lt;/marker&gt; to host their operations. We are to complete all sub-objectives and eliminate a majority of their units to force a retreat. Expect garrisons, turrets, minefields, and patrols sweeping the region.</Original>
+            </Key>
+            <Key ID="STR_WHF_mainAnnexRegionCommand_title">
+                <Original>Neutralize Commander</Original>
+            </Key>
+            <Key ID="STR_WHF_mainAnnexRegionCommand_description">
+                <Original>We've identified the approximate location of their Command &amp;amp; Control facility. Capture or eliminate the OPFOR commander.</Original>
+            </Key>
+            <Key ID="STR_WHF_mainAnnexRegionComms_title">
+                <Original>Disrupt Communications</Original>
+            </Key>
+            <Key ID="STR_WHF_mainAnnexRegionComms_description">
+                <Original>We've identified the approximate location of their communications hub. You must disable the radio transmitter, seize their servers, and extract intelligence from their officer.</Original>
+            </Key>
+            <Key ID="STR_WHF_mainAnnexRegionRepair_title">
+                <Original>Destroy Repair Depot</Original>
+            </Key>
+            <Key ID="STR_WHF_mainAnnexRegionRepair_description">
+                <Original>We've identified the approximate location of their service depot. Destroy it!</Original>
+            </Key>
+            <Key ID="STR_WHF_mainAnnexRegionThreshold_title">
+                <Original>Eliminate Remaining Forces (%1)</Original>
+            </Key>
+            <Key ID="STR_WHF_mainAnnexRegionThreshold_description">
+                <Original>A majority of their forces still remain in this area. We need to neutralize at least %1 more units before this mission is complete, including any reinforcements that have arrived.</Original>
+            </Key>
+            <Key ID="STR_WHF_secureCaches_title">
+                <Original>Secure Caches</Original>
+            </Key>
+            <Key ID="STR_WHF_secureCaches_description">
+                <Original>%1 are exchanging weapons and munitions with %2 at this location. We need to disrupt this transfer and secure their caches.</Original>
+            </Key>
+        </Container>
+        <Container name="Context">
+            <Key ID="STR_WHF_context_action_cruise_on">
+                <Original>Set Cruise Control</Original>
+            </Key>
+            <Key ID="STR_WHF_context_action_cruise_up">
+                <Original>Cruise Up</Original>
+            </Key>
+            <Key ID="STR_WHF_context_action_cruise_down">
+                <Original>Cruise Down</Original>
+            </Key>
+            <Key ID="STR_WHF_context_action_cruise_off">
+                <Original>Unset Cruise Control</Original>
+            </Key>
+            <Key ID="STR_WHF_context_action_detain">
+                <Original>Detain</Original>
+            </Key>
+            <Key ID="STR_WHF_context_action_fpv">
+                <Original>Assemble FPV Drone</Original>
+            </Key>
+            <Key ID="STR_WHF_context_action_haloJump">
+                <Original>Halo Jump</Original>
+            </Key>
+            <Key ID="STR_WHF_context_action_magrepack">
+                <Original>Repack Magazines</Original>
+            </Key>
+            <Key ID="STR_WHF_context_action_quadbike">
+                <Original>Deploy Quadbike</Original>
+            </Key>
+            <Key ID="STR_WHF_context_action_quadbike_obstructed">
+                <Original>There is not enough space to deploy your quadbike.</Original>
+            </Key>
+            <Key ID="STR_WHF_context_action_selfdestruct">
+                <Original>Self-Destruct UAV</Original>
+            </Key>
+            <Key ID="STR_WHF_context_keybind">
+                <Original>Context Menu</Original>
+            </Key>
+            <Key ID="STR_WHF_context_keybind_tooltip">
+                <Original>Hold this key to reveal any contextual actions from the mission. Disabled when ACE is loaded.</Original>
+            </Key>
+        </Container>
+        <Container name="Cruise">
+            <Key ID="STR_WHF_cruise_keybind">
+                <Original>Cruise Control</Original>
+            </Key>
+            <Key ID="STR_WHF_cruise_keybind_tooltip">
+                <Original>Toggle cruise control when driving.\nDisabled when ACE is loaded.</Original>
+            </Key>
+            <Key ID="STR_WHF_cruise_up_keybind">
+                <Original>Cruise Up</Original>
+            </Key>
+            <Key ID="STR_WHF_cruise_up_keybind_tooltip">
+                <Original>Increase set speed while cruise control is enabled.\nDisabled when ACE is loaded.</Original>
+            </Key>
+            <Key ID="STR_WHF_cruise_down_keybind">
+                <Original>Cruise Down</Original>
+            </Key>
+            <Key ID="STR_WHF_cruise_down_keybind_tooltip">
+                <Original>Decrease set speed while cruise control is enabled.\nDisabled when ACE is loaded.</Original>
+            </Key>
+        </Container>
+        <Container name="Diary">
+            <Key ID="STR_WHF_diaryGuide_subject">
+                <Original>Getting Started</Original>
+            </Key>
+            <Key ID="STR_WHF_diaryGuide_summary_title">
+                <Original>Summary</Original>
+            </Key>
+            <Key ID="STR_WHF_diaryGuide_summary_description">
+                <Original>
+                    This is a persistent, Invade &amp;amp; Annex-like mission where
+                    players are working together to complete procedurally generated
+                    objectives across the map of %1.
+                    &lt;br/&gt;
+                    &lt;br/&gt;
+                    This mission was developed by thegamecracks and Vicious Resilience
+                    as part of the Warriors Haven community. This took a lot of hard
+                    work to make, so thank you for playing!
+                    &lt;br/&gt;
+                    &lt;br/&gt;
+                    Playing solo and want a taste of combat? Grab yourself your
+                    favorite gun and a lot of first aid kits, then recruit some AI
+                    and halo jump into the main objective!
+                </Original>
+            </Key>
+            <Key ID="STR_WHF_diaryGuide_keybinds_title">
+                <Original>Keybinds</Original>
+            </Key>
+            <Key ID="STR_WHF_diaryGuide_keybinds_description">
+                <Original>
+                    The following keybinds are provided by this mission:
+                    &lt;br/&gt;
+                    - Detain: [T]
+                    &lt;br/&gt;
+                    - Earplugs: [End]
+                    &lt;br/&gt;
+                    &lt;br/&gt;
+                    The following keybinds are also available when ACE is not loaded:
+                    &lt;br/&gt;
+                    - Context Menu: [Left Windows]
+                    &lt;br/&gt;
+                    - Repack Magazines: [Ctrl+R]
+                    &lt;br/&gt;
+                    - Cruise Control: [Insert]
+                    &lt;br/&gt;
+                    - Cruise Up: [Ctrl+Mouse wheel up]
+                    &lt;br/&gt;
+                    - Cruise Down: [Ctrl+Mouse wheel down]
+                    &lt;br/&gt;
+                    &lt;br/&gt;
+                    If you have CBA loaded, these keybinds can be changed by going
+                    to your Controls &amp;gt; Configure Addons menu.
+                </Original>
+            </Key>
+            <Key ID="STR_WHF_diaryGuide_halo_title">
+                <Original>Halo Jumping</Original>
+            </Key>
+            <Key ID="STR_WHF_diaryGuide_halo_description">
+                <Original>
+                    When available, halo jumping may be accessed from anywhere by
+                    holding the Context Menu keybind. This allows you to drop over
+                    any location of your choosing, as long as it is not within coverage
+                    of enemy anti-air vehicles. Halo jumps can carry along AI recruits
+                    and vehicles.
+                    &lt;br/&gt;
+                    &lt;br/&gt;
+                    If you have CBA installed, you can customize how high you want
+                    to be dropped off, when recruit/vehicle parachutes automatically
+                    deploy, and the separation between your units.
+                    &lt;br/&gt;
+                    &lt;br/&gt;
+                    Depending on server settings, halo jumping may become hidden
+                    after a certain number of players have joined.
+                </Original>
+            </Key>
+            <Key ID="STR_WHF_diaryGuide_incapacitation_title">
+                <Original>Incapacitation</Original>
+            </Key>
+            <Key ID="STR_WHF_diaryGuide_incapacitation_description">
+                <Original>
+                    NOTE: this section does not apply if ACE Medical is loaded.
+                    &lt;br/&gt;
+                    &lt;br/&gt;
+                    Once you have been significantly wounded, you will become incapacitated
+                    and unable to move. There are four ways to recover from incapacitation:
+                    &lt;br/&gt;
+                    1. Press Escape and respawn back at base;
+                    &lt;br/&gt;
+                    2. Pray for an act of god;
+                    &lt;br/&gt;
+                    3. Wait for a player medic to revive you, or;
+                    &lt;br/&gt;
+                    4. Perform a self-revive.
+                    &lt;br/&gt;
+                    &lt;br/&gt;
+                    Depending on server settings, options (3) and (4) may have different
+                    requirements to succeed. By default, players can only revive units
+                    when they are a Medic, have a Medkit on hand, and have one First Aid Kit
+                    to be consumed. The last two item requirements will check the
+                    incapacitated unit's inventory first, so medics that have forgotten
+                    their medkit or have ran out of first aid kits can still perform
+                    revives on anyone that has the necessary items themselves.
+                    &lt;br/&gt;
+                    &lt;br/&gt;
+                    For self-reviving, this option typically appears after three seconds,
+                    and allows any player with at least three First Aid Kits to self-revive
+                    themselves. Depending on server settings, self-reviving may become hidden
+                    after a certain number of players have joined.
+                </Original>
+            </Key>
+            <Key ID="STR_WHF_diaryGuide_recruits_title">
+                <Original>Recruits</Original>
+            </Key>
+            <Key ID="STR_WHF_diaryGuide_recruits_description">
+                <Original>
+                    Certain objects around the base, typically flag poles, may serve
+                    as places for group leaders to request AI recruits. Recruits can
+                    be spawned for a subset of player roles, including AT Specialists,
+                    Engineers, and Medics.
+                    &lt;br/&gt;
+                    &lt;br/&gt;
+                    Each time you select a role for your next recruit, they will
+                    receive the last loadout you used in that role. If you have yet
+                    to play as that role, or have not yet made a loadout for it,
+                    they will receive a default loadout. In this case, you can edit
+                    their loadout by looking at them and using the Edit Recruit Loadout
+                    action. The loadout you give them will be saved to the role,
+                    allowing you to reuse the loadout for future recruits.
+                    &lt;br/&gt;
+                    &lt;br/&gt;
+                    Depending on server settings, recruit actions may become hidden
+                    after a certain number of players have joined.
+                </Original>
+            </Key>
+            <Key ID="STR_WHF_diaryGuide_service_title">
+                <Original>Vehicle Servicing</Original>
+            </Key>
+            <Key ID="STR_WHF_diaryGuide_service_description">
+                <Original>
+                    Repair depots provide service capabilities to all players within
+                    range. You must park your vehicle near the depot, exit it, and
+                    look at the vehicle to service it. This will repair, refuel, and
+                    rearm your vehicle, including its Active Protection System if
+                    it has one.
+                </Original>
+            </Key>
+            <Key ID="STR_WHF_diaryGuide_locks_title">
+                <Original>Vehicle Locks</Original>
+            </Key>
+            <Key ID="STR_WHF_diaryGuide_locks_description">
+                <Original>
+                    Depending on server settings, certain vehicles will be locked
+                    to a specific role or owner. These locks typically apply to the
+                    driver seat only, but may also apply to gunner and passenger seats.
+                    Aircraft provided by Vehicle Spawners will have their pilot
+                    seats locked to the owner.
+                </Original>
+            </Key>
+            <Key ID="STR_WHF_diaryGuide_vehSpawn_title">
+                <Original>Vehicle Spawners</Original>
+            </Key>
+            <Key ID="STR_WHF_diaryGuide_vehSpawn_description">
+                <Original>
+                    Certain objects around the base, typically laptops, may serve as
+                    vehicle spawners and can provide various types of vehicles. Some
+                    vehicle types, like Artillery, Tanks, and Helicopters, are only available for
+                    certain roles like Artillery Gunner, Engineer, and Transport Pilot respectively.
+                    &lt;br/&gt;
+                    &lt;br/&gt;
+                    Once you spawn a vehicle, all Vehicle Spawners will enter
+                    a cooldown based on the specific vehicle you have chosen.
+                </Original>
+            </Key>
+            <Key ID="STR_WHF_diaryGuide_fpv_title">
+                <Original>FPV Drones</Original>
+            </Key>
+            <Key ID="STR_WHF_diaryGuide_fpv_description">
+                <Original>
+                    Depending on server settings, players and AI with backpack drones
+                    may be able to assemble them as FPV drones. After placing these
+                    drones on the ground, they will autonomously target enemies and
+                    attempt to explode within proximity of them. Shooting the drone
+                    or killing the pilot will also cause the drone to detonate.
+                    &lt;br/&gt;
+                    &lt;br/&gt;
+                    You can assemble your own FPV drones by wearing a backpack drone
+                    and selecting Assemble FPV Drone.
+                    If this option does not show up, either the server has FPV drones
+                    disabled, or FPV drones can only be assembled by Drone Operators.
+                    Beware, these drones cannot be disassembled or remote controlled,
+                    and can explode themselves even when there are friendlies nearby!
+                </Original>
+            </Key>
+        </Container>
+        <Container name="Earplugs">
+            <Key ID="STR_WHF_earplugs_keybind">
+                <Original>Toggle Earplugs</Original>
+            </Key>
+            <Key ID="STR_WHF_earplugs_keybind_tooltip">
+                <Original>Press this key to enable and disable earplugs.</Original>
+            </Key>
+        </Container>
+        <Container name="Factions">
+            <Key ID="STR_WHF_cycleFaction_unsupported">
+                <Original>No supported factions in faction pool for %1. Using %2 faction as fallback.</Original>
+            </Key>
+            <Key ID="STR_WHF_factions_base">
+                <Original>Syndikat</Original>
+            </Key>
+            <Key ID="STR_WHF_factions_csat">
+                <Original>CSAT</Original>
+            </Key>
+            <Key ID="STR_WHF_factions_csat_pacific">
+                <Original>CSAT (Pacific)</Original>
+            </Key>
+            <Key ID="STR_WHF_factions_aaf">
+                <Original>AAF</Original>
+            </Key>
+            <Key ID="STR_WHF_factions_ldf">
+                <Original>LDF</Original>
+            </Key>
+            <Key ID="STR_WHF_factions_Ws_sfia">
+                <Original>WS SFIA</Original>
+            </Key>
+            <Key ID="STR_WHF_factions_ws_tura">
+                <Original>WS Tura</Original>
+            </Key>
+            <Key ID="STR_WHF_factions_rhsafrf">
+                <Original>RHSAFRF</Original>
+            </Key>
+            <Key ID="STR_WHF_factions_cup_afrf">
+                <Original>CUP AFRF</Original>
+            </Key>
+            <Key ID="STR_WHF_factions_cup_afrf_modern">
+                <Original>CUP AFRF (Modern)</Original>
+            </Key>
+            <Key ID="STR_WHF_factions_cup_npc">
+                <Original>CUP National Party of Chernarus</Original>
+            </Key>
+            <Key ID="STR_WHF_factions_cup_tk">
+                <Original>CUP Takistani Army</Original>
+            </Key>
+            <Key ID="STR_WHF_factions_cup_tk_ins">
+                <Original>CUP Takistani Militia</Original>
+            </Key>
+            <Key ID="STR_WHF_factions_nato">
+                <Original>NATO</Original>
+            </Key>
+            <Key ID="STR_WHF_factions_nato_pacific">
+                <Original>NATO (Pacific)</Original>
+            </Key>
+            <Key ID="STR_WHF_factions_ef_mjtf_desert">
+                <Original>EF MJTF (Desert)</Original>
+            </Key>
+            <Key ID="STR_WHF_factions_ef_mjtf_woodland">
+                <Original>EF MJTF (Woodland)</Original>
+            </Key>
+            <Key ID="STR_WHF_factions_ws_ion">
+                <Original>WS ION Services</Original>
+            </Key>
+            <Key ID="STR_WHF_factions_ws_una">
+                <Original>WS UNA</Original>
+            </Key>
+            <Key ID="STR_WHF_factions_cup_usa_woodland">
+                <Original>CUP US Army (Woodland)</Original>
+            </Key>
+            <Key ID="STR_WHF_factions_cup_usmc_woodland">
+                <Original>CUP USMC (Woodland)</Original>
+            </Key>
+        </Container>
+        <Container name="Halo">
+            <Key ID="STR_WHF_checkHaloJump_antiair">
+                <Original>Area within AA coverage</Original>
+            </Key>
+            <Key ID="STR_WHF_checkHaloJump_restricted">
+                <Original>Area is restricted</Original>
+            </Key>
+            <Key ID="STR_WHF_haloJumpGUI_antiair">
+                <Original>Blocked by AA coverage</Original>
+            </Key>
+            <Key ID="STR_WHF_haloJumpGUI_enemy">
+                <Original>Blocked by nearby hostiles</Original>
+            </Key>
+            <Key ID="STR_WHF_haloJumpGUI_mission">
+                <Original>Blocked in mission area</Original>
+            </Key>
+            <Key ID="STR_WHF_haloJumpGUI_description">
+                <Original>Select a point on the map to halo jump to.</Original>
+            </Key>
+        </Container>
+        <Container name="Helpers">
+            <Key ID="STR_WHF_defaultTimer">
+                <Original>Time left: %3/%2</Original>
+            </Key>
+        </Container>
+        <Container name="JTAC">
+            <Key ID="STR_WHF_initJTACAction_report">
+                <Original>Report</Original>
+            </Key>
+            <Key ID="STR_WHF_initJTACAction_cooldown">
+                <Original>Next report allowed in %1 seconds...</Original>
+            </Key>
+        </Container>
+        <Container name="Loadouts">
+            <Key ID="STR_WHF_initArsenal_loadLastLoadout">
+                <Original>Load Last Loadout</Original>
+            </Key>
+            <Key ID="STR_WHF_initArsenalLoadoutHandlers_role">
+                <Original>Editing loadout for: %1</Original>
+            </Key>
+            <Key ID="STR_WHF_initVehicleArsenalAction">
+                <Original>Edit Vehicle Inventory</Original>
+            </Key>
+        </Container>
+        <Container name="Locks">
+            <Key ID="STR_WHF_vehicleLock">
+                <Original>This seat is locked!</Original>
+            </Key>
+            <Key ID="STR_WHF_vehicleLock_copilot">
+                <Original>You cannot take control of this vehicle!</Original>
+            </Key>
+        </Container>
+        <Container name="Missions">
+            <Key ID="STR_WHF_addIntelAction_title">
+                <Original>Collect Intel</Original>
+            </Key>
+            <Key ID="STR_WHF_defendAidSupplies_start">
+                <Original>You've arrived! The raiders are about to attack soon. Take your positions!</Original>
+            </Key>
+            <Key ID="STR_WHF_defendAidSupplies_contact">
+                <Original>Hey, they're hitting us now! Bearing %1!</Original>
+            </Key>
+            <Key ID="STR_WHF_defendAidSupplies_theft">
+                <Original>A supply crate is being stolen!</Original>
+            </Key>
+            <Key ID="STR_WHF_defendAidSupplies_stolen">
+                <Original>We've lost a supply crate!</Original>
+            </Key>
+            <Key ID="STR_WHF_defendAidSupplies_failed">
+                <Original>Enemies have taken majority of the supplies!</Original>
+            </Key>
+            <Key ID="STR_WHF_defendAidSupplies_half">
+                <Original>We're halfway there. Keep holding them off!</Original>
+            </Key>
+            <Key ID="STR_WHF_defendAidSupplies_close">
+                <Original>Just one minute left, we're almost done!</Original>
+            </Key>
+            <Key ID="STR_WHF_defendAidSupplies_success">
+                <Original>The humanitarian supplies have been successfully defended. Good work!</Original>
+            </Key>
+            <Key ID="STR_WHF_downloadIntelLaptop_action">
+                <Original>Download Intel</Original>
+            </Key>
+            <Key ID="STR_WHF_downloadIntelLaptop_start">
+                <Original>Intel is being downloaded...</Original>
+            </Key>
+            <Key ID="STR_WHF_downloadIntelLaptop_interrupted">
+                <Original>Someone needs to stay near the intel laptop!</Original>
+            </Key>
+            <Key ID="STR_WHF_downloadIntelLaptop_ended">
+                <Original>Intel has been downloaded!</Original>
+            </Key>
+            <Key ID="STR_WHF_downloadIntelLaptop_ended_inArea">
+                <Original>Intel has been downloaded! Time for you to move out!</Original>
+            </Key>
+            <Key ID="STR_WHF_mainAnnexRegion_region">
+                <Original>Region</Original>
+            </Key>
+            <Key ID="STR_WHF_secureCaches_action">
+                <Original>Secure Cache</Original>
+            </Key>
+        </Container>
+        <Container name="Prisoners">
+            <Key ID="STR_WHF_detain_keybind">
+                <Original>Detain</Original>
+            </Key>
+            <Key ID="STR_WHF_detain_keybind_tooltip">
+                <Original>Press this key while looking at an enemy to command them to surrender.</Original>
+            </Key>
+            <Key ID="STR_WHF_detain_request_generic_1">
+                <Original>Hands in the air!</Original>
+            </Key>
+            <Key ID="STR_WHF_detain_request_generic_2">
+                <Original>Surrender now!</Original>
+            </Key>
+            <Key ID="STR_WHF_detain_request_generic_3">
+                <Original>Get down on the ground!</Original>
+            </Key>
+            <Key ID="STR_WHF_detain_request_generic_4">
+                <Original>Stop right there!</Original>
+            </Key>
+            <Key ID="STR_WHF_detain_request_stop_1">
+                <Original>Freeze!</Original>
+            </Key>
+            <Key ID="STR_WHF_detain_request_stop_2">
+                <Original>Don't move!</Original>
+            </Key>
+            <Key ID="STR_WHF_detain_request_gun_1">
+                <Original>Drop your weapon!</Original>
+            </Key>
+            <Key ID="STR_WHF_detain_failed_1">
+                <Original>Fuck you!</Original>
+            </Key>
+            <Key ID="STR_WHF_detain_failed_2">
+                <Original>Screw you!</Original>
+            </Key>
+            <Key ID="STR_WHF_detain_failed_3">
+                <Original>No way I'm doing that!</Original>
+            </Key>
+            <Key ID="STR_WHF_detain_failed_4">
+                <Original>I'm not giving up!</Original>
+            </Key>
+            <Key ID="STR_WHF_detain_failed_5">
+                <Original>You're not going to stop me!</Original>
+            </Key>
+            <Key ID="STR_WHF_detain_failed_6">
+                <Original>Never!</Original>
+            </Key>
+            <Key ID="STR_WHF_detain_failed_7">
+                <Original>Not a chance!</Original>
+            </Key>
+            <Key ID="STR_WHF_detain_failed_8">
+                <Original>I'm not backing down!</Original>
+            </Key>
+            <Key ID="STR_WHF_detain_failed_9">
+                <Original>I'm not afraid of you!</Original>
+            </Key>
+            <Key ID="STR_WHF_detain_failed_kill_1">
+                <Original>You're dead!</Original>
+            </Key>
+            <Key ID="STR_WHF_detain_failed_kill_2">
+                <Original>I'll kill you!</Original>
+            </Key>
+            <Key ID="STR_WHF_detain_failed_kill_3">
+                <Original>I fight to the end!</Original>
+            </Key>
+            <Key ID="STR_WHF_detain_failed_kill_4">
+                <Original>Over my dead body!</Original>
+            </Key>
+            <Key ID="STR_WHF_detain_success_1">
+                <Original>Okay, okay! I surrender!</Original>
+            </Key>
+            <Key ID="STR_WHF_detain_success_2">
+                <Original>I yield, I yield!</Original>
+            </Key>
+            <Key ID="STR_WHF_detain_success_3">
+                <Original>Okay, I give up!</Original>
+            </Key>
+            <Key ID="STR_WHF_detain_success_gun_1">
+                <Original>Okay, okay! I surrender! Don't shoot!</Original>
+            </Key>
+            <Key ID="STR_WHF_detain_success_gun_2">
+                <Original>I dropped my gun, don't shoot!</Original>
+            </Key>
+            <Key ID="STR_WHF_detain_success_gun_3">
+                <Original>I surrender! Don't kill me, please!</Original>
+            </Key>
+            <Key ID="STR_WHF_detain_success_gun_4">
+                <Original>I give up! Don't kill me, please!</Original>
+            </Key>
+            <Key ID="STR_WHF_detain_success_gun_5">
+                <Original>My gun's on the ground! Don't shoot me!</Original>
+            </Key>
+            <Key ID="STR_WHF_prisoner_escort">
+                <Original>Escort</Original>
+            </Key>
+            <Key ID="STR_WHF_prisoner_free">
+                <Original>Set Free</Original>
+            </Key>
+            <Key ID="STR_WHF_prisoner_release">
+                <Original>Release</Original>
+            </Key>
+        </Container>
+        <Container name="Recruits">
+            <Key ID="STR_WHF_addRecruitLoadoutAction_edit">
+                <Original>Edit Recruit Loadout</Original>
+            </Key>
+            <Key ID="STR_WHF_spawnRecruit">
+                <Original>Request Recruit</Original>
+            </Key>
+            <Key ID="STR_WHF_spawnRecruit_leader">
+                <Original>You must be a group leader to manage your recruits.</Original>
+            </Key>
+            <Key ID="STR_WHF_spawnRecruit_limit">
+                <Original>You have reached the recruit limit of %1.</Original>
+            </Key>
+            <Key ID="STR_WHF_spawnRecruit_limit_global">
+                <Original>The global limit of %1 recruits has been reached.</Original>
+            </Key>
+            <Key ID="STR_WHF_spawnRecruit_limit_player">
+                <Original>The player limit of %1 players has been reached.</Original>
+            </Key>
+            <Key ID="STR_WHF_spawnRecruitGUI_clear">
+                <Original>Dismiss Recruits</Original>
+            </Key>
+            <Key ID="STR_WHF_rearmRecruits">
+                <Original>Rearm Recruits</Original>
+            </Key>
+            <Key ID="STR_WHF_rearmRecruits_completed">
+                <Original>Rearmed loadouts for %1 recruit(s)!</Original>
+            </Key>
+            <Key ID="STR_WHF_rearmRecruits_none">
+                <Original>No recruits in range to rearm.</Original>
+            </Key>
+        </Container>
+        <Container name="Repack">
+            <Key ID="STR_WHF_repack_keybind">
+                <Original>Repack Magazines</Original>
+            </Key>
+            <Key ID="STR_WHF_repack_keybind_tooltip">
+                <Original>Press this key while on foot or in a vehicle to repack your magazines.\nIgnored if magazines are already repacked.</Original>
+            </Key>
+        </Container>
+        <Container name="Revive">
+            <Key ID="STR_WHF_addCarryAction_action">
+                <Original>Carry</Original>
+            </Key>
+            <Key ID="STR_WHF_checkRevive_generic">
+                <Original>Unable to revive!</Original>
+            </Key>
+            <Key ID="STR_WHF_checkRevive_medic">
+                <Original>Must be a medic to revive!</Original>
+            </Key>
+            <Key ID="STR_WHF_checkRevive_medkit">
+                <Original>Missing medkit to revive!</Original>
+            </Key>
+            <Key ID="STR_WHF_checkRevive_FAKs">
+                <Original>Missing %1 first aid kit(s)</Original>
+            </Key>
+            <Key ID="STR_WHF_selfReviveCompleted">
+                <Original>%1 first aid kits consumed (%2 left)</Original>
+            </Key>
+            <Key ID="STR_WHF_selfReviveConditionProgress_noFirstAidKits">
+                <Original>You need %1 first aid kits to self-revive! (%2 missing)</Original>
+            </Key>
+            <Key ID="STR_WHF_selfReviveAdd_action">
+                <Original>Self-Revive</Original>
+            </Key>
+            <Key ID="STR_WHF_incapBleedout">
+                <Original>%1 bled out</Original>
+            </Key>
+            <Key ID="STR_WHF_incapLoop_actOfGod">
+                <Original>Revived by an act of god!</Original>
+            </Key>
+            <Key ID="STR_WHF_incapLoop_status_bleedout">
+                <Original>Bleedout in: %1min</Original>
+            </Key>
+            <Key ID="STR_WHF_incapLoop_status_assigned">
+                <Original>Assigned medic: %1 (%2m)</Original>
+            </Key>
+            <Key ID="STR_WHF_incapLoop_status_medic">
+                <Original>Nearest medic: %1 (%2m)</Original>
+            </Key>
+            <Key ID="STR_WHF_incapUnit_chat">
+                <Original>%1 was incapacitated</Original>
+            </Key>
+            <Key ID="STR_WHF_incapUnit_friendly">
+                <Original>%1 was incapacitated by %2 (friendly fire)</Original>
+            </Key>
+        </Container>
+        <Container name="Roles">
+            <Key ID="STR_WHF_roles_arty">
+                <Original>Artillery Gunner</Original>
+            </Key>
+            <Key ID="STR_WHF_roles_at">
+                <Original>AT Specialist</Original>
+            </Key>
+            <Key ID="STR_WHF_roles_medic">
+                <Original>Medic</Original>
+            </Key>
+            <Key ID="STR_WHF_roles_pilot_transport">
+                <Original>Transport Pilot</Original>
+            </Key>
+            <Key ID="STR_WHF_roleSelectionGUI_title">
+                <Original>Role Selection</Original>
+            </Key>
+            <Key ID="STR_WHF_roleSelectionGUI_roles">
+                <Original>Roles:</Original>
+            </Key>
+            <Key ID="STR_WHF_roleSelectionGUI_players">
+                <Original>Players in role:</Original>
+            </Key>
+        </Container>
+        <Container name="Service">
+            <Key ID="STR_WHF_initServiceAction">
+                <Original>Service</Original>
+            </Key>
+        </Container>
+        <Container name="Settings">
+            <Key ID="STR_WHF_settings">
+                <Original>Warriors Haven Framework</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_aps">
+                <Original>Active Protection System</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_aps_enabled">
+                <Original>Enable APS?</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_aps_enabled_tooltip">
+                <Original>Toggles APS usage and simulation. Can be disabled to improve performance.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_aps_enabled_players">
+                <Original>Players Only</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_aps_enabled_recruits">
+                <Original>Players and Recruits</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_aps_enabled_everyone">
+                <Original>Everyone</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_aps_radius">
+                <Original>Scan Radius</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_aps_radius_tooltip">
+                <Original>The distance in metres from which threats are considered for intercept.\nHigher distances can improve reliability against faster projectiles, but may worsen performance.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_aps_rate">
+                <Original>Scan Rate</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_aps_rate_tooltip">
+                <Original>How frequently threats are scanned around APS-enabled vehicles every second.\nHigher scan rates can improve reliability against faster projectiles, but may worsen performance.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_aps_distance">
+                <Original>Intercept Distance</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_aps_distance_tooltip">
+                <Original>The distance factor at which threats are intercepted.\nActual intercept distance is determined by the projectile's speed and the scan rate.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_aps_ammoMRAP">
+                <Original>MRAP Charges</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_aps_ammoMRAP_tooltip">
+                <Original>The number of APS charges loaded on MRAPs.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_aps_ammoAPC">
+                <Original>APC Charges</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_aps_ammoAPC_tooltip">
+                <Original>The number of APS charges loaded on APCs and IFVs.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_aps_ammoMBT">
+                <Original>MBT Charges</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_aps_ammoMBT_tooltip">
+                <Original>The number of APS charges loaded on MBTs.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_curators">
+                <Original>Curators</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_curators_uids">
+                <Original>Curator UIDs</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_curators_uids_tooltip">
+                <Original>A list of steamID64 strings to automatically assign curator modules to.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_damage">
+                <Original>Damage</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_damage_scale">
+                <Original>Player Damage Scale</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_damage_scale_tooltip">
+                <Original>The percentage of damage that players receive.\nHas no effect when ACE Medical is loaded.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_damage_scale_recruit">
+                <Original>Recruit Damage Scale</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_damage_scale_recruit_tooltip">
+                <Original>The percentage of damage that AI recruits receive.\nHas no effect when ACE Medical is loaded.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_drones">
+                <Original>Drones</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_drones_combat_enabled">
+                <Original>Enable Combat Drones?</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_drones_combat_enabled_tooltip">
+                <Original>Toggles the ability for players and AI to assemble combat drones.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_drones_combat_uavOnly">
+                <Original>Require UAV Role?</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_drones_combat_uavOnly_tooltip">
+                <Original>If enabled, players must be a Drone Operator to assemble combat drones.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_drones_owned">
+                <Original>Own Assembled Drones?</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_drones_owned_tooltip">
+                <Original>If enabled, other players will be prevented from connecting to drones you assemble.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_earplugs">
+                <Original>Earplugs</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_earplugs_volume">
+                <Original>Volume Reduction</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_earplugs_volume_tooltip">
+                <Original>The percentage volume reduction. Setting to 100% will mute most sounds.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_earplugs_radio">
+                <Original>Affect Radio?</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_earplugs_radio_tooltip">
+                <Original>Toggles effect of earplugs on radio callouts from players and AI.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_earplugs_music">
+                <Original>Affect Music?</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_earplugs_music_tooltip">
+                <Original>Toggles effect of earplugs on ingame music.</Original>
+            </Key>
 
-        <Key ID="STR_WHF_settings_factions">
-            <Original>Warriors Haven Framework (Factions)</Original>
-        </Key>
+            <Key ID="STR_WHF_settings_factions">
+                <Original>Warriors Haven Framework (Factions)</Original>
+            </Key>
 
-        <Key ID="STR_WHF_settings_fitness">
-            <Original>Fitness</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_fitness_stamina">
-            <Original>Enable Stamina?</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_fitness_stamina_tooltip">
-            <Original>Toggles stamina for all players.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_fitness_sway">
-            <Original>Weapon Sway</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_fitness_sway_tooltip">
-            <Original>Sets the amount of weapon sway for all players.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_flares">
-            <Original>Signal Flares</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_flares_enabled">
-            <Original>Enable Signal Flares?</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_flares_enabled_tooltip">
-            <Original>Toggles the use of signal flares by AI to communicate threats to nearby allies.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_flares_blufor">
-            <Original>Allow BLUFOR?</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_flares_blufor_tooltip">
-            <Original>Toggles the use of signal flares from AI leaders in BLUFOR groups.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_flares_interval">
-            <Original>Check Interval</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_flares_interval_tooltip">
-            <Original>How often in seconds to check for eligible units.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_flares_globalCooldown">
-            <Original>Global Cooldown</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_flares_globalCooldown_tooltip">
-            <Original>The cooldown in seconds between signal flares shared amongst all local enemies.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_flares_groupCooldown">
-            <Original>Group Cooldown</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_flares_groupCooldown_tooltip">
-            <Original>The cooldown in seconds between signal flares for a single group.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_flares_maxDistance">
-            <Original>Max Distance</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_flares_maxDistance_tooltip">
-            <Original>The max distance that squad leaders can deploy signal flares for.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_flares_revealDistance">
-            <Original>Reveal Distance</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_flares_revealDistance_tooltip">
-            <Original>The max distance at which nearby allies receive intel from signal flares.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_gc">
-            <Original>Garbage Collection</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_gc_gcDeletionDistance">
-            <Original>Object GC Distance</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_gc_gcDeletionDistance_tooltip">
-            <Original>The max distance from any player before mission objects can be deleted.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_gc_gcUnhideDistance">
-            <Original>Object Unhide Distance</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_gc_gcUnhideDistance_tooltip">
-            <Original>The max distance from any player before hidden objects (usually terrain) can be revealed.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_halo">
-            <Original>Halo Jumping</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_halo_altitude_unit">
-            <Original>Jump Altitude (Units Only)</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_halo_altitude_unit_tooltip">
-            <Original>The altitude in metres to halo jump units from, when there are no vehicles included.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_halo_altitude_vehicle">
-            <Original>Jump Altitude (Vehicles)</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_halo_altitude_vehicle_tooltip">
-            <Original>The altitude in metres to halo jump units from, when vehicles are included.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_halo_parachuteAltitude_unit">
-            <Original>Auto-Chute Altitude (Units)</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_halo_parachuteAltitude_unit_tooltip">
-            <Original>The altitude in metres when units automatically deploy parachutes.\nOnly applies to players if vehicles are included in the halo jump.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_halo_parachuteAltitude_vehicle">
-            <Original>Auto-Chute Altitude (Vehicles)</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_halo_parachuteAltitude_vehicle_tooltip">
-            <Original>The altitude in metres when vehicles automatically deploy parachutes.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_halo_spacing_unit">
-            <Original>Jump Spacing (Units)</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_halo_spacing_unit_tooltip">
-            <Original>The distance in metres between units when halo jumping.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_halo_spacing_vehicle">
-            <Original>Jump Spacing (Vehicles)</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_halo_spacing_vehicle_tooltip">
-            <Original>The distance in metres between vehicles when halo jumping.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_halo_antiair_distance">
-            <Original>Anti-Air Distance</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_halo_antiair_distance_tooltip">
-            <Original>The max distance in metres that enemy AA vehicles can prevent halo jumping.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_halo_enemy_distance">
-            <Original>Enemy Distance</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_halo_enemy_distance_tooltip">
-            <Original>The max distance in metres that enemy units can prevent halo jumping.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_halo_mission_exfil">
-            <Original>Allow Mission Exfil?</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_halo_mission_exfil_tooltip">
-            <Original>If enabled, players can halo jump out of active mission areas.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_halo_limit_player">
-            <Original>Halo Limit (Players)</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_halo_limit_player_tooltip">
-            <Original>The maximum number of players allowed before the Halo Jump action is hidden.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_halo_eject">
-            <Original>Auto Eject?</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_halo_eject_tooltip">
-            <Original>Toggles ejecting units, including the player, from vehicles not included in the halo jump.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_icons">
-            <Original>Icons</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_icons_3D">
-            <Original>Enable 3D Icons?</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_icons_3D_tooltip">
-            <Original>Toggles 3D icons over players and recruits.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_icons_3D_group">
-            <Original>Only Group 3D Icons</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_icons_3D_group_tooltip">
-            <Original>If enabled, 3D icons will only show over your group members.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_icons_3D_distance">
-            <Original>Max 3D Icon Distance</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_icons_3D_distance_tooltip">
-            <Original>The max distance in metres at which you will see 3D icons.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_icons_3D_style">
-            <Original>3D Icon Style</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_icons_3D_style_tooltip">
-            <Original>The 3D icon style to use.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_icons_3D_style_hex">
-            <Original>Hexagons</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_icons_3D_style_overhead">
-            <Original>Overhead</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_icons_map">
-            <Original>Enable Map Icons?</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_icons_map_tooltip">
-            <Original>Toggles map icons for players and AI.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_icons_color">
-            <Original>Icons (Colors)</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_icons_color_blufor">
-            <Original>BLUFOR</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_icons_color_opfor">
-            <Original>OPFOR</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_icons_color_independent">
-            <Original>Independent</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_icons_color_civilian">
-            <Original>Civilian</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_icons_color_incap">
-            <Original>Incapacitated</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_icons_color_dead">
-            <Original>Dead</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_jtac">
-            <Original>JTAC</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_jtac_tasks_max">
-            <Original>Max Tasks</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_jtac_tasks_max_tooltip">
-            <Original>The maximum number of JTAC tasks that can be active. When this is exceeded, the oldest JTAC task is automatically cleared.\nIf disabled, JTACs will not be able to report targets.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_jtac_tasks_cooldown">
-            <Original>Task Cooldown</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_jtac_tasks_cooldown_tooltip">
-            <Original>The cooldown in seconds between JTAC reports.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_loadouts">
-            <Original>Loadouts</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_loadouts_collection">
-            <Original>Collection ID</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_loadouts_collection_tooltip">
-            <Original>This can be used to switch between loadout collections without overwriting your previous loadouts.\nBefore changing this ID, make sure you write it down so you can restore your loadouts!\nIf set to "" or "default", default mission loadouts are always used.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_locks">
-            <Original>Locks</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_locks_enabled">
-            <Original>Enable Vehicle Locks?</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_locks_enabled_tooltip">
-            <Original>Toggles the role/owner-based vehicle lock system. In singleplayer, this is always disabled.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_locks_copilot">
-            <Original>Allow Copilot?</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_locks_copilot_tooltip">
-            <Original>Toggles extension of locks to taking control for aircraft copilots. Only applies to role-based locks.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_prisoners">
-            <Original>Prisoners</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_prisoners_detain_cooldown">
-            <Original>Detain Cooldown</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_prisoners_detain_cooldown_tooltip">
-            <Original>The cooldown in seconds after attempting to detain a unit.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_repack">
-            <Original>Repacking</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_repack_prefer_capacity">
-            <Original>Prefer High Capacity?</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_repack_prefer_capacity_tooltip">
-            <Original>If enabled, rounds from full magazines can be repacked into higher capacity magazines.\nThis prevents discarding high capacity magazines even when you have ammo in smaller magazines.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_revive">
-            <Original>Revive</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_revive_self_maxPlayers">
-            <Original>Self-Revive Player Limit</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_revive_self_maxPlayers_tooltip">
-            <Original>The maximum number of players allowed before the Self-Revive action is hidden.\nIf set to 0, self-reviving will be disabled.\nThis also affects recruits, as they will die immediately unless Always Incapacitate? is enabled.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_revive_self_minTime">
-            <Original>Self-Revive Delay</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_revive_self_minTime_tooltip">
-            <Original>The time in seconds to wait before a unit can self-revive.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_revive_self_duration">
-            <Original>Self-Revive Length</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_revive_self_duration_tooltip">
-            <Original>The duration in seconds needed to hold the self-revive action.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_revive_self_FAKs">
-            <Original>Self-Revive FAKs</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_revive_self_FAKs_tooltip">
-            <Original>The number of first aid kits required to self-revive.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_revive_captive">
-            <Original>Grace Period</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_revive_captive_tooltip">
-            <Original>The duration in seconds after being revived where enemies will not target the player.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_revive_bleedout">
-            <Original>Bleedout Time</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_revive_bleedout_tooltip">
-            <Original>The duration in seconds that the player can remain incapacitated before bleeding out.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_revive_FAKs">
-            <Original>Revive FAKs</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_revive_FAKs_tooltip">
-            <Original>The number of first aid kits required to revive another unit.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_revive_medic">
-            <Original>Require Medic?</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_revive_medic_tooltip">
-            <Original>Toggles the medic trait requirement to revive other units.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_revive_medkit">
-            <Original>Requires Medkit?</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_revive_medkit_tooltip">
-            <Original>Toggles the medkit item requirement to revive other units.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_revive_FAKs_modded">
-            <Original>Allow Modded FAKs?</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_revive_FAKs_modded_tooltip">
-            <Original>Toggles the use of modded first aid kits for reviving.\nIf disabled, only vanilla First Aid Kits are used.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_revive_medkit_modded">
-            <Original>Allow Modded Medkits?</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_revive_medkit_modded_tooltip">
-            <Original>Toggles the use of modded medkits for reviving.\nIf disabled, only the vanilla Medkit can be used.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_time">
-            <Original>Time</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_time_skipEnabled">
-            <Original>Enable Skip Time?</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_time_skipEnabled_tooltip">
-            <Original>Toggles actions to let players skip time.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_time_skipCooldown">
-            <Original>Skip Time Cooldown</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_time_skipCooldown_tooltip">
-            <Original>The cooldown in minutes between time skips.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_time_multiplier">
-            <Original>World Time Multiplier</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_time_multiplier_tooltip">
-            <Original>The default time multiplier for the world.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_unflip">
-            <Original>Unflip</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_unflip_duration">
-            <Original>Action Duration</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_unflip_duration_tooltip">
-            <Original>The duration in seconds needed to unflip vehicles.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_unflip_angle">
-            <Original>Minimum Vehicle Angle</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_unflip_angle_tooltip">
-            <Original>The maximum vehicle angle allowed to be unflipped.\n100% is straight up (always allowed), 0% is at least perpendicular to terrain, and -100% is exactly straight down.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_unflip_radius">
-            <Original>Search Radius</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_unflip_radius_tooltip">
-            <Original>The distance in metres to search around the vehicle for an empty position.\nHigh values may worsen performance.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_units">
-            <Original>Units</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_units_skill">
-            <Original>Unit Skill</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_units_skill_tooltip">
-            <Original>The skill level of AI units, not including player recruits.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_units_equipment">
-            <Original>Unit Equipment</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_units_equipment_tooltip">
-            <Original>The equipment that AI units spawn with.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_units_equipment_flashlights">
-            <Original>Flashlights</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_units_equipment_lasers">
-            <Original>Lasers</Original>
-        </Key>
+            <Key ID="STR_WHF_settings_fitness">
+                <Original>Fitness</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_fitness_stamina">
+                <Original>Enable Stamina?</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_fitness_stamina_tooltip">
+                <Original>Toggles stamina for all players.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_fitness_sway">
+                <Original>Weapon Sway</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_fitness_sway_tooltip">
+                <Original>Sets the amount of weapon sway for all players.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_flares">
+                <Original>Signal Flares</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_flares_enabled">
+                <Original>Enable Signal Flares?</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_flares_enabled_tooltip">
+                <Original>Toggles the use of signal flares by AI to communicate threats to nearby allies.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_flares_blufor">
+                <Original>Allow BLUFOR?</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_flares_blufor_tooltip">
+                <Original>Toggles the use of signal flares from AI leaders in BLUFOR groups.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_flares_interval">
+                <Original>Check Interval</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_flares_interval_tooltip">
+                <Original>How often in seconds to check for eligible units.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_flares_globalCooldown">
+                <Original>Global Cooldown</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_flares_globalCooldown_tooltip">
+                <Original>The cooldown in seconds between signal flares shared amongst all local enemies.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_flares_groupCooldown">
+                <Original>Group Cooldown</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_flares_groupCooldown_tooltip">
+                <Original>The cooldown in seconds between signal flares for a single group.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_flares_maxDistance">
+                <Original>Max Distance</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_flares_maxDistance_tooltip">
+                <Original>The max distance that squad leaders can deploy signal flares for.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_flares_revealDistance">
+                <Original>Reveal Distance</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_flares_revealDistance_tooltip">
+                <Original>The max distance at which nearby allies receive intel from signal flares.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_gc">
+                <Original>Garbage Collection</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_gc_gcDeletionDistance">
+                <Original>Object GC Distance</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_gc_gcDeletionDistance_tooltip">
+                <Original>The max distance from any player before mission objects can be deleted.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_gc_gcUnhideDistance">
+                <Original>Object Unhide Distance</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_gc_gcUnhideDistance_tooltip">
+                <Original>The max distance from any player before hidden objects (usually terrain) can be revealed.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_halo">
+                <Original>Halo Jumping</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_halo_altitude_unit">
+                <Original>Jump Altitude (Units Only)</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_halo_altitude_unit_tooltip">
+                <Original>The altitude in metres to halo jump units from, when there are no vehicles included.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_halo_altitude_vehicle">
+                <Original>Jump Altitude (Vehicles)</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_halo_altitude_vehicle_tooltip">
+                <Original>The altitude in metres to halo jump units from, when vehicles are included.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_halo_parachuteAltitude_unit">
+                <Original>Auto-Chute Altitude (Units)</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_halo_parachuteAltitude_unit_tooltip">
+                <Original>The altitude in metres when units automatically deploy parachutes.\nOnly applies to players if vehicles are included in the halo jump.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_halo_parachuteAltitude_vehicle">
+                <Original>Auto-Chute Altitude (Vehicles)</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_halo_parachuteAltitude_vehicle_tooltip">
+                <Original>The altitude in metres when vehicles automatically deploy parachutes.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_halo_spacing_unit">
+                <Original>Jump Spacing (Units)</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_halo_spacing_unit_tooltip">
+                <Original>The distance in metres between units when halo jumping.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_halo_spacing_vehicle">
+                <Original>Jump Spacing (Vehicles)</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_halo_spacing_vehicle_tooltip">
+                <Original>The distance in metres between vehicles when halo jumping.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_halo_antiair_distance">
+                <Original>Anti-Air Distance</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_halo_antiair_distance_tooltip">
+                <Original>The max distance in metres that enemy AA vehicles can prevent halo jumping.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_halo_enemy_distance">
+                <Original>Enemy Distance</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_halo_enemy_distance_tooltip">
+                <Original>The max distance in metres that enemy units can prevent halo jumping.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_halo_mission_exfil">
+                <Original>Allow Mission Exfil?</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_halo_mission_exfil_tooltip">
+                <Original>If enabled, players can halo jump out of active mission areas.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_halo_limit_player">
+                <Original>Halo Limit (Players)</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_halo_limit_player_tooltip">
+                <Original>The maximum number of players allowed before the Halo Jump action is hidden.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_halo_eject">
+                <Original>Auto Eject?</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_halo_eject_tooltip">
+                <Original>Toggles ejecting units, including the player, from vehicles not included in the halo jump.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_icons">
+                <Original>Icons</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_icons_3D">
+                <Original>Enable 3D Icons?</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_icons_3D_tooltip">
+                <Original>Toggles 3D icons over players and recruits.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_icons_3D_group">
+                <Original>Only Group 3D Icons</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_icons_3D_group_tooltip">
+                <Original>If enabled, 3D icons will only show over your group members.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_icons_3D_distance">
+                <Original>Max 3D Icon Distance</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_icons_3D_distance_tooltip">
+                <Original>The max distance in metres at which you will see 3D icons.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_icons_3D_style">
+                <Original>3D Icon Style</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_icons_3D_style_tooltip">
+                <Original>The 3D icon style to use.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_icons_3D_style_hex">
+                <Original>Hexagons</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_icons_3D_style_overhead">
+                <Original>Overhead</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_icons_map">
+                <Original>Enable Map Icons?</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_icons_map_tooltip">
+                <Original>Toggles map icons for players and AI.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_icons_color">
+                <Original>Icons (Colors)</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_icons_color_blufor">
+                <Original>BLUFOR</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_icons_color_opfor">
+                <Original>OPFOR</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_icons_color_independent">
+                <Original>Independent</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_icons_color_civilian">
+                <Original>Civilian</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_icons_color_incap">
+                <Original>Incapacitated</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_icons_color_dead">
+                <Original>Dead</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_jtac">
+                <Original>JTAC</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_jtac_tasks_max">
+                <Original>Max Tasks</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_jtac_tasks_max_tooltip">
+                <Original>The maximum number of JTAC tasks that can be active. When this is exceeded, the oldest JTAC task is automatically cleared.\nIf disabled, JTACs will not be able to report targets.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_jtac_tasks_cooldown">
+                <Original>Task Cooldown</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_jtac_tasks_cooldown_tooltip">
+                <Original>The cooldown in seconds between JTAC reports.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_loadouts">
+                <Original>Loadouts</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_loadouts_collection">
+                <Original>Collection ID</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_loadouts_collection_tooltip">
+                <Original>This can be used to switch between loadout collections without overwriting your previous loadouts.\nBefore changing this ID, make sure you write it down so you can restore your loadouts!\nIf set to "" or "default", default mission loadouts are always used.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_locks">
+                <Original>Locks</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_locks_enabled">
+                <Original>Enable Vehicle Locks?</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_locks_enabled_tooltip">
+                <Original>Toggles the role/owner-based vehicle lock system. In singleplayer, this is always disabled.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_locks_copilot">
+                <Original>Allow Copilot?</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_locks_copilot_tooltip">
+                <Original>Toggles extension of locks to taking control for aircraft copilots. Only applies to role-based locks.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_prisoners">
+                <Original>Prisoners</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_prisoners_detain_cooldown">
+                <Original>Detain Cooldown</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_prisoners_detain_cooldown_tooltip">
+                <Original>The cooldown in seconds after attempting to detain a unit.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_repack">
+                <Original>Repacking</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_repack_prefer_capacity">
+                <Original>Prefer High Capacity?</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_repack_prefer_capacity_tooltip">
+                <Original>If enabled, rounds from full magazines can be repacked into higher capacity magazines.\nThis prevents discarding high capacity magazines even when you have ammo in smaller magazines.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_revive">
+                <Original>Revive</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_revive_self_maxPlayers">
+                <Original>Self-Revive Player Limit</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_revive_self_maxPlayers_tooltip">
+                <Original>The maximum number of players allowed before the Self-Revive action is hidden.\nIf set to 0, self-reviving will be disabled.\nThis also affects recruits, as they will die immediately unless Always Incapacitate? is enabled.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_revive_self_minTime">
+                <Original>Self-Revive Delay</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_revive_self_minTime_tooltip">
+                <Original>The time in seconds to wait before a unit can self-revive.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_revive_self_duration">
+                <Original>Self-Revive Length</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_revive_self_duration_tooltip">
+                <Original>The duration in seconds needed to hold the self-revive action.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_revive_self_FAKs">
+                <Original>Self-Revive FAKs</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_revive_self_FAKs_tooltip">
+                <Original>The number of first aid kits required to self-revive.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_revive_captive">
+                <Original>Grace Period</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_revive_captive_tooltip">
+                <Original>The duration in seconds after being revived where enemies will not target the player.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_revive_bleedout">
+                <Original>Bleedout Time</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_revive_bleedout_tooltip">
+                <Original>The duration in seconds that the player can remain incapacitated before bleeding out.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_revive_FAKs">
+                <Original>Revive FAKs</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_revive_FAKs_tooltip">
+                <Original>The number of first aid kits required to revive another unit.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_revive_medic">
+                <Original>Require Medic?</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_revive_medic_tooltip">
+                <Original>Toggles the medic trait requirement to revive other units.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_revive_medkit">
+                <Original>Requires Medkit?</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_revive_medkit_tooltip">
+                <Original>Toggles the medkit item requirement to revive other units.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_revive_FAKs_modded">
+                <Original>Allow Modded FAKs?</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_revive_FAKs_modded_tooltip">
+                <Original>Toggles the use of modded first aid kits for reviving.\nIf disabled, only vanilla First Aid Kits are used.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_revive_medkit_modded">
+                <Original>Allow Modded Medkits?</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_revive_medkit_modded_tooltip">
+                <Original>Toggles the use of modded medkits for reviving.\nIf disabled, only the vanilla Medkit can be used.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_time">
+                <Original>Time</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_time_skipEnabled">
+                <Original>Enable Skip Time?</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_time_skipEnabled_tooltip">
+                <Original>Toggles actions to let players skip time.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_time_skipCooldown">
+                <Original>Skip Time Cooldown</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_time_skipCooldown_tooltip">
+                <Original>The cooldown in minutes between time skips.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_time_multiplier">
+                <Original>World Time Multiplier</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_time_multiplier_tooltip">
+                <Original>The default time multiplier for the world.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_unflip">
+                <Original>Unflip</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_unflip_duration">
+                <Original>Action Duration</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_unflip_duration_tooltip">
+                <Original>The duration in seconds needed to unflip vehicles.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_unflip_angle">
+                <Original>Minimum Vehicle Angle</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_unflip_angle_tooltip">
+                <Original>The maximum vehicle angle allowed to be unflipped.\n100% is straight up (always allowed), 0% is at least perpendicular to terrain, and -100% is exactly straight down.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_unflip_radius">
+                <Original>Search Radius</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_unflip_radius_tooltip">
+                <Original>The distance in metres to search around the vehicle for an empty position.\nHigh values may worsen performance.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_units">
+                <Original>Units</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_units_skill">
+                <Original>Unit Skill</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_units_skill_tooltip">
+                <Original>The skill level of AI units, not including player recruits.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_units_equipment">
+                <Original>Unit Equipment</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_units_equipment_tooltip">
+                <Original>The equipment that AI units spawn with.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_units_equipment_flashlights">
+                <Original>Flashlights</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_units_equipment_lasers">
+                <Original>Lasers</Original>
+            </Key>
 
-        <Key ID="STR_WHF_settings_missions">
-            <Original>Warriors Haven Framework (Missions)</Original>
-        </Key>
+            <Key ID="STR_WHF_settings_missions">
+                <Original>Warriors Haven Framework (Missions)</Original>
+            </Key>
 
-        <Key ID="STR_WHF_settings_missions_annex">
-            <Original>Annex Region (Main)</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_annex_size">
-            <Original>Size Scale</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_annex_size_tooltip">
-            <Original>The scale factor applied to the Annex mission's size. Additionally affects number of units.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_annex_threshold">
-            <Original>Unit Threshold</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_annex_threshold_tooltip">
-            <Original>The percentage of units that need to be killed to complete the mission.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_annex_forts">
-            <Original>Fortification Scale</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_annex_forts_tooltip">
-            <Original>The scale factor applied to the number of fortifications spawned. Affected by mission size.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_annex_units_types">
-            <Original>Unit Types</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_annex_units_types_tooltip">
-            <Original>An array of unit types, group min/max sizes, skills, and probabilities to spawn.\nThe first unit type is always used for garrisons.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_annex_vehicles">
-            <Original>Vehicle Scale</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_annex_vehicles_tooltip">
-            <Original>The scale factor applied to the number of vehicles spawned. Affected by mission size.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_annex_vehicles_types">
-            <Original>Vehicle Types</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_annex_vehicles_types_tooltip">
-            <Original>An array of vehicle types to spawn. Can be any of "standard", "supply", "mrap", "apc", "ifv", "mbt", "aa".</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_annex_reinforce_frequency_units">
-            <Original>Reinforce Delay (Units)</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_annex_reinforce_frequency_units_tooltip">
-            <Original>The delay in seconds between reinforcement units spawned.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_annex_reinforce_frequency_vehicles">
-            <Original>Reinforce Delay (Vehicles)</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_annex_reinforce_frequency_vehicles_tooltip">
-            <Original>The delay in seconds between reinforcement vehicles spawned.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_aaa_types">
-            <Original>Battery Types</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_aaa_types_tooltip">
-            <Original>An array of battery types with weights to spawn. Can be any of "aa_short", "aa_medium", or "aa_long".</Original>
-        </Key>
+            <Key ID="STR_WHF_settings_missions_annex">
+                <Original>Annex Region (Main)</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_annex_size">
+                <Original>Size Scale</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_annex_size_tooltip">
+                <Original>The scale factor applied to the Annex mission's size. Additionally affects number of units.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_annex_threshold">
+                <Original>Unit Threshold</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_annex_threshold_tooltip">
+                <Original>The percentage of units that need to be killed to complete the mission.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_annex_forts">
+                <Original>Fortification Scale</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_annex_forts_tooltip">
+                <Original>The scale factor applied to the number of fortifications spawned. Affected by mission size.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_annex_units_types">
+                <Original>Unit Types</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_annex_units_types_tooltip">
+                <Original>An array of unit types, group min/max sizes, skills, and probabilities to spawn.\nThe first unit type is always used for garrisons.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_annex_vehicles">
+                <Original>Vehicle Scale</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_annex_vehicles_tooltip">
+                <Original>The scale factor applied to the number of vehicles spawned. Affected by mission size.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_annex_vehicles_types">
+                <Original>Vehicle Types</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_annex_vehicles_types_tooltip">
+                <Original>An array of vehicle types to spawn. Can be any of "standard", "supply", "mrap", "apc", "ifv", "mbt", "aa".</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_annex_reinforce_frequency_units">
+                <Original>Reinforce Delay (Units)</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_annex_reinforce_frequency_units_tooltip">
+                <Original>The delay in seconds between reinforcement units spawned.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_annex_reinforce_frequency_vehicles">
+                <Original>Reinforce Delay (Vehicles)</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_annex_reinforce_frequency_vehicles_tooltip">
+                <Original>The delay in seconds between reinforcement vehicles spawned.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_aaa_types">
+                <Original>Battery Types</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_aaa_types_tooltip">
+                <Original>An array of battery types with weights to spawn. Can be any of "aa_short", "aa_medium", or "aa_long".</Original>
+            </Key>
 
-        <Key ID="STR_WHF_settings_missions_main">
-            <Original>Main Missions</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_main_enabled">
-            <Original>Enabled?</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_main_enabled_tooltip">
-            <Original>Toggles the creation of main missions. This does not interrupt in-progress missions.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_main_min">
-            <Original>Minimum Missions</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_main_min_tooltip">
-            <Original>When there are fewer main missions than this, new missions are spawned up to the maximum.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_main_max">
-            <Original>Maximum Missions</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_main_max_tooltip">
-            <Original>The number of main missions to spawn up to. Takes priority over minimum missions.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_main_units">
-            <Original>Unit Scale</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_main_units_tooltip">
-            <Original>The scale factor applied to the number of units spawned across all main missions.</Original>
-        </Key>
+            <Key ID="STR_WHF_settings_missions_main">
+                <Original>Main Missions</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_main_enabled">
+                <Original>Enabled?</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_main_enabled_tooltip">
+                <Original>Toggles the creation of main missions. This does not interrupt in-progress missions.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_main_min">
+                <Original>Minimum Missions</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_main_min_tooltip">
+                <Original>When there are fewer main missions than this, new missions are spawned up to the maximum.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_main_max">
+                <Original>Maximum Missions</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_main_max_tooltip">
+                <Original>The number of main missions to spawn up to. Takes priority over minimum missions.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_main_units">
+                <Original>Unit Scale</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_main_units_tooltip">
+                <Original>The scale factor applied to the number of units spawned across all main missions.</Original>
+            </Key>
 
-        <Key ID="STR_WHF_settings_missions_music">
-            <Original>Music</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_music_main">
-            <Original>Main Mission End Music?</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_music_main_tooltip">
-            <Original>Toggles playing music at the end of a main mission.</Original>
-        </Key>
+            <Key ID="STR_WHF_settings_missions_music">
+                <Original>Music</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_music_main">
+                <Original>Main Mission End Music?</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_music_main_tooltip">
+                <Original>Toggles playing music at the end of a main mission.</Original>
+            </Key>
 
-        <Key ID="STR_WHF_settings_missions_side">
-            <Original>Side Missions</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_side_enabled">
-            <Original>Enabled?</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_side_enabled_tooltip">
-            <Original>Toggles the creation of side missions. This does not interrupt in-progress missions.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_side_min">
-            <Original>Minimum Missions</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_side_min_tooltip">
-            <Original>When there are fewer side missions than this, new missions are spawned up to the maximum.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_side_max">
-            <Original>Maximum Missions</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_side_max_tooltip">
-            <Original>The number of side missions to spawn up to. Takes priority over minimum missions.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_side_units">
-            <Original>Unit Scale</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_missions_side_units_tooltip">
-            <Original>The scale factor applied to the number of units spawned across all side missions.</Original>
-        </Key>
+            <Key ID="STR_WHF_settings_missions_side">
+                <Original>Side Missions</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_side_enabled">
+                <Original>Enabled?</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_side_enabled_tooltip">
+                <Original>Toggles the creation of side missions. This does not interrupt in-progress missions.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_side_min">
+                <Original>Minimum Missions</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_side_min_tooltip">
+                <Original>When there are fewer side missions than this, new missions are spawned up to the maximum.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_side_max">
+                <Original>Maximum Missions</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_side_max_tooltip">
+                <Original>The number of side missions to spawn up to. Takes priority over minimum missions.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_side_units">
+                <Original>Unit Scale</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_missions_side_units_tooltip">
+                <Original>The scale factor applied to the number of units spawned across all side missions.</Original>
+            </Key>
 
-        <Key ID="STR_WHF_settings_recruits">
-            <Original>Warriors Haven Framework (Recruits)</Original>
-        </Key>
+            <Key ID="STR_WHF_settings_recruits">
+                <Original>Warriors Haven Framework (Recruits)</Original>
+            </Key>
 
-        <Key ID="STR_WHF_settings_recruits_identity">
-            <Original>Identity</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_identity_tooltip">
-            <Original>The identity used for you and your recruits.\nChanges take effect after respawning.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_identity_american">
-            <Original>American</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_identity_british">
-            <Original>British</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_identity_chinese">
-            <Original>Chinese</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_identity_french">
-            <Original>French</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_identity_polish">
-            <Original>Polish</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_identity_russian">
-            <Original>Russian</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_speaker">
-            <Original>Allow Speaking?</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_speaker_tooltip">
-            <Original>Toggles you and/or your AI recruits speaking and responding to commands.\nChanges take effect after respawning. Does not affect recruits from other players.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_speaker_recruits">
-            <Original>Recruits Only</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_speaker_player">
-            <Original>Player Only</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_limit">
-            <Original>Recruit Limit (Group)</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_limit_tooltip">
-            <Original>The maximum number of recruits that can be commanded per player group.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_limit_global">
-            <Original>Recruit Limit (Global)</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_limit_global_tooltip">
-            <Original>The maximum number of recruits that can be commanded across all players.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_limit_player">
-            <Original>Recruit Limit (Players)</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_limit_player_tooltip">
-            <Original>The maximum number of players allowed before the Spawn Recruit action is hidden.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_skill">
-            <Original>Recruit Skill</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_skill_tooltip">
-            <Original>The skill level of AI recruits.</Original>
-        </Key>
+            <Key ID="STR_WHF_settings_recruits_identity">
+                <Original>Identity</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_identity_tooltip">
+                <Original>The identity used for you and your recruits.\nChanges take effect after respawning.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_identity_american">
+                <Original>American</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_identity_british">
+                <Original>British</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_identity_chinese">
+                <Original>Chinese</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_identity_french">
+                <Original>French</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_identity_polish">
+                <Original>Polish</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_identity_russian">
+                <Original>Russian</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_speaker">
+                <Original>Allow Speaking?</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_speaker_tooltip">
+                <Original>Toggles you and/or your AI recruits speaking and responding to commands.\nChanges take effect after respawning. Does not affect recruits from other players.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_speaker_recruits">
+                <Original>Recruits Only</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_speaker_player">
+                <Original>Player Only</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_limit">
+                <Original>Recruit Limit (Group)</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_limit_tooltip">
+                <Original>The maximum number of recruits that can be commanded per player group.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_limit_global">
+                <Original>Recruit Limit (Global)</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_limit_global_tooltip">
+                <Original>The maximum number of recruits that can be commanded across all players.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_limit_player">
+                <Original>Recruit Limit (Players)</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_limit_player_tooltip">
+                <Original>The maximum number of players allowed before the Spawn Recruit action is hidden.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_skill">
+                <Original>Recruit Skill</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_skill_tooltip">
+                <Original>The skill level of AI recruits.</Original>
+            </Key>
 
-        <Key ID="STR_WHF_settings_recruits_revive">
-            <Original>Medics</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_revive_radius_group">
-            <Original>Search Radius (Group)</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_revive_radius_group_tooltip">
-            <Original>The distance in metres that recruits will search for their group's own incapacitated units to revive.\nRecruits will abandon their group to revive units.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_revive_radius">
-            <Original>Search Radius (Other)</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_revive_radius_tooltip">
-            <Original>The distance in metres that recruits will search for other incapacitated units to revive.\nRecruits will abandon their group to revive units.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_revive_targets">
-            <Original>Allowed Targets</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_revive_targets_tooltip">
-            <Original>The class of units that recruits will automatically revive if able to do so.\nRegardless of this setting, recruits can always be manually ordered to revive a specific unit via the command menu.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_revive_targets_group">
-            <Original>Group Only</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_revive_targets_side">
-            <Original>Same Side</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_revive_targets_all">
-            <Original>All Sides</Original>
-        </Key>
+            <Key ID="STR_WHF_settings_recruits_revive">
+                <Original>Medics</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_revive_radius_group">
+                <Original>Search Radius (Group)</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_revive_radius_group_tooltip">
+                <Original>The distance in metres that recruits will search for their group's own incapacitated units to revive.\nRecruits will abandon their group to revive units.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_revive_radius">
+                <Original>Search Radius (Other)</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_revive_radius_tooltip">
+                <Original>The distance in metres that recruits will search for other incapacitated units to revive.\nRecruits will abandon their group to revive units.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_revive_targets">
+                <Original>Allowed Targets</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_revive_targets_tooltip">
+                <Original>The class of units that recruits will automatically revive if able to do so.\nRegardless of this setting, recruits can always be manually ordered to revive a specific unit via the command menu.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_revive_targets_group">
+                <Original>Group Only</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_revive_targets_side">
+                <Original>Same Side</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_revive_targets_all">
+                <Original>All Sides</Original>
+            </Key>
 
-        <Key ID="STR_WHF_settings_recruits_incap">
-            <Original>Incapacitation</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_incap_hold">
-            <Original>Hold Duration</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_incap_hold_tooltip">
-            <Original>The duration in seconds that incapacitated recruits will wait before self-reviving.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_incap_hold_assigned">
-            <Original>Hold Duration (Medic)</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_incap_hold_assigned_tooltip">
-            <Original>The duration in seconds that incapacitated recruits will wait for a medic recruit before self-reviving.\nAlso applies when the recruit is being carried by a player.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_incap_FAKs">
-            <Original>Self-Revive FAKs</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_incap_FAKs_tooltip">
-            <Original>The number of FAKs needed for a recruit to self-revive. If disabled, recruits will never self-revive.</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_incap_noFAKs">
-            <Original>Always Incapacitate?</Original>
-        </Key>
-        <Key ID="STR_WHF_settings_recruits_incap_noFAKs_tooltip">
-            <Original>Always allow recruits to be incapacitated, even if they are unable to self-revive.</Original>
-        </Key>
-    </Container>
-    <Container name="Time">
-        <Key ID="STR_WHF_initSkipTimeAction_morning">
-            <Original>Skip to Morning</Original>
-        </Key>
-        <Key ID="STR_WHF_initSkipTimeAction_noon">
-            <Original>Skip to Noon</Original>
-        </Key>
-        <Key ID="STR_WHF_initSkipTimeAction_evening">
-            <Original>Skip to Evening</Original>
-        </Key>
-        <Key ID="STR_WHF_showSkipTime_morning">
-            <Original>%1 has requested a time skip to morning! Accelerating time for %2...</Original>
-        </Key>
-        <Key ID="STR_WHF_showSkipTime_noon">
-            <Original>%1 has requested a time skip to noon! Accelerating time for %2...</Original>
-        </Key>
-        <Key ID="STR_WHF_showSkipTime_evening">
-            <Original>%1 has requested a time skip to evening! Accelerating time for %2...</Original>
-        </Key>
-        <Key ID="STR_WHF_showSkipTimeCompleted_morning">
-            <Original>Time skip to morning has finished!</Original>
-        </Key>
-        <Key ID="STR_WHF_showSkipTimeCompleted_noon">
-            <Original>Time skip to noon has finished!</Original>
-        </Key>
-        <Key ID="STR_WHF_showSkipTimeCompleted_evening">
-            <Original>Time skip to evening has finished!</Original>
-        </Key>
-        <Key ID="STR_WHF_showSkipTimeCooldown">
-            <Original>Skip time is on cooldown for %1.</Original>
-        </Key>
-        <Key ID="STR_WHF_showSkipTimePending">
-            <Original>A time skip is already in progress!</Original>
-        </Key>
-    </Container>
-    <Container name="Unflip">
-        <Key ID="STR_WHF_initUnflipAction_title">
-            <Original>Unflip vehicle</Original>
-        </Key>
-        <Key ID="STR_WHF_initUnflipAction_crew">
-            <Original>All vehicle crew need to exit before you can unflip it!</Original>
-        </Key>
-        <Key ID="STR_WHF_unflipVehicle_spacing">
-            <Original>CAUTION: Limited space to unflip. Next attempt will unflip the vehicle in-place.</Original>
-        </Key>
-    </Container>
-    <Container name="VehicleSpawner">
-        <Key ID="STR_WHF_vehSpawnDespawnMessage">
-            <Original>This vehicle was despawned because a new vehicle was requested by %1.</Original>
-        </Key>
-        <Key ID="STR_WHF_vehSpawnGUIClient_empty">
-            <Original>There are no vehicles available from this spawner for your role.</Original>
-        </Key>
-        <Key ID="STR_WHF_vehSpawnInit_action">
-            <Original>Open Vehicle Spawner</Original>
-        </Key>
-        <Key ID="STR_WHF_vehSpawnRequestObstructed">
-            <Original>Vehicle spawn is obstructed</Original>
-        </Key>
-    </Container>
+            <Key ID="STR_WHF_settings_recruits_incap">
+                <Original>Incapacitation</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_incap_hold">
+                <Original>Hold Duration</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_incap_hold_tooltip">
+                <Original>The duration in seconds that incapacitated recruits will wait before self-reviving.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_incap_hold_assigned">
+                <Original>Hold Duration (Medic)</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_incap_hold_assigned_tooltip">
+                <Original>The duration in seconds that incapacitated recruits will wait for a medic recruit before self-reviving.\nAlso applies when the recruit is being carried by a player.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_incap_FAKs">
+                <Original>Self-Revive FAKs</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_incap_FAKs_tooltip">
+                <Original>The number of FAKs needed for a recruit to self-revive. If disabled, recruits will never self-revive.</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_incap_noFAKs">
+                <Original>Always Incapacitate?</Original>
+            </Key>
+            <Key ID="STR_WHF_settings_recruits_incap_noFAKs_tooltip">
+                <Original>Always allow recruits to be incapacitated, even if they are unable to self-revive.</Original>
+            </Key>
+        </Container>
+        <Container name="Time">
+            <Key ID="STR_WHF_initSkipTimeAction_morning">
+                <Original>Skip to Morning</Original>
+            </Key>
+            <Key ID="STR_WHF_initSkipTimeAction_noon">
+                <Original>Skip to Noon</Original>
+            </Key>
+            <Key ID="STR_WHF_initSkipTimeAction_evening">
+                <Original>Skip to Evening</Original>
+            </Key>
+            <Key ID="STR_WHF_showSkipTime_morning">
+                <Original>%1 has requested a time skip to morning! Accelerating time for %2...</Original>
+            </Key>
+            <Key ID="STR_WHF_showSkipTime_noon">
+                <Original>%1 has requested a time skip to noon! Accelerating time for %2...</Original>
+            </Key>
+            <Key ID="STR_WHF_showSkipTime_evening">
+                <Original>%1 has requested a time skip to evening! Accelerating time for %2...</Original>
+            </Key>
+            <Key ID="STR_WHF_showSkipTimeCompleted_morning">
+                <Original>Time skip to morning has finished!</Original>
+            </Key>
+            <Key ID="STR_WHF_showSkipTimeCompleted_noon">
+                <Original>Time skip to noon has finished!</Original>
+            </Key>
+            <Key ID="STR_WHF_showSkipTimeCompleted_evening">
+                <Original>Time skip to evening has finished!</Original>
+            </Key>
+            <Key ID="STR_WHF_showSkipTimeCooldown">
+                <Original>Skip time is on cooldown for %1.</Original>
+            </Key>
+            <Key ID="STR_WHF_showSkipTimePending">
+                <Original>A time skip is already in progress!</Original>
+            </Key>
+        </Container>
+        <Container name="Unflip">
+            <Key ID="STR_WHF_initUnflipAction_title">
+                <Original>Unflip vehicle</Original>
+            </Key>
+            <Key ID="STR_WHF_initUnflipAction_crew">
+                <Original>All vehicle crew need to exit before you can unflip it!</Original>
+            </Key>
+            <Key ID="STR_WHF_unflipVehicle_spacing">
+                <Original>CAUTION: Limited space to unflip. Next attempt will unflip the vehicle in-place.</Original>
+            </Key>
+        </Container>
+        <Container name="VehicleSpawner">
+            <Key ID="STR_WHF_vehSpawnDespawnMessage">
+                <Original>This vehicle was despawned because a new vehicle was requested by %1.</Original>
+            </Key>
+            <Key ID="STR_WHF_vehSpawnGUIClient_empty">
+                <Original>There are no vehicles available from this spawner for your role.</Original>
+            </Key>
+            <Key ID="STR_WHF_vehSpawnInit_action">
+                <Original>Open Vehicle Spawner</Original>
+            </Key>
+            <Key ID="STR_WHF_vehSpawnRequestObstructed">
+                <Original>Vehicle spawn is obstructed</Original>
+            </Key>
+        </Container>
+    </Package>
 </Project>

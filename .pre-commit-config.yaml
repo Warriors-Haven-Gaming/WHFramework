@@ -9,4 +9,5 @@ repos:
       - id: check-xml
       - id: check-yaml
       - id: end-of-file-fixer
+        exclude: 'mod/addons/.+?/\$PBOPREFIX\$'
       - id: trailing-whitespace
