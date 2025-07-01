@@ -20,14 +20,13 @@ private _actionID = [
     "a3\ui_f\data\igui\cfg\holdactions\holdaction_takeoff1_ca.paa",
     "a3\ui_f\data\igui\cfg\holdactions\holdaction_takeoff2_ca.paa",
     "isNull objectParent _this && {call WHF_fnc_isLookingAtFlippedVehicle}",
-    "
+    toString {
         private _vehicle = cursorObject;
-        if (!unitIsUAV _vehicle && {crew _vehicle findIf {alive _x} >= 0}) exitWith {
-            50 cutText [localize '$STR_WHF_initUnflipAction_crew', 'PLAIN', 0.5];
-            false
-        };
-        true
-    ",
+        if (unitIsUAV _vehicle) exitWith {true};
+        if (crew _vehicle findIf {lifeState _x in ["HEALTHY", "INJURED"]} < 0) exitWith {true};
+        50 cutText [localize "$STR_WHF_initUnflipAction_crew", "PLAIN", 0.5];
+        false
+    },
     {},
     {},
     {[cursorObject] remoteExec ["WHF_fnc_unflipVehicle", cursorObject]},

@@ -21,8 +21,8 @@ params ["_parent", "_area", "_initialUnitCount"];
 
 private _getThreshold = {floor (_initialUnitCount * WHF_missions_annex_threshold)};
 private _getCurrent = {
-    private _allThreats = units opfor + units independent;
-    count (_allThreats inAreaArray _area)
+    private _allThreats = units opfor + units independent inAreaArray _area;
+    {lifeState _x in ["HEALTHY", "INJURED"]} count _allThreats
 };
 private _current = call _getCurrent;
 private _threshold = call _getThreshold;

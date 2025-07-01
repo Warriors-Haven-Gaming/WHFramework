@@ -145,8 +145,8 @@ private _threshold = _initialUnitCount * 0.3;
 while {true} do {
     sleep 10;
 
-    private _allThreats = units opfor + units independent;
-    private _current = count (_allThreats inAreaArray _area);
+    private _allThreats = units opfor + units independent inAreaArray _area;
+    private _current = {lifeState _x in ["HEALTHY", "INJURED"]} count _allThreats;
 
     if (_current <= _threshold) exitWith {
         [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;

@@ -110,7 +110,7 @@ while {true} do {
     if (count _supplies < 1) exitWith {};
 
     {
-        if (units _x findIf {alive _x} < 0) then {continue};
+        if (units _x findIf {lifeState _x in ["HEALTHY", "INJURED"]} < 0) then {continue};
 
         private _supply = [leader _x, _supplies] call WHF_fnc_nearestPosition;
         if ([_x, _supply] call _hasNearestSupplyWaypoint) then {continue};
