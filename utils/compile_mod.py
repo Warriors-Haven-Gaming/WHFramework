@@ -16,6 +16,7 @@ BRANCH_DIRECTORIES = {
     "regero": "regero",
     "mogadishu": "Mog",
     "tanoa": "Tanoa",
+    "colombia": "UMB_Colombia",
 }
 
 
