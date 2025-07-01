@@ -20,6 +20,7 @@ class CfgPatches {
             "skilava_props_set_01",
             "TCGM_Girls",
             "Valor_Plane_F",
+            "yulakia",
         };
         skipWhenMissingDependencies = 1;
 

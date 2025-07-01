@@ -14,6 +14,7 @@ class CfgPatches {
             "Peral_F16",
             "QAV_AbramsX",
             "QAV_Ripsaw",
+            "regero",
             "Valor_Plane_F",
         };
         skipWhenMissingDependencies = 1;
