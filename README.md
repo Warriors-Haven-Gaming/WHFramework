@@ -65,39 +65,21 @@ Additional factions are supported with the following CDLC and mods:
 ## How do I play?
 
 You can find this gamemode published on the Steam Workshop:
+[Warriors Haven Framework](https://steamcommunity.com/sharedfiles/filedetails/?id=3514182772)
 
-- [Warriors Haven Framework (Altis)](https://steamcommunity.com/sharedfiles/filedetails/?id=3455424755), ID 3455424755
-- [Warriors Haven Framework (Mogadishu)](https://steamcommunity.com/sharedfiles/filedetails/?id=3500539207), ID 3500539207
-- [Warriors Haven Framework (Regero)](https://steamcommunity.com/sharedfiles/filedetails/?id=3484096450), ID 3484096450
-- [Warriors Haven Framework (Tanoa)](https://steamcommunity.com/sharedfiles/filedetails/?id=3511439205), ID 3511439205
-- [Warriors Haven Framework (Yulakia)](https://steamcommunity.com/sharedfiles/filedetails/?id=3455426168), ID 3455426168
+Once subscribed, you can start the gamemode from Scenarios in the main menu,
+or host it by going to Server Browser > Host Server and selecting Warriors Haven Framework
+from the appropriate map. You may choose to host LAN if you want to play alone.
 
-Once subscribed, you can host the gamemode by going to Server Browser > Host Server,
-and then select Warriors Haven Framework from the appropriate map.
-You may choose to host LAN if you want to play alone.
-
-For dedicated server hosters, you can either download the mission files from our
-[Releases] page, or copy and rename the mission file from your workshop directory:
-1. Navigate to `<Steam>/steamapps/workshop/content/107410/<itemID>`,
-   where itemID corresponds to the workshop map you downloaded above.
-2. Copy the `<numbers>_legacy.bin` file into your server's `MPMissions` directory.
-3. Rename it to `WHFramework.<terrain>.pbo`, where terrain is the name
-   of the map (`Altis`, `Mog`, `regero`, `Tanoa`, or `yulakia`).
-4. In your server.cfg, use `WHFramework.<terrain>` as the template name,
-   for example:
-
-   ```cpp
-   class Missions {
-       class WHF {
-           template = "WHFramework.Altis";
-       };
-   };
-   ```
+For dedicated server hosters, you can also host the gamemode directly from
+the mission files on our [Releases] page. This allows players to join without
+installing our mod, which is particularly helpful with our vanilla ports like
+Altis and Tanoa.
 
 Dedicated server hosters may also consider using our suggested [BattlEye filters]
 to improve security. See this [DayZ BattlEye Guide] for more information.
 
-[Releases]: https://github.com/Warriors-Haven-Gaming/WHFramework/releases
+[Releases]: https://github.com/Warriors-Haven-Gaming/WHFramework/releases/latest
 [BattlEye filters]: https://github.com/Warriors-Haven-Gaming/WHFramework/tree/main/BattlEye
 [DayZ BattlEye Guide]: https://opendayz.net/threads/a-guide-to-battleye-filters.21066/
 
