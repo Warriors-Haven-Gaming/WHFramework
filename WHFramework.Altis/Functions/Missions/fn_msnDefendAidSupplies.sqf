@@ -80,7 +80,8 @@ private _supplyTypes = [
 ];
 
 private _supplies = [];
-for "_i" from 0 to 4 + random 6 do {
+private _supplyCount = [5, 10] call WHF_fnc_scaleUnitsSide;
+for "_i" from 1 to _supplyCount do {
     private _type = selectRandom _supplyTypes;
     private _supply = createVehicle [_type, _center, [], _radius, "NONE"];
     _supply setDir random 360;
