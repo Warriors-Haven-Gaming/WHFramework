@@ -23,6 +23,12 @@ BRANCH_DIRECTORIES = {
     "colombia": "UMB_Colombia",
 }
 
+COMMON_FILES = {
+    "LICENSE": "LICENSE",
+    "README.md": "README.md",
+    "stringtable.xml": "addons/main/stringtable.xml",
+}
+
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
@@ -41,6 +47,9 @@ def main() -> None:
     for branch in branches:
         suffix = BRANCH_DIRECTORIES[branch]
         check_valid_suffix(suffix)
+
+    print("Copying common files...")
+    copy_common_files(BRANCH_DIRECTORIES[branches[0]])
 
     for branch in branches:
         suffix = BRANCH_DIRECTORIES[branch]
@@ -65,12 +74,24 @@ def copy_branch(branch: str, suffix: str) -> None:
     print(f"Copying to {dest}...")
     shutil.rmtree(dest, ignore_errors=True)
     shutil.copytree(path, dest)
+    remove_common_files(dest)
 
 
 def check_call(*args: object) -> None:
     str_args = [str(x) for x in args]
     print("$", shlex.join(str_args))
     subprocess.check_call(str_args, stdout=subprocess.DEVNULL)
+
+
+def copy_common_files(suffix: str) -> None:
+    for src, dest in COMMON_FILES.items():
+        content = Path(f"WHFramework.{suffix}/").joinpath(src).read_bytes()
+        Path("mod/").joinpath(dest).write_bytes(content)
+
+
+def remove_common_files(root: Path) -> None:
+    for src in COMMON_FILES:
+        root.joinpath(src).unlink()
 
 
 if __name__ == "__main__":
