@@ -51,7 +51,7 @@ addMissionEventHandler ["PreloadFinished", {
     missionProfileNamespace setVariable ["WHF_play_times", _timesPlayed + 1];
     saveMissionProfileNamespace;
 
-    if (_timesPlayed < 5) then {
+    if (_timesPlayed < 10) then {
         [["WHF", "Intro"], 15, nil, 35, nil, true, true] spawn BIS_fnc_advHint;
     };
 
