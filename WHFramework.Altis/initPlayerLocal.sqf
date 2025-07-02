@@ -14,14 +14,6 @@ Author:
 
 */
 params ["_player"];
-
-if (isMultiplayer && {!isServer}) then {
-    // Will run before init.sqf and on clients, unlike initServer.sqf
-    if (!isClass (configFile >> "CfgPatches" >> "cba_xeh")) then {
-        call compileScript ["XEH_preInit.sqf"];
-    };
-};
-
 if (!hasInterface) exitWith {};
 
 if (isNil {player getVariable "WHF_role"}) then {player setVariable ["WHF_role", "rifleman", true]};

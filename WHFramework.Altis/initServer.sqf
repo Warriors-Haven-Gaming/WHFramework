@@ -9,18 +9,8 @@ Author:
     thegamecracks
 
 */
-WHF_globalPlayerTarget = [0, -2] select isDedicated;
-publicVariable "WHF_globalPlayerTarget";
-
 skipTime random 24;
 enableSaving [false, false];
-
-if (isMultiplayer) then {
-    // Will run before init.sqf and initPlayerLocal.sqf
-    if (!isClass (configFile >> "CfgPatches" >> "cba_xeh")) then {
-        call compileScript ["XEH_preInit.sqf"];
-    };
-};
 
 if (isMultiplayer) then {
     deleteVehicle (playableUnits select {!isPlayer _x});
