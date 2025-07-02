@@ -43,7 +43,7 @@ if (_target < 0) exitWith {};
 WHF_requestSkipTime_last = time;
 diag_log text format ["Skip time to %1 requested by %2", _timeOfDay, name _player];
 
-private _hours = (_target - daytime) % 24;
+private _hours = (_target - dayTime) % 24;
 if (_hours < 0) then {_hours = _hours + 24};
 private _duration = ceil (_hours * 60 / 2);
 [_player, _timeOfDay, _duration] remoteExec ["WHF_fnc_showSkipTime", WHF_globalPlayerTarget];
@@ -51,9 +51,9 @@ private _duration = ceil (_hours * 60 / 2);
 WHF_requestSkipTime_script = [side group _player, _timeOfDay, _target] spawn {
     params ["_side", "_timeOfDay", "_target"];
     private _lastTimeMultiplier = timeMultiplier;
-    private _waitForNextDay = daytime > _target;
-    while {_waitForNextDay || {daytime < _target}} do {
-        if (daytime < _target) then {_waitForNextDay = FALSE};
+    private _waitForNextDay = dayTime > _target;
+    while {_waitForNextDay || {dayTime < _target}} do {
+        if (dayTime < _target) then {_waitForNextDay = FALSE};
         if (timeMultiplier < 120) then {setTimeMultiplier 120};
         sleep 5;
     };

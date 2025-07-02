@@ -24,45 +24,45 @@ with uiNamespace do {
     private _primaryColor = ["GUI", "BCG_RGB"] call BIS_fnc_displayColorGet;
 
     private _frame = _display ctrlCreate ["RscText", -1];
-    _frame ctrlSetPosition [safezoneX + 0.35 * safezoneW, safezoneY + 0.45 * safezoneH, 0.3 * safezoneW, 0.15 * safezoneH];
+    _frame ctrlSetPosition [safeZoneX + 0.35 * safeZoneW, safeZoneY + 0.45 * safeZoneH, 0.3 * safeZoneW, 0.15 * safeZoneH];
     _frame ctrlSetBackgroundColor [0, 0, 0, 0.7];
     _frame ctrlEnable false;
     _frame ctrlCommit 0;
 
     private _title = _display ctrlCreate ["RscText", -1];
-    _title ctrlSetPosition [safezoneX + 0.35 * safezoneW, safezoneY + 0.45 * safezoneH, 0.3 * safezoneW, 0.025 * safezoneH];
+    _title ctrlSetPosition [safeZoneX + 0.35 * safeZoneW, safeZoneY + 0.45 * safeZoneH, 0.3 * safeZoneW, 0.025 * safeZoneH];
     _title ctrlSetBackgroundColor _primaryColor;
     _title ctrlSetText localize "$STR_WHF_spawnRecruit";
     _title ctrlEnable false;
     _title ctrlCommit 0;
 
     _atButton = _display ctrlCreate ["RscButton", -1];
-    _atButton ctrlSetPosition [safezoneX + 0.3925 * safezoneW, safezoneY + 0.49 * safezoneH, 0.065 * safezoneW, 0.03 * safezoneH];
+    _atButton ctrlSetPosition [safeZoneX + 0.3925 * safeZoneW, safeZoneY + 0.49 * safeZoneH, 0.065 * safeZoneW, 0.03 * safeZoneH];
     _atButton ctrlSetText ("at" call _localizeRole);
     _atButton ctrlCommit 0;
 
     _autoriflemanButton = _display ctrlCreate ["RscButton", -1];
-    _autoriflemanButton ctrlSetPosition [safezoneX + 0.4675 * safezoneW, safezoneY + 0.49 * safezoneH, 0.065 * safezoneW, 0.03 * safezoneH];
+    _autoriflemanButton ctrlSetPosition [safeZoneX + 0.4675 * safeZoneW, safeZoneY + 0.49 * safeZoneH, 0.065 * safeZoneW, 0.03 * safeZoneH];
     _autoriflemanButton ctrlSetText ("autorifleman" call _localizeRole);
     _autoriflemanButton ctrlCommit 0;
 
     _engineerButton = _display ctrlCreate ["RscButton", -1];
-    _engineerButton ctrlSetPosition [safezoneX + 0.5425 * safezoneW, safezoneY + 0.49 * safezoneH, 0.065 * safezoneW, 0.03 * safezoneH];
+    _engineerButton ctrlSetPosition [safeZoneX + 0.5425 * safeZoneW, safeZoneY + 0.49 * safeZoneH, 0.065 * safeZoneW, 0.03 * safeZoneH];
     _engineerButton ctrlSetText ("engineer" call _localizeRole);
     _engineerButton ctrlCommit 0;
 
     _medicButton = _display ctrlCreate ["RscButton", -1];
-    _medicButton ctrlSetPosition [safezoneX + 0.43 * safezoneW, safezoneY + 0.53 * safezoneH, 0.065 * safezoneW, 0.03 * safezoneH];
+    _medicButton ctrlSetPosition [safeZoneX + 0.43 * safeZoneW, safeZoneY + 0.53 * safeZoneH, 0.065 * safeZoneW, 0.03 * safeZoneH];
     _medicButton ctrlSetText ("medic" call _localizeRole);
     _medicButton ctrlCommit 0;
 
     _riflemanButton = _display ctrlCreate ["RscButton", -1];
-    _riflemanButton ctrlSetPosition [safezoneX + 0.505 * safezoneW, safezoneY + 0.53 * safezoneH, 0.065 * safezoneW, 0.03 * safezoneH];
+    _riflemanButton ctrlSetPosition [safeZoneX + 0.505 * safeZoneW, safeZoneY + 0.53 * safeZoneH, 0.065 * safeZoneW, 0.03 * safeZoneH];
     _riflemanButton ctrlSetText ("rifleman" call _localizeRole);
     _riflemanButton ctrlCommit 0;
 
     _clearButton = _display ctrlCreate ["RscButton", -1];
-    _clearButton ctrlSetPosition [safezoneX + 0.56 * safezoneW, safezoneY + 0.56 * safezoneH, 0.08 * safezoneW, 0.03 * safezoneH];
+    _clearButton ctrlSetPosition [safeZoneX + 0.56 * safeZoneW, safeZoneY + 0.56 * safeZoneH, 0.08 * safeZoneW, 0.03 * safeZoneH];
     _clearButton ctrlSetText localize "$STR_WHF_spawnRecruitGUI_clear";
     _clearButton ctrlCommit 0;
 

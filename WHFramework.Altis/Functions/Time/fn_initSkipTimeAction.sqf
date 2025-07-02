@@ -21,7 +21,7 @@ _obj addAction [
     true,
     true,
     "",
-    "WHF_requestSkipTime_enabled && {daytime < 5 || {daytime > 12}}",
+    "WHF_requestSkipTime_enabled && {dayTime < 5 || {dayTime > 12}}",
     3
 ];
 _obj addAction [
@@ -32,7 +32,7 @@ _obj addAction [
     true,
     true,
     "",
-    "WHF_requestSkipTime_enabled && {daytime < 10 || {daytime > 17}}",
+    "WHF_requestSkipTime_enabled && {dayTime < 10 || {dayTime > 17}}",
     3
 ];
 _obj addAction [
@@ -43,6 +43,6 @@ _obj addAction [
     true,
     true,
     "",
-    "WHF_requestSkipTime_enabled && {daytime < 15 || {daytime > 22}}",
+    "WHF_requestSkipTime_enabled && {dayTime < 15 || {dayTime > 22}}",
     3
 ];

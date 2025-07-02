@@ -144,7 +144,7 @@ with uiNamespace do {
     private _primaryColor = ["GUI", "BCG_RGB"] call BIS_fnc_displayColorGet;
 
     private _group = _display ctrlCreate ["RscControlsGroup", -1];
-    _group ctrlSetPosition [safezoneX + 0.3 * safezoneW, safezoneY + 0.3 * safezoneH, 0.4 * safezoneW, 0.4 * safezoneH];
+    _group ctrlSetPosition [safeZoneX + 0.3 * safeZoneW, safeZoneY + 0.3 * safeZoneH, 0.4 * safeZoneW, 0.4 * safeZoneH];
     _group ctrlCommit 0;
 
     ctrlPosition _group params ["", "", "_width", "_height"];

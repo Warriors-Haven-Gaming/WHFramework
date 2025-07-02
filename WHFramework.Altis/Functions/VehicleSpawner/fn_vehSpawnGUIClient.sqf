@@ -153,13 +153,13 @@ with uiNamespace do {
     WHF_vehSpawnGUI_categories sort true;
 
     private _frame = _display ctrlCreate ["RscText", -1];
-    _frame ctrlSetPosition [safezoneX + 0.2 * safezoneW, safezoneY + 0.7 * safezoneH, 0.6 * safezoneW, 0.2 * safezoneH];
+    _frame ctrlSetPosition [safeZoneX + 0.2 * safeZoneW, safeZoneY + 0.7 * safeZoneH, 0.6 * safeZoneW, 0.2 * safeZoneH];
     _frame ctrlSetBackgroundColor [0, 0, 0, 0.7];
     _frame ctrlEnable false;
     _frame ctrlCommit 0;
 
     WHF_vehSpawnGUI_ctrlCategory = _display ctrlCreate ["RscListbox", -1];
-    WHF_vehSpawnGUI_ctrlCategory ctrlSetPosition [safezoneX + 0.22 * safezoneW, safezoneY + 0.72 * safezoneH, 0.1 * safezoneW, 0.16 * safezoneH];
+    WHF_vehSpawnGUI_ctrlCategory ctrlSetPosition [safeZoneX + 0.22 * safeZoneW, safeZoneY + 0.72 * safeZoneH, 0.1 * safeZoneW, 0.16 * safeZoneH];
     {
         _x params ["", "_displayName", "_category"];
         _category = WHF_vehSpawnGUI_vehicles get _category;
@@ -169,17 +169,17 @@ with uiNamespace do {
     WHF_vehSpawnGUI_ctrlCategory ctrlCommit 0;
 
     WHF_vehSpawnGUI_ctrlVehicle = _display ctrlCreate ["RscListbox", -1];
-    WHF_vehSpawnGUI_ctrlVehicle ctrlSetPosition [safezoneX + 0.33 * safezoneW, safezoneY + 0.72 * safezoneH, 0.2 * safezoneW, 0.16 * safezoneH];
+    WHF_vehSpawnGUI_ctrlVehicle ctrlSetPosition [safeZoneX + 0.33 * safeZoneW, safeZoneY + 0.72 * safeZoneH, 0.2 * safeZoneW, 0.16 * safeZoneH];
     WHF_vehSpawnGUI_ctrlVehicle ctrlCommit 0;
     WHF_vehSpawnGUI_ctrlVehicle_preview = objNull;
 
     WHF_vehSpawnGUI_ctrlStatus = _display ctrlCreate ["RscStructuredText", -1];
-    WHF_vehSpawnGUI_ctrlStatus ctrlSetPosition [safezoneX + 0.615 * safezoneW, safezoneY + 0.755 * safezoneH, 0.1 * safezoneW, 0.02 * safezoneH];
+    WHF_vehSpawnGUI_ctrlStatus ctrlSetPosition [safeZoneX + 0.615 * safeZoneW, safeZoneY + 0.755 * safeZoneH, 0.1 * safeZoneW, 0.02 * safeZoneH];
     WHF_vehSpawnGUI_ctrlStatus ctrlEnable false;
     WHF_vehSpawnGUI_ctrlStatus ctrlCommit 0;
 
     WHF_vehSpawnGUI_ctrlConfirm = _display ctrlCreate ["RscButton", 1];
-    WHF_vehSpawnGUI_ctrlConfirm ctrlSetPosition [safezoneX + 0.615 * safezoneW, safezoneY + 0.785 * safezoneH, 0.1 * safezoneW, 0.05 * safezoneH];
+    WHF_vehSpawnGUI_ctrlConfirm ctrlSetPosition [safeZoneX + 0.615 * safeZoneW, safeZoneY + 0.785 * safeZoneH, 0.1 * safeZoneW, 0.05 * safeZoneH];
     WHF_vehSpawnGUI_ctrlConfirm ctrlSetText "Spawn";
     WHF_vehSpawnGUI_ctrlConfirm ctrlEnable false;
     WHF_vehSpawnGUI_ctrlConfirm ctrlCommit 0;
