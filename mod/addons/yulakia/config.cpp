@@ -29,6 +29,13 @@ class CfgPatches {
 };
 
 class CfgMissions {
+    class Missions {
+        class WHFramework_Yulakia {
+            briefingName = "Warriors Haven Framework (Yulakia)";
+            directory = "z\whf\addons\yulakia\WHFramework_Yulakia.Yulakia";
+        };
+    };
+
     class MPMissions {
         class WHFramework_Yulakia {
             briefingName = "Warriors Haven Framework";

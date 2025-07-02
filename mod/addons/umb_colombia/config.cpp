@@ -15,6 +15,13 @@ class CfgPatches {
 };
 
 class CfgMissions {
+    class Missions {
+        class WHFramework_UMB_Colombia {
+            briefingName = "Warriors Haven Framework (Colombia)";
+            directory = "z\whf\addons\umb_colombia\WHFramework_UMB_Colombia.UMB_Colombia";
+        };
+    };
+
     class MPMissions {
         class WHFramework_UMB_Colombia {
             briefingName = "Warriors Haven Framework";
