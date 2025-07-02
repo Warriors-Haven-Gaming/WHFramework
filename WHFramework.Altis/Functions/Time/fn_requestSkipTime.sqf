@@ -18,7 +18,7 @@ Author:
 */
 params ["_player", "_timeOfDay"];
 if !([_player] call WHF_fnc_isPlayerRemoteExecuted) exitWith {};
-if (!WHF_requestSkipTime_enabled) exitWith {};
+if (!WHF_requestSkipTime_enabled && {!call WHF_fnc_isRemoteExecutedByAdmin}) exitWith {};
 if (!isNil "WHF_requestSkipTime_script" && {!scriptDone WHF_requestSkipTime_script}) exitWith {
     ["$STR_WHF_showSkipTimePending"] remoteExec ["WHF_fnc_localizedHint", remoteExecutedOwner];
 };

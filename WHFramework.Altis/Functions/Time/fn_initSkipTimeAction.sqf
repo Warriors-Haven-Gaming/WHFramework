@@ -21,7 +21,11 @@ _obj addAction [
     true,
     true,
     "",
-    "WHF_requestSkipTime_enabled && {dayTime < 5 || {dayTime > 12}}",
+    toString {
+        (dayTime < 5 || {dayTime > 12})
+        && {WHF_requestSkipTime_enabled
+        || {call BIS_fnc_admin > 0}}
+    },
     3
 ];
 _obj addAction [
@@ -32,7 +36,11 @@ _obj addAction [
     true,
     true,
     "",
-    "WHF_requestSkipTime_enabled && {dayTime < 10 || {dayTime > 17}}",
+    toString {
+        (dayTime < 10 || {dayTime > 17})
+        && {WHF_requestSkipTime_enabled
+        || {call BIS_fnc_admin > 0}}
+    },
     3
 ];
 _obj addAction [
@@ -43,6 +51,10 @@ _obj addAction [
     true,
     true,
     "",
-    "WHF_requestSkipTime_enabled && {dayTime < 15 || {dayTime > 22}}",
+    toString {
+        (dayTime < 15 || {dayTime > 22})
+        && {WHF_requestSkipTime_enabled
+        || {call BIS_fnc_admin > 0}}
+    },
     3
 ];
