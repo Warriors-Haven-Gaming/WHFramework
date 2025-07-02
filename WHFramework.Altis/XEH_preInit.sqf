@@ -1134,7 +1134,7 @@ call WHF_fnc_cycleFaction;
     "CHECKBOX",
     ["STR_WHF_settings_time_skipEnabled", "STR_WHF_settings_time_skipEnabled_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_time"],
-    true,
+    false,
     true,
     {},
     false
