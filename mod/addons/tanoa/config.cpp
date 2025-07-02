@@ -5,7 +5,9 @@ class CfgPatches {
         url = "https://github.com/Warriors-Haven-Gaming/WHFramework/tree/tanoa";
 
         requiredVersion = 2.20;
-        requiredAddons[] = {};
+        requiredAddons[] = {
+            "whf_main",
+        };
         skipWhenMissingDependencies = 1;
 
         units[] = {};

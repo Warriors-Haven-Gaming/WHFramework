@@ -16,6 +16,7 @@ class CfgPatches {
             "QAV_Ripsaw",
             "regero",
             "Valor_Plane_F",
+            "whf_main",
         };
         skipWhenMissingDependencies = 1;
 

@@ -7,6 +7,7 @@ class CfgPatches {
         requiredVersion = 2.20;
         requiredAddons[] = {
             "UMB_Colombia",
+            "whf_main",
         };
         skipWhenMissingDependencies = 1;
 

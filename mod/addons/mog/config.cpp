@@ -33,6 +33,7 @@ class CfgPatches {
             "unit_config",
             "US_ESS_Glasses_tryk",
             "Valor_Plane_F",
+            "whf_main",
             "women",
         };
         skipWhenMissingDependencies = 1;
