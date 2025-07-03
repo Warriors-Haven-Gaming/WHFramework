@@ -40,12 +40,16 @@ if (isNil "_lock") exitWith {""};
 switch (_lock # 0) do {
     case "role": {
         private _roles = _lock # 1;
+        if (count _roles < 1) exitWith {""};
+
         private _role = player getVariable "WHF_role";
         if (!isNil "_role" && {_role in _roles}) exitWith {""};
         localize "$STR_WHF_vehicleLock"
     };
     case "uid": {
         private _uids = _lock # 1;
+        if (count _uids < 1) exitWith {""};
+
         // NOTE: player is used to allow recruits into the same seats
         if (getPlayerUID player in _uids) exitWith {""};
         localize "$STR_WHF_vehicleLock"
