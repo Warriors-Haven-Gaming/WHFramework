@@ -40,11 +40,19 @@ if (isNull objectParent _unit) then {
         _unit setDir _dir;
     };
 
+    private _weapon = currentWeapon _unit;
+    private _hasPrimary = primaryWeapon _unit isNotEqualTo "";
+    private _hasHandgun = handgunWeapon _unit isNotEqualTo "";
+    private _primaryAnim = "amovppnemstpsnonwnondnon_amovppnemstpsraswrfldnon";
+    private _handgunAnim = "amovppnemstpsnonwnondnon_amovppnemstpsraswpstdnon";
     private _animation = switch (true) do {
-        case (primaryWeapon _unit isNotEqualTo ""): {"amovppnemstpsnonwnondnon_amovppnemstpsraswrfldnon"};
-        case (handgunWeapon _unit isNotEqualTo ""): {"amovppnemstpsnonwnondnon_amovppnemstpsraswpstdnon"};
+        case (_hasPrimary && {_weapon isEqualTo primaryWeapon _unit}): {_primaryAnim};
+        case (_hasHandgun && {_weapon isEqualTo handgunWeapon _unit}): {_handgunAnim};
+        case (_hasPrimary): {_primaryAnim};
+        case (_hasHandgun): {_handgunAnim};
         default {"unconsciousoutprone"};
     };
+
     [_unit, [_animation, 0, 0, false]] remoteExec ["switchMove"];
 };
 if (_unit isEqualTo focusOn) then {hintSilent ""};
