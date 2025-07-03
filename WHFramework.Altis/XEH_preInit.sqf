@@ -906,7 +906,7 @@ call WHF_fnc_cycleFaction;
     "SLIDER",
     ["STR_WHF_settings_recruits_limit_global", "STR_WHF_settings_recruits_limit_global_tooltip"],
     "STR_WHF_settings_recruits",
-    [0, 200, 40, 0, false],
+    [0, 200, 24, 0, false],
     true,
     {WHF_recruits_limit_global = round _this},
     false
