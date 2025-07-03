@@ -44,7 +44,8 @@ switch (_lock # 0) do {
 
         private _role = player getVariable "WHF_role";
         if (!isNil "_role" && {_role in _roles}) exitWith {""};
-        localize "$STR_WHF_vehicleLock"
+        private _name = _roles # 0 call WHF_fnc_localizeRole;
+        format [localize "$STR_WHF_vehicleLock_role", _name]
     };
     case "uid": {
         private _uids = _lock # 1;
@@ -52,7 +53,9 @@ switch (_lock # 0) do {
 
         // NOTE: player is used to allow recruits into the same seats
         if (getPlayerUID player in _uids) exitWith {""};
-        localize "$STR_WHF_vehicleLock"
+        private _owner = _uids # 0 call BIS_fnc_getUnitByUID;
+        private _name = if (!isNull _owner) then {name _owner} else {"<unknown player>"}; // TODO: localize
+        format [localize "$STR_WHF_vehicleLock_uid", _name]
     };
     default {""};
 }
