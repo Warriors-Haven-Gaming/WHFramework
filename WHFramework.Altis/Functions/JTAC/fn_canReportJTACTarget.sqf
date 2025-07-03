@@ -22,8 +22,17 @@ if (WHF_jtac_tasks_max < 1) exitWith {false};
 if (_unit getVariable ["WHF_role", ""] isNotEqualTo "jtac") exitWith {false};
 if !(lifeState _unit in ["HEALTHY", "INJURED"]) exitWith {false};
 if (!alive _target) exitWith {false};
-if (local _unit && {currentWeapon _unit isNotEqualTo binocular _unit}) exitWith {false};
 if (["LandVehicle", "Air", "Ship"] findIf {_target isKindOf _x} < 0) exitWith {false};
+
+private _canSpot = switch (true) do {
+    case (!local _unit): {true}; // Weapon checks are unreliable on remote units
+    case (!isNull objectParent _unit): {
+        private _vehicle = objectParent _unit;
+        _unit in [gunner _vehicle, commander _vehicle]
+    };
+    default {currentWeapon _unit isEqualTo binocular _unit};
+};
+if (!_canSpot) exitWith {false};
 
 private _side = side group _unit;
 private _commander = effectiveCommander _target;
