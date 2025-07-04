@@ -24,6 +24,7 @@ Parameters:
         (Optional, default [])
         An array containing any of the following flags:
             "hidden": Find hidden positions to spawn vehicles.
+            "noDynamicSimulation": Disable dynamic simulation on vehicles and groups.
 
 Returns:
     Group
