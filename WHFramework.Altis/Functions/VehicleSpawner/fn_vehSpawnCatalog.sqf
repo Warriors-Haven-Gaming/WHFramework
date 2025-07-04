@@ -177,6 +177,8 @@ private _helicopters = [
     ["ef_b_ah99j_nato_des",                      [-1,  ["pilot_cas"]]],
     ["valor_attack_f",                           [-1,  ["pilot_cas"]]],
     ["b_t_vtol_01_armed_f",                      [-1,  ["pilot_cas"]]],
+    ["o_heli_attack_02_dynamicloadout_f",        [-1,  ["pilot_cas"]]],
+    ["i_heli_light_03_dynamicloadout_f",         [-1,  ["pilot_cas"]]],
     ["cup_b_mh6m_usa",                           [-1,  []]],
     ["b_d_heli_light_01_lxws",                   [-1,  []]],
     ["cup_b_mh60l_dap_2x_us",                    [-1,  ["pilot_transport"]]],
