@@ -32,7 +32,14 @@ if (_categories findIf {count (_catalog get _x get "_vehicles") > 0} < 0) exitWi
     50 cutText [localize "$STR_WHF_vehSpawnGUIClient_empty", "PLAIN", 0.5];
 };
 
-_pos = _pos findEmptyPosition _safeArea;
+if (surfaceIsWater _pos) then {
+    // TODO: find safe water position
+    _safeArea params ["_radius"];
+    private _objects = [_pos, _radius] call WHF_fnc_nearObjectsRespawn;
+    if (count _objects > 0) then {_pos = []};
+} else {
+    _pos = _pos findEmptyPosition _safeArea;
+};
 if (_pos isEqualTo []) exitWith {call WHF_fnc_vehSpawnObstructed};
 
 disableUserInput true;
@@ -200,9 +207,8 @@ with uiNamespace do {
         WHF_vehSpawnGUI_ctrlVehicle_preview = _vehicle createVehicleLocal [-random 500, -random 500, random 500];
         WHF_vehSpawnGUI_ctrlVehicle_preview allowDamage false;
         WHF_vehSpawnGUI_ctrlVehicle_preview setVehicleLock "LOCKED";
-        WHF_vehSpawnGUI_ctrlVehicle_preview setPosATL WHF_vehSpawnGUI_pos;
         WHF_vehSpawnGUI_ctrlVehicle_preview setDir WHF_vehSpawnGUI_dir;
-        WHF_vehSpawnGUI_ctrlVehicle_preview setVectorUp surfaceNormal WHF_vehSpawnGUI_pos;
+        WHF_vehSpawnGUI_ctrlVehicle_preview setPos WHF_vehSpawnGUI_pos;
         WHF_vehSpawnGUI_ctrlVehicle_preview enableSimulation false;
     }}];
 
