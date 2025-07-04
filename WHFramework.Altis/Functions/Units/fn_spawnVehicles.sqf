@@ -59,7 +59,7 @@ for "_i" from 1 to _quantity do {
     private _special = "NONE";
     if (_radius isEqualType [] || {_radius > 0}) then {
         private _empty = [_center, _radius] call _randomPos;
-        if (_empty isEqualTo [0,0]) exitWith {};
+        if (_empty isEqualTo [0,0]) then {break};
         _pos = _empty;
         _special = "CAN_COLLIDE";
     };
