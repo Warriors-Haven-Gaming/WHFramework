@@ -202,15 +202,20 @@ private _helicopters = [
 
 private _planesCooldown = 300;
 private _planes = [
-    ["peral_f16v",                       [-1, ["pilot_cas"]]],
-    ["f_35c",                            [-1, ["pilot_cas"]]],
-    ["fa_emb312_at27m35_nato",           [-1, ["pilot_cas"]]],
-    ["cup_b_gr9_dyn_gb",                 [-1, ["pilot_cas"]]],
-    ["b_plane_cas_01_dynamicloadout_f",  [-1, ["pilot_cas"]]],
-    ["b_plane_fighter_01_f",             [-1, ["pilot_cas"]]],
-    ["cup_b_mv22_viv_usmc",              [600, ["pilot_transport"]]],
-    ["cup_b_c130j_gb",                   [600, ["pilot_transport"]]],
-    ["cup_b_c130j_cargo_gb",             [600, ["pilot_transport"]]],
+    ["peral_f16v",                          [-1, ["pilot_cas"]]],
+    ["f_35c",                               [-1, ["pilot_cas"]]],
+    ["fa_emb312_at27m35_nato",              [-1, ["pilot_cas"]]],
+    ["cup_b_gr9_dyn_gb",                    [-1, ["pilot_cas"]]],
+    ["b_plane_cas_01_dynamicloadout_f",     [-1, ["pilot_cas"]]],
+    ["b_plane_fighter_01_f",                [-1, ["pilot_cas"]]],
+    ["o_plane_cas_02_dynamicloadout_f",     [-1, ["pilot_cas"]]],
+    ["o_plane_fighter_02_f",                [-1, ["pilot_cas"]]],
+    ["i_plane_fighter_03_dynamicloadout_f", [-1, ["pilot_cas"]]],
+    ["i_plane_fighter_04_f",                [-1, ["pilot_cas"]]],
+    ["c_plane_civil_01_f",                  [-1, ["pilot_transport"]]],
+    ["cup_b_mv22_viv_usmc",                 [600, ["pilot_transport"]]],
+    ["cup_b_c130j_gb",                      [600, ["pilot_transport"]]],
+    ["cup_b_c130j_cargo_gb",                [600, ["pilot_transport"]]],
     ["", []]
 ];
 
