@@ -55,7 +55,6 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
             apply {_x # 6 vectorMultiply [1,1,0]};
         if (!isNil "_area") then {_targets = _targets inAreaArray _area};
 
-
         if (count _targets < 1) then {sleep 0.125; continue};
 
         [_x] call WHF_fnc_clearWaypoints;
