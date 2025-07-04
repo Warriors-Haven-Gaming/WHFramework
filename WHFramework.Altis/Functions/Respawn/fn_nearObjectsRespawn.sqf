@@ -18,7 +18,7 @@ Author:
 
 */
 params ["_pos", "_radius", ["_ignore", []]];
-private _exceptions = ["Animal", "WeaponHolder", "WeaponHolderSimulated"];
+private _exceptions = ["Animal", "ThingEffect", "WeaponHolder", "WeaponHolderSimulated"];
 private _objects = _pos nearObjects ["All", _radius];
 _objects = _objects select {
     private _obj = _x;
