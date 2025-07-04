@@ -21,11 +21,17 @@ private _cars = [
     ["cup_b_nm1151_ogpk_m2_usa_wdl",    [-1,  []]],
     ["cup_b_m1165_gmv_wdl_usa",         [-1,  []]],
     ["ef_b_pickup_mjtf_des",            [120, []]],
+    ["ef_b_pickup_mjtf_wdl",            [120, []]],
+    ["ef_b_pickup_rf",                  [120, []]],
     ["ef_b_pickup_comms_mjtf_des",      [120, []]],
+    ["ef_b_pickup_comms_mjtf_wdl",      [120, []]],
+    ["ef_b_pickup_comms_rf",            [120, []]],
     ["ef_b_pickup_mmg_mjtf_des",        [180, []]],
     ["b_t_lsv_01_unarmed_f",            [120, []]],
     ["b_t_lsv_01_armed_f",              [-1,  []]],
     ["b_t_lsv_01_at_f",                 [-1,  []]],
+    ["ef_b_pickup_mmg_mjtf_wdl",        [180, []]],
+    ["ef_b_pickup_mmg_rf",              [180, []]],
     ["", []] // Dummy element to assist with VCS tooling, may be removed
 ];
 
@@ -34,6 +40,7 @@ private _motorcycles = [
     ["cup_b_m1030_usa",           [-1, []]],
     ["cup_i_tt650_napa",          [-1, []]],
     ["ef_b_quadbike_01_mjtf_des", [-1, []]],
+    ["ef_b_quadbike_01_f",        [-1, []]],
     ["", []]
 ];
 
@@ -66,10 +73,15 @@ private _MRAPs = [
     ["cup_b_dingo_ger_wdl",       [-1,  []]],
     ["cup_b_ridgback_hmg_gb_w",   [-1,  []]],
     ["cup_b_mastiff_gmg_gb_w",    [600, []]],
+    ["ef_b_mrap_01_mjtf_wdl",     [-1,  []]],
     ["ef_b_mrap_01_mjtf_des",     [-1,  []]],
+    ["ef_b_mrap_01_hmg_mjtf_wdl", [-1,  []]],
     ["ef_b_mrap_01_hmg_mjtf_des", [-1,  []]],
+    ["ef_b_mrap_01_gmg_mjtf_wdl", [600, []]],
     ["ef_b_mrap_01_gmg_mjtf_des", [600, []]],
+    ["ef_b_mrap_01_fsv_mjtf_wdl", [900, []]],
     ["ef_b_mrap_01_fsv_mjtf_des", [900, []]],
+    ["ef_b_mrap_01_at_mjtf_wdl",  [900, []]],
     ["ef_b_mrap_01_at_mjtf_des",  [900, []]],
     ["", []]
 ];
@@ -80,13 +92,20 @@ private _APCs = [
     ["cup_b_m1135_atgmv_woodland",     [-1,  []]],
     ["cup_b_m1128_mgs_woodland",       [-1,  []]],
     ["cup_b_m1126_icv_mk19_woodland",  [600, []]],
+    ["b_t_apc_wheeled_01_atgm_lxws",   [-1,  []]],
     ["b_apc_wheeled_01_atgm_lxws",     [-1,  []]],
+    ["b_t_d_apc_wheeled_01_cannon_lxws", [-1,  []]],
     ["b_d_apc_wheeled_01_cannon_lxws", [-1,  []]],
+    ["b_t_apc_wheeled_01_command_lxws",[-1,  []]],
     ["b_apc_wheeled_01_command_lxws",  [-1,  []]],
     ["b_t_apc_wheeled_01_cannon_f",    [-1,  []]],
     ["b_t_apc_tracked_01_rcws_f",      [-1,  []]],
     ["i_apc_wheeled_03_cannon_f",      [-1,  []]],
     ["i_apc_tracked_03_cannon_f",      [-1,  []]],
+    ["b_t_apc_wheeled_01_cannon_f",    [-1,  []]],
+    ["b_apc_wheeled_01_cannon_f",      [-1,  []]],
+    ["b_t_apc_tracked_01_rcws_f",      [-1,  []]],
+    ["b_apc_tracked_01_rcws_f",        [-1,  []]],
     ["", []]
 ];
 
@@ -103,7 +122,9 @@ private _IFVs = [
     ["cup_b_aav_usmc_tts",      [600, []]],
     ["cup_b_boxer_gmg_ger_wdl", [600, []]],
     ["cup_b_boxer_hmg_ger_wdl", [600, []]],
+    ["ef_b_aav9_mjtf_wdl",      [-1,  []]],
     ["ef_b_aav9_mjtf_des",      [-1,  []]],
+    ["ef_b_aav9_50mm_mjtf_wdl", [-1,  []]],
     ["ef_b_aav9_50mm_mjtf_des", [-1,  []]],
     ["", []]
 ];
@@ -128,10 +149,12 @@ private _artillery = [
     ["b_t_mbt_01_arty_f",              [-1,   ["arty"]]],
     ["cup_b_m270_he_baf_wood",         [-1,   ["arty"]]],
     ["cup_b_m270_dpicm_baf_wood",      [-1,   ["arty"]]],
-    ["b_d_apc_wheeled_01_mortar_lxws", [1200, ["arty"]]],
+    ["b_g_pickup_mrl_rf",              [-1,   ["arty"]]],
+    ["b_t_apc_wheeled_01_mortar_lxws", [1200, ["arty"]]],
+    ["b_apc_wheeled_01_mortar_lxws",   [1200, ["arty"]]],
     ["b_twinmortar_rf",                [2100, ["arty"]]],
     ["b_t_mbt_01_mlrs_f",              [-1,   ["arty"]]],
-    ["b_mbt_01_mlrs_cluster",          [-1,   ["arty"]]],
+    ["b_t_mbt_01_arty_f",              [-1,   ["arty"]]],
     ["", []]
 ];
 
@@ -140,20 +163,20 @@ private _airdefense = [
     ["cup_b_m6linebacker_usa_w",     [-1,   []]],
     ["cup_b_m163_vulcan_usa",        [300,  []]],
     ["cup_b_nm1097_avenger_usa_wdl", [-1,   []]],
+    ["b_t_pickup_aat_rf",            [300,  []]],
     ["b_pickup_aat_rf",              [300,  []]],
     ["ef_b_mrap_01_laad_mjtf_des",   [-1,   []]],
+    ["ef_b_mrap_01_laad_nato_t",     [-1,   []]],
     ["b_t_apc_tracked_01_aa_f",      [1200, ["engineer"]]],
     ["", []]
 ];
 
 private _tanksCooldown = 1500;
 private _tanks = [
-    ["qav_abramsx",                          [-1,   ["engineer"]]],
-    ["qav_abramsx_tusk",                     [-1,   ["engineer"]]],
+    ["b_qav_abramsx_tusk",                   [-1,   ["engineer"]]],
     ["qav_abramsx_templar",                  [-1,   ["engineer"]]],
     ["cup_b_m1a2c_tusk_ii_woodland_us_army", [-1,   ["engineer"]]],
     ["cup_b_challenger2_woodland_baf",       [-1,   ["engineer"]]],
-    ["cup_o_t90m_ru",                        [-1,   ["engineer"]]],
     ["b_d_mbt_01_tusk_lxws",                 [1000, ["engineer"]]],
     ["b_t_mbt_01_cannon_f",                  [-1,   ["engineer"]]],
     ["b_t_mbt_01_tusk_f",                    [-1,   ["engineer"]]],
@@ -175,14 +198,17 @@ private _helicopters = [
     ["b_heli_light_03_dynamicloadout_rf",        [-1,  ["pilot_cas"]]],
     ["b_heli_attack_01_dynamicloadout_f",        [-1,  ["pilot_cas"]]],
     ["b_heli_attack_01_pylons_dynamicloadout_f", [-1,  ["pilot_cas"]]],
+    ["ef_b_heli_attack_01_dynamicloadout_mjtf_wdl", [-1,  ["pilot_cas"]]],
     ["b_d_heli_light_01_dynamicloadout_lxws",    [-1,  ["pilot_cas"]]],
     ["b_d_heli_attack_01_dynamicloadout_lxws",   [-1,  ["pilot_cas"]]],
+    ["ef_b_ah99j_mjtf_wdl",                      [-1,  ["pilot_cas"]]],
     ["ef_b_ah99j_nato_des",                      [-1,  ["pilot_cas"]]],
     ["valor_attack_f",                           [-1,  ["pilot_cas"]]],
     ["b_t_vtol_01_armed_f",                      [-1,  ["pilot_cas"]]],
     ["o_heli_attack_02_dynamicloadout_f",        [-1,  ["pilot_cas"]]],
     ["i_heli_light_03_dynamicloadout_f",         [-1,  ["pilot_cas"]]],
     ["cup_b_mh6m_usa",                           [-1,  []]],
+    ["b_heli_light_01_f",                        [-1,  []]],
     ["b_d_heli_light_01_lxws",                   [-1,  []]],
     ["cup_b_mh60l_dap_2x_us",                    [-1,  ["pilot_transport"]]],
     ["cup_b_mh47e_usa",                          [-1,  ["pilot_transport"]]],
@@ -196,6 +222,8 @@ private _helicopters = [
     ["o_t_vtol_02_infantry_dynamicloadout_f",    [900, ["pilot_transport"]]],
     ["o_t_vtol_02_vehicle_dynamicloadout_f",     [900, ["pilot_transport", "pilot_cas"]]],
     ["b_d_heli_transport_01_lxws",               [-1,  ["pilot_transport"]]],
+    ["b_ctrg_heli_transport_01_tropic_f",        [-1,  ["pilot_transport"]]],
+    ["ef_b_heli_transport_01_mjtf_wdl",          [-1,  ["pilot_transport"]]],
     ["b_heli_light_03_unarmed_rf",               [-1,  ["pilot_transport"]]],
     ["b_heli_ec_04_military_rf",                 [-1,  ["pilot_transport"]]],
     ["b_heli_transport_01_f",                    [-1,  ["pilot_transport"]]],
@@ -213,6 +241,7 @@ private _planes = [
     ["fa_emb312_at27m35_nato",              [-1, ["pilot_cas"]]],
     ["cup_b_gr9_dyn_gb",                    [-1, ["pilot_cas"]]],
     ["b_plane_cas_01_dynamicloadout_f",     [-1, ["pilot_cas"]]],
+    ["b_d_plane_cas_01_dynamicloadout_lxws", [-1, ["pilot_cas"]]],
     ["b_plane_fighter_01_f",                [-1, ["pilot_cas"]]],
     ["o_plane_cas_02_dynamicloadout_f",     [-1, ["pilot_cas"]]],
     ["o_plane_fighter_02_f",                [-1, ["pilot_cas"]]],
@@ -227,6 +256,7 @@ private _planes = [
 
 private _dronesCooldown = 300;
 private _drones = [
+    ["qav_ripsaw_mk44",             [-1, ["uav"]]],
     ["qav_b_ripsaw_mk44",           [-1, ["uav"]]],
     ["qav_ripsaw_c",                [-1, ["uav"]]],
     ["cup_b_usmc_dyn_mq9",          [-1, ["uav"]]],
@@ -255,9 +285,13 @@ private _ships = [
     ["cup_b_zodiac_usmc",                   [-1,  []]],
     ["bae_fic",                             [-1,  []]],
     ["rhicc_green",                         [600, []]],
+    ["ef_b_combatboat_unarmed_nato_t",      [-1,  []]],
     ["ef_b_combatboat_unarmed_mjtf_des",    [-1,  []]],
+    ["ef_b_combatboat_hmg_nato_t",          [600, []]],
     ["ef_b_combatboat_hmg_mjtf_des",        [600, []]],
+    ["ef_b_combatboat_at_nato_t",           [600, []]],
     ["ef_b_combatboat_at_mjtf_des",         [600, []]],
+    ["ef_b_boat_armed_01_minigun_f",        [-1,  []]],
     ["ef_b_boat_armed_01_minigun_mjtf_des", [-1,  []]],
     ["ef_b_lcc_mjtf_des",                   [-1,  []]],
     ["ef_b_lcc_sideload_mjtf_des",          [-1,  []]],
