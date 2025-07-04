@@ -157,6 +157,8 @@ private _tanks = [
     ["b_d_mbt_01_tusk_lxws",                 [1000, ["engineer"]]],
     ["b_mbt_01_cannon_f",                    [-1,   ["engineer"]]],
     ["b_mbt_01_tusk_f",                      [-1,   ["engineer"]]],
+    ["o_mbt_02_cannon_f",                    [-1,   ["engineer"]]],
+    ["i_mbt_03_cannon_f",                    [-1,   ["engineer"]]],
     ["b_afv_wheeled_01_up_cannon_f",         [900,  ["engineer"]]],
     ["", []]
 ];
