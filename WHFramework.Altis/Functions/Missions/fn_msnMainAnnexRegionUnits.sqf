@@ -63,6 +63,17 @@ for "_i" from 1 to _vehicleCount do {
     _vehicles append assignedVehicles _group;
 };
 
+private _shipTypes = [["light", _faction], ["heavy", _faction]];
+private _shipCount = 1 + floor (_radius / 150);
+_shipCount = _shipCount * WHF_missions_annex_vehicles call WHF_fnc_scaleUnitsMain;
+for "_i" from 1 to _shipCount do {
+    private _group = [opfor, _shipTypes, [_standard], 1, _center, _radius] call WHF_fnc_spawnShips;
+    if (count units _group < 1) then {break};
+    [_group, getPosASL leader _group, 500] call WHF_fnc_taskWaterPatrol;
+    _groups pushBack _group;
+    _vehicles append assignedVehicles _group;
+};
+
 private _area = [_center, _radius, _radius];
 [_groups, _area] spawn WHF_fnc_attackLoop;
 
