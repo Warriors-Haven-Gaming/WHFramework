@@ -41,6 +41,7 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
 
         private _leadVehicle = objectParent _leader;
         if (!isNull _leadVehicle && {!canFire _leadVehicle}) then {continue};
+        if (_leadVehicle isKindOf "Ship") then {continue};
 
         private _waypoints = waypoints _x;
         if (
