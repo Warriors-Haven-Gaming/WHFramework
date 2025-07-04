@@ -8,7 +8,7 @@
 5 "BIS_fnc_spawn"
 1 "call" !="\[_this,\"bis_fnc_curatorrespawn\",false\] call bis_fnc_mp;" !"APS_Anims" !"SFX_ProjectR" !"WBK_Hit_|WBK_BloodSprayOnWall" !"DBUG_remoteExecs = \[\];"
 5 "compile"
-5 "exec" !"CBA_fnc_waitUntilAndExecute" !"DBUG_remoteExecs = \[\];"
+5 "exec" !"CBA_fnc_waitUntilAndExecute" !"bis_fnc_debugconsoleexec" !"DBUG_remoteExecs = \[\];"
 5 "loadFile"
 5 "preprocessFile"
 1 "spawn" !="\w+?_fnc_\w+? \[.*\]" !="\[_this,\"bis_fnc_curatorrespawn\",false\] call bis_fnc_mp;" !"SFX_ProjectR" !"spawn WBK_" !"WBK_Hit_|WBK_BloodSprayOnWall" !"DBUG_remoteExecs = \[\];"
