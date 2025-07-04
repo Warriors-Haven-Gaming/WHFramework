@@ -1,30 +1,28 @@
 /*
-Function: WHF_fnc_spawnVehicles
+Function: WHF_fnc_spawnShips
 
 Description:
-    Spawn vehicles at the given position.
+    Spawn ships at the given position.
 
 Parameters:
     Side side:
         The group's side.
     Array types:
-        One or more group types to spawn vehicles from.
-        See WHF_fnc_getVehicleTypes for allowed values.
+        One or more group types to spawn ships from.
+        See WHF_fnc_getShipTypes for allowed values.
     Array unitTypes:
         One or more group types to spawn units from.
         See WHF_fnc_getUnitTypes for allowed values.
     Number quantity:
-        The number of vehicles to spawn.
+        The number of ships to spawn.
     PositionATL center:
-        The position at which vehicles will spawn around.
-    Array | Number radius:
-        The radius around the position at which vehicles will spawn around.
-        An array can be passed to specify the minimum and maximum radius.
+        The position at which ships will spawn around.
+    Number radius:
+        The radius around the position at which ships will spawn around.
     Array flags:
         (Optional, default [])
         An array containing any of the following flags:
-            "hidden": Find hidden positions to spawn vehicles.
-            "noDynamicSimulation": Disable dynamic simulation on vehicles and groups.
+            "": No flags are currently supported.
 
 Returns:
     Group
@@ -45,31 +43,27 @@ params [
 ];
 if (_quantity < 1) exitWith {grpNull};
 
-private _randomPos =
-    [WHF_fnc_randomPos, WHF_fnc_randomPosHidden]
-    select ("hidden" in _flags);
-private _dynamicSimulation = !("noDynamicSimulation" in _flags);
+// private _dynamicSimulation = !("noDynamicSimulation" in _flags);
 
 private _group = createGroup [_side, true];
-private _vehicleTypes = _types call WHF_fnc_getVehicleTypes;
+private _shipTypes = _types call WHF_fnc_getShipTypes;
 private _vehicles = [];
 for "_i" from 1 to _quantity do {
     private _pos = _center;
     private _special = "NONE";
-    if (_radius isEqualType [] || {_radius > 0}) then {
-        private _empty = [_center, _radius] call _randomPos;
+    if (_radius > 0) then {
+        private _empty = [_center, 0, _radius, 5, 2, 0, 0, [], [[0,0], [0,0]]] call BIS_fnc_findSafePos;
         if (_empty isEqualTo [0,0]) then {break};
         _pos = _empty;
         _special = "CAN_COLLIDE";
     };
 
-    private _vehicle = createVehicle [selectRandom _vehicleTypes, _pos, [], 0, _special];
+    private _vehicle = createVehicle [selectRandom _shipTypes, _pos, [], 0, _special];
     _vehicle setDir random 360;
-    _vehicle setVectorUp surfaceNormal getPosATL _vehicle;
     _group addVehicle _vehicle;
     _vehicles pushBack _vehicle;
 
-    WHF_usedPositions pushBack [_vehicle, 10];
+    // WHF_usedPositions pushBack [_vehicle, 10];
 };
 
 {
@@ -86,9 +80,10 @@ _group allowFleeing 0;
 _group setBehaviourStrong "SAFE";
 _group setCombatMode "RED";
 
-if (_dynamicSimulation) then {
-    private _objects = _vehicles + [_group];
-    [_objects, true, 1] spawn WHF_fnc_enableDynamicSimulation;
-};
+// FIXME: ships seem to not support dynamic simulation
+// if (_dynamicSimulation) then {
+//     private _objects = _vehicles + [_group];
+//     [_objects, true, 1] spawn WHF_fnc_enableDynamicSimulation;
+// };
 
 _group
