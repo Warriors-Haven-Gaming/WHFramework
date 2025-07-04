@@ -85,6 +85,8 @@ private _APCs = [
     ["b_apc_wheeled_01_command_lxws",  [-1,  []]],
     ["b_apc_wheeled_01_cannon_f",      [-1,  []]],
     ["b_apc_tracked_01_rcws_f",        [-1,  []]],
+    ["i_apc_wheeled_03_cannon_f",      [-1,  []]],
+    ["i_apc_tracked_03_cannon_f",      [-1,  []]],
     ["", []]
 ];
 
