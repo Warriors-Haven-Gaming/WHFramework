@@ -39,7 +39,8 @@ params ["_cache"];
     {},
     {
         params ["_cache", "_caller"];
-        _cache setVariable ["WHF_cache_secured", true, true];
+        deleteVehicle _cache;
+        // _cache setVariable ["WHF_cache_secured", true, true];
         // TODO: add sideChat notification
     },
     {},
