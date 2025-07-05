@@ -12,6 +12,7 @@ Author:
 
 */
 if (!isNull objectParent focusOn) exitWith {false};
+if (!WHF_service_enabled) exitWith {false};
 
 getCursorObjectParams params ["_vehicle", "", "_distance"];
 if (!alive _vehicle) exitWith {false};

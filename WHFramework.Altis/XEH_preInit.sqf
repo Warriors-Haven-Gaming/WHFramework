@@ -1128,6 +1128,18 @@ call WHF_fnc_cycleFaction;
     false
 ] call WHF_fnc_addSetting;
 
+// Service
+[
+    "WHF_service_enabled",
+    "CHECKBOX",
+    ["STR_WHF_settings_service_enabled", "STR_WHF_settings_service_enabled_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_service"],
+    true,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+
 // Time
 [
     "WHF_requestSkipTime_enabled",
