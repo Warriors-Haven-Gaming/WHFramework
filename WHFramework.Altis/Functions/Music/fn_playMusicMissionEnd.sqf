@@ -26,7 +26,6 @@ selectRandom [
     ["LeadTrack02_F_Jets", 0],      // Air Power
     ["LeadTrack01_F_Mark", 0],      // This is War (Marksmen Remix)
     ["Track_O_01", 0],              // A2 OA: Arrowhead
-    ["EventTrack02_F_Orange", 0],   // Laws of War DLC: Scenario Completed
     ["Track_P_17", 0],              // A2 BAF: Jackals
     ["Track_R_01", 0],              // A2: Manhattan
     ["Track_R_17", 0]               // A2: Insertion
