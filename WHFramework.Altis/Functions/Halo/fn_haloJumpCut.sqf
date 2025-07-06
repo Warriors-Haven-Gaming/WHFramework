@@ -16,7 +16,7 @@ Author:
 params ["_seed"];
 
 cutText ["", "BLACK", 2];
-WHF_haloJump_soundVolume = soundVolume;
+private _soundVolume = soundVolume;
 2 fadeSound 0;
 sleep 2;
 
@@ -27,7 +27,7 @@ sleep (0.75 + (_seed random 0.5));
 
 playSoundUI ["UAV_05_tailhook_up_sound"];
 
-5 fadeSound WHF_haloJump_soundVolume;
+5 fadeSound _soundVolume;
 sleep (2 + (_seed + 1 random 3));
 
 cutText ["", "BLACK IN", 1];
