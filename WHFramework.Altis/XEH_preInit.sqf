@@ -1170,7 +1170,20 @@ call WHF_fnc_cycleFaction;
     true,
     {
         WHF_timeMultiplier = round (_this * 10) / 10;
-        if (isServer) then {setTimeMultiplier WHF_timeMultiplier};
+        ["refresh"] call WHF_fnc_setTimeMultiplier;
+    },
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_timeMultiplier_night",
+    "SLIDER",
+    ["STR_WHF_settings_time_multiplier_night", "STR_WHF_settings_time_multiplier_night_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_time"],
+    [1, 60, 40, 1, false],
+    true,
+    {
+        WHF_timeMultiplier_night = round (_this * 10) / 10;
+        ["refresh"] call WHF_fnc_setTimeMultiplier;
     },
     false
 ] call WHF_fnc_addSetting;

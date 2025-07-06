@@ -49,3 +49,4 @@ WHF_sideMissionLoop_script = [
 WHF_gcDeletionQueue = [];
 WHF_gcUnhideQueue = [];
 WHF_garbageCollector_script = 0 spawn WHF_fnc_garbageCollectorLoop;
+WHF_timeMultiplierLoop_script = 0 spawn WHF_fnc_timeMultiplierLoop;

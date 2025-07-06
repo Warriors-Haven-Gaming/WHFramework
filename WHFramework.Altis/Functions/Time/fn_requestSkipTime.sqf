@@ -54,10 +54,10 @@ WHF_requestSkipTime_script = [side group _player, _timeOfDay, _target] spawn {
     private _waitForNextDay = dayTime > _target;
     while {_waitForNextDay || {dayTime < _target}} do {
         if (dayTime < _target) then {_waitForNextDay = FALSE};
-        if (timeMultiplier < 120) then {setTimeMultiplier 120};
+        ["skip"] call WHF_fnc_setTimeMultiplier;
         sleep 5;
     };
 
-    setTimeMultiplier _lastTimeMultiplier;
+    ["reset"] call WHF_fnc_setTimeMultiplier;
     [_side, _timeOfDay] remoteExec ["WHF_fnc_showSkipTimeCompleted", WHF_globalPlayerTarget];
 };
