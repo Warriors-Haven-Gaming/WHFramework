@@ -41,6 +41,7 @@ with uiNamespace do {
         call WHF_roleSelectionGUI_updateRoles;
         call WHF_roleSelectionGUI_updatePlayers;
         call WHF_roleSelectionGUI_updateSelect;
+        call WHF_roleSelectionGUI_updateRespawn;
     };
 
     WHF_roleSelectionGUI_updateHeader = {
@@ -98,6 +99,19 @@ with uiNamespace do {
         private _selected = call WHF_roleSelectionGUI_selectedRole;
         private _enabled = [_selected] call WHF_roleSelectionGUI_canSwitchToRole;
         WHF_roleSelectionGUI_ctrlSelect ctrlEnable _enabled;
+    };
+
+    WHF_roleSelectionGUI_updateRespawn = {
+        private _enabled = with missionNamespace do {
+            // FIXME: respawn condition is somewhat unintuitive
+            // NOTE: WHF_fnc_respawnMarkers is side-specific, but
+            //       WHF_fnc_isNearRespawn is side-agnostic
+            private _marker = [focusOn] call WHF_fnc_respawnMarkers select 0;
+            !isNil "_marker"
+            && {focusOn distance2D markerPos _marker > 50
+            && {[focusOn, 100] call WHF_fnc_isNearRespawn}}
+        };
+        WHF_roleSelectionGUI_ctrlRespawn ctrlEnable _enabled;
     };
 
     WHF_roleSelectionGUI_requestRole = {
@@ -211,6 +225,46 @@ with uiNamespace do {
     WHF_roleSelectionGUI_ctrlSelect ctrlAddEventHandler ["ButtonClick", {with uiNamespace do {
         call WHF_roleSelectionGUI_requestRole;
     }}];
+
+    WHF_roleSelectionGUI_ctrlRespawn = _display ctrlCreate ["RscButtonMenu", -1, _group];
+    WHF_roleSelectionGUI_ctrlRespawn ctrlSetPosition ([0.53, 0.89, 0.15, 0.06] call _scaleToGroup);
+    WHF_roleSelectionGUI_ctrlRespawn ctrlSetStructuredText composeText [
+        parseText "<img image='\a3\ui_f\data\igui\cfg\actions\getout_ca.paa' size='1'/>",
+        text localize "$str_disp_int_respawn" setAttributes [
+            "align", "center",
+            "font", "RobotoCondensed",
+            "size", "1",
+            "valign", "middle"
+        ]
+    ];
+    WHF_roleSelectionGUI_ctrlRespawn ctrlCommit 0;
+
+    WHF_roleSelectionGUI_ctrlRespawn ctrlAddEventHandler ["ButtonClick", {
+        closeDialog 1;
+        playSoundUI ["a3\3den\data\sound\cfgsound\notificationdefault.wss"];
+
+        0 spawn {
+            scriptName "WHF_fnc_roleSelectionGUI_respawn";
+            private _duration = 0.75 + random 0.5;
+            private _half = _duration / 2;
+
+            if !("slow" in animationState focusOn) then {
+                focusOn action ["WeaponOnBack", focusOn];
+            };
+
+            cutText ["", "BLACK", _half];
+            private _soundVolume = soundVolume;
+            _half fadeSound 0;
+            sleep _duration;
+
+            private _marker = [focusOn] call WHF_fnc_respawnMarkers select 0;
+            focusOn setPosATL markerPos [_marker, true];
+            focusOn setDir markerDir _marker;
+
+            _half fadeSound _soundVolume;
+            cutText ["", "BLACK IN", _half];
+        };
+    }];
 
     _display displayAddEventHandler ["KeyDown", {with uiNamespace do {
         params ["", "_key", "_shift", "_ctrl", "_alt"];
