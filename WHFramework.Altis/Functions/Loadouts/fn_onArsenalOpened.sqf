@@ -26,3 +26,7 @@ if (!isNil "_role" && {WHF_loadout_center isNotEqualTo player}) then {
         0.5
     ];
 };
+
+if (!isClass (configFile >> "CfgPatches" >> "ace_arsenal")) then {
+    WHF_loadout_center call WHF_fnc_lowerWeapon;
+};
