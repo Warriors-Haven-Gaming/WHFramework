@@ -133,6 +133,8 @@ while {true} do {
     private _current = {lifeState _x in ["HEALTHY", "INJURED"]} count _allThreats;
 
     if (_current <= _threshold) exitWith {
+        private _message = "$STR_WHF_destroyRoadblock_success";
+        [[blufor, "HQ"], _message] remoteExec ["WHF_fnc_localizedSideChat", blufor];
         [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
     };
 };

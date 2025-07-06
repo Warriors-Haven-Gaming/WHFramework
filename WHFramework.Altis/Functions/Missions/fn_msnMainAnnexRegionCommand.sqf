@@ -64,6 +64,7 @@ private _taskID = [
 while {true} do {
     sleep 3;
     if (!alive _commander || {captive _commander}) exitWith {
+        // TODO: add message showing who killed or captured the commander
         [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
     };
 };
