@@ -192,6 +192,8 @@ private _helicopters = [
     ["valor_transport_unarmed_f",                [600, ["pilot_transport"]]],
     ["b_t_vtol_01_infantry_f",                   [600, ["pilot_transport"]]],
     ["b_t_vtol_01_vehicle_f",                    [600, ["pilot_transport"]]],
+    ["o_t_vtol_02_infantry_dynamicloadout_f",    [900, ["pilot_transport"]]],
+    ["o_t_vtol_02_vehicle_dynamicloadout_f",     [900, ["pilot_transport", "pilot_cas"]]],
     ["b_d_heli_transport_01_lxws",               [-1,  ["pilot_transport"]]],
     ["b_heli_light_03_unarmed_rf",               [-1,  ["pilot_transport"]]],
     ["b_heli_ec_04_military_rf",                 [-1,  ["pilot_transport"]]],
