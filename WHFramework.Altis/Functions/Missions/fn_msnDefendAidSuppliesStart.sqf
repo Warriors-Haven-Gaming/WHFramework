@@ -96,7 +96,8 @@ private _state = while {true} do {
     };
 
     if (_time >= _endAt) exitWith {
-        [[blufor, "HQ"], "$STR_WHF_defendAidSupplies_success"] call _sideChat;
+        private _message = "$STR_WHF_defendAidSupplies_success";
+        [[blufor, "HQ"], _message] remoteExec ["WHF_fnc_localizedSideChat", blufor];
         "SUCCEEDED"
     };
 };
