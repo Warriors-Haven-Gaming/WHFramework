@@ -50,6 +50,8 @@ private _units = _allUnits select {isNull objectParent _x};
 
 private _seed = floor random 1000000;
 private _players = flatten (_vehicles apply {crew _x}) select {isPlayer _x && {_x isNotEqualTo focusOn}};
+
+focusOn call WHF_fnc_lowerWeapon;
 _seed spawn WHF_fnc_haloJumpCut;
 [_seed] remoteExec ["WHF_fnc_haloJumpCut", _players];
 {[_x, _forEachIndex] spawn {
