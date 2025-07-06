@@ -36,7 +36,10 @@ private _actionID = [
     }
     ",
     "true",
-    {},
+    {
+        params ["", "_caller"];
+        _caller call WHF_fnc_lowerWeapon;
+    },
     {},
     {
         // TODO: add a vehicle inventory editor
