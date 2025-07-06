@@ -42,6 +42,7 @@ if (surfaceIsWater _pos) then {
 };
 if (_pos isEqualTo []) exitWith {call WHF_fnc_vehSpawnObstructed};
 
+player call WHF_fnc_lowerWeapon;
 disableUserInput true;
 0 cutText ["", "BLACK OUT", 0.5];
 sleep 0.5;
