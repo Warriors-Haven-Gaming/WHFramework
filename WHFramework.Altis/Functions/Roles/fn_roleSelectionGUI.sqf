@@ -248,10 +248,7 @@ with uiNamespace do {
             private _duration = 0.75 + random 0.5;
             private _half = _duration / 2;
 
-            if !("slow" in animationState focusOn) then {
-                focusOn action ["WeaponOnBack", focusOn];
-            };
-
+            focusOn call WHF_fnc_lowerWeapon;
             cutText ["", "BLACK", _half];
             private _soundVolume = soundVolume;
             _half fadeSound 0;

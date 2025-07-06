@@ -33,9 +33,7 @@ private _carryID = [
     {
         params ["_target", "_caller"];
         _target setVariable ["WHF_carry_caller", _caller];
-        if !("slow" in animationState _caller) then {
-            _caller action ["WeaponOnBack", _caller];
-        };
+        _caller call WHF_fnc_lowerWeapon;
     },
     {},
     {
