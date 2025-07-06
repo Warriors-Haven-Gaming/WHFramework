@@ -30,6 +30,12 @@ private _canSpot = switch (true) do {
         private _vehicle = objectParent _unit;
         _unit in [gunner _vehicle, commander _vehicle]
     };
+    // FIXME: add support for reporting JTAC targets within drones
+    //        (requires reworking action to show on other units)
+    // case (unitIsUAV remoteControlled _unit): {
+    //     private _vehicle = objectParent remoteControlled _unit;
+    //     focusOn in [gunner _vehicle, commander _vehicle]
+    // };
     default {currentWeapon _unit isEqualTo binocular _unit};
 };
 if (!_canSpot) exitWith {false};
