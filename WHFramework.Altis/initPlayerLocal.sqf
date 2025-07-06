@@ -34,6 +34,7 @@ call WHF_fnc_initDroneHandlers;
 call WHF_fnc_initCruiseKeybind;
 call WHF_fnc_initDetainKeybind;
 call WHF_fnc_initEarplugsKeybind;
+call WHF_fnc_initHolsterKeybind;
 call WHF_fnc_initMagRepackKeybind;
 [player] call WHF_fnc_initVehicleLockHandlers;
 call WHF_fnc_vehSpawnCatalogClient;
