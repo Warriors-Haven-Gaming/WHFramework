@@ -27,7 +27,10 @@ private _actionID = [
         50 cutText [localize "$STR_WHF_initUnflipAction_crew", "PLAIN", 0.5];
         false
     },
-    {},
+    {
+        params ["", "_caller"];
+        _caller call WHF_fnc_lowerWeapon;
+    },
     {},
     {[cursorObject] remoteExec ["WHF_fnc_unflipVehicle", cursorObject]},
     {},
