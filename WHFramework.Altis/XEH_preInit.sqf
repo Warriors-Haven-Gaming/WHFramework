@@ -1166,7 +1166,7 @@ call WHF_fnc_cycleFaction;
     "SLIDER",
     ["STR_WHF_settings_time_multiplier", "STR_WHF_settings_time_multiplier_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_time"],
-    [1, 60, 10, 1, false],
+    [1, 120, 10, 1, false],
     true,
     {
         WHF_timeMultiplier = round (_this * 10) / 10;
@@ -1179,7 +1179,7 @@ call WHF_fnc_cycleFaction;
     "SLIDER",
     ["STR_WHF_settings_time_multiplier_night", "STR_WHF_settings_time_multiplier_night_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_time"],
-    [1, 60, 40, 1, false],
+    [1, 120, 40, 1, false],
     true,
     {
         WHF_timeMultiplier_night = round (_this * 10) / 10;
