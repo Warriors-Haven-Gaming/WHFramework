@@ -22,5 +22,6 @@ if (isClass (configFile >> "CfgPatches" >> "cba_keybinding")) then {
     findDisplay 46 displayAddEventHandler ["KeyDown", {
         params ["", "_key"];
         if (_key isEqualTo DIK_T) then {call WHF_fnc_detainAction};
+        nil
     }];
 };

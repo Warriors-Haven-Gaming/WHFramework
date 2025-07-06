@@ -22,6 +22,7 @@ if (isClass (configFile >> "CfgPatches" >> "cba_keybinding")) then {
     findDisplay 46 displayAddEventHandler ["KeyDown", {
         params ["", "_key"];
         if (_key isEqualTo DIK_LWIN) then {call WHF_fnc_contextMenuShow};
+        nil
     }];
     findDisplay 46 displayAddEventHandler ["KeyUp", {
         params ["", "_key"];

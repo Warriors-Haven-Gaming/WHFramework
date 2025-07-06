@@ -26,5 +26,6 @@ if (isClass (configFile >> "CfgPatches" >> "cba_keybinding")) then {
     findDisplay 46 displayAddEventHandler ["KeyDown", {
         params ["", "_key"];
         if (_key isEqualTo DIK_4) then {focusOn call WHF_fnc_holsterWeapon};
+        nil
     }];
 };

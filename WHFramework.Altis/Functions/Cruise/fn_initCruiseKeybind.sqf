@@ -43,5 +43,6 @@ if (isClass (configFile >> "CfgPatches" >> "cba_keybinding")) then {
         if (_key isEqualTo DIK_INSERT) then {call WHF_fnc_cruiseAction};
         if (_ctrl && {_key isEqualTo MOUSE_SCROLL_UP}) then {true call WHF_fnc_cruiseActionAdjust};
         if (_ctrl && {_key isEqualTo MOUSE_SCROLL_DOWN}) then {false call WHF_fnc_cruiseActionAdjust};
+        nil
     }];
 };

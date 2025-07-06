@@ -28,5 +28,6 @@ if (isClass (configFile >> "CfgPatches" >> "cba_keybinding")) then {
         if (_key isNotEqualTo DIK_R) exitWith {};
         if !([focusOn] call WHF_fnc_canMagRepack) exitWith {};
         [focusOn] spawn WHF_fnc_magRepack;
+        nil
     }];
 };
