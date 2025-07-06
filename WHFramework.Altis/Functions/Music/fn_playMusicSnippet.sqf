@@ -43,7 +43,7 @@ params [
 if (!isNil "WHF_playMusicSnippet_script") then {terminate WHF_playMusicSnippet_script};
 WHF_playMusicSnippet_script = _thisScript;
 
-if (_fadeLast < 0 && {getMusicPlayedTime <= 0}) exitWith {};
+if (_fadeLast < 0 && {getMusicPlayedTime > 0}) exitWith {};
 if (_fadeLast >= 0 && {getMusicPlayedTime > 0}) then {
     _fadeLast fadeMusic 0;
     sleep _fadeLast;
