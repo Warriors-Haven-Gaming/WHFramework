@@ -17,6 +17,7 @@ if (isClass (configFile >> "CfgPatches" >> "cba_keybinding")) then {
         ["$STR_WHF_holster_keybind", "$STR_WHF_holster_keybind_tooltip"],
         {
             if (isClass (configFile >> "CfgPatches" >> "ace_weaponselect")) exitWith {};
+            if (commandingMenu isNotEqualTo "") exitWith {};
             focusOn call WHF_fnc_holsterWeapon;
         },
         {},
@@ -25,7 +26,9 @@ if (isClass (configFile >> "CfgPatches" >> "cba_keybinding")) then {
 } else {
     findDisplay 46 displayAddEventHandler ["KeyDown", {
         params ["", "_key"];
-        if (_key isEqualTo DIK_4) then {focusOn call WHF_fnc_holsterWeapon};
+        if (_key isNotEqualTo DIK_4) exitWith {};
+        if (commandingMenu isNotEqualTo "") exitWith {};
+        focusOn call WHF_fnc_holsterWeapon;
         nil
     }];
 };
