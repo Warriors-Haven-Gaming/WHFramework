@@ -16,6 +16,8 @@ params ["_position"];
 
 uiNamespace setVariable ["WHF_spawnRecruitGUI_pos", _position];
 
+focusOn call WHF_fnc_lowerWeapon;
+
 with uiNamespace do {
     createDialog "RscDisplayEmpty";
     private _display = findDisplay -1;
