@@ -245,6 +245,7 @@ private _ships = [
     ["b_boat_transport_01_f",               [-1,  []]],
     ["b_lifeboat",                          [-1,  []]],
     ["b_boat_armed_01_minigun_f",           [-1,  []]],
+    ["o_boat_armed_01_hmg_f",               [-1,  []]],
     ["c_boat_civil_01_f",                   [-1,  []]],
     ["c_boat_transport_02_f",               [-1,  []]],
     ["c_scooter_transport_01_f",            [-1,  []]],
