@@ -16,6 +16,7 @@ if (!hasInterface) exitWith {};
         private _vehicle = cursorObject;
         if !([_vehicle] call WHF_fnc_canForceRespawnVehicle) exitWith {};
 
+        call WHF_fnc_contextMenuHide;
         private _confirmed = [
             format [
                 localize "$STR_WHF_context_action_respawn_vehicle_confirm",
