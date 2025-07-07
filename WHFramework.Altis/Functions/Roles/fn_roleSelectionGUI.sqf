@@ -200,6 +200,13 @@ with uiNamespace do {
         call WHF_roleSelectionGUI_updateSelect;
     }}];
 
+    WHF_roleSelectionGUI_ctrlRoles ctrlAddEventHandler ["KeyDown", {with uiNamespace do {
+        params ["", "_key", "_shift", "_ctrl", "_alt"];
+        if !(_key in [DIK_RETURN, DIK_NUMPADENTER]) exitWith {};
+        if (_alt) exitWith {}; // Alt+Enter usually toggles fullscreen
+        call WHF_roleSelectionGUI_requestRole;
+    }}];
+
     private _playersTitle = _display ctrlCreate ["RscText", -1, _group];
     _playersTitle ctrlSetPosition ([0.7, 0.15, 0.25, 0.05] call _scaleToGroup);
     _playersTitle ctrlSetText localize "$STR_WHF_roleSelectionGUI_players";
@@ -264,13 +271,6 @@ with uiNamespace do {
             cutText ["", "BLACK IN", _half];
         };
     }];
-
-    _display displayAddEventHandler ["KeyDown", {with uiNamespace do {
-        params ["", "_key", "_shift", "_ctrl", "_alt"];
-        if !(_key in [DIK_RETURN, DIK_NUMPADENTER]) exitWith {};
-        if (_alt) exitWith {}; // Alt+Enter usually toggles fullscreen
-        call WHF_roleSelectionGUI_requestRole;
-    }}];
 
     call WHF_roleSelectionGUI_refreshState;
     _display spawn {
