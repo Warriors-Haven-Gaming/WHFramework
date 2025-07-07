@@ -16,7 +16,10 @@ if (!hasInterface) exitWith {};
         private _vehicle = cursorObject;
         if !([_vehicle] call WHF_fnc_canForceRespawnVehicle) exitWith {};
 
+        // HACK: Key is considered held down even after the dialog is closed.
+        //       Requires double-tapping context menu to re-open it.
         call WHF_fnc_contextMenuHide;
+
         private _confirmed = [
             format [
                 localize "$STR_WHF_context_action_respawn_vehicle_confirm",
