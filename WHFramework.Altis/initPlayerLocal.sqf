@@ -27,6 +27,7 @@ call WHF_fnc_initContextActionFPV;
 call WHF_fnc_initContextActionHaloJump;
 call WHF_fnc_initContextActionMagRepack;
 call WHF_fnc_initContextActionQuadbike;
+call WHF_fnc_initContextActionRespawn;
 call WHF_fnc_initContextActionSelfDestruct;
 call WHF_fnc_initContextHandlers;
 call WHF_fnc_initDiary;

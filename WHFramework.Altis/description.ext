@@ -102,6 +102,7 @@ class CfgFunctions {
             class initContextActionHaloJump {};
             class initContextActionMagRepack {};
             class initContextActionQuadbike {};
+            class initContextActionRespawn {};
             class initContextActionSelfDestruct {};
             class initContextHandlers {};
         };
@@ -302,6 +303,8 @@ class CfgFunctions {
         };
         class Respawn {
             class addRespawnVehicle {};
+            class canForceRespawnVehicle {};
+            class forceRespawnVehicle {};
             class initRespawnSystem { preInit = 1; };
             class nearObjectsRespawn {};
             class respawnLoop {};
