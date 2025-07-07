@@ -68,6 +68,7 @@ for "_i" from 0 to 1 + random 4 do {
     };
     if (_pos isEqualTo [0,0]) then {break};
 
+    // NOTE: type is checked in WHF_fnc_msnSecureCachesActionCompleted
     private _cache = createVehicle ["Box_FIA_Ammo_F", [-random 500, -random 500, 500], [], 0, "CAN_COLLIDE"];
     _cache enableSimulationGlobal false;
     _cache setDir random 360;

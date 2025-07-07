@@ -39,9 +39,7 @@ params ["_cache"];
     {},
     {
         params ["_cache", "_caller"];
-        deleteVehicle _cache;
-        // _cache setVariable ["WHF_cache_secured", true, true];
-        // TODO: add sideChat notification
+        [_cache] remoteExec ["WHF_fnc_msnSecureCachesActionCompleted"];
     },
     {},
     [],

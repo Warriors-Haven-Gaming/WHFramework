@@ -59,6 +59,7 @@ class CfgRemoteExec {
         class WHF_fnc_localizedHint { allowedTargets = 1; };
         class WHF_fnc_localizedSideChat { allowedTargets = 1; };
         class WHF_fnc_msnDownloadIntelLaptopTimer {};
+        class WHF_fnc_msnSecureCachesActionCompleted {};
         class WHF_fnc_playMusicSnippet { allowedTargets = 1; };
         class WHF_fnc_queueGCDeletion { allowedTargets = 2; };
         class WHF_fnc_removePrisonerActions {};
