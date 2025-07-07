@@ -19,7 +19,9 @@ private _isPilot = {
     if ("pilot" in _role) exitWith {true};
 
     private _vehicle = objectParent player;
-    _vehicle isKindOf "Air" && {currentPilot _vehicle isEqualTo player}
+    _vehicle isKindOf "Air"
+    && {currentPilot _vehicle isEqualTo player
+    && {!(_vehicle isKindOf "ParachuteBase")}}
 };
 
 while {true} do {
