@@ -14,6 +14,7 @@ if (!hasInterface) exitWith {};
     localize "$STR_WHF_context_action_respawn_vehicle",
     {
         private _vehicle = cursorObject;
+        if !([_vehicle] call WHF_fnc_canForceRespawnVehicle) exitWith {};
 
         private _confirmed = [
             format [
