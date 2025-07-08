@@ -58,7 +58,7 @@ _arsenal addAction [
         playSoundUI [_sound, 0.75, 1, true];
     },
     nil,
-    1.5,
+    6,
     true,
     true,
     "",
@@ -70,7 +70,7 @@ _arsenal addAction [
     localize "$STR_WHF_roleSelectionGUI_title",
     WHF_fnc_roleSelectionGUI,
     nil,
-    1.5,
+    6,
     true,
     true,
     "",
