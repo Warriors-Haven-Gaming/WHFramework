@@ -30,44 +30,47 @@ params [
     ["_duration", WHF_selfRevive_duration]
 ];
 
+private _canWaitToRevive = {
+    // Interrupt self-reviving if we're being revived by another unit
+    if (!isNil {_unit getVariable "WHF_revive_caller"}) exitWith {true};
+
+    // Indefinitely suspend self-reviving when over the player limit
+    if (count allPlayers > WHF_selfRevive_maxPlayers) exitWith {true};
+
+    // Immediately self-revive if we're about to bleed out
+    if (_time >= _mustRevive) exitWith {false};
+
+    // Give some time for carrying, or for AI medics to arrive
+    if (_time < call _getHoldTime) exitWith {true};
+
+    false
+};
+
+private _getHoldTime = {
+    private _holdDelay =
+        [WHF_recruits_incap_hold, WHF_recruits_incap_hold_assigned]
+        select call _isAssigned;
+    _incappedAt + _holdDelay + _randomDelay
+};
+
 private _isAssigned = {
     !isNil {_unit getVariable "WHF_reviveActionAuto_assigned"}
     || {!isNil {_unit getVariable "WHF_carry_caller"}
     || {!isNull attachedTo _unit}}
 };
-private _beforeHoldAssigned = {
-    _time < _incappedAt + WHF_recruits_incap_hold_assigned min _mustRevive
-};
 
-sleep (_delay + random 5);
+sleep _delay;
 
 private _incappedAt = time;
 private _bleedoutAt = _incappedAt + WHF_revive_bleedout; // Duplicated in WHF_fnc_incapLoop
+private _randomDelay = random 5; // Helps avoid units simultaneously reviving
 private _mustRevive = _bleedoutAt - _duration - 10;
 private _startedAt = -1;
 while {local _unit && {lifeState _unit isEqualTo "INCAPACITATED"}} do {
     sleep (1 + random 1);
 
-    // Interrupt self-reviving if we're being revived by another unit
-    if (!isNil {_unit getVariable "WHF_revive_caller"}) then {
-        _startedAt = -1;
-        continue;
-    };
-
-    // Indefinitely suspend self-reviving when over the player limit
-    if (count allPlayers > WHF_selfRevive_maxPlayers) then {
-        _startedAt = -1;
-        continue;
-    };
-
-    // Give some time for carrying, or for AI medics to arrive
     private _time = time;
-    if (call _isAssigned && _beforeHoldAssigned) then {
-        _startedAt = -1;
-        continue;
-    };
-
-    if (_time < _incappedAt + WHF_recruits_incap_hold min _mustRevive) then {
+    if (call _canWaitToRevive) then {
         _startedAt = -1;
         continue;
     };
