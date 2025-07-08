@@ -343,6 +343,7 @@ class CfgFunctions {
         class Service {
             class canServiceVehicle {};
             class initServiceAction {};
+            class initServiceHandlers { postInit = 1; };
             class playServiceSound {};
             class serviceVehicle {};
         };
