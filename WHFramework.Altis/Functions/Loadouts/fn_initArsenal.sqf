@@ -14,6 +14,8 @@ Author:
 */
 params ["_arsenal"];
 
+_arsenal lockInventory true;
+
 if (isClass (configFile >> "CfgPatches" >> "ace_arsenal")) then {
     [_arsenal, true] call ace_arsenal_fnc_initBox;
 
