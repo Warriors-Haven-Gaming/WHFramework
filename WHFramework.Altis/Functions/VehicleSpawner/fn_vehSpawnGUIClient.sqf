@@ -207,6 +207,7 @@ with uiNamespace do {
         WHF_vehSpawnGUI_lastVehicles set [_category, _vehicle];
         WHF_vehSpawnGUI_ctrlVehicle_preview = _vehicle createVehicleLocal [-random 500, -random 500, random 500];
         WHF_vehSpawnGUI_ctrlVehicle_preview allowDamage false;
+        WHF_vehSpawnGUI_ctrlVehicle_preview setPhysicsCollisionFlag false;
         WHF_vehSpawnGUI_ctrlVehicle_preview setVehicleLock "LOCKED";
         WHF_vehSpawnGUI_ctrlVehicle_preview setDir WHF_vehSpawnGUI_dir;
         WHF_vehSpawnGUI_ctrlVehicle_preview setPos WHF_vehSpawnGUI_pos;
