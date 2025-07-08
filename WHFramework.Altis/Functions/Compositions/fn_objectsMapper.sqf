@@ -100,6 +100,9 @@ private _objects = _composition apply {
         case (_frozen): {
             private _obj = createVehicle [_type, _randPos, [], 0, "NONE"];
             _obj allowDamage false;
+            _obj setAmmoCargo 0;
+            _obj setFuelCargo 0;
+            _obj setRepairCargo 0;
             _obj enableSimulationGlobal !(_obj isKindOf "thingX");
             _obj
         };
