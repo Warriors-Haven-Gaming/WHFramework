@@ -201,6 +201,7 @@ private _helicopters = [
     ["b_heli_transport_01_pylons_f",             [600, ["pilot_transport"]]],
     ["b_heli_transport_03_f",                    [-1,  ["pilot_transport"]]],
     ["b_heli_ec_03_rf",                          [-1,  ["pilot_transport"]]],
+    ["i_heli_transport_02_f",                    [-1,  ["pilot_transport"]]],
     ["", []]
 ];
 
