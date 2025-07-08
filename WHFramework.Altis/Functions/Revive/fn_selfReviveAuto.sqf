@@ -37,6 +37,9 @@ private _canWaitToRevive = {
     // Indefinitely suspend self-reviving when over the player limit
     if (count allPlayers > WHF_selfRevive_maxPlayers) exitWith {true};
 
+    // Immediately self-revive if we're drowning
+    if (!isAbleToBreathe _unit) exitWith {false};
+
     // Immediately self-revive if we're about to bleed out
     if (_time >= _mustRevive) exitWith {false};
 
