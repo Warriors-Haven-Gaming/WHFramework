@@ -93,12 +93,22 @@ private _reinforceArgs = [
 ];
 private _reinforceScripts = _reinforceArgs apply {_x spawn WHF_fnc_reinforceLoop};
 
+private _aircraftTypes =
+    ["heli_attack", "heli_gunship", "jet_cap", "jet_cas"]
+    apply {[_x, _faction]};
+private _aircraftArgs = [true, 30, [opfor, independent], 5, 0, _aircraftTypes];
+private _aircraftScript = _aircraftArgs spawn WHF_fnc_aircraftLoop;
+_reinforceArgs pushBack _aircraftArgs;
+_reinforceScripts pushBack _aircraftScript;
+
 while {_this # 0} do {
     sleep 1;
     if !(_this # 0) exitWith {};
 
     _reinforceArgs # 0 set [1, WHF_missions_annex_reinforce_frequency_units];
     _reinforceArgs # 1 set [1, WHF_missions_annex_reinforce_frequency_vehicles];
+    _aircraftArgs set [1, WHF_missions_annex_reinforce_frequency_vehicles];
+    _aircraftArgs set [4, 4 call WHF_fnc_scaleUnitsMain];
 };
 
 {_x set [0, false]} forEach _reinforceArgs;
