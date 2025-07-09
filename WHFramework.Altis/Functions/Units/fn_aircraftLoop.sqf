@@ -60,8 +60,8 @@ private _gcAircraftGroup = {
 private _refreshTargetAreas = {
     private _targetGroups = call _getKnownTargets;
     private _targetPositions = [_targetGroups] call _getKnownTargetPositions;
-    private _aggregatedTargets = [_targetPositions, _targetGroups] call _aggregateTargetPositions;
-    _targetAreas = [_aggregatedTargets, _targetPositions] call _generateTargetAreas;
+    private _aggregatedTargets = [_targetPositions] call _aggregateTargetPositions;
+    _targetAreas = [_aggregatedTargets] call _generateTargetAreas;
     [_targetAreas] call _appendTargetAreaPriorities;
 
     if (_debug) then {
@@ -97,8 +97,8 @@ private _refreshTargetAreas = {
 
 private _getKnownTargets = {
     /*
-        Get every known target and the groups they're known to.
-        Return a HashMap of netId to [Object, [Group, ...]].
+        Get every known target and one group they're known to.
+        Return a HashMap of netId to [Object, Group].
     */
     private _groups = flatten (_sides apply {groups _x}) select {local _x};
     private _targetGroups = createHashMap;
@@ -106,16 +106,12 @@ private _getKnownTargets = {
         private _group = _x;
         private _targets =
             _group targets [true, 750, [], 600]
-            apply {[_x, leader _group targetKnowledge _x]}
-            select {[side _group, _x # 1 # 4] call BIS_fnc_sideIsEnemy}
-            apply {_x # 0};
+            select {leader _group knowsAbout _x >= 2.5};
 
         {
             private _key = netId _x;
             if (_key isEqualTo "0:0") then {continue};
-
-            _targetGroups getOrDefault [_key, [_x, []], true] params ["", "_groups"];
-            _groups pushBackUnique _group;
+            _targetGroups getOrDefault [_key, [_x, _group], true];
         } forEach _targets;
     } forEach _groups;
     _targetGroups
@@ -124,30 +120,19 @@ private _getKnownTargets = {
 private _getKnownTargetPositions = {
     /*
         Get every target's closest known position from their groups.
-        Return a HashMap of netId to PositionATL.
+        Return an Array of [Object, PositionATL].
     */
     params ["_targetGroups"];
-    private _targetPositions = createHashMap;
+    private _targetPositions = [];
     {
-        _y params ["_target", "_groups"];
+        _y params ["_target", "_group"];
 
-        // Get known positions from each group and select the lowest error margin
-        private _margins = [];
-        private _positions = [];
-        {
-            leader _x
-                targetKnowledge _target
-                params ["_knownByGroup", "", "", "", "", "_margin", "_position", "_ignored"];
-            if (!_knownByGroup) then {continue};
-            if (_ignored) then {continue};
+        leader _group
+            targetKnowledge _target
+            params ["", "", "", "", "", "", "_position", "_ignored"];
 
-            _margins pushBack _margin;
-            _positions pushBack _position;
-        } forEach _groups;
-        if (count _positions < 1) then {continue};
-
-        private _nearestPos = _positions select (_margins find selectMin _margins);
-        _targetPositions set [netId _target, _nearestPos];
+        if (_ignored) then {continue};
+        _targetPositions pushBack [_target, _position];
     } forEach _targetGroups;
     _targetPositions
 };
@@ -155,26 +140,26 @@ private _getKnownTargetPositions = {
 private _aggregateTargetPositions = {
     /*
         Group targets by proximity.
-        Return an Array of Objects.
+        Return an Array of [[Object, PositionATL], ...].
     */
-    params ["_targetPositions", "_targetGroups"];
+    params ["_targetPositions"];
     private _aggregatedTargets = [];
     {
-        private _target = _targetGroups get _x select 0;
-        private _position = _y;
+        _x params ["_target", "_position"];
 
         private _area = [_position, 500, 500];
         private _index = -1;
         {
-            if !([_x, _area] call WHF_fnc_anyInArea) then {continue};
+            private _positions = _x apply {_x # 1};
+            if !([_positions, _area] call WHF_fnc_anyInArea) then {continue};
             _index = _forEachIndex;
             break;
         } forEach _aggregatedTargets;
 
         if (_index >= 0) then {
-            _aggregatedTargets # _index pushBack _target;
+            _aggregatedTargets # _index pushBack _x;
         } else {
-            _aggregatedTargets pushBack [_target];
+            _aggregatedTargets pushBack [_x];
         };
     } forEach _targetPositions;
     _aggregatedTargets
@@ -185,25 +170,27 @@ private _generateTargetAreas = {
         Create area arrays based on the grouped targets.
         Return an Array of [area, targets].
     */
-    params ["_aggregatedTargets", "_targetPositions"];
+    params ["_aggregatedTargets"];
     private _targetAreas = [];
     {
-        private _targets = _x;
-        private _positions = _targets apply {_targetPositions get netId _x};
+        private _targets = _x apply {_x # 0};
+        private _positions = _x apply {_x # 1};
 
         private _center = [0,0,0];
-        {_center = _center vectorAdd _x} forEach _positions;
+        private _minX = _positions # 0 # 0;
+        private _minY = _positions # 0 # 1;
+        private _maxX = _positions # 0 # 0;
+        private _maxY = _positions # 0 # 1;
+        {
+            _center = _center vectorAdd _x;
+            _minX = _minX min _x # 0;
+            _minY = _minY min _x # 1;
+            _maxX = _maxX max _x # 0;
+            _maxY = _maxY max _x # 1;
+        } forEach _positions;
         _center = _center vectorMultiply (1 / count _positions);
 
-        private _diameter = 0;
-        {
-            private _y = _x;
-            {
-                private _distance = _x distance2D _y;
-                _diameter = _distance max _diameter;
-            } forEach _positions;
-        } forEach _positions;
-
+        private _diameter = [_minX, _minY] distance2D [_maxX, _maxY];
         private _area = [_center, _diameter / 2, _diameter / 2];
         _targetAreas pushBack [_area, _targets];
     } forEach _aggregatedTargets;
