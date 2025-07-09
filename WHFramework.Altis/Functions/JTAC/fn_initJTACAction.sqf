@@ -34,8 +34,11 @@ private _reportID = [
     {},
     {
         params ["", "_caller"];
+        private _target = cursorObject;
+        if !([_caller, _target] call WHF_fnc_canReportJTACTarget) exitWith {};
+
         playSoundUI ["beep_target"];
-        [_caller, cursorObject] remoteExec ["WHF_fnc_reportJTACTarget", 2];
+        [_caller, _target] remoteExec ["WHF_fnc_reportJTACTarget", 2];
         WHF_jtac_lastReport = time;
     },
     {},
