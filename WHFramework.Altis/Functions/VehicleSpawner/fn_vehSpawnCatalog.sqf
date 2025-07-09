@@ -142,7 +142,7 @@ private _airdefense = [
     ["cup_b_nm1097_avenger_usa_wdl", [-1,   []]],
     ["b_pickup_aat_rf",              [300,  []]],
     ["ef_b_mrap_01_laad_mjtf_des",   [-1,   []]],
-    ["b_apc_tracked_01_aa_f",        [1200, []]],
+    ["b_apc_tracked_01_aa_f",        [1200, ["engineer"]]],
     ["", []]
 ];
 
