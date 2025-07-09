@@ -3,7 +3,7 @@ Function: WHF_fnc_initFriendlyIcons
 
 Description:
     Set up friendly icons.
-    Function must be ran in scheduled environment.
+    Function must be executed in scheduled environment.
 
 Author:
     thegamecracks

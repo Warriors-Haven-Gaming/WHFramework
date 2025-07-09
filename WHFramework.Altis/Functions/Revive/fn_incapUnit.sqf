@@ -3,7 +3,7 @@ Function: WHF_fnc_incapUnit
 
 Description:
     Incapacitate a unit.
-    Function must be ran in scheduled environment.
+    Function must be executed in scheduled environment.
 
 Parameters:
     Object unit:

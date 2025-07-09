@@ -3,7 +3,7 @@ Function: WHF_fnc_msnDownloadIntel
 
 Description:
     Players must download intel from a research building.
-    Function must be ran in scheduled environment.
+    Function must be executed in scheduled environment.
 
 Parameters:
     PositionATL center:

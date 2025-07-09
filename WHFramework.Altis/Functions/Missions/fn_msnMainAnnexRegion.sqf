@@ -3,7 +3,7 @@ Function: WHF_fnc_msnMainAnnexRegion
 
 Description:
     Players must clear out enemies from a location.
-    Function must be ran in scheduled environment.
+    Function must be executed in scheduled environment.
 
 Parameters:
     Location location:

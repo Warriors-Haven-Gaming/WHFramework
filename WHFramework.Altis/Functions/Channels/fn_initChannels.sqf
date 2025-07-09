@@ -3,7 +3,7 @@ Function: WHF_fnc_initChannels
 
 Description:
     Initializes custom channels.
-    Function must be ran on server.
+    Function must be executed on server.
 
 Examples:
     (begin example)

@@ -3,7 +3,7 @@ Function: WHF_fnc_headshotEffects
 
 Description:
     Trigger effects as a result of being incapacitated by a headshot.
-    Function must be ran in scheduled environment.
+    Function must be executed in scheduled environment.
 
 Author:
     thegamecracks

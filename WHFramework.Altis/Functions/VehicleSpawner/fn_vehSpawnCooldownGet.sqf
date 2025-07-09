@@ -3,7 +3,7 @@ Function: WHF_fnc_vehSpawnCooldownGet
 
 Description:
     Return a player's vehicle spawner cooldown in seconds.
-    Must be called on server.
+    Function must be executed on server.
 
 Parameters:
     Object | String uid:

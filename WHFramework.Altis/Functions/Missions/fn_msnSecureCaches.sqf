@@ -3,7 +3,7 @@ Function: WHF_fnc_msnSecureCaches
 
 Description:
     Players must secure a weapons cache between two factions.
-    Function must be ran in scheduled environment.
+    Function must be executed in scheduled environment.
 
 Parameters:
     PositionATL center:

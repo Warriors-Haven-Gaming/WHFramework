@@ -3,7 +3,7 @@ Function: WHF_fnc_msnDefendAidSuppliesShelter
 
 Description:
     Create a task keeping track of sheltered civilians.
-    Function must be ran in scheduled environment.
+    Function must be executed in scheduled environment.
 
 Parameters:
     Array signal:

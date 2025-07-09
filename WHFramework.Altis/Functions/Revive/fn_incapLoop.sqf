@@ -5,7 +5,7 @@ Description:
     Handle a unit becoming incapacitated.
     This may be called on a remote unit, in which case the script will
     idle until the unit is killed/revived or the unit becomes local.
-    Function must be ran in scheduled environment.
+    Function must be executed in scheduled environment.
 
 Parameters:
     Object unit:

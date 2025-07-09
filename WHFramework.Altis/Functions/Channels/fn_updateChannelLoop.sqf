@@ -3,7 +3,7 @@ Function: WHF_fnc_updateChannelLoop
 
 Description:
     Periodically updates the player's channel access.
-    Function must be ran in scheduled environment.
+    Function must be executed in scheduled environment.
 
 Examples:
     (begin example)

@@ -3,7 +3,7 @@ Function: WHF_fnc_msnDestroyArtillery
 
 Description:
     Players must destroy an artillery emplacement.
-    Function must be ran in scheduled environment.
+    Function must be executed in scheduled environment.
 
 Parameters:
     PositionATL center:

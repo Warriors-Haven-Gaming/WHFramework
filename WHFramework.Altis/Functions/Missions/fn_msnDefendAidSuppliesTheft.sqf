@@ -3,7 +3,7 @@ Function: WHF_fnc_msnDefendAidSuppliesTheft
 
 Description:
     Create markers keeping track of supplies and allow OPFOR to steal them.
-    Function must be ran in scheduled environment.
+    Function must be executed in scheduled environment.
 
 Parameters:
     Array signal:

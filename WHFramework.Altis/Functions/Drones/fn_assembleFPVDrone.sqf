@@ -3,7 +3,7 @@ Function: WHF_fnc_assembleFPVDrone
 
 Description:
     Make the given unit assemble an FPV drone.
-    Must be executed in scheduled environment.
+    Function must be executed in scheduled environment.
 
 Parameters:
     Object unit:

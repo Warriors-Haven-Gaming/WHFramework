@@ -5,7 +5,7 @@ Description:
     Periodically spawn reinforcements in the given area.
     Unlike other functions, the arguments array can be modified in-place
     to change behaviour mid-execution.
-    Function must be ran in scheduled environment.
+    Function must be executed in scheduled environment.
 
 Parameters:
     Boolean running:

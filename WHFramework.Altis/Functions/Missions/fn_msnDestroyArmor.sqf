@@ -3,7 +3,7 @@ Function: WHF_fnc_msnDestroyArmor
 
 Description:
     Players must destroy an armor staging area.
-    Function must be ran in scheduled environment.
+    Function must be executed in scheduled environment.
 
 Parameters:
     PositionATL ecnter:

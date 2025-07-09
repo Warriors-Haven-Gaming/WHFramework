@@ -13,7 +13,7 @@ Description:
     this function automatically terminates itself once all current groups
     are killed.
 
-    Function must be ran in scheduled environment.
+    Function must be executed in scheduled environment.
 
 Parameters:
     Array inputGroups:

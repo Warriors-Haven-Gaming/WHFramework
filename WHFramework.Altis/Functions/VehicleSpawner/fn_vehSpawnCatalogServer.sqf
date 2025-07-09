@@ -3,7 +3,7 @@ Function: WHF_fnc_vehSpawnCatalogServer
 
 Description:
     Generate and cache the hashmap of allowed vehicles.
-    Must be called on server.
+    Function must be executed on server.
 
 Returns:
     HashMap

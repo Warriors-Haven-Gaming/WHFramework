@@ -3,7 +3,7 @@ Function: WHF_fnc_msnMainAnnexRegionRepair
 
 Description:
     Players must destroy the repair station.
-    Function must be ran in scheduled environment.
+    Function must be executed in scheduled environment.
 
 Parameters:
     Position2D center:

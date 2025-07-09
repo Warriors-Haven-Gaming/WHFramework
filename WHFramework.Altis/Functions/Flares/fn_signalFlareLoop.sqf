@@ -3,7 +3,7 @@ Function: WHF_fnc_signalFlareLoop
 
 Description:
     Periodically check if any enemy groups should fire a signal flare.
-    Must be executed in scheduled environment.
+    Function must be executed in scheduled environment.
 
 Author:
     thegamecracks

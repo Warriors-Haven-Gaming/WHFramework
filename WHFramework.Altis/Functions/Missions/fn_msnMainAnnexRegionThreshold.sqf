@@ -3,7 +3,7 @@ Function: WHF_fnc_msnMainAnnexRegionThreshold
 
 Description:
     Players must sufficiently reduce the number of enemies in the region.
-    Function must be ran in scheduled environment.
+    Function must be executed in scheduled environment.
 
 Parameters:
     String parent:

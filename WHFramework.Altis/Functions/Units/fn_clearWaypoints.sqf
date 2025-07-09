@@ -3,7 +3,7 @@ Function: WHF_fnc_clearWaypoints
 
 Description:
     Clear waypoints from a group.
-    Function must be ran in scheduled environment.
+    Function must be executed in scheduled environment.
 
 Parameters:
     Group group:

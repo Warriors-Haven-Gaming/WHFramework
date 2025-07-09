@@ -3,7 +3,7 @@ Function: WHF_fnc_msnDefendAidSuppliesContact
 
 Description:
     Detect guard contact with enemies.
-    Function must be ran in scheduled environment.
+    Function must be executed in scheduled environment.
 
 Parameters:
     Array signal:

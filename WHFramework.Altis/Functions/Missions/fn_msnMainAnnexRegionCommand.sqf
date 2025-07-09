@@ -3,7 +3,7 @@ Function: WHF_fnc_msnMainAnnexRegionCommand
 
 Description:
     Players must capture or kill the region's commander.
-    Function must be ran in scheduled environment.
+    Function must be executed in scheduled environment.
 
 Parameters:
     Position2D center:

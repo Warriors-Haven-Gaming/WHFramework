@@ -3,7 +3,7 @@ Function: WHF_fnc_cycleFaction
 
 Description:
     Cycle the current faction to use for units.
-    Function must be called on server.
+    Function must be executed on server.
 
 Author:
     thegamecracks

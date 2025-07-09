@@ -3,7 +3,7 @@ Function: WHF_fnc_vehSpawnCooldownSet
 
 Description:
     Set the vehicle spawner cooldown for a player.
-    Must be called on server.
+    Function must be executed on server.
 
 Parameters:
     Object | String uid:

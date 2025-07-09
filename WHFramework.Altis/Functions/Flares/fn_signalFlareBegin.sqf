@@ -3,8 +3,8 @@ Function: WHF_fnc_signalFlareBegin
 
 Description:
     Begin the animation to fire a flare for a unit.
-    Must be executed in scheduled environment.
-    Should be remote executed on server and all clients.
+    Function must be executed in scheduled environment.
+    Function should be remote executed on server and all clients.
 
 Parameters:
     Object siren:

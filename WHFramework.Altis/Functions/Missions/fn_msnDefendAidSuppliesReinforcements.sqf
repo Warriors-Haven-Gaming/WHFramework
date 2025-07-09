@@ -3,7 +3,7 @@ Function: WHF_fnc_msnDefendAidSuppliesReinforcements
 
 Description:
     Continuously spawn attackers to move towards supplies.
-    Function must be ran in scheduled environment.
+    Function must be executed in scheduled environment.
 
 Parameters:
     Array signal:

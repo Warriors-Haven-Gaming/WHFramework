@@ -3,7 +3,7 @@ Function: WHF_fnc_FPVDroneLoop
 
 Description:
     Attempt to steer a UAV into an enemy target.
-    Must be executed in scheduled environment.
+    Function must be executed in scheduled environment.
 
 Parameters:
     Object drone:

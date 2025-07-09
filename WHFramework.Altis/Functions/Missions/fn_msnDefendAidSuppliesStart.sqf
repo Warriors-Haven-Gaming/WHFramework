@@ -3,7 +3,7 @@ Function: WHF_fnc_msnDefendAidSuppliesStart
 
 Description:
     Start the defense for players to protect the supplies.
-    Function must be ran in scheduled environment.
+    Function must be executed in scheduled environment.
 
 Parameters:
     Position2D center:

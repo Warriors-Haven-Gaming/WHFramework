@@ -4,7 +4,7 @@ Function: WHF_fnc_msnDefendAidSuppliesStatus
 Description:
     Create a status task keeping track of alive supplies.
     Returns when all supplies are stolen.
-    Function must be ran in scheduled environment.
+    Function must be executed in scheduled environment.
 
 Parameters:
     Array signal:

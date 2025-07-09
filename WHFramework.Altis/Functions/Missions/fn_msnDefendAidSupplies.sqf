@@ -3,7 +3,7 @@ Function: WHF_fnc_msnDefendAidSupplies
 
 Description:
     Players must defend civilian aid supplies from being stolen by OPFOR.
-    Function must be ran in scheduled environment.
+    Function must be executed in scheduled environment.
 
 Parameters:
     PositionATL center:

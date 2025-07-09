@@ -3,7 +3,7 @@ Function: WHF_fnc_signalFlareInterrupt
 
 Description:
     Interrupt the flare animation on a unit.
-    Should be remote executed on server and all clients.
+    Function should be remote executed on server and all clients.
 
 Parameters:
     Object siren:

@@ -3,7 +3,7 @@ Function: WHF_fnc_combatDroneLoop
 
 Description:
     Periodically check if any AI UAV operators should assemble combat drones.
-    Must be executed in scheduled environment.
+    Function must be executed in scheduled environment.
 
 Author:
     thegamecracks

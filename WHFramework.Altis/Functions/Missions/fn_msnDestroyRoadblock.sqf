@@ -3,7 +3,7 @@ Function: WHF_fnc_msnDestroyRoadblock
 
 Description:
     Players must clear out enemies from a roadblock.
-    Function must be ran in scheduled environment.
+    Function must be executed in scheduled environment.
 
 Parameters:
     PositionATL center:
