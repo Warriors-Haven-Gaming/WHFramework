@@ -43,10 +43,12 @@ params [
 ];
 if (_quantity < 1) exitWith {grpNull};
 
+private _shipTypes = _types call WHF_fnc_getShipTypes;
+if (count _shipTypes < 1) exitWith {grpNull};
+
 // private _dynamicSimulation = !("noDynamicSimulation" in _flags);
 
 private _group = createGroup [_side, true];
-private _shipTypes = _types call WHF_fnc_getShipTypes;
 private _vehicles = [];
 for "_i" from 1 to _quantity do {
     private _pos = _center;
