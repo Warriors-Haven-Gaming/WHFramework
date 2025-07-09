@@ -121,7 +121,7 @@ private _getKnownTargets = {
     {
         private _group = _x;
         private _targets =
-            _group targets [true, 750, [], 600]
+            _group targets [true, 3000, [], 600]
             select {leader _group knowsAbout _x >= 2.5};
 
         {
