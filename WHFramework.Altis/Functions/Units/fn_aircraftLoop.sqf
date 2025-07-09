@@ -16,6 +16,17 @@ Parameters:
         If an array is passed, it is treated as the minimum and maximum time.
     Array sides:
         An array of sides to count threats from.
+    Number cost:
+        The threat value required for one aircraft to be dispatched.
+        Each threat is assigned a value based on their type:
+            Infantry    => 1
+            LandVehicle => 3
+            Ship        => 3
+            Tank        => 5
+            Air         => 5
+        For example, 5 infantry and 2 tanks will have a combined threat value
+        of 15. If the cost is set to 5, then up to 3 aircraft can be dispatched.
+        UAVs will have their threat value reduced by half.
     Number threshold:
         The maximum number of aircraft before reinforcements are paused.
     Array types:
@@ -271,7 +282,6 @@ private _findTargetArea = {
 
 private _debug = false;
 private _gcDistance = 5000;
-private _priorityPerAircraft = 10;
 
 private _targetAreas = [];
 private _aircraftGroups = [];
@@ -288,6 +298,7 @@ while {_this # 0} do {
         "",
         "",
         "_sides",
+        "_cost",
         "_threshold",
         "_types"
     ];
@@ -300,9 +311,9 @@ while {_this # 0} do {
         call _refreshTargetAreas;
         call _cleanupAircraftGroups;
         {
-            private _targetArea = [_priorityPerAircraft, _x] call _findTargetArea;
+            private _targetArea = [_cost, _x] call _findTargetArea;
             if (count _targetArea < 1) exitWith {};
-            [_targetArea, _priorityPerAircraft, _x] call _assignTargetArea;
+            [_targetArea, _cost, _x] call _assignTargetArea;
             sleep 0.125;
         } forEach _aircraftGroups;
     };
@@ -312,14 +323,14 @@ while {_this # 0} do {
         call _cleanupAircraftGroups;
         if (count _aircraftGroups >= _threshold) exitWith {};
 
-        private _targetArea = [_priorityPerAircraft] call _findTargetArea;
+        private _targetArea = [_cost] call _findTargetArea;
         if (count _targetArea < 1) exitWith {};
 
         // FIXME: may spawn aircraft in plain sight
         private _pos = [worldSize / 2, worldSize / 2] getPos [worldSize / 2, random 360];
         _pos = _pos vectorAdd [0, 0, 300 + random 500];
         private _group = [_sides # 0, _types, 1, _pos, 100] call WHF_fnc_spawnAircraft;
-        [_targetArea, _priorityPerAircraft, _group] call _assignTargetArea;
+        [_targetArea, _cost, _group] call _assignTargetArea;
         _aircraftGroups pushBack _group;
     };
 };
