@@ -231,6 +231,9 @@ private _assignTargetArea = {
     if (_pos isEqualTo [0,0]) exitWith {};
     _pos = AGLToASL _pos vectorMultiply [1,1,0];
 
+    private _targets = _targetArea # 1;
+    {_group reveal _x} forEach _targets;
+
     [_group] call WHF_fnc_clearWaypoints;
     private _waypoint = _group addWaypoint [_pos, -1];
     _waypoint setWaypointType "SAD";
