@@ -14,13 +14,13 @@ Parameters:
     Array | Number frequency:
         How often this function should spawn reinforcements.
         If an array is passed, it is treated as the minimum and maximum time.
+    Array sides:
+        An array of sides to count threats from.
+    Number threshold:
+        The maximum number of aircraft before reinforcements are paused.
     Array types:
         One or more group types to spawn aircraft from.
         See WHF_fnc_getAircraftTypes for allowed values.
-    Number threshold:
-        The maximum number of aircraft before reinforcements are paused.
-    Array sides:
-        An array of sides to count threats from.
 
 Author:
     thegamecracks
@@ -287,9 +287,9 @@ while {_this # 0} do {
     params [
         "",
         "",
-        "_types",
+        "_sides",
         "_threshold",
-        "_sides"
+        "_types"
     ];
 
     sleep 1;
