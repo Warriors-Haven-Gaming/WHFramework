@@ -29,7 +29,7 @@ private _actionID = [
     {
         private _vehicle = cursorObject;
         [player, ["", 0, 0, false]] remoteExec ["switchMove"];
-        [_vehicle] remoteExec ["WHF_fnc_serviceVehicle", _vehicle];
+        [_vehicle] remoteExec ["WHF_fnc_serviceVehicle"];
         _vehicle setVariable ["WHF_service_last", time];
 
         sleep 0.35;

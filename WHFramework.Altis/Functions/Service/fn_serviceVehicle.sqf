@@ -15,6 +15,9 @@ Author:
 */
 params ["_vehicle"];
 
+// Handle rearming local turrets on remote vehicles
+if (!local _vehicle) exitWith {_vehicle setVehicleAmmo 1};
+
 _vehicle setDamage 0;
 _vehicle setVehicleAmmo 1;
 _vehicle setFuel 1;
