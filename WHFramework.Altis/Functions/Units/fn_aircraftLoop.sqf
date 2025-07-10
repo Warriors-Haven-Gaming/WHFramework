@@ -286,7 +286,7 @@ private _findTargetArea = {
 };
 
 private _debug = false;
-private _gcDistance = 5000;
+private _gcDistance = 3000;
 
 private _targetAreas = [];
 private _aircraftGroups = [];
