@@ -95,7 +95,7 @@ private _taskID = [blufor, "", "destroyArtillery", _center, "CREATED", -1, true,
 while {true} do {
     sleep 10;
 
-    private _active = _allTurrets select {alive _x} inAreaArray _area;
+    private _active = _allTurrets select {canFire _x} inAreaArray _area;
     if (count _active < 1) exitWith {
         private _message = "$STR_WHF_destroyArtillery_success";
         [[blufor, "HQ"], _message] remoteExec ["WHF_fnc_localizedSideChat", blufor];

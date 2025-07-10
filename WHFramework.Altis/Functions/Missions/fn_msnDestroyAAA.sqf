@@ -104,7 +104,7 @@ while {true} do {
         private _childTaskID = _childTaskIDs # _forEachIndex;
         if (_childTaskID in _completedChildTaskIDs) then {continue};
 
-        private _active = _x select {alive _x} inAreaArray _area;
+        private _active = _x select {canFire _x} inAreaArray _area;
         if (count _active > 0) then {continue};
 
         [_childTaskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
