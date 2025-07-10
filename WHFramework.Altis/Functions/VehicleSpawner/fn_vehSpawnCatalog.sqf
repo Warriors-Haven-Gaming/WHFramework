@@ -171,6 +171,7 @@ private _helicopters = [
     ["cup_i_mi24_mk4_aaf",                       [-1,  ["pilot_cas"]]],
     ["cup_b_mi35_dynamic_cz_tiger",              [-1,  ["pilot_cas"]]],
     ["cup_b_aw159_rn_blackcat",                  [-1,  ["pilot_cas"]]],
+    ["b_heli_light_01_dynamicloadout_f",         [-1,  ["pilot_cas"]]],
     ["b_heli_light_03_dynamicloadout_rf",        [-1,  ["pilot_cas"]]],
     ["b_heli_attack_01_dynamicloadout_f",        [-1,  ["pilot_cas"]]],
     ["b_heli_attack_01_pylons_dynamicloadout_f", [-1,  ["pilot_cas"]]],
