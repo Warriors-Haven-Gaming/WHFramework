@@ -11,9 +11,10 @@ Parameters:
     Boolean running:
         Whether the function should run. By setting this to false,
         the function can be safely terminated during execution.
-    Array | Number frequency:
-        How often this function should spawn reinforcements.
-        If an array is passed, it is treated as the minimum and maximum time.
+    Number spawnDelay:
+        The delay between aircraft spawned during a single wave.
+    Number waveDelay:
+        The delay between spawn waves.
     Array sides:
         An array of sides to count threats from.
     Number cost:
@@ -28,7 +29,8 @@ Parameters:
         of 15. If the cost is set to 5, then up to 3 aircraft can be dispatched.
         UAVs will have their threat value reduced by half.
     Number threshold:
-        The maximum number of aircraft before reinforcements are paused.
+        The maximum number of aircraft to spawn per wave,
+        and the maximum aircraft allowed at any given time.
     Array types:
         One or more group types to spawn aircraft from.
         See WHF_fnc_getAircraftTypes for allowed values.
@@ -37,12 +39,6 @@ Author:
     thegamecracks
 
 */
-private _nextReinforceAt = {
-    _this # 1 params ["_min", "_max"];
-    if (isNil "_max" || {_min > _max}) exitWith {time + _min};
-    time + _min + random (_max - _min)
-};
-
 private _cleanupAircraftGroups = {
     private _toRemove = [];
     {
@@ -293,15 +289,19 @@ private _aircraftGroups = [];
 
 // NOTE: updating waypoints too frequently can cause aircraft to not move
 // NOTE: priorities don't reset until each refresh, so target areas get
-//       a limited number of aircraft regardless of frequency
+//       a limited number of aircraft regardless of spawnDelay.
+private _time = time;
 private _targetDelay = 60;
-private _targetAt = time + _targetDelay;
-private _reinforceAt = call _nextReinforceAt;
+private _targetAt = _time + _targetDelay;
+private _spawnAt = _time + _this # 1;
+private _spawnLast = _time;
+private _spawnCount = 0;
 
 while {_this # 0} do {
     params [
         "",
-        "",
+        "_spawnDelay",
+        "_waveDelay",
         "_sides",
         "_cost",
         "_threshold",
@@ -309,7 +309,7 @@ while {_this # 0} do {
     ];
 
     sleep 1;
-    private _time = time;
+    _time = time;
 
     if (_time >= _targetAt) then {
         _targetAt = _time + _targetDelay;
@@ -326,8 +326,9 @@ while {_this # 0} do {
         } forEach _aircraftGroups;
     };
 
-    if (_time >= _reinforceAt) then {
-        _reinforceAt = call _nextReinforceAt;
+    if (_time >= _spawnAt) then {
+        _spawnAt = _time + _spawnDelay;
+
         call _cleanupAircraftGroups;
         if (count _aircraftGroups >= _threshold) exitWith {};
 
@@ -342,6 +343,20 @@ while {_this # 0} do {
 
         [_targetArea, _cost, _group] call _assignTargetArea;
         _aircraftGroups pushBack _group;
+
+        // If we had an in-progress wave that's stagnated, start a new wave
+        if (_spawnCount > 0 && {_time >= _spawnLast + _waveDelay}) then {
+            _spawnCount = 0;
+        };
+
+        _spawnLast = _time;
+        _spawnCount = _spawnCount + 1;
+
+        if (_spawnCount >= _threshold) then {
+            // All aircraft spawned for current wave, schedule next wave
+            _spawnAt = _time + _waveDelay;
+            _spawnCount = 0;
+        };
     };
 };
 
