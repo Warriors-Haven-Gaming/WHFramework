@@ -45,7 +45,7 @@ while {true} do {
         private _ammo = _vehicle getVariable ["WHF_aps_ammo", 0];
         if (_ammo < 1) then {continue};
 
-        private _targets = [getPosATL _vehicle, WHF_aps_radius] call WHF_fnc_nearAPSTargets;
+        private _targets = [_vehicle, WHF_aps_radius] call WHF_fnc_nearAPSTargets;
         if (count _targets < 1) then {continue};
 
         _targets = [_vehicle, _targets] call WHF_fnc_checkAPSTargetPaths;

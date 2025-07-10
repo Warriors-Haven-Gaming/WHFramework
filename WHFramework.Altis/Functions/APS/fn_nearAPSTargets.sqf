@@ -7,8 +7,8 @@ Description:
     are returned.
 
 Parameters:
-    PositionAGL center:
-        The position to return projectiles around.
+    Object vehicle:
+        The vehicle to return projectiles around.
     Number radius:
         The maximum distance from the center.
 
@@ -19,11 +19,14 @@ Author:
     thegamecracks
 
 */
-params ["_position", "_radius"];
+params ["_vehicle", "_radius"];
 private _ret = [];
 {
-    private _projectiles = _position nearObjects [_x, _radius];
-    {if (local _x) then {_ret pushBack _x}} forEach _projectiles;
+    private _projectiles =
+        _vehicle nearObjects [_x, _radius]
+        select {local _x}
+        select {getShotParents _x # 0 isNotEqualTo _vehicle};
+    _ret append _projectiles;
 } forEach ["RocketCore", "MissileCore", "SubmunitionCore", "ammo_Penetrator_Base"];
 // Have fun with these:
 // - "BombCore"
