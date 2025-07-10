@@ -28,7 +28,7 @@ _unit setUnitTrait ["explosiveSpecialist", _isEngineer];
 _unit setUnitTrait ["medic", _isMedic];
 
 private _isSneaky = _role in ["sniper"];
-private _camouflageCoef = [1, 0.5] select _isSneaky;
-private _audibleCoef = [1, 0.5] select _isSneaky;
+private _camouflageCoef = [1, 0.15] select _isSneaky;
+private _audibleCoef = [1, 0.15] select _isSneaky;
 _unit setUnitTrait ["camouflageCoef", _camouflageCoef];
 _unit setUnitTrait ["audibleCoef", _audibleCoef];
