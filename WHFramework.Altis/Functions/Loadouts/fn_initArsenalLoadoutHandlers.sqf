@@ -8,6 +8,8 @@ Author:
     thegamecracks
 
 */
+if (!hasInterface) exitWith {};
+
 [missionNamespace, "arsenalPreOpen", {
     params ["", "_center"];
     [_center] call WHF_fnc_onArsenalOpened;

@@ -20,9 +20,6 @@ if (isMultiplayer) then {
 };
 
 if (isMultiplayer) then {["Initialize"] call BIS_fnc_dynamicGroups};
-call WHF_fnc_initChannels;
-call WHF_fnc_initGCHandlers;
-call WHF_fnc_vehSpawnCatalogServer;
 
 WHF_mainMissionLoop_script = [
     [

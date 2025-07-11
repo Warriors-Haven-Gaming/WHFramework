@@ -6,13 +6,19 @@ Description:
 
 Parameters:
     Object unit:
+        (Optional, default player)
         The unit to add handlers to.
 
 Author:
     thegamecracks
 
 */
-params ["_unit"];
+params [["_unit", player]];
+
+// NOTE: this function runs in postInit so it must tolerate the
+//       arguments ["postInit", didJIP].
+if (_unit isEqualTo "postInit") then {_unit = player};
+if (isNull _unit) exitWith {};
 
 _unit addEventHandler ["GetInMan", {
     params ["_unit", "_role", "_vehicle"];

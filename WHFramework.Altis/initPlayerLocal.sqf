@@ -19,26 +19,14 @@ if (!hasInterface) exitWith {};
 if (isNil {player getVariable "WHF_role"}) then {player setVariable ["WHF_role", "rifleman", true]};
 if (isMultiplayer) then {["InitializePlayer", [player]] call BIS_fnc_dynamicGroups};
 
-call WHF_fnc_addPlayerDamageHandlers;
-call WHF_fnc_initArsenalLoadoutHandlers;
-call WHF_fnc_initContextActionCruise;
-call WHF_fnc_initContextActionDetain;
-call WHF_fnc_initContextActionFPV;
-call WHF_fnc_initContextActionHaloJump;
-call WHF_fnc_initContextActionMagRepack;
-call WHF_fnc_initContextActionQuadbike;
-call WHF_fnc_initContextActionRespawn;
-call WHF_fnc_initContextActionSelfDestruct;
+// Functions that require mission display
 call WHF_fnc_initContextHandlers;
-call WHF_fnc_initDiary;
-call WHF_fnc_initDroneHandlers;
 call WHF_fnc_initCruiseKeybind;
 call WHF_fnc_initDetainKeybind;
 call WHF_fnc_initEarplugsKeybind;
 call WHF_fnc_initHolsterKeybind;
 call WHF_fnc_initMagRepackKeybind;
-[player] call WHF_fnc_initVehicleLockHandlers;
-call WHF_fnc_vehSpawnCatalogClient;
+
 0 spawn WHF_fnc_laserLightLoop;
 0 spawn WHF_fnc_updateChannelLoop;
 0 spawn WHF_fnc_initFriendlyIcons;

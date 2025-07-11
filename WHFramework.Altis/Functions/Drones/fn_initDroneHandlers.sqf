@@ -8,6 +8,7 @@ Author:
     thegamecracks
 
 */
+if (!hasInterface) exitWith {};
 player addEventHandler ["SlotItemChanged", {
     params ["_unit", "_name", "_slot", "_assigned"];
     if (_slot isNotEqualTo 612) exitWith {};

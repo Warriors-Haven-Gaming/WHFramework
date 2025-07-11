@@ -77,7 +77,7 @@ class CfgFunctions {
             class simulateAPSLoop {};
         };
         class Channels {
-            class initChannels {};
+            class initChannels { preInit = 1; };
             class updateChannelLoop {};
         };
         class Compositions {
@@ -96,14 +96,14 @@ class CfgFunctions {
             class contextMenuHide {};
             class contextMenuRemove {};
             class contextMenuShow {};
-            class initContextActionCruise {};
-            class initContextActionDetain {};
-            class initContextActionFPV {};
-            class initContextActionHaloJump {};
-            class initContextActionMagRepack {};
-            class initContextActionQuadbike {};
-            class initContextActionRespawn {};
-            class initContextActionSelfDestruct {};
+            class initContextActionCruise { postInit = 1; };
+            class initContextActionDetain { postInit = 1; };
+            class initContextActionFPV { postInit = 1; };
+            class initContextActionHaloJump { postInit = 1; };
+            class initContextActionMagRepack { postInit = 1; };
+            class initContextActionQuadbike { postInit = 1; };
+            class initContextActionRespawn { postInit = 1; };
+            class initContextActionSelfDestruct { postInit = 1; };
             class initContextHandlers {};
         };
         class Cruise {
@@ -119,14 +119,14 @@ class CfgFunctions {
             class refreshCurators {};
         };
         class Damage {
-            class addPlayerDamageHandlers {};
+            class addPlayerDamageHandlers { postInit = 1; };
             class addRecruitDamageHandlers {};
             class scaleDamage {};
         };
         class Diary {
             class diaryGuide {};
             class diaryLocalize {};
-            class initDiary {};
+            class initDiary { postInit = 1; };
         };
         class Drones {
             class assembleFPVDrone {};
@@ -135,7 +135,7 @@ class CfgFunctions {
             class FPVDroneLoop {};
             class getBackpackDrone {};
             class initDroneAction {};
-            class initDroneHandlers {};
+            class initDroneHandlers { postInit = 1; };
             class lockDroneByUID {};
         };
         class Earplugs {
@@ -160,7 +160,7 @@ class CfgFunctions {
             class garbageCollectorLoop {};
             class queueGCDeletion {};
             class queueGCUnhide {};
-            class initGCHandlers {};
+            class initGCHandlers { preInit = 1; };
         };
         class Halo {
             class checkHaloJump {};
@@ -215,7 +215,7 @@ class CfgFunctions {
             class getLastLoadout {};
             class holsterWeapon {};
             class initArsenal {};
-            class initArsenalLoadoutHandlers {};
+            class initArsenalLoadoutHandlers { postInit = 1; };
             class initHolsterKeybind {};
             class initVehicleArsenalAction {};
             class isNearArsenal {};
@@ -228,7 +228,7 @@ class CfgFunctions {
         class Locks {
             class addVehicleLockCopilotHandlers {};
             class checkVehicleLock {};
-            class initVehicleLockHandlers {};
+            class initVehicleLockHandlers { postInit = 1; };
         };
         class Markers {
             class createAreaMarker {};
@@ -403,11 +403,11 @@ class CfgFunctions {
             class vehSpawnCatalog {};
             class vehSpawnCatalogAddVehicleLocks {};
             class vehSpawnCatalogCleanup {};
-            class vehSpawnCatalogClient {};
+            class vehSpawnCatalogClient { postInit = 1; };
             class vehSpawnCatalogCooldown {};
             class vehSpawnCatalogRoleAllowed {};
             class vehSpawnCatalogRoleFilter {};
-            class vehSpawnCatalogServer {};
+            class vehSpawnCatalogServer { preInit = 1; };
             class vehSpawnCooldownGet {};
             class vehSpawnCooldownSet {};
             class vehSpawnDespawn {};
