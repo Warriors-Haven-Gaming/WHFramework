@@ -48,7 +48,6 @@ class CfgRemoteExec {
 
         class WHF_fnc_addPrisonerActions { jip = 1; };
         class WHF_fnc_detainUnitRequest {};
-        class WHF_fnc_disableUAVConnectability { allowedTargets = 1; jip = 1; };
         class WHF_fnc_enableDynamicSimulation { allowedTargets = 2; };
         class WHF_fnc_forceRespawnVehicle { allowedTargets = 2; };
         class WHF_fnc_freeUnit {};
@@ -59,6 +58,7 @@ class CfgRemoteExec {
         class WHF_fnc_localizedCutText { allowedTargets = 1; };
         class WHF_fnc_localizedHint { allowedTargets = 1; };
         class WHF_fnc_localizedSideChat { allowedTargets = 1; };
+        class WHF_fnc_lockDroneByUID {};
         class WHF_fnc_msnDownloadIntelLaptopTimer {};
         class WHF_fnc_msnSecureCachesActionCompleted {};
         class WHF_fnc_playMusicSnippet { allowedTargets = 1; };
