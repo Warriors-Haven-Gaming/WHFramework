@@ -16,19 +16,22 @@ player addEventHandler ["SlotItemChanged", {
     _name call BIS_fnc_itemType params ["", "_type"];
     if (_type isNotEqualTo "UAVTerminal") exitWith {};
 
-    private _disabled = _unit getVariable ["WHF_drones_disabled", []];
-    {if (!alive _x) then {_disabled deleteAt _forEachIndex}} forEachReversed _disabled;
-    {_unit disableUAVConnectability [_x, true]} forEach _disabled;
+    {
+        private _uid = _x getVariable "WHF_drones_owner";
+        if (isNil "_uid") then {continue};
+
+        private _locked = !(_uid in ["", getPlayerUID _unit]);
+        if (_locked) then {
+            _unit disableUAVConnectability [_x, false];
+        } else {
+            _unit enableUAVConnectability [_x, false];
+        };
+    } forEach allUnitsUAV;
 }];
 player addEventHandler ["WeaponAssembled", {
     params ["_unit", "_drone"];
+    if (!WHF_drones_owned) exitWith {};
     if (!unitIsUAV _drone) exitWith {};
-    if (!isNull (_drone getVariable ["WHF_drones_owner", objNull])) exitWith {};
-
-    _drone setVariable ["WHF_drones_owner", _unit, true];
-    _unit enableUAVConnectability [_drone, true];
-
-    if (isMultiplayer && {WHF_drones_owned}) then {
-        [_drone] remoteExec ["WHF_fnc_disableUAVConnectability", -clientOwner, _drone];
-    };
+    if (!isNil {_drone getVariable "WHF_drones_owner"}) exitWith {};
+    [_drone, getPlayerUID _unit] remoteExec ["WHF_fnc_lockDroneByUID"];
 }];
