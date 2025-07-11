@@ -14,14 +14,21 @@ if (isClass (configFile >> "CfgPatches" >> "cba_keybinding")) then {
         "$STR_WHF_settings",
         "WHF_keybind_earplugs",
         ["$STR_WHF_earplugs_keybind", "$STR_WHF_earplugs_keybind_tooltip"],
-        {[nil, true] call WHF_fnc_toggleEarplugs},
+        {
+            params ["", "_key", "_shift", "_ctrl", "_alt"];
+            private _isDefault = {_key isEqualTo DIK_END && !_shift && !_ctrl && !_alt};
+            if (!isNull curatorCamera && _isDefault) exitWith {};
+            [nil, true] call WHF_fnc_toggleEarplugs;
+        },
         {},
         [DIK_END, [false, false, false]]
     ] call CBA_fnc_addKeybind;
 } else {
     findDisplay 46 displayAddEventHandler ["KeyDown", {
         params ["", "_key"];
-        if (_key isEqualTo DIK_END) then {[nil, true] call WHF_fnc_toggleEarplugs};
+        if (_key isNotEqualTo DIK_END) exitWith {};
+        if (!isNull curatorCamera) exitWith {};
+        [nil, true] call WHF_fnc_toggleEarplugs;
         nil
     }];
 };
