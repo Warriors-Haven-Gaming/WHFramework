@@ -27,13 +27,12 @@ Author:
 params ["_positions", "_prefix"];
 
 if !(_positions isEqualType []) then {_positions = [_positions]};
+if (count _positions < 1) exitWith {[]};
 
-private _allMatches = [];
-{
-    if (count _positions < 1) exitWith {};
-    if !([_x, _prefix] call WHF_fnc_stringStartsWith) then {continue};
-    private _matched = _positions inAreaArray _x;
-    _positions = _positions - _matched;
-    _allMatches append _matched;
-} forEach allMapMarkers;
-_allMatches
+private _markers = allMapMarkers select {_x find _prefix isEqualTo 0};
+private _matched = flatten (_markers apply {_positions inAreaArrayIndexes _x});
+_matched = _matched arrayIntersect _matched;
+_matched sort true;
+
+// Produce stable ordering based on input
+_matched apply {_positions # _x}
