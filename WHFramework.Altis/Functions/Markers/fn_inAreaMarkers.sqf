@@ -26,6 +26,8 @@ Author:
 */
 params ["_positions", "_prefix"];
 
+if !(_positions isEqualType []) then {_positions = [_positions]};
+
 private _allMatches = [];
 {
     if (count _positions < 1) exitWith {};
