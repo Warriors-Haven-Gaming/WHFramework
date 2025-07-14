@@ -43,6 +43,7 @@ if (_location isEqualTo locationNull) then {
         ["Airport", "Hill", "NameVillage", "NameCity", "NameCityCapital", "NameLocal"],
         sqrt 2 / 2 * worldSize
     ];
+    _locations = _locations - ([_locations] call WHF_fnc_inAreaDeadzone);
     _locations = _locations call WHF_fnc_arrayShuffle;
 
     private _units = units blufor;

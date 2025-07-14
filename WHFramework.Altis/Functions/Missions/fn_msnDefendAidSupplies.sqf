@@ -34,6 +34,7 @@ if (_center isEqualTo []) then {
         ["NameVillage", "NameCity", "NameCityCapital"],
         sqrt 2 / 2 * worldSize
     ];
+    _locations = _locations - ([_locations] call WHF_fnc_inAreaDeadzone);
     _locations = _locations call WHF_fnc_arrayShuffle;
 
     private _units = allUnits;

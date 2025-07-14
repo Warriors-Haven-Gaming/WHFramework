@@ -46,6 +46,7 @@ if (isNil "_cache") then {
         200,
         2000
     ] apply {_x # 0 vectorAdd [0,0,0]} inAreaArray [_center, _half, _half, 0, true];
+    _results = _results - ([_results] call WHF_fnc_inAreaDeadzone);
     _cache = [_results, 0];
     WHF_selectBestPlaces_cache set [_expression, _cache];
 };
