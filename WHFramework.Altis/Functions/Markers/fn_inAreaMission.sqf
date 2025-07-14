@@ -5,8 +5,8 @@ Description:
     Check if the given objects or positions are in a mission area marker.
 
 Parameters:
-    Array | Object positions:
-        The objects or positions to check.
+    Array | Location | Object positions:
+        The objects, locations, or positions to check.
 
 Returns:
     Array
