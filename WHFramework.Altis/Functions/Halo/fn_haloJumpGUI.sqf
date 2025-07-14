@@ -15,10 +15,7 @@ if (_vehicles findIf {[_x, focusOn] call WHF_fnc_isEnemyAntiAir} >= 0) exitWith 
     50 cutText [localize "$STR_WHF_haloJumpGUI_antiair", "PLAIN DOWN", 0.3];
 };
 
-if (!WHF_halo_mission_exfil && {
-    private _areas = allMapMarkers select {[_x, "WHF_msn"] call WHF_fnc_stringStartsWith};
-    _areas findIf {focusOn inArea _x} >= 0
-}) exitWith {
+if (!WHF_halo_mission_exfil && {[focusOn] call WHF_fnc_inAreaMission isNotEqualTo []}) exitWith {
     50 cutText [localize "$STR_WHF_haloJumpGUI_mission", "PLAIN DOWN", 0.3];
 };
 
