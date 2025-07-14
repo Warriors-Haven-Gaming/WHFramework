@@ -2,8 +2,8 @@
 Function: WHF_fnc_inAreaMarkers
 
 Description:
-    Checks if the given objects or positions are in any marker starting
-    with a given prefix.
+    Check if the given objects or positions are in any area marker
+    starting with the given prefix.
 
 Parameters:
     Array | Object positions:
@@ -13,7 +13,7 @@ Parameters:
 
 Returns:
     Array
-        An array of positions that are in a marker.
+        An array of positions that are in an area marker matching the prefix.
 
 Examples:
     (begin example)
