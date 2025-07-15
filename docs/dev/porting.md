@@ -17,7 +17,8 @@ for any given map.
   - [11. Adding vehicle spawners](#11-adding-vehicle-spawners)
   - [12. (Optional) Setting default loadouts](#12-optional-setting-default-loadouts)
   - [13. (Optional) Adding time skip actions](#13-optional-adding-time-skip-actions)
-  - [14. Other tips](#14-other-tips)
+  - [14. (Optional) Adding special area markers](#14-optional-adding-special-area-markers)
+  - [15. Other tips](#15-other-tips)
 
 ## 1. Creating the scenario
 
@@ -238,7 +239,35 @@ public servers unless all players have CBA_A3 loaded, in which case
 the action can be hidden instead by disabling the `Enable Skip Time?`
 CBA setting.
 
-## 14. Other tips
+## 14. (Optional) Adding special area markers
+
+Area markers can be placed to provide effects across the map by assigning them
+variable names with special prefixes, like `WHF_safezone_1`. These areas do
+not require any visibility to the player and can have their alpha transparency
+set to 0%. The following prefixes are supported:
+
+- `WHF_deadzone`
+
+  These areas prevent missions from generating inside them. Useful for excluding
+  towns and areas that are difficult to generate missions inside, or hard for
+  players to reach. For certain missions like Annex Region, generation is based
+  on locations placed by the map creator and can be blocked simply by covering
+  the location text with a small deadzone area.
+
+- `WHF_halo_restricted`
+
+  These areas prevent players from halo jumping into them. Useful for denying
+  fast access to parts of the map and requiring players to transport themselves.
+  This restriction only affects infil and not exfil, meaning players will be
+  allowed to halo jump out of restricted areas.
+
+- `WHF_safezone`
+
+  These areas prevent players from dealing friendly fire damage. Useful for areas
+  beyond proximity of a respawn marker, such as to cover a large airport. Unlike
+  respawn safezones, these safezone markers cannot be resized on the fly with CBA settings.
+
+## 15. Other tips
 
 When building your scenario, here are a few more tips we recommend following
 to make sure the base works as expected:
