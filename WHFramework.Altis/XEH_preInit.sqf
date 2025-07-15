@@ -1144,7 +1144,7 @@ call WHF_fnc_cycleFaction;
     "SLIDER",
     ["STR_WHF_settings_safezone_respawn_radius", "STR_WHF_settings_safezone_respawn_radius_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_safezone"],
-    [0, 1000, 500, 1, false],
+    [0, 1000, 500, 0, false],
     true,
     {},
     false
