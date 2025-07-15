@@ -834,7 +834,7 @@ call WHF_fnc_cycleFaction;
     "SLIDER",
     ["STR_WHF_settings_missions_side_min", "STR_WHF_settings_missions_side_min_tooltip"],
     ["STR_WHF_settings_missions", "STR_WHF_settings_missions_side"],
-    [1, 10, 1, 0, false],
+    [1, 10, 2, 0, false],
     true,
     {WHF_missions_side_min = round _this},
     false
