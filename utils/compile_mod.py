@@ -21,6 +21,7 @@ BRANCH_DIRECTORIES = {
     "mogadishu": "Mog",
     "tanoa": "Tanoa",
     "colombia": "UMB_Colombia",
+    "drakovac": "drakovac",
 }
 
 COMMON_FILES = {

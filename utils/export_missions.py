@@ -16,7 +16,7 @@ from typing import Iterable, Iterator
 # FIXME: avoid hardcoding addon builder path
 ADDON_BUILDER = Path("C:/Program Files (x86)/Steam/steamapps/common/Arma 3 Tools/AddonBuilder/AddonBuilder.exe")
 DESTINATION = Path("build")
-DEFAULT_BRANCHES = ("mogadishu", "regero", "tanoa", "yulakia", "colombia", "main")
+DEFAULT_BRANCHES = ("mogadishu", "regero", "tanoa", "yulakia", "colombia", "drakovac", "main")
 
 
 def main() -> None:
