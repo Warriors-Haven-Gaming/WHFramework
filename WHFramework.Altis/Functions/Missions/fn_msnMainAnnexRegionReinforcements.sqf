@@ -108,7 +108,7 @@ while {_this # 0} do {
     _reinforceArgs # 0 set [1, WHF_missions_annex_reinforce_frequency_units];
     _reinforceArgs # 1 set [1, WHF_missions_annex_reinforce_frequency_vehicles];
     _aircraftArgs set [1, WHF_missions_annex_reinforce_frequency_vehicles];
-    _aircraftArgs set [4, 4 call WHF_fnc_scaleUnitsMain];
+    _aircraftArgs set [5, 4 call WHF_fnc_scaleUnitsMain];
 };
 
 {_x set [0, false]} forEach _reinforceArgs;
