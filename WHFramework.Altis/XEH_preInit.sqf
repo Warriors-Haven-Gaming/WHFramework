@@ -457,7 +457,7 @@ call WHF_fnc_cycleFaction;
     "SLIDER",
     ["STR_WHF_settings_halo_antiair_distance", "STR_WHF_settings_halo_antiair_distance_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_halo"],
-    [0, 5000, 2000, 0, false],
+    [0, 5000, 1000, 0, false],
     true,
     {},
     false
