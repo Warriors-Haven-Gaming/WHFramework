@@ -121,6 +121,9 @@ class CfgFunctions {
         class Damage {
             class addPlayerDamageHandlers { postInit = 1; };
             class addRecruitDamageHandlers {};
+            class addVehicleDamageHandlers {};
+            class damageSafezoneLoop {};
+            class isFriendlyFire {};
             class scaleDamage {};
         };
         class Diary {

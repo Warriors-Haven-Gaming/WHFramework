@@ -14,14 +14,15 @@ Author:
 
 */
 params ["_vehicle"];
-if (!local _vehicle) exitWith {};
 if !(_vehicle isKindOf "AllVehicles") exitWith {};
 if (_vehicle isKindOf "Man") exitWith {};
 
-// NOTE: only prevents multiple calls for one client, locality transfer will
-//       allow re-initialization
 if (!isNil {_vehicle getVariable "WHF_setupVehicle_called"}) exitWith {};
 _vehicle setVariable ["WHF_setupVehicle_called", true];
+
+_vehicle call WHF_fnc_addVehicleDamageHandlers;
+
+if (!local _vehicle) exitWith {};
 
 switch (true) do {
     // QAV - AbramsX

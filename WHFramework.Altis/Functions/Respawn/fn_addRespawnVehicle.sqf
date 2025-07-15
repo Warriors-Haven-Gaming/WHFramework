@@ -20,6 +20,9 @@ params ["_vehicle"];
 if (isNull _vehicle) exitWith {};
 if (typeOf _vehicle isEqualTo "") exitWith {};
 
+// TODO: parameterize vehicle side
+_vehicle setVariable ["WHF_vehicle_side", blufor, true];
+
 private _pos = getPosATL _vehicle;
 private _radius = sizeOf typeOf _vehicle / 2;
 private _objects = [_pos, _radius, [_vehicle]] call WHF_fnc_nearObjectsRespawn;
