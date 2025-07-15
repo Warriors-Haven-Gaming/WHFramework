@@ -9,7 +9,6 @@ Author:
 
 */
 private _getSafezones = {
-    // TODO: support custom safezone markers
     private _respawnSafezones =
         allMapMarkers
         select {_x find "respawn" isEqualTo 0}
@@ -22,8 +21,12 @@ private _getSafezones = {
             WHF_safezone_respawn_radius / 2
         ]};
 
+    private _customSafezones =
+        allMapMarkers
+        select {_x find "WHF_safezone" isEqualTo 0};
+
     [
-        [_respawnSafezones, "WHF_safezone_friendly"]
+        [_respawnSafezones + _customSafezones, "WHF_safezone_friendly"]
     ]
 };
 
