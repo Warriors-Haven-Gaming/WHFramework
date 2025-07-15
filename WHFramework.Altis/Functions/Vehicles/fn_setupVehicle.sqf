@@ -14,13 +14,16 @@ Author:
 
 */
 params ["_vehicle"];
-if !(_vehicle isKindOf "AllVehicles") exitWith {};
-if (_vehicle isKindOf "Man") exitWith {};
-
 if (!isNil {_vehicle getVariable "WHF_setupVehicle_called"}) exitWith {};
-_vehicle setVariable ["WHF_setupVehicle_called", true];
+if (_vehicle isKindOf "Man") exitWith {};
+if (_vehicle isKindOf "ReammoBox_F") exitWith {
+    _vehicle call WHF_fnc_addVehicleDamageHandlers;
+    _vehicle setVariable ["WHF_setupVehicle_called", true];
+};
+if !(_vehicle isKindOf "AllVehicles") exitWith {};
 
 _vehicle call WHF_fnc_addVehicleDamageHandlers;
+_vehicle setVariable ["WHF_setupVehicle_called", true];
 
 if (!local _vehicle) exitWith {};
 
