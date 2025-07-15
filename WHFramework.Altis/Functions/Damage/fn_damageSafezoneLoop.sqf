@@ -15,10 +15,7 @@ private _getSafezones = {
         apply {[
             markerPos [_x, true],
             WHF_safezone_respawn_radius,
-            WHF_safezone_respawn_radius,
-            0,
-            false,
-            WHF_safezone_respawn_radius / 2
+            WHF_safezone_respawn_radius
         ]};
 
     private _customSafezones =
