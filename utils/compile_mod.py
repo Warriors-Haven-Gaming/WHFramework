@@ -50,7 +50,7 @@ def main() -> None:
         check_valid_suffix(suffix)
 
     print("Copying common files...")
-    copy_common_files(BRANCH_DIRECTORIES[branches[0]])
+    copy_common_files(BRANCH_DIRECTORIES["main"])
 
     for branch in branches:
         suffix = BRANCH_DIRECTORIES[branch]
