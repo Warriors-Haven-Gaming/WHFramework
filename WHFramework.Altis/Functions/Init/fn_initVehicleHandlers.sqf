@@ -11,7 +11,7 @@ Author:
 if (isRemoteExecuted) exitWith {};
 if (!isNil "WHF_initVehicleHandlers") exitWith {};
 
-if (isServer) then {{_x call WHF_fnc_setupVehicle} forEach vehicles};
+{_x call WHF_fnc_setupVehicle} forEach vehicles;
 
 addMissionEventHandler ["EntityCreated", {
     params ["_entity"];
