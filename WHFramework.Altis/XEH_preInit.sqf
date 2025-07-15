@@ -1139,6 +1139,16 @@ call WHF_fnc_cycleFaction;
     {},
     false
 ] call WHF_fnc_addSetting;
+[
+    "WHF_safezone_respawn_radius",
+    "SLIDER",
+    ["STR_WHF_settings_safezone_respawn_radius", "STR_WHF_settings_safezone_respawn_radius_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_safezone"],
+    [0, 1000, 500, 1, false],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
 
 // Service
 [

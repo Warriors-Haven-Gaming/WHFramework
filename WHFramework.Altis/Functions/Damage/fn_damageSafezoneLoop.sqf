@@ -8,16 +8,24 @@ Author:
     thegamecracks
 
 */
-// TODO: support custom safezone markers
-// TODO: maybe support dynamic safezones?
-private _friendlySafezones =
-    allMapMarkers
-    select {_x find "respawn" isEqualTo 0}
-    apply {[markerPos [_x, true], 500, 500, 0, false, 200]};
+private _getSafezones = {
+    // TODO: support custom safezone markers
+    private _respawnSafezones =
+        allMapMarkers
+        select {_x find "respawn" isEqualTo 0}
+        apply {[
+            markerPos [_x, true],
+            WHF_safezone_respawn_radius,
+            WHF_safezone_respawn_radius,
+            0,
+            false,
+            WHF_safezone_respawn_radius / 2
+        ]};
 
-private _allSafezones = [
-    [_friendlySafezones, "WHF_safezone_friendly"]
-];
+    [
+        [_respawnSafezones, "WHF_safezone_friendly"]
+    ]
+};
 
 while {true} do {
     sleep (1 + random 1);
@@ -39,5 +47,5 @@ while {true} do {
             {_x setVariable [_var, false]} forEach _entities;
             {_x setVariable [_var, true]} forEach _protected;
         };
-    } forEach _allSafezones;
+    } forEach call _getSafezones;
 };
