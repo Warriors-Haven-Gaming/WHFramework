@@ -731,7 +731,7 @@ call WHF_fnc_cycleFaction;
     "EDITBOX",
     ["STR_WHF_settings_missions_annex_vehicles_types", "STR_WHF_settings_missions_annex_vehicles_types_tooltip"],
     ["STR_WHF_settings_missions", "STR_WHF_settings_missions_annex"],
-    '["standard", "supply"]',
+    '["standard", "supply", "mrap", "apc", "ifv", "mbt", "aa"]',
     true,
     {WHF_missions_annex_vehicles_types = parseSimpleArray _this},
     false
