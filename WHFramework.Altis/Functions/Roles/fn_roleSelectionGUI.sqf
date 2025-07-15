@@ -111,7 +111,8 @@ with uiNamespace do {
             private _marker = [focusOn] call WHF_fnc_respawnMarkers select 0;
             !isNil "_marker"
             && {focusOn distance2D markerPos _marker > 50
-            && {[focusOn, 100] call WHF_fnc_isNearRespawn}}
+            && {focusOn getVariable ["WHF_safezone_friendly", false] isEqualTo true
+            || {[focusOn, 100] call WHF_fnc_isNearRespawn}}}
         };
         WHF_roleSelectionGUI_ctrlRespawn ctrlEnable _enabled;
     };
