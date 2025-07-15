@@ -40,8 +40,11 @@ while {true} do {
     {
         _x params ["_areas", "_var"];
 
-        private _protected = flatten (_areas apply {_entities inAreaArray _x});
-        _protected = _protected arrayIntersect _protected;
+        private _protected = [];
+        if (WHF_safezone_enabled) then {
+            _protected = flatten (_areas apply {_entities inAreaArray _x});
+            _protected = _protected arrayIntersect _protected;
+        };
 
         isNil {
             {_x setVariable [_var, false]} forEach _entities;

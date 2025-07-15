@@ -11,7 +11,6 @@ Author:
 
 */
 params ["_unit", "", "", "_source", "", "", "_instigator"];
-if (!WHF_safezone_enabled) exitWith {false};
 if (_unit getVariable ["WHF_safezone_friendly", false] isNotEqualTo true) exitWith {false};
 
 private _sideA = side group _unit;
