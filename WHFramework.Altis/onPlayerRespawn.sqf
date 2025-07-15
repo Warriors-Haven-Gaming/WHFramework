@@ -39,6 +39,7 @@ call WHF_fnc_initDroneAction;
 call WHF_fnc_initJTACAction;
 call WHF_fnc_initParachuteAction;
 call WHF_fnc_initReviveCancelAction;
+call WHF_fnc_initSafezoneAction;
 
 // Vehicle actions
 call WHF_fnc_initUnflipAction;
