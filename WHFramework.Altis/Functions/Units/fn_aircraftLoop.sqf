@@ -120,7 +120,7 @@ private _aggregateTargets = {
     private _aggregatedTargets = [];
     {
         private _area = [getPosATL _x, 500, 500];
-        private _index = _aggregatedTargets findIf {[_x, _area] call WHF_fnc_anyInArea};
+        private _index = _aggregatedTargets findIf {_x inAreaArray _area isNotEqualTo []};
 
         if (_index >= 0) then {
             _aggregatedTargets # _index pushBack _x;
