@@ -64,11 +64,6 @@ private _gcAircraftGroup = {
     } forEach assignedVehicles _group;
 };
 
-private _shouldRefreshTargetAreas = {
-    count _aircraftGroups > 0
-    || {count (_types call WHF_fnc_getAircraftTypes) > 0}
-};
-
 private _refreshTargetAreas = {
     private _targets = call _getKnownTargets;
     private _aggregatedTargets = [_targets] call _aggregateTargets;
@@ -252,6 +247,8 @@ private _aircraftGroups = [];
 private _time = time;
 private _targetDelay = 60;
 private _targetAt = _time + _targetDelay;
+private _assignDelay = 60;
+private _assignAt = _time + _assignDelay;
 private _spawnAt = _time + _this # 1;
 private _spawnLast = _time;
 private _spawnCount = 0;
@@ -274,9 +271,16 @@ while {_this # 0} do {
         _targetAt = _time + _targetDelay;
 
         call _cleanupAircraftGroups;
-        if (!call _shouldRefreshTargetAreas) exitWith {};
+        if (count _aircraftGroups < 1) exitWith {};
+        if (count (_types call WHF_fnc_getAircraftTypes) < 1) exitWith {};
 
         call _refreshTargetAreas;
+    };
+
+    if (_time >= _assignAt) then {
+        _assignAt = _time + _assignDelay;
+
+        call _cleanupAircraftGroups;
         {
             private _targetArea = [_cost, _x] call _findTargetArea;
             if (count _targetArea < 1) exitWith {};
