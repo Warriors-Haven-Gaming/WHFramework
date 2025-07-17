@@ -15,8 +15,8 @@ Parameters:
         The delay between aircraft spawned during a single wave.
     Number waveDelay:
         The delay between spawn waves.
-    Array sides:
-        An array of sides to count threats from.
+    Side side:
+        The side to count threats and spawn aircraft for.
     Number cost:
         The threat value required for one aircraft to be dispatched.
         Each threat is assigned a value based on their type:
@@ -70,15 +70,13 @@ private _shouldRefreshTargetAreas = {
 };
 
 private _refreshTargetAreas = {
-    private _targetGroups = call _getKnownTargets;
-    private _targetPositions = [_targetGroups] call _getKnownTargetPositions;
-    private _aggregatedTargets = [_targetPositions] call _aggregateTargetPositions;
+    private _targets = call _getKnownTargets;
+    private _aggregatedTargets = [_targets] call _aggregateTargets;
     _targetAreas = [_aggregatedTargets] call _generateTargetAreas;
     [_targetAreas] call _appendTargetAreaPriorities;
 
     if (_debug) then {
-        WHF_targetGroups = _targetGroups;
-        WHF_targetPositions = _targetPositions;
+        WHF_targets = _targets;
         WHF_aggregatedTargets = _aggregatedTargets;
         WHF_targetAreas = _targetAreas;
 
@@ -109,84 +107,45 @@ private _refreshTargetAreas = {
 
 private _getKnownTargets = {
     /*
-        Get every known target and one group they're known to.
-        Return a HashMap of netId to [Object, Group].
+        Get every known target from the side.
+        Return an array of objects.
     */
-    private _groups = flatten (_sides apply {groups _x}) select {local _x};
-    private _targetGroups = createHashMap;
-    {
-        private _group = _x;
-        private _targets =
-            _group targets [true, 3000, [], 600]
-            select {leader _group knowsAbout _x >= 2.5};
-
-        {
-            private _key = netId _x;
-            if (_key isEqualTo "0:0") then {continue};
-            _targetGroups getOrDefault [_key, [_x, _group], true];
-        } forEach _targets;
-    } forEach _groups;
-    _targetGroups
+    private _groups = groups _side select {local _x};
+    private _targets = flatten (_groups apply {_x targets [true, 3000, [], 600]});
+    _targets = _targets arrayIntersect _targets;
+    _targets select {_side knowsAbout _x >= 2.5}
 };
 
-private _getKnownTargetPositions = {
-    /*
-        Get every target's closest known position from their groups.
-        Return an Array of [Object, PositionATL].
-    */
-    params ["_targetGroups"];
-    private _targetPositions = [];
-    {
-        _y params ["_target", "_group"];
-
-        leader _group
-            targetKnowledge _target
-            params ["", "", "", "", "", "", "_position", "_ignored"];
-
-        if (_ignored) then {continue};
-        _targetPositions pushBack [_target, _position];
-    } forEach _targetGroups;
-    _targetPositions
-};
-
-private _aggregateTargetPositions = {
+private _aggregateTargets = {
     /*
         Group targets by proximity.
-        Return an Array of [[Object, PositionATL], ...].
+        Return a 2D array in the format [[Object, ...], ...].
     */
-    params ["_targetPositions"];
+    params ["_targets"];
     private _aggregatedTargets = [];
     {
-        _x params ["_target", "_position"];
-
-        private _area = [_position, 500, 500];
-        private _index = -1;
-        {
-            private _positions = _x apply {_x # 1};
-            if !([_positions, _area] call WHF_fnc_anyInArea) then {continue};
-            _index = _forEachIndex;
-            break;
-        } forEach _aggregatedTargets;
+        private _area = [getPosATL _x, 500, 500];
+        private _index = _aggregatedTargets findIf {[_x, _area] call WHF_fnc_anyInArea};
 
         if (_index >= 0) then {
             _aggregatedTargets # _index pushBack _x;
         } else {
             _aggregatedTargets pushBack [_x];
         };
-    } forEach _targetPositions;
+    } forEach _targets;
     _aggregatedTargets
 };
 
 private _generateTargetAreas = {
     /*
         Create area arrays based on the grouped targets.
-        Return an Array of [area, targets].
+        Return a 2D array in the format [[area, targets], ...].
     */
     params ["_aggregatedTargets"];
     private _targetAreas = [];
     {
-        private _targets = _x apply {_x # 0};
-        private _positions = _x apply {_x # 1};
+        private _targets = _x;
+        private _positions = _targets apply {getPosATL _x};
 
         private _center = [0,0,0];
         private _minX = _positions # 0 # 0;
@@ -302,7 +261,7 @@ while {_this # 0} do {
         "",
         "_spawnDelay",
         "_waveDelay",
-        "_sides",
+        "_side",
         "_cost",
         "_threshold",
         "_types"
@@ -338,7 +297,7 @@ while {_this # 0} do {
         // FIXME: may spawn aircraft in plain sight
         private _pos = [worldSize / 2, worldSize / 2] getPos [worldSize / 2, random 360];
         _pos = _pos vectorAdd [0, 0, 300 + random 500];
-        private _group = [_sides # 0, _types, 1, _pos, 100] call WHF_fnc_spawnAircraft;
+        private _group = [_side, _types, 1, _pos, 100] call WHF_fnc_spawnAircraft;
         if (isNull _group) exitWith {};
 
         [_targetArea, _cost, _group] call _assignTargetArea;

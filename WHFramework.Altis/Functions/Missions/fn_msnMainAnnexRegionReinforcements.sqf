@@ -96,7 +96,7 @@ private _reinforceScripts = _reinforceArgs apply {_x spawn WHF_fnc_reinforceLoop
 private _aircraftTypes =
     ["heli_attack", "heli_gunship", "jet_cap", "jet_cas"]
     apply {[_x, _faction]};
-private _aircraftArgs = [true, 30, 1200, [opfor, independent], 5, 0, _aircraftTypes];
+private _aircraftArgs = [true, 30, 1200, opfor, 5, 0, _aircraftTypes];
 private _aircraftScript = _aircraftArgs spawn WHF_fnc_aircraftLoop;
 _reinforceArgs pushBack _aircraftArgs;
 _reinforceScripts pushBack _aircraftScript;
