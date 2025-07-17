@@ -142,21 +142,16 @@ private _generateTargetAreas = {
         private _targets = _x;
         private _positions = _targets apply {getPosATL _x};
 
+        private _posX = _positions apply {_x # 0};
+        private _posY = _positions apply {_x # 1};
+        private _min = [selectMin _posX, selectMin _posY];
+        private _max = [selectMax _posX, selectMax _posY];
+        private _diameter = _min distance2D _max;
+
         private _center = [0,0,0];
-        private _minX = _positions # 0 # 0;
-        private _minY = _positions # 0 # 1;
-        private _maxX = _positions # 0 # 0;
-        private _maxY = _positions # 0 # 1;
-        {
-            _center = _center vectorAdd _x;
-            _minX = _minX min _x # 0;
-            _minY = _minY min _x # 1;
-            _maxX = _maxX max _x # 0;
-            _maxY = _maxY max _x # 1;
-        } forEach _positions;
+        {_center = _center vectorAdd _x} forEach _positions;
         _center = _center vectorMultiply (1 / count _positions);
 
-        private _diameter = [_minX, _minY] distance2D [_maxX, _maxY];
         private _area = [_center, _diameter / 2, _diameter / 2];
         _targetAreas pushBack [_area, _targets];
     } forEach _aggregatedTargets;
