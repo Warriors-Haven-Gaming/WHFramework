@@ -31,38 +31,40 @@ sleep (5 + random 10);
 private _groups = [_inputGroups] call WHF_fnc_coerceGroups;
 while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
     {
+        private _group = _x;
         {
-            if (!alive _x) then {continue};
-            if (!local _x) then {continue};
-            if (!simulationEnabled _x) then {continue};
-            if (_x checkAIFeature "PATH") then {continue};
+            private _unit = _x;
+            if (!alive _unit) then {continue};
+            if (!local _unit) then {continue};
+            if (!simulationEnabled _unit) then {continue};
+            if (_unit checkAIFeature "PATH") then {continue};
 
-            private _targets = _x targets [true, 100, [], 180];
+            private _targets = _unit targets [true, 100, [], 180];
             sleep 0.125;
             if (count _targets < 1) then {continue};
 
             private _target = selectRandom _targets;
-            private _position = _x getHideFrom _target;
+            private _position = _unit getHideFrom _target;
 
-            _x setUnitPos "AUTO";
-            _x enableAIFeature ["COVER", true];
-            _x enableAIFeature ["PATH", true];
+            _unit setUnitPos "AUTO";
+            _unit enableAIFeature ["COVER", true];
+            _unit enableAIFeature ["PATH", true];
 
-            private _dynamicSimulation = dynamicSimulationEnabled group _x;
-            private _lasersOn = _x isIRLaserOn currentWeapon _x;
-            private _lightsOn = _x isFlashlightOn currentWeapon _x;
+            private _dynamicSimulation = dynamicSimulationEnabled _group;
+            private _lasersOn = _unit isIRLaserOn currentWeapon _unit;
+            private _lightsOn = _unit isFlashlightOn currentWeapon _unit;
 
-            private _group = createGroup [side group _x, true];
-            _group setVariable ["WHF_siren_disabled", true];
-            [_x] joinSilent _group;
+            private _newGroup = createGroup [side _group, true];
+            _newGroup setVariable ["WHF_siren_disabled", true];
+            [_unit] joinSilent _newGroup;
 
-            _group allowFleeing 0;
-            _group setBehaviourStrong "AWARE";
-            _group setSpeedMode "FULL";
-            _group enableIRLasers _lasersOn;
-            _group enableGunLights (["Auto", "ForceOn"] select _lightsOn);
+            _newGroup allowFleeing 0;
+            _newGroup setBehaviourStrong "AWARE";
+            _newGroup setSpeedMode "FULL";
+            _newGroup enableIRLasers _lasersOn;
+            _newGroup enableGunLights (["Auto", "ForceOn"] select _lightsOn);
 
-            private _waypoint = _group addWaypoint [_position vectorMultiply [1,1,0], 5];
+            private _waypoint = _newGroup addWaypoint [_position vectorMultiply [1,1,0], 5];
             _waypoint setWaypointType "SAD";
             _waypoint setWaypointCompletionRadius 5;
 
@@ -71,7 +73,7 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
             };
 
             if (!isNil "_outputGroups") then {_outputGroups pushBack _group};
-        } forEach units _x;
+        } forEach units _group;
     } forEach _groups;
 
     _groups = [_inputGroups] call WHF_fnc_coerceGroups;
