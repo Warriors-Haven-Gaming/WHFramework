@@ -60,7 +60,7 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
 
         [_x] call WHF_fnc_clearWaypoints;
         private _position = [_leader, _targets] call WHF_fnc_nearestPosition;
-        private _waypoint = _x addWaypoint [_position vectorMultiply [1,1,0], 50];
+        private _waypoint = _x addWaypoint [_position, 50];
         _waypoint setWaypointType "SAD";
         _waypoint setWaypointCompletionRadius 20;
 
