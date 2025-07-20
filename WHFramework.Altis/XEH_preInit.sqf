@@ -687,6 +687,16 @@ call WHF_fnc_cycleFaction;
     false
 ] call WHF_fnc_addSetting;
 [
+    "WHF_missions_annex_location_named",
+    "CHECKBOX",
+    ["STR_WHF_settings_missions_annex_location_named", "STR_WHF_settings_missions_annex_location_named_tooltip"],
+    ["STR_WHF_settings_missions", "STR_WHF_settings_missions_annex"],
+    false,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_missions_annex_size",
     "SLIDER",
     ["STR_WHF_settings_missions_annex_size", "STR_WHF_settings_missions_annex_size_tooltip"],

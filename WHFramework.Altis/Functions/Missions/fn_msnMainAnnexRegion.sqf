@@ -43,6 +43,9 @@ if (_location isEqualTo locationNull) then {
         WHF_missions_annex_location_types,
         sqrt 2 / 2 * worldSize
     ];
+    if (WHF_missions_annex_location_named) then {
+        _locations = _locations select {text _x isNotEqualTo ""};
+    };
     _locations = _locations - ([_locations] call WHF_fnc_inAreaDeadzone);
     _locations = _locations call WHF_fnc_arrayShuffle;
 
