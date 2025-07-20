@@ -677,6 +677,16 @@ call WHF_fnc_cycleFaction;
 
 // Missions
 [
+    "WHF_missions_annex_location_types",
+    "EDITBOX",
+    ["STR_WHF_settings_missions_annex_location_types", "STR_WHF_settings_missions_annex_location_types_tooltip"],
+    ["STR_WHF_settings_missions", "STR_WHF_settings_missions_annex"],
+    '["Airport", "BorderCrossing", "Hill", "NameCity", "NameCityCapital", "NameLocal", "NameVillage", "ViewPoint"]',
+    true,
+    {WHF_missions_annex_location_types = parseSimpleArray _this},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_missions_annex_size",
     "SLIDER",
     ["STR_WHF_settings_missions_annex_size", "STR_WHF_settings_missions_annex_size_tooltip"],
