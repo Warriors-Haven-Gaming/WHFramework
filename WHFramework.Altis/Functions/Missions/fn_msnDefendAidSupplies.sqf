@@ -31,7 +31,7 @@ private _radius = 200;
 if (_center isEqualTo []) then {
     private _locations = nearestLocations [
         [worldSize / 2, worldSize / 2],
-        ["NameVillage", "NameCity", "NameCityCapital"],
+        ["NameCity", "NameCityCapital", "NameVillage"],
         sqrt 2 / 2 * worldSize
     ];
     _locations = _locations - ([_locations] call WHF_fnc_inAreaDeadzone);
