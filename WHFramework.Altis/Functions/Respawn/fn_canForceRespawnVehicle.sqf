@@ -21,7 +21,7 @@ if (typeOf _vehicle isEqualTo "") exitWith {false};
 
 if (!isServer && {!local _vehicle}) exitWith {false};
 if (hasInterface && {!isNull objectParent focusOn}) exitWith {false};
-if (hasInterface && {focusOn distance _vehicle > 5}) exitWith {false};
+if (hasInterface && {focusOn distance _vehicle > 10}) exitWith {false};
 
 if (vectorMagnitude velocity _vehicle > 2.5) exitWith {false};
 if (crew _vehicle findIf {alive _x} >= 0) exitWith {false};
