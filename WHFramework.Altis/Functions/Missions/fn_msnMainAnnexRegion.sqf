@@ -40,7 +40,7 @@ private _radius = [_location] call _getRadius;
 if (_location isEqualTo locationNull) then {
     private _locations = nearestLocations [
         [worldSize / 2, worldSize / 2],
-        ["Airport", "BorderCrossing", "Hill", "NameCity", "NameCityCapital", "NameLocal", "NameVillage"],
+        ["Airport", "BorderCrossing", "Hill", "NameCity", "NameCityCapital", "NameLocal", "NameVillage", "ViewPoint"],
         sqrt 2 / 2 * worldSize
     ];
     _locations = _locations - ([_locations] call WHF_fnc_inAreaDeadzone);
