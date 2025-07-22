@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2308.5857,9.0561037,15433.071};
-		dir[]={0.6420998,-0.49443799,-0.58587551};
-		up[]={0.36525562,0.86920518,-0.33327261};
-		aside[]={-0.67402881,1.4528632e-07,-0.73871356};
+		pos[]={2318.9365,9.0561037,15431.93};
+		dir[]={-0.025230166,-0.35834926,-0.93324763};
+		up[]={-0.009684382,0.93358612,-0.35821959};
+		aside[]={-0.99963641,-5.6315912e-09,0.027025005};
 	};
 };
 binarizationWanted=0;
@@ -1757,7 +1757,7 @@ class Mission
 					name="respawn_west";
 					text="Main Operating Base";
 					type="b_hq";
-					angle=74.999985;
+					angle=74.999977;
 					id=179;
 					class CustomAttributes
 					{
@@ -1809,7 +1809,7 @@ class Mission
 					position[]={1049.256,63.700001,17321.207};
 					name="respawn_west_uav";
 					type="Empty";
-					angle=314.99997;
+					angle=314.99994;
 					id=180;
 					class CustomAttributes
 					{
@@ -1835,7 +1835,7 @@ class Mission
 					position[]={856.18298,63.700001,17678.783};
 					name="respawn_west_pilot_cas";
 					type="Empty";
-					angle=344.99997;
+					angle=344.99994;
 					id=177;
 					class CustomAttributes
 					{
@@ -18264,7 +18264,7 @@ class Mission
 							side="Empty";
 							class Attributes
 							{
-								init="[this, [2298,15378,0], 173, [""Ships""]] call WHF_fnc_vehSpawnInit;";
+								init="[this, [2300,15378,0], 173, [""Ships""]] call WHF_fnc_vehSpawnInit;";
 								disableSimulation=1;
 							};
 							id=383;
@@ -18812,6 +18812,7 @@ class Mission
 							};
 							id=828;
 							type="Land_Statue_03_F";
+							atlOffset=3.8146973e-06;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -18836,7 +18837,6 @@ class Mission
 							class PositionInfo
 							{
 								position[]={2317,2,15425};
-								angles[]={0,6.2831855,-0};
 							};
 							side="Empty";
 							class Attributes
@@ -18900,7 +18900,7 @@ class Mission
 						};
 					};
 					id=243;
-					atlOffset=-28.968983;
+					atlOffset=-28.968979;
 				};
 				class Item2
 				{
