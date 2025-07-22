@@ -5,14 +5,14 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=0.1;
 	autoGroupingDist=10;
-	toggles=1573;
+	toggles=1061;
 	mods[]=
 	{
 		"3denEnhanced"
 	};
 	class ItemIDProvider
 	{
-		nextID=1003;
+		nextID=1007;
 	};
 	class MarkerIDProvider
 	{
@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={879.41229,88.700005,17508.523};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		pos[]={847.59155,78.634964,17432.557};
+		dir[]={0.67754573,-0.47388756,-0.56247562};
+		up[]={0.36463529,0.88057387,-0.3027083};
+		aside[]={-0.6387524,-2.7229544e-07,-0.76942515};
 	};
 };
 binarizationWanted=0;
@@ -75,6 +75,7 @@ addons[]=
 	"RF_Air_Heli_Light_03",
 	"A3_Armor_F_Exp_APC_Wheeled_01",
 	"EF_AH99",
+	"A3_Static_F_Jets_AAA_System_01",
 	"A3_Structures_F_Civ_Lamps",
 	"A3_Characters_F_Common",
 	"A3_Structures_F_Ind_AirPort",
@@ -90,8 +91,7 @@ addons[]=
 	"A3_Structures_F_Ind_Transmitter_Tower",
 	"A3_Structures_F_Naval_Piers",
 	"A3_Structures_F_Enoch_Cultural_Statues",
-	"A3_Structures_F_Mil_Cargo",
-	"A3_Static_F_Jets_AAA_System_01"
+	"A3_Structures_F_Mil_Cargo"
 };
 class AddonsMetaData
 {
@@ -332,50 +332,50 @@ class AddonsMetaData
 		};
 		class Item34
 		{
+			className="A3_Static_F_Jets";
+			name="Arma 3 Jets - Turrets";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item35
+		{
 			className="A3_Structures_F_Ind";
 			name="Arma 3 - Industrial Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item35
+		class Item36
 		{
 			className="A3_Structures_F_Exp";
 			name="Arma 3 Apex - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item36
+		class Item37
 		{
 			className="A3_Structures_F_Enoch";
 			name="Arma 3 Contact Platform - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item37
+		class Item38
 		{
 			className="A3_Structures_F_Argo";
 			name="Arma 3 Malden - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item38
+		class Item39
 		{
 			className="A3_Structures_F_Enoch_Military";
 			name="Arma 3 Contact Platform - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item39
+		class Item40
 		{
 			className="A3_Structures_F_Enoch_Cultural";
 			name="Arma 3 Contact Platform - Cultural Buildings";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item40
-		{
-			className="A3_Static_F_Jets";
-			name="Arma 3 Jets - Turrets";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -442,7 +442,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=338;
+		items=337;
 		class Item0
 		{
 			dataType="Layer";
@@ -8011,7 +8011,7 @@ class Mission
 					name="Vehicles";
 					class Entities
 					{
-						items=62;
+						items=64;
 						class Item0
 						{
 							dataType="Object";
@@ -10817,9 +10817,48 @@ class Mission
 							type="EF_B_AH99J_NATO";
 							atlOffset=3.8146973e-06;
 						};
+						class Item62
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={855,73.386765,17423};
+								angles[]={0,1.3089969,0};
+							};
+							side="West";
+							flags=6;
+							class Attributes
+							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
+								reportRemoteTargets=1;
+								receiveRemoteTargets=1;
+								reportOwnPosition=1;
+								aiRadarUsage=1;
+							};
+							id=1005;
+							type="B_AAA_System_01_F";
+							atlOffset=0.00019836426;
+						};
+						class Item63
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={851.55902,71.669807,17421.961};
+								angles[]={0,2.8623402,0};
+							};
+							side="Empty";
+							class Attributes
+							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
+							};
+							id=1002;
+							type="Box_NATO_AmmoVeh_F";
+							atlOffset=7.1799965;
+						};
 					};
 					id=258;
-					atlOffset=4.196167e-05;
+					atlOffset=5.3852654;
 				};
 				class Item4
 				{
@@ -11532,7 +11571,7 @@ class Mission
 				};
 			};
 			id=231;
-			atlOffset=128.66771;
+			atlOffset=129.70654;
 		};
 		class Item3
 		{
@@ -23004,39 +23043,56 @@ class Mission
 		};
 		class Item336
 		{
-			dataType="Object";
-			class PositionInfo
+			dataType="Group";
+			side="West";
+			class Entities
 			{
-				position[]={855.13312,73.386566,17422.859};
-				angles[]={0,1.3089969,0};
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={857.88037,66.207199,17417.523};
+						angles[]={0,1.3089969,0};
+					};
+					side="West";
+					flags=6;
+					class Attributes
+					{
+					};
+					id=1006;
+					type="B_UAV_AI";
+					atlOffset=0.00019836426;
+				};
 			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				reportRemoteTargets=1;
-				receiveRemoteTargets=1;
-				reportOwnPosition=1;
-				aiRadarUsage=1;
-			};
-			id=1001;
-			type="B_AAA_System_01_F";
-		};
-		class Item337
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={851.55853,71.67012,17421.959};
-				angles[]={0,2.8623402,0};
-			};
-			side="Empty";
 			class Attributes
 			{
 			};
-			id=1002;
-			type="Box_NATO_AmmoVeh_F";
-			atlOffset=7.1803093;
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=1;
+				};
+				class Links
+				{
+					items=1;
+					class Item0
+					{
+						linkID=0;
+						item0=1006;
+						item1=1005;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=1004;
+			atlOffset=0.00019836426;
 		};
 	};
 };
