@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=71;
+		nextID=81;
 	};
 	class Camera
 	{
-		pos[]={2318.9365,9.0561037,15431.93};
-		dir[]={-0.025230166,-0.35834926,-0.93324763};
-		up[]={-0.009684382,0.93358612,-0.35821959};
-		aside[]={-0.99963641,-5.6315912e-09,0.027025005};
+		pos[]={781.22595,88.699997,17486.033};
+		dir[]={0,-0.70710677,0.70710683};
+		up[]={0,0.70710677,0.70710671};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -830,7 +830,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={532.39063,64.084869,17342.826};
+								position[]={532.39062,64.084869,17342.826};
 								angles[]={0.0060001095,0,6.2711854};
 							};
 							side="West";
@@ -1596,7 +1596,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={523.05762,65.043228,17319.563};
+								position[]={523.05762,65.043228,17319.562};
 							};
 							side="West";
 							flags=5;
@@ -1809,7 +1809,7 @@ class Mission
 					position[]={1049.256,63.700001,17321.207};
 					name="respawn_west_uav";
 					type="Empty";
-					angle=314.99994;
+					angle=314.99991;
 					id=180;
 					class CustomAttributes
 					{
@@ -1835,7 +1835,7 @@ class Mission
 					position[]={856.18298,63.700001,17678.783};
 					name="respawn_west_pilot_cas";
 					type="Empty";
-					angle=344.99994;
+					angle=344.99991;
 					id=177;
 					class CustomAttributes
 					{
@@ -5663,7 +5663,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={1007.4835,64.103523,17551.063};
+								position[]={1007.4835,64.103523,17551.062};
 								angles[]={0,1.0471987,0};
 							};
 							side="Empty";
@@ -12817,7 +12817,7 @@ class Mission
 							};
 							id=700;
 							type="Land_CamoConcreteWall_01_l_4m_v2_F";
-							atlOffset=-0.0043945313;
+							atlOffset=-0.0043945312;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -15065,7 +15065,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={740.14063,64.510414,17612.92};
+								position[]={740.14062,64.510414,17612.92};
 								angles[]={0,4.4505901,0};
 							};
 							side="Empty";
@@ -18983,6 +18983,7 @@ class Mission
 								position[]={937.87335,63.700001,17494.648};
 								angles[]={0,5.937654,0};
 							};
+							init="if (!isServer) exitWith {}; " \n "_filter = [ " \n "    ""BUILDING"",""HOUSE"",""CHURCH"",""CHAPEL"",""FUELSTATION"",""HOSPITAL"",""RUIN"",""BUNKER"", " \n "    ""TREE"",""SMALL TREE"",""BUSH"", " \n "    ""WALL"",""FENCE"", " \n "    ""ROCK"",""ROCKS"",""FOREST BORDER"",""FOREST TRIANGLE"",""FOREST SQUARE"",""CROSS"",""FORTRESS"",""FOUNTAIN"",""VIEW-TOWER"",""LIGHTHOUSE"",""QUAY"",""HIDE"",""BUSSTOP"",""ROAD"",""FOREST"",""TRANSMITTER"",""STACK"",""TOURISM"",""WATERTOWER"",""TRACK"",""MAIN ROAD"",""POWER LINES"",""RAILWAY"",""POWERSOLAR"",""POWERWAVE"",""POWERWIND"",""SHIPWRECK"",""TRAIL"" " \n "]; " \n "_area = [getPosATL this] + (this getVariable [""objectarea"",[]]); " \n "_area params ["""",""_a"",""_b""]; " \n "_radius = (_a max _b) * sqrt 2; " \n "_objects = nearestTerrainObjects [this,_filter,_radius,false] inAreaArray _area; " \n "{_x hideObjectGlobal true; _x allowDamage false} forEach _objects;";
 							areaSize[]={13.109987,0,5};
 							areaIsRectangle=1;
 							flags=1;
@@ -19027,6 +19028,7 @@ class Mission
 								position[]={781.22595,63.700001,17511.033};
 								angles[]={0,6.0330701,0};
 							};
+							init="if (!isServer) exitWith {}; " \n "_filter = [ " \n "    ""BUILDING"",""HOUSE"",""CHURCH"",""CHAPEL"",""FUELSTATION"",""HOSPITAL"",""RUIN"",""BUNKER"", " \n "    ""TREE"",""SMALL TREE"",""BUSH"", " \n "    ""WALL"",""FENCE"", " \n "    ""ROCK"",""ROCKS"",""FOREST BORDER"",""FOREST TRIANGLE"",""FOREST SQUARE"",""CROSS"",""FORTRESS"",""FOUNTAIN"",""VIEW-TOWER"",""LIGHTHOUSE"",""QUAY"",""HIDE"",""BUSSTOP"",""ROAD"",""FOREST"",""TRANSMITTER"",""STACK"",""TOURISM"",""WATERTOWER"",""TRACK"",""MAIN ROAD"",""POWER LINES"",""RAILWAY"",""POWERSOLAR"",""POWERWAVE"",""POWERWIND"",""SHIPWRECK"",""TRAIL"" " \n "]; " \n "_area = [getPosATL this] + (this getVariable [""objectarea"",[]]); " \n "_area params ["""",""_a"",""_b""]; " \n "_radius = (_a max _b) * sqrt 2; " \n "_objects = nearestTerrainObjects [this,_filter,_radius,false] inAreaArray _area; " \n "{_x hideObjectGlobal true; _x allowDamage false} forEach _objects;";
 							areaSize[]={107.74,0,22.519539};
 							areaIsRectangle=1;
 							flags=1;
@@ -19071,6 +19073,7 @@ class Mission
 								position[]={804.83368,63.700001,17563.863};
 								angles[]={0,6.033411,0};
 							};
+							init="if (!isServer) exitWith {}; " \n "_filter = [ " \n "    ""BUILDING"",""HOUSE"",""CHURCH"",""CHAPEL"",""FUELSTATION"",""HOSPITAL"",""RUIN"",""BUNKER"", " \n "    ""TREE"",""SMALL TREE"",""BUSH"", " \n "    ""WALL"",""FENCE"", " \n "    ""ROCK"",""ROCKS"",""FOREST BORDER"",""FOREST TRIANGLE"",""FOREST SQUARE"",""CROSS"",""FORTRESS"",""FOUNTAIN"",""VIEW-TOWER"",""LIGHTHOUSE"",""QUAY"",""HIDE"",""BUSSTOP"",""ROAD"",""FOREST"",""TRANSMITTER"",""STACK"",""TOURISM"",""WATERTOWER"",""TRACK"",""MAIN ROAD"",""POWER LINES"",""RAILWAY"",""POWERSOLAR"",""POWERWAVE"",""POWERWIND"",""SHIPWRECK"",""TRAIL"" " \n "]; " \n "_area = [getPosATL this] + (this getVariable [""objectarea"",[]]); " \n "_area params ["""",""_a"",""_b""]; " \n "_radius = (_a max _b) * sqrt 2; " \n "_objects = nearestTerrainObjects [this,_filter,_radius,false] inAreaArray _area; " \n "{_x hideObjectGlobal true; _x allowDamage false} forEach _objects;";
 							areaSize[]={13.109987,0,6.4784899};
 							areaIsRectangle=1;
 							flags=1;
@@ -19115,6 +19118,7 @@ class Mission
 								position[]={768.99005,63.700001,17446.928};
 								angles[]={0,6.0684342,0};
 							};
+							init="if (!isServer) exitWith {}; " \n "_filter = [ " \n "    ""BUILDING"",""HOUSE"",""CHURCH"",""CHAPEL"",""FUELSTATION"",""HOSPITAL"",""RUIN"",""BUNKER"", " \n "    ""TREE"",""SMALL TREE"",""BUSH"", " \n "    ""WALL"",""FENCE"", " \n "    ""ROCK"",""ROCKS"",""FOREST BORDER"",""FOREST TRIANGLE"",""FOREST SQUARE"",""CROSS"",""FORTRESS"",""FOUNTAIN"",""VIEW-TOWER"",""LIGHTHOUSE"",""QUAY"",""HIDE"",""BUSSTOP"",""ROAD"",""FOREST"",""TRANSMITTER"",""STACK"",""TOURISM"",""WATERTOWER"",""TRACK"",""MAIN ROAD"",""POWER LINES"",""RAILWAY"",""POWERSOLAR"",""POWERWAVE"",""POWERWIND"",""SHIPWRECK"",""TRAIL"" " \n "]; " \n "_area = [getPosATL this] + (this getVariable [""objectarea"",[]]); " \n "_area params ["""",""_a"",""_b""]; " \n "_radius = (_a max _b) * sqrt 2; " \n "_objects = nearestTerrainObjects [this,_filter,_radius,false] inAreaArray _area; " \n "{_x hideObjectGlobal true; _x allowDamage false} forEach _objects;";
 							areaSize[]={69.634415,0,14.885172};
 							areaIsRectangle=1;
 							flags=1;
@@ -19159,6 +19163,7 @@ class Mission
 								position[]={834.14807,63.700001,17583.68};
 								angles[]={0,2.9267254,0};
 							};
+							init="if (!isServer) exitWith {}; " \n "_filter = [ " \n "    ""BUILDING"",""HOUSE"",""CHURCH"",""CHAPEL"",""FUELSTATION"",""HOSPITAL"",""RUIN"",""BUNKER"", " \n "    ""TREE"",""SMALL TREE"",""BUSH"", " \n "    ""WALL"",""FENCE"", " \n "    ""ROCK"",""ROCKS"",""FOREST BORDER"",""FOREST TRIANGLE"",""FOREST SQUARE"",""CROSS"",""FORTRESS"",""FOUNTAIN"",""VIEW-TOWER"",""LIGHTHOUSE"",""QUAY"",""HIDE"",""BUSSTOP"",""ROAD"",""FOREST"",""TRANSMITTER"",""STACK"",""TOURISM"",""WATERTOWER"",""TRACK"",""MAIN ROAD"",""POWER LINES"",""RAILWAY"",""POWERSOLAR"",""POWERWAVE"",""POWERWIND"",""SHIPWRECK"",""TRAIL"" " \n "]; " \n "_area = [getPosATL this] + (this getVariable [""objectarea"",[]]); " \n "_area params ["""",""_a"",""_b""]; " \n "_radius = (_a max _b) * sqrt 2; " \n "_objects = nearestTerrainObjects [this,_filter,_radius,false] inAreaArray _area; " \n "{_x hideObjectGlobal true; _x allowDamage false} forEach _objects;";
 							areaSize[]={4.5379152,0,4.8280659};
 							areaIsRectangle=1;
 							flags=1;
@@ -19203,6 +19208,7 @@ class Mission
 								position[]={6460.124,217.42574,2814.6243};
 								angles[]={0,6.1699829,0};
 							};
+							init="if (!isServer) exitWith {}; " \n "_filter = [ " \n "    ""BUILDING"",""HOUSE"",""CHURCH"",""CHAPEL"",""FUELSTATION"",""HOSPITAL"",""RUIN"",""BUNKER"", " \n "    ""TREE"",""SMALL TREE"",""BUSH"", " \n "    ""WALL"",""FENCE"", " \n "    ""ROCK"",""ROCKS"",""FOREST BORDER"",""FOREST TRIANGLE"",""FOREST SQUARE"",""CROSS"",""FORTRESS"",""FOUNTAIN"",""VIEW-TOWER"",""LIGHTHOUSE"",""QUAY"",""HIDE"",""BUSSTOP"",""ROAD"",""FOREST"",""TRANSMITTER"",""STACK"",""TOURISM"",""WATERTOWER"",""TRACK"",""MAIN ROAD"",""POWER LINES"",""RAILWAY"",""POWERSOLAR"",""POWERWAVE"",""POWERWIND"",""SHIPWRECK"",""TRAIL"" " \n "]; " \n "_area = [getPosATL this] + (this getVariable [""objectarea"",[]]); " \n "_area params ["""",""_a"",""_b""]; " \n "_radius = (_a max _b) * sqrt 2; " \n "_objects = nearestTerrainObjects [this,_filter,_radius,false] inAreaArray _area; " \n "{_x hideObjectGlobal true; _x allowDamage false} forEach _objects;";
 							areaSize[]={4.8356934,0,7.7592773};
 							flags=1;
 							id=849;
