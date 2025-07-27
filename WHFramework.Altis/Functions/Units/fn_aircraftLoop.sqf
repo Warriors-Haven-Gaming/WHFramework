@@ -64,6 +64,11 @@ private _gcAircraftGroup = {
     } forEach assignedVehicles _group;
 };
 
+private _shouldRefreshTargetAreas = {
+    count _aircraftGroups > 0
+    || {count (_types call WHF_fnc_getAircraftTypes) > 0}
+};
+
 private _refreshTargetAreas = {
     private _targets = call _getKnownTargets;
     private _aggregatedTargets = [_targets] call _aggregateTargets;
@@ -266,8 +271,7 @@ while {_this # 0} do {
         _targetAt = _time + _targetDelay;
 
         call _cleanupAircraftGroups;
-        if (count _aircraftGroups < 1) exitWith {};
-        if (count (_types call WHF_fnc_getAircraftTypes) < 1) exitWith {};
+        if (!call _shouldRefreshTargetAreas) exitWith {};
 
         call _refreshTargetAreas;
     };
