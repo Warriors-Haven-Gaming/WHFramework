@@ -310,30 +310,30 @@ call WHF_fnc_cycleFaction;
 ] call WHF_fnc_addSetting;
 [
     "WHF_signalFlareCheckInterval",
-    "SLIDER",
+    "TIME",
     ["STR_WHF_settings_flares_interval", "STR_WHF_settings_flares_interval_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_flares"],
-    [1, 30, 5, 0, false],
+    [1, 30, 5],
     true,
     {},
     false
 ] call WHF_fnc_addSetting;
 [
     "WHF_signalFlareGlobalCooldown",
-    "SLIDER",
+    "TIME",
     ["STR_WHF_settings_flares_globalCooldown", "STR_WHF_settings_flares_globalCooldown_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_flares"],
-    [0, 300, 0, 0, false],
+    [0, 300, 0],
     true,
     {},
     false
 ] call WHF_fnc_addSetting;
 [
     "WHF_signalFlareGroupCooldown",
-    "SLIDER",
+    "TIME",
     ["STR_WHF_settings_flares_groupCooldown", "STR_WHF_settings_flares_groupCooldown_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_flares"],
-    [0, 300, 120, 0, false],
+    [0, 300, 120],
     true,
     {},
     false
@@ -620,10 +620,10 @@ call WHF_fnc_cycleFaction;
 ] call WHF_fnc_addSetting;
 [
     "WHF_jtac_tasks_cooldown",
-    "SLIDER",
+    "TIME",
     ["STR_WHF_settings_jtac_tasks_cooldown", "STR_WHF_settings_jtac_tasks_cooldown_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_jtac"],
-    [0, 300, 15, 1, false],
+    [0, 300, 15],
     true,
     {},
     false
@@ -758,20 +758,20 @@ call WHF_fnc_cycleFaction;
 ] call WHF_fnc_addSetting;
 [
     "WHF_missions_annex_reinforce_frequency_units",
-    "SLIDER",
+    "TIME",
     ["STR_WHF_settings_missions_annex_reinforce_frequency_units", "STR_WHF_settings_missions_annex_reinforce_frequency_units_tooltip"],
     ["STR_WHF_settings_missions", "STR_WHF_settings_missions_annex"],
-    [10, 600, 120, 0, false],
+    [10, 600, 120],
     true,
     {},
     false
 ] call WHF_fnc_addSetting;
 [
     "WHF_missions_annex_reinforce_frequency_vehicles",
-    "SLIDER",
+    "TIME",
     ["STR_WHF_settings_missions_annex_reinforce_frequency_vehicles", "STR_WHF_settings_missions_annex_reinforce_frequency_vehicles_tooltip"],
     ["STR_WHF_settings_missions", "STR_WHF_settings_missions_annex"],
-    [10, 600, 180, 0, false],
+    [10, 600, 180],
     true,
     {},
     false
@@ -985,20 +985,20 @@ call WHF_fnc_cycleFaction;
 
 [
     "WHF_recruits_incap_hold",
-    "SLIDER",
+    "TIME",
     ["STR_WHF_settings_recruits_incap_hold", "STR_WHF_settings_recruits_incap_hold_tooltip"],
     ["STR_WHF_settings_recruits", "STR_WHF_settings_recruits_incap"],
-    [0, 600, 25, 0, false],
+    [0, 600, 25],
     false,
     {},
     false
 ] call WHF_fnc_addSetting;
 [
     "WHF_recruits_incap_hold_assigned",
-    "SLIDER",
+    "TIME",
     ["STR_WHF_settings_recruits_incap_hold_assigned", "STR_WHF_settings_recruits_incap_hold_assigned_tooltip"],
     ["STR_WHF_settings_recruits", "STR_WHF_settings_recruits_incap"],
-    [0, 600, 180, 0, false],
+    [0, 600, 180],
     false,
     {},
     false
@@ -1049,10 +1049,10 @@ call WHF_fnc_cycleFaction;
 ] call WHF_fnc_addSetting;
 [
     "WHF_selfRevive_minTime",
-    "SLIDER",
+    "TIME",
     ["STR_WHF_settings_revive_self_minTime", "STR_WHF_settings_revive_self_minTime_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_revive"],
-    [0, 180, 3, 0, false],
+    [0, 180, 3],
     true,
     {},
     false
@@ -1089,10 +1089,10 @@ call WHF_fnc_cycleFaction;
 ] call WHF_fnc_addSetting;
 [
     "WHF_revive_bleedout",
-    "SLIDER",
+    "TIME",
     ["STR_WHF_settings_revive_bleedout", "STR_WHF_settings_revive_bleedout_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_revive"],
-    [30, 3600, 600, 0, false],
+    [30, 3600, 600],
     true,
     {},
     false
