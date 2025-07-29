@@ -313,7 +313,7 @@ call WHF_fnc_cycleFaction;
     "TIME",
     ["STR_WHF_settings_flares_interval", "STR_WHF_settings_flares_interval_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_flares"],
-    [1, 30, 5],
+    [1, 60, 5],
     true,
     {},
     false
@@ -669,7 +669,7 @@ call WHF_fnc_cycleFaction;
     "SLIDER",
     ["STR_WHF_settings_prisoners_detain_cooldown", "STR_WHF_settings_prisoners_detain_cooldown_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_prisoners"],
-    [3, 30, 3, 1, false],
+    [3, 60, 3, 1, false],
     true,
     {},
     false
