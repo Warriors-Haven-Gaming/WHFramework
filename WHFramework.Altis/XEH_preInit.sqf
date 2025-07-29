@@ -1052,7 +1052,7 @@ call WHF_fnc_cycleFaction;
     "TIME",
     ["STR_WHF_settings_revive_self_minTime", "STR_WHF_settings_revive_self_minTime_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_revive"],
-    [0, 180, 3],
+    [3, 180, 3],
     true,
     {},
     false
