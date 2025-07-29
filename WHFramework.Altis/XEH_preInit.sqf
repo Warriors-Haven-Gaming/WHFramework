@@ -1195,12 +1195,12 @@ call WHF_fnc_cycleFaction;
 ] call WHF_fnc_addSetting;
 [
     "WHF_requestSkipTime_cooldown",
-    "SLIDER",
+    "TIME",
     ["STR_WHF_settings_time_skipCooldown", "STR_WHF_settings_time_skipCooldown_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_time"],
-    [5, 60, 30, 0, false],
+    [300, 3600, 1800],
     true,
-    {WHF_requestSkipTime_cooldown = _this * 60},
+    {},
     false
 ] call WHF_fnc_addSetting;
 [
