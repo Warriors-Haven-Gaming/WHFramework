@@ -29,6 +29,10 @@ private _objects = [_pos, _radius, [_vehicle]] call WHF_fnc_nearObjectsRespawn;
 {_radius = _radius min ((_pos distance _x) - 1)} forEach _objects;
 _radius = _radius max 0;
 
+private _animNames = animationNames _vehicle;
+private _animations = []; // FIXME: some sources like hidedoor1 on prowler require animate
+private _animationSources = _animNames apply {[_x, _vehicle animationSourcePhase _x]};
+
 private _vars =
     allVariables _vehicle
     select {[_x, "whf_"] call WHF_fnc_stringStartsWith}
@@ -40,6 +44,8 @@ private _record = createHashMapFromArray [
     ["_pos", _pos],
     ["_dir", getDir _vehicle],
     ["_radius", _radius],
+    ["_animations", _animations],
+    ["_animationSources", _animationSources],
     ["_vars", _vars],
     ["_respawnAt", -1]
 ];
