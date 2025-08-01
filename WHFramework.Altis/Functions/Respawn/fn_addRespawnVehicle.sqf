@@ -50,6 +50,7 @@ private _record = createHashMapFromArray [
     ["_animations", _animations apply {[_x, _vehicle animationPhase _x]}],
     ["_animationDoors", _animationDoors apply {[_x, _vehicle doorPhase _x]}],
     ["_animationSources", _animationSources apply {[_x, _vehicle animationSourcePhase _x]}],
+    ["_pylons", getAllPylonsInfo _vehicle],
     ["_textures", getObjectTextures _vehicle],
     ["_vars", _vars],
     ["_respawnAt", -1]

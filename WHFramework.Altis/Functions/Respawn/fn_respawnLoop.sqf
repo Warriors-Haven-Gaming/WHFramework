@@ -32,10 +32,12 @@ private _respawnVehicle = {
 
     private _type = _record get "_type";
     private _dir = _record get "_dir";
+    private _pylons = _record get "_pylons";
     private _textures = _record get "_textures";
     private _vars = _record get "_vars";
 
     private _object = createVehicle [_type, [-random 500, -random 500, random 500], [], 0, "CAN_COLLIDE"];
+    {_object setPylonLoadout [_x # 0, _x # 3, true, _x # 2]} forEach _pylons;
     {_object setObjectTextureGlobal [_forEachIndex, _x]} forEach _textures;
     {_object setVariable _x} forEach _vars;
     sleep 0.125; // Animations don't like applying on new vehicles unless we wait
@@ -58,6 +60,9 @@ private _restoreVehicle = {
 
     _object setOwner 2;
     sleep 0.5; // Allow for some network delay
+
+    private _pylons = _record get "_pylons";
+    {_object setPylonLoadout [_x # 0, _x # 3, true, _x # 2]} forEach _pylons;
 
     _object engineOn false;
     _object setCollisionLight false;
