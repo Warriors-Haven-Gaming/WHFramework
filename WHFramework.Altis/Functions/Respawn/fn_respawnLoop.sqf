@@ -32,9 +32,11 @@ private _respawnVehicle = {
 
     private _type = _record get "_type";
     private _dir = _record get "_dir";
+    private _textures = _record get "_textures";
     private _vars = _record get "_vars";
 
     private _object = createVehicle [_type, [-random 500, -random 500, random 500], [], 0, "CAN_COLLIDE"];
+    {_object setObjectTextureGlobal [_forEachIndex, _x]} forEach _textures;
     {_object setVariable _x} forEach _vars;
     sleep 0.125; // Animations don't like applying on new vehicles unless we wait
     call _animateVehicle;

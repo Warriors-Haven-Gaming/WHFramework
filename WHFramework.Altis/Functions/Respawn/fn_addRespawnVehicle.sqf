@@ -46,6 +46,7 @@ private _record = createHashMapFromArray [
     ["_radius", _radius],
     ["_animations", _animations],
     ["_animationSources", _animationSources],
+    ["_textures", getObjectTextures _vehicle],
     ["_vars", _vars],
     ["_respawnAt", -1]
 ];
