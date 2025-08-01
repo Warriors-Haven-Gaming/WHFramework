@@ -74,8 +74,10 @@ private _restoreVehicle = {
 
 private _animateVehicle = {
     private _animations = _record get "_animations";
+    private _animationDoors = _record get "_animationDoors";
     private _animationSources = _record get "_animationSources";
     {_object animate [_x # 0, _x # 1, true]} forEach _animations;
+    {_object animateDoor [_x # 0, _x # 1, true]} forEach _animationDoors;
     {_object animateSource [_x # 0, _x # 1, true]} forEach _animationSources;
 };
 

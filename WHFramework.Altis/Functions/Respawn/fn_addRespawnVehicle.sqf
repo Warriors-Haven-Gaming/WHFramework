@@ -29,9 +29,12 @@ private _objects = [_pos, _radius, [_vehicle]] call WHF_fnc_nearObjectsRespawn;
 {_radius = _radius min ((_pos distance _x) - 1)} forEach _objects;
 _radius = _radius max 0;
 
+// Derived from BIS_fnc_initVehicle
 private _animNames = animationNames _vehicle;
-private _animations = []; // FIXME: some sources like hidedoor1 on prowler require animate
-private _animationSources = _animNames apply {[_x, _vehicle animationSourcePhase _x]};
+private _animSources = configOf _vehicle >> "AnimationSources";
+private _animationDoors = _animNames select {getText (_animSources >> _x >> "source") == "door"};
+private _animationSources = _animNames - _animationDoors select {getNumber (_animSources >> _x >> "useSource") == 1};
+private _animations = _animNames - _animationDoors - _animationSources;
 
 private _vars =
     allVariables _vehicle
@@ -44,8 +47,9 @@ private _record = createHashMapFromArray [
     ["_pos", _pos],
     ["_dir", getDir _vehicle],
     ["_radius", _radius],
-    ["_animations", _animations],
-    ["_animationSources", _animationSources],
+    ["_animations", _animations apply {[_x, _vehicle animationPhase _x]}],
+    ["_animationDoors", _animationDoors apply {[_x, _vehicle doorPhase _x]}],
+    ["_animationSources", _animationSources apply {[_x, _vehicle animationSourcePhase _x]}],
     ["_textures", getObjectTextures _vehicle],
     ["_vars", _vars],
     ["_respawnAt", -1]
