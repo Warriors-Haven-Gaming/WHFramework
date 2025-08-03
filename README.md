@@ -1,5 +1,8 @@
 # Warriors Haven Framework
 
+Available on Steam Workshop:
+https://steamcommunity.com/sharedfiles/filedetails/?id=3514182772
+
 Warriors Haven Framework is our attempt at building our own I&A gamemode from
 the ground up, porting over features we've developed in our modified version of
 [Quiksilver's Invade & Annex], and rewriting everything else to (hopefully)
@@ -66,10 +69,10 @@ Additional factions are supported with the following CDLC and mods:
 
 ## How do I play?
 
-You can find this gamemode published on the Steam Workshop:
-[Warriors Haven Framework](https://steamcommunity.com/sharedfiles/filedetails/?id=3514182772)
+For most players, you can play by subscribing to our [Steam Workshop] mod
+and loading Warriors Haven Framework in the Arma 3 Launcher.
 
-Once subscribed, you can start the gamemode from Scenarios in the main menu,
+After loading the mod, you can start the gamemode from Scenarios in the main menu,
 or host it by going to Server Browser > Host Server and selecting Warriors Haven Framework
 from the appropriate map. Beware that if you play the SP version from the Scenarios menu,
 you will not be able to respawn when you die and will have to restart the mission each time.
@@ -83,6 +86,7 @@ Altis and Tanoa.
 Dedicated server hosters may also consider using our suggested [BattlEye filters]
 to improve security. See this [DayZ BattlEye Guide] for more information.
 
+[Steam Workshop]: https://steamcommunity.com/sharedfiles/filedetails/?id=3514182772
 [Releases]: https://github.com/Warriors-Haven-Gaming/WHFramework/releases/latest
 [BattlEye filters]: https://github.com/Warriors-Haven-Gaming/WHFramework/tree/main/BattlEye
 [DayZ BattlEye Guide]: https://opendayz.net/threads/a-guide-to-battleye-filters.21066/
