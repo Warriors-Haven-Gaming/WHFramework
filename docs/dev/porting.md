@@ -114,9 +114,14 @@ Init field:
 ```
 
 This works for regular vehicles and autonomous drones, which will spawn under
-the BLUFOR side. As of now, the vehicle respawn system does not save pylon/weapon
-loadouts and custom textures or selections like camo nets. Do **NOT** combine
-this with the vanilla Vehicle Respawn module.
+the BLUFOR side. The gamemode will preserve the vehicle's pylon loadouts,
+custom textures, and animation sources like camo nets, but not weapon loadouts
+that are part of the vehicle like cannon shells and HMG boxes.
+Instead, we recommend modifying weapon loadouts on a global basis by editing
+[fn_setupVehicle.sqf].
+Do **NOT** combine this with the vanilla Vehicle Respawn module.
+
+[fn_setupVehicle.sqf]: https://github.com/Warriors-Haven-Gaming/WHFramework/blob/main/WHFramework.Altis/Functions/Vehicles/fn_setupVehicle.sqf
 
 ## 8. Adding vehicle locks
 
