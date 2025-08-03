@@ -7,6 +7,8 @@ improve stability and make it easier to develop new objectives and functionality
 
 ![](/docs/images/cover.jpg)
 
+[Quiksilver's Invade & Annex]: https://github.com/auQuiksilver/Apex-Framework
+
 ## Summary
 
 Warriors Haven Framework provides a reoccurring main objective and side objectives
@@ -101,9 +103,22 @@ Certain features like damage reduction and our revive system are disabled when
 ACE is loaded. However, we don't normally test ACE with this gamemode, so you
 may encounter issues with it.
 
-# License
+## Can I publish derivatives of this gamemode?
 
-This project is written under the [MIT License].
+Warriors Haven Framework is written under the [MIT License] so you are free to
+modify and redistribute it as long as you retain the original license in your
+project. For tips on making your own gamemode ports, see our [Creating Ports]
+guide.
 
-[Quiksilver's Invade & Annex]: https://github.com/auQuiksilver/Apex-Framework
-[MIT License]: /LICENSE
+[MIT License]: https://github.com/Warriors-Haven-Gaming/WHFramework/blob/main/LICENSE
+[Creating Ports]: https://github.com/Warriors-Haven-Gaming/WHFramework/blob/main/docs/dev/porting.md
+
+If you also plan on publishing your version to the Steam Workshop, we recommend
+following these guidelines:
+- Remove "Warriors Haven Framework" from the workshop title.
+- Include WHF somewhere in the title, for example "WHF Remastered"
+  or "The Righteous Spearhead (WHF)".
+- In the description, add a notice explaining that your version is a derivative
+  of Warriors Haven Framework.
+- Under the above notice, include either a link to this workshop page, or a link
+  to our GitHub repository.
