@@ -365,7 +365,7 @@ call WHF_fnc_cycleFaction;
     "SLIDER",
     ["STR_WHF_settings_gc_gcDeletionDistance", "STR_WHF_settings_gc_gcDeletionDistance_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_gc"],
-    [0, 10000, 500, 0, false],
+    [0, 10000, 750, 0, false],
     true,
     {},
     false
@@ -375,7 +375,7 @@ call WHF_fnc_cycleFaction;
     "SLIDER",
     ["STR_WHF_settings_gc_gcUnhideDistance", "STR_WHF_settings_gc_gcUnhideDistance_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_gc"],
-    [0, 10000, 500, 0, false],
+    [0, 10000, 750, 0, false],
     true,
     {},
     false
