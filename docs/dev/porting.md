@@ -172,7 +172,7 @@ for the action to appear.
 
 ## 11. Adding vehicle spawners
 
-To allow players to request vehicels from an object, usually a laptop,
+To allow players to request vehicles from an object, usually a laptop,
 you should add the following line to the object's Init field:
 
 ```sqf
