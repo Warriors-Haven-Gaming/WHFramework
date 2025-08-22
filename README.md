@@ -69,14 +69,13 @@ Additional factions are supported with the following CDLC and mods:
 
 ## How do I play?
 
-For most players, you can play by subscribing to our [Steam Workshop] mod
-and loading Warriors Haven Framework in the Arma 3 Launcher.
+For most players, you should subscribe to our [Steam Workshop] mod
+and load Warriors Haven Framework in the Arma 3 Launcher.
 
 After loading the mod, you can start the gamemode from Scenarios in the main menu,
 or host it by going to Server Browser > Host Server and selecting Warriors Haven Framework
 from the appropriate map. Beware that if you play the SP version from the Scenarios menu,
 you will not be able to respawn when you die and will have to restart the mission each time.
-As such, we recommend hosting it as a LAN server.
 
 For dedicated server hosters, you can also host the gamemode directly from
 the mission files on our [Releases] page. This allows players to join without
@@ -124,5 +123,5 @@ following these guidelines:
   or "The Righteous Spearhead (WHF)".
 - In the description, add a notice explaining that your version is a derivative
   of Warriors Haven Framework.
-- Under the above notice, include either a link to this workshop page, or a link
-  to our GitHub repository.
+- Under the above notice, include either a link to our workshop page, or a link
+  to this GitHub repository.
