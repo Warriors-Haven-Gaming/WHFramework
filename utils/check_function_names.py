@@ -1,11 +1,12 @@
 """Validates SQF function names in docstrings."""
+
 import argparse
 import re
 import sys
 from pathlib import Path
 
 TAG = "WHF"
-FUNCTION_PATTERN = re.compile(r'^Function: (.+)$', re.MULTILINE)
+FUNCTION_PATTERN = re.compile(r"^Function: (.+)$", re.MULTILINE)
 
 
 def transform_function_name(tag: str, filename: str) -> str:

@@ -14,9 +14,20 @@ from pathlib import Path
 from typing import Iterable, Iterator
 
 # FIXME: avoid hardcoding addon builder path
-ADDON_BUILDER = Path("C:/Program Files (x86)/Steam/steamapps/common/Arma 3 Tools/AddonBuilder/AddonBuilder.exe")
+ADDON_BUILDER = Path(
+    "C:/Program Files (x86)/Steam/steamapps/common/Arma 3 Tools/AddonBuilder/AddonBuilder.exe"
+)
 DESTINATION = Path("build")
-DEFAULT_BRANCHES = ("mogadishu", "regero", "tanoa", "yulakia", "colombia", "drakovac", "mehland", "main")
+DEFAULT_BRANCHES = (
+    "mogadishu",
+    "regero",
+    "tanoa",
+    "yulakia",
+    "colombia",
+    "drakovac",
+    "mehland",
+    "main",
+)
 
 
 def main() -> None:
@@ -38,7 +49,7 @@ def main() -> None:
         "-d",
         "--dest",
         default=DESTINATION,
-        help=f"The destination directory (default: %(default)s)",
+        help="The destination directory (default: %(default)s)",
         type=Path,
     )
     parser.add_argument(
