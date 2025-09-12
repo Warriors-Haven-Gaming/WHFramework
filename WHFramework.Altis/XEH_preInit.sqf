@@ -216,7 +216,7 @@ Author:
     "SLIDER",
     ["STR_WHF_settings_dynSim_distance_group", "STR_WHF_settings_dynSim_distance_group_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_dynSim"],
-    [250, 5000, 750, 0, false],
+    [250, 5000, 1000, 0, false],
     true,
     {
         "Group"        setDynamicSimulationDistance _this;
