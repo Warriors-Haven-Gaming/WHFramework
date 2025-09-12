@@ -6,3 +6,10 @@ if (isServer) then {
     WHF_globalPlayerTarget = [0, -2] select isDedicated;
     publicVariable "WHF_globalPlayerTarget";
 };
+
+setMissionOptions createHashMapFromArray [
+    ["IgnoreNoDamage", true],
+    ["IgnoreFakeHeadHit", true],
+    ["IgnoreUpsideDownDamage", true],
+    ["AIThinkOnlyLocal", true]
+];

@@ -199,6 +199,35 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 
+[
+    "WHF_dynSim_enabled",
+    "CHECKBOX",
+    ["STR_WHF_settings_dynSim_enabled", "STR_WHF_settings_dynSim_enabled_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_dynSim"],
+    true,
+    true,
+    {
+        enableDynamicSimulationSystem _this;
+    },
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_dynSim_distance_group",
+    "SLIDER",
+    ["STR_WHF_settings_dynSim_distance_group", "STR_WHF_settings_dynSim_distance_group_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_dynSim"],
+    [250, 5000, 750, 0, false],
+    true,
+    {
+        "Group"        setDynamicSimulationDistance _this;
+        "Vehicle"      setDynamicSimulationDistance _this;
+        "Prop"         setDynamicSimulationDistance 50;
+        "EmptyVehicle" setDynamicSimulationDistance 250;
+        "IsMoving"     setDynamicSimulationDistanceCoef 2.5;
+    },
+    false
+] call WHF_fnc_addSetting;
+
 // Factions
 /*
     Useful scripts for adding new factions:
