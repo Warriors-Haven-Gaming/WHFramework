@@ -223,7 +223,7 @@ Author:
         "Vehicle"      setDynamicSimulationDistance _this;
         "Prop"         setDynamicSimulationDistance 50;
         "EmptyVehicle" setDynamicSimulationDistance 250;
-        "IsMoving"     setDynamicSimulationDistanceCoef 2.5;
+        "IsMoving"     setDynamicSimulationDistanceCoef 2;
     },
     false
 ] call WHF_fnc_addSetting;
