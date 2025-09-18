@@ -92,6 +92,7 @@ with uiNamespace do {
 
     WHF_roleSelectionGUI_ctrlPlayersInRole = {
         params ["_role"];
+        // FIXME: may return an incomplete set of units, desync issue?
         units side group focusOn
             select {isPlayer _x}
             select {_x getVariable ["WHF_role", ""] isEqualTo _role}
