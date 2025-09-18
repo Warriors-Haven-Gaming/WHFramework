@@ -27,6 +27,7 @@ private _calculateLimit = {
 // TODO: add settings to customize role limits
 switch (_role) do {
     case "arty":            {[1, 20] call _calculateLimit};
+    case "aa":              {[3,  3] call _calculateLimit};
     case "at":              {[3,  3] call _calculateLimit};
     case "autorifleman":    {[3,  3] call _calculateLimit};
     case "engineer":        {[3,  8] call _calculateLimit};

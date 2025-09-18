@@ -15,6 +15,7 @@ uiNamespace setVariable ["WHF_roleSelectionGUI_roles", [
     "medic",
     "autorifleman",
     "at",
+    "aa",
     "engineer",
     "sniper",
     "jtac",

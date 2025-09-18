@@ -19,6 +19,7 @@ Author:
 params ["_role"];
 private _type = switch (_role) do {
     case "arty": {"B_support_Mort_F"};
+    case "aa": {"B_soldier_AA_F"};
     case "at": {"B_soldier_AT_F"};
     case "autorifleman": {"B_soldier_AR_F"};
     case "engineer": {"B_engineer_F"};
