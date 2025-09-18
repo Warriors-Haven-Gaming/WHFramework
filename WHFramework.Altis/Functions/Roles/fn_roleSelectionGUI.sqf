@@ -210,7 +210,7 @@ with uiNamespace do {
 
     WHF_roleSelectionGUI_ctrlRoles ctrlAddEventHandler ["KeyDown", {with uiNamespace do {
         params ["", "_key", "_shift", "_ctrl", "_alt"];
-        if !(_key in [DIK_RETURN, DIK_NUMPADENTER]) exitWith {};
+        if !(_key in [DIK_SPACE, DIK_RETURN, DIK_NUMPADENTER]) exitWith {};
         if (_alt) exitWith {}; // Alt+Enter usually toggles fullscreen
         call WHF_roleSelectionGUI_requestRole;
     }}];
