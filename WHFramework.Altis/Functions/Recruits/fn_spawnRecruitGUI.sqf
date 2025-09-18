@@ -16,6 +16,7 @@ params ["_position"];
 
 uiNamespace setVariable ["WHF_spawnRecruitGUI_pos", _position];
 uiNamespace setVariable ["WHF_spawnRecruitGUI_roles", [
+    "aa",
     "at",
     "autorifleman",
     "engineer",
