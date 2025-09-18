@@ -12,6 +12,13 @@ Author:
 addMissionEventHandler ["Draw3D", {
     if (!WHF_icons_3D) exitWith {};
 
+    private _getName = {
+        if (!freeLook) exitWith {name _this};
+        private _role = _this getVariable "WHF_role";
+        if (isNil "_role") exitWith {name _this};
+        format ["%1 (%2)", name _this, _role call WHF_fnc_localizeRole]
+    };
+
     // Separate units from vehicles
     private _side = side group focusOn;
     private _groups = if (WHF_icons_3D_group) then {[group focusOn]} else {groups _side};
@@ -65,7 +72,7 @@ addMissionEventHandler ["Draw3D", {
 
         private _config = configOf _x;
         private _isTarget = _x isEqualTo cursorTarget || {_x in _selectedUnits};
-        private _text = if (_isTarget) then {name _x} else {""};
+        private _text = if (_isTarget) then {_x call _getName} else {""};
 
         if (WHF_icons_3D_style isEqualTo 0) then {
             drawIcon3D [
@@ -151,8 +158,8 @@ addMissionEventHandler ["Draw3D", {
             format [
                 "%1 (%2)",
                 [_config] call BIS_fnc_displayName,
-                if (count _crew < 2) then {name _target} else {
-                    format ["%1 + %2", name _target, count _crew - 1]
+                if (count _crew < 2) then {_target call _getName} else {
+                    format ["%1 + %2", _target call _getName, count _crew - 1]
                 }
             ]
         };
@@ -193,6 +200,13 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
     params ["_display"];
 
     if (!WHF_icons_map) exitWith {};
+
+    private _getName = {
+        if (!freeLook) exitWith {name _this};
+        private _role = _this getVariable "WHF_role";
+        if (isNil "_role") exitWith {name _this};
+        format ["%1 (%2)", name _this, _role call WHF_fnc_localizeRole]
+    };
 
     private _mapScale = ctrlMapScale _display;
     private _iconScale = linearConversion [0.05, 0.002, _mapScale, 20, 32, true];
@@ -260,7 +274,7 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
             default {[_side] call _getSideColor};
         };
         private _textScale = 0.045;
-        private _text = if (_mapScale <= _textMinMapScale) then {name _x} else {""};
+        private _text = if (_mapScale <= _textMinMapScale) then {_x call _getName} else {""};
         _display drawIcon [
             [_x] call WHF_fnc_getUnitIcon,
             _color + [1],
@@ -318,7 +332,7 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
                 private _controller = _crew apply {remoteControlled _x} select {!isNull _x};
                 private _displayName = [_config] call BIS_fnc_displayName;
                 if (count _controller > 0) then {
-                    format ["%1 (%2)", _displayName, name (_controller # 0)]
+                    format ["%1 (%2)", _displayName, _controller # 0 call _getName]
                 } else {
                     _displayName
                 }
@@ -330,12 +344,12 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
                     "%1 (%2)",
                     [_config] call BIS_fnc_displayName,
                     // _crew apply {
-                    //     if (isPlayer _x) then {name _x} else {
-                    //         format ["%1 [AI]", name _x]
+                    //     if (isPlayer _x) then {_x call _getName} else {
+                    //         format ["%1 [AI]", _x call _getName]
                     //     }
                     // } joinString ", "
-                    if (count _crew < 2) then {name _commander} else {
-                        format ["%1 + %2", name _commander, count _crew - 1]
+                    if (count _crew < 2) then {_commander call _getName} else {
+                        format ["%1 + %2", _commander call _getName, count _crew - 1]
                     }
                 ]
             };
