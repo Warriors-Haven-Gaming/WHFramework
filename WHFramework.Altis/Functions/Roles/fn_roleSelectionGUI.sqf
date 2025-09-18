@@ -31,6 +31,7 @@ with uiNamespace do {
     private _display = findDisplay -1;
 
     if (isNil "WHF_fnc_localizeRole") then {WHF_fnc_localizeRole = missionNamespace getVariable "WHF_fnc_localizeRole"};
+    if (isNil "WHF_fnc_getRoleLimit") then {WHF_fnc_getRoleLimit = missionNamespace getVariable "WHF_fnc_getRoleLimit"};
 
     WHF_roleSelectionGUI_currentRole = {focusOn getVariable ["WHF_role", "rifleman"]};
     WHF_roleSelectionGUI_selectedRole = {
@@ -66,9 +67,10 @@ with uiNamespace do {
         lbClear _list;
         {
             private _text = format [
-                "%1 (%2)",
+                "%1 (%2/%3)",
                 _x call WHF_fnc_localizeRole,
-                count ([_x] call WHF_roleSelectionGUI_ctrlPlayersInRole)
+                count ([_x] call WHF_roleSelectionGUI_ctrlPlayersInRole),
+                [_x] call WHF_fnc_getRoleLimit
             ];
 
             private _index = _list lbAdd _text;
@@ -155,7 +157,10 @@ with uiNamespace do {
         private _current = call WHF_roleSelectionGUI_currentRole;
         if (_current isEqualTo _role) exitWith {false};
 
-        // TODO: limit number of players per role
+        private _players = [_role] call WHF_roleSelectionGUI_ctrlPlayersInRole;
+        private _limit = [_role] call WHF_fnc_getRoleLimit;
+        if (count _players >= _limit) exitWith {false};
+
         true
     };
 
