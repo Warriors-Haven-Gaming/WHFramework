@@ -13,3 +13,6 @@ sleep 0.5;
 
 [] call WHF_fnc_introGUI;
 waitUntil {sleep 0.25; !dialog};
+
+[] call WHF_fnc_roleSelectionGUI;
+waitUntil {sleep 0.25; !dialog};
