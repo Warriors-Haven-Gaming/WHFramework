@@ -370,3 +370,82 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
         ];
     } forEach _vehicles;
 }];
+
+addMissionEventHandler ["Draw3D", {
+    // Maybe add a separate setting for laser target icons?
+    if (!WHF_icons_3D) exitWith {};
+
+    private _vehicle = objectParent focusOn;
+    if (isNull _vehicle) exitWith {};
+
+    assignedVehicleRole focusOn params [["_role", ""]];
+    if !(_role in ["driver", "turret"]) exitWith {};
+
+    private _laserTargets =
+        getSensorTargets _vehicle
+        select {_x # 1 isEqualTo "lasertarget"}
+        apply {_x # 0};
+    if (count _laserTargets < 1) exitWith {};
+
+    private _getName = {
+        if (!freeLook) exitWith {name _this};
+        private _role = _this getVariable "WHF_role";
+        if (isNil "_role") exitWith {name _this};
+        format ["%1 (%2)", name _this, _role call WHF_fnc_localizeRole]
+    };
+
+    private _getLaserParents = {
+        private _target = _x;
+        private _vehicle = objectParent _target; // NOTE: only works in 2.22+
+        if (isNull _vehicle) exitWith {[objNull, objNull]};
+        if (_vehicle isKindOf "Man") exitWith {[_vehicle, _vehicle]};
+
+        // Intentionally obfuscate laser parents from other sides
+        private _commander = effectiveCommander _vehicle;
+        if (side group _commander isNotEqualTo side group focusOn) exitWith {[objNull, objNull]};
+
+        private _crewTargets =
+            crew _vehicle
+            apply {[_x, _vehicle laserTarget (_vehicle unitTurret _x)]};
+        private _index = _crewTargets findIf {_x # 1 isEqualTo _target};
+        private _unit = if (_index >= 0) then {_crewTargets # _index # 0} else {_commander};
+
+        private _instigator = switch (true) do {
+            case (isPlayer _unit): {_unit};
+            case (!isNull (UAVControl _vehicle # 0)): {UAVControl _vehicle # 0};
+            case (isPlayer leader _unit): {leader _unit};
+            default {_unit};
+        };
+
+        [_vehicle, _instigator]
+    };
+
+    private _getCurrentText = {
+        call _getLaserParents params ["_source", "_instigator"];
+        if (isNull _source) exitWith {""};
+
+        private _sourceName = [configOf _source] call BIS_fnc_displayName;
+        if (isNull _instigator) exitWith {_sourceName};
+
+        if (_source isEqualTo _instigator) exitWith {_instigator call _getName};
+        format ["%1 (%2)", _sourceName, _instigator call _getName]
+    };
+
+    {
+        private _isTarget = cursorTarget isEqualTo _x;
+        private _distance = focusOn distanceSqr _x;
+        private _size = linearConversion [2500, 6250000, _distance, 1, 0.5, true];
+        private _text = call _getCurrentText;
+
+        drawIcon3D [
+            "\a3\ui_f_curator\data\cfgcurator\laser_ca.paa",
+            [1, 0.2, 0.2, [0.5, 0.9] select _isTarget],
+            getPosATL _x,
+            _size,
+            _size,
+            0,
+            _text,
+            2
+        ];
+    } forEach _laserTargets;
+}];
