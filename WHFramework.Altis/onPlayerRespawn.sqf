@@ -15,6 +15,8 @@ Author:
 */
 params ["_unit"];
 
+if (isNil {player getVariable "WHF_role"}) then {player setVariable ["WHF_role", "rifleman", true]};
+
 private _loadout = [] call WHF_fnc_getLastLoadout;
 if (_loadout isNotEqualTo []) then {[_unit, _loadout] spawn WHF_fnc_setUnitLoadout};
 [_unit] call WHF_fnc_setRoleTraits;

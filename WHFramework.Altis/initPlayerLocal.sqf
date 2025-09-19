@@ -16,7 +16,6 @@ Author:
 params ["_player"];
 if (!hasInterface) exitWith {};
 
-if (isNil {player getVariable "WHF_role"}) then {player setVariable ["WHF_role", "rifleman", true]};
 if (isMultiplayer) then {["InitializePlayer", [player]] call BIS_fnc_dynamicGroups};
 
 // Functions that require mission display
