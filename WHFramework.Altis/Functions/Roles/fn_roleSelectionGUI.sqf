@@ -34,7 +34,7 @@ isNil {with uiNamespace do {
     if (isNil "WHF_fnc_localizeRole") then {WHF_fnc_localizeRole = missionNamespace getVariable "WHF_fnc_localizeRole"};
     if (isNil "WHF_fnc_getRoleLimit") then {WHF_fnc_getRoleLimit = missionNamespace getVariable "WHF_fnc_getRoleLimit"};
 
-    WHF_roleSelectionGUI_currentRole = {focusOn getVariable ["WHF_role", "rifleman"]};
+    WHF_roleSelectionGUI_currentRole = {focusOn getVariable ["WHF_role", ""]};
     WHF_roleSelectionGUI_selectedRole = {
         private _roles = WHF_roleSelectionGUI_ctrlRoles;
         _roles lbData lbCurSel _roles
