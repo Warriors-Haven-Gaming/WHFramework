@@ -25,8 +25,9 @@ addMissionEventHandler ["PreloadFinished", {
     missionProfileNamespace setVariable ["WHF_play_times", _timesPlayed + 1];
     saveMissionProfileNamespace;
 
-    [] spawn WHF_fnc_startIntroSequence;
-    if (isNil {uiNamespace getVariable "WHF_play_intro"}) then {
+    private _introPlayed = !isNil {uiNamespace getVariable "WHF_play_intro"};
+    [_introPlayed && !isMultiplayer] spawn WHF_fnc_startIntroSequence;
+    if (!_introPlayed) then {
         uiNamespace setVariable ["WHF_play_intro", true];
         selectRandom [
             ["AmbientTrack02_F_Orange", 0], // Laws of War DLC: Remnants of War
