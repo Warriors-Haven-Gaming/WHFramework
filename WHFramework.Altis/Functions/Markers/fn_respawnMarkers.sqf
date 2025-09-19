@@ -18,14 +18,26 @@ Author:
 */
 params ["_unit"];
 
-private _respawnPrefix = switch (side group _unit) do {
+private _basePrefix = switch (side group _unit) do {
     case blufor: {"respawn_west"};
     case opfor: {"respawn_east"};
     case independent: {"respawn_guerrila"};
     case civilian: {"respawn_civilian"};
     default {""};
 };
-private _rolePrefix = format ["%1_%2", _respawnPrefix, _unit getVariable ["WHF_role", ""]];
+private _prefixes = [_basePrefix];
 
-(allMapMarkers select {[_x, _rolePrefix] call WHF_fnc_stringStartsWith})
-+ (allMapMarkers select {[_x, _respawnPrefix] call WHF_fnc_stringStartsWith})
+private _role = _unit getVariable "WHF_role";
+if (!isNil "_role") then {
+    private _prefix = format ["%1_%2", _basePrefix, _role];
+    _prefixes insert [0, [_prefix]];
+};
+
+flatten (
+    _prefixes apply {
+        private _prefix = _x;
+        private _markers = allMapMarkers select {[_x, _prefix] call WHF_fnc_stringStartsWith};
+        _markers sort true;
+        _markers
+    }
+)
