@@ -941,6 +941,16 @@ call WHF_fnc_cycleFaction;
     false
 ] call WHF_fnc_addSetting;
 [
+    "WHF_recruits_lasers_ignore",
+    "CHECKBOX",
+    ["STR_WHF_settings_recruits_lasers_ignore", "STR_WHF_settings_recruits_lasers_ignore_tooltip"],
+    "STR_WHF_settings_recruits",
+    true,
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_recruits_limit",
     "SLIDER",
     ["STR_WHF_settings_recruits_limit", "STR_WHF_settings_recruits_limit_tooltip"],

@@ -295,6 +295,7 @@ class CfgFunctions {
         };
         class Recruits {
             class addRecruitLoadoutAction {};
+            class initRecruitLaserHandlers { postInit = 1; };
             class initSpawnRecruitAction {};
             class laserLightLoop {};
             class spawnRecruit {};
