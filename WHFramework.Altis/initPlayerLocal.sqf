@@ -31,6 +31,7 @@ call WHF_fnc_initMagRepackKeybind;
 0 spawn WHF_fnc_updateChannelLoop;
 0 spawn WHF_fnc_initFriendlyIcons;
 
+// FIXME: preload handler does not run consistently in singleplayer
 addMissionEventHandler ["PreloadFinished", {
     removeMissionEventHandler [_thisEvent, _thisEventHandler];
 
@@ -41,6 +42,7 @@ addMissionEventHandler ["PreloadFinished", {
     missionProfileNamespace setVariable ["WHF_play_times", _timesPlayed + 1];
     saveMissionProfileNamespace;
 
+    [] spawn WHF_fnc_startIntroSequence;
     if (isNil {uiNamespace getVariable "WHF_play_intro"}) then {
         uiNamespace setVariable ["WHF_play_intro", true];
         selectRandom [
@@ -53,7 +55,6 @@ addMissionEventHandler ["PreloadFinished", {
             ["LeadTrack02_F_Jets", 0]       // Air Power
         ] params ["_music", "_offset"];
         [_music, 60, 0, 15, 15] spawn WHF_fnc_playMusicSnippet;
-        [["WHF", "Intro"], 15, nil, 35, nil, true, true] spawn BIS_fnc_advHint;
     };
 
     0 spawn {

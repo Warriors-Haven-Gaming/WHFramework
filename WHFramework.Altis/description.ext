@@ -203,6 +203,10 @@ class CfgFunctions {
             class preInit { preInit = 1; };
             class setSideRelations { preInit = 1; };
         };
+        class Intro {
+            class introGUI {};
+            class startIntroSequence {};
+        };
         class JTAC {
             class canReportJTACTarget {};
             class completeJTACTask {};
@@ -432,6 +436,7 @@ class CfgHints {
     class WHF {
         displayName = "$STR_WHF_settings";
 
+        // Deprecated by intro GUI
         class Intro {
             displayName = "$STR_WHF_hint_intro_title";
             description = "$STR_WHF_hint_intro_description";
