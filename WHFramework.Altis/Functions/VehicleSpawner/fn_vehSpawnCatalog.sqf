@@ -182,6 +182,8 @@ private _helicopters = [
     ["b_t_vtol_01_armed_f",                      [-1,  ["pilot_cas"]]],
     ["o_heli_attack_02_dynamicloadout_f",        [-1,  ["pilot_cas"]]],
     ["i_heli_light_03_dynamicloadout_f",         [-1,  ["pilot_cas"]]],
+    ["dega_heli_attack_01_dynamicloadout_f",     [-1,  ["pilot_cas"]]],
+    ["peral_ah1z",                               [-1,  ["pilot_cas"]]],
     ["cup_b_mh6m_usa",                           [-1,  []]],
     ["b_d_heli_light_01_lxws",                   [-1,  []]],
     ["cup_b_mh60l_dap_2x_us",                    [-1,  ["pilot_transport"]]],
@@ -218,6 +220,29 @@ private _planes = [
     ["o_plane_fighter_02_f",                [-1, ["pilot_cas"]]],
     ["i_plane_fighter_03_dynamicloadout_f", [-1, ["pilot_cas"]]],
     ["i_plane_fighter_04_f",                [-1, ["pilot_cas"]]],
+    ["fir_a10c",                            [-1, ["pilot_cas"]]],
+    ["fir_f14a",                            [-1, ["pilot_cas"]]],
+    ["fir_f14b",                            [-1, ["pilot_cas"]]],
+    ["fir_f14d",                            [-1, ["pilot_cas"]]],
+    ["fir_f15c",                            [-1, ["pilot_cas"]]],
+    ["fir_f15ex",                           [-1, ["pilot_cas"]]],
+    ["fir_f16c",                            [-1, ["pilot_cas"]]],
+    ["fir_f16d",                            [-1, ["pilot_cas"]]],
+    ["fir_f18c",                            [-1, ["pilot_cas"]]],
+    ["fir_f18f",                            [-1, ["pilot_cas"]]],
+    ["fir_f22",                             [-1, ["pilot_cas"]]],
+    ["fir_f23a",                            [-1, ["pilot_cas"]]],
+    ["fir_f35b_standard",                   [-1, ["pilot_cas"]]],
+    ["fir_av8b",                            [-1, ["pilot_cas"]]],
+    ["fir_av8b_gr9a",                       [-1, ["pilot_cas"]]],
+    ["tornado_aws_ecr_blu",                 [-1, ["pilot_cas"]]],
+    ["tornado_aws_blu",                     [-1, ["pilot_cas"]]],
+    ["flan_ea18g",                          [-1, ["pilot_cas"]]],
+    ["fff_h_jet_fightyer_1",                [-1, ["pilot_cas"]]],
+    ["usaf_ac130u",                         [600, ["pilot_transport"]]],
+    ["usaf_c-17",                           [-1, ["pilot_transport"]]],
+    ["usaf_c130j_cargo",                    [-1, ["pilot_transport"]]],
+    ["usaf_c130j",                          [-1, ["pilot_transport"]]],
     ["c_plane_civil_01_f",                  [-1, ["pilot_transport"]]],
     ["cup_b_mv22_viv_usmc",                 [600, ["pilot_transport"]]],
     ["cup_b_c130j_gb",                      [600, ["pilot_transport"]]],
@@ -239,6 +264,9 @@ private _drones = [
     ["ef_b_ugv_01_rcws_mjtf_des",   [-1, ["uav"]]],
     ["b_uav_05_f",                  [-1, ["uav"]]],
     ["b_uav_02_dynamicloadout_f",   [-1, ["uav"]]],
+    ["usaf_mq9",                    [-1, ["uav"]]],
+    ["usaf_rq4a",                   [-1, ["uav"]]],
+    ["fir_a10u",                    [-1, ["uav"]]],
     ["", []]
 ];
 
@@ -255,6 +283,8 @@ private _ships = [
     ["cup_b_zodiac_usmc",                   [-1,  []]],
     ["bae_fic",                             [-1,  []]],
     ["rhicc_green",                         [600, []]],
+    ["rhicc_gray",                          [600, []]],
+    ["cca_armed",                           [600, []]],
     ["ef_b_combatboat_unarmed_mjtf_des",    [-1,  []]],
     ["ef_b_combatboat_hmg_mjtf_des",        [600, []]],
     ["ef_b_combatboat_at_mjtf_des",         [600, []]],
@@ -265,6 +295,27 @@ private _ships = [
     ["", []]
 ];
 
+private _experimentalCooldown = 900;
+private _experimental = [
+    ["tke_ext_bearcat_aa",          [-1, []]],
+    ["tke_ext_bearcat_unarmed",     [-1, []]],
+    ["tke_ext_bearcat_cannon",      [-1, []]],
+    ["tke_ext_bearcat_autocannon",  [-1, []]],
+    ["tke_ext_dragonfly_a",         [-1, ["pilot_cas"]]],
+    ["tke_ext_dragonflyu_s",        [-1, ["pilot_cas"]]],
+    ["tke_ext_gusa",                [-1, ["pilot_transport"]]],
+    ["tke_ext_gusm",                [-1, ["pilot_transport"]]],
+    ["fff_v_apc_tracked_1",         [-1, []]],
+    ["fff_v_mpv_01_aa",             [-1, []]],
+    ["fff_v_airboat_1",             [-1, []]],
+    ["fff_v_vtol_cas_1_1",          [-1, ["pilot_cas"]]],
+    ["fff_v_jet_attack_1",          [-1, ["pilot_cas"]]],
+    ["fff_h_apc_1",                 [-1, []]],
+    ["fff_h_mpv_2mg",               [-1, []]],
+    ["fff_h_fav_at",                [-1, []]],
+    ["fff_v_fav_unarmed",           [-1, []]],
+    ["", []]
+];
 
 
 
