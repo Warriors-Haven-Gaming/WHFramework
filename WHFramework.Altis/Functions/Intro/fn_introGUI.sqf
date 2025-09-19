@@ -20,7 +20,7 @@ isNil {with uiNamespace do {
     private _scaleToGroup = {_this vectorMultiply [_width, _height, _width, _height]};
 
     private _group = _display ctrlCreate ["RscControlsGroup", -1];
-    _group ctrlSetPosition [safeZoneX + 0.3 * safeZoneW, safeZoneY + 0.2 * safeZoneH, 0.4 * safeZoneW, 0.6 * safeZoneH];
+    _group ctrlSetPosition [safeZoneX + 0.25 * safeZoneW, safeZoneY + 0.1 * safeZoneH, 0.5 * safeZoneW, 0.8 * safeZoneH];
     _group ctrlCommit 0;
     ctrlPosition _group params ["_groupX", "_groupY", "_width", "_height"];
 
