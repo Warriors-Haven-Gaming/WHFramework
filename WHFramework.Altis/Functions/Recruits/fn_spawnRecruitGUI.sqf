@@ -26,7 +26,7 @@ uiNamespace setVariable ["WHF_spawnRecruitGUI_roles", [
 
 focusOn call WHF_fnc_lowerWeapon;
 
-with uiNamespace do {
+isNil {with uiNamespace do {
     createDialog "RscDisplayEmpty";
     private _display = findDisplay -1;
 
@@ -91,4 +91,4 @@ with uiNamespace do {
         };
         deleteVehicle _recruits;
     }];
-};
+}};

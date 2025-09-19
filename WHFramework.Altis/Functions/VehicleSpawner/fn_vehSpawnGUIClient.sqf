@@ -65,7 +65,7 @@ uiNamespace setVariable ["WHF_vehSpawnGUI_categories", _categories];
 uiNamespace setVariable ["WHF_vehSpawnGUI_cooldown", uiTime + _cooldown];
 uiNamespace setVariable ["WHF_vehSpawnGUI_vehicles", _catalog];
 
-with uiNamespace do {
+isNil {with uiNamespace do {
     createDialog "RscDisplayEmpty";
     private _display = findDisplay -1;
 
@@ -256,4 +256,4 @@ with uiNamespace do {
             uiSleep (1 - abs (WHF_vehSpawnGUI_cooldown - uiTime) % 1);
         };
     };
-};
+}};
