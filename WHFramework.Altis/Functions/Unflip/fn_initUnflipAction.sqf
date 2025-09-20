@@ -19,7 +19,7 @@ private _actionID = [
     localize "$STR_WHF_initUnflipAction_title",
     "a3\ui_f\data\igui\cfg\holdactions\holdaction_takeoff1_ca.paa",
     "a3\ui_f\data\igui\cfg\holdactions\holdaction_takeoff2_ca.paa",
-    "isNull objectParent _this && {call WHF_fnc_isLookingAtFlippedVehicle}",
+    toString {isNull objectParent _this && {call WHF_fnc_isLookingAtFlippedVehicle}},
     toString {
         private _vehicle = cursorObject;
         if (unitIsUAV _vehicle) exitWith {true};

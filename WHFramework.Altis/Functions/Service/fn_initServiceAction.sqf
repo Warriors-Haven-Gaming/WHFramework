@@ -18,8 +18,8 @@ private _actionID = [
     localize "$STR_WHF_initServiceAction",
     "\a3\ui_f_oldman\data\igui\cfg\holdactions\repair_ca.paa",
     "\a3\ui_f_oldman\data\igui\cfg\holdactions\repair_ca.paa",
-    "call WHF_fnc_canServiceVehicle",
-    "true",
+    toString {call WHF_fnc_canServiceVehicle},
+    toString {true},
     {
         [player, ["InBaseMoves_assemblingVehicleErc", random 0.5, 0, false]] remoteExec ["switchMove"];
     },

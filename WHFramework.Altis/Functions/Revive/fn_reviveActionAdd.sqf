@@ -28,10 +28,10 @@ private _playerID = _unit addAction [
     true,
     true,
     "",
-    "
-    isPlayer _this
-    && {[_this, _originalTarget, false] call WHF_fnc_checkRevive isEqualTo ''}
-    ",
+    toString {
+        isPlayer _this
+        && {[_this, _originalTarget, false] call WHF_fnc_checkRevive isEqualTo ""}
+    },
     3
 ];
 private _remoteID = _unit addAction [
@@ -45,10 +45,10 @@ private _remoteID = _unit addAction [
     true,
     true,
     "",
-    "
-    !isPlayer _this
-    && {[_this, _originalTarget] call WHF_fnc_checkRevive isEqualTo ''}
-    ",
+    toString {
+        !isPlayer _this
+        && {[_this, _originalTarget] call WHF_fnc_checkRevive isEqualTo ""}
+    },
     50
 ];
 

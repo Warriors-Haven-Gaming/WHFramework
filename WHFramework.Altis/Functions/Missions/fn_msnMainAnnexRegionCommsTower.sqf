@@ -19,8 +19,11 @@ params ["_tower"];
     localize "STR_WHF_mainAnnexRegionComms_title",
     "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_hack_ca.paa",
     "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_hack_ca.paa",
-    "!(_target getVariable ['WHF_comms_disabled', false]) && {_this distance _target < 6}",
-    "true",
+    toString {
+        !(_target getVariable ["WHF_comms_disabled", false])
+        && {_this distance _target < 6}
+    },
+    toString {true},
     {
         params ["", "_caller"];
         _caller call WHF_fnc_lowerWeapon;

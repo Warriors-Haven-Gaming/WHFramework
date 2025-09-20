@@ -18,12 +18,12 @@ params ["_cache"];
     localize "$STR_WHF_secureCaches_action",
     "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa",
     "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa",
-    "
-    _this distance _target < 5
-    && {_originalTarget getVariable ['WHF_cache_secured', false] isNotEqualTo true
-    && {side group _this isEqualTo blufor}}
-    ",
-    "true",
+    toString {
+        _this distance _target < 5
+        && {_originalTarget getVariable ["WHF_cache_secured", false] isNotEqualTo true
+        && {side group _this isEqualTo blufor}}
+    },
+    toString {true},
     {
         params ["", "_caller"];
         _caller playActionNow "PutDown";

@@ -22,14 +22,14 @@ private _carryID = [
     format ["<t color='#00FF00'>%1</t>", localize "$STR_WHF_addCarryAction_action"],
     "a3\ui_f\data\igui\cfg\holdactions\holdaction_takeoff1_ca.paa",
     "a3\ui_f\data\igui\cfg\holdactions\holdaction_takeoff2_ca.paa",
-    "
-    isNil {_this getVariable 'WHF_carry'}
-    && {isNil {_originalTarget getVariable 'WHF_revive_caller'}
-    && {lifeState _originalTarget in ['INCAPACITATED']
-    && {isNull attachedTo _originalTarget
-    && {_this distance _target < 3}}}}
-    ",
-    "true",
+    toString {
+        isNil {_this getVariable "WHF_carry"}
+        && {isNil {_originalTarget getVariable "WHF_revive_caller"}
+        && {lifeState _originalTarget in ["INCAPACITATED"]
+        && {isNull attachedTo _originalTarget
+        && {_this distance _target < 3}}}}
+    },
+    toString {true},
     {
         params ["_target", "_caller"];
         _target setVariable ["WHF_carry_caller", _caller];

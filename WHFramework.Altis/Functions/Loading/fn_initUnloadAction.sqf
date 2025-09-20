@@ -28,15 +28,15 @@ private _unloadID = player addAction [
     true,
     false,
     "",
-    "
-    getCursorObjectParams params ['_vehicle', '', '_distance'];
-    _distance < 3
-    && {!(_vehicle isKindOf 'Man')
-    && {
-        crew _vehicle findIf {
-            captive _x && {!isPlayer _x || {lifeState _x isEqualTo 'INCAPACITATED'}}
-        } >= 0
-    }}
-    "
+    toString {
+        getCursorObjectParams params ["_vehicle", "", "_distance"];
+        _distance < 3
+        && {!(_vehicle isKindOf "Man")
+        && {
+            crew _vehicle findIf {
+                captive _x && {!isPlayer _x || {lifeState _x isEqualTo "INCAPACITATED"}}
+            } >= 0
+        }}
+    }
 ];
 player setVariable ["WHF_load_unloadID", _unloadID];
