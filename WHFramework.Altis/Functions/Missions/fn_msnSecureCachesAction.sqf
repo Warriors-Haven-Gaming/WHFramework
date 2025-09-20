@@ -19,7 +19,7 @@ params ["_cache"];
     "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa",
     "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa",
     "
-    _this distance _target < 3
+    _this distance _target < 5
     && {_originalTarget getVariable ['WHF_cache_secured', false] isNotEqualTo true
     && {side group _this isEqualTo blufor}}
     ",

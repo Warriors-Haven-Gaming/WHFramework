@@ -69,6 +69,9 @@ for "_i" from 0 to 1 + random 4 do {
     if (_pos isEqualTo [0,0]) then {break};
 
     // NOTE: type is checked in WHF_fnc_msnSecureCachesActionCompleted
+    // FIXME: If placed inside a building that later collapses, the cache
+    //        may be stuck floating. As a result, players need to climb
+    //        or fly near the cache to recover it.
     private _cache = createVehicle ["Box_FIA_Ammo_F", [-random 500, -random 500, 500], [], 0, "CAN_COLLIDE"];
     _cache enableSimulationGlobal false;
     _cache setDir random 360;
