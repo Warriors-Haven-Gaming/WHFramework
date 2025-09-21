@@ -1,27 +1,25 @@
 /*
-Function: WHF_fnc_missionLoop
+Function: WHF_fnc_missionLoopSide
 
 Description:
-    Periodically spawns the given missions.
-
-Parameters:
-    Array functions:
-        The function names of each mission to spawn.
-    Code minScripts:
-        A function that returns minimum number of active missions allowed.
-    Code maxScripts:
-        A function that returns maximum number of active missions allowed.
-        Takes priority over minScripts.
+    Continuously spawn side mission scripts.
 
 Author:
     thegamecracks
 
 */
-params ["_functions", "_minScripts", "_maxScripts"];
-
-if (count _functions < 1) exitWith {
-    diag_log text format ["%1: No functions to call", _fnc_scriptName];
-};
+private _functions = [
+    "WHF_fnc_msnDefendAidSupplies",
+    "WHF_fnc_msnDestroyAAA",
+    "WHF_fnc_msnDestroyArmor",
+    "WHF_fnc_msnDestroyArtillery",
+    "WHF_fnc_msnDestroyBarracks",
+    "WHF_fnc_msnDestroyRoadblock",
+    "WHF_fnc_msnDownloadIntel",
+    "WHF_fnc_msnSecureCaches"
+];
+private _minScripts = {if (WHF_missions_side_enabled) then {WHF_missions_side_min} else {0}};
+private _maxScripts = {if (WHF_missions_side_enabled) then {WHF_missions_side_max} else {0}};
 
 private _functionCounts = createHashMapFromArray (_functions apply {[_x, 0]});
 private _scripts = [];
@@ -72,19 +70,35 @@ private _selectRandomFunction = {
     }
 };
 
+private _spawning = true;
+private _total = 0;
+
 while {true} do {
     private _nScripts = call _countActiveScripts;
     private _maxScripts = call _maxScripts;
     private _minScripts = call _minScripts min _maxScripts;
-    if (_nScripts < _minScripts) then {
-        for "_i" from 1 to (_maxScripts - _nScripts) do {
+
+    switch (true) do {
+        case (!_spawning && {_nScripts < _minScripts}): {
+            sleep (60 + random 120); // Grace period
+            _spawning = true;
+        };
+        case (_spawning && {_nScripts >= _maxScripts}): {
+            _spawning = false;
+        };
+        case (_spawning): {
+            // Spawn state
             private _function = call _selectRandomFunction;
-            if (isNil "_function") then {continue};
+            if (isNil "_function") exitWith {sleep 10}; // No available missions
 
             private _script = [] spawn (missionNamespace getVariable _function);
             _scripts pushBack _script;
-            sleep (1 + random 4);
+            _total = _total + 1;
+            sleep (3 + random 30);
+        };
+        default {
+            // Idle state
+            sleep (5 + random 5);
         };
     };
-    sleep (60 + random 120);
 };
