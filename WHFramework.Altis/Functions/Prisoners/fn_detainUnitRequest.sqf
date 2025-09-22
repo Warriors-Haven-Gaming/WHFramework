@@ -94,6 +94,7 @@ if (side group _target isNotEqualTo civilian) then {
 _target enableAIFeature ["PATH", false];
 _target setCaptive true;
 _target setUnitPos "UP";
+_target setVariable ["WHF_detain_caller", _caller, true];
 moveOut _target;
 unassignVehicle _target;
 

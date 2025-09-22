@@ -50,6 +50,18 @@ private _commander = units _commanderGroup # 0;
 [[_commander] + units _garrisonGroup, _pos, 30, true] call WHF_fnc_garrisonUnits;
 _groups append [_garrisonGroup, _commanderGroup];
 
+_commander addEventHandler ["Killed", {
+    params ["_commander", "_killer", "_instigator"];
+    if (!isNull (_commander call WHF_fnc_getDetainedBy)) exitWith {};
+    if (isNull _instigator) then {_instigator = effectiveCommander _killer};
+    if (!isPlayer _instigator) exitWith {};
+    [
+        [blufor, "HQ"],
+        "$STR_WHF_mainAnnexRegionCommand_success_kill",
+        [name _instigator]
+    ] remoteExec ["WHF_fnc_localizedSideChat", blufor];
+}];
+
 private _taskID = [
     blufor,
     ["", _parent],
@@ -64,7 +76,15 @@ private _taskID = [
 while {true} do {
     sleep 3;
     if (!alive _commander || {captive _commander}) exitWith {
-        // TODO: add message showing who killed or captured the commander
         [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
     };
+};
+
+private _detainer = _commander call WHF_fnc_getDetainedBy;
+if (isPlayer _detainer) then {
+    [
+        [blufor, "HQ"],
+        "$STR_WHF_mainAnnexRegionCommand_success_detain",
+        [name _detainer]
+    ] remoteExec ["WHF_fnc_localizedSideChat", blufor];
 };
