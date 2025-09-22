@@ -75,7 +75,7 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
                 [_group, true, 1] spawn WHF_fnc_enableDynamicSimulation;
             };
 
-            if (!isNil "_outputGroups") then {_outputGroups pushBack _group};
+            if (!isNil "_outputGroups") then {_outputGroups pushBack _newGroup};
         } forEach units _group;
     } forEach _groups;
 
