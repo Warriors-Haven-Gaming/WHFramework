@@ -106,7 +106,7 @@ private _taskID = [blufor, "", _description, _area # 0, "AUTOASSIGNED", -1, true
 
 private _sideChat = {
     params ["_message", ["_params", []]];
-    [[blufor, "HQ"], _message, _params] remoteExec ["WHF_fnc_localizedSideChat", blufor];
+    [[blufor, "BLU"], _message, _params] remoteExec ["WHF_fnc_localizedSideChat", blufor];
 };
 
 ["$STR_WHF_mainAnnexRegion_start", [_name]] call _sideChat;

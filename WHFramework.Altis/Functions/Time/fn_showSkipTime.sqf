@@ -23,7 +23,7 @@ params ["_player", "_timeOfDay", "_duration"];
 if !(_timeOfDay in ["morning", "noon", "evening"]) exitWith {};
 
 private _key = format ["$STR_WHF_showSkipTime_%1", _timeOfDay];
-[side group _player, "HQ"] sideChat format [
+[side group _player, "BLU"] sideChat format [
     localize _key,
     name _player,
     [_duration, "HH:MM:SS"] call BIS_fnc_secondsToString

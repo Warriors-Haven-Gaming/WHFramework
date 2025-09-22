@@ -98,7 +98,7 @@ while {true} do {
     private _active = _allTurrets select {canFire _x} inAreaArray _area;
     if (count _active < 1) exitWith {
         private _message = "$STR_WHF_destroyArtillery_success";
-        [[blufor, "HQ"], _message] remoteExec ["WHF_fnc_localizedSideChat", blufor];
+        [[blufor, "BLU"], _message] remoteExec ["WHF_fnc_localizedSideChat", blufor];
         [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
     };
 };

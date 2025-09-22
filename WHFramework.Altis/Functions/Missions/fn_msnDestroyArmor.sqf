@@ -162,7 +162,7 @@ while {true} do {
     _current = count call _activeVehicles;
     if (_current < 1) exitWith {
         private _message = "$STR_WHF_destroyArmor_success";
-        [[blufor, "HQ"], _message] remoteExec ["WHF_fnc_localizedSideChat", blufor];
+        [[blufor, "BLU"], _message] remoteExec ["WHF_fnc_localizedSideChat", blufor];
         [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
     };
 

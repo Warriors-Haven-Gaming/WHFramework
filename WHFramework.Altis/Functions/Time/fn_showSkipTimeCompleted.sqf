@@ -21,4 +21,4 @@ params ["_side", "_timeOfDay"];
 if !(_timeOfDay in ["morning", "noon", "evening"]) exitWith {};
 
 private _key = format ["$STR_WHF_showSkipTimeCompleted_%1", _timeOfDay];
-[_side, "HQ"] sideChat localize _key;
+[_side, "BLU"] sideChat localize _key;

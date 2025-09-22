@@ -101,14 +101,14 @@ while {true} do {
         if (_theftAt < 0) then {_theftAt = _time; _supplyTheftAt set [_forEachIndex, _theftAt]};
 
         if (_time >= _theftAt + _theftDelay) then {
-            [_x, [blufor, "HQ"], "$STR_WHF_defendAidSupplies_stolen"] call _sideChat;
+            [_x, [blufor, "BLU"], "$STR_WHF_defendAidSupplies_stolen"] call _sideChat;
             deleteVehicle _x;
             sleep (0.25 + random 0.5);
             continue;
         };
 
         if (_time >= _lastAlert + _alertDelay) then {
-            [_x, [blufor, "HQ"], "$STR_WHF_defendAidSupplies_theft"] call _sideChat;
+            [_x, [blufor, "BLU"], "$STR_WHF_defendAidSupplies_theft"] call _sideChat;
             _lastAlert = _time;
         };
     } forEach _supplies;

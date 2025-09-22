@@ -113,7 +113,7 @@ while {true} do {
 
     if (count _completedChildTaskIDs isEqualTo count _childTaskIDs) exitWith {
         private _message = "$STR_WHF_destroyAAA_success";
-        [[blufor, "HQ"], _message] remoteExec ["WHF_fnc_localizedSideChat", blufor];
+        [[blufor, "BLU"], _message] remoteExec ["WHF_fnc_localizedSideChat", blufor];
         [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
     };
 };

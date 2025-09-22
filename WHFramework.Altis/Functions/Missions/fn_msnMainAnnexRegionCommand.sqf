@@ -56,7 +56,7 @@ _commander addEventHandler ["Killed", {
     if (isNull _instigator) then {_instigator = effectiveCommander _killer};
     if (!isPlayer _instigator) exitWith {};
     [
-        [blufor, "HQ"],
+        [blufor, "BLU"],
         "$STR_WHF_mainAnnexRegionCommand_success_kill",
         [name _instigator]
     ] remoteExec ["WHF_fnc_localizedSideChat", blufor];
@@ -83,7 +83,7 @@ while {true} do {
 private _detainer = _commander call WHF_fnc_getDetainedBy;
 if (isPlayer _detainer) then {
     [
-        [blufor, "HQ"],
+        [blufor, "BLU"],
         "$STR_WHF_mainAnnexRegionCommand_success_detain",
         [name _detainer]
     ] remoteExec ["WHF_fnc_localizedSideChat", blufor];

@@ -151,7 +151,7 @@ while {true} do {
     sleep 3;
     if (call _allCachesSecured) exitWith {
         private _message = "$STR_WHF_secureCaches_success";
-        [[blufor, "HQ"], _message] remoteExec ["WHF_fnc_localizedSideChat", blufor];
+        [[blufor, "BLU"], _message] remoteExec ["WHF_fnc_localizedSideChat", blufor];
         [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
     };
 

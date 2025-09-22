@@ -80,24 +80,24 @@ private _state = while {true} do {
     sleep 3;
 
     if (scriptDone _statusScript) exitWith {
-        [[blufor, "HQ"], "$STR_WHF_defendAidSupplies_failed"] call _sideChat;
+        [[blufor, "BLU"], "$STR_WHF_defendAidSupplies_failed"] call _sideChat;
         "FAILED"
     };
 
     private _time = time;
     if (_halfAt >= 0 && {_time >= _halfAt}) then {
-        [[blufor, "HQ"], "$STR_WHF_defendAidSupplies_half"] call _sideChat;
+        [[blufor, "BLU"], "$STR_WHF_defendAidSupplies_half"] call _sideChat;
         _halfAt = -1;
     };
 
     if (_closeAt >= 0 && {_time >= _closeAt}) then {
-        [[blufor, "HQ"], "$STR_WHF_defendAidSupplies_close"] call _sideChat;
+        [[blufor, "BLU"], "$STR_WHF_defendAidSupplies_close"] call _sideChat;
         _closeAt = -1;
     };
 
     if (_time >= _endAt) exitWith {
         private _message = "$STR_WHF_defendAidSupplies_success";
-        [[blufor, "HQ"], _message] remoteExec ["WHF_fnc_localizedSideChat", blufor];
+        [[blufor, "BLU"], _message] remoteExec ["WHF_fnc_localizedSideChat", blufor];
         "SUCCEEDED"
     };
 };

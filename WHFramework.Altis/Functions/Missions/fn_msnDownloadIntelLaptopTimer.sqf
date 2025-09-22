@@ -41,7 +41,7 @@ if (!_hasElapsed) exitWith {
     };
 
     if (hasInterface && {focusOn inArea _area}) then {
-        [blufor, "HQ"] sideChat localize "$STR_WHF_downloadIntelLaptop_interrupted";
+        [blufor, "BLU"] sideChat localize "$STR_WHF_downloadIntelLaptop_interrupted";
     };
 
     _laptop setVariable ["WHF_downloadStarted", false];
@@ -50,8 +50,8 @@ _laptop setVariable ["WHF_downloadEnded", true];
 
 if (hasInterface) then {
     if (focusOn inArea _area) then {
-        [blufor, "HQ"] sideChat localize "$STR_WHF_downloadIntelLaptop_ended_inArea";
+        [blufor, "BLU"] sideChat localize "$STR_WHF_downloadIntelLaptop_ended_inArea";
     } else {
-        [blufor, "HQ"] sideChat localize "$STR_WHF_downloadIntelLaptop_ended";
+        [blufor, "BLU"] sideChat localize "$STR_WHF_downloadIntelLaptop_ended";
     };
 };

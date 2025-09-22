@@ -160,7 +160,7 @@ if (!_canDefend) exitWith {
     {[_x] call WHF_fnc_queueGCDeletion} forEach _vehicles;
 };
 
-[[blufor, "HQ"], "$STR_WHF_defendAidSupplies_start"] call _sideChat;
+[[blufor, "BLU"], "$STR_WHF_defendAidSupplies_start"] call _sideChat;
 [_groups, false] call WHF_fnc_enableDynamicSimulation;
 sleep 3;
 [_center, _radius, _supplies, _factionRaid, _taskID, _groups, _vehicles]
