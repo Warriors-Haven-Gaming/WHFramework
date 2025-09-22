@@ -720,7 +720,7 @@ call WHF_fnc_cycleFaction;
     "CHECKBOX",
     ["STR_WHF_settings_missions_annex_location_named", "STR_WHF_settings_missions_annex_location_named_tooltip"],
     ["STR_WHF_settings_missions", "STR_WHF_settings_missions_annex"],
-    false,
+    true,
     true,
     {},
     false
