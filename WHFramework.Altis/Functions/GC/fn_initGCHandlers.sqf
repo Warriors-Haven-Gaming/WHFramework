@@ -31,5 +31,5 @@ addMissionEventHandler ["PlayerDisconnected", {
     params ["", "_uid"];
     private _vehicle = WHF_vehSpawn_lastVehicles get _uid;
     if (isNil "_vehicle" || {isNull _vehicle}) exitWith {};
-    _vehicle call WHF_fnc_queueGCDeletion;
+    [_vehicle, 50] call WHF_fnc_queueGCDeletion;
 }];
