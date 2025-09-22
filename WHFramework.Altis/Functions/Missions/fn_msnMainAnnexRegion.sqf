@@ -104,6 +104,13 @@ private _description = [
 ];
 private _taskID = [blufor, "", _description, _area # 0, "AUTOASSIGNED", -1, true, "attack"] call WHF_fnc_taskCreate;
 
+private _sideChat = {
+    params ["_message", ["_params", []]];
+    [[blufor, "HQ"], _message, _params] remoteExec ["WHF_fnc_localizedSideChat", blufor];
+};
+
+["$STR_WHF_mainAnnexRegion_start", [_name]] call _sideChat;
+
 private _subObjectiveArgs = [_center, _radius, _faction, _taskID, _objects, _terrain, _groups];
 private _subObjectives = [
     [_subObjectiveArgs, WHF_fnc_msnMainAnnexRegionCommand],
@@ -120,6 +127,7 @@ private _thresholdScript = [_taskID, _area, _initialUnitCount] spawn WHF_fnc_msn
 waitUntil {sleep 3; scriptDone _thresholdScript};
 
 [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
+["$STR_WHF_mainAnnexRegion_success", [_name]] call _sideChat;
 
 call WHF_fnc_cycleFaction;
 call WHF_fnc_playMusicMissionEnd;
