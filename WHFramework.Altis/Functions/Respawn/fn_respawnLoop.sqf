@@ -106,6 +106,11 @@ while {true} do {
         private _pos = _record get "_pos";
 
         private _shouldRespawn = switch (true) do {
+            case (_respawnAt >= 0 && {alive _object}): {
+                // Object may have been resurrected, respawn not needed
+                _record set ["_respawnAt", -1];
+                false
+            };
             case (_respawnAt >= 0): {_time >= _respawnAt};
             case (call _isDeserted): {true};
             case (!alive _object): {
