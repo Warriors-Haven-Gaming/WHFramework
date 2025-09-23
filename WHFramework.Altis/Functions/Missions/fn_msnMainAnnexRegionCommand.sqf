@@ -52,6 +52,7 @@ _groups append [_garrisonGroup, _commanderGroup];
 
 _commander addEventHandler ["Killed", {
     params ["_commander", "_killer", "_instigator"];
+    _commander removeEventHandler [_thisEvent, _thisEventHandler];
     if (!isNull (_commander call WHF_fnc_getDetainedBy)) exitWith {};
     if (isNull _instigator) then {_instigator = effectiveCommander _killer};
     if (!isPlayer _instigator) exitWith {};
