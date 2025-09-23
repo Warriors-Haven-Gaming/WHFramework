@@ -25,7 +25,14 @@ private _isDeserted = {
 
 private _respawnVehicle = {
     deleteVehicle _obstructions;
-    if (alive _object) exitWith _restoreVehicle;
+
+    // Before we delete the vehicle, see if the original vehicle can be restored.
+    //
+    // Vehicles can be resurrected as of 2.20.153281 (2025-09-23 profiling v26),
+    // but may retain their destroyed models, making them unusable.
+    // For safety, we will avoid resurrecting or restoring dead vehicles.
+    // If a vehicle has a respawn timer, assume it was resurrected and delete it.
+    if (alive _object && {_respawnAt < 0}) exitWith _restoreVehicle;
 
     deleteVehicle _object;
     sleep 0.5; // Allow for some network delay (and for physics to catch up)
@@ -106,11 +113,6 @@ while {true} do {
         private _pos = _record get "_pos";
 
         private _shouldRespawn = switch (true) do {
-            case (_respawnAt >= 0 && {alive _object}): {
-                // Object may have been resurrected, respawn not needed
-                _record set ["_respawnAt", -1];
-                false
-            };
             case (_respawnAt >= 0): {_time >= _respawnAt};
             case (call _isDeserted): {true};
             case (!alive _object): {
