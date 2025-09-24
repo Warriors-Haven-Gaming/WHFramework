@@ -67,8 +67,7 @@ private _guardGroup = [opfor, [_standard], _guardCount, _pos, 20] call WHF_fnc_s
 [_guardGroup, _pos] call BIS_fnc_taskDefend;
 _groups pushBack _guardGroup;
 
-private _towerFunction = "WHF_fnc_msnMainAnnexRegionCommsTower";
-{[_x] remoteExec [_towerFunction, WHF_globalPlayerTarget, _x]} forEach _tower;
+{[_x] remoteExec ["WHF_fnc_msnMainAnnexRegionCommsTower", WHF_globalPlayerTarget, _x]} forEach _tower;
 {[_x] remoteExec ["WHF_fnc_addIntelAction", WHF_globalPlayerTarget, _x]} forEach _intel;
 [_officer, "variable"] remoteExec ["WHF_fnc_addIntelAction", WHF_globalPlayerTarget, _officer];
 
