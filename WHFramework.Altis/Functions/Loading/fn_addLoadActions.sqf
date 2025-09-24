@@ -72,7 +72,7 @@ private _loadID = _unit addAction [
 
         detach _target;
 
-        private _sound = getArray (configFile >> "CfgVehicles" >> typeOf cursorObject >> "soundGetIn") # 0;
+        private _sound = getArray (configOf cursorObject >> "soundGetIn") # 0;
         if !("." in _sound) then {_sound = _sound + ".wss"};
         playSound3D [_sound, objNull, false, getPosASL cursorObject];
 

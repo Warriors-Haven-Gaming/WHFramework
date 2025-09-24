@@ -17,7 +17,7 @@ private _unloadID = player addAction [
             captive _x && {!isPlayer _x || {lifeState _x isEqualTo "INCAPACITATED"}}
         } select -1;
 
-        private _sound = getArray (configFile >> "CfgVehicles" >> typeOf cursorObject >> "soundGetOut") # 0;
+        private _sound = getArray (configOf cursorObject >> "soundGetOut") # 0;
         if !("." in _sound) then {_sound = _sound + ".wss"};
         playSound3D [_sound, objNull, false, getPosASL _target];
         moveOut _target;

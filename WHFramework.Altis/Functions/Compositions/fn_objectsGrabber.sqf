@@ -24,7 +24,7 @@ private _objects =
     nearestObjects [_center, ["All"], _radius]
     select {_x in _allDynamic}
     select {
-        private _sim = getText (configFile >> "CfgVehicles" >> typeOf _x >> "simulation");
+        private _sim = getText (configOf _x >> "simulation");
         _sim isNotEqualTo "soldier"
     };
 
