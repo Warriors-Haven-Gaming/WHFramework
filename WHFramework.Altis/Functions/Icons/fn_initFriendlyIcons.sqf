@@ -291,6 +291,11 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
     private _iconScale = linearConversion [0.05, 0.002, _mapScale, 20, 32, true];
     private _textMinMapScale = 0.062;
     private _lineMinMapScale = 0.175;
+    private _mousePos = getMousePosition;
+    private _isFocused = {
+        _mapScale <= _textMinMapScale
+        || {_display ctrlMapWorldToScreen _pos distance2D _mousePos < 0.02}
+    };
 
     // Separate units from vehicles
     private _side = side group focusOn;
@@ -352,12 +357,13 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
             case (lifeState _x in ["INCAPACITATED"]): {WHF_icons_color_incap};
             default {[_side] call _getSideColor};
         };
+        private _pos = getPosWorldVisual _x;
         private _textScale = 0.045;
-        private _text = if (_mapScale <= _textMinMapScale) then {_x call _getName} else {""};
+        private _text = if (call _isFocused) then {_x call _getName} else {""};
         _display drawIcon [
             [_x] call WHF_fnc_getUnitIcon,
             _color + [1],
-            getPosWorldVisual _x,
+            _pos,
             _iconScale,
             _iconScale,
             getDirVisual _x,
@@ -416,7 +422,7 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
                     _displayName
                 }
             };
-            case (_mapScale > _textMinMapScale): {groupId group effectiveCommander _x};
+            case (!call _isFocused): {groupId group effectiveCommander _x};
             default {
                 private _commander = effectiveCommander _x;
                 format [
