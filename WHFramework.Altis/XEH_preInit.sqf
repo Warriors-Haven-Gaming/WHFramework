@@ -69,7 +69,7 @@ Author:
     "LIST",
     ["STR_WHF_settings_aps_ammoMRAP", "STR_WHF_settings_aps_ammoMRAP_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_aps"],
-    [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], [], 2],
+    [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], [], 3],
     true,
     {},
     false
@@ -79,7 +79,7 @@ Author:
     "LIST",
     ["STR_WHF_settings_aps_ammoAPC", "STR_WHF_settings_aps_ammoAPC_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_aps"],
-    [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], [], 3],
+    [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], [], 4],
     true,
     {},
     false
@@ -89,7 +89,7 @@ Author:
     "LIST",
     ["STR_WHF_settings_aps_ammoMBT", "STR_WHF_settings_aps_ammoMBT_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_aps"],
-    [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], [], 4],
+    [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], [], 6],
     true,
     {},
     false
