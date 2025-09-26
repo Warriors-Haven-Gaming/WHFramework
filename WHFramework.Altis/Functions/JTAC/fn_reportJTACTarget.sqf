@@ -39,6 +39,7 @@ if (isNil "_parentID") then {isNil {
 // FIXME: maybe make this JIP-compatible?
 [_target, [_side, true]] remoteExec ["confirmSensorTarget", _target];
 [_side, [_target, 3600]] remoteExec ["reportRemoteTarget", _target];
+[_player, _target] remoteExec ["WHF_fnc_showJTACTarget", _side];
 
 // FIXME: localize display names on client (requires custom Task Framework)
 private _targetName = [configOf _target] call BIS_fnc_displayName;
