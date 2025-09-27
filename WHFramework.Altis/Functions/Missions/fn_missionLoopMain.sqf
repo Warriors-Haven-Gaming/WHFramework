@@ -51,7 +51,7 @@ while {true} do {
 
             _scripts pushBack _script;
             _total = _total + 1;
-            sleep (3 + random 30);
+            sleep (30 + random 30);
         };
         default {
             // Idle state, nothing to do here

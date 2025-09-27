@@ -80,7 +80,7 @@ while {true} do {
 
     switch (true) do {
         case (!_spawning && {_nScripts < _minScripts}): {
-            sleep (60 + random 120); // Grace period
+            sleep (120 + random 180); // Grace period
             _spawning = true;
         };
         case (_spawning && {_nScripts >= _maxScripts}): {
@@ -94,7 +94,7 @@ while {true} do {
             private _script = [] spawn (missionNamespace getVariable _function);
             _scripts pushBack _script;
             _total = _total + 1;
-            sleep (3 + random 30);
+            sleep (30 + random 30);
         };
         default {
             // Idle state
