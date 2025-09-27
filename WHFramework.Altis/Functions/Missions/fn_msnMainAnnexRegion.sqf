@@ -25,8 +25,9 @@ params [["_location", locationNull], ["_faction", ""]];
 private _getRadius = {
     params ["_location"];
 
-    private _minRadius = 250 + count allPlayers * 10 min 650;
-    private _maxRadius = 500 + count allPlayers * 15 min 1100;
+    private _playerCount = count allPlayers min 80;
+    private _minRadius = 250 + _playerCount * 10;
+    private _maxRadius = 500 + _playerCount * 15;
 
     private _radius = selectMax size _location * 2;
     _radius = _radius max _minRadius min _maxRadius;
