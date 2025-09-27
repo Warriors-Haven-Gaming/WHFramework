@@ -18,6 +18,7 @@ player addEventHandler ["FiredMan", {
         params ["", "_entity"];
         private _time = uiTime;
         if (_time - WHF_hit_last < 0.05) exitWith {};
+        if (!alive _entity) exitWith {};
         if (side group _entity isEqualTo sideUnknown) exitWith {};
 
         if (WHF_hit_sounds) then {
