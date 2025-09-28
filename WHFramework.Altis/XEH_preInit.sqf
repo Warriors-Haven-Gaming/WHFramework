@@ -136,7 +136,7 @@ Author:
     "CHECKBOX",
     ["STR_WHF_settings_damage_hit_sounds", "STR_WHF_settings_damage_hit_sounds_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_damage"],
-    false,
+    true,
     false,
     {},
     false
