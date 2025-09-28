@@ -53,6 +53,7 @@ class CfgRemoteExec {
         class WHF_fnc_freeUnit {};
         class WHF_fnc_haloJumpCut {};
         class WHF_fnc_incapBleedout {};
+        class WHF_fnc_incapDrowned {};
         class WHF_fnc_incapUnit { jip = 1; };
         class WHF_fnc_localChat { allowedTargets = 1; };
         class WHF_fnc_localizedCutText { allowedTargets = 1; };
