@@ -12,10 +12,10 @@ Author:
 
 uiNamespace setVariable ["WHF_roleSelectionGUI_roles", [
     "rifleman",
-    "medic",
     "autorifleman",
     "at",
     "aa",
+    "medic",
     "engineer",
     "sniper",
     "jtac",
