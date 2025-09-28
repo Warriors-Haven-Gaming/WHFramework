@@ -40,6 +40,7 @@ player addEventHandler ["GetInMan", {
 
     private _missileID = _vehicle addEventHandler ["IncomingMissile", {
         params ["", "", "_source", "", "_missile"];
+        if (!WHF_icons_projectiles_launches) exitWith {};
         WHF_projectiles_launches pushBack [time, _source, _missile];
     }];
 

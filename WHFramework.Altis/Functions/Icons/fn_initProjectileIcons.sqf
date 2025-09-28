@@ -15,9 +15,17 @@ WHF_projectiles_launches = [];
 
 addMissionEventHandler ["ProjectileCreated", {
     params ["_projectile"];
+    if (!WHF_icons_projectiles) exitWith {};
 
-    getShotParents _projectile params ["_source"];
-    if (cameraOn isEqualTo _source) exitWith {};
+    getShotParents _projectile params ["_source", "_instigator"];
+    if (
+        !WHF_icons_projectiles_self
+        && {cameraOn isEqualTo _source}
+    ) exitWith {};
+    if(
+        !WHF_icons_projectiles_friendly
+        && {side group _instigator isEqualTo side group focusOn}
+    ) exitWith {};
 
     private _types = ["BombCore", "MissileCore", "RocketCore"];
     if (_types findIf {_projectile isKindOf _x} < 0) exitWith {};
@@ -60,7 +68,7 @@ addMissionEventHandler ["Draw3D", {
 }];
 
 addMissionEventHandler ["Draw3D", {
-    if (!WHF_icons_projectiles) exitWith {};
+    if (!WHF_icons_projectiles_launches) exitWith {};
     if (isNil "WHF_projectiles_launches") then {WHF_projectiles_launches = []};
 
     private _time = time;

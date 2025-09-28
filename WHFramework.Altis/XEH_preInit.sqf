@@ -593,6 +593,36 @@ call WHF_fnc_cycleFaction;
     {},
     false
 ] call WHF_fnc_addSetting;
+[
+    "WHF_icons_projectiles_friendly",
+    "CHECKBOX",
+    ["STR_WHF_settings_icons_projectiles_friendly", "STR_WHF_settings_icons_projectiles_friendly_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_icons"],
+    true,
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_icons_projectiles_self",
+    "CHECKBOX",
+    ["STR_WHF_settings_icons_projectiles_self", "STR_WHF_settings_icons_projectiles_self_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_icons"],
+    false,
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_icons_projectiles_launches",
+    "CHECKBOX",
+    ["STR_WHF_settings_icons_projectiles_launches", "STR_WHF_settings_icons_projectiles_launches_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_icons"],
+    true,
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
 
 // Icon Colors
 [
