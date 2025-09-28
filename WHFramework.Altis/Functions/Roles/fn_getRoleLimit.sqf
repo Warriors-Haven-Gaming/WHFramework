@@ -33,7 +33,8 @@ switch (_role) do {
     case "engineer":        {[3,  8] call _calculateLimit};
     case "jtac":            {[2, 20] call _calculateLimit};
     case "medic":           {[4,  8] call _calculateLimit};
-    case "pilot_cas":       {[2, 20] call _calculateLimit};
+    case "pilot_cas_heli":  {[1, 20] call _calculateLimit};
+    case "pilot_cas_plane": {[1, 30] call _calculateLimit};
     case "pilot_transport": {[2, 10] call _calculateLimit};
     case "rifleman":        {_current};
     case "sniper":          {[4,  8] call _calculateLimit};

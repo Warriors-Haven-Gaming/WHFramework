@@ -25,7 +25,8 @@ private _type = switch (_role) do {
     case "engineer": {"B_engineer_F"};
     case "jtac": {"B_recon_JTAC_F"};
     case "medic": {"B_medic_F"};
-    case "pilot_cas": {"B_Fighter_Pilot_F"};
+    case "pilot_cas_heli": {"B_Fighter_Pilot_F"};
+    case "pilot_cas_plane": {"B_Fighter_Pilot_F"};
     case "pilot_transport": {"B_Helipilot_F"};
     case "rifleman": {"B_Soldier_F"};
     case "sniper": {"B_sniper_F"};

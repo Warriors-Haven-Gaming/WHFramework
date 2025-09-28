@@ -22,7 +22,8 @@ uiNamespace setVariable ["WHF_roleSelectionGUI_roles", [
     "arty",
     "uav",
     "pilot_transport",
-    "pilot_cas"
+    "pilot_cas_heli",
+    "pilot_cas_plane"
 ]];
 
 focusOn call WHF_fnc_lowerWeapon;
