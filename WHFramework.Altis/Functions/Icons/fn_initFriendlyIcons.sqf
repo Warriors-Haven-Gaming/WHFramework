@@ -264,7 +264,7 @@ addMissionEventHandler ["Draw3D", {
         drawIcon3D [
             "\a3\ui_f_curator\data\cfgcurator\laser_ca.paa",
             [1, 0.2, 0.2, [0.5, 0.9] select _isTarget],
-            getPosATL _x,
+            _x modelToWorldVisual [0,0,0],
             _size,
             _size,
             0,
