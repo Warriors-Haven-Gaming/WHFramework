@@ -37,10 +37,21 @@ player addEventHandler ["GetInMan", {
     params ["", "", "_vehicle"];
 
     if (!isNil {_vehicle getVariable "WHF_addProjectileHandlers"}) exitWith {};
-    _vehicle setVariable ["WHF_addProjectileHandlers", true];
 
-    _vehicle addEventHandler ["IncomingMissile", {
+    private _missileID = _vehicle addEventHandler ["IncomingMissile", {
         params ["", "", "_source", "", "_missile"];
         WHF_projectiles_launches pushBack [time, _source, _missile];
     }];
-}]
+
+    _vehicle setVariable ["WHF_addProjectileHandlers", [
+        ["IncomingMissile", _missileID]
+    ]];
+}];
+
+player addEventHandler ["GetOutMan", {
+    params ["", "", "_vehicle"];
+
+    private _handlers = _vehicle getVariable ["WHF_addProjectileHandlers", []];
+    {_vehicle removeEventHandler _x} forEach _handlers;
+    _vehicle setVariable ["WHF_addProjectileHandlers", nil];
+}];
