@@ -911,7 +911,7 @@ class Mission
 				{
 					dataType="Marker";
 					position[]={677,9.9700003,10720};
-					name="respawn_west_pilot_cas";
+					name="respawn_west_pilot_cas_plane";
 					type="Empty";
 					angle=270;
 					id=1625;
@@ -2228,7 +2228,7 @@ class Mission
 							flags=7;
 							class Attributes
 							{
-								init="this setVariable [""WHF_role"", ""pilot_cas""];";
+								init="this setVariable [""WHF_role"", ""pilot_cas_plane""];";
 								description="Fighter Pilot@Fighter Pilots";
 								isPlayable=1;
 							};
@@ -2246,7 +2246,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								init="this setVariable [""WHF_role"", ""pilot_cas""];";
+								init="this setVariable [""WHF_role"", ""pilot_cas_plane""];";
 								description="Fighter Pilot@Fighter Pilots";
 								isPlayable=1;
 							};
@@ -23707,7 +23707,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas_plane""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=1033;
 							type="Peral_F16V";
@@ -23806,7 +23806,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas_plane""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 								reportRemoteTargets=1;
 								receiveRemoteTargets=1;
 								reportOwnPosition=1;
@@ -23826,7 +23826,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas_plane""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 								reportRemoteTargets=1;
 								receiveRemoteTargets=1;
 								reportOwnPosition=1;
@@ -23865,7 +23865,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas_heli""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=726;
 							type="B_Plane_CAS_01_dynamicLoadout_F";
@@ -23882,7 +23882,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas_heli""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 								reportRemoteTargets=1;
 								receiveRemoteTargets=1;
 								reportOwnPosition=1;
@@ -23903,7 +23903,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas_heli""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=1182;
 							type="CUP_B_AH6M_USA";
