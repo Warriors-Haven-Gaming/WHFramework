@@ -11,6 +11,7 @@ Author:
 if (!hasInterface) exitWith {};
 
 WHF_projectiles = [];
+WHF_projectiles_launches = [];
 
 addMissionEventHandler ["ProjectileCreated", {
     params ["_projectile"];
@@ -56,4 +57,39 @@ addMissionEventHandler ["Draw3D", {
         ];
     } forEach WHF_projectiles;
     {WHF_projectiles deleteAt _x} forEach _toRemove;
+}];
+
+addMissionEventHandler ["Draw3D", {
+    if (!WHF_icons_projectiles) exitWith {};
+    if (isNil "WHF_projectiles_launches") then {WHF_projectiles_launches = []};
+
+    private _time = time;
+    private _duration = 4;
+    private _cameraPos = positionCameraToWorld [0, 0, 0];
+
+    private _toRemove = [];
+    {
+        _x params ["_started", "_source", "_projectile"];
+        if (isNull _source) then {_toRemove pushBack _forEachIndex; continue};
+
+        private _delta = _time - _started;
+        if (_delta > _duration) then {_toRemove pushBack _forEachIndex; continue};
+
+        private _distanceSqr = _cameraPos distanceSqr _source;
+        private _scale =
+            linearConversion [250, 250000, _distanceSqr, 1, 0.5, true]
+            + (_started * 1000 random 0.25);
+        private _opacity = linearConversion [1, _duration, _delta, 1, 0, true];
+        private _color = [1, 0.1, 0, _opacity];
+
+        drawIcon3D [
+            "a3\ui_f\data\igui\cfg\cursors\select_ca.paa",
+            _color,
+            _source modelToWorldVisual (_source selectionPosition "Spine3"),
+            _scale,
+            _scale,
+            0
+        ];
+    } forEach WHF_projectiles_launches;
+    {WHF_projectiles_launches deleteAt _x} forEach _toRemove;
 }];

@@ -31,3 +31,16 @@ player addEventHandler ["FiredMan", {
     _projectile addEventHandler ["HitExplosion", _hitHandler];
     _projectile addEventHandler ["HitPart", _hitHandler];
 }];
+
+// FIXME: handle missile events on remote controlled units like UAVs
+player addEventHandler ["GetInMan", {
+    params ["", "", "_vehicle"];
+
+    if (!isNil {_vehicle getVariable "WHF_addProjectileHandlers"}) exitWith {};
+    _vehicle setVariable ["WHF_addProjectileHandlers", true];
+
+    _vehicle addEventHandler ["IncomingMissile", {
+        params ["", "", "_source", "", "_missile"];
+        WHF_projectiles_launches pushBack [time, _source, _missile];
+    }];
+}]
