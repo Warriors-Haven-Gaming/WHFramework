@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2243;
+		nextID=2244;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=88;
+		nextID=98;
 	};
 	class Camera
 	{
-		pos[]={11109.576,398.24554,11481.815};
-		dir[]={0.05598481,-0.60214078,0.79642731};
-		up[]={0.042223539,0.79838634,0.60066336};
-		aside[]={0.99754173,9.094947e-09,-0.07012184};
+		pos[]={11008.999,360.21606,11539.896};
+		dir[]={-0.52536434,-0.62274152,-0.57982469};
+		up[]={-0.41814274,0.78242254,-0.46148837};
+		aside[]={-0.74105722,1.3038516e-08,0.67145163};
 	};
 };
 binarizationWanted=0;
@@ -1349,7 +1349,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_cas""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_cas_heli""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=2025;
 							type="B_Heli_Light_01_dynamicLoadout_F";
@@ -1367,7 +1367,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_cas""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_cas_heli""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=2022;
 							type="B_Heli_Attack_01_pylons_dynamicLoadout_F";
@@ -9137,7 +9137,7 @@ class Mission
 			name="Spawns";
 			class Entities
 			{
-				items=4;
+				items=5;
 				class Item0
 				{
 					dataType="Marker";
@@ -9222,7 +9222,7 @@ class Mission
 				{
 					dataType="Marker";
 					position[]={11001,350.41,11532};
-					name="respawn_west_pilot_cas";
+					name="respawn_west_pilot_cas_heli";
 					type="Empty";
 					angle=180;
 					id=2103;
@@ -9244,9 +9244,76 @@ class Mission
 						nAttributes=1;
 					};
 				};
+				class Item4
+				{
+					dataType="Marker";
+					position[]={11002,350.40701,11533};
+					name="respawn_west_pilot_cas_plane";
+					type="Empty";
+					angle=180;
+					id=2243;
+					atlOffset=0.00036621094;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="markerblink";
+							expression="if ((_value # 0 isNotEqualTo 0) || (_value # 1 isNotEqualTo 0)) then {[_this, _value # 0, _value # 1] spawn BIS_fnc_blinkMarker};";
+							class Value
+							{
+								class data
+								{
+									singleType="ARRAY";
+									class value
+									{
+										items=3;
+										class Item0
+										{
+											class data
+											{
+												singleType="SCALAR";
+												value=0;
+											};
+										};
+										class Item1
+										{
+											class data
+											{
+												singleType="SCALAR";
+												value=0;
+											};
+										};
+										class Item2
+										{
+											class data
+											{
+												singleType="SCALAR";
+												value=0;
+											};
+										};
+									};
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ENH_markerShape";
+							expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="NONE";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
 			};
 			id=712;
-			atlOffset=0.55664062;
+			atlOffset=0.31848145;
 		};
 		class Item5
 		{
@@ -13530,7 +13597,7 @@ class Mission
 					{
 					};
 					id=2114;
-					atlOffset=3.0517578e-05;
+					atlOffset=60.779999;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -13551,7 +13618,7 @@ class Mission
 				};
 			};
 			id=2113;
-			atlOffset=3.0517578e-05;
+			atlOffset=60.779999;
 		};
 	};
 };
