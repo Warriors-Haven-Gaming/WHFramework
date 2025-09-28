@@ -583,6 +583,16 @@ call WHF_fnc_cycleFaction;
     {},
     false
 ] call WHF_fnc_addSetting;
+[
+    "WHF_icons_projectiles",
+    "CHECKBOX",
+    ["STR_WHF_settings_icons_projectiles", "STR_WHF_settings_icons_projectiles_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_icons"],
+    true,
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
 
 // Icon Colors
 [
