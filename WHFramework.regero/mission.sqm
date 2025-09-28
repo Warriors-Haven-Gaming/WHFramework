@@ -12,18 +12,18 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1346;
+		nextID=1347;
 	};
 	class LayerIndexProvider
 	{
-		nextID=214;
+		nextID=225;
 	};
 	class Camera
 	{
-		pos[]={1788.2449,67.256851,9108.4941};
-		dir[]={0.10964151,-0.50833827,0.85415113};
-		up[]={0.064720944,0.86115485,0.50420189};
-		aside[]={0.99186373,1.1001248e-08,-0.12731852};
+		pos[]={1764.7061,64.206627,2072.5024};
+		dir[]={0.13797407,-0.49161917,-0.85983962};
+		up[]={0.077894315,0.87079692,-0.48543087};
+		aside[]={-0.98739499,2.7898932e-07,-0.15844433};
 	};
 };
 binarizationWanted=0;
@@ -529,7 +529,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas_plane""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=546;
 							type="B_Plane_CAS_01_dynamicLoadout_F";
@@ -568,7 +568,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas_heli""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 								reportRemoteTargets=1;
 								receiveRemoteTargets=1;
 								reportOwnPosition=1;
@@ -589,7 +589,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas_heli""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=548;
 							type="CUP_B_AH6M_USA";
@@ -625,7 +625,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas_plane""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 								reportRemoteTargets=1;
 								receiveRemoteTargets=1;
 								reportOwnPosition=1;
@@ -645,7 +645,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas_plane""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 							};
 							id=542;
 							type="Peral_F16V";
@@ -654,14 +654,14 @@ class Mission
 							{
 								class Attribute0
 								{
-									property="F16V_Squadron_Insignia";
-									expression="_this setVariable [""F16V_Squadron_Insignia"", _value]; [_this,_value] call Peral_F16V_fnc_Squadron_Insignia;";
+									property="F16VFontStyle";
+									expression="_this setVariable [""F16VFontStyle"", _value]; [_this, _value] call lala_peral_F16V_fnc_applyAircraftFontStyle; [_this,_this getVariable [""F16V_Squadron_Insignia"",""None""]] call Peral_F16V_fnc_Squadron_Insignia;";
 									class Value
 									{
 										class data
 										{
 											singleType="STRING";
-											value="None";
+											value="white_font";
 										};
 									};
 								};
@@ -719,14 +719,14 @@ class Mission
 								};
 								class Attribute5
 								{
-									property="F16VFontStyle";
-									expression="_this setVariable [""F16VFontStyle"", _value]; [_this, _value] call lala_peral_F16V_fnc_applyAircraftFontStyle; [_this,_this getVariable [""F16V_Squadron_Insignia"",""None""]] call Peral_F16V_fnc_Squadron_Insignia;";
+									property="F16V_Squadron_Insignia";
+									expression="_this setVariable [""F16V_Squadron_Insignia"", _value]; [_this,_value] call Peral_F16V_fnc_Squadron_Insignia;";
 									class Value
 									{
 										class data
 										{
 											singleType="STRING";
-											value="white_font";
+											value="None";
 										};
 									};
 								};
@@ -745,7 +745,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", ""pilot_cas_plane""]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 								reportRemoteTargets=1;
 								receiveRemoteTargets=1;
 								reportOwnPosition=1;
@@ -16374,7 +16374,7 @@ class Mission
 			name="Spawns";
 			class Entities
 			{
-				items=4;
+				items=5;
 				class Item0
 				{
 					dataType="Marker";
@@ -16390,7 +16390,7 @@ class Mission
 				{
 					dataType="Marker";
 					position[]={1740,60.029999,1947};
-					name="respawn_west_pilot_cas";
+					name="respawn_west_pilot_cas_plane";
 					type="Empty";
 					angle=180.00002;
 					id=1066;
@@ -16413,9 +16413,35 @@ class Mission
 					angle=180;
 					id=1069;
 				};
+				class Item4
+				{
+					dataType="Marker";
+					position[]={1766,60.029999,2066};
+					name="respawn_west_pilot_cas_heli";
+					type="Empty";
+					angle=180;
+					id=1346;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ENH_markerShape";
+							expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="NONE";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
 			};
 			id=996;
-			atlOffset=0.0037498474;
+			atlOffset=0.0018768311;
 		};
 		class Item2
 		{
@@ -18611,7 +18637,7 @@ class Mission
 					{
 					};
 					id=1217;
-					atlOffset=5.7220459e-06;
+					atlOffset=35.91;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -18632,7 +18658,7 @@ class Mission
 				};
 			};
 			id=1216;
-			atlOffset=5.7220459e-06;
+			atlOffset=35.91;
 		};
 	};
 };
