@@ -93,7 +93,7 @@ while {lifeState _unit isEqualTo "INCAPACITATED"} do {
     private _time = time;
 
     if (_bleedoutAt - _time <= 0) exitWith {
-        _unit setDamage 1;
+        forceRespawn _unit;
         if (isPlayer _unit) then {[_unit] remoteExec ["WHF_fnc_incapBleedout"]};
     };
 
@@ -101,7 +101,7 @@ while {lifeState _unit isEqualTo "INCAPACITATED"} do {
     switch (true) do {
         case (!_drowning): {_drownAt = -1};
         case (_drownAt < 0): {_drownAt = _time + 9};
-        case (_time > _drownAt): {_unit setDamage 1};
+        case (_time > _drownAt): {forceRespawn _unit};
     };
 
     if (_actOfGod > 0 && {_time > _actOfGod && {_unit isEqualTo focusOn}}) exitWith {
