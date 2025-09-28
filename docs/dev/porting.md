@@ -85,7 +85,8 @@ of the role, for example, `respawn_west_arty`. Here are the role IDs we've defin
 - `engineer`
 - `jtac`
 - `medic`
-- `pilot_cas`
+- `pilot_cas_heli`
+- `pilot_cas_plane`
 - `pilot_transport`
 - `rifleman`
 - `sniper`
