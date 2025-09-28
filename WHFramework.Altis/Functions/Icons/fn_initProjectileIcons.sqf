@@ -36,13 +36,14 @@ addMissionEventHandler ["Draw3D", {
     {
         if (!alive _x) then {_toRemove pushBack _forEachIndex; continue};
 
-        private _distance = _cameraPos distanceSqr _x;
-        if (_distance > 9000000) then {continue};
+        private _distanceSqr = _cameraPos distanceSqr _x;
+        private _speedSqr = vectorMagnitudeSqr velocity _x;
+        private _timeToImpactSqr = _distanceSqr / (_speedSqr max 1);
 
         private _started = _x getVariable ["WHF_projectiles_time", 0];
         private _delta = _time - _started;
-        private _scale = linearConversion [250000, 1000000, _distance, 1, 0.25, true];
-        private _opacity = linearConversion [250000, 9000000, _distance, 1, 0, true];
+        private _scale = linearConversion [0, 25, _timeToImpactSqr, 1, 0.25, true];
+        private _opacity = linearConversion [0, 400, _timeToImpactSqr, 1, 0, true];
         private _color = [1, 0.1, 0, _opacity];
 
         drawIcon3D [
