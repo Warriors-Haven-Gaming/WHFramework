@@ -22,6 +22,7 @@ if (!isPlayer _player) exitWith {};
 if (!unitIsUAV _drone) exitWith {};
 
 private _owner = _drone getVariable ["WHF_drones_owner", ""];
+if (_owner isNotEqualTo "" && {getPlayerUID _player isNotEqualTo _owner}) exitWith {};
 
 if (local _drone) then {_drone setDamage [1, false]};
 if (hasInterface) then {

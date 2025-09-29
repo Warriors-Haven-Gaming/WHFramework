@@ -15,7 +15,15 @@ if (!hasInterface) exitWith {};
     {[player, objectParent focusOn] remoteExec ["WHF_fnc_selfDestructUAV"]},
     nil,
     true,
-    {unitIsUAV focusOn && {!isNull objectParent focusOn && {local focusOn}}},
+    {
+        unitIsUAV focusOn
+        && {!isNull cameraOn
+        && {local focusOn
+        && {
+            private _owner = cameraOn getVariable "WHF_drones_owner";
+            isNil "_owner" || {_owner isEqualTo "" || {getPlayerUID player isEqualTo _owner}}
+        }}}
+    },
     false,
     getTextRaw (configFile >> "CfgVehicles" >> "CAManBase" >> "ACE_SelfActions" >> "ACE_Explosives" >> "icon")
 ] call WHF_fnc_contextMenuAdd;
