@@ -22,6 +22,9 @@ addMissionEventHandler ["EntityKilled", {
     if (isNull _source) exitWith {};
     if (_entity isEqualTo _source) exitWith {}; // Likely force respawned
 
+    private _side = side group _entity;
+    if (_side isEqualTo sideUnknown) exitWith {};
+
     private _systemChat = {
         params ["_key", "_params"];
         [_key, _params] remoteExec ["WHF_fnc_localizedSystemChat", WHF_globalPlayerTarget];
@@ -30,7 +33,7 @@ addMissionEventHandler ["EntityKilled", {
     switch (true) do {
         case (_entity isEqualTo _instigator): {};
         case (isPlayer _entity && {isPlayer _instigator}): {
-            private _isFriendly = side group _entity isEqualTo side group _instigator;
+            private _isFriendly = _side isEqualTo side group _instigator;
             if (_isFriendly) then {
                 private _key = "$STR_WHF_initDeathMessages_pvp_friendly";
                 [_key, [name _entity, name _instigator]] call _systemChat;
