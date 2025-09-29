@@ -31,7 +31,6 @@ addMissionEventHandler ["EntityKilled", {
     };
 
     switch (true) do {
-        case (_entity isEqualTo _instigator): {};
         case (isPlayer _entity && {isPlayer _instigator}): {
             private _isFriendly = _side isEqualTo side group _instigator;
             if (_isFriendly) then {
