@@ -126,6 +126,23 @@
                 <Original>%1 are exchanging weapons and munitions with %2 at this location. We need to disrupt this transfer and secure their caches.</Original>
             </Key>
         </Container>
+        <Container name="Channels">
+            <Key ID="STR_WHF_killFeed_default">
+                <Original>%1 was killed</Original>
+            </Key>
+            <Key ID="STR_WHF_killFeed_pvp">
+                <Original>%1 was killed by %2</Original>
+            </Key>
+            <Key ID="STR_WHF_killFeed_pvp_friendly">
+                <Original>%1 was killed by %2 (friendly fire)</Original>
+            </Key>
+            <Key ID="STR_WHF_killFeed_prisoner">
+                <Original>%2 killed a prisoner!</Original>
+            </Key>
+            <Key ID="STR_WHF_killFeed_civilian">
+                <Original>%2 killed a civilian!</Original>
+            </Key>
+        </Container>
         <Container name="Context">
             <Key ID="STR_WHF_context_action_cruise_on">
                 <Original>Set Cruise Control</Original>
@@ -836,21 +853,6 @@
             </Key>
             <Key ID="STR_WHF_incapUnit_sniper">
                 <Original>%1 was incapacitated by an enemy sniper</Original>
-            </Key>
-            <Key ID="STR_WHF_initDeathMessages_default">
-                <Original>%1 was killed</Original>
-            </Key>
-            <Key ID="STR_WHF_initDeathMessages_pvp">
-                <Original>%1 was killed by %2</Original>
-            </Key>
-            <Key ID="STR_WHF_initDeathMessages_pvp_friendly">
-                <Original>%1 was killed by %2 (friendly fire)</Original>
-            </Key>
-            <Key ID="STR_WHF_initDeathMessages_prisoner">
-                <Original>%2 killed a prisoner!</Original>
-            </Key>
-            <Key ID="STR_WHF_initDeathMessages_civilian">
-                <Original>%2 killed a civilian!</Original>
             </Key>
         </Container>
         <Container name="Roles">

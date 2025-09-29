@@ -85,6 +85,7 @@ class CfgFunctions {
         };
         class Channels {
             class initChannels { preInit = 1; };
+            class initKillFeed { preInit = 1; };
             class updateChannelLoop {};
         };
         class Compositions {
@@ -342,7 +343,6 @@ class CfgFunctions {
             class incapDrowned {};
             class incapLoop {};
             class incapUnit {};
-            class initDeathMessages { preInit = 1; };
             class initReviveCancelAction {};
             class reviveAction {};
             class reviveActionAdd {};

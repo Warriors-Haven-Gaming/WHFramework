@@ -1,8 +1,8 @@
 /*
-Function: WHF_fnc_initDeathMessages
+Function: WHF_fnc_initKillFeed
 
 Description:
-    Set up death message handlers.
+    Set up kill feed handlers.
     Function must be executed on server.
 
 Author:
@@ -33,16 +33,16 @@ addMissionEventHandler ["EntityKilled", {
 
     // Priority messages, will bypass cooldown
     private _priority = switch (true) do {
-        case (_pvp && _friendly): {"$STR_WHF_initDeathMessages_pvp_friendly"};
-        case (_pvp): {"$STR_WHF_initDeathMessages_pvp"};
-        case (isPlayer _entity): {"$STR_WHF_initDeathMessages_default"};
+        case (_pvp && _friendly): {"$STR_WHF_killFeed_pvp_friendly"};
+        case (_pvp): {"$STR_WHF_killFeed_pvp"};
+        case (isPlayer _entity): {"$STR_WHF_killFeed_default"};
         default {""};
     };
 
     private _normal = switch (true) do {
         case (_priority isNotEqualTo ""): {""};
-        case (_prisoner && {isPlayer _instigator}): {"$STR_WHF_initDeathMessages_prisoner"};
-        case (_civilian && {isPlayer _instigator}): {"$STR_WHF_initDeathMessages_civilian"};
+        case (_prisoner && {isPlayer _instigator}): {"$STR_WHF_killFeed_prisoner"};
+        case (_civilian && {isPlayer _instigator}): {"$STR_WHF_killFeed_civilian"};
         default {""};
     };
 
