@@ -33,14 +33,14 @@ if (!isRemoteExecutedJIP) then {
     if (_unit isEqualTo player) then {call WHF_fnc_selfReviveAdd};
     if (isPlayer _unit) then {
         private _friendly = side group _unit isEqualTo side group _killer;
-        switch (true) do {
-            case (_friendly && isPlayer _killer): {
-                systemChat format [localize "$STR_WHF_incapUnit_friendly", name _unit, name _killer];
-            };
-            default {
-                systemChat format [localize "$STR_WHF_incapUnit_chat", name _unit];
-            };
+        private _pvp = isPlayer _killer;
+        private _sniper = ["ghillie", "sniper"] findIf {_x in toLowerANSI typeOf _killer} >= 0;
+        private _key = switch (true) do {
+            case (_friendly && _pvp): {"$STR_WHF_incapUnit_friendly"};
+            case (_sniper): {"$STR_WHF_incapUnit_sniper"};
+            default {"$STR_WHF_incapUnit_chat"};
         };
+        systemChat format [localize _key, name _unit, name _killer];
     };
     if (local _unit) then {
         if (isNil {_unit getVariable "WHF_incapUnit_wasCaptive"}) then {
