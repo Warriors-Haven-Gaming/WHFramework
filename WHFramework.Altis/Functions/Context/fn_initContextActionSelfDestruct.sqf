@@ -12,7 +12,7 @@ if (!hasInterface) exitWith {};
 [
     "WHF_context_action_selfdestruct",
     localize "$STR_WHF_context_action_selfdestruct",
-    {objectParent focusOn setDamage [1, false]},
+    {[player, objectParent focusOn] remoteExec ["WHF_fnc_selfDestructUAV"]},
     nil,
     true,
     {unitIsUAV focusOn && {!isNull objectParent focusOn && {local focusOn}}},

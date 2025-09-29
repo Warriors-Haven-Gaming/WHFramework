@@ -69,6 +69,7 @@ class CfgRemoteExec {
         class WHF_fnc_reportJTACTarget { allowedTargets = 2; };
         class WHF_fnc_requestSkipTime { allowedTargets = 2; };
         class WHF_fnc_reviveUnit {};
+        class WHF_fnc_selfDestructUAV {};
         class WHF_fnc_serviceVehicle {};
         class WHF_fnc_setPhysicsCollisions { jip = 1; };
         class WHF_fnc_setSpeaker { allowedTargets = 1; jip = 1; };
