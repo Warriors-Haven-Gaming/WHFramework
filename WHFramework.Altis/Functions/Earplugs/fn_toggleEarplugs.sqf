@@ -21,7 +21,7 @@ Author:
 params ["_enabled", ["_force", false]];
 
 private _ace_hearing = configFile >> "CfgPatches" >> "ace_hearing";
-if (isClass _ace_hearing && {ace_hearing_enableCombatDeafness}) exitWith {systemChat "disabled"};
+if (isClass _ace_hearing && {ace_hearing_enableCombatDeafness}) exitWith {};
 
 if (isNil "WHF_earplugs_isEnabled") then {WHF_earplugs_isEnabled = false};
 if (isNil "_enabled") then {_enabled = !WHF_earplugs_isEnabled};
