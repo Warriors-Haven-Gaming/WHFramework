@@ -30,7 +30,7 @@ addMissionEventHandler ["ProjectileCreated", {
     private _types = ["BombCore", "MissileCore", "RocketCore"];
     if (_types findIf {_projectile isKindOf _x} < 0) exitWith {};
 
-    WHF_projectiles pushBack [time, _projectile];
+    WHF_projectiles pushBack [time, _projectile, 0];
 }];
 
 addMissionEventHandler ["Draw3D", {
@@ -42,14 +42,14 @@ addMissionEventHandler ["Draw3D", {
 
     private _toRemove = [];
     {
-        _x params ["_started", "_projectile"];
+        _x params ["_started", "_projectile", "_rotation"];
         if (!alive _projectile) then {_toRemove pushBack _forEachIndex; continue};
 
         private _distanceSqr = _cameraPos distanceSqr _projectile;
         private _speedSqr = vectorMagnitudeSqr velocity _projectile;
         private _timeToImpactSqr = _distanceSqr / (_speedSqr max 1);
 
-        private _delta = _time - _started;
+        // private _delta = _time - _started;
         private _scale = linearConversion [0, 25, _timeToImpactSqr, 1, 0.25, true];
         private _opacity = linearConversion [0, 400, _timeToImpactSqr, 1, 0, true];
         private _color = [1, 0.1, 0, _opacity];
@@ -60,9 +60,16 @@ addMissionEventHandler ["Draw3D", {
             _projectile modelToWorldVisual [0,0,0],
             _scale,
             _scale,
-            _delta * 720
+            _rotation
         ];
+
+        private _rotationRate =
+            linearConversion [0, 122500, _speedSqr, 360, 1440, true]
+            * diag_deltaTime;
+        _x set [2, _rotation + _rotationRate];
+
     } forEach WHF_projectiles;
+
     {WHF_projectiles deleteAt _x} forEach _toRemove;
 }];
 
