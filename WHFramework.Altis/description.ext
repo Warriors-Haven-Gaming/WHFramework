@@ -210,7 +210,6 @@ class CfgFunctions {
             class initProjectileIcons { preInit = 1; };
         };
         class Init {
-            class initVehicleHandlers { postInit = 1; };
             class preInit { preInit = 1; };
             class setSideRelations { preInit = 1; };
         };
@@ -422,6 +421,7 @@ class CfgFunctions {
         };
         class Vehicles {
             class initArtilleryHandlers { postInit = 1; };
+            class initVehicleHandlers { postInit = 1; };
             class isAntiAirVehicle {};
             class isArtilleryVehicle {};
             class isEnemyAntiAir {};
