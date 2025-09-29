@@ -50,6 +50,7 @@ private _commander = units _commanderGroup # 0;
 [[_commander] + units _garrisonGroup, _pos, 30, true] call WHF_fnc_garrisonUnits;
 _groups append [_garrisonGroup, _commanderGroup];
 
+_commander setVariable ["WHF_killFeed_disabled", true, true];
 _commander addEventHandler ["Killed", {
     params ["_commander", "_killer", "_instigator"];
     _commander removeEventHandler [_thisEvent, _thisEventHandler];
