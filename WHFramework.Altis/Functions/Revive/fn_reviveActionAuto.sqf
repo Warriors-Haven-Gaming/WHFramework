@@ -17,10 +17,9 @@ Author:
 params ["_unit"];
 
 private _canRevive = {
-    if !(lifeState _unit in ["HEALTHY", "INJURED"]) exitWith {false};
     if (!isNull objectParent _unit) exitWith {false};
-    if (!isNull (_unit getVariable ["WHF_revive_target", objNull])) exitWith {false};
     if !(currentCommand _unit in _allowedCommands) exitWith {false};
+    if (_unit call WHF_fnc_unitIsReviving) exitWith {false};
     true
 };
 
