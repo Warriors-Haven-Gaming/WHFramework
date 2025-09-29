@@ -30,8 +30,7 @@ addMissionEventHandler ["ProjectileCreated", {
     private _types = ["BombCore", "MissileCore", "RocketCore"];
     if (_types findIf {_projectile isKindOf _x} < 0) exitWith {};
 
-    _projectile setVariable ["WHF_projectiles_started", time];
-    WHF_projectiles pushBack _projectile;
+    WHF_projectiles pushBack [time, _projectile];
 }];
 
 addMissionEventHandler ["Draw3D", {
@@ -43,13 +42,13 @@ addMissionEventHandler ["Draw3D", {
 
     private _toRemove = [];
     {
-        if (!alive _x) then {_toRemove pushBack _forEachIndex; continue};
+        _x params ["_started", "_projectile"];
+        if (!alive _projectile) then {_toRemove pushBack _forEachIndex; continue};
 
-        private _distanceSqr = _cameraPos distanceSqr _x;
-        private _speedSqr = vectorMagnitudeSqr velocity _x;
+        private _distanceSqr = _cameraPos distanceSqr _projectile;
+        private _speedSqr = vectorMagnitudeSqr velocity _projectile;
         private _timeToImpactSqr = _distanceSqr / (_speedSqr max 1);
 
-        private _started = _x getVariable ["WHF_projectiles_time", 0];
         private _delta = _time - _started;
         private _scale = linearConversion [0, 25, _timeToImpactSqr, 1, 0.25, true];
         private _opacity = linearConversion [0, 400, _timeToImpactSqr, 1, 0, true];
@@ -58,7 +57,7 @@ addMissionEventHandler ["Draw3D", {
         drawIcon3D [
             "a3\ui_f\data\igui\cfg\cursors\explosive_ca.paa",
             _color,
-            _x modelToWorldVisual [0,0,0],
+            _projectile modelToWorldVisual [0,0,0],
             _scale,
             _scale,
             _delta * 720
