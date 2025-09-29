@@ -25,13 +25,17 @@ addMissionEventHandler ["EntityKilled", {
     private _side = side group _entity;
     if (_side isEqualTo sideUnknown) exitWith {};
 
+    private _civilian = _side isEqualTo civilian;
     private _friendly = _side isEqualTo side group _instigator;
+    private _prisoner = !isNull (_entity call WHF_fnc_getDetainedBy);
     private _pvp = isPlayer _entity && {isPlayer _instigator};
 
     private _key = switch (true) do {
         case (_pvp && _friendly): {"$STR_WHF_initDeathMessages_pvp_friendly"};
         case (_pvp): {"$STR_WHF_initDeathMessages_pvp"};
         case (isPlayer _entity): {"$STR_WHF_initDeathMessages_default"};
+        case (_prisoner && {isPlayer _instigator}): {"$STR_WHF_initDeathMessages_prisoner"};
+        case (_civilian && {isPlayer _instigator}): {"$STR_WHF_initDeathMessages_civilian"};
         default {""};
     };
 
