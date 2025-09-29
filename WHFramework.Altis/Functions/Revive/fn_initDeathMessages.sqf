@@ -25,25 +25,20 @@ addMissionEventHandler ["EntityKilled", {
     private _side = side group _entity;
     if (_side isEqualTo sideUnknown) exitWith {};
 
-    private _systemChat = {
-        params ["_key", "_params"];
+    private _friendly = _side isEqualTo side group _instigator;
+    private _pvp = isPlayer _entity && {isPlayer _instigator};
+
+    private _key = switch (true) do {
+        case (_pvp && _friendly): {"$STR_WHF_initDeathMessages_pvp_friendly"};
+        case (_pvp): {"$STR_WHF_initDeathMessages_pvp"};
+        case (isPlayer _entity): {"$STR_WHF_initDeathMessages_default"};
+        default {""};
+    };
+
+    if (_key isNotEqualTo "") then {
+        private _params = [name _entity, name _instigator];
         [_key, _params] remoteExec ["WHF_fnc_localizedSystemChat", WHF_globalPlayerTarget];
     };
 
-    switch (true) do {
-        case (isPlayer _entity && {isPlayer _instigator}): {
-            private _isFriendly = _side isEqualTo side group _instigator;
-            if (_isFriendly) then {
-                private _key = "$STR_WHF_initDeathMessages_pvp_friendly";
-                [_key, [name _entity, name _instigator]] call _systemChat;
-            } else {
-                private _key = "$STR_WHF_initDeathMessages_pvp";
-                [_key, [name _entity, name _instigator]] call _systemChat;
-            };
-        };
-        case (isPlayer _entity): {
-            ["$STR_WHF_initDeathMessages_default", [name _entity]] call _systemChat;
-        };
-    };
     nil
 }];
