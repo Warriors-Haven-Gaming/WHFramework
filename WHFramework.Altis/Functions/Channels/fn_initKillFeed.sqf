@@ -22,6 +22,7 @@ addMissionEventHandler ["EntityKilled", {
     if (isNull _source) exitWith {};
     if (_entity isEqualTo _source) exitWith {}; // Likely force respawned
     if (!isNil {_entity getVariable "WHF_killFeed_disabled"}) exitWith {};
+    if !(_entity isKindOf "CAManBase") exitWith {};
 
     private _side = side group _entity;
     if (_side isEqualTo sideUnknown) exitWith {};
