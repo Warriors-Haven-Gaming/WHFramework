@@ -26,6 +26,7 @@ DEFAULT_BRANCHES = (
     "colombia",
     "drakovac",
     "mehland",
+    "kaska",
     "main",
 )
 
