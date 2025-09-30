@@ -65,8 +65,8 @@ private _gcAircraftGroup = {
 };
 
 private _shouldRefreshTargetAreas = {
-    count _aircraftGroups > 0
-    || {count (_types call WHF_fnc_getAircraftTypes) > 0}
+    _aircraftGroups isNotEqualTo []
+    || {_types call WHF_fnc_getAircraftTypes isNotEqualTo []}
 };
 
 private _refreshTargetAreas = {

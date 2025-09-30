@@ -82,8 +82,6 @@ for "_i" from 1 to _quantity do {
 private _faction = _types # 0 # 1;
 {
     private _vehicle = _x;
-    private _seats = _vehicle emptyPositions "";
-    private _quantity = selectRandom [3, 5, 7] min _seats;
     private _pos = [-random 500, -random 500, 0];
 
     private _pilot = ["pilot_heli", "pilot_jet"] select (_vehicle isKindOf "Plane");

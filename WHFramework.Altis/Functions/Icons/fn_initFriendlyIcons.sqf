@@ -70,7 +70,6 @@ addMissionEventHandler ["Draw3D", {
             default {_sideColor};
         };
 
-        private _config = configOf _x;
         private _isTarget = _x isEqualTo cursorTarget || {_x in _selectedUnits};
         private _text = if (_isTarget) then {_x call _getName} else {""};
 
@@ -138,11 +137,11 @@ addMissionEventHandler ["Draw3D", {
         private _opacity = linearConversion [_max - 1000 max _max / 10, _max, _distance, 1, 0, true];
         private _color = switch (true) do {
             case (_hasIncapped): {WHF_icons_color_incap};
-            case (count _aliveCrew < 1): {WHF_icons_color_dead};
+            case (_aliveCrew isEqualTo []): {WHF_icons_color_dead};
             default {_sideColor};
         };
 
-        private _pos = if (count _aliveCrew > 0) then {
+        private _pos = if (_aliveCrew isNotEqualTo []) then {
             _aliveCrew # 0 modelToWorldVisual (_x selectionPosition "Spine3")
         } else {
             _x modelToWorldVisual [0,0,0]
@@ -416,7 +415,7 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
             case (unitIsUAV _x): {
                 private _controller = _crew apply {remoteControlled _x} select {!isNull _x};
                 private _displayName = [_config] call BIS_fnc_displayName;
-                if (count _controller > 0) then {
+                if (_controller isNotEqualTo []) then {
                     format ["%1 (%2)", _displayName, _controller # 0 call _getName]
                 } else {
                     _displayName

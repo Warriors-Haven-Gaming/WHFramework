@@ -57,7 +57,7 @@ WHF_contextMenu_entries set [
     [
         _title,
         _script,
-        if (!isNil "_arguments") then {_arguments} else {nil},
+        if (isNil "_arguments") then {nil} else {_arguments},
         _hideOnUse,
         _condition,
         _unconscious
@@ -68,7 +68,7 @@ if (!isNil "WHF_contextMenu_actionIDs") then {
     private _actionID = focusOn addAction [
         _title,
         _script,
-        if (!isNil "_arguments") then {_arguments} else {nil},
+        if (isNil "_arguments") then {nil} else {_arguments},
         13,
         true,
         _hideOnUse,
@@ -90,7 +90,7 @@ if (isClass (configFile >> "CfgPatches" >> "ace_interact_menu")) then {
         _script,
         _condition,
         {},
-        if (!isNil "_arguments") then {_arguments} else {nil}
+        if (isNil "_arguments") then {nil} else {_arguments}
     ] call ace_interact_menu_fnc_createAction;
 
     [focusOn, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;

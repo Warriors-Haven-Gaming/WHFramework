@@ -56,7 +56,7 @@ isNil {with uiNamespace do {
         private _row = floor (_forEachIndex / 3);
         private _col = _forEachIndex % 3;
 
-        _button = _display ctrlCreate ["RscButton", -1, _group];
+        private _button = _display ctrlCreate ["RscButton", -1, _group];
         _button ctrlSetPosition ([
             0.14 + 0.25 * _col,
             0.26 + 0.26 * _row,
@@ -74,7 +74,7 @@ isNil {with uiNamespace do {
         }];
     } forEach WHF_spawnRecruitGUI_roles;
 
-    _clearButton = _display ctrlCreate ["RscButton", -1];
+    private _clearButton = _display ctrlCreate ["RscButton", -1];
     _clearButton ctrlSetPosition [
         _groupX + _width - 0.07 * safeZoneW - 0.01,
         _groupY + _height + 0.01,

@@ -58,7 +58,7 @@ private _deleteAbandonedRecruits = {
             if !(_x getVariable "WHF_recruiter" in _missingOwners) then {continue};
 
             private _incapacitated = lifeState _x isEqualTo "INCAPACITATED";
-            if (_incapacitated && {_hasACEMedical}) then {continue};
+            if (_incapacitated && _hasACEMedical) then {continue};
 
             deleteVehicle _x;
         } forEach _recruits;

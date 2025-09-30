@@ -50,7 +50,6 @@ private _duration = ceil (_hours * 60 / 2);
 
 WHF_requestSkipTime_script = [side group _player, _timeOfDay, _target] spawn {
     params ["_side", "_timeOfDay", "_target"];
-    private _lastTimeMultiplier = timeMultiplier;
     private _waitForNextDay = dayTime > _target;
     while {_waitForNextDay || {dayTime < _target}} do {
         if (dayTime < _target) then {_waitForNextDay = FALSE};

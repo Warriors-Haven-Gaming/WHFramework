@@ -45,7 +45,7 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
 
         private _waypoints = waypoints _x;
         if (
-            count _waypoints > 0
+            _waypoints isNotEqualTo []
             && {!(waypointType (_waypoints # 0) in ["MOVE", "SAD"])}
         ) then {continue};
 
@@ -56,7 +56,7 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
             apply {_x # 6 vectorMultiply [1,1,0]};
         if (!isNil "_area") then {_targets = _targets inAreaArray _area};
 
-        if (count _targets < 1) then {sleep 0.125; continue};
+        if (_targets isEqualTo []) then {sleep 0.125; continue};
 
         [_x] call WHF_fnc_clearWaypoints;
         private _position = [_leader, _targets] call WHF_fnc_nearestPosition;

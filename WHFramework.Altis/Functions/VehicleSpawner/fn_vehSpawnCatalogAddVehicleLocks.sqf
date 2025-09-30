@@ -26,7 +26,7 @@ if (isNil "_catalog") exitWith {};
 _category = _catalog get _category;
 if (isNil "_category") exitWith {};
 
-_locks = _category get "_locks";
+private _locks = _category get "_locks";
 if (isNil "_locks") exitWith {};
 
 {

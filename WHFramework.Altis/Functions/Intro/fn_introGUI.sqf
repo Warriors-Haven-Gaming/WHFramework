@@ -56,7 +56,7 @@ isNil {with uiNamespace do {
     ];
     _description ctrlCommit 0;
 
-    _clearButton = _display ctrlCreate ["RscButtonMenu", 2];
+    private _clearButton = _display ctrlCreate ["RscButtonMenu", 2];
     _clearButton ctrlSetPosition [
         _groupX + _width - 0.07 * safeZoneW - 0.01,
         _groupY + _height + 0.01,

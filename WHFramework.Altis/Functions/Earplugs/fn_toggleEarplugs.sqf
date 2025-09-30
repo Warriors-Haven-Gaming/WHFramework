@@ -33,7 +33,7 @@ if (isNil "WHF_earplugs_last") then {WHF_earplugs_last = _now - _duration};
 if (WHF_earplugs_last + _duration > _now) exitWith {};
 
 switch (true) do {
-    case (_enabled && {_force}): {
+    case (_enabled && _force): {
         WHF_earplugs_music_last = 1;
         WHF_earplugs_radio_last = 1;
         WHF_earplugs_sound_last = 1;
@@ -59,7 +59,7 @@ switch (true) do {
 
         playSoundUI ["a3\ui_f\data\sound\cfgnotifications\defaultnotificationclose.wss", 5, 0.5];
     };
-    case (!_enabled && {_force}): {
+    case (!_enabled && _force): {
         _duration fadeMusic 1;
         _duration fadeRadio 1;
         _duration fadeSound 1;

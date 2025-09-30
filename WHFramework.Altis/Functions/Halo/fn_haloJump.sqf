@@ -71,7 +71,7 @@ _seed spawn WHF_fnc_haloJumpCut;
 }} forEach (_units + _vehicles);
 sleep 3; // CAUTION: unit/vehicle locality can change after this point
 
-private _altitude = if (count _vehicles > 0) then {WHF_halo_altitude_vehicle} else {WHF_halo_altitude_unit};
+private _altitude = [WHF_halo_altitude_vehicle, WHF_halo_altitude_unit] select (_vehicles isEqualTo []);
 _center set [2, _altitude];
 
 private _posIndex = 0;
@@ -96,7 +96,7 @@ private _getNextPos = {
     _x setPosATL ([WHF_halo_spacing_unit] call _getNextPos);
     _x setDir _direction;
 
-    if (!isPlayer _x || {count _vehicles > 0}) then {_x spawn {
+    if (!isPlayer _x || {_vehicles isNotEqualTo []}) then {_x spawn {
         waitUntil {sleep (0.5 + random 0.5); getPos _this # 2 < WHF_halo_parachuteAltitude_unit};
         [_this] call WHF_fnc_deployParachute;
     }};

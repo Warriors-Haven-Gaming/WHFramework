@@ -21,7 +21,7 @@ if (isNil "WHF_contextMenu_entries") exitWith {};
     private _actionID = focusOn addAction [
         _title,
         _script,
-        if (!isNil "_arguments") then {_arguments} else {nil},
+        if (isNil "_arguments") then {nil} else {_arguments},
         13,
         true,
         _hideOnUse,

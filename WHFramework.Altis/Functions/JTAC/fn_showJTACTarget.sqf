@@ -25,7 +25,7 @@ private _locations = nearestLocations [
     1000,
     _target
 ] apply {text _x} select {_x isNotEqualTo ""};
-private _location = if (count _locations > 0) then {_locations # 0} else {""};
+private _location = if (_locations isNotEqualTo []) then {_locations # 0} else {""};
 
 private _key = [
     "$STR_WHF_showJTACTarget",

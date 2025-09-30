@@ -15,7 +15,7 @@ private _sounds = [
     "\SFX_ProjectR\SFX\Death\headshot_nohelm_2.wav",
     "\SFX_ProjectR\SFX\Death\headshot_nohelm_3.wav"
 ] select {fileExists _x};
-if (count _sounds > 0) then {playSoundUI [selectRandom _sounds, 1, 1, true]};
+if (_sounds isNotEqualTo []) then {playSoundUI [selectRandom _sounds, 1, 1, true]};
 
 private _blur = ppEffectCreate ["DynamicBlur", 474];
 _blur ppEffectEnable true;

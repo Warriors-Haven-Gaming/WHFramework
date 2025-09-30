@@ -23,7 +23,7 @@ while {true} do {
         select {isNull objectParent _x}
         select {!captive _x}
         select {eyePos _x select 2 >= 0}
-        select {count (_x targets [true, _detectDistance, [], 30]) > 0}
+        select {_x targets [true, _detectDistance, [], 30] isNotEqualTo []}
         select {[_x] call WHF_fnc_canAssembleFPVDrone}
         select {!lineIntersects [getPosASL _x, getPosASL _x vectorAdd [0, 0, 50], _x]};
     if (count _operatorsOnAlert < 1) then {continue};

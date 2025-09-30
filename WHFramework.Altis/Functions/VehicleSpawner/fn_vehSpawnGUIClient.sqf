@@ -70,7 +70,7 @@ isNil {with uiNamespace do {
     private _display = findDisplay -1;
 
     WHF_vehSpawnGUI_getSelectedCategory = {
-        if (count WHF_vehSpawnGUI_categories == 0) exitWith {nil};
+        if (WHF_vehSpawnGUI_categories isEqualTo []) exitWith {nil};
         WHF_vehSpawnGUI_categories
             select lbCurSel WHF_vehSpawnGUI_ctrlCategory
             select 2;
@@ -108,7 +108,7 @@ isNil {with uiNamespace do {
     };
 
     WHF_vehSpawnGUI_getSelectedVehicle = {
-        if (count WHF_vehSpawnGUI_ctrlVehicle_values == 0) exitWith {nil};
+        if (WHF_vehSpawnGUI_ctrlVehicle_values isEqualTo []) exitWith {nil};
         WHF_vehSpawnGUI_ctrlVehicle_values
             select lbCurSel WHF_vehSpawnGUI_ctrlVehicle
             select 1;
