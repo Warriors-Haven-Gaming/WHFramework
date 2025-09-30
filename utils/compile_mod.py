@@ -23,6 +23,7 @@ BRANCH_DIRECTORIES = {
     "colombia": "UMB_Colombia",
     "drakovac": "drakovac",
     "mehland": "mehland",
+    "kaska": "kaska",
 }
 
 COMMON_FILES = {
