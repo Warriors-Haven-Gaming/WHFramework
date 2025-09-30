@@ -208,6 +208,15 @@ private _helicopters = [
 
 private _planesCooldown = 300;
 private _planes = [
+    ["usaf_ac130u",                         [-1, ["pilot_cas_plane"]]],
+    ["usaf_a10",                            [-1, ["pilot_cas_plane"]]],
+    ["usaf_f22",                            [-1, ["pilot_cas_plane"]]],
+    ["usaf_f22_ewp_aa",                     [-1, ["pilot_cas_plane"]]],
+    ["usaf_f22_ewp_ag",                     [-1, ["pilot_cas_plane"]]],
+    ["usaf_f22_heavy",                      [-1, ["pilot_cas_plane"]]],
+    ["usaf_f35a",                           [-1, ["pilot_cas_plane"]]],
+    ["usaf_f35a_light",                     [-1, ["pilot_cas_plane"]]],
+    ["usaf_f35a_stealth",                   [-1, ["pilot_cas_plane"]]],
     ["peral_f16v",                          [-1, ["pilot_cas_plane"]]],
     ["f_35c",                               [-1, ["pilot_cas_plane"]]],
     ["fa_emb312_at27m35_nato",              [-1, ["pilot_cas_plane"]]],
@@ -219,6 +228,9 @@ private _planes = [
     ["i_plane_fighter_03_dynamicloadout_f", [-1, ["pilot_cas_plane"]]],
     ["i_plane_fighter_04_f",                [-1, ["pilot_cas_plane"]]],
     ["c_plane_civil_01_f",                  [-1, ["pilot_transport"]]],
+    ["usaf_kc135",                          [600, ["pilot_transport"]]],
+    ["usaf_c130j",                          [600, ["pilot_transport"]]],
+    ["usaf_c130j_cargo",                    [600, ["pilot_transport"]]],
     ["cup_b_mv22_viv_usmc",                 [600, ["pilot_transport"]]],
     ["cup_b_c130j_gb",                      [600, ["pilot_transport"]]],
     ["cup_b_c130j_cargo_gb",                [600, ["pilot_transport"]]],
@@ -227,6 +239,8 @@ private _planes = [
 
 private _dronesCooldown = 300;
 private _drones = [
+    ["usaf_mq9",                    [-1, ["uav"]]],
+    ["usaf_rq4a",                   [-1, ["uav"]]],
     ["qav_b_ripsaw_mk44",           [-1, ["uav"]]],
     ["qav_ripsaw_c",                [-1, ["uav"]]],
     ["cup_b_usmc_dyn_mq9",          [-1, ["uav"]]],
