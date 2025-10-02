@@ -23,6 +23,7 @@ private _spawnNextScript = {
     // Add any complex logic here for stateful mission generation.
     // For example, an FOB mission can be generated and then later
     // followed up with a FOB defense mission.
+    call WHF_fnc_cycleFaction;
     if (random 1 < 1) exitWith {
         if (_total > 0) then {sleep (60 + random 120)}; // Grace period
         [] spawn WHF_fnc_msnMainAnnexRegion
