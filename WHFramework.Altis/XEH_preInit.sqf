@@ -780,7 +780,7 @@ call WHF_fnc_cycleFaction;
     "SLIDER",
     ["STR_WHF_settings_missions_annex_size", "STR_WHF_settings_missions_annex_size_tooltip"],
     ["STR_WHF_settings_missions", "STR_WHF_settings_missions_annex"],
-    [0.5, 2, 1, 0, true],
+    [0.5, 5, 1, 0, true],
     true,
     {},
     false
