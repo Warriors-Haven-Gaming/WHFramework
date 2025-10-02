@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2136.9626,18.25815,13061.574};
-		dir[]={0.87773925,-0.45239115,0.15809326};
-		up[]={0.44526011,0.89179814,0.080198109};
-		aside[]={0.17726831,-5.7392754e-08,-0.98420143};
+		pos[]={2153.2256,8.0318193,13075.943};
+		dir[]={0.7064417,-0.32563433,-0.62843603};
+		up[]={0.2433102,0.94548726,-0.21644443};
+		aside[]={-0.66466302,1.5483238e-07,-0.74716353};
 	};
 };
 binarizationWanted=0;
@@ -2746,7 +2746,7 @@ class Mission
 					position[]={2369.1057,37.389999,13577.248};
 					name="respawn_west_pilot_transport";
 					type="Empty";
-					angle=220.00002;
+					angle=220;
 					id=132;
 					class CustomAttributes
 					{
@@ -5243,7 +5243,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={2161.311,2.2430091,13066.782};
+								position[]={2161.311,2.6830859,13066.782};
 								angles[]={0.0016194459,3.0057213,0};
 							};
 							side="Empty";
@@ -5254,7 +5254,7 @@ class Mission
 							};
 							id=238;
 							type="Land_CampingTable_small_F";
-							atlOffset=2.7111499;
+							atlOffset=3.1512268;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -18707,10 +18707,11 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={2160.0015,2.7322943,13066.462};
+								position[]={2160.0015,3.1723711,13066.462};
 								angles[]={0.0016194459,3.0057607,0};
 							};
 							side="Empty";
+							flags=4;
 							class Attributes
 							{
 								init="[this] call WHF_fnc_initArsenal;";
@@ -18718,7 +18719,6 @@ class Mission
 							};
 							id=300;
 							type="B_supplyCrate_F";
-							atlOffset=2.710139;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -18755,10 +18755,11 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={2161.23,2.7939563,13066.869};
-								angles[]={0.0016231562,3.0057187,0};
+								position[]={2161.2969,3.2582393,13066.822};
+								angles[]={0.0016194459,3.0057187,0};
 							};
 							side="Empty";
+							flags=4;
 							class Attributes
 							{
 								init="[this, [2168,13052,0], 82, [""Ships""]] call WHF_fnc_vehSpawnInit;";
@@ -18766,7 +18767,6 @@ class Mission
 							};
 							id=301;
 							type="Land_Laptop_03_olive_F";
-							atlOffset=0.34698343;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -18790,17 +18790,17 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={2166.2473,4.4761438,13066.201};
+								position[]={2166.2473,4.699789,13066.201};
 								angles[]={0.0016194459,4.5769539,0};
 							};
 							side="Empty";
+							flags=4;
 							class Attributes
 							{
 								disableSimulation=1;
 							};
 							id=302;
 							type="Land_RepairDepot_01_tan_F";
-							atlOffset=2.955157;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -19030,8 +19030,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={2158.4343,5.7721329,13066.513};
-								angles[]={0,6.1473937,0};
+								position[]={2158.4343,6.2122097,13066.513};
+								angles[]={0.0016194459,6.1473937,0};
 							};
 							side="Empty";
 							class Attributes
@@ -19040,7 +19040,7 @@ class Mission
 							};
 							id=311;
 							type="Flag_Blue_F";
-							atlOffset=2.6654477;
+							atlOffset=3.1055245;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -20466,17 +20466,16 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={2169.8313,4.9591894,13067.171};
+								position[]={2169.8313,5.1789761,13067.171};
 								angles[]={0,6.1473203,0};
 							};
 							side="Empty";
-							flags=1;
+							flags=5;
 							class Attributes
 							{
 							};
 							id=330;
 							type="Land_LampHarbour_F";
-							atlOffset=2.9387329;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -22392,12 +22391,12 @@ class Mission
 						class Item5
 						{
 							dataType="Marker";
-							position[]={2165.5039,1.9910001,13066.467};
+							position[]={2165.5039,2.431077,13066.467};
 							name="marker_7";
 							text="Ships";
 							type="b_naval";
 							id=340;
-							atlOffset=2.8832319;
+							atlOffset=0.14988995;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -22548,11 +22547,11 @@ class Mission
 						};
 					};
 					id=334;
-					atlOffset=-0.42317963;
+					atlOffset=-0.41630554;
 				};
 			};
 			id=135;
-			atlOffset=-0.24837112;
+			atlOffset=-0.24493408;
 		};
 		class Item3
 		{
