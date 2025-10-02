@@ -177,7 +177,7 @@ private _helicopters = [
     ["b_heli_attack_01_pylons_dynamicloadout_f", [-1,  ["pilot_cas_heli"]]],
     ["b_d_heli_light_01_dynamicloadout_lxws",    [-1,  ["pilot_cas_heli"]]],
     ["b_d_heli_attack_01_dynamicloadout_lxws",   [-1,  ["pilot_cas_heli"]]],
-    ["ef_b_ah99j_nato_des",                      [-1,  ["pilot_cas_heli"]]],
+    ["ef_b_ah99j_nato",                          [-1,  ["pilot_cas_heli"]]],
     ["valor_attack_f",                           [-1,  ["pilot_cas_plane"]]],
     ["b_t_vtol_01_armed_f",                      [-1,  ["pilot_cas_plane"]]],
     ["o_heli_attack_02_dynamicloadout_f",        [-1,  ["pilot_cas_heli"]]],
