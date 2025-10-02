@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.017453292;
 	scaleGridStep=0.1;
 	autoGroupingDist=10;
-	toggles=41;
+	toggles=33;
 	mods[]=
 	{
 		"3denEnhanced"
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2703.9573,85.659569,13551.434};
-		dir[]={-0.033737566,-0.54981983,0.83460283};
-		up[]={-0.022207461,0.83528298,0.54937226};
-		aside[]={0.99918544,-6.3912012e-08,0.040390521};
+		pos[]={2810.5801,67.768845,13534.931};
+		dir[]={-0.77376145,-0.46337494,0.43200472};
+		up[]={-0.40459195,0.88615966,0.22589047};
+		aside[]={0.48749766,1.1897646e-07,0.87315553};
 	};
 };
 binarizationWanted=0;
@@ -2720,7 +2720,7 @@ class Mission
 					text="Main Operating Base";
 					type="b_hq";
 					colorName="ColorWEST";
-					angle=177.99991;
+					angle=177.99989;
 					id=131;
 					class CustomAttributes
 					{
@@ -2746,7 +2746,7 @@ class Mission
 					position[]={2369.1057,37.389999,13577.248};
 					name="respawn_west_pilot_transport";
 					type="Empty";
-					angle=220.00006;
+					angle=220.00005;
 					id=132;
 					class CustomAttributes
 					{
@@ -2795,12 +2795,11 @@ class Mission
 				class Item3
 				{
 					dataType="Marker";
-					position[]={2784.5471,12.912,13547.839};
+					position[]={2788.4797,50.36932,13548.214};
 					name="respawn_west_uav";
 					type="Empty";
-					angle=74.999977;
+					angle=280.00003;
 					id=134;
-					atlOffset=-24.544857;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -2847,7 +2846,7 @@ class Mission
 				};
 			};
 			id=130;
-			atlOffset=-6.0705776;
+			atlOffset=3.2937546;
 		};
 		class Item2
 		{
@@ -17292,6 +17291,7 @@ class Mission
 							};
 							id=1064;
 							type="qav_ripsaw_c";
+							atlOffset=3.8146973e-06;
 						};
 						class Item22
 						{
@@ -17310,6 +17310,7 @@ class Mission
 							};
 							id=1068;
 							type="B_T_UGV_01_rcws_olive_F";
+							atlOffset=5.7220459e-05;
 						};
 						class Item23
 						{
@@ -22290,7 +22291,7 @@ class Mission
 							name="marker_5";
 							text="Ground Vehicles";
 							type="b_motor_inf";
-							angle=176.99994;
+							angle=176.99992;
 							id=336;
 							class CustomAttributes
 							{
@@ -22317,7 +22318,7 @@ class Mission
 							name="marker_2";
 							text="Service";
 							type="b_service";
-							angle=349.99988;
+							angle=349.99985;
 							id=337;
 							atlOffset=0.0057907104;
 							class CustomAttributes
@@ -22372,7 +22373,7 @@ class Mission
 							name="marker_4";
 							text="Service";
 							type="b_service";
-							angle=89.999977;
+							angle=89.999969;
 							id=339;
 							atlOffset=0.52018356;
 							class CustomAttributes
@@ -22675,12 +22676,13 @@ class Mission
 						angles[]={-0,3.2114058,0};
 					};
 					side="West";
-					flags=6;
+					flags=2;
 					class Attributes
 					{
 					};
 					id=1062;
 					type="B_UAV_AI";
+					atlOffset=1.6728058;
 				};
 			};
 			class Attributes
@@ -22752,12 +22754,13 @@ class Mission
 						angles[]={-0,3.1415932,0};
 					};
 					side="West";
-					flags=6;
+					flags=2;
 					class Attributes
 					{
 					};
 					id=1066;
 					type="B_UAV_AI";
+					atlOffset=2.3660393;
 				};
 			};
 			class Attributes
@@ -22796,6 +22799,7 @@ class Mission
 				};
 			};
 			id=1063;
+			atlOffset=3.8146973e-06;
 		};
 		class Item6
 		{
@@ -22829,12 +22833,13 @@ class Mission
 						angles[]={-0,3.1241393,0};
 					};
 					side="West";
-					flags=6;
+					flags=2;
 					class Attributes
 					{
 					};
 					id=1070;
 					type="B_UAV_AI";
+					atlOffset=2.0893364;
 				};
 			};
 			class Attributes
@@ -22873,6 +22878,7 @@ class Mission
 				};
 			};
 			id=1067;
+			atlOffset=5.7220459e-05;
 		};
 	};
 };
