@@ -22,12 +22,16 @@ Parameters:
         (Optional, default nil)
         If provided, units will only consider targets within the given area.
         Should be in a format suitable for inArea.
+    Number maxDistance:
+        (Optional, default 0)
+        The maximum distance that units will seek out targets,
+        If set to 0, target distance will be unlimited.
 
 Author:
     thegamecracks
 
 */
-params ["_inputGroups", "_area"];
+params ["_inputGroups", "_area", ["_maxDistance", 0]];
 
 sleep (20 + random 20);
 private _groups = [_inputGroups] call WHF_fnc_coerceGroups;
@@ -50,7 +54,7 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
         ) then {continue};
 
         private _targets =
-            _leader targets [true, 0, [], 180]
+            _leader targets [true, _maxDistance, [], 180]
             apply {_leader targetKnowledge _x}
             select {_x # 4 isNotEqualTo sideUnknown}
             apply {_x # 6 vectorMultiply [1,1,0]};
