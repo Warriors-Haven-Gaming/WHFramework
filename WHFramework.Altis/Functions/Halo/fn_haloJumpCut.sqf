@@ -20,12 +20,12 @@ private _soundVolume = soundVolume;
 2 fadeSound 0;
 sleep 2;
 
-playSoundUI ["surrender_fall", 1, 1, true];
-playSoundUI ["Planes_Passby", 0.2, 1, true];
+playSoundUI ["surrender_fall"];
+playSoundUI ["Planes_Passby", 0.2];
 
 sleep (0.75 + (_seed random 0.5));
 
-playSoundUI ["UAV_05_tailhook_up_sound", 1, 1, true];
+playSoundUI ["UAV_05_tailhook_up_sound"];
 
 5 fadeSound _soundVolume;
 sleep (2 + (_seed + 1 random 3));
