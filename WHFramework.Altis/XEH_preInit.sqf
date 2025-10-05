@@ -132,6 +132,16 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 [
+    "WHF_rating_safe",
+    "CHECKBOX",
+    ["STR_WHF_settings_damage_rating_safe", "STR_WHF_settings_damage_rating_safe_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_damage"],
+    true,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_hit_sounds",
     "CHECKBOX",
     ["STR_WHF_settings_damage_hit_sounds", "STR_WHF_settings_damage_hit_sounds_tooltip"],
