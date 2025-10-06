@@ -29,6 +29,6 @@ if (!isNil "_lastService" && {time - _lastService < _cooldown}) exitWith {};
 
 private _depots = ["Land_RepairDepot_01_base_F"];
 private _repairDistance = [25, 50] select _isAir;
-if (nearestObjects [focusOn, _depots, _repairDistance] isEqualTo []) exitWith {false};
+if (nearestObjects [_vehicle, _depots, _repairDistance] isEqualTo []) exitWith {false};
 
 true
