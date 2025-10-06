@@ -17,14 +17,18 @@ if (!WHF_service_enabled) exitWith {false};
 getCursorObjectParams params ["_vehicle", "", "_distance"];
 if (!alive _vehicle) exitWith {false};
 if (_distance > 7) exitWith {false};
-if (["LandVehicle", "Air", "Ship"] findIf {_vehicle isKindOf _x} < 0) exitWith {false};
+
+private _isLand = _vehicle isKindOf "LandVehicle";
+private _isAir = !_isLand && {_vehicle isKindOf "Air"};
+private _isShip = !_isLand && !_isAir && {_vehicle isKindOf "Ship"};
+if !(_isLand || _isAir || _isShip) exitWith {false};
 
 private _lastService = _vehicle getVariable "WHF_service_last";
 private _cooldown = 60;
 if (!isNil "_lastService" && {time - _lastService < _cooldown}) exitWith {};
 
 private _depots = ["Land_RepairDepot_01_base_F"];
-private _repairDistance = 25;
+private _repairDistance = [25, 50] select _isAir;
 if (nearestObjects [focusOn, _depots, _repairDistance] isEqualTo []) exitWith {false};
 
 true
