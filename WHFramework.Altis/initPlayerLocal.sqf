@@ -16,6 +16,14 @@ Author:
 params ["_player"];
 if (!hasInterface) exitWith {};
 
+// HACK: wait a bit for CBA settings to sync
+private _timeout = time + 1;
+waitUntil {
+    time > _timeout
+    || {!isNil "WHF_loadout_blacklist"
+    && {!(WHF_loadout_blacklist isEqualType "")}}
+};
+
 if (isMultiplayer) then {["InitializePlayer", [player]] call BIS_fnc_dynamicGroups};
 
 // Functions that require mission display
@@ -29,3 +37,5 @@ call WHF_fnc_initMagRepackKeybind;
 0 spawn WHF_fnc_laserLightLoop;
 0 spawn WHF_fnc_updateChannelLoop;
 0 spawn WHF_fnc_initFriendlyIcons;
+
+[player] call compileScript ["onPlayerRespawn.sqf"];

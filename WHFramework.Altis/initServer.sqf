@@ -16,7 +16,6 @@ if (isMultiplayer) then {
     deleteVehicle (playableUnits select {!isPlayer _x});
 } else {
     deleteVehicle (switchableUnits select {!isPlayer _x});
-    [player] execVM "onPlayerRespawn.sqf";
 };
 
 if (isMultiplayer) then {["Initialize"] call BIS_fnc_dynamicGroups};
