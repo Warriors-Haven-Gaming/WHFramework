@@ -720,6 +720,19 @@ call WHF_fnc_cycleFaction;
 
 // Loadouts
 [
+    "WHF_loadout_blacklist",
+    "EDITBOX",
+    ["STR_WHF_settings_loadouts_blacklist", "STR_WHF_settings_loadouts_blacklist_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_loadouts"],
+    '[]',
+    true,
+    {
+        WHF_loadout_blacklist = parseSimpleArray _this apply {toLowerANSI _x};
+        BIS_fnc_arsenal_data = nil; // Require preloading again
+    },
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_loadout_collection",
     "EDITBOX",
     ["STR_WHF_settings_loadouts_collection", "STR_WHF_settings_loadouts_collection_tooltip"],
