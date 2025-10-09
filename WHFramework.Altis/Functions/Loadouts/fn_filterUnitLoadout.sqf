@@ -18,7 +18,7 @@ Author:
 */
 params ["_loadout"];
 if (_loadout isEqualType []) then {_loadout = +_loadout};
-if (_loadout isEqualType objNull) then {_loadout = getUnitLoadout _loadout};
+if (_loadout isEqualType objNull) then {_loadout = _loadout call WHF_fnc_getUnitLoadout};
 if (WHF_loadout_blacklist isEqualTo []) exitWith {_loadout};
 
 private _blacklist = WHF_loadout_blacklist createHashMapFromArray [];

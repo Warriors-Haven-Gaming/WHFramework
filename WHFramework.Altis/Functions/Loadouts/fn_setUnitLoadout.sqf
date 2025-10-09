@@ -10,9 +10,9 @@ Description:
 Parameters:
     Object unit:
         The unit whose loadout to switch.
-    Array | Config | String loadout:
-        The loadout to apply. See setUnitLoadout for syntax.
-        https://community.bistudio.com/wiki/setUnitLoadout
+    Array loadout:
+        The loadout to apply. Can be a CBA extended loadout
+        or a loadout returned by getUnitLoadout.
 
 Returns:
     Boolean
@@ -24,11 +24,22 @@ Author:
 */
 params ["_unit", "_loadout"];
 
-if (!isSwitchingWeapon _unit) exitWith {
+private _setLoadout = {
+    if (!isNil "CBA_fnc_setLoadout") exitWith {
+        [_unit, _loadout] call CBA_fnc_setLoadout;
+        true
+    };
+
+    if (_loadout isNotEqualTo [] && {count _loadout < 10}) then {
+        // Looks like a CBA extended loadout, extract the vanilla part from it
+        _loadout = _loadout # 0;
+    };
     _unit setUnitLoadout _loadout;
     true
 };
 
+if (!isSwitchingWeapon _unit) exitWith {call _setLoadout};
+
 private _timeout = time + 5;
 waitUntil {sleep 0.1; !isSwitchingWeapon _unit || {time > _timeout}};
-if (!isSwitchingWeapon _unit) then {_unit setUnitLoadout _loadout; true} else {false}
+if (!isSwitchingWeapon _unit) then {call _setLoadout} else {false}
