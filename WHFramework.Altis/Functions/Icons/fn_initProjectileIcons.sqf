@@ -70,7 +70,7 @@ addMissionEventHandler ["Draw3D", {
 
     } forEach WHF_projectiles;
 
-    {WHF_projectiles deleteAt _x} forEach _toRemove;
+    {WHF_projectiles deleteAt _x} forEachReversed _toRemove;
 }];
 
 addMissionEventHandler ["Draw3D", {
@@ -105,5 +105,5 @@ addMissionEventHandler ["Draw3D", {
             0
         ];
     } forEach WHF_projectiles_launches;
-    {WHF_projectiles_launches deleteAt _x} forEach _toRemove;
+    {WHF_projectiles_launches deleteAt _x} forEachReversed _toRemove;
 }];
