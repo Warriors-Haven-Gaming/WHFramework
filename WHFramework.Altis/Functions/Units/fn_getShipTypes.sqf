@@ -63,6 +63,12 @@ private _resolvedTypes = _this apply {
         case ["heavy",     "ws_sfia"]: {["O_Boat_Armed_01_hmg_F"]};
         case ["light",     "ws_tura"]: {["O_Boat_Transport_01_F"]};
         case ["heavy",     "ws_tura"]: {["O_Boat_Armed_01_hmg_F"]};
+        case ["light",     "e22_raf_alpine"]: {["E22_O_RAF_A_Boat_Transport_01_F","E22_O_RAF_A_Boat_Transport_02_F"]};
+        case ["heavy",     "e22_raf_alpine"]: {["O_Boat_Armed_01_hmg_F"]};
+        case ["light",     "e22_raf_arid"]: {["E22_O_RAF_D_Boat_Transport_01_F","E22_O_RAF_D_Boat_Transport_02_F"]};
+        case ["heavy",     "e22_raf_arid"]: {["O_Boat_Armed_01_hmg_F"]};
+        case ["light",     "e22_raf_woodland"]: {["E22_O_RAF_Boat_Transport_01_F","E22_O_RAF_Boat_Transport_02_F"]};
+        case ["heavy",     "e22_raf_woodland"]: {["O_Boat_Armed_01_hmg_F"]};
         case ["light",     "rhsafrf"]: {["O_Boat_Transport_01_F"]};
         case ["heavy",     "rhsafrf"]: {["O_Boat_Armed_01_hmg_F"]};
         case ["light",     "cup_afrf"]: {["CUP_O_PBX_RU"]};

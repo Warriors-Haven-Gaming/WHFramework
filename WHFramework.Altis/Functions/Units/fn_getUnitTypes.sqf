@@ -56,6 +56,9 @@ private _resolvedTypes = _this apply {
         case ["standard", "ldf"]: {["I_E_Soldier_A_F","I_E_Soldier_AAR_F","I_E_Soldier_AAA_F","I_E_Soldier_AAT_F","I_E_Soldier_AR_F","I_E_Medic_F","I_E_Engineer_F","I_E_Soldier_Exp_F","I_E_Soldier_GL_F","I_E_soldier_M_F","I_E_soldier_Mine_F","I_E_Soldier_AA_F","I_E_Soldier_AT_F","I_E_Soldier_Pathfinder_F","I_E_RadioOperator_F","I_E_Soldier_Repair_F","I_E_Soldier_F","I_E_Soldier_LAT_F","I_E_Soldier_LAT2_F","I_E_Soldier_SL_F","I_E_Soldier_TL_F","I_E_Soldier_UAV_F"]};
         case ["standard", "ws_sfia"]: {["O_SFIA_Soldier_AAA_lxWS","O_SFIA_Soldier_AAT_lxWS","O_SFIA_Soldier_AR_lxWS","O_SFIA_medic_lxWS","O_SFIA_exp_lxWS","O_SFIA_Soldier_GL_lxWS","O_SFIA_HeavyGunner_lxWS","O_SFIA_soldier_aa_lxWS","O_SFIA_soldier_at_lxWS","O_SFIA_repair_lxWS","O_SFIA_soldier_lxWS","O_SFIA_soldier_lite_lxWS","O_SFIA_sharpshooter_lxWS","O_SFIA_Soldier_TL_lxWS","O_soldier_UAV_F"]};
         case ["standard", "ws_tura"]: {["O_Tura_deserter_lxWS","O_Tura_enforcer_lxWS","O_Tura_hireling_lxWS","O_Tura_HeavyGunner_lxWS","O_Tura_medic2_lxWS","O_Tura_thug_lxWS","O_Tura_soldier_UAV_lxWS","O_Tura_watcher_lxWS"]};
+        case ["standard", "e22_raf_alpine"]: {["E22_O_RAF_A_Soldier_AB_F","E22_O_RAF_A_Soldier_AR_F","E22_O_RAF_A_Soldier_AAR_F","E22_O_RAF_A_Soldier_CLS_F","E22_O_RAF_A_Soldier_ENG_F","E22_O_RAF_A_Soldier_EXP_F","E22_O_RAF_A_Soldier_GL_F","E22_O_RAF_A_Soldier_M_F","E22_O_RAF_A_Soldier_Mine_F","E22_O_RAF_A_RadioOperator_F","E22_O_RAF_A_Soldier_REP_F","E22_O_RAF_A_Soldier_F","E22_O_RAF_A_Soldier_LAT_F","E22_O_RAF_A_Soldier_Light_F","E22_O_RAF_A_Soldier_SL_F","E22_O_RAF_A_Soldier_TL_F","E22_O_RAF_A_Soldier_UAV_01_F"]};
+        case ["standard", "e22_raf_arid"]: {["E22_O_RAF_D_Soldier_AB_F","E22_O_RAF_D_Soldier_AR_F","E22_O_RAF_D_Soldier_AAR_F","E22_O_RAF_D_Soldier_CLS_F","E22_O_RAF_D_Soldier_ENG_F","E22_O_RAF_D_Soldier_EXP_F","E22_O_RAF_D_Soldier_GL_F","E22_O_RAF_D_Soldier_M_F","E22_O_RAF_D_Soldier_Mine_F","E22_O_RAF_D_RadioOperator_F","E22_O_RAF_D_Soldier_REP_F","E22_O_RAF_D_Soldier_F","E22_O_RAF_D_Soldier_LAT_F","E22_O_RAF_D_Soldier_Light_F","E22_O_RAF_D_Soldier_SL_F","E22_O_RAF_D_Soldier_TL_F","E22_O_RAF_D_Soldier_UAV_01_F"]};
+        case ["standard", "e22_raf_woodland"]: {["E22_O_RAF_Soldier_AB_F","E22_O_RAF_Soldier_AR_F","E22_O_RAF_Soldier_AAR_F","E22_O_RAF_Soldier_CLS_F","E22_O_RAF_Soldier_ENG_F","E22_O_RAF_Soldier_EXP_F","E22_O_RAF_Soldier_GL_F","E22_O_RAF_Soldier_M_F","E22_O_RAF_Soldier_Mine_F","E22_O_RAF_RadioOperator_F","E22_O_RAF_Soldier_REP_F","E22_O_RAF_Soldier_F","E22_O_RAF_Soldier_LAT_F","E22_O_RAF_Soldier_Light_F","E22_O_RAF_Soldier_SL_F","E22_O_RAF_Soldier_TL_F","E22_O_RAF_Soldier_UAV_01_F"]};
         case ["standard", "rhsafrf"]: {["rhs_vdv_rifleman","rhs_vdv_rifleman_asval","rhs_vdv_grenadier","rhs_vdv_grenadier_alt","rhs_vdv_rifleman_lite","rhs_vdv_LAT","rhs_vdv_RShG2","rhs_vdv_rifleman_alt","rhs_vdv_sergeant","rhs_vdv_aa","rhs_vdv_at","rhs_vdv_arifleman_rpk","rhs_vdv_arifleman","rhs_vdv_efreitor","rhs_vdv_engineer","rhs_vdv_grenadier_rpg","rhs_vdv_strelok_rpg_assist","rhs_vdv_junior_sergeant","rhs_vdv_machinegunner","rhs_vdv_machinegunner_assistant","rhs_vdv_marksman","rhs_vdv_marksman_asval","rhs_vdv_medic","O_T_Soldier_UAV_F"]};
         case ["standard", "cup_afrf"]: {["CUP_O_RU_Soldier_AR_VDV_EMR","CUP_O_RU_Engineer_VDV_EMR","CUP_O_RU_Explosive_Specialist_VDV_EMR","CUP_O_RU_Soldier_GL_VDV_EMR","CUP_O_RU_Soldier_MG_VDV_EMR","CUP_O_RU_Soldier_Marksman_VDV_EMR","CUP_O_RU_Medic_VDV_EMR","CUP_O_RU_Soldier_AA_VDV_EMR","CUP_O_RU_Soldier_HAT_VDV_EMR","CUP_O_RU_Soldier_VDV_EMR","CUP_O_RU_Soldier_LAT_VDV_EMR","CUP_O_RU_Soldier_AT_VDV_EMR","CUP_O_RU_Soldier_Saiga_VDV_EMR","CUP_O_RU_Soldier_SL_VDV_EMR","CUP_O_RU_Soldier_TL_VDV_EMR"]};
         case ["standard", "cup_afrf_modern"]: {["CUP_O_RUS_M_Soldier_A_Ratnik_Summer","CUP_O_RUS_M_Soldier_AAR_Ratnik_Summer","CUP_O_RUS_M_Soldier_AAR_Ratnik_Summer","CUP_O_RUS_M_Soldier_AHAT_Ratnik_Summer","CUP_O_RUS_M_Soldier_AAT_Ratnik_Summer","CUP_O_RUS_M_Soldier_AR_Ratnik_Summer","CUP_O_RUS_M_Soldier_Medic_Ratnik_Summer","CUP_O_RUS_M_Soldier_Engineer_Ratnik_Summer","CUP_O_RUS_M_Soldier_Exp_Ratnik_Summer","CUP_O_RUS_M_Soldier_GL_Ratnik_Summer","CUP_O_RUS_M_Soldier_MG_Ratnik_Summer","CUP_O_RUS_M_Soldier_Marksman_Ratnik_Summer","CUP_O_RUS_M_Soldier_AA_Ratnik_Summer","CUP_O_RUS_M_Soldier_AT_Ratnik_Summer","CUP_O_RUS_M_Soldier_Repair_Ratnik_Summer","CUP_O_RUS_M_Soldier_Ratnik_Summer","CUP_O_RUS_M_Soldier_LAT_Ratnik_Summer","CUP_O_RUS_M_Soldier_HAT_Ratnik_Summer","CUP_O_RUS_M_Soldier_Lite_Ratnik_Summer","CUP_O_RUS_M_Soldier_SL_Ratnik_Summer","CUP_O_RUS_M_Soldier_TL_Ratnik_Summer","O_T_Soldier_UAV_F"]};
@@ -78,6 +81,9 @@ private _resolvedTypes = _this apply {
         case ["officer", "ldf"]: {["I_E_Soldier_MP_F","I_E_Officer_F"]};
         case ["officer", "ws_sfia"]: {["O_SFIA_officer_lxWS"]};
         case ["officer", "ws_tura"]: {["O_Tura_defector_lxWS"]};
+        case ["officer", "e22_raf_alpine"]: {["E22_O_RAF_A_Officer_Field_F","E22_O_RAF_A_Officer_F"]};
+        case ["officer", "e22_raf_arid"]: {["E22_O_RAF_D_Officer_Field_F","E22_O_RAF_D_Officer_F"]};
+        case ["officer", "e22_raf_woodland"]: {["E22_O_RAF_Officer_Field_F","E22_O_RAF_Officer_F"]};
         case ["officer", "rhsafrf"]: {["rhs_vdv_officer_armored"]};
         case ["officer", "cup_afrf"]: {["CUP_O_RU_Officer_VDV_EMR"]};
         case ["officer", "cup_afrf_modern"]: {["CUP_O_RU_Officer_VDV_EMR"]};
@@ -100,6 +106,9 @@ private _resolvedTypes = _this apply {
         case ["crew", "ldf"]: {["I_E_Crew_F"]};
         case ["crew", "ws_sfia"]: {["O_SFIA_crew_lxWS"]};
         case ["crew", "ws_tura"]: {["O_Tura_deserter_lxWS","O_Tura_enforcer_lxWS","O_Tura_medic2_lxWS","O_Tura_thug_lxWS","O_Tura_watcher_lxWS"]};
+        case ["crew", "e22_raf_alpine"]: {["E22_O_RAF_A_Crewman_F"]};
+        case ["crew", "e22_raf_arid"]: {["E22_O_RAF_D_Crewman_F"]};
+        case ["crew", "e22_raf_woodland"]: {["E22_O_RAF_Crewman_F"]};
         case ["crew", "rhsafrf"]: {["rhs_vdv_armoredcrew","rhs_vdv_combatcrew","rhs_vdv_crew_commander"]};
         case ["crew", "cup_afrf"]: {["CUP_O_RU_Crew_VDV_EMR"]};
         case ["crew", "cup_afrf_modern"]: {["CUP_O_RUS_M_Soldier_Crew_VKPO_Summer"]};
@@ -122,6 +131,9 @@ private _resolvedTypes = _this apply {
         case ["diver", "ldf"]: {["O_diver_F","O_diver_exp_F","O_diver_TL_F"]};
         case ["diver", "ws_sfia"]: {["O_diver_F","O_diver_exp_F","O_diver_TL_F"]};
         case ["diver", "ws_tura"]: {["O_diver_F","O_diver_exp_F","O_diver_TL_F"]};
+        case ["diver", "e22_raf_alpine"]: {["O_diver_F","O_diver_exp_F","O_diver_TL_F"]};
+        case ["diver", "e22_raf_arid"]: {["O_diver_F","O_diver_exp_F","O_diver_TL_F"]};
+        case ["diver", "e22_raf_woodland"]: {["O_diver_F","O_diver_exp_F","O_diver_TL_F"]};
         case ["diver", "rhsafrf"]: {["O_diver_F","O_diver_exp_F","O_diver_TL_F"]};
         case ["diver", "cup_afrf"]: {["O_diver_F","O_diver_exp_F","O_diver_TL_F"]};
         case ["diver", "cup_afrf_modern"]: {["O_diver_F","O_diver_exp_F","O_diver_TL_F"]};
@@ -144,6 +156,9 @@ private _resolvedTypes = _this apply {
         case ["recon", "ldf"]: {["I_E_Soldier_lite_F"]};
         case ["recon", "ws_sfia"]: {["O_SFIA_medic_lxWS","O_SFIA_soldier_lxWS","O_SFIA_soldier_lite_lxWS","O_SFIA_Soldier_TL_lxWS"]};
         case ["recon", "ws_tura"]: {["O_Tura_deserter_lxWS","O_Tura_enforcer_lxWS","O_Tura_hireling_lxWS","O_Tura_HeavyGunner_lxWS","O_Tura_medic2_lxWS","O_Tura_thug_lxWS","O_Tura_soldier_UAV_lxWS","O_Tura_watcher_lxWS","O_recon_exp_F","O_recon_JTAC_F","O_recon_M_F","O_recon_medic_F","O_Pathfinder_F","O_recon_F","O_recon_LAT_F","O_recon_TL_F"]};
+        case ["recon", "e22_raf_alpine"]: {["E22_O_RAF_A_Recon_TL_F","E22_O_RAF_A_Recon_LAT_F","E22_O_RAF_A_Recon_F","E22_O_RAF_A_Recon_CLS_F","E22_O_RAF_A_Recon_M_F","E22_O_RAF_A_Recon_JTAC_F","E22_O_RAF_A_Recon_EXP_F"]};
+        case ["recon", "e22_raf_arid"]: {["E22_O_RAF_D_Recon_TL_F","E22_O_RAF_D_Recon_LAT_F","E22_O_RAF_D_Recon_F","E22_O_RAF_D_Recon_CLS_F","E22_O_RAF_D_Recon_M_F","E22_O_RAF_D_Recon_JTAC_F","E22_O_RAF_D_Recon_EXP_F"]};
+        case ["recon", "e22_raf_woodland"]: {["E22_O_RAF_Recon_TL_F","E22_O_RAF_Recon_LAT_F","E22_O_RAF_Recon_F","E22_O_RAF_Recon_CLS_F","E22_O_RAF_Recon_M_F","E22_O_RAF_Recon_JTAC_F","E22_O_RAF_Recon_EXP_F"]};
         case ["recon", "rhsafrf"]: {["rhs_vdv_recon_efreitor","rhs_vdv_recon_marksman_vss","rhs_vdv_recon_rifleman_asval","rhs_vdv_recon_rifleman_scout_akm","rhs_vdv_recon_rifleman_scout","rhs_vdv_recon_grenadier_scout","rhs_vdv_recon_arifleman_rpk_scout"]};
         case ["recon", "cup_afrf"]: {["CUP_O_MVD_Soldier_MG","CUP_O_MVD_Soldier_Marksman","CUP_O_MVD_Soldier","CUP_O_MVD_Soldier_GL","CUP_O_MVD_Soldier_AT","CUP_O_MVD_Sniper","CUP_O_MVD_Soldier_TL"]};
         case ["recon", "cup_afrf_modern"]: {["CUP_O_RUS_M_Soldier_A_VKPO_Summer","CUP_O_RUS_M_Soldier_AAR_VKPO_Summer","CUP_O_RUS_M_Soldier_AHAT_VKPO_Summer","CUP_O_RUS_M_Soldier_AAT_VKPO_Summer","CUP_O_RUS_M_Soldier_AR_VKPO_Summer","CUP_O_RUS_M_Soldier_Medic_VKPO_Summer","CUP_O_RUS_M_Soldier_Engineer_VKPO_Summer","CUP_O_RUS_M_Soldier_Exp_VKPO_Summer","CUP_O_RUS_M_Soldier_GL_VKPO_Summer","CUP_O_RUS_M_Soldier_MG_VKPO_Summer","CUP_O_RUS_M_Soldier_Marksman_VKPO_Summer","CUP_O_RUS_M_Soldier_Mine_VKPO_Summer","CUP_O_RUS_M_Soldier_AA_VKPO_Summer","CUP_O_RUS_M_Soldier_AT_VKPO_Summer","CUP_O_RUS_M_Soldier_Repair_VKPO_Summer","CUP_O_RUS_M_Soldier_VKPO_Summer","CUP_O_RUS_M_Soldier_LAT_VKPO_Summer","CUP_O_RUS_M_Soldier_HAT_VKPO_Summer","CUP_O_RUS_M_Soldier_Lite_VKPO_Summer","CUP_O_RUS_M_Soldier_SL_VKPO_Summer","CUP_O_RUS_M_Soldier_TL_VKPO_Summer"]};
@@ -166,6 +181,9 @@ private _resolvedTypes = _this apply {
         case ["elite", "ldf"]: {["I_E_Soldier_CBRN_F"]};
         case ["elite", "ws_sfia"]: {["O_V_Soldier_Exp_hex_F","O_V_Soldier_jtac_hex_F","O_V_Soldier_m_hex_F","O_V_Soldier_hex_F","O_V_Soldier_Medic_hex_F","O_V_Soldier_lat_hex_F","O_V_Soldier_TL_hex_F"]};
         case ["elite", "ws_tura"]: {["O_V_Soldier_Exp_hex_F","O_V_Soldier_jtac_hex_F","O_V_Soldier_m_hex_F","O_V_Soldier_hex_F","O_V_Soldier_Medic_hex_F","O_V_Soldier_lat_hex_F","O_V_Soldier_TL_hex_F"]};
+        case ["elite", "e22_raf_alpine"]: {["E22_O_RAF_A_Special_EXP_F","E22_O_RAF_A_Special_JTAC_F","E22_O_RAF_A_Special_M_F","E22_O_RAF_A_Special_TL_F","E22_O_RAF_A_Special_LAT_F","E22_O_RAF_A_Special_F","E22_O_RAF_A_Special_CLS_F"]};
+        case ["elite", "e22_raf_arid"]: {["E22_O_RAF_D_Special_EXP_F","E22_O_RAF_D_Special_JTAC_F","E22_O_RAF_D_Special_M_F","E22_O_RAF_D_Special_TL_F","E22_O_RAF_D_Special_LAT_F","E22_O_RAF_D_Special_F","E22_O_RAF_D_Special_CLS_F"]};
+        case ["elite", "e22_raf_woodland"]: {["E22_O_RAF_Special_EXP_F","E22_O_RAF_Special_JTAC_F","E22_O_RAF_Special_M_F","E22_O_RAF_Special_TL_F","E22_O_RAF_Special_LAT_F","E22_O_RAF_Special_F","E22_O_RAF_Special_CLS_F"]};
         case ["elite", "rhsafrf"]: {["rhs_vmf_recon_arifleman","rhs_vmf_recon_efreitor","rhs_vmf_recon_machinegunner_assistant","rhs_vmf_recon_marksman","rhs_vmf_recon_marksman_vss","rhs_vmf_recon_medic","rhs_vmf_recon_rifleman","rhs_vmf_recon_rifleman_akms","rhs_vmf_recon_rifleman_asval","rhs_vmf_recon_grenadier","rhs_vmf_recon_rifleman_l","rhs_vmf_recon_rifleman_lat","rhs_vmf_recon_rifleman_scout_akm","rhs_vmf_recon_rifleman_scout","rhs_vmf_recon_grenadier_scout","rhs_vmf_recon_arifleman_scout","rhs_vmf_recon_sergeant"]};
         case ["elite", "cup_afrf"]: {["CUP_O_RUS_Saboteur","CUP_O_RUS_Soldier_GL","CUP_O_RUS_Soldier_Marksman","CUP_O_RUS_SpecOps","CUP_O_RUS_SpecOps_Night","CUP_O_RUS_SpecOps_SD","CUP_O_RUS_SpecOps_Scout","CUP_O_RUS_SpecOps_Scout_Night","CUP_O_RUS_Soldier_TL"]};
         case ["elite", "cup_afrf_modern"]: {["CUP_O_RUS_M_Recon_MG_Gorka_EMR","CUP_O_RUS_M_Recon_Exp_Gorka_EMR","CUP_O_RUS_M_Recon_GL_Gorka_EMR","CUP_O_RUS_M_Recon_Marksman_Gorka_EMR","CUP_O_RUS_M_Recon_Medic_Gorka_EMR","CUP_O_RUS_M_Recon_Rifleman_Gorka_EMR","CUP_O_RUS_M_Recon_LAT_Gorka_EMR","CUP_O_RUS_M_Recon_Sharpshooter_Gorka_EMR","CUP_O_RUS_M_Recon_TL_Gorka_EMR"]};
@@ -188,6 +206,9 @@ private _resolvedTypes = _this apply {
         case ["sniper", "ldf"]: {["I_Sniper_F","I_ghillie_ard_F","I_ghillie_lsh_F","I_ghillie_sard_F"]};
         case ["sniper", "ws_sfia"]: {["O_sniper_F","O_ghillie_ard_F","O_ghillie_lsh_F","O_ghillie_sard_F"]};
         case ["sniper", "ws_tura"]: {["O_Tura_scout_lxWS"]};
+        case ["sniper", "e22_raf_alpine"]: {["E22_O_RAF_A_Special_Sharpshooter_F","E22_O_RAF_A_Recon_Sharpshooter_F","E22_O_RAF_A_Sharpshooter_F"]};
+        case ["sniper", "e22_raf_arid"]: {["E22_O_RAF_D_Special_Sharpshooter_F","E22_O_RAF_D_Recon_Sharpshooter_F","E22_O_RAF_D_Sharpshooter_F"]};
+        case ["sniper", "e22_raf_woodland"]: {["E22_O_RAF_Special_Sharpshooter_F","E22_O_RAF_Recon_Sharpshooter_F","E22_O_RAF_Sharpshooter_F"]};
         case ["sniper", "rhsafrf"]: {["rhs_vdv_marksman"]};
         case ["sniper", "cup_afrf"]: {["CUP_O_RU_Sniper_VDV_EMR","CUP_O_RU_Sniper_KSVK_VDV_EMR"]};
         case ["sniper", "cup_afrf_modern"]: {["CUP_O_RU_Sniper_VDV_EMR","CUP_O_RU_Sniper_KSVK_VDV_EMR"]};
@@ -210,6 +231,9 @@ private _resolvedTypes = _this apply {
         case ["pilot_heli", "ldf"]: {["I_E_Helicrew_F","I_E_Helipilot_F"]};
         case ["pilot_heli", "ws_sfia"]: {["O_SFIA_pilot_lxWS"]};
         case ["pilot_heli", "ws_tura"]: {["O_Tura_deserter_lxWS","O_Tura_watcher_lxWS"]};
+        case ["pilot_heli", "e22_raf_alpine"]: {["E22_O_RAF_A_Helipilot_F","E22_O_RAF_A_Helicrew_F"]};
+        case ["pilot_heli", "e22_raf_arid"]: {["E22_O_RAF_D_Helipilot_F","E22_O_RAF_D_Helicrew_F"]};
+        case ["pilot_heli", "e22_raf_woodland"]: {["E22_O_RAF_Helipilot_F","E22_O_RAF_Helicrew_F"]};
         case ["pilot_heli", "rhsafrf"]: {["rhs_pilot_combat_heli","rhs_pilot_transport_heli"]};
         case ["pilot_heli", "cup_afrf"]: {["CUP_O_RU_Pilot_M_EMR","CUP_O_RU_Pilot_VDV_M_EMR","CUP_O_RU_Pilot_EMR","CUP_O_RU_Pilot","CUP_O_RU_Pilot_VDV_EMR","CUP_O_RU_Pilot_VDV"]};
         case ["pilot_heli", "cup_afrf_modern"]: {["CUP_O_RU_Pilot_M_EMR","CUP_O_RU_Pilot_VDV_M_EMR","CUP_O_RU_Pilot_EMR","CUP_O_RU_Pilot","CUP_O_RU_Pilot_VDV_EMR","CUP_O_RU_Pilot_VDV"]};
@@ -232,6 +256,9 @@ private _resolvedTypes = _this apply {
         case ["pilot_jet", "ldf"]: {["I_Fighter_Pilot_F","I_pilot_F"]};
         case ["pilot_jet", "ws_sfia"]: {["O_SFIA_pilot_lxWS"]};
         case ["pilot_jet", "ws_tura"]: {["O_Tura_deserter_lxWS","O_Tura_watcher_lxWS"]};
+        case ["pilot_jet", "e22_raf_alpine"]: {["E22_O_RAF_A_Fighter_Pilot_F"]};
+        case ["pilot_jet", "e22_raf_arid"]: {["E22_O_RAF_D_Fighter_Pilot_F"]};
+        case ["pilot_jet", "e22_raf_woodland"]: {["E22_O_RAF_Fighter_Pilot_F"]};
         case ["pilot_jet", "rhsafrf"]: {["rhs_pilot","rhs_pilot_tan"]};
         case ["pilot_jet", "cup_afrf"]: {["CUP_O_RU_Pilot_M_EMR","CUP_O_RU_Pilot_VDV_M_EMR","CUP_O_RU_Pilot_EMR","CUP_O_RU_Pilot","CUP_O_RU_Pilot_VDV_EMR","CUP_O_RU_Pilot_VDV"]};
         case ["pilot_jet", "cup_afrf_modern"]: {["CUP_O_RU_Pilot_M_EMR","CUP_O_RU_Pilot_VDV_M_EMR","CUP_O_RU_Pilot_EMR","CUP_O_RU_Pilot","CUP_O_RU_Pilot_VDV_EMR","CUP_O_RU_Pilot_VDV"]};
