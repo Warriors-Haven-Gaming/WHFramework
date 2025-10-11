@@ -10,6 +10,7 @@ Author:
 */
 if (!hasInterface) exitWith {};
 if (isClass (configFile >> "CfgPatches" >> "ace_magazinerepack")) exitWith {false};
+if (isClass (configFile >> "CfgPatches" >> "outlw_magRepack")) exitWith {false};
 [
     "WHF_context_action_magrepack",
     localize "$STR_WHF_context_action_magrepack",

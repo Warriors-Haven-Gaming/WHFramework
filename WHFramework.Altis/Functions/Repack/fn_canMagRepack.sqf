@@ -17,6 +17,7 @@ Author:
 */
 params ["_unit"];
 if (isClass (configFile >> "CfgPatches" >> "ace_magazinerepack")) exitWith {false};
+if (isClass (configFile >> "CfgPatches" >> "outlw_magRepack")) exitWith {false};
 
 private _vehicle = objectParent _unit;
 if (isEngineOn _vehicle && {currentPilot _vehicle isEqualTo _unit}) exitWith {false};
