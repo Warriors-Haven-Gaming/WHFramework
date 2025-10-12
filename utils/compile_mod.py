@@ -24,6 +24,7 @@ BRANCH_DIRECTORIES = {
     "drakovac": "drakovac",
     "mehland": "mehland",
     "kaska": "kaska",
+    "enoch": "Enoch",
 }
 
 COMMON_FILES = {

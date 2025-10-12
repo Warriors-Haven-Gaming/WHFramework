@@ -27,6 +27,7 @@ DEFAULT_BRANCHES = (
     "drakovac",
     "mehland",
     "kaska",
+    "enoch",
     "main",
 )
 
