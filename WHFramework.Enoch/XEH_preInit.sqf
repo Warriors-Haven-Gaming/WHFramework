@@ -740,7 +740,7 @@ call WHF_fnc_cycleFaction;
     "EDITBOX",
     ["STR_WHF_settings_loadouts_collection", "STR_WHF_settings_loadouts_collection_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_loadouts"],
-    "enoch",
+    "enoch_desolation",
     false,
     {},
     false
