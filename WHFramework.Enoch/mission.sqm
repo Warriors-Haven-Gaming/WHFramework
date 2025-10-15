@@ -12,18 +12,18 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=862;
+		nextID=860;
 	};
 	class LayerIndexProvider
 	{
-		nextID=60;
+		nextID=50;
 	};
 	class Camera
 	{
-		pos[]={4259.4668,81.448021,10527.834};
-		dir[]={-0.5363726,-0.62478292,0.5674392};
-		up[]={-0.42920762,0.78076875,0.45406732};
-		aside[]={0.72672898,1.2794044e-07,0.68694288};
+		pos[]={3965.3364,111.76235,10191.337};
+		dir[]={0.8726573,-0.45758995,0.17058083};
+		up[]={0.4491021,0.88915765,0.087787375};
+		aside[]={0.19184312,1.1373777e-07,-0.98143303};
 	};
 };
 binarizationWanted=0;
@@ -77,8 +77,8 @@ addons[]=
 	"Soft_F_Levi_Quadbike_01",
 	"A3_Armor_F_Tank_AFV_Wheeled_01",
 	"Soft_F_Levi_MRAP_03",
+	"UH_80_Ghost_Hawk_Plus_Air",
 	"Air_F_Levi_Heli_Transport_01",
-	"A3_Air_F_Beta_Heli_Transport_01",
 	"A3_Structures_F_EPC_Items_Electronics",
 	"A3_Props_F_Enoch_Military_Equipment",
 	"A3_Structures_F_Tank_Military_RepairDepot",
@@ -290,10 +290,8 @@ class AddonsMetaData
 		};
 		class Item28
 		{
-			className="A3_Air_F_Beta";
-			name="Arma 3 Beta - Aircraft";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
+			className="UH_80_Ghost_Hawk_Plus_Air";
+			name="UH_80_Ghost_Hawk_Plus_Air";
 		};
 		class Item29
 		{
@@ -10421,6 +10419,24 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
+								position[]={4247.75,70.299263,10542.5};
+								angles[]={0,2.3567357,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+								pylons="PylonWeapon_860Rnd_127x99mm_shells_black_RF;PylonRack_19Rnd_PG_missiles_black_RF;PylonRack_19Rnd_PG_missiles_black_RF;PylonWeapon_860Rnd_127x99mm_shells_black_RF;";
+							};
+							id=515;
+							type="B_Heli_Transport_01_pylons_02_F";
+						};
+						class Item57
+						{
+							dataType="Object";
+							class PositionInfo
+							{
 								position[]={4288.5,70.305664,10486};
 								angles[]={0,3.9269907,0.0063879048};
 							};
@@ -10434,7 +10450,7 @@ class Mission
 							type="E22_B_JTF_Heli_Transport_01_F";
 							atlOffset=-3.8146973e-05;
 						};
-						class Item57
+						class Item58
 						{
 							dataType="Object";
 							class PositionInfo
@@ -10451,29 +10467,9 @@ class Mission
 							id=516;
 							type="E22_B_JTF_Heli_Transport_01_F";
 						};
-						class Item58
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={4247.5,70.299263,10543};
-								angles[]={-0,2.3561945,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
-								reportRemoteTargets=1;
-								receiveRemoteTargets=1;
-								reportOwnPosition=1;
-							};
-							id=861;
-							type="B_Heli_Transport_01_pylons_F";
-						};
 					};
 					id=243;
-					atlOffset=0.013885498;
+					atlOffset=-0.061538696;
 				};
 				class Item3
 				{
@@ -13025,7 +13021,7 @@ class Mission
 				};
 			};
 			id=136;
-			atlOffset=-0.32271576;
+			atlOffset=-0.32167053;
 		};
 		class Item3
 		{
@@ -13192,13 +13188,13 @@ class Mission
 						angles[]={0,5.4981885,0.0015358897};
 					};
 					side="West";
-					flags=2;
+					flags=6;
 					class Attributes
 					{
 					};
 					id=859;
 					type="B_UAV_AI";
-					atlOffset=2.0893326;
+					atlOffset=-7.6293945e-06;
 				};
 			};
 			class Attributes
