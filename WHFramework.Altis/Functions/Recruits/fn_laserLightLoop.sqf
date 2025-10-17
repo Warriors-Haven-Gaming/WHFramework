@@ -10,6 +10,14 @@ Author:
     thegamecracks
 
 */
+private _hasCBAAccessory = isClass (configFile >> "CfgPatches" >> "cba_accessory");
+if (_hasCBAAccessory && {isNil "WHF_laserLightLoop_attachmentSwitched"}) then {
+    WHF_laserLightLoop_attachmentSwitched = [
+        "CBA_attachmentSwitched",
+        WHF_fnc_switchRecruitAttachments
+    ] call CBA_fnc_addEventHandler;
+};
+
 while {true} do {
     sleep (1 + random 1);
     private _unit = focusOn;
