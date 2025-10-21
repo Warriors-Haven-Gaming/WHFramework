@@ -7,18 +7,18 @@ Description:
 Parameters:
     Object spawner:
         The object to add the action to.
-    PositionRelative position:
+    PositionRelative offset:
         The relative position to spawn recruits from.
 
 Author:
     thegamecracks
 
 */
-params ["_spawner", "_position"];
+params ["_spawner", "_offset"];
 _spawner addAction [
     localize "$STR_WHF_spawnRecruit",
     {
-        params ["_spawner", "_caller", "", "_position"];
+        params ["_spawner", "_caller", "", "_offset"];
 
         if (leader _caller isNotEqualTo _caller) exitWith {
             hint localize "$STR_WHF_spawnRecruit_leader";
@@ -27,10 +27,11 @@ _spawner addAction [
             hint format [localize "$STR_WHF_spawnRecruit_limit_player", WHF_recruits_limit_player];
         };
 
-        _position = _spawner modelToWorld _position vectorMultiply [1,1,0];
+        private _position = _spawner modelToWorld _offset;
+        _position set [2, ASLToAGL getPosASL _spawner # 2 + _offset # 2];
         [_position] call WHF_fnc_spawnRecruitGUI;
     },
-    _position,
+    _offset vectorAdd [0,0,0],
     12,
     true,
     true,
