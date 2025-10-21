@@ -80,7 +80,7 @@ if (isNull _vehicle) exitWith {
 WHF_vehSpawn_lastVehicles set [_uid, _vehicle];
 
 _vehicle setDir _dir;
-_vehicle setPos _pos;
+_vehicle setVehiclePosition [_pos, [], 0, "CAN_COLLIDE"];
 _vehicle setVariable ["WHF_vehicle_side", side group _player, true];
 [_category, _vehicle, _player] call WHF_fnc_vehSpawnCatalogAddVehicleLocks;
 [_uid, _cooldown] call WHF_fnc_vehSpawnCooldownSet;

@@ -47,10 +47,14 @@ disableUserInput true;
 0 cutText ["", "BLACK OUT", 0.5];
 sleep 0.5;
 
-private _camera = "camera" camCreate ASLToATL eyePos player;
+private _posAGL = ASLToAGL ATLToASL _pos;
+private _cameraPos = _pos getPos [15, _dir - 45];
+_cameraPos set [2, _posAGL # 2 + 5];
+
+private _camera = "camera" camCreate ASLToAGL eyePos player;
 _camera cameraEffect ["internal", "back"];
-_camera camPreparePos (_pos getPos [15, _dir - 45] vectorAdd [0, 0, 5]);
-_camera camPrepareTarget (_pos vectorAdd [0, 0, 1]);
+_camera camPreparePos _cameraPos;
+_camera camPrepareTarget (_posAGL vectorAdd [0, 0, 1]);
 _camera camCommitPrepared (2.5 + random 0.5);
 showCinemaBorder true;
 camUseNVG (currentVisionMode player isEqualTo 1);
@@ -210,7 +214,7 @@ isNil {with uiNamespace do {
         WHF_vehSpawnGUI_ctrlVehicle_preview setPhysicsCollisionFlag false;
         WHF_vehSpawnGUI_ctrlVehicle_preview setVehicleLock "LOCKED";
         WHF_vehSpawnGUI_ctrlVehicle_preview setDir WHF_vehSpawnGUI_dir;
-        WHF_vehSpawnGUI_ctrlVehicle_preview setPos WHF_vehSpawnGUI_pos;
+        WHF_vehSpawnGUI_ctrlVehicle_preview setVehiclePosition [WHF_vehSpawnGUI_pos, [], 0, "CAN_COLLIDE"];
         WHF_vehSpawnGUI_ctrlVehicle_preview enableSimulation false;
     }}];
 
