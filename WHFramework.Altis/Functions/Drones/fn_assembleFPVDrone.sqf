@@ -24,7 +24,8 @@ if (_drone isEqualTo "") exitWith {};
 _unit playActionNow "PutDown";
 sleep ([0.75, 1.25] select (stance _unit isEqualTo "PRONE"));
 
-private _pos = _unit getRelPos [2, 0] vectorAdd [0, 0, getPosATL _unit # 2];
+private _pos = _unit getRelPos [2, 0];
+_pos set [2, getPosATL _unit # 2];
 _drone = createVehicle [_drone, _pos, [], 0, "CAN_COLLIDE"];
 _drone setDir getDir _unit;
 _drone setVectorUp surfaceNormal _pos;
