@@ -273,7 +273,7 @@ isNil {with uiNamespace do {
             sleep _duration;
 
             private _marker = [focusOn] call WHF_fnc_respawnMarkers select 0;
-            focusOn setPosATL markerPos [_marker, true];
+            focusOn setPosASL AGLToASL markerPos [_marker, true];
             focusOn setDir markerDir _marker;
 
             _half fadeSound _soundVolume;
