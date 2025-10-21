@@ -32,14 +32,9 @@ if (_categories findIf {count (_catalog get _x get "_vehicles") > 0} < 0) exitWi
     50 cutText [localize "$STR_WHF_vehSpawnGUIClient_empty", "PLAIN", 0.5];
 };
 
-if (surfaceIsWater _pos) then {
-    // TODO: find safe water position
-    _safeArea params ["_radius"];
-    private _objects = [_pos, _radius] call WHF_fnc_nearObjectsRespawn;
-    if (count _objects > 0) then {_pos = []};
-} else {
-    _pos = _pos findEmptyPosition _safeArea;
-};
+_safeArea params ["_radius"];
+private _objects = [_pos, _radius] call WHF_fnc_nearObjectsRespawn;
+if (count _objects > 0) then {_pos = _pos findEmptyPosition _safeArea};
 if (_pos isEqualTo []) exitWith {call WHF_fnc_vehSpawnObstructed};
 
 player call WHF_fnc_lowerWeapon;

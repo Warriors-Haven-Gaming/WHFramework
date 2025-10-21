@@ -47,14 +47,9 @@ if (isNil "_cooldown") exitWith {};
 private _role = _player getVariable "WHF_role";
 if !([_category, _vehicle, _role] call WHF_fnc_vehSpawnCatalogRoleAllowed) exitWith {};
 
-if (surfaceIsWater _pos) then {
-    // TODO: find safe water position
-    _safeArea params ["_radius"];
-    private _objects = [_pos, _radius] call WHF_fnc_nearObjectsRespawn;
-    if (count _objects > 0) then {_pos = []};
-} else {
-    _pos = _pos findEmptyPosition _safeArea;
-};
+_safeArea params ["_radius"];
+private _objects = [_pos, _radius] call WHF_fnc_nearObjectsRespawn;
+if (count _objects > 0) then {_pos = _pos findEmptyPosition _safeArea};
 if (_pos isEqualTo []) exitWith {
     remoteExec ["WHF_fnc_vehSpawnObstructed", remoteExecutedOwner];
 };
