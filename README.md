@@ -59,13 +59,17 @@ Additional factions are supported with the following CDLC and mods:
   - US Army (Woodland) \*
   - USMC (Woodland) \*
 - [RHSAFRF]
-  - Also... Armed Forces of the Russian Federation
+- [E22 - Russian Armed Forces 2.0]
+  - E22 RAF (Alpine)
+  - E22 RAF (Arid)
+  - E22 RAF (Woodland)
 
 \* To fight against BLUFOR factions, you must enable them in the gamemode's [CBA Settings](#cba-settings).
    These factions are converted to the OPFOR side when spawned.
 
 [CUP Vehicles]: https://steamcommunity.com/sharedfiles/filedetails/?id=541888371
 [RHSAFRF]: https://steamcommunity.com/sharedfiles/filedetails/?id=843425103
+[E22 - Russian Armed Forces 2.0]: https://steamcommunity.com/sharedfiles/filedetails/?id=2815603726
 
 ## How do I play?
 
