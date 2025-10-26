@@ -67,6 +67,18 @@ private _repair = _compVehicles # 0;
 sleep (1.5 + random 2.5);
 if (!alive _repair) exitWith {};
 
+_repair addEventHandler ["Killed", {
+    params ["_repair", "_killer", "_instigator"];
+    _repair removeEventHandler [_thisEvent, _thisEventHandler];
+    if (isNull _instigator) then {_instigator = effectiveCommander _killer};
+    if (!isPlayer _instigator) exitWith {};
+    [
+        [blufor, "BLU"],
+        "$STR_WHF_mainAnnexRegionRepair_success",
+        [name _instigator]
+    ] remoteExec ["WHF_fnc_localizedSideChat", blufor];
+}];
+
 private _taskID = [
     blufor,
     ["", _parent],
