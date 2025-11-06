@@ -816,7 +816,7 @@ call WHF_fnc_cycleFaction;
     "SLIDER",
     ["STR_WHF_settings_missions_annex_threshold", "STR_WHF_settings_missions_annex_threshold_tooltip"],
     ["STR_WHF_settings_missions", "STR_WHF_settings_missions_annex"],
-    [0.3, 1, 0.75, 0, true],
+    [0.3, 1, 0.7, 0, true],
     true,
     {WHF_missions_annex_threshold = 1 - _this},
     false
