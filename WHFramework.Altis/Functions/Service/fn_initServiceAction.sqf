@@ -19,15 +19,19 @@ private _actionID = [
     "\a3\ui_f_oldman\data\igui\cfg\holdactions\repair_ca.paa",
     "\a3\ui_f_oldman\data\igui\cfg\holdactions\repair_ca.paa",
     toString {call WHF_fnc_canServiceVehicle},
-    toString {true},
+    toString {call WHF_fnc_canServiceVehicle},
     {
+        WHF_service_target = cursorObject;
+        if (!call WHF_fnc_canServiceVehicle) exitWith {}; // Player looked away
         [player, ["InBaseMoves_assemblingVehicleErc", random 0.5, 0, false]] remoteExec ["switchMove"];
     },
     {
-        [cursorObject] call WHF_fnc_playServiceSound;
+        [WHF_service_target] call WHF_fnc_playServiceSound;
     },
     {
-        private _vehicle = cursorObject;
+        private _vehicle = WHF_service_target;
+        WHF_service_target = nil;
+
         [player, ["", 0, 0, false]] remoteExec ["switchMove"];
         [_vehicle] remoteExec ["WHF_fnc_serviceVehicle"];
         _vehicle setVariable ["WHF_service_last", time];
@@ -44,6 +48,7 @@ private _actionID = [
     },
     {
         [player, ["", 0, 0, false]] remoteExec ["switchMove"];
+        WHF_service_target = nil;
     },
     [],
     10,
