@@ -25,6 +25,7 @@ BRANCH_DIRECTORIES = {
     "mehland": "mehland",
     "kaska": "kaska",
     "enoch": "Enoch",
+    "armavir": "UMB_Armavir",
 }
 
 COMMON_FILES = {
