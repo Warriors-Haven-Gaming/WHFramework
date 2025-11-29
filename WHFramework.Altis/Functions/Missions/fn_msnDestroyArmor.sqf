@@ -107,7 +107,6 @@ call {
         }];
     };
 
-
     private _infantryQuantity = [8, 16] call WHF_fnc_scaleUnitsSide;
     private _infantryArgs = [opfor, [_standard], _infantryQuantity, _pos, 30];
     private _infantryGroup = _infantryArgs call WHF_fnc_spawnUnits;
