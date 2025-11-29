@@ -119,7 +119,8 @@ call {
     [["mrap", _faction],     [2, 4] call WHF_fnc_scaleUnitsSide],
     [["apc", _faction],      [2, 4] call WHF_fnc_scaleUnitsSide],
     [["ifv", _faction],      [2, 4] call WHF_fnc_scaleUnitsSide],
-    [["mbt", _faction],      [2, 4] call WHF_fnc_scaleUnitsSide]
+    [["mbt", _faction],      [2, 4] call WHF_fnc_scaleUnitsSide],
+    [["aa", _faction],       [1, 3] call WHF_fnc_scaleUnitsSide]
 ];
 
 if (count _vehicles < 1) exitWith {
