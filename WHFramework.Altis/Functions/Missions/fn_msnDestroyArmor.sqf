@@ -42,7 +42,7 @@ if (_center isEqualTo []) exitWith {
 if (_faction isEqualTo "") then {_faction = selectRandom (WHF_factions_pool get opfor)};
 private _standard = ["standard", _faction];
 
-private _area = [_center, _radius, _radius];
+private _area = [_center, _radius * 2, _radius * 2]; // attack radius
 
 private _objects = [];
 private _terrain = [];
