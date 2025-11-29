@@ -19,15 +19,15 @@ params ["_faction"];
 
 private _patches = switch (_faction) do {
     case "base": {[]};
-    case "csat": {[]};
+    case "csat": {["QAV_BMP", "QAV_BRDM", "QAV_T72"]};
     case "csat_pacific": {[]};
-    case "aaf": {[]};
-    case "ldf": {[]};
-    case "ws_sfia": {["Characters_f_lxWS", "Vehicles_F_lxWS"]};
-    case "ws_tura": {["Characters_f_lxWS", "Vehicles_F_lxWS_Truck_02"]};
-    case "e22_raf_alpine": {["Characters_F_RAF", "Soft_F_RAF_LSV_02"]};
-    case "e22_raf_arid": {["Characters_F_RAF", "Soft_F_RAF_LSV_02"]};
-    case "e22_raf_woodland": {["Characters_F_RAF", "Soft_F_RAF_LSV_02"]};
+    case "aaf": {["QAV_T72"]};
+    case "ldf": {["QAV_T72"]};
+    case "ws_sfia": {["Characters_f_lxWS", "Vehicles_F_lxWS", "QAV_BMP", "QAV_BRDM", "QAV_T72", "QAV_SU76"]};
+    case "ws_tura": {["Characters_f_lxWS", "Vehicles_F_lxWS_Truck_02", "QAV_BMP", "QAV_BRDM", "QAV_T72", "QAV_SU76"]};
+    case "e22_raf_alpine": {["Characters_F_RAF", "Soft_F_RAF_LSV_02", "QAV_BMP", "QAV_BRDM", "QAV_T72", "QAV_SU76"]};
+    case "e22_raf_arid": {["Characters_F_RAF", "Soft_F_RAF_LSV_02", "QAV_BMP", "QAV_BRDM", "QAV_T72", "QAV_SU76"]};
+    case "e22_raf_woodland": {["Characters_F_RAF", "Soft_F_RAF_LSV_02", "QAV_BMP", "QAV_BRDM", "QAV_T72", "QAV_SU76"]};
     case "rhsafrf": {["rhs_main"]};
     case "cup_afrf": {["CUP_Creatures_Military_Russia", "CUP_WheeledVehicles_UAZ"]};
     case "cup_afrf_modern": {["CUP_Creatures_Military_RussiaModern_Units", "CUP_WheeledVehicles_GAZTigr"]};
