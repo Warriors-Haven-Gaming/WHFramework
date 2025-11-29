@@ -12,18 +12,18 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=4440;
+		nextID=5747;
 	};
 	class LayerIndexProvider
 	{
-		nextID=203;
+		nextID=266;
 	};
 	class Camera
 	{
-		pos[]={7724.604,129.76488,3424.0659};
-		dir[]={0.72268045,-0.26648435,-0.63774782};
-		up[]={0.1998083,0.96383804,-0.17632608};
-		aside[]={-0.66167402,7.9162419e-09,-0.7497924};
+		pos[]={7892.6953,103.18947,3302.5894};
+		dir[]={-0.65072882,-0.17026585,0.73998958};
+		up[]={-0.11243975,0.98539412,0.12786303};
+		aside[]={0.75095642,-1.7610728e-07,0.66037166};
 	};
 };
 binarizationWanted=0;
@@ -76,12 +76,12 @@ addons[]=
 	"A3_Structures_F_Bootcamp_Items_Electronics",
 	"A3_Air_F_Heli_Light_01",
 	"A3_Air_F_Beta_Heli_Attack_01",
-	"A3_Air_F_Beta_Heli_Transport_02",
 	"A3_Boat_F_Boat_Armed_01",
 	"A3_Air_F_Exp_UAV_03",
 	"A3_Drones_F_Soft_F_Gamma_UGV_01",
 	"A3_Supplies_F_Heli_CargoNets",
 	"A3_Supplies_F_Heli_Slingload",
+	"WNZExplodingBarrels",
 	"A3_Weapons_F_Ammoboxes",
 	"NDS_6x6_ATV",
 	"FIR_A10C_F",
@@ -114,6 +114,7 @@ addons[]=
 	"A3_Structures_F_Tank_Military_RepairDepot",
 	"A3_Structures_F_Mil_Flags",
 	"A3_Modules_F_Curator_Curator",
+	"ef_curator",
 	"A3_Modules_F",
 	"A3_Structures_F_Civ_Lamps",
 	"A3_Structures_F_EPA_Civ_Constructions",
@@ -125,12 +126,9 @@ addons[]=
 	"Static_F_Levi_HMG_02",
 	"CAMM",
 	"QAV_Ripsaw",
-	"EF_Static",
-	"A3_Structures_F_Enoch_Infrastructure_Pavements",
-	"A3_Static_F",
-	"A3_Static_F_Mark_Designator_01",
 	"TCGM_Girls",
 	"A3_Weapons_F_Pistols_ACPC2",
+	"jsrs_soundmod_2025_Beta",
 	"cba_jam",
 	"A3_Weapons_F_Acc",
 	"A3_Weapons_F",
@@ -144,6 +142,7 @@ addons[]=
 	"Max_WAW",
 	"A3_expEden_Characters_Vests",
 	"unit_config",
+	"CSAT_Eyewear",
 	"A3_Characters_F_Heads",
 	"A3_Characters_F_Orange_Facewear",
 	"Structures_Globe_Walls",
@@ -151,13 +150,17 @@ addons[]=
 	"Weapons_F_JCA_IA_Accessories",
 	"Weapons_Globe_Binoculars",
 	"A3_Weapons_F_Orange",
-	"xs_female_xs_f_base"
+	"xs_female_xs_f_base",
+	"bwa3_mrs120",
+	"bwa3_nh90",
+	"CSAT_Ghatar",
+	"pook_ARTY_c"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=72;
+		items=78;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -382,247 +385,279 @@ class AddonsMetaData
 		};
 		class Item34
 		{
+			className="WNZExplodingBarrels";
+			name="WNZExplodingBarrels";
+		};
+		class Item35
+		{
 			className="A3_Weapons_F";
 			name="Arma 3 Alpha - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item35
+		class Item36
 		{
 			className="NDS_6x6_ATV";
 			name="NDS_6x6_ATV";
 			author="Neddles";
 		};
-		class Item36
+		class Item37
 		{
 			className="FIR_A10C_F";
 			name="FIR_A10C_F";
 		};
-		class Item37
+		class Item38
 		{
 			className="ej_Ah1Z";
 			name="ej_Ah1Z";
 		};
-		class Item38
+		class Item39
 		{
 			className="EF_AAV9_C";
 			name="Expeditionary Forces - AAV9 (Encoding)";
 			author="Tiny Gecko Studios";
 			url="https://www.arma3.com";
 		};
-		class Item39
+		class Item40
 		{
 			className="QAV_AbramsX";
 			name="QAV_AbramsX";
 		};
-		class Item40
+		class Item41
 		{
 			className="A3_Armor_F_Exp";
 			name="Arma 3 Apex - Armored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item41
+		class Item42
 		{
 			className="A3_Armor_F_Gamma";
 			name="Arma 3 - Armored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item42
+		class Item43
 		{
 			className="A3_Air_F_Heli";
 			name="Arma 3 Helicopters - Aircraft";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item43
+		class Item44
 		{
 			className="FIR_F16_F";
 			name="FIR_F16_F";
 		};
-		class Item44
+		class Item45
 		{
 			className="A3_Soft_F_Exp";
 			name="Arma 3 Apex - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item45
+		class Item46
 		{
 			className="A3_Soft_F_Enoch";
 			name="Arma 3 Contact Platform - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item46
+		class Item47
 		{
 			className="A3_Soft_F_Beta";
 			name="Arma 3 Beta - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item47
+		class Item48
 		{
 			className="EF_Hunter";
 			name="Expeditionary Forces - Hunter MRAP";
 			author="Tiny Gecko Studios";
 			url="https://www.arma3.com";
 		};
-		class Item48
+		class Item49
 		{
 			className="A3_Armor_F";
 			name="Arma 3 Alpha - Armored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item49
+		class Item50
 		{
 			className="A3_Armor_F_Tank";
 			name="Arma 3 Tank - Armored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item50
+		class Item51
 		{
 			className="UH_80_Ghost_Hawk_Plus_Air";
 			name="UH_80_Ghost_Hawk_Plus_Air";
 		};
-		class Item51
+		class Item52
 		{
 			className="CAMM_Truck";
 			name="CAMM_Truck";
 			author="Phantom hawk";
 		};
-		class Item52
+		class Item53
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item53
+		class Item54
+		{
+			className="EF_Curator";
+			name="Expeditionary Forces - Zeus";
+			author="Tiny Gecko Studios";
+			url="https://www.arma3.com";
+		};
+		class Item55
 		{
 			className="A3_Modules_F";
 			name="Arma 3 Alpha - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item54
+		class Item56
 		{
 			className="A3_Structures_F_Enoch_Infrastructure";
 			name="Arma 3 Contact Platform - Infrastructure Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item55
+		class Item57
 		{
 			className="CUP_CABuildings_Misc";
 			name="CUP_CABuildings_Misc";
 		};
-		class Item56
+		class Item58
 		{
 			className="A3_Static_F_Jets";
 			name="Arma 3 Jets - Turrets";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item57
+		class Item59
 		{
 			className="A3_Static_F";
 			name="Arma 3 Alpha - Turrets";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item58
+		class Item60
 		{
 			className="CAMM";
 			name="CAMM";
 			author="Phantom hawk";
 		};
-		class Item59
-		{
-			className="EF_Static";
-			name="Expeditionary Forces - Static Weapons";
-			author="Tiny Gecko Studios";
-			url="https://www.arma3.com";
-		};
-		class Item60
-		{
-			className="A3_Static_F_Mark";
-			name="Arma 3 Marksmen - Turrets";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
 		class Item61
+		{
+			className="jsrs_soundmod_2025_Beta";
+			name="JSRS Soundmod 2025 Beta";
+			author="LordJarhead";
+			url="https://www.arma3.com";
+		};
+		class Item62
 		{
 			className="cba_jam";
 			name="Community Base Addons - Joint Ammo Magazines";
 			author="CBA Team";
 			url="https://www.github.com/CBATeam/CBA_A3";
 		};
-		class Item62
+		class Item63
 		{
 			className="A3_Characters_F_Exp";
 			name="Arma 3 Apex - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item63
+		class Item64
 		{
 			className="Headwear_F_Levi";
 			name="Headwear_F_Levi";
 			author="Grave";
 		};
-		class Item64
+		class Item65
 		{
 			className="Max_WAW";
 			name="Max_WAW";
 		};
-		class Item65
+		class Item66
 		{
 			className="A3_expEden_characters";
 			name="O&T Expansion Eden - Characters";
 			author="O&T Expansion Eden";
 			url="https://steamcommunity.com/workshop/filedetails/?id=1923321700";
 		};
-		class Item66
+		class Item67
 		{
 			className="unit_config";
 			name="unit_config";
 		};
-		class Item67
+		class Item68
+		{
+			className="CSAT_Eyewear";
+			name="CSAT_Eyewear";
+		};
+		class Item69
 		{
 			className="A3_Characters_F_Orange";
 			name="Arma 3 Orange - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item68
+		class Item70
 		{
 			className="EF_Weapons";
 			name="Expeditionary Forces - Weapons";
 			author="Tiny Gecko Studios";
 			url="https://www.arma3.com";
 		};
-		class Item69
+		class Item71
 		{
 			className="A3_Weapons_F_expEden";
 			name="O&T Expansion Eden - Weapons and Accessories";
 			author="Trager";
 			url="https://steamcommunity.com/workshop/filedetails/?id=1923321700";
 		};
-		class Item70
+		class Item72
 		{
 			className="A3_Weapons_F_Orange";
 			name="Arma 3 Orange - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item71
+		class Item73
 		{
 			className="xs_female_xs_f_base";
 			name="xs_female_xs_f_base";
+		};
+		class Item74
+		{
+			className="bwa3_mrs120";
+			name="bwa3_mrs120";
+		};
+		class Item75
+		{
+			className="bwa3_nh90";
+			name="Bundeswehr - NH90";
+			author="BW-Mod";
+			url="http://www.bwmod.de/index.php/download";
+		};
+		class Item76
+		{
+			className="CSAT_Ghatar";
+			name="CSAT_Ghatar";
+		};
+		class Item77
+		{
+			className="pook_ARTY_c";
+			name="pook_ARTY_c";
 		};
 	};
 };
@@ -710,7 +745,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=79;
+		items=97;
 		class Item0
 		{
 			dataType="Layer";
@@ -3077,7 +3112,7 @@ class Mission
 				class Item4
 				{
 					dataType="Marker";
-					position[]={8171.6396,87.979996,3219.51};
+					position[]={8176.1699,87.979996,3224.3884};
 					name="respawn_west_pilot_cas_plane";
 					type="Empty";
 					angle=131.63503;
@@ -3728,13 +3763,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8133.7192,95.695496,3253.188};
+								position[]={8144.4722,95.695496,3267.303};
 								angles[]={0,0.71708596,0};
 							};
 							side="Empty";
 							flags=5;
 							class Attributes
 							{
+								disableSimulation=1;
 							};
 							id=361;
 							type="Airport_02_hangar_left";
@@ -3774,13 +3810,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8160.8252,95.71315,3229.4399};
+								position[]={8171.5781,95.71315,3243.5549};
 								angles[]={0,0.72429419,0};
 							};
 							side="Empty";
 							flags=5;
 							class Attributes
 							{
+								disableSimulation=1;
 							};
 							id=362;
 							type="Airport_02_hangar_right";
@@ -4103,7 +4140,7 @@ class Mission
 					name="Props";
 					class Entities
 					{
-						items=1515;
+						items=1520;
 						class Item0
 						{
 							dataType="Object";
@@ -4465,7 +4502,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8181.0542,88.385201,3216.1038};
+								position[]={8183.9565,88.385201,3221.9829};
 								angles[]={0,2.2602406,0};
 							};
 							side="Empty";
@@ -6331,7 +6368,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8179.8076,88.500259,3212.9475};
+								position[]={8187.79,88.500259,3222.9978};
 								angles[]={0,5.0178185,0};
 							};
 							side="Empty";
@@ -6378,7 +6415,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8178.3555,88.500259,3221.5305};
+								position[]={8186.1211,88.500259,3232.4961};
 								angles[]={0,5.0178185,0};
 							};
 							side="Empty";
@@ -6425,7 +6462,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8178.9492,88.500259,3211.8264};
+								position[]={8186.5,88.500259,3221.6218};
 								angles[]={0,5.0178585,0};
 							};
 							side="Empty";
@@ -6472,7 +6509,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8179.4629,88.500259,3220.6594};
+								position[]={8187.5615,88.500259,3231.3242};
 								angles[]={0,5.0178185,0};
 							};
 							side="Empty";
@@ -7976,7 +8013,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8170.334,88.500259,3212.2146};
+								position[]={8174.7041,88.500259,3219.3164};
 								angles[]={0,3.4644759,0};
 							};
 							side="Empty";
@@ -8023,7 +8060,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8171.4399,88.500259,3211.3367};
+								position[]={8176.127,88.500259,3218.1016};
 								angles[]={0,3.4645159,0};
 							};
 							side="Empty";
@@ -9737,7 +9774,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8091.5518,88.382484,3107.2812};
+								position[]={8091.5518,88.382484,3107.2813};
 								angles[]={0,5.435585,0};
 							};
 							side="Empty";
@@ -13544,7 +13581,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8182.0205,88.382484,3215.5818};
+								position[]={8190.1196,88.382484,3225.4888};
 								angles[]={0,2.2689285,0};
 							};
 							side="Empty";
@@ -13591,7 +13628,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8174.1704,88.382484,3246.8018};
+								position[]={8184.1147,88.382484,3260.2163};
 								angles[]={0,0.69699991,0};
 							};
 							side="Empty";
@@ -13638,7 +13675,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8176.7368,88.382484,3209.3936};
+								position[]={8181.8892,88.382484,3216.0662};
 								angles[]={0,2.2503438,0};
 							};
 							side="Empty";
@@ -13920,7 +13957,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8175.7002,88.382484,3223.5762};
+								position[]={8183.8687,88.382484,3234.3943};
 								angles[]={0,3.8297005,0};
 							};
 							side="Empty";
@@ -13967,7 +14004,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8181.7456,88.382484,3218.5786};
+								position[]={8190.2622,88.382484,3228.8521};
 								angles[]={0,3.8297005,0};
 							};
 							side="Empty";
@@ -16317,7 +16354,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8081.2305,88.382484,3181.5312};
+								position[]={8081.2305,88.382484,3181.5313};
 								angles[]={0,3.8571784,0};
 							};
 							side="Empty";
@@ -16599,7 +16636,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8019.4409,88.382484,3235.2812};
+								position[]={8019.4409,88.382484,3235.2813};
 								angles[]={0,3.8571784,0};
 							};
 							side="Empty";
@@ -17257,7 +17294,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={7982.4062,88.382484,3267.6472};
+								position[]={7982.4063,88.382484,3267.6472};
 								angles[]={0,3.8571784,0};
 							};
 							side="Empty";
@@ -19983,7 +20020,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={7819.1562,88.382484,3327.0266};
+								position[]={7819.1563,88.382484,3327.0266};
 								angles[]={0,3.8571784,0};
 							};
 							side="Empty";
@@ -21675,7 +21712,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8163.2812,88.382484,3110.4126};
+								position[]={8163.2813,88.382484,3110.4126};
 								angles[]={0,3.8571784,0};
 							};
 							side="Empty";
@@ -24636,7 +24673,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8173.877,88.382484,3209.4038};
+								position[]={8178.4751,88.382484,3216.3623};
 								angles[]={0,3.8297005,0};
 							};
 							side="Empty";
@@ -24683,7 +24720,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8167.8315,88.382484,3214.4014};
+								position[]={8172.6279,88.382484,3221.2603};
 								angles[]={0,3.8297005,0};
 							};
 							side="Empty";
@@ -26093,7 +26130,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8053.6367,89.148155,3176.7812};
+								position[]={8053.6367,89.148155,3176.7813};
 								angles[]={0,2.2863817,0};
 							};
 							side="Empty";
@@ -26849,7 +26886,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={7546.8242,91.65316,3752.1562};
+								position[]={7546.8242,91.65316,3752.1563};
 								angles[]={0,0.62831903,0};
 							};
 							side="Empty";
@@ -28774,7 +28811,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8093.2812,89.109993,2986.8679};
+								position[]={8093.2813,89.109993,2986.8679};
 								angles[]={0,2.3038347,0};
 							};
 							side="Empty";
@@ -35698,7 +35735,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8134.6431,87.97541,2923.4062};
+								position[]={8134.6431,87.97541,2923.4063};
 								angles[]={0,5.4279737,0};
 							};
 							side="Empty";
@@ -54008,7 +54045,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={7518.1562,87.979996,3781.1201};
+								position[]={7518.1563,87.979996,3781.1201};
 								angles[]={0,3.8397253,0};
 							};
 							side="Empty";
@@ -71507,7 +71544,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8145.6465,87.979996,3238.4912};
+								position[]={8156.1113,87.979996,3252.7292};
 								angles[]={0,0.71558499,0};
 							};
 							side="Empty";
@@ -75145,9 +75182,244 @@ class Mission
 								nAttributes=2;
 							};
 						};
+						class Item1515
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={8150.2329,87.979996,3216.2695};
+								angles[]={0,2.2863812,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								disableSimulation=1;
+							};
+							id=4443;
+							type="Land_Bro_Decal_4";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="allowDamage";
+									expression="_this allowdamage _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item1516
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={8135.6611,87.979996,3229.0139};
+								angles[]={0,2.2863812,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								disableSimulation=1;
+							};
+							id=4444;
+							type="Land_Bro_Decal_4";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="allowDamage";
+									expression="_this allowdamage _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item1517
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={8122.7236,87.979996,3240.2317};
+								angles[]={0,2.2863812,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								disableSimulation=1;
+							};
+							id=4445;
+							type="Land_Bro_Decal_4";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="allowDamage";
+									expression="_this allowdamage _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item1518
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={8184.0039,87.979996,3229.5652};
+								angles[]={0,2.2863812,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								disableSimulation=1;
+							};
+							id=4447;
+							type="Land_Bro_Decal_4";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="allowDamage";
+									expression="_this allowdamage _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item1519
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={8184.6973,88.382484,3219.4028};
+								angles[]={0,2.2503438,0};
+							};
+							side="Empty";
+							flags=5;
+							class Attributes
+							{
+								disableSimulation=1;
+							};
+							id=4448;
+							type="Land_Mil_ConcreteWall_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="allowDamage";
+									expression="_this allowdamage _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
 					};
 					id=141;
-					atlOffset=6.5000153;
+					atlOffset=0.203125;
 				};
 				class Item2
 				{
@@ -75155,7 +75427,7 @@ class Mission
 					name="Vehicles";
 					class Entities
 					{
-						items=86;
+						items=83;
 						class Item0
 						{
 							dataType="Object";
@@ -75225,78 +75497,6 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={7864.5024,91.610901,3335.207};
-								angles[]={0,2.3096962,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
-								textures="ION";
-							};
-							id=249;
-							type="I_Heli_Transport_02_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="VehicleCustomization";
-									expression="if (local _this) then {([_this] + _value + [true]) call (uinamespace getvariable 'BIS_fnc_initVehicle')};";
-									class Value
-									{
-										class data
-										{
-											singleType="ARRAY";
-											class value
-											{
-												items=2;
-												class Item0
-												{
-													class data
-													{
-														singleType="ARRAY";
-														class value
-														{
-															items=2;
-															class Item0
-															{
-																class data
-																{
-																	singleType="STRING";
-																	value="ION";
-																};
-															};
-															class Item1
-															{
-																class data
-																{
-																	singleType="SCALAR";
-																	value=1;
-																};
-															};
-														};
-													};
-												};
-												class Item1
-												{
-													class data
-													{
-														singleType="ARRAY";
-													};
-												};
-											};
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item3
-						{
-							dataType="Object";
-							class PositionInfo
-							{
 								position[]={7928.2241,89.75914,3282.7117};
 								angles[]={0,2.4086492,0};
 							};
@@ -75309,7 +75509,7 @@ class Mission
 							id=261;
 							type="B_Heli_Light_01_F";
 						};
-						class Item4
+						class Item3
 						{
 							dataType="Object";
 							class PositionInfo
@@ -75326,7 +75526,7 @@ class Mission
 							id=262;
 							type="B_Heli_Light_01_F";
 						};
-						class Item5
+						class Item4
 						{
 							dataType="Object";
 							class PositionInfo
@@ -75343,7 +75543,7 @@ class Mission
 							type="B_Boat_Armed_01_minigun_F";
 							atlOffset=10.417696;
 						};
-						class Item6
+						class Item5
 						{
 							dataType="Object";
 							class PositionInfo
@@ -75362,7 +75562,7 @@ class Mission
 							id=283;
 							type="B_T_UAV_03_dynamicLoadout_F";
 						};
-						class Item7
+						class Item6
 						{
 							dataType="Object";
 							class PositionInfo
@@ -75380,7 +75580,7 @@ class Mission
 							id=284;
 							type="B_UGV_01_rcws_F";
 						};
-						class Item8
+						class Item7
 						{
 							dataType="Object";
 							class PositionInfo
@@ -75398,7 +75598,7 @@ class Mission
 							id=285;
 							type="B_UGV_01_rcws_F";
 						};
-						class Item9
+						class Item8
 						{
 							dataType="Object";
 							class PositionInfo
@@ -75416,7 +75616,7 @@ class Mission
 							type="B_CargoNet_01_ammo_F";
 							atlOffset=-0.022644043;
 						};
-						class Item10
+						class Item9
 						{
 							dataType="Object";
 							class PositionInfo
@@ -75434,7 +75634,7 @@ class Mission
 							type="B_CargoNet_01_ammo_F";
 							atlOffset=-0.02961731;
 						};
-						class Item11
+						class Item10
 						{
 							dataType="Object";
 							class PositionInfo
@@ -75452,7 +75652,7 @@ class Mission
 							type="B_Slingload_01_Ammo_F";
 							atlOffset=-0.063346863;
 						};
-						class Item12
+						class Item11
 						{
 							dataType="Object";
 							class PositionInfo
@@ -75470,7 +75670,7 @@ class Mission
 							type="B_Slingload_01_Fuel_F";
 							atlOffset=-0.024520874;
 						};
-						class Item13
+						class Item12
 						{
 							dataType="Object";
 							class PositionInfo
@@ -75488,7 +75688,7 @@ class Mission
 							type="B_Slingload_01_Repair_F";
 							atlOffset=-0.0034713745;
 						};
-						class Item14
+						class Item13
 						{
 							dataType="Object";
 							class PositionInfo
@@ -75506,7 +75706,7 @@ class Mission
 							type="B_supplyCrate_F";
 							atlOffset=-0.0052871704;
 						};
-						class Item15
+						class Item14
 						{
 							dataType="Object";
 							class PositionInfo
@@ -75524,7 +75724,7 @@ class Mission
 							type="B_supplyCrate_F";
 							atlOffset=-0.016807556;
 						};
-						class Item16
+						class Item15
 						{
 							dataType="Object";
 							class PositionInfo
@@ -75541,7 +75741,7 @@ class Mission
 							id=3279;
 							type="B_Heli_Light_01_F";
 						};
-						class Item17
+						class Item16
 						{
 							dataType="Object";
 							class PositionInfo
@@ -75588,7 +75788,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item18
+						class Item17
 						{
 							dataType="Object";
 							class PositionInfo
@@ -75635,13 +75835,13 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item19
+						class Item18
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8149.9849,88.939461,3227.5281};
-								angles[]={0,3.8571777,0};
+								position[]={8158.5889,88.939461,3241.5466};
+								angles[]={-0,3.8571777,0};
 							};
 							side="Empty";
 							flags=4;
@@ -75722,7 +75922,7 @@ class Mission
 								nAttributes=5;
 							};
 						};
-						class Item20
+						class Item19
 						{
 							dataType="Object";
 							class PositionInfo
@@ -75824,7 +76024,7 @@ class Mission
 								nAttributes=3;
 							};
 						};
-						class Item21
+						class Item20
 						{
 							dataType="Object";
 							class PositionInfo
@@ -75874,7 +76074,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item22
+						class Item21
 						{
 							dataType="Object";
 							class PositionInfo
@@ -75921,7 +76121,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item23
+						class Item22
 						{
 							dataType="Object";
 							class PositionInfo
@@ -76186,7 +76386,7 @@ class Mission
 								nAttributes=3;
 							};
 						};
-						class Item24
+						class Item23
 						{
 							dataType="Object";
 							class PositionInfo
@@ -76233,7 +76433,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item25
+						class Item24
 						{
 							dataType="Object";
 							class PositionInfo
@@ -76280,7 +76480,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item26
+						class Item25
 						{
 							dataType="Object";
 							class PositionInfo
@@ -76327,7 +76527,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item27
+						class Item26
 						{
 							dataType="Object";
 							class PositionInfo
@@ -76374,7 +76574,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item28
+						class Item27
 						{
 							dataType="Object";
 							class PositionInfo
@@ -76471,12 +76671,12 @@ class Mission
 								nAttributes=3;
 							};
 						};
-						class Item29
+						class Item28
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8133.1572,89.805237,3240.781};
+								position[]={8143.8296,89.805237,3253.8093};
 								angles[]={0,3.8397245,0};
 							};
 							side="Empty";
@@ -76545,13 +76745,13 @@ class Mission
 								nAttributes=4;
 							};
 						};
-						class Item30
+						class Item29
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8130.2417,90.609238,3146.9746};
-								angles[]={0,5.3756142,0};
+								position[]={8131.6455,90.609238,3150.4016};
+								angles[]={-0,5.3756142,0};
 							};
 							side="Empty";
 							flags=4;
@@ -76592,7 +76792,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item31
+						class Item30
 						{
 							dataType="Object";
 							class PositionInfo
@@ -76638,7 +76838,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item32
+						class Item31
 						{
 							dataType="Object";
 							class PositionInfo
@@ -76684,7 +76884,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item33
+						class Item32
 						{
 							dataType="Object";
 							class PositionInfo
@@ -76731,7 +76931,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item34
+						class Item33
 						{
 							dataType="Object";
 							class PositionInfo
@@ -76779,60 +76979,13 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item35
+						class Item34
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={7890.2061,90.682022,3137.2683};
-								angles[]={0,0.71558565,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								name="HEMTT_Mortar";
-							};
-							id=3506;
-							type="B_T_Truck_01_flatbed_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="attachMarker";
-									expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="ObjectCollision";
-									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item36
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={7885.603,90.682022,3140.7156};
-								angles[]={0,0.68067849,0};
+								position[]={7889.3516,90.682022,3140.9175};
+								angles[]={-0,0.68067849,0};
 							};
 							side="Empty";
 							flags=4;
@@ -76873,7 +77026,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item37
+						class Item35
 						{
 							dataType="Object";
 							class PositionInfo
@@ -76921,7 +77074,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item38
+						class Item36
 						{
 							dataType="Object";
 							class PositionInfo
@@ -76968,7 +77121,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item39
+						class Item37
 						{
 							dataType="Object";
 							class PositionInfo
@@ -77015,7 +77168,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item40
+						class Item38
 						{
 							dataType="Object";
 							class PositionInfo
@@ -77062,7 +77215,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item41
+						class Item39
 						{
 							dataType="Object";
 							class PositionInfo
@@ -77109,7 +77262,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item42
+						class Item40
 						{
 							dataType="Object";
 							class PositionInfo
@@ -77157,7 +77310,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item43
+						class Item41
 						{
 							dataType="Object";
 							class PositionInfo
@@ -77204,7 +77357,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item44
+						class Item42
 						{
 							dataType="Object";
 							class PositionInfo
@@ -77254,7 +77407,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item45
+						class Item43
 						{
 							dataType="Object";
 							class PositionInfo
@@ -77304,7 +77457,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item46
+						class Item44
 						{
 							dataType="Object";
 							class PositionInfo
@@ -77352,7 +77505,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item47
+						class Item45
 						{
 							dataType="Object";
 							class PositionInfo
@@ -77400,7 +77553,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item48
+						class Item46
 						{
 							dataType="Object";
 							class PositionInfo
@@ -77451,7 +77604,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item49
+						class Item47
 						{
 							dataType="Object";
 							class PositionInfo
@@ -77501,7 +77654,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item50
+						class Item48
 						{
 							dataType="Object";
 							class PositionInfo
@@ -77548,7 +77701,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item51
+						class Item49
 						{
 							dataType="Object";
 							class PositionInfo
@@ -77595,7 +77748,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item52
+						class Item50
 						{
 							dataType="Object";
 							class PositionInfo
@@ -77642,7 +77795,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item53
+						class Item51
 						{
 							dataType="Object";
 							class PositionInfo
@@ -77690,7 +77843,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item54
+						class Item52
 						{
 							dataType="Object";
 							class PositionInfo
@@ -77738,7 +77891,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item55
+						class Item53
 						{
 							dataType="Object";
 							class PositionInfo
@@ -77938,54 +78091,7 @@ class Mission
 								nAttributes=3;
 							};
 						};
-						class Item56
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={8072.2432,91.063309,3311.75};
-								angles[]={0,0.73303831,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								init="this setVariable [""WHF_vehicleLock_gunner"", [""role"", [""arty""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
-							};
-							id=2854;
-							type="B_T_MBT_01_arty_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="attachMarker";
-									expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="ObjectCollision";
-									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item57
+						class Item54
 						{
 							dataType="Object";
 							class PositionInfo
@@ -78035,7 +78141,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item58
+						class Item55
 						{
 							dataType="Object";
 							class PositionInfo
@@ -78082,7 +78188,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item59
+						class Item56
 						{
 							dataType="Object";
 							class PositionInfo
@@ -78129,7 +78235,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item60
+						class Item57
 						{
 							dataType="Object";
 							class PositionInfo
@@ -78176,12 +78282,12 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item61
+						class Item58
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8166.1528,89.606285,3212.4634};
+								position[]={8171.7354,89.606285,3218.9287};
 								angles[]={0,3.4557538,0};
 							};
 							side="Empty";
@@ -78223,7 +78329,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item62
+						class Item59
 						{
 							dataType="Object";
 							class PositionInfo
@@ -78270,7 +78376,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item63
+						class Item60
 						{
 							dataType="Object";
 							class PositionInfo
@@ -78317,7 +78423,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item64
+						class Item61
 						{
 							dataType="Object";
 							class PositionInfo
@@ -78364,7 +78470,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item65
+						class Item62
 						{
 							dataType="Object";
 							class PositionInfo
@@ -78411,7 +78517,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item66
+						class Item63
 						{
 							dataType="Object";
 							class PositionInfo
@@ -78458,7 +78564,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item67
+						class Item64
 						{
 							dataType="Object";
 							class PositionInfo
@@ -78508,7 +78614,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item68
+						class Item65
 						{
 							dataType="Object";
 							class PositionInfo
@@ -78555,7 +78661,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item69
+						class Item66
 						{
 							dataType="Object";
 							class PositionInfo
@@ -78603,7 +78709,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item70
+						class Item67
 						{
 							dataType="Object";
 							class PositionInfo
@@ -78651,7 +78757,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item71
+						class Item68
 						{
 							dataType="Object";
 							class PositionInfo
@@ -78698,7 +78804,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item72
+						class Item69
 						{
 							dataType="Object";
 							class PositionInfo
@@ -78745,13 +78851,13 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item73
+						class Item70
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={7911.3682,90.119255,3299.1907};
-								angles[]={0,2.3212879,0};
+								position[]={7911.4585,90.119255,3297.2151};
+								angles[]={-0,2.3212879,0};
 							};
 							side="Empty";
 							flags=4;
@@ -78792,7 +78898,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item74
+						class Item71
 						{
 							dataType="Object";
 							class PositionInfo
@@ -78839,7 +78945,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item75
+						class Item72
 						{
 							dataType="Object";
 							class PositionInfo
@@ -78886,7 +78992,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item76
+						class Item73
 						{
 							dataType="Object";
 							class PositionInfo
@@ -78937,7 +79043,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item77
+						class Item74
 						{
 							dataType="Object";
 							class PositionInfo
@@ -78954,7 +79060,7 @@ class Mission
 							id=3165;
 							type="Box_NATO_AmmoVeh_F";
 						};
-						class Item78
+						class Item75
 						{
 							dataType="Object";
 							class PositionInfo
@@ -78971,7 +79077,7 @@ class Mission
 							id=3166;
 							type="Box_NATO_AmmoVeh_F";
 						};
-						class Item79
+						class Item76
 						{
 							dataType="Object";
 							class PositionInfo
@@ -78988,13 +79094,13 @@ class Mission
 							id=3321;
 							type="Box_NATO_AmmoVeh_F";
 						};
-						class Item80
+						class Item77
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8071.7603,88.769806,3305.3533};
-								angles[]={0,2.3561957,0};
+								position[]={8066.8379,88.769806,3307.8538};
+								angles[]={-0,2.3561957,0};
 							};
 							side="Empty";
 							flags=4;
@@ -79005,7 +79111,7 @@ class Mission
 							id=3351;
 							type="Box_NATO_AmmoVeh_F";
 						};
-						class Item81
+						class Item78
 						{
 							dataType="Object";
 							class PositionInfo
@@ -79022,7 +79128,7 @@ class Mission
 							id=3370;
 							type="Box_NATO_AmmoVeh_F";
 						};
-						class Item82
+						class Item79
 						{
 							dataType="Object";
 							class PositionInfo
@@ -79069,7 +79175,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item83
+						class Item80
 						{
 							dataType="Object";
 							class PositionInfo
@@ -79086,7 +79192,7 @@ class Mission
 							id=4397;
 							type="Box_NATO_AmmoVeh_F";
 						};
-						class Item84
+						class Item81
 						{
 							dataType="Object";
 							class PositionInfo
@@ -79103,7 +79209,7 @@ class Mission
 							id=4399;
 							type="Box_NATO_AmmoVeh_F";
 						};
-						class Item85
+						class Item82
 						{
 							dataType="Object";
 							class PositionInfo
@@ -80180,7 +80286,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8169.874,88.872421,3215.6917};
+								position[]={8174.9375,88.872421,3222.4617};
 								angles[]={0,0.70693827,0};
 							};
 							side="Empty";
@@ -80228,7 +80334,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8181.0117,88.960411,3216.1589};
+								position[]={8183.9141,88.960411,3222.0381};
 								angles[]={0,2.2601838,0};
 							};
 							side="Empty";
@@ -80276,7 +80382,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8173.3101,91.956802,3212.6846};
+								position[]={8179.4502,91.956802,3218.6995};
 								angles[]={0,0.75882435,0};
 							};
 							side="Empty";
@@ -81596,8 +81702,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={7963.4849,90.397995,3298.5269};
-								angles[]={0,3.8690259,0};
+								position[]={7964.3457,90.397995,3297.1667};
+								angles[]={-0,3.8690259,0};
 							};
 							side="Empty";
 							flags=4;
@@ -81841,7 +81947,7 @@ class Mission
 					name="Modules";
 					class Entities
 					{
-						items=5;
+						items=9;
 						class Item0
 						{
 							dataType="Logic";
@@ -82001,15 +82107,15 @@ class Mission
 							dataType="Logic";
 							class PositionInfo
 							{
-								position[]={7435.5713,87.320877,3806.188};
+								position[]={7388.3247,87.320877,3795.8518};
 								angles[]={0.015340266,0.71546638,0.058441117};
 							};
-							areaSize[]={41.711914,0,60.957203};
+							areaSize[]={70.593185,0,156.62964};
 							areaIsRectangle=1;
 							flags=1;
 							id=596;
 							type="ModuleHideTerrainObjects_F";
-							atlOffset=0.42996216;
+							atlOffset=5.3680801;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -82085,9 +82191,189 @@ class Mission
 								nAttributes=2;
 							};
 						};
+						class Item5
+						{
+							dataType="Logic";
+							class PositionInfo
+							{
+								position[]={7755.4712,93.348076,3635.332};
+								angles[]={0.015340266,0.71546638,0.058441117};
+							};
+							areaSize[]={327.43634,0,37.127037};
+							areaIsRectangle=1;
+							flags=1;
+							id=4440;
+							type="ModuleHideTerrainObjects_F";
+							atlOffset=5.3680801;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="#filter";
+									expression="_this setVariable [""#filter"",_value]";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=15;
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="#hideLocally";
+									expression="_this setVariable [""#hideLocally"",_value]";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item6
+						{
+							dataType="Logic";
+							class PositionInfo
+							{
+								position[]={8318.9209,93.348076,2892.0005};
+								angles[]={0.015340266,0.71546638,0.058441117};
+							};
+							areaSize[]={162.62889,0,174.05345};
+							areaIsRectangle=1;
+							flags=1;
+							id=4441;
+							type="ModuleHideTerrainObjects_F";
+							atlOffset=5.1467133;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="#filter";
+									expression="_this setVariable [""#filter"",_value]";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=15;
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="#hideLocally";
+									expression="_this setVariable [""#hideLocally"",_value]";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item7
+						{
+							dataType="Logic";
+							class PositionInfo
+							{
+								position[]={7561.9512,88.745934,3435.5005};
+								angles[]={0,0.73949516,0};
+							};
+							areaSize[]={334.93362,0,42.406044};
+							areaIsRectangle=1;
+							flags=1;
+							id=5706;
+							type="ModuleHideTerrainObjects_F";
+							atlOffset=7.0461578;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="#filter";
+									expression="_this setVariable [""#filter"",_value]";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=15;
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="#hideLocally";
+									expression="_this setVariable [""#hideLocally"",_value]";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item8
+						{
+							dataType="Logic";
+							class PositionInfo
+							{
+								position[]={7894.2891,92.517502,3035.9773};
+								angles[]={0,0.69410074,0};
+							};
+							areaSize[]={310.60928,0,41.033348};
+							areaIsRectangle=1;
+							flags=1;
+							id=5707;
+							type="ModuleHideTerrainObjects_F";
+							atlOffset=5.8285599;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="#filter";
+									expression="_this setVariable [""#filter"",_value]";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=15;
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="#hideLocally";
+									expression="_this setVariable [""#hideLocally"",_value]";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
 					};
 					id=313;
-					atlOffset=-0.15103149;
+					atlOffset=3.4573135;
 				};
 				class Item5
 				{
@@ -87181,7 +87467,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8157.7764,92.212479,3253.6716};
+								position[]={8166.6943,92.212479,3266.1609};
 								angles[]={0,5.4803338,0};
 							};
 							side="Empty";
@@ -88239,7 +88525,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8174.9238,92.202423,3219.0195};
+								position[]={8180.3135,92.202423,3226.376};
 								angles[]={0,2.7401671,0};
 							};
 							side="Empty";
@@ -89537,7 +89823,7 @@ class Mission
 						class Item4
 						{
 							dataType="Marker";
-							position[]={8172.3979,87.979996,3214.6821};
+							position[]={8176.6875,87.979996,3226.7419};
 							name="marker_8";
 							text="CAS Fixed WIng";
 							type="b_air";
@@ -89790,7 +90076,7 @@ class Mission
 				};
 			};
 			id=136;
-			atlOffset=-0.5667572;
+			atlOffset=-0.21411133;
 		};
 		class Item3
 		{
@@ -90870,182 +91156,6 @@ class Mission
 		};
 		class Item27
 		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={7889.9761,90.62162,3136.7288};
-				angles[]={0,2.2863817,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="[this, HEMTT_Mortar] call BIS_fnc_attachToRelative;" \n "this addEventHandler [""fired"", {(_this select 0) setVehicleAmmo 1}];";
-				name="mortar1";
-			};
-			id=3509;
-			type="EF_B_Mortar_01_MJTF_Wdl";
-			atlOffset=0.00036621094;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ObjectCollision";
-					expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="attachMarker";
-					expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="";
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="setTurretLimits3";
-					expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, _value ]";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=13;
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="desableWeaponDisassembly";
-					expression="_this enableWeaponDisassembly _value;";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=0;
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="fixPosition";
-					expression="if (_value isEqualTo true) then {_this call expEden_fnc_turretAttach}";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				nAttributes=5;
-			};
-		};
-		class Item28
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={7887.9829,90.62162,3134.7637};
-				angles[]={0,5.4628811,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="[this, HEMTT_Mortar] call BIS_fnc_attachToRelative;" \n "this addEventHandler [""fired"", {(_this select 0) setVehicleAmmo 1}];";
-				name="mortar2";
-			};
-			id=3510;
-			type="EF_B_Mortar_01_MJTF_Wdl";
-			atlOffset=0.00036621094;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ObjectCollision";
-					expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="attachMarker";
-					expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="";
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="setTurretLimits3";
-					expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, _value ]";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=13;
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="desableWeaponDisassembly";
-					expression="_this enableWeaponDisassembly _value;";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=0;
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="fixPosition";
-					expression="if (_value isEqualTo true) then {_this call expEden_fnc_turretAttach}";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				nAttributes=5;
-			};
-		};
-		class Item29
-		{
 			dataType="Trigger";
 			position[]={7837.1201,87.979996,3219.8516};
 			angle=5.418303;
@@ -91063,7 +91173,7 @@ class Mission
 			id=3513;
 			type="EmptyDetector";
 		};
-		class Item30
+		class Item28
 		{
 			dataType="Group";
 			side="West";
@@ -91076,7 +91186,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={8051.8472,91.470428,3113.2505};
-						angles[]={0,3.8222711,0};
+						angles[]={-0,3.8222711,0};
 					};
 					side="West";
 					flags=2;
@@ -91116,13 +91226,13 @@ class Mission
 			id=3528;
 			atlOffset=1.7505341;
 		};
-		class Item31
+		class Item29
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7883.1621,91.468613,3137.6726};
-				angles[]={0,3.8222711,0};
+				position[]={7886.9106,91.468613,3137.875};
+				angles[]={-0,3.8222711,0};
 			};
 			side="West";
 			flags=2;
@@ -91181,2906 +91291,14 @@ class Mission
 				nAttributes=3;
 			};
 		};
-		class Item32
+		class Item30
 		{
 			dataType="Layer";
 			name="HEMTT Autogun";
-			class Entities
-			{
-				items=39;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7877.2148,90.682022,3149.002};
-						angles[]={0,0.71558547,0};
-					};
-					side="Empty";
-					flags=4;
-					class Attributes
-					{
-						name="HEMTT_AutoGuntruck";
-					};
-					id=3764;
-					type="B_T_Truck_01_flatbed_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="attachMarker";
-							expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ObjectCollision";
-							expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7875.9878,90.122993,3147.6299};
-						angles[]={0,2.3038347,0};
-					};
-					side="Empty";
-					class Attributes
-					{
-						init="[this, HEMTT_AutoGuntruck] call BIS_fnc_attachToRelative;" \n "";
-						name="weaponmountpanel";
-					};
-					id=3765;
-					type="Land_rhs_cnc_slab_triple_02";
-					atlOffset=0.22336578;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ObjectCollision";
-							expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="allowDamage";
-							expression="_this allowdamage _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7878.8721,90.253601,3146.3953};
-						angles[]={0,5.4279747,0};
-					};
-					side="Empty";
-					flags=4;
-					class Attributes
-					{
-						init="[this, weaponmountpanel] call BIS_fnc_attachToRelative;" \n "";
-					};
-					id=3766;
-					type="Land_ConcreteKerb_01_4m_v2_F";
-					atlOffset=0.12863159;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ObjectCollision";
-							expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7877.2515,90.247108,3150.3611};
-						angles[]={0,0.71558547,0};
-					};
-					side="Empty";
-					flags=4;
-					class Attributes
-					{
-						init="[this, weaponmountpanel] call BIS_fnc_attachToRelative;" \n "";
-					};
-					id=3767;
-					type="Land_ConcreteKerb_01_4m_v2_F";
-					atlOffset=0.12213898;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ObjectCollision";
-							expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item4
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7879.4272,90.255135,3148.478};
-						angles[]={0,0.71558547,0};
-					};
-					side="Empty";
-					flags=4;
-					class Attributes
-					{
-						init="[this, weaponmountpanel] call BIS_fnc_attachToRelative;" \n "";
-					};
-					id=3768;
-					type="Land_ConcreteKerb_01_2m_v2_F";
-					atlOffset=0.12646484;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ObjectCollision";
-							expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item5
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7874.3911,90.277191,3150.3015};
-						angles[]={0,5.4279747,0};
-					};
-					side="Empty";
-					flags=4;
-					class Attributes
-					{
-						init="[this, weaponmountpanel] call BIS_fnc_attachToRelative;" \n "";
-					};
-					id=3769;
-					type="Land_ConcreteKerb_01_4m_v2_F";
-					atlOffset=0.15222168;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ObjectCollision";
-							expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item6
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7874.7705,90.260078,3144.7664};
-						angles[]={0,3.8571782,0};
-					};
-					side="Empty";
-					flags=4;
-					class Attributes
-					{
-						init="[this, weaponmountpanel] call BIS_fnc_attachToRelative;" \n "";
-					};
-					id=3770;
-					type="Land_ConcreteKerb_01_4m_v2_F";
-					atlOffset=0.13510895;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ObjectCollision";
-							expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item7
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7872.5767,90.268501,3146.6755};
-						angles[]={0,0.71558547,0};
-					};
-					side="Empty";
-					flags=4;
-					class Attributes
-					{
-						init="[this, weaponmountpanel] call BIS_fnc_attachToRelative;" \n "";
-					};
-					id=3771;
-					type="Land_ConcreteKerb_01_2m_v2_F";
-					atlOffset=0.13983154;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ObjectCollision";
-							expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item8
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7872.4365,90.294083,3148.0664};
-						angles[]={0,5.4279747,0};
-					};
-					side="Empty";
-					flags=4;
-					class Attributes
-					{
-						init="[this, weaponmountpanel] call BIS_fnc_attachToRelative;" \n "";
-					};
-					id=3772;
-					type="Land_ConcreteKerb_01_2m_v2_F";
-					atlOffset=0.1654129;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ObjectCollision";
-							expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item9
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7876.9346,90.264282,3144.1892};
-						angles[]={0,5.4279747,0};
-					};
-					side="Empty";
-					flags=4;
-					class Attributes
-					{
-						init="[this, weaponmountpanel] call BIS_fnc_attachToRelative;" \n "";
-					};
-					id=3773;
-					type="Land_ConcreteKerb_01_2m_v2_F";
-					atlOffset=0.13561249;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ObjectCollision";
-							expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item10
-				{
-					dataType="Group";
-					side="West";
-					class Entities
-					{
-						items=1;
-						class Item0
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={7904.915,91.188362,3177.7969};
-								angles[]={0,0.7504918,0};
-							};
-							side="West";
-							flags=2;
-							class Attributes
-							{
-							};
-							id=3775;
-							type="B_UAV_AI";
-							atlOffset=3.2069244;
-						};
-					};
-					class Attributes
-					{
-					};
-					class CrewLinks
-					{
-						class LinkIDProvider
-						{
-							nextID=1;
-						};
-						class Links
-						{
-							items=1;
-							class Item0
-							{
-								linkID=0;
-								item0=3775;
-								item1=3776;
-								class CustomData
-								{
-									role=2;
-									turretPath[]={0};
-								};
-							};
-						};
-					};
-					id=3774;
-					atlOffset=0.052619934;
-				};
-				class Item11
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7878.8335,91.432381,3147.7795};
-						angles[]={0,0.7504918,0};
-					};
-					side="West";
-					flags=6;
-					class Attributes
-					{
-						init="[this, weaponmountpanel] call BIS_fnc_attachToRelative;" \n "this addEventHandler [""fired"", {(_this select 0) setVehicleAmmo 1}];";
-						reportRemoteTargets=1;
-						receiveRemoteTargets=1;
-					};
-					id=3776;
-					type="B_HMG_01_A_F";
-					atlOffset=0.052619934;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="fixPosition";
-							expression="if (_value isEqualTo true) then {_this call expEden_fnc_turretAttach}";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ObjectCollision";
-							expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="setTurretLimits0";
-							expression="_this setTurretLimits [ [0], _value, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=-40;
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="setTurretLimits1";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, _value, (_this getTurretLimits [0])#2, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=40;
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="attachMarker";
-							expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="";
-								};
-							};
-						};
-						class Attribute5
-						{
-							property="setTurretLimits2";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, _value, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=-20;
-								};
-							};
-						};
-						class Attribute6
-						{
-							property="setTurretLimits3";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, _value ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=35;
-								};
-							};
-						};
-						class Attribute7
-						{
-							property="desableWeaponDisassembly";
-							expression="_this enableWeaponDisassembly _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						nAttributes=8;
-					};
-				};
-				class Item12
-				{
-					dataType="Group";
-					side="West";
-					class Entities
-					{
-						items=1;
-						class Item0
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={7900.7363,91.143921,3178.022};
-								angles[]={0,0.71558547,0};
-							};
-							side="West";
-							flags=2;
-							class Attributes
-							{
-							};
-							id=3778;
-							type="B_UAV_AI";
-							atlOffset=3.1624832;
-						};
-					};
-					class Attributes
-					{
-					};
-					class CrewLinks
-					{
-						class LinkIDProvider
-						{
-							nextID=1;
-						};
-						class Links
-						{
-							items=1;
-							class Item0
-							{
-								linkID=0;
-								item0=3778;
-								item1=3779;
-								class CustomData
-								{
-									role=2;
-									turretPath[]={0};
-								};
-							};
-						};
-					};
-					id=3777;
-					atlOffset=0.039619446;
-				};
-				class Item13
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7875.5762,91.374939,3150.1289};
-						angles[]={0,0.71558547,0};
-					};
-					side="West";
-					flags=6;
-					class Attributes
-					{
-						init="[this,weaponmountpanel] call BIS_fnc_attachToRelative;" \n "this addEventHandler [""fired"", {(_this select 0) setVehicleAmmo 1}];";
-						reportRemoteTargets=1;
-						receiveRemoteTargets=1;
-					};
-					id=3779;
-					type="B_GMG_01_A_F";
-					atlOffset=0.039619446;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="fixPosition";
-							expression="if (_value isEqualTo true) then {_this call expEden_fnc_turretAttach}";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ObjectCollision";
-							expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="setTurretLimits0";
-							expression="_this setTurretLimits [ [0], _value, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=-40;
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="setTurretLimits1";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, _value, (_this getTurretLimits [0])#2, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=40;
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="attachMarker";
-							expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="";
-								};
-							};
-						};
-						class Attribute5
-						{
-							property="setTurretLimits2";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, _value, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=-20;
-								};
-							};
-						};
-						class Attribute6
-						{
-							property="setTurretLimits3";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, _value ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=20;
-								};
-							};
-						};
-						class Attribute7
-						{
-							property="desableWeaponDisassembly";
-							expression="_this enableWeaponDisassembly _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						nAttributes=8;
-					};
-				};
-				class Item14
-				{
-					dataType="Group";
-					side="West";
-					class Entities
-					{
-						items=1;
-						class Item0
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={7903.0439,91.204666,3182.6707};
-								angles[]={0,0.71558499,0};
-							};
-							side="West";
-							flags=2;
-							class Attributes
-							{
-							};
-							id=3781;
-							type="B_UAV_AI";
-							atlOffset=3.2232285;
-						};
-					};
-					class Attributes
-					{
-					};
-					class CrewLinks
-					{
-						class LinkIDProvider
-						{
-							nextID=1;
-						};
-						class Links
-						{
-							items=1;
-							class Item0
-							{
-								linkID=0;
-								item0=3781;
-								item1=3782;
-								class CustomData
-								{
-									role=2;
-									turretPath[]={0};
-								};
-							};
-						};
-					};
-					id=3780;
-					atlOffset=3.0005341;
-				};
-				class Item15
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7878.5801,91.62648,3151.3279};
-						angles[]={0,0.71558499,0};
-					};
-					side="West";
-					flags=2;
-					class Attributes
-					{
-						init="[this, HEMTT_AutoGuntruck] call BIS_fnc_attachToRelative;" \n "";
-						reportRemoteTargets=1;
-						reportOwnPosition=1;
-					};
-					id=3782;
-					type="B_Static_Designator_01_F";
-					atlOffset=3.0005341;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ObjectCollision";
-							expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="setTurretLimits2";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, _value, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=-7;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="attachMarker";
-							expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="";
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="setTurretLimits3";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, _value ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=70;
-								};
-							};
-						};
-						nAttributes=4;
-					};
-				};
-				class Item16
-				{
-					dataType="Group";
-					side="West";
-					class Entities
-					{
-						items=1;
-						class Item0
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={7904.6113,91.104729,3176.2205};
-								angles[]={0,2.2863817,0};
-							};
-							side="West";
-							flags=2;
-							class Attributes
-							{
-							};
-							id=3784;
-							type="B_UAV_AI";
-							atlOffset=3.123291;
-						};
-					};
-					class Attributes
-					{
-					};
-					class CrewLinks
-					{
-						class LinkIDProvider
-						{
-							nextID=1;
-						};
-						class Links
-						{
-							items=1;
-							class Item0
-							{
-								linkID=0;
-								item0=3784;
-								item1=3785;
-								class CustomData
-								{
-									role=2;
-									turretPath[]={0};
-								};
-							};
-						};
-					};
-					id=3783;
-					atlOffset=0.039619446;
-				};
-				class Item17
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7877.4634,91.374939,3146.7798};
-						angles[]={0,2.2863817,0};
-					};
-					side="West";
-					flags=6;
-					class Attributes
-					{
-						init="[this, weaponmountpanel] call BIS_fnc_attachToRelative;" \n "this addEventHandler [""fired"", {(_this select 0) setVehicleAmmo 1}];";
-						reportRemoteTargets=1;
-						receiveRemoteTargets=1;
-					};
-					id=3785;
-					type="B_GMG_01_A_F";
-					atlOffset=0.039619446;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="fixPosition";
-							expression="if (_value isEqualTo true) then {_this call expEden_fnc_turretAttach}";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ObjectCollision";
-							expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="setTurretLimits0";
-							expression="_this setTurretLimits [ [0], _value, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=-40;
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="setTurretLimits1";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, _value, (_this getTurretLimits [0])#2, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=40;
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="attachMarker";
-							expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="";
-								};
-							};
-						};
-						class Attribute5
-						{
-							property="setTurretLimits2";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, _value, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=-20;
-								};
-							};
-						};
-						class Attribute6
-						{
-							property="setTurretLimits3";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, _value ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=20;
-								};
-							};
-						};
-						class Attribute7
-						{
-							property="desableWeaponDisassembly";
-							expression="_this enableWeaponDisassembly _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						nAttributes=8;
-					};
-				};
-				class Item18
-				{
-					dataType="Group";
-					side="West";
-					class Entities
-					{
-						items=1;
-						class Item0
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={7901.2139,91.13575,3175.9866};
-								angles[]={0,5.4279747,0};
-							};
-							side="West";
-							flags=2;
-							class Attributes
-							{
-							};
-							id=3787;
-							type="B_UAV_AI";
-							atlOffset=3.1543121;
-						};
-					};
-					class Attributes
-					{
-					};
-					class CrewLinks
-					{
-						class LinkIDProvider
-						{
-							nextID=1;
-						};
-						class Links
-						{
-							items=1;
-							class Item0
-							{
-								linkID=0;
-								item0=3787;
-								item1=3788;
-								class CustomData
-								{
-									role=2;
-									turretPath[]={0};
-								};
-							};
-						};
-					};
-					id=3786;
-					atlOffset=0.052619934;
-				};
-				class Item19
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7874.7549,91.432381,3149.2632};
-						angles[]={0,5.4279747,0};
-					};
-					side="West";
-					flags=6;
-					class Attributes
-					{
-						init="[this, weaponmountpanel] call BIS_fnc_attachToRelative;" \n "this addEventHandler [""fired"", {(_this select 0) setVehicleAmmo 1}];";
-						reportRemoteTargets=1;
-						receiveRemoteTargets=1;
-					};
-					id=3788;
-					type="B_HMG_01_A_F";
-					atlOffset=0.052619934;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="fixPosition";
-							expression="if (_value isEqualTo true) then {_this call expEden_fnc_turretAttach}";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ObjectCollision";
-							expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="setTurretLimits0";
-							expression="_this setTurretLimits [ [0], _value, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=-40;
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="setTurretLimits1";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, _value, (_this getTurretLimits [0])#2, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=40;
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="attachMarker";
-							expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="";
-								};
-							};
-						};
-						class Attribute5
-						{
-							property="setTurretLimits2";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, _value, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=-20;
-								};
-							};
-						};
-						class Attribute6
-						{
-							property="setTurretLimits3";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, _value ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=35;
-								};
-							};
-						};
-						class Attribute7
-						{
-							property="desableWeaponDisassembly";
-							expression="_this enableWeaponDisassembly _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						nAttributes=8;
-					};
-				};
-				class Item20
-				{
-					dataType="Group";
-					side="West";
-					class Entities
-					{
-						items=1;
-						class Item0
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={7900.8291,91.065109,3174.7153};
-								angles[]={0,5.4279747,0};
-							};
-							side="West";
-							flags=2;
-							class Attributes
-							{
-							};
-							id=3790;
-							type="B_UAV_AI";
-							atlOffset=3.0836716;
-						};
-					};
-					class Attributes
-					{
-					};
-					class CrewLinks
-					{
-						class LinkIDProvider
-						{
-							nextID=1;
-						};
-						class Links
-						{
-							items=1;
-							class Item0
-							{
-								linkID=0;
-								item0=3790;
-								item1=3791;
-								class CustomData
-								{
-									role=2;
-									turretPath[]={0};
-								};
-							};
-						};
-					};
-					id=3789;
-					atlOffset=0.039619446;
-				};
-				class Item21
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7873.9697,91.374939,3148.0066};
-						angles[]={0,5.4279747,0};
-					};
-					side="West";
-					flags=6;
-					class Attributes
-					{
-						init="[this, weaponmountpanel] call BIS_fnc_attachToRelative;" \n "this addEventHandler [""fired"", {(_this select 0) setVehicleAmmo 1}];";
-						reportRemoteTargets=1;
-						receiveRemoteTargets=1;
-					};
-					id=3791;
-					type="B_GMG_01_A_F";
-					atlOffset=0.039619446;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="fixPosition";
-							expression="if (_value isEqualTo true) then {_this call expEden_fnc_turretAttach}";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ObjectCollision";
-							expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="setTurretLimits0";
-							expression="_this setTurretLimits [ [0], _value, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=-40;
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="setTurretLimits1";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, _value, (_this getTurretLimits [0])#2, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=40;
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="attachMarker";
-							expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="";
-								};
-							};
-						};
-						class Attribute5
-						{
-							property="setTurretLimits2";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, _value, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=-20;
-								};
-							};
-						};
-						class Attribute6
-						{
-							property="setTurretLimits3";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, _value ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=20;
-								};
-							};
-						};
-						class Attribute7
-						{
-							property="desableWeaponDisassembly";
-							expression="_this enableWeaponDisassembly _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						nAttributes=8;
-					};
-				};
-				class Item22
-				{
-					dataType="Group";
-					side="West";
-					class Entities
-					{
-						items=1;
-						class Item0
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={7905.0654,91.083138,3174.6001};
-								angles[]={0,2.2863817,0};
-							};
-							side="West";
-							flags=2;
-							class Attributes
-							{
-							};
-							id=3793;
-							type="B_UAV_AI";
-							atlOffset=3.1016998;
-						};
-					};
-					class Attributes
-					{
-					};
-					class CrewLinks
-					{
-						class LinkIDProvider
-						{
-							nextID=1;
-						};
-						class Links
-						{
-							items=1;
-							class Item0
-							{
-								linkID=0;
-								item0=3793;
-								item1=3794;
-								class CustomData
-								{
-									role=2;
-									turretPath[]={0};
-								};
-							};
-						};
-					};
-					id=3792;
-					atlOffset=0.052619934;
-				};
-				class Item23
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7876.7104,91.432381,3145.4102};
-						angles[]={0,2.2863817,0};
-					};
-					side="West";
-					flags=6;
-					class Attributes
-					{
-						init="[this, weaponmountpanel] call BIS_fnc_attachToRelative;" \n "this addEventHandler [""fired"", {(_this select 0) setVehicleAmmo 1}];";
-						reportRemoteTargets=1;
-						receiveRemoteTargets=1;
-					};
-					id=3794;
-					type="B_HMG_01_A_F";
-					atlOffset=0.052619934;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="fixPosition";
-							expression="if (_value isEqualTo true) then {_this call expEden_fnc_turretAttach}";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ObjectCollision";
-							expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="setTurretLimits0";
-							expression="_this setTurretLimits [ [0], _value, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=-40;
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="setTurretLimits1";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, _value, (_this getTurretLimits [0])#2, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=40;
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="attachMarker";
-							expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="";
-								};
-							};
-						};
-						class Attribute5
-						{
-							property="setTurretLimits2";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, _value, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=-20;
-								};
-							};
-						};
-						class Attribute6
-						{
-							property="setTurretLimits3";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, _value ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=35;
-								};
-							};
-						};
-						class Attribute7
-						{
-							property="desableWeaponDisassembly";
-							expression="_this enableWeaponDisassembly _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						nAttributes=8;
-					};
-				};
-				class Item24
-				{
-					dataType="Group";
-					side="West";
-					class Entities
-					{
-						items=1;
-						class Item0
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={7903.7007,91.02549,3173.5691};
-								angles[]={0,2.8099804,0};
-							};
-							side="West";
-							flags=2;
-							class Attributes
-							{
-							};
-							id=3796;
-							type="B_UAV_AI";
-							atlOffset=3.0440521;
-						};
-					};
-					class Attributes
-					{
-					};
-					class CrewLinks
-					{
-						class LinkIDProvider
-						{
-							nextID=1;
-						};
-						class Links
-						{
-							items=1;
-							class Item0
-							{
-								linkID=0;
-								item0=3796;
-								item1=3797;
-								class CustomData
-								{
-									role=2;
-									turretPath[]={0};
-								};
-							};
-						};
-					};
-					id=3795;
-					atlOffset=0.039619446;
-				};
-				class Item25
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7875.8613,91.374939,3144.6633};
-						angles[]={0,2.8099804,0};
-					};
-					side="West";
-					flags=6;
-					class Attributes
-					{
-						init="[this, weaponmountpanel] call BIS_fnc_attachToRelative;" \n "this addEventHandler [""fired"", {(_this select 0) setVehicleAmmo 1}];";
-						reportRemoteTargets=1;
-						receiveRemoteTargets=1;
-					};
-					id=3797;
-					type="B_GMG_01_A_F";
-					atlOffset=0.039619446;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="fixPosition";
-							expression="if (_value isEqualTo true) then {_this call expEden_fnc_turretAttach}";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ObjectCollision";
-							expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="setTurretLimits0";
-							expression="_this setTurretLimits [ [0], _value, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=-40;
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="setTurretLimits1";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, _value, (_this getTurretLimits [0])#2, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=40;
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="attachMarker";
-							expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="";
-								};
-							};
-						};
-						class Attribute5
-						{
-							property="setTurretLimits2";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, _value, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=-20;
-								};
-							};
-						};
-						class Attribute6
-						{
-							property="setTurretLimits3";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, _value ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=20;
-								};
-							};
-						};
-						class Attribute7
-						{
-							property="desableWeaponDisassembly";
-							expression="_this enableWeaponDisassembly _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						nAttributes=8;
-					};
-				};
-				class Item26
-				{
-					dataType="Group";
-					side="West";
-					class Entities
-					{
-						items=1;
-						class Item0
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={7901.6519,91.083138,3173.4871};
-								angles[]={0,4.7647495,0};
-							};
-							side="West";
-							flags=2;
-							class Attributes
-							{
-							};
-							id=3799;
-							type="B_UAV_AI";
-							atlOffset=3.1016998;
-						};
-					};
-					class Attributes
-					{
-					};
-					class CrewLinks
-					{
-						class LinkIDProvider
-						{
-							nextID=1;
-						};
-						class Links
-						{
-							items=1;
-							class Item0
-							{
-								linkID=0;
-								item0=3799;
-								item1=3800;
-								class CustomData
-								{
-									role=2;
-									turretPath[]={0};
-								};
-							};
-						};
-					};
-					id=3798;
-					atlOffset=0.052619934;
-				};
-				class Item27
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7873.084,91.432381,3147.3608};
-						angles[]={0,4.7647495,0};
-					};
-					side="West";
-					flags=6;
-					class Attributes
-					{
-						init="[this, weaponmountpanel] call BIS_fnc_attachToRelative;" \n "this addEventHandler [""fired"", {(_this select 0) setVehicleAmmo 1}];";
-						reportRemoteTargets=1;
-						receiveRemoteTargets=1;
-					};
-					id=3800;
-					type="B_HMG_01_A_F";
-					atlOffset=0.052619934;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="fixPosition";
-							expression="if (_value isEqualTo true) then {_this call expEden_fnc_turretAttach}";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ObjectCollision";
-							expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="setTurretLimits0";
-							expression="_this setTurretLimits [ [0], _value, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=-40;
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="setTurretLimits1";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, _value, (_this getTurretLimits [0])#2, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=40;
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="attachMarker";
-							expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="";
-								};
-							};
-						};
-						class Attribute5
-						{
-							property="setTurretLimits2";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, _value, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=-20;
-								};
-							};
-						};
-						class Attribute6
-						{
-							property="setTurretLimits3";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, _value ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=35;
-								};
-							};
-						};
-						class Attribute7
-						{
-							property="desableWeaponDisassembly";
-							expression="_this enableWeaponDisassembly _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						nAttributes=8;
-					};
-				};
-				class Item28
-				{
-					dataType="Group";
-					side="West";
-					class Entities
-					{
-						items=1;
-						class Item0
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={7903.439,91.083138,3173.9805};
-								angles[]={0,3.8571782,0};
-							};
-							side="West";
-							flags=2;
-							class Attributes
-							{
-							};
-							id=3802;
-							type="B_UAV_AI";
-							atlOffset=3.1016998;
-						};
-					};
-					class Attributes
-					{
-					};
-					class CrewLinks
-					{
-						class LinkIDProvider
-						{
-							nextID=1;
-						};
-						class Links
-						{
-							items=1;
-							class Item0
-							{
-								linkID=0;
-								item0=3802;
-								item1=3803;
-								class CustomData
-								{
-									role=2;
-									turretPath[]={0};
-								};
-							};
-						};
-					};
-					id=3801;
-					atlOffset=0.052619934;
-				};
-				class Item29
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7875.2129,91.432381,3145.6609};
-						angles[]={0,3.8571782,0};
-					};
-					side="West";
-					flags=6;
-					class Attributes
-					{
-						init="[this, weaponmountpanel] call BIS_fnc_attachToRelative;" \n "this addEventHandler [""fired"", {(_this select 0) setVehicleAmmo 1}];";
-						reportRemoteTargets=1;
-						receiveRemoteTargets=1;
-					};
-					id=3803;
-					type="B_HMG_01_A_F";
-					atlOffset=0.052619934;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="fixPosition";
-							expression="if (_value isEqualTo true) then {_this call expEden_fnc_turretAttach}";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ObjectCollision";
-							expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="setTurretLimits0";
-							expression="_this setTurretLimits [ [0], _value, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=-40;
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="setTurretLimits1";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, _value, (_this getTurretLimits [0])#2, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=40;
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="attachMarker";
-							expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="";
-								};
-							};
-						};
-						class Attribute5
-						{
-							property="setTurretLimits2";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, _value, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=-20;
-								};
-							};
-						};
-						class Attribute6
-						{
-							property="setTurretLimits3";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, _value ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=35;
-								};
-							};
-						};
-						class Attribute7
-						{
-							property="desableWeaponDisassembly";
-							expression="_this enableWeaponDisassembly _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						nAttributes=8;
-					};
-				};
-				class Item30
-				{
-					dataType="Group";
-					side="West";
-					class Entities
-					{
-						items=1;
-						class Item0
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={7901.4678,90.98587,3174.1997};
-								angles[]={0,3.8571782,0};
-							};
-							side="West";
-							flags=2;
-							class Attributes
-							{
-							};
-							id=3805;
-							type="B_UAV_AI";
-							atlOffset=3.0044327;
-						};
-					};
-					class Attributes
-					{
-					};
-					class CrewLinks
-					{
-						class LinkIDProvider
-						{
-							nextID=1;
-						};
-						class Links
-						{
-							items=1;
-							class Item0
-							{
-								linkID=0;
-								item0=3805;
-								item1=3806;
-								class CustomData
-								{
-									role=2;
-									turretPath[]={0};
-								};
-							};
-						};
-					};
-					id=3804;
-					atlOffset=0.039619446;
-				};
-				class Item31
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7874.3271,91.374939,3146.6787};
-						angles[]={0,3.8571782,0};
-					};
-					side="West";
-					flags=6;
-					class Attributes
-					{
-						init="[this, weaponmountpanel] call BIS_fnc_attachToRelative;" \n "this addEventHandler [""fired"", {(_this select 0) setVehicleAmmo 1}];";
-						reportRemoteTargets=1;
-						receiveRemoteTargets=1;
-					};
-					id=3806;
-					type="B_GMG_01_A_F";
-					atlOffset=0.039619446;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="fixPosition";
-							expression="if (_value isEqualTo true) then {_this call expEden_fnc_turretAttach}";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ObjectCollision";
-							expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="setTurretLimits0";
-							expression="_this setTurretLimits [ [0], _value, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=-40;
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="setTurretLimits1";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, _value, (_this getTurretLimits [0])#2, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=40;
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="attachMarker";
-							expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="";
-								};
-							};
-						};
-						class Attribute5
-						{
-							property="setTurretLimits2";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, _value, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=-20;
-								};
-							};
-						};
-						class Attribute6
-						{
-							property="setTurretLimits3";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, _value ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=20;
-								};
-							};
-						};
-						class Attribute7
-						{
-							property="desableWeaponDisassembly";
-							expression="_this enableWeaponDisassembly _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						nAttributes=8;
-					};
-				};
-				class Item32
-				{
-					dataType="Group";
-					side="West";
-					class Entities
-					{
-						items=1;
-						class Item0
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={7903.1416,91.568428,3173.23};
-								angles[]={0,3.8571782,0};
-							};
-							side="West";
-							flags=2;
-							class Attributes
-							{
-							};
-							id=3816;
-							type="B_UAV_AI";
-							atlOffset=3.5869904;
-						};
-					};
-					class Attributes
-					{
-					};
-					class CrewLinks
-					{
-						class LinkIDProvider
-						{
-							nextID=1;
-						};
-						class Links
-						{
-							items=1;
-							class Item0
-							{
-								linkID=0;
-								item0=3816;
-								item1=3817;
-								class CustomData
-								{
-									role=2;
-									turretPath[]={0};
-								};
-							};
-						};
-					};
-					id=3815;
-					atlOffset=1.4455185;
-				};
-				class Item33
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7875.8657,92.200378,3147.5271};
-						angles[]={0,3.8571782,0};
-					};
-					side="West";
-					flags=2;
-					class Attributes
-					{
-						init="[this, ammo2] call BIS_fnc_attachToRelative;" \n "";
-						reportRemoteTargets=1;
-						reportOwnPosition=1;
-					};
-					id=3817;
-					type="B_Static_Designator_01_F";
-					atlOffset=1.4455185;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ObjectCollision";
-							expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="setTurretLimits2";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, _value, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=-7;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="attachMarker";
-							expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="";
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="setTurretLimits3";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, _value ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=70;
-								};
-							};
-						};
-						nAttributes=4;
-					};
-				};
-				class Item34
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7880.9971,90.352997,3153.26};
-						angles[]={1.5707964,2.0245821,0.8552112};
-					};
-					side="Empty";
-					flags=1;
-					class Attributes
-					{
-						init="[this, HEMTT_AutoGuntruck] call BIS_fnc_attachToRelative;" \n "";
-						disableSimulation=1;
-					};
-					id=3818;
-					type="Land_Bro_Cage_1m";
-					atlOffset=0.98453522;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ObjectCollision";
-							expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item35
-				{
-					dataType="Group";
-					side="West";
-					class Entities
-					{
-						items=1;
-						class Item0
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={7899.0044,91.216049,3182.6128};
-								angles[]={0,0.71558547,0};
-							};
-							side="West";
-							flags=2;
-							class Attributes
-							{
-							};
-							id=3820;
-							type="B_UAV_AI";
-							atlOffset=3.2346115;
-						};
-					};
-					class Attributes
-					{
-					};
-					class CrewLinks
-					{
-						class LinkIDProvider
-						{
-							nextID=1;
-						};
-						class Links
-						{
-							items=1;
-							class Item0
-							{
-								linkID=0;
-								item0=3820;
-								item1=3821;
-								class CustomData
-								{
-									role=2;
-									turretPath[]={0};
-								};
-							};
-						};
-					};
-					id=3819;
-					atlOffset=1.4367294;
-				};
-				class Item36
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7877.209,92.191589,3149.125};
-						angles[]={0,0.71558547,0};
-					};
-					side="West";
-					flags=2;
-					class Attributes
-					{
-						init="[this, ammo1] call BIS_fnc_attachToRelative;" \n "";
-						reportRemoteTargets=1;
-						reportOwnPosition=1;
-					};
-					id=3821;
-					type="B_Static_Designator_01_F";
-					atlOffset=1.4367294;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ObjectCollision";
-							expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="setTurretLimits2";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, _value, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=-7;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="attachMarker";
-							expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="";
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="setTurretLimits3";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, _value ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=70;
-								};
-							};
-						};
-						nAttributes=4;
-					};
-				};
-				class Item37
-				{
-					dataType="Group";
-					side="West";
-					class Entities
-					{
-						items=1;
-						class Item0
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={7901.9756,89.042366,3175.0215};
-								angles[]={0,0.75049156,0};
-							};
-							side="West";
-							flags=2;
-							class Attributes
-							{
-							};
-							id=3823;
-							type="B_UAV_AI";
-							atlOffset=1.0609283;
-						};
-					};
-					class Attributes
-					{
-					};
-					class CrewLinks
-					{
-						class LinkIDProvider
-						{
-							nextID=1;
-						};
-						class Links
-						{
-							items=1;
-							class Item0
-							{
-								linkID=0;
-								item0=3823;
-								item1=3824;
-								class CustomData
-								{
-									role=2;
-									turretPath[]={0};
-								};
-							};
-						};
-					};
-					id=3822;
-					atlOffset=2.6315308;
-				};
-				class Item38
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7880.3442,91.882378,3152.448};
-						angles[]={0,0.75049156,0};
-					};
-					side="West";
-					flags=2;
-					class Attributes
-					{
-						init="[this, HEMTT_AutoGuntruck] call BIS_fnc_attachToRelative;" \n "this addEventHandler [""fired"", {(_this select 0) setVehicleAmmo 1}];";
-						reportRemoteTargets=1;
-						receiveRemoteTargets=1;
-					};
-					id=3824;
-					type="B_HMG_01_A_F";
-					atlOffset=2.6315308;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="fixPosition";
-							expression="if (_value isEqualTo true) then {_this call expEden_fnc_turretAttach}";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ObjectCollision";
-							expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="setTurretLimits0";
-							expression="_this setTurretLimits [ [0], _value, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=-40;
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="setTurretLimits1";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, _value, (_this getTurretLimits [0])#2, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=40;
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="attachMarker";
-							expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="";
-								};
-							};
-						};
-						class Attribute5
-						{
-							property="setTurretLimits2";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, _value, (_this getTurretLimits [0])#3 ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=-20;
-								};
-							};
-						};
-						class Attribute6
-						{
-							property="setTurretLimits3";
-							expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, _value ]";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=35;
-								};
-							};
-						};
-						class Attribute7
-						{
-							property="desableWeaponDisassembly";
-							expression="_this enableWeaponDisassembly _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						nAttributes=8;
-					};
-				};
-			};
 			id=3825;
-			atlOffset=2.7737198;
+			atlOffset=50.009998;
 		};
-		class Item33
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={7877.1938,91.017807,3149.136};
-				angles[]={0,2.2863817,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-				init="[this, weaponmountpanel] call BIS_fnc_attachToRelative;" \n "";
-				name="ammo1";
-				disableSimulation=1;
-			};
-			id=3831;
-			type="Box_NATO_AmmoVeh_F";
-			atlOffset=0.32836914;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ObjectCollision";
-					expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=0;
-						};
-					};
-				};
-				nAttributes=2;
-			};
-		};
-		class Item34
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={7875.9785,91.037804,3147.7102};
-				angles[]={0,2.2863817,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="[this, weaponmountpanel] call BIS_fnc_attachToRelative;" \n "";
-				name="ammo2";
-				disableSimulation=1;
-			};
-			id=3832;
-			type="Box_NATO_AmmoVeh_F";
-			atlOffset=0.00061798096;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ObjectCollision";
-					expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=0;
-						};
-					};
-				};
-				nAttributes=2;
-			};
-		};
-		class Item35
+		class Item31
 		{
 			dataType="Group";
 			side="West";
@@ -94678,7 +91896,7 @@ class Mission
 			id=4134;
 			atlOffset=0.0090026855;
 		};
-		class Item36
+		class Item32
 		{
 			dataType="Group";
 			side="West";
@@ -94931,7 +92149,7 @@ class Mission
 			id=4152;
 			atlOffset=0.13198853;
 		};
-		class Item37
+		class Item33
 		{
 			dataType="Group";
 			side="West";
@@ -95174,7 +92392,7 @@ class Mission
 			id=4159;
 			atlOffset=0.12264252;
 		};
-		class Item38
+		class Item34
 		{
 			dataType="Group";
 			side="Civilian";
@@ -95345,7 +92563,7 @@ class Mission
 			id=4164;
 			atlOffset=0.083999634;
 		};
-		class Item39
+		class Item35
 		{
 			dataType="Group";
 			side="Civilian";
@@ -95517,7 +92735,7 @@ class Mission
 			id=4166;
 			atlOffset=0.083999634;
 		};
-		class Item40
+		class Item36
 		{
 			dataType="Group";
 			side="Civilian";
@@ -95688,7 +92906,7 @@ class Mission
 			id=4170;
 			atlOffset=0.39284515;
 		};
-		class Item41
+		class Item37
 		{
 			dataType="Group";
 			side="Civilian";
@@ -95860,7 +93078,7 @@ class Mission
 			id=4172;
 			atlOffset=0.080360413;
 		};
-		class Item42
+		class Item38
 		{
 			dataType="Group";
 			side="West";
@@ -96028,7 +93246,7 @@ class Mission
 			id=4175;
 			atlOffset=0.48600006;
 		};
-		class Item43
+		class Item39
 		{
 			dataType="Group";
 			side="West";
@@ -96228,7 +93446,7 @@ class Mission
 			id=4178;
 			atlOffset=0.08240509;
 		};
-		class Item44
+		class Item40
 		{
 			dataType="Object";
 			class PositionInfo
@@ -96262,7 +93480,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item45
+		class Item41
 		{
 			dataType="Trigger";
 			position[]={8194.7666,87.979996,3045.252};
@@ -96281,7 +93499,7 @@ class Mission
 			id=4199;
 			type="EmptyDetector";
 		};
-		class Item46
+		class Item42
 		{
 			dataType="Group";
 			side="Civilian";
@@ -96441,7 +93659,7 @@ class Mission
 			id=4257;
 			atlOffset=0.18399811;
 		};
-		class Item47
+		class Item43
 		{
 			dataType="Group";
 			side="West";
@@ -96863,7 +94081,7 @@ class Mission
 			id=4278;
 			atlOffset=0.63300323;
 		};
-		class Item48
+		class Item44
 		{
 			dataType="Group";
 			side="West";
@@ -97283,7 +94501,7 @@ class Mission
 			};
 			id=4280;
 		};
-		class Item49
+		class Item45
 		{
 			dataType="Group";
 			side="West";
@@ -97706,7 +94924,7 @@ class Mission
 			id=4282;
 			atlOffset=5.2979965;
 		};
-		class Item50
+		class Item46
 		{
 			dataType="Group";
 			side="West";
@@ -98088,7 +95306,7 @@ class Mission
 			};
 			id=4284;
 		};
-		class Item51
+		class Item47
 		{
 			dataType="Group";
 			side="West";
@@ -98511,7 +95729,7 @@ class Mission
 			id=4286;
 			atlOffset=0.033615112;
 		};
-		class Item52
+		class Item48
 		{
 			dataType="Group";
 			side="West";
@@ -98934,7 +96152,7 @@ class Mission
 			id=4288;
 			atlOffset=5.2459869;
 		};
-		class Item53
+		class Item49
 		{
 			dataType="Group";
 			side="West";
@@ -99357,7 +96575,7 @@ class Mission
 			id=4290;
 			atlOffset=5.2979965;
 		};
-		class Item54
+		class Item50
 		{
 			dataType="Group";
 			side="West";
@@ -99780,7 +96998,7 @@ class Mission
 			id=4292;
 			atlOffset=5.0953979;
 		};
-		class Item55
+		class Item51
 		{
 			dataType="Group";
 			side="West";
@@ -100203,7 +97421,7 @@ class Mission
 			id=4294;
 			atlOffset=5.2524033;
 		};
-		class Item56
+		class Item52
 		{
 			dataType="Group";
 			side="West";
@@ -100632,7 +97850,7 @@ class Mission
 			id=4300;
 			atlOffset=5.0611115;
 		};
-		class Item57
+		class Item53
 		{
 			dataType="Group";
 			side="West";
@@ -101061,7 +98279,7 @@ class Mission
 			id=4302;
 			atlOffset=0.14237213;
 		};
-		class Item58
+		class Item54
 		{
 			dataType="Group";
 			side="West";
@@ -101490,7 +98708,7 @@ class Mission
 			id=4304;
 			atlOffset=0.14237213;
 		};
-		class Item59
+		class Item55
 		{
 			dataType="Group";
 			side="West";
@@ -101919,7 +99137,7 @@ class Mission
 			id=4306;
 			atlOffset=0.14237213;
 		};
-		class Item60
+		class Item56
 		{
 			dataType="Group";
 			side="West";
@@ -102342,7 +99560,7 @@ class Mission
 			id=4308;
 			atlOffset=0.033615112;
 		};
-		class Item61
+		class Item57
 		{
 			dataType="Group";
 			side="West";
@@ -102765,7 +99983,7 @@ class Mission
 			id=4310;
 			atlOffset=5.0673599;
 		};
-		class Item62
+		class Item58
 		{
 			dataType="Group";
 			side="West";
@@ -103188,7 +100406,7 @@ class Mission
 			id=4312;
 			atlOffset=0.033615112;
 		};
-		class Item63
+		class Item59
 		{
 			dataType="Group";
 			side="West";
@@ -103611,7 +100829,7 @@ class Mission
 			id=4314;
 			atlOffset=0.033615112;
 		};
-		class Item64
+		class Item60
 		{
 			dataType="Group";
 			side="West";
@@ -104034,7 +101252,7 @@ class Mission
 			id=4316;
 			atlOffset=0.033615112;
 		};
-		class Item65
+		class Item61
 		{
 			dataType="Group";
 			side="West";
@@ -104457,7 +101675,7 @@ class Mission
 			id=4318;
 			atlOffset=0.033615112;
 		};
-		class Item66
+		class Item62
 		{
 			dataType="Group";
 			side="West";
@@ -104880,7 +102098,7 @@ class Mission
 			id=4320;
 			atlOffset=0.033615112;
 		};
-		class Item67
+		class Item63
 		{
 			dataType="Group";
 			side="West";
@@ -105309,7 +102527,7 @@ class Mission
 			id=4342;
 			atlOffset=9.1504364;
 		};
-		class Item68
+		class Item64
 		{
 			dataType="Group";
 			side="West";
@@ -105672,7 +102890,7 @@ class Mission
 			id=4346;
 			atlOffset=3.6782227;
 		};
-		class Item69
+		class Item65
 		{
 			dataType="Group";
 			side="West";
@@ -105884,7 +103102,7 @@ class Mission
 			id=4352;
 			atlOffset=3.6781921;
 		};
-		class Item70
+		class Item66
 		{
 			dataType="Group";
 			side="West";
@@ -106096,7 +103314,7 @@ class Mission
 			id=4353;
 			atlOffset=3.6490326;
 		};
-		class Item71
+		class Item67
 		{
 			dataType="Group";
 			side="Civilian";
@@ -106279,7 +103497,7 @@ class Mission
 			id=4359;
 			atlOffset=0.057868958;
 		};
-		class Item72
+		class Item68
 		{
 			dataType="Group";
 			side="Civilian";
@@ -106317,14 +103535,14 @@ class Mission
 					{
 						class Attribute0
 						{
-							property="enableStamina";
-							expression="_this enablestamina _value;";
+							property="ENH_doStop";
+							expression="if (!is3DEN && _value) then {doStop _this}";
 							class Value
 							{
 								class data
 								{
 									singleType="BOOL";
-									value=0;
+									value=1;
 								};
 							};
 						};
@@ -106484,14 +103702,14 @@ class Mission
 						};
 						class Attribute5
 						{
-							property="ENH_doStop";
-							expression="if (!is3DEN && _value) then {doStop _this}";
+							property="enableStamina";
+							expression="_this enablestamina _value;";
 							class Value
 							{
 								class data
 								{
 									singleType="BOOL";
-									value=1;
+									value=0;
 								};
 							};
 						};
@@ -106505,7 +103723,7 @@ class Mission
 			id=4373;
 			atlOffset=0.22766876;
 		};
-		class Item73
+		class Item69
 		{
 			dataType="Group";
 			side="Civilian";
@@ -106691,7 +103909,7 @@ class Mission
 			};
 			id=4385;
 		};
-		class Item74
+		class Item70
 		{
 			dataType="Group";
 			side="Civilian";
@@ -106860,7 +104078,7 @@ class Mission
 			};
 			id=4387;
 		};
-		class Item75
+		class Item71
 		{
 			dataType="Group";
 			side="West";
@@ -107030,7 +104248,7 @@ class Mission
 			id=4390;
 			atlOffset=0.06098175;
 		};
-		class Item76
+		class Item72
 		{
 			dataType="Group";
 			side="West";
@@ -107473,7 +104691,7 @@ class Mission
 			};
 			id=4409;
 		};
-		class Item77
+		class Item73
 		{
 			dataType="Group";
 			side="West";
@@ -107916,7 +105134,7 @@ class Mission
 			};
 			id=4411;
 		};
-		class Item78
+		class Item74
 		{
 			dataType="Group";
 			side="West";
@@ -108364,6 +105582,774 @@ class Mission
 				};
 			};
 			id=4434;
+		};
+		class Item75
+		{
+			dataType="Layer";
+			name="FARP";
+			id=4986;
+			atlOffset=50.009998;
+		};
+		class Item76
+		{
+			dataType="Layer";
+			name="Living Quarters #O";
+			id=5020;
+			atlOffset=50.009998;
+		};
+		class Item77
+		{
+			dataType="Layer";
+			name="Landing Zone #O";
+			id=5043;
+			atlOffset=50.009998;
+		};
+		class Item78
+		{
+			dataType="Layer";
+			name="Radio Tower #O";
+			id=5075;
+			atlOffset=50.009998;
+		};
+		class Item79
+		{
+			dataType="Layer";
+			name="UAV Terminal #O";
+			id=5105;
+			atlOffset=50.009998;
+		};
+		class Item80
+		{
+			dataType="Layer";
+			name="Vehicle Bunker #O";
+			id=5121;
+			atlOffset=50.009998;
+		};
+		class Item81
+		{
+			dataType="Layer";
+			name="Vehicle Cargo Post #O";
+			id=5150;
+			atlOffset=50.009998;
+		};
+		class Item82
+		{
+			dataType="Layer";
+			name="Vehicle Watchtower #O";
+			id=5174;
+			atlOffset=50.009998;
+		};
+		class Item83
+		{
+			dataType="Layer";
+			name="Bunker (Small) Checkpoint #O";
+			id=5195;
+			atlOffset=50.009998;
+		};
+		class Item84
+		{
+			dataType="Layer";
+			name="Fuel Dump #O";
+			id=5220;
+			atlOffset=50.009998;
+		};
+		class Item85
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7878.9043,90.486809,3153.7019};
+				angles[]={0,2.2689281,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="[this, Mortar_HET] call BIS_fnc_attachToRelative;" \n "this addEventHandler [""fired"", {(_this select 0) setVehicleAmmo 1}];";
+			};
+			id=5721;
+			type="BWA3_MRS120_Fleck";
+			atlOffset=1.3945313;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectCollision";
+					expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="setTurretLimits2";
+					expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, _value, (_this getTurretLimits [0])#3 ]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=-13;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="attachMarker";
+					expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="setTurretLimits3";
+					expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, _value ]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=20;
+						};
+					};
+				};
+				nAttributes=4;
+			};
+		};
+		class Item86
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7867.3042,87.873505,3333.9092};
+				angles[]={-0,2.2863815,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+			};
+			id=5730;
+			type="BWA3_NH90_TTH_M3M_Fleck";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="attachMarker";
+					expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ObjectCollision";
+					expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item87
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7877.2324,90.800369,3151.5188};
+				angles[]={-0,0.69813162,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="Mortar_HET";
+			};
+			id=5723;
+			type="TEC_VH_WD_Truck_Ghatar";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="attachMarker";
+					expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ObjectCollision";
+					expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item88
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7880.5078,89.890305,3153.0288};
+				angles[]={0,2.2689281,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="[this, Mortar_HET] call BIS_fnc_attachToRelative;" \n "";
+				disableSimulation=1;
+			};
+			id=5734;
+			type="Land_BagFence_01_long_green_F";
+			atlOffset=1.3545303;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectCollision";
+					expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item89
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7878.6616,89.890305,3150.8142};
+				angles[]={0,2.2689281,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="[this, Mortar_HET] call BIS_fnc_attachToRelative;" \n "";
+				disableSimulation=1;
+			};
+			id=5735;
+			type="Land_BagFence_01_long_green_F";
+			atlOffset=1.3545303;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectCollision";
+					expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item90
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7877.1572,89.910713,3149.073};
+				angles[]={0,2.2689281,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="[this, Mortar_HET] call BIS_fnc_attachToRelative;" \n "";
+				disableSimulation=1;
+			};
+			id=5736;
+			type="Land_BagFence_01_short_green_F";
+			atlOffset=1.3795319;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectCollision";
+					expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item91
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7874.9658,89.910713,3151.1558};
+				angles[]={0,2.2689281,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="[this, Mortar_HET] call BIS_fnc_attachToRelative;" \n "";
+				disableSimulation=1;
+			};
+			id=5737;
+			type="Land_BagFence_01_short_green_F";
+			atlOffset=1.3795319;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectCollision";
+					expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item92
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7876.4702,89.890305,3152.8972};
+				angles[]={0,2.2689281,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="[this, Mortar_HET] call BIS_fnc_attachToRelative;" \n "";
+				disableSimulation=1;
+			};
+			id=5738;
+			type="Land_BagFence_01_long_green_F";
+			atlOffset=1.3545303;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectCollision";
+					expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item93
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7878.3247,89.890305,3155.0876};
+				angles[]={0,2.2689281,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="[this, Mortar_HET] call BIS_fnc_attachToRelative;" \n "";
+				disableSimulation=1;
+			};
+			id=5739;
+			type="Land_BagFence_01_long_green_F";
+			atlOffset=1.3545303;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectCollision";
+					expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item94
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7877.3057,90.486809,3151.4841};
+				angles[]={0,5.410521,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="[this, Mortar_HET] call BIS_fnc_attachToRelative;" \n "this addEventHandler [""fired"", {(_this select 0) setVehicleAmmo 1}];";
+			};
+			id=5740;
+			type="BWA3_MRS120_Fleck";
+			atlOffset=1.3945313;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectCollision";
+					expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="setTurretLimits2";
+					expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, _value, (_this getTurretLimits [0])#3 ]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=-13;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="attachMarker";
+					expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="setTurretLimits3";
+					expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, _value ]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=20;
+						};
+					};
+				};
+				nAttributes=4;
+			};
+		};
+		class Item95
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8068.5742,87.979996,3313.8391};
+				angles[]={0,0.76794487,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this setVariable [""WHF_vehicleLock_gunner"", [""role"", [""arty""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+				textures="ForestCamo";
+			};
+			id=5744;
+			type="pook_M777_DES";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="VehicleCustomization";
+					expression="if (local _this) then {([_this] + _value + [true]) call (uinamespace getvariable 'BIS_fnc_initVehicle')};";
+					class Value
+					{
+						class data
+						{
+							singleType="ARRAY";
+							class value
+							{
+								items=2;
+								class Item0
+								{
+									class data
+									{
+										singleType="ARRAY";
+										class value
+										{
+											items=2;
+											class Item0
+											{
+												class data
+												{
+													singleType="STRING";
+													value="ForestCamo";
+												};
+											};
+											class Item1
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1;
+												};
+											};
+										};
+									};
+								};
+								class Item1
+								{
+									class data
+									{
+										singleType="ARRAY";
+									};
+								};
+							};
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ObjectCollision";
+					expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="setTurretLimits2";
+					expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, _value, (_this getTurretLimits [0])#3 ]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=-2;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="attachMarker";
+					expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="setTurretLimits3";
+					expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, _value ]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=85;
+						};
+					};
+				};
+				nAttributes=5;
+			};
+		};
+		class Item96
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8073.6523,87.979996,3309.3301};
+				angles[]={0,0.76794487,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this setVariable [""WHF_vehicleLock_gunner"", [""role"", [""arty""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+				textures="ForestCamo";
+			};
+			id=5745;
+			type="pook_M777_DES";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="VehicleCustomization";
+					expression="if (local _this) then {([_this] + _value + [true]) call (uinamespace getvariable 'BIS_fnc_initVehicle')};";
+					class Value
+					{
+						class data
+						{
+							singleType="ARRAY";
+							class value
+							{
+								items=2;
+								class Item0
+								{
+									class data
+									{
+										singleType="ARRAY";
+										class value
+										{
+											items=2;
+											class Item0
+											{
+												class data
+												{
+													singleType="STRING";
+													value="ForestCamo";
+												};
+											};
+											class Item1
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1;
+												};
+											};
+										};
+									};
+								};
+								class Item1
+								{
+									class data
+									{
+										singleType="ARRAY";
+									};
+								};
+							};
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ObjectCollision";
+					expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="setTurretLimits2";
+					expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, _value, (_this getTurretLimits [0])#3 ]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=-2;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="attachMarker";
+					expression="if (_value isNotEqualTo '') then {[_this, _value] spawn expEden_fnc_markerAttachToObject}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="setTurretLimits3";
+					expression="_this setTurretLimits [ [0], (_this getTurretLimits [0])#0, (_this getTurretLimits [0])#1, (_this getTurretLimits [0])#2, _value ]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=85;
+						};
+					};
+				};
+				nAttributes=5;
+			};
 		};
 	};
 };
