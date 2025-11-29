@@ -90,7 +90,7 @@ call {
         private _vehicleArgs = [opfor, [_vehicleType], [_standard], 1, _pos, 30];
         private _vehicleGroup = _vehicleArgs call WHF_fnc_spawnVehicles;
         private _groupVehicles = assignedVehicles _vehicleGroup;
-        [_vehicleGroup, _pos] call BIS_fnc_taskDefend;
+        [_vehicleGroup, _pos, 100] call BIS_fnc_taskPatrol;
         _groups pushBack _vehicleGroup;
         _vehicles append _groupVehicles;
 
