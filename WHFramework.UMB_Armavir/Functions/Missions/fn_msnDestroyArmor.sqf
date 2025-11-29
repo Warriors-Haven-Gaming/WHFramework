@@ -75,8 +75,8 @@ call {
     _objects append _centerService;
     _objects append _centerTurrets;
 
-    private _quantity = [8, 16] call WHF_fnc_scaleUnitsSide;
-    private _group = [opfor, _infantryTypes, _quantity, _center, 20] call WHF_fnc_spawnUnits;
+    private _quantity = [16, 32] call WHF_fnc_scaleUnitsSide;
+    private _group = [opfor, _infantryTypes, _quantity, _center, _centerRadius] call WHF_fnc_spawnUnits;
     [_group, _center] call BIS_fnc_taskDefend;
     _groups pushBack _group;
 
