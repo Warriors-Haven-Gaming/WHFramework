@@ -93,6 +93,8 @@ call {
     _groups pushBack _vehicleGroup;
     _vehicles append _groupVehicles;
 
+    [_groupVehicles, _pos, 30] call WHF_fnc_setPosOnRoads;
+
     {if (random 1 < 0.5) then {_vehicleGroup leaveVehicle _x}} forEach _groupVehicles;
     _vehicleGroup setVariable ["WHF_assignedVehicles", _groupVehicles];
     _vehicleGroup addEventHandler ["CombatModeChanged", {
