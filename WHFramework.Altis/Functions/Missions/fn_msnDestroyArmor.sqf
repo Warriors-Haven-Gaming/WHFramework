@@ -157,9 +157,17 @@ _areaMarker setMarkerAlpha 0.7;
 
 private _activeVehicles = {_vehicles select {alive _x} inAreaArray _area};
 private _current = count call _activeVehicles;
+private _total = _current;
+private _threshold = ceil (_total * 0.2) min (_total - 1);
 
 private _getDescription = {[
-    ["STR_WHF_destroyArmor_description", _current, _areaMarker],
+    [
+        "STR_WHF_destroyArmor_description",
+        _current,
+        _areaMarker,
+        _current - _threshold max 0,
+        _total - _threshold
+    ],
     "STR_WHF_destroyArmor_title"
 ]};
 
@@ -179,7 +187,7 @@ while {true} do {
     sleep 10;
 
     _current = count call _activeVehicles;
-    if (_current < 1) exitWith {
+    if (_current <= _threshold) exitWith {
         private _message = "$STR_WHF_destroyArmor_success";
         [[blufor, "BLU"], _message] remoteExec ["WHF_fnc_localizedSideChat", blufor];
         [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
