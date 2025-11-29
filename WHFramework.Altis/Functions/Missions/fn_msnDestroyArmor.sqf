@@ -88,9 +88,20 @@ call {
 
     private _vehicleArgs = [opfor, [_vehicleType], [_standard], _vehicleQuantity, _pos, 30];
     private _vehicleGroup = _vehicleArgs call WHF_fnc_spawnVehicles;
+    private _groupVehicles = assignedVehicles _vehicleGroup;
     [_vehicleGroup, _pos] call BIS_fnc_taskDefend;
     _groups pushBack _vehicleGroup;
-    _vehicles append assignedVehicles _vehicleGroup;
+    _vehicles append _groupVehicles;
+
+    {if (random 1 < 0.5) then {_vehicleGroup leaveVehicle _x}} forEach _groupVehicles;
+    _vehicleGroup setVariable ["WHF_assignedVehicles", _groupVehicles];
+    _vehicleGroup addEventHandler ["CombatModeChanged", {
+        params ["_vehicleGroup", "_mode"];
+        if (_mode isNotEqualTo "COMBAT") exitWith {};
+        _vehicleGroup removeEventHandler [_thisEvent, _thisEventHandler];
+        private _groupVehicles = _vehicleGroup getVariable ["WHF_assignedVehicles", []];
+        {_vehicleGroup addVehicle _x} forEach _groupVehicles;
+    }];
 
     private _infantryQuantity = [8, 16] call WHF_fnc_scaleUnitsSide;
     private _infantryArgs = [opfor, [_standard], _infantryQuantity, _pos, 30];
