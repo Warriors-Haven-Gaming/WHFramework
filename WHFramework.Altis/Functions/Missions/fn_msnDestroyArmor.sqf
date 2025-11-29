@@ -136,6 +136,8 @@ call {
     [["aa", _faction],       [1, 3] call WHF_fnc_scaleUnitsSide]
 ];
 
+[_groups, _area] spawn WHF_fnc_attackLoop;
+
 if (count _vehicles < 1) exitWith {
     diag_log text format ["%1: center %2 not clear to spawn vehicles", _fnc_scriptName, _center];
     [_objects] call WHF_fnc_queueGCDeletion;
