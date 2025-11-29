@@ -129,13 +129,13 @@ call {
         _objects append _depot;
     };
 } forEach [
-    [["standard", _faction], [4, 8] call WHF_fnc_scaleUnitsSide],
-    [["supply", _faction],   [3, 6] call WHF_fnc_scaleUnitsSide],
-    [["mrap", _faction],     [2, 4] call WHF_fnc_scaleUnitsSide],
-    [["apc", _faction],      [2, 4] call WHF_fnc_scaleUnitsSide],
-    [["ifv", _faction],      [2, 4] call WHF_fnc_scaleUnitsSide],
-    [["mbt", _faction],      [2, 4] call WHF_fnc_scaleUnitsSide],
-    [["aa", _faction],       [1, 3] call WHF_fnc_scaleUnitsSide]
+    [["standard", _faction], [2, 3] call WHF_fnc_scaleUnitsSide],
+    [["supply", _faction],   [2, 3] call WHF_fnc_scaleUnitsSide],
+    [["mrap", _faction],     [2, 3] call WHF_fnc_scaleUnitsSide],
+    [["apc", _faction],      [2, 3] call WHF_fnc_scaleUnitsSide],
+    [["ifv", _faction],      [2, 3] call WHF_fnc_scaleUnitsSide],
+    [["mbt", _faction],      [2, 3] call WHF_fnc_scaleUnitsSide],
+    [["aa", _faction],       [2, 3] call WHF_fnc_scaleUnitsSide]
 ];
 
 [_groups, _area] spawn WHF_fnc_attackLoop;
