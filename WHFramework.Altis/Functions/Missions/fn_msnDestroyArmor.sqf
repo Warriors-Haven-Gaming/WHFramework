@@ -121,7 +121,7 @@ call {
 
         private _depotDir = ((_depotPos getDir _pos) + 90) % 360;
         private _depot = [
-            [["StorageBladder_01_fuel_forest_F",[-1,1,0],90],["CamoNet_ghex_open_F",[0,0,1.09],90],["B_Slingload_01_Fuel_F",[-1,-7,0],60],["Box_East_AmmoVeh_F",[-3,7,0],0],["Land_RepairDepot_01_green_F",[-8,3,0],0],["Land_RepairDepot_01_green_F",[-8,-3,0],0],["Land_FuelStation_01_pump_F",[-6,7,0],0],["Land_FuelStation_01_pump_F",[-9,7,0],0],["B_Slingload_01_Ammo_F",[-8,-9,0],90]],
+            [["StorageBladder_01_fuel_forest_F",[-1,1,0],90],["CamoNet_ghex_open_F",[0,0,1.09],90],["B_Slingload_01_Fuel_F",[-1,-7,0],60],["Box_East_AmmoVeh_F",[-3,7,0],0],["Land_RepairDepot_01_green_F",[-8,3,0],0],["Land_FuelStation_01_pump_F",[-6,7,0],0],["Land_FuelStation_01_pump_F",[-9,7,0],0]],
             _depotPos,
             _depotDir,
             ["normal", "simple"]
