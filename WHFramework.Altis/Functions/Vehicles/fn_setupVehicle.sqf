@@ -33,6 +33,19 @@ switch (true) do {
         [_vehicle, WHF_aps_ammoMBT] call WHF_fnc_addAPS;
         _vehicle addMagazineTurret ["16Rnd_120mm_HE_shells_Tracer_Red", [0]];
     };
+    // BWMod
+    case (_vehicle isKindOf "BWA3_Dingo2_base"): {
+        [_vehicle, WHF_aps_ammoMRAP] call WHF_fnc_addAPS;
+    };
+    case (_vehicle isKindOf "BWA3_Eagle_base"): {
+        [_vehicle, WHF_aps_ammoMRAP] call WHF_fnc_addAPS;
+    };
+    case (_vehicle isKindOf "BWA3_Leopard_base"): {
+        [_vehicle, WHF_aps_ammoMBT] call WHF_fnc_addAPS;
+    };
+    case (_vehicle isKindOf "BWA3_Puma_base"): {
+        [_vehicle, WHF_aps_ammoAPC] call WHF_fnc_addAPS;
+    };
     // CUP
     case (_vehicle isKindOf "CUP_AAV_Base"): {
         [_vehicle, WHF_aps_ammoAPC] call WHF_fnc_addAPS;
