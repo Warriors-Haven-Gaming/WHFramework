@@ -16,10 +16,11 @@ improve stability and make it easier to develop new objectives and functionality
 
 Warriors Haven Framework provides a reoccurring main objective and side objectives
 procedurally generated across the map, using terrain features and marked locations
-to take full advantage of the map's topography. The main objective aims for
-infantry-focused combat, providing lightly armored vehicles and turrets that
-players can dispatch with their firearms alone. However, players can also opt for
-combined arms tactics, with dozens of ground and aerial vehicles to choose from.
+to take full advantage of the map's topography. The main objective aims for dynamic
+combat operations, providing a mix of enemy infantry, emplacements, light vehicles,
+heavy armor, ships, and aircraft for players to dispatch. Players can also opt for
+their own combined arms tactics, with dozens of ground and aerial vehicles to choose
+from parking lots and vehicle spawner laptops.
 
 Worried about playing this gamemode alone? Recruits are always available to fight
 with you, capable of reviving and sustaining themselves in prolonged firefights.
