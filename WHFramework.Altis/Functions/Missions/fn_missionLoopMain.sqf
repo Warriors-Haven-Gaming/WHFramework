@@ -25,7 +25,7 @@ private _spawnNextScript = {
     // followed up with a FOB defense mission.
     call WHF_fnc_cycleFaction;
     if (random 1 < 1) exitWith {
-        if (_total > 0) then {sleep (60 + random 120)}; // Grace period
+        if (_total > 0) then {sleep (180 + random 120)}; // Grace period
         [] spawn WHF_fnc_msnMainAnnexRegion
     };
     scriptNull
