@@ -173,8 +173,8 @@ private _MRAPs = [
     ["ef_b_mrap_01_mjtf_des",              [-1,  []]],
     ["ef_b_mrap_01_hmg_mjtf_des",          [-1,  []]],
     ["ef_b_mrap_01_gmg_mjtf_des",          [600, []]],
-    ["ef_b_mrap_01_fsv_mjtf_des",          [900, []]],
-    ["ef_b_mrap_01_at_mjtf_des",           [900, []]],
+    ["ef_b_mrap_01_fsv_mjtf_des",          [600, []]],
+    ["ef_b_mrap_01_at_mjtf_des",           [600, []]],
     ["bwa3_dingo2_flw100_mg3_cg13_fleck",  [-1,  []]],
     ["bwa3_dingo2_flw100_mg3_cg13_tropen", [-1,  []]],
     ["bwa3_dingo2_flw200_m2_cg13_fleck",   [-1,  []]],
@@ -200,7 +200,7 @@ private _MRAPs = [
     ["", []]
 ];
 
-private _APCsCooldown = 900;
+private _APCsCooldown = 300;
 private _APCs = [
     ["cup_b_m1130_cv_m2_woodland",                 [600, []]],
     ["cup_b_m1135_atgmv_woodland",                 [-1,  []]],
@@ -223,7 +223,7 @@ private _APCs = [
     ["", []]
 ];
 
-private _IFVsCooldown = 900;
+private _IFVsCooldown = 300;
 private _IFVs = [
     ["cup_b_lav25m240_usmc",                       [600, []]],
     ["cup_b_m7bradley_usa_w",                      [-1,  []]],
@@ -274,12 +274,12 @@ private _utility = [
     ["", []]
 ];
 
-private _artilleryCooldown = 1800;
+private _artilleryCooldown = 600;
 private _artillery = [
-    ["cup_b_fv432_mortar",                          [1200, ["arty"]]],
-    ["cup_b_m1129_mc_mk19_woodland",                [1200, ["arty"]]],
-    ["b_d_apc_wheeled_01_mortar_lxws",              [1200, ["arty"]]],
-    ["b_twinmortar_rf",                             [2100, ["arty"]]],
+    ["cup_b_fv432_mortar",                          [300,  ["arty"]]],
+    ["cup_b_m1129_mc_mk19_woodland",                [300,  ["arty"]]],
+    ["b_d_apc_wheeled_01_mortar_lxws",              [300,  ["arty"]]],
+    ["b_twinmortar_rf",                             [300,  ["arty"]]],
     ["b_mbt_01_arty_f",                             [-1,   ["arty"]]],
     ["sparky_jsdf_overhaul_type74_105mm_spg",       [-1,   ["arty"]]],
     ["sparky_jsdf_overhaul_type75_155mm_spg",       [-1,   ["arty"]]],
@@ -299,7 +299,7 @@ private _artillery = [
     ["", []]
 ];
 
-private _airdefenseCooldown = 900;
+private _airdefenseCooldown = 300;
 private _airdefense = [
     ["cup_b_m6linebacker_usa_w",                 [-1,   ["aa"]]],
     ["cup_b_m163_vulcan_usa",                    [300,  ["aa"]]],
@@ -326,7 +326,7 @@ private _airdefense = [
     ["", []]
 ];
 
-private _tanksCooldown = 1500;
+private _tanksCooldown = 300;
 private _tanks = [
     ["qav_abramsx",                                   [-1,   ["engineer"]]],
     ["qav_abramsx_tusk",                              [-1,   ["engineer"]]],
@@ -334,10 +334,10 @@ private _tanks = [
     ["cup_b_m1a2c_tusk_ii_woodland_us_army",          [-1,   ["engineer"]]],
     ["cup_b_challenger2_woodland_baf",                [-1,   ["engineer"]]],
     ["cup_o_t90m_ru",                                 [-1,   ["engineer"]]],
-    ["b_d_mbt_01_tusk_lxws",                          [1000, ["engineer"]]],
+    ["b_d_mbt_01_tusk_lxws",                          [600,  ["engineer"]]],
     ["b_mbt_01_cannon_f",                             [-1,   ["engineer"]]],
     ["b_mbt_01_tusk_f",                               [-1,   ["engineer"]]],
-    ["b_afv_wheeled_01_up_cannon_f",                  [900,  ["engineer"]]],
+    ["b_afv_wheeled_01_up_cannon_f",                  [600,  ["engineer"]]],
     ["ef_b_mbt_01_tusk_mjtf_wdl",                     [-1,   ["engineer"]]],
     ["ef_b_mbt_01_tusk_mjtf_des",                     [-1,   ["engineer"]]],
     ["e22_b_jtf_mbt_03_cannon_f",                     [-1,   ["engineer"]]],
