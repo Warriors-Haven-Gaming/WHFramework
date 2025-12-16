@@ -149,6 +149,22 @@ isNil {with uiNamespace do {
                 ]
             };
         };
+
+        getAssetDLCInfo [call WHF_vehSpawnGUI_getSelectedVehicle]
+            params ["_isDLC", "_isOwned", "", "", "", "_dlcName"];
+        private _dlc = switch (true) do {
+            case (_isDLC && _isOwned): {parseText format [
+                "<t align='center' color='#00ff00'>%1</t>",
+                _dlcName
+            ]};
+            case (_isDLC && !_isOwned): {parseText format [
+                "<t align='center' color='#ff0000'>%1</t>",
+                _dlcName
+            ]};
+            default {text ""};
+        };
+        _text = composeText [_dlc, lineBreak, _text];
+
         WHF_vehSpawnGUI_ctrlStatus ctrlSetStructuredText _text;
     };
 
@@ -181,7 +197,7 @@ isNil {with uiNamespace do {
     WHF_vehSpawnGUI_ctrlVehicle_preview = objNull;
 
     WHF_vehSpawnGUI_ctrlStatus = _display ctrlCreate ["RscStructuredText", -1];
-    WHF_vehSpawnGUI_ctrlStatus ctrlSetPosition [safeZoneX + 0.615 * safeZoneW, safeZoneY + 0.755 * safeZoneH, 0.1 * safeZoneW, 0.02 * safeZoneH];
+    WHF_vehSpawnGUI_ctrlStatus ctrlSetPosition [safeZoneX + 0.55 * safeZoneW, safeZoneY + 0.735 * safeZoneH, 0.23 * safeZoneW, 0.04 * safeZoneH];
     WHF_vehSpawnGUI_ctrlStatus ctrlEnable false;
     WHF_vehSpawnGUI_ctrlStatus ctrlCommit 0;
 
