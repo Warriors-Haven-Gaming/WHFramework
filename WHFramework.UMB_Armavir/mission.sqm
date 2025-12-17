@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6564.9766,23.783844,3774.5442};
-		dir[]={-0.86031199,-0.46504307,0.20923439};
-		up[]={-0.45186707,0.88529247,0.10989844};
-		aside[]={0.2363406,-1.006294e-06,0.97176772};
+		pos[]={6265.2188,244.07585,5247.9204};
+		dir[]={0.20153724,-0.62180698,0.7567966};
+		up[]={0.16001244,0.78316998,0.60086602};
+		aside[]={0.96632284,1.7578714e-08,-0.25733471};
 	};
 };
 binarizationWanted=0;
@@ -82698,7 +82698,6 @@ class Mission
 							class Attributes
 							{
 								disableSimulation=1;
-								dynamicSimulation=1;
 							};
 							id=1243;
 							type="Land_RepairDepot_01_green_F";
@@ -82747,7 +82746,6 @@ class Mission
 							class Attributes
 							{
 								disableSimulation=1;
-								dynamicSimulation=1;
 							};
 							id=1244;
 							type="Land_RepairDepot_01_green_F";
@@ -82795,7 +82793,6 @@ class Mission
 							class Attributes
 							{
 								disableSimulation=1;
-								dynamicSimulation=1;
 							};
 							id=2679;
 							type="Land_RepairDepot_01_green_F";
@@ -82843,7 +82840,6 @@ class Mission
 							class Attributes
 							{
 								disableSimulation=1;
-								dynamicSimulation=1;
 							};
 							id=3282;
 							type="Land_RepairDepot_01_green_F";
@@ -82891,7 +82887,6 @@ class Mission
 							class Attributes
 							{
 								disableSimulation=1;
-								dynamicSimulation=1;
 							};
 							id=3883;
 							type="Land_RepairDepot_01_green_F";
@@ -82939,7 +82934,6 @@ class Mission
 							class Attributes
 							{
 								disableSimulation=1;
-								dynamicSimulation=1;
 							};
 							id=3888;
 							type="Land_RepairDepot_01_green_F";
@@ -83116,8 +83110,6 @@ class Mission
 							class Attributes
 							{
 								init="[this, [0,5,0]] call WHF_fnc_initSpawnRecruitAction;";
-								disableSimulation=1;
-								dynamicSimulation=1;
 							};
 							id=6243;
 							type="Flag_Blue_F";
@@ -83178,7 +83170,6 @@ class Mission
 							class Attributes
 							{
 								disableSimulation=1;
-								dynamicSimulation=1;
 							};
 							id=6249;
 							type="Land_RepairDepot_01_green_F";
@@ -91282,7 +91273,7 @@ class Mission
 							name="marker_2";
 							text="Base artillery";
 							type="b_air";
-							angle=357.99997;
+							angle=357.99994;
 							id=6217;
 							class CustomAttributes
 							{
@@ -106562,6 +106553,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				disableSimulation=1;
 			};
 			id=5760;
 			type="VCM_Cargo_Crate";
@@ -106577,6 +106569,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				disableSimulation=1;
 			};
 			id=5761;
 			type="VCM_Cargo_Crate";
@@ -115355,7 +115348,6 @@ class Mission
 			class Attributes
 			{
 				disableSimulation=1;
-				dynamicSimulation=1;
 			};
 			id=6244;
 			type="VCM_Cargo_Crate";
@@ -124069,18 +124061,17 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6498.4453,2.9753962,3791.6519};
+				position[]={6498.4448,2.9753907,3791.6521};
 				angles[]={0,5.7421336,0};
 			};
 			side="Empty";
 			class Attributes
 			{
 				disableSimulation=1;
-				dynamicSimulation=1;
 			};
 			id=6406;
 			type="Land_RepairDepot_01_green_F";
-			atlOffset=7.5770235;
+			atlOffset=7.5769997;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -124123,6 +124114,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
+				disableSimulation=1;
 			};
 			id=6407;
 			type="VCM_Cargo_Crate";
