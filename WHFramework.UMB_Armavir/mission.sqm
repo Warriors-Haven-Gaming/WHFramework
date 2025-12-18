@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=329;
+		nextID=339;
 	};
 	class Camera
 	{
-		pos[]={6265.2188,244.07585,5247.9204};
-		dir[]={0.20153724,-0.62180698,0.7567966};
-		up[]={0.16001244,0.78316998,0.60086602};
-		aside[]={0.96632284,1.7578714e-08,-0.25733471};
+		pos[]={6525.7671,3.3692498,3814.1094};
+		dir[]={-0.33837926,-0.56186491,0.75485957};
+		up[]={-0.22983144,0.82722664,0.51271039};
+		aside[]={0.9125151,-1.0244548e-08,0.40905076};
 	};
 };
 binarizationWanted=0;
@@ -91273,7 +91273,7 @@ class Mission
 							name="marker_2";
 							text="Base artillery";
 							type="b_air";
-							angle=357.99994;
+							angle=357.99991;
 							id=6217;
 							class CustomAttributes
 							{
@@ -104540,14 +104540,14 @@ class Mission
 					{
 						class Attribute0
 						{
-							property="enableStamina";
-							expression="_this enablestamina _value;";
+							property="ENH_doStop";
+							expression="if (!is3DEN && _value) then {doStop _this}";
 							class Value
 							{
 								class data
 								{
 									singleType="BOOL";
-									value=0;
+									value=1;
 								};
 							};
 						};
@@ -104707,14 +104707,14 @@ class Mission
 						};
 						class Attribute5
 						{
-							property="ENH_doStop";
-							expression="if (!is3DEN && _value) then {doStop _this}";
+							property="enableStamina";
+							expression="_this enablestamina _value;";
 							class Value
 							{
 								class data
 								{
 									singleType="BOOL";
-									value=1;
+									value=0;
 								};
 							};
 						};
@@ -124742,17 +124742,6 @@ class Mission
 									ammoLeft=30;
 								};
 							};
-							class secondaryWeapon
-							{
-								name="launch_PSRL1_black_RF";
-								optics="optic_Hamr";
-								flashlight="acc_pointer_IR";
-								class primaryMuzzleMag
-								{
-									name="PSRL1_AT_RF";
-									ammoLeft=1;
-								};
-							};
 							class handgun
 							{
 								name="ef_hgun_P07_coy";
@@ -124833,24 +124822,12 @@ class Mission
 								isBackpack=1;
 								class MagazineCargo
 								{
-									items=3;
+									items=1;
 									class Item0
 									{
 										name="EF_30Rnd_65x39_caseless_coy_mag";
 										count=16;
 										ammoLeft=30;
-									};
-									class Item1
-									{
-										name="PSRL1_AT_RF";
-										count=3;
-										ammoLeft=1;
-									};
-									class Item2
-									{
-										name="PSRL1_HE_RF";
-										count=1;
-										ammoLeft=1;
 									};
 								};
 							};
