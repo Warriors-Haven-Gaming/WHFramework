@@ -29,6 +29,7 @@ DEFAULT_BRANCHES = (
     "kaska",
     "enoch",
     "armavir",
+    "malden",
     "main",
 )
 
