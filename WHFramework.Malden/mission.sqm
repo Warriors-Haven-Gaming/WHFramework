@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=20;
+		nextID=30;
 	};
 	class Camera
 	{
@@ -2550,6 +2550,23 @@ class Mission
 					};
 					id=1;
 					atlOffset=96.5;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="groupID";
+							expression="                            if (isNil 'CBA_fnc_setCallsign') then {                                _this setGroupID [_value];                            } else {                                [_this, _value] call CBA_fnc_setCallsign;                            };";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Main Group";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 			};
 			id=0;
@@ -2596,7 +2613,7 @@ class Mission
 					position[]={8063,29.639599,10245};
 					name="respawn_west_pilot_transport";
 					type="Empty";
-					angle=354.99994;
+					angle=354.99991;
 					id=132;
 					class CustomAttributes
 					{
@@ -2674,7 +2691,7 @@ class Mission
 					position[]={8047,29.579199,10238};
 					name="respawn_west_pilot_cas_heli";
 					type="Empty";
-					angle=224.99994;
+					angle=224.99992;
 					id=135;
 					class CustomAttributes
 					{
