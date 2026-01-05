@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={12599.333,34.688629,412.55576};
-		dir[]={-1.2363449e-07,-0.70710683,0.70710683};
-		up[]={-1.2363449e-07,0.70710671,0.70710683};
-		aside[]={1,0,1.7484557e-07};
+		pos[]={12745.499,84.16465,336.7471};
+		dir[]={-0.62972254,-0.51900029,0.57801801};
+		up[]={-0.38235131,0.85477138,0.35095787};
+		aside[]={0.6762194,-9.8487362e-08,0.7367087};
 	};
 };
 binarizationWanted=0;
@@ -889,6 +889,19 @@ class Mission
 							{
 								class Attribute0
 								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								class Attribute1
+								{
 									property="speaker";
 									expression="_this setspeaker _value;";
 									class Value
@@ -900,7 +913,7 @@ class Mission
 										};
 									};
 								};
-								class Attribute1
+								class Attribute2
 								{
 									property="pitch";
 									expression="_this setpitch _value;";
@@ -913,7 +926,7 @@ class Mission
 										};
 									};
 								};
-								nAttributes=2;
+								nAttributes=3;
 							};
 						};
 						class Item1
@@ -932,6 +945,23 @@ class Mission
 							id=3;
 							type="B_Soldier_F";
 							atlOffset=3.2424927e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item2
 						{
@@ -949,6 +979,23 @@ class Mission
 							id=4;
 							type="B_Soldier_F";
 							atlOffset=3.2424927e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item3
 						{
@@ -966,6 +1013,23 @@ class Mission
 							id=5;
 							type="B_Soldier_F";
 							atlOffset=3.2424927e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item4
 						{
@@ -983,6 +1047,23 @@ class Mission
 							id=6;
 							type="B_Soldier_F";
 							atlOffset=3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item5
 						{
@@ -1000,6 +1081,23 @@ class Mission
 							id=7;
 							type="B_Soldier_F";
 							atlOffset=3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item6
 						{
@@ -1017,6 +1115,23 @@ class Mission
 							id=8;
 							type="B_Soldier_F";
 							atlOffset=3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item7
 						{
@@ -1034,6 +1149,23 @@ class Mission
 							id=9;
 							type="B_Soldier_F";
 							atlOffset=3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item8
 						{
@@ -1051,6 +1183,23 @@ class Mission
 							id=10;
 							type="B_Soldier_F";
 							atlOffset=3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item9
 						{
@@ -1068,6 +1217,23 @@ class Mission
 							id=11;
 							type="B_Soldier_F";
 							atlOffset=3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item10
 						{
@@ -1085,6 +1251,23 @@ class Mission
 							id=12;
 							type="B_Soldier_F";
 							atlOffset=3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item11
 						{
@@ -1102,6 +1285,23 @@ class Mission
 							id=13;
 							type="B_Soldier_F";
 							atlOffset=3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item12
 						{
@@ -1119,6 +1319,23 @@ class Mission
 							id=14;
 							type="B_Soldier_F";
 							atlOffset=3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item13
 						{
@@ -1136,6 +1353,23 @@ class Mission
 							id=15;
 							type="B_Soldier_F";
 							atlOffset=3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item14
 						{
@@ -1153,6 +1387,23 @@ class Mission
 							id=16;
 							type="B_Soldier_F";
 							atlOffset=3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item15
 						{
@@ -1170,6 +1421,23 @@ class Mission
 							id=17;
 							type="B_Soldier_F";
 							atlOffset=4.6730042e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item16
 						{
@@ -1187,6 +1455,23 @@ class Mission
 							id=18;
 							type="B_Soldier_F";
 							atlOffset=3.2424927e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item17
 						{
@@ -1204,6 +1489,23 @@ class Mission
 							id=19;
 							type="B_Soldier_F";
 							atlOffset=3.2424927e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item18
 						{
@@ -1221,6 +1523,23 @@ class Mission
 							id=20;
 							type="B_Soldier_F";
 							atlOffset=3.2424927e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item19
 						{
@@ -1238,6 +1557,23 @@ class Mission
 							id=21;
 							type="B_Soldier_F";
 							atlOffset=3.2424927e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item20
 						{
@@ -1255,6 +1591,23 @@ class Mission
 							id=22;
 							type="B_Soldier_F";
 							atlOffset=3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item21
 						{
@@ -1272,6 +1625,23 @@ class Mission
 							id=23;
 							type="B_Soldier_F";
 							atlOffset=3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item22
 						{
@@ -1289,6 +1659,23 @@ class Mission
 							id=24;
 							type="B_Soldier_F";
 							atlOffset=3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item23
 						{
@@ -1306,6 +1693,23 @@ class Mission
 							id=25;
 							type="B_Soldier_F";
 							atlOffset=3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item24
 						{
@@ -1323,6 +1727,23 @@ class Mission
 							id=26;
 							type="B_Soldier_F";
 							atlOffset=3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item25
 						{
@@ -1340,6 +1761,23 @@ class Mission
 							id=27;
 							type="B_Soldier_F";
 							atlOffset=3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item26
 						{
@@ -1357,6 +1795,23 @@ class Mission
 							id=28;
 							type="B_Soldier_F";
 							atlOffset=3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item27
 						{
@@ -1374,6 +1829,23 @@ class Mission
 							id=29;
 							type="B_Soldier_F";
 							atlOffset=3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item28
 						{
@@ -1391,6 +1863,23 @@ class Mission
 							id=30;
 							type="B_Soldier_F";
 							atlOffset=3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item29
 						{
@@ -1408,6 +1897,23 @@ class Mission
 							id=31;
 							type="B_Soldier_F";
 							atlOffset=3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item30
 						{
@@ -1425,6 +1931,23 @@ class Mission
 							id=32;
 							type="B_Soldier_F";
 							atlOffset=3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item31
 						{
@@ -1442,6 +1965,23 @@ class Mission
 							id=33;
 							type="B_Soldier_F";
 							atlOffset=3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item32
 						{
@@ -1459,6 +1999,23 @@ class Mission
 							id=34;
 							type="B_Soldier_F";
 							atlOffset=-8.7738037e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item33
 						{
@@ -1476,6 +2033,23 @@ class Mission
 							id=35;
 							type="B_Soldier_F";
 							atlOffset=-8.7738037e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item34
 						{
@@ -1493,6 +2067,23 @@ class Mission
 							id=36;
 							type="B_Soldier_F";
 							atlOffset=-8.7738037e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item35
 						{
@@ -1510,6 +2101,23 @@ class Mission
 							id=37;
 							type="B_Soldier_F";
 							atlOffset=-8.7738037e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item36
 						{
@@ -1527,6 +2135,23 @@ class Mission
 							id=38;
 							type="B_Soldier_F";
 							atlOffset=-8.7738037e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item37
 						{
@@ -1544,6 +2169,23 @@ class Mission
 							id=39;
 							type="B_Soldier_F";
 							atlOffset=-8.7738037e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item38
 						{
@@ -1561,6 +2203,23 @@ class Mission
 							id=40;
 							type="B_Soldier_F";
 							atlOffset=-5.7220459e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item39
 						{
@@ -1578,6 +2237,23 @@ class Mission
 							id=41;
 							type="B_Soldier_F";
 							atlOffset=-3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item40
 						{
@@ -1595,6 +2271,23 @@ class Mission
 							id=42;
 							type="B_Soldier_F";
 							atlOffset=-3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item41
 						{
@@ -1612,6 +2305,23 @@ class Mission
 							id=43;
 							type="B_Soldier_F";
 							atlOffset=-3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item42
 						{
@@ -1629,6 +2339,23 @@ class Mission
 							id=44;
 							type="B_Soldier_F";
 							atlOffset=-3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item43
 						{
@@ -1646,6 +2373,23 @@ class Mission
 							id=45;
 							type="B_Soldier_F";
 							atlOffset=-3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item44
 						{
@@ -1663,6 +2407,23 @@ class Mission
 							id=46;
 							type="B_Soldier_F";
 							atlOffset=-3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item45
 						{
@@ -1680,6 +2441,23 @@ class Mission
 							id=47;
 							type="B_Soldier_F";
 							atlOffset=-3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item46
 						{
@@ -1697,6 +2475,23 @@ class Mission
 							id=48;
 							type="B_Soldier_F";
 							atlOffset=-3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item47
 						{
@@ -1714,6 +2509,23 @@ class Mission
 							id=49;
 							type="B_Soldier_F";
 							atlOffset=-3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item48
 						{
@@ -1731,6 +2543,23 @@ class Mission
 							id=50;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item49
 						{
@@ -1748,6 +2577,23 @@ class Mission
 							id=51;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item50
 						{
@@ -1765,6 +2611,23 @@ class Mission
 							id=52;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item51
 						{
@@ -1782,6 +2645,23 @@ class Mission
 							id=53;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item52
 						{
@@ -1799,6 +2679,23 @@ class Mission
 							id=54;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item53
 						{
@@ -1816,6 +2713,23 @@ class Mission
 							id=55;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item54
 						{
@@ -1833,6 +2747,23 @@ class Mission
 							id=56;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item55
 						{
@@ -1850,6 +2781,23 @@ class Mission
 							id=57;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item56
 						{
@@ -1867,6 +2815,23 @@ class Mission
 							id=58;
 							type="B_Soldier_F";
 							atlOffset=-1.7166138e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item57
 						{
@@ -1884,6 +2849,23 @@ class Mission
 							id=59;
 							type="B_Soldier_F";
 							atlOffset=-1.5258789e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item58
 						{
@@ -1901,6 +2883,23 @@ class Mission
 							id=60;
 							type="B_Soldier_F";
 							atlOffset=-1.5258789e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item59
 						{
@@ -1918,6 +2917,23 @@ class Mission
 							id=61;
 							type="B_Soldier_F";
 							atlOffset=-1.5258789e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item60
 						{
@@ -1935,6 +2951,23 @@ class Mission
 							id=62;
 							type="B_Soldier_F";
 							atlOffset=-1.5258789e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item61
 						{
@@ -1952,6 +2985,23 @@ class Mission
 							id=63;
 							type="B_Soldier_F";
 							atlOffset=-1.5258789e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item62
 						{
@@ -1969,6 +3019,23 @@ class Mission
 							id=64;
 							type="B_Soldier_F";
 							atlOffset=-1.5258789e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item63
 						{
@@ -1986,6 +3053,23 @@ class Mission
 							id=65;
 							type="B_Soldier_F";
 							atlOffset=-1.5258789e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item64
 						{
@@ -2003,6 +3087,23 @@ class Mission
 							id=66;
 							type="B_Soldier_F";
 							atlOffset=-8.7738037e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item65
 						{
@@ -2020,6 +3121,23 @@ class Mission
 							id=67;
 							type="B_Soldier_F";
 							atlOffset=-8.7738037e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item66
 						{
@@ -2037,6 +3155,23 @@ class Mission
 							id=68;
 							type="B_Soldier_F";
 							atlOffset=-8.7738037e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item67
 						{
@@ -2054,6 +3189,23 @@ class Mission
 							id=69;
 							type="B_Soldier_F";
 							atlOffset=-8.7738037e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item68
 						{
@@ -2071,6 +3223,23 @@ class Mission
 							id=70;
 							type="B_Soldier_F";
 							atlOffset=-8.7738037e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item69
 						{
@@ -2088,6 +3257,23 @@ class Mission
 							id=71;
 							type="B_Soldier_F";
 							atlOffset=-8.7738037e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item70
 						{
@@ -2105,6 +3291,23 @@ class Mission
 							id=72;
 							type="B_Soldier_F";
 							atlOffset=-8.7738037e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item71
 						{
@@ -2122,6 +3325,23 @@ class Mission
 							id=73;
 							type="B_Soldier_F";
 							atlOffset=-8.7738037e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item72
 						{
@@ -2139,6 +3359,23 @@ class Mission
 							id=74;
 							type="B_Soldier_F";
 							atlOffset=-8.7738037e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item73
 						{
@@ -2156,6 +3393,23 @@ class Mission
 							id=75;
 							type="B_Soldier_F";
 							atlOffset=-8.7738037e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item74
 						{
@@ -2173,6 +3427,23 @@ class Mission
 							id=76;
 							type="B_Soldier_F";
 							atlOffset=-5.9127808e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item75
 						{
@@ -2190,6 +3461,23 @@ class Mission
 							id=77;
 							type="B_Soldier_F";
 							atlOffset=-3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item76
 						{
@@ -2207,6 +3495,23 @@ class Mission
 							id=78;
 							type="B_Soldier_F";
 							atlOffset=-3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item77
 						{
@@ -2224,6 +3529,23 @@ class Mission
 							id=79;
 							type="B_Soldier_F";
 							atlOffset=-3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item78
 						{
@@ -2241,6 +3563,23 @@ class Mission
 							id=80;
 							type="B_Soldier_F";
 							atlOffset=-3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item79
 						{
@@ -2258,6 +3597,23 @@ class Mission
 							id=81;
 							type="B_Soldier_F";
 							atlOffset=-3.0517578e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item80
 						{
@@ -2275,6 +3631,23 @@ class Mission
 							id=82;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item81
 						{
@@ -2292,6 +3665,23 @@ class Mission
 							id=83;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item82
 						{
@@ -2309,6 +3699,23 @@ class Mission
 							id=84;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item83
 						{
@@ -2326,6 +3733,23 @@ class Mission
 							id=85;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item84
 						{
@@ -2343,6 +3767,23 @@ class Mission
 							id=86;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item85
 						{
@@ -2360,6 +3801,23 @@ class Mission
 							id=87;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item86
 						{
@@ -2377,6 +3835,23 @@ class Mission
 							id=88;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item87
 						{
@@ -2394,6 +3869,23 @@ class Mission
 							id=89;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item88
 						{
@@ -2411,6 +3903,23 @@ class Mission
 							id=90;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item89
 						{
@@ -2428,6 +3937,23 @@ class Mission
 							id=91;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item90
 						{
@@ -2445,6 +3971,23 @@ class Mission
 							id=92;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item91
 						{
@@ -2462,6 +4005,23 @@ class Mission
 							id=93;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item92
 						{
@@ -2479,6 +4039,23 @@ class Mission
 							id=94;
 							type="B_Soldier_F";
 							atlOffset=-1.5258789e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item93
 						{
@@ -2496,6 +4073,23 @@ class Mission
 							id=95;
 							type="B_Soldier_F";
 							atlOffset=-1.5258789e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item94
 						{
@@ -2513,6 +4107,23 @@ class Mission
 							id=96;
 							type="B_Soldier_F";
 							atlOffset=-1.5258789e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item95
 						{
@@ -2530,6 +4141,23 @@ class Mission
 							id=97;
 							type="B_Soldier_F";
 							atlOffset=-1.5258789e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item96
 						{
@@ -2547,6 +4175,23 @@ class Mission
 							id=98;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item97
 						{
@@ -2564,6 +4209,23 @@ class Mission
 							id=99;
 							type="B_Soldier_F";
 							atlOffset=-5.531311e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item98
 						{
@@ -2581,6 +4243,23 @@ class Mission
 							id=100;
 							type="B_Soldier_F";
 							atlOffset=-5.7220459e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item99
 						{
@@ -2598,6 +4277,23 @@ class Mission
 							id=101;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item100
 						{
@@ -2615,6 +4311,23 @@ class Mission
 							id=102;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item101
 						{
@@ -2632,6 +4345,23 @@ class Mission
 							id=103;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item102
 						{
@@ -2649,6 +4379,23 @@ class Mission
 							id=104;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item103
 						{
@@ -2666,6 +4413,23 @@ class Mission
 							id=105;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item104
 						{
@@ -2683,6 +4447,23 @@ class Mission
 							id=106;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item105
 						{
@@ -2700,6 +4481,23 @@ class Mission
 							id=107;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item106
 						{
@@ -2717,6 +4515,23 @@ class Mission
 							id=108;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item107
 						{
@@ -2734,6 +4549,23 @@ class Mission
 							id=109;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item108
 						{
@@ -2751,6 +4583,23 @@ class Mission
 							id=110;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item109
 						{
@@ -2768,6 +4617,23 @@ class Mission
 							id=111;
 							type="B_Soldier_F";
 							atlOffset=-4.3869019e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item110
 						{
@@ -2785,6 +4651,23 @@ class Mission
 							id=112;
 							type="B_Soldier_F";
 							atlOffset=-1.5258789e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item111
 						{
@@ -2802,6 +4685,23 @@ class Mission
 							id=113;
 							type="B_Soldier_F";
 							atlOffset=-1.5258789e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item112
 						{
@@ -2819,6 +4719,23 @@ class Mission
 							id=114;
 							type="B_Soldier_F";
 							atlOffset=-5.7220459e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item113
 						{
@@ -2836,6 +4753,23 @@ class Mission
 							id=115;
 							type="B_Soldier_F";
 							atlOffset=-5.7220459e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item114
 						{
@@ -2853,6 +4787,23 @@ class Mission
 							id=116;
 							type="B_Soldier_F";
 							atlOffset=-5.7220459e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item115
 						{
@@ -2870,6 +4821,23 @@ class Mission
 							id=117;
 							type="B_Soldier_F";
 							atlOffset=-5.7220459e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item116
 						{
@@ -2887,6 +4855,23 @@ class Mission
 							id=118;
 							type="B_Soldier_F";
 							atlOffset=-4.196167e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item117
 						{
@@ -2904,6 +4889,23 @@ class Mission
 							id=119;
 							type="B_Soldier_F";
 							atlOffset=-4.196167e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item118
 						{
@@ -2921,6 +4923,23 @@ class Mission
 							id=120;
 							type="B_Soldier_F";
 							atlOffset=-4.196167e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item119
 						{
@@ -2938,6 +4957,23 @@ class Mission
 							id=121;
 							type="B_Soldier_F";
 							atlOffset=-4.196167e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item120
 						{
@@ -2955,6 +4991,23 @@ class Mission
 							id=122;
 							type="B_Soldier_F";
 							atlOffset=-4.196167e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item121
 						{
@@ -2972,6 +5025,23 @@ class Mission
 							id=123;
 							type="B_Soldier_F";
 							atlOffset=-4.196167e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item122
 						{
@@ -2989,6 +5059,23 @@ class Mission
 							id=124;
 							type="B_Soldier_F";
 							atlOffset=-4.196167e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item123
 						{
@@ -3006,6 +5093,23 @@ class Mission
 							id=125;
 							type="B_Soldier_F";
 							atlOffset=-4.196167e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item124
 						{
@@ -3023,6 +5127,23 @@ class Mission
 							id=126;
 							type="B_Soldier_F";
 							atlOffset=-4.196167e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item125
 						{
@@ -3040,6 +5161,23 @@ class Mission
 							id=127;
 							type="B_Soldier_F";
 							atlOffset=-4.2915344e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item126
 						{
@@ -3057,6 +5195,23 @@ class Mission
 							id=128;
 							type="B_Soldier_F";
 							atlOffset=-4.196167e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item127
 						{
@@ -3074,6 +5229,23 @@ class Mission
 							id=129;
 							type="B_Soldier_F";
 							atlOffset=-4.196167e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ObjectCollision";
+									expression="[_this, 	(			[false,true] select (if 		(_value in [true,false]) 	then 	{parseNumber _value} else {_value # 0}		 ) ) 	] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 					};
 					class Attributes
@@ -3081,6 +5253,23 @@ class Mission
 					};
 					id=1;
 					atlOffset=96.5;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="groupID";
+							expression="                            if (isNil 'CBA_fnc_setCallsign') then {                                _this setGroupID [_value];                            } else {                                [_this, _value] call CBA_fnc_setCallsign;                            };";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Main Group";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 			};
 			id=0;
