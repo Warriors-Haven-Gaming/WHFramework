@@ -20,7 +20,7 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={12723.318,33.774887,15.474998};
+		pos[]={12599.333,34.688629,412.55576};
 		dir[]={0,-0.70710683,0.70710683};
 		up[]={0,0.70710677,0.70710677};
 		aside[]={0.99999994,0,-0};
@@ -13650,6 +13650,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]]; " \n "[this] call WHF_fnc_addRespawnVehicle;";
 								textures="Green";
 								reportOwnPosition=1;
 							};
@@ -13865,6 +13866,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]]; " \n "[this] call WHF_fnc_addRespawnVehicle;";
 								textures="Green";
 								reportOwnPosition=1;
 							};
@@ -14080,7 +14082,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this] call WHF_fnc_addRespawnVehicle;";
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]]; " \n "[this] call WHF_fnc_addRespawnVehicle;";
 								textures="Green";
 								reportOwnPosition=1;
 							};
@@ -15195,6 +15197,7 @@ class Mission
 							side="Empty";
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 								reportRemoteTargets=1;
 								receiveRemoteTargets=1;
 								reportOwnPosition=1;
@@ -15244,6 +15247,7 @@ class Mission
 							side="Empty";
 							class Attributes
 							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
 								reportRemoteTargets=1;
 								receiveRemoteTargets=1;
 								reportOwnPosition=1;
@@ -15571,7 +15575,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this] call WHF_fnc_addRespawnVehicle;";
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 								reportRemoteTargets=1;
 								receiveRemoteTargets=1;
 								reportOwnPosition=1;
