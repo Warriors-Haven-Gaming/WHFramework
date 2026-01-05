@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=150;
+		nextID=160;
 	};
 	class Camera
 	{
 		pos[]={12599.333,34.688629,412.55576};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		dir[]={-1.2363449e-07,-0.70710683,0.70710683};
+		up[]={-1.2363449e-07,0.70710671,0.70710683};
+		aside[]={1,0,1.7484557e-07};
 	};
 };
 binarizationWanted=0;
@@ -3705,19 +3705,6 @@ class Mission
 								};
 								class Attribute2
 								{
-									property="CustomShipNumber3";
-									expression="[([_this, 'Land_Destroyer_01_hull_01_F'] call bis_fnc_destroyer01GetShipPart), _value, 2] spawn bis_fnc_destroyer01InitHullNumbers;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=7;
-										};
-									};
-								};
-								class Attribute3
-								{
 									property="SwitchTextureDestroyer3";
 									expression="([_this,'Land_Destroyer_01_hull_05_F'] call bis_fnc_destroyer01GetShipPart) setObjectTextureGlobal [0, _value]";
 									class Value
@@ -3726,6 +3713,19 @@ class Mission
 										{
 											singleType="STRING";
 											value="\A3\Boat_F_Destroyer\Destroyer_01\Data\Destroyer_01_tag_01_co.paa";
+										};
+									};
+								};
+								class Attribute3
+								{
+									property="CustomShipNumber3";
+									expression="[([_this, 'Land_Destroyer_01_hull_01_F'] call bis_fnc_destroyer01GetShipPart), _value, 2] spawn bis_fnc_destroyer01InitHullNumbers;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=7;
 										};
 									};
 								};
@@ -3961,6 +3961,7 @@ class Mission
 								angles[]={0,1.2391838,0};
 							};
 							side="Empty";
+							flags=4;
 							class Attributes
 							{
 								createAsSimpleObject=1;
@@ -3968,7 +3969,7 @@ class Mission
 							};
 							id=152;
 							type="Land_CampingTable_small_F";
-							atlOffset=3.5160103;
+							atlOffset=0.0011138916;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -4067,7 +4068,6 @@ class Mission
 								angles[]={0,1.3090056,0};
 							};
 							side="Empty";
-							flags=4;
 							class Attributes
 							{
 								createAsSimpleObject=1;
@@ -4075,7 +4075,7 @@ class Mission
 							};
 							id=240;
 							type="Land_CampingTable_small_F";
-							atlOffset=0.010076523;
+							atlOffset=94.193932;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -4219,7 +4219,7 @@ class Mission
 							};
 							id=764;
 							type="Land_CampingTable_small_F";
-							atlOffset=0.00075721741;
+							atlOffset=0.001783371;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -7841,7 +7841,7 @@ class Mission
 							};
 							id=428;
 							type="Land_LiquidDispenser_01_F";
-							atlOffset=0.81307793;
+							atlOffset=0.81287098;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -16155,7 +16155,7 @@ class Mission
 							};
 							id=289;
 							type="B_supplyCrate_F";
-							atlOffset=0.00050354004;
+							atlOffset=0.0013275146;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -16353,7 +16353,7 @@ class Mission
 							};
 							id=295;
 							type="B_supplyCrate_F";
-							atlOffset=3.4332275e-05;
+							atlOffset=0.0024909973;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -16394,7 +16394,6 @@ class Mission
 								angles[]={0,6.0388961,0};
 							};
 							side="Empty";
-							flags=4;
 							class Attributes
 							{
 								init="[this] call WHF_fnc_initArsenal;";
@@ -16402,7 +16401,7 @@ class Mission
 							};
 							id=296;
 							type="B_supplyCrate_F";
-							atlOffset=0.022192001;
+							atlOffset=14.349815;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -16443,6 +16442,7 @@ class Mission
 								angles[]={0,2.8449421,0};
 							};
 							side="Empty";
+							flags=4;
 							class Attributes
 							{
 								init="[this] call WHF_fnc_initArsenal;";
@@ -16450,7 +16450,7 @@ class Mission
 							};
 							id=301;
 							type="B_supplyCrate_F";
-							atlOffset=6.9897275;
+							atlOffset=0.0024986267;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -16644,7 +16644,6 @@ class Mission
 							class Attributes
 							{
 								init="[this, [0,5,0]] call WHF_fnc_initSpawnRecruitAction;";
-								disableSimulation=1;
 							};
 							id=305;
 							type="Flag_Blue_F";
@@ -16719,7 +16718,6 @@ class Mission
 							class Attributes
 							{
 								init="[this, [0,5,0]] call WHF_fnc_initSpawnRecruitAction;";
-								disableSimulation=1;
 							};
 							id=307;
 							type="Flag_Blue_F";
@@ -16792,7 +16790,6 @@ class Mission
 							class Attributes
 							{
 								init="[this, [0,5,0]] call WHF_fnc_initSpawnRecruitAction;";
-								disableSimulation=1;
 							};
 							id=308;
 							type="Flag_Blue_F";
@@ -16866,7 +16863,6 @@ class Mission
 							class Attributes
 							{
 								init="[this, [0,5,0]] call WHF_fnc_initSpawnRecruitAction;";
-								disableSimulation=1;
 							};
 							id=309;
 							type="Flag_Blue_F";
@@ -16937,6 +16933,7 @@ class Mission
 								angles[]={0,1.309036,0};
 							};
 							side="Empty";
+							flags=4;
 							class Attributes
 							{
 								init="[this] call WHF_fnc_initArsenal;";
@@ -16944,7 +16941,7 @@ class Mission
 							};
 							id=356;
 							type="B_supplyCrate_F";
-							atlOffset=8.9251175;
+							atlOffset=0.0011444092;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -17041,6 +17038,7 @@ class Mission
 							};
 							id=358;
 							type="B_supplyCrate_F";
+							atlOffset=0.0011444092;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -17084,7 +17082,6 @@ class Mission
 							class Attributes
 							{
 								init="[this, [0,5,0]] call WHF_fnc_initSpawnRecruitAction;";
-								disableSimulation=1;
 							};
 							id=584;
 							type="Flag_Blue_F";
@@ -17581,7 +17578,6 @@ class Mission
 							{
 								init="this addAction [""Teleport to USS Vicious"",{player setPosATL (getPosATL dest1)}];" \n "this addAction [""Teleport to USS Liberty"",{player setPosATL (getPosATL dest2)}];" \n "this addAction [""Teleport to HMCS Thegamecracks"",{player setPosATL (getPosATL dest3)}];" \n "this addAction [""Teleport to USS Signal Hill"",{player setPosATL (getPosATL LHA)}];";
 								name="carrier";
-								disableSimulation=1;
 							};
 							id=650;
 							type="Flag_Red_F";
@@ -17656,7 +17652,6 @@ class Mission
 							{
 								init="this addAction [""Teleport to USS Liberty"",{player setPosATL (getPosATL dest2)}];" \n "this addAction [""Teleport to HCMS Thegamecracks"",{player setPosATL (getPosATL dest3)}];" \n "this addAction [""Teleport to USS Freedom"",{player setPosATL (getPosATL carrier)}];" \n "this addAction [""Teleport to USS Signal Hill"",{player setPosATL (getPosATL LHA)}];";
 								name="dest1";
-								disableSimulation=1;
 							};
 							id=539;
 							type="Flag_Red_F";
@@ -17732,7 +17727,6 @@ class Mission
 							{
 								init="this addAction [""Teleport to USS Vicious"",{player setPosATL (getPosATL dest1)}];" \n "this addAction [""Teleport to HCMS Thegamecracks"",{player setPosATL (getPosATL dest3)}];" \n "this addAction [""Teleport to USS Freedom"",{player setPosATL (getPosATL carrier)}];" \n "this addAction [""Teleport to USS Signal Hill"",{player setPosATL (getPosATL LHA)}];";
 								name="dest2";
-								disableSimulation=1;
 							};
 							id=585;
 							type="Flag_Red_F";
@@ -17807,7 +17801,6 @@ class Mission
 							{
 								init="this addAction [""Teleport to USS Vicious"",{player setPosATL (getPosATL dest1)}];" \n "this addAction [""Teleport to USS Liberty"",{player setPosATL (getPosATL dest2)}];" \n "this addAction [""Teleport to USS Freedom"",{player setPosATL (getPosATL carrier)}];" \n "this addAction [""Teleport to USS Signal Hill"",{player setPosATL (getPosATL LHA)}];";
 								name="dest3";
-								disableSimulation=1;
 							};
 							id=596;
 							type="Flag_Red_F";
@@ -17883,7 +17876,6 @@ class Mission
 							{
 								init="this addAction [""Teleport to USS Vicious"",{player setPosATL (getPosATL dest1)}];" \n "this addAction [""Teleport to USS Liberty"",{player setPosATL (getPosATL dest2)}];" \n "this addAction [""Teleport to USS Freedom"",{player setPosATL (getPosATL carrier)}];" \n "this addAction [""Teleport to HMCS Thegamecracks"",{player setPosATL (getPosATL dest3)}];";
 								name="LHA";
-								disableSimulation=1;
 							};
 							id=651;
 							type="Flag_Red_F";
