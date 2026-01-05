@@ -1,5 +1,5 @@
 /*
-Function: WHF_fnc_initArtileryHandlers
+Function: WHF_fnc_initArtilleryHandlers
 
 Description:
     Set up artillery handlers.
