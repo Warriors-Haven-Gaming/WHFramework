@@ -46,7 +46,7 @@ _unit setVariable ["WHF_recruiter", getPlayerUID player, true];
 _unit setVariable ["WHF_role", _role, true];
 [_unit, _role] call WHF_fnc_setRoleTraits;
 
-if (surfaceIsWater getPosATL _unit) then {doStop _unit};
+if (surfaceIsWater _position) then {doStop _unit};
 
 private _loadout = [_role] call WHF_fnc_getLastLoadout;
 if (_loadout isNotEqualTo []) then {[_unit, _loadout] spawn WHF_fnc_setUnitLoadout};
