@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=180;
+		nextID=190;
 	};
 	class Camera
 	{
-		pos[]={10394.798,18.349277,7348.3188};
-		dir[]={-0.27334985,0.19657645,0.94174755};
-		up[]={0.054769713,0.98050123,-0.18869483};
-		aside[]={0.96048117,1.7586863e-06,0.27878881};
+		pos[]={10378.897,38.56263,7494.3818};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -5558,7 +5558,7 @@ class Mission
 					position[]={10778.586,24.5,7521.1348};
 					name="respawn_west_pilot_cas_heli";
 					type="Empty";
-					angle=344.99988;
+					angle=344.99985;
 					id=135;
 					atlOffset=0.32202911;
 					class CustomAttributes
@@ -5892,19 +5892,6 @@ class Mission
 								};
 								class Attribute2
 								{
-									property="SwitchTextureDestroyer3";
-									expression="([_this,'Land_Destroyer_01_hull_05_F'] call bis_fnc_destroyer01GetShipPart) setObjectTextureGlobal [0, _value]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="\A3\Boat_F_Destroyer\Destroyer_01\Data\Destroyer_01_tag_01_co.paa";
-										};
-									};
-								};
-								class Attribute3
-								{
 									property="CustomShipNumber3";
 									expression="[([_this, 'Land_Destroyer_01_hull_01_F'] call bis_fnc_destroyer01GetShipPart), _value, 2] spawn bis_fnc_destroyer01InitHullNumbers;";
 									class Value
@@ -5913,6 +5900,19 @@ class Mission
 										{
 											singleType="SCALAR";
 											value=7;
+										};
+									};
+								};
+								class Attribute3
+								{
+									property="SwitchTextureDestroyer3";
+									expression="([_this,'Land_Destroyer_01_hull_05_F'] call bis_fnc_destroyer01GetShipPart) setObjectTextureGlobal [0, _value]";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="\A3\Boat_F_Destroyer\Destroyer_01\Data\Destroyer_01_tag_01_co.paa";
 										};
 									};
 								};
@@ -6708,7 +6708,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={10402.854,19.193058,8011.1606};
-								angles[]={-0,3.4732058,0};
+								angles[]={0,3.4732058,0};
 							};
 							side="Empty";
 							flags=4;
@@ -10077,7 +10077,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={10416.753,10.774976,7399.1563};
+								position[]={10416.753,10.774976,7399.1562};
 								angles[]={0,4.4156837,0};
 							};
 							side="Empty";
@@ -14614,7 +14614,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={10809.321,26.365097,7692.1812};
-								angles[]={-0,4.4854965,0};
+								angles[]={0,4.4854965,0};
 							};
 							side="Empty";
 							flags=4;
@@ -14769,7 +14769,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={10813.899,26.451847,7653.7876};
-								angles[]={-0,4.4854965,0};
+								angles[]={0,4.4854965,0};
 							};
 							side="Empty";
 							flags=4;
@@ -14784,6 +14784,7 @@ class Mission
 							};
 							id=692;
 							type="JS_JC_FA18E";
+							atlOffset=1.9073486e-06;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -15006,7 +15007,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={10419.506,11.514805,7961.5815};
-								angles[]={0,4.4505901,-0};
+								angles[]={0,4.4505901,0};
 							};
 							side="Empty";
 							flags=4;
@@ -17130,7 +17131,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={10433.094,9.7740469,7340.4668};
-								angles[]={-0,4.4331374,0};
+								angles[]={0,4.4331374,0};
 							};
 							side="Empty";
 							flags=4;
@@ -17435,7 +17436,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={10418.738,11.879936,7362.0532};
-								angles[]={-0,1.2217307,0};
+								angles[]={0,1.2217307,0};
 							};
 							side="Empty";
 							flags=4;
@@ -18203,7 +18204,7 @@ class Mission
 						};
 					};
 					id=243;
-					atlOffset=35.066483;
+					atlOffset=35.659943;
 				};
 				class Item3
 				{
@@ -18865,7 +18866,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={10415.315,22.492838,8024.145};
-								angles[]={-0,5.5327306,0};
+								angles[]={0,5.5327306,0};
 							};
 							side="Empty";
 							flags=4;
@@ -18938,7 +18939,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={10826.043,28.170221,7563.4717};
-								angles[]={-0,3.0893033,-0};
+								angles[]={0,3.0893033,0};
 							};
 							side="Empty";
 							flags=4;
@@ -20023,7 +20024,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={10420.694,22.493685,8026.8115};
-								angles[]={0,5.2359881,-0};
+								angles[]={0,5.2359881,0};
 							};
 							side="Empty";
 							flags=5;
@@ -20920,7 +20921,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={10397.26,13.566988,7979.7075};
-								angles[]={0,1.239254,-0};
+								angles[]={0,1.239254,0};
 							};
 							side="Empty";
 							class Attributes
@@ -21067,7 +21068,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={10407.771,6.5769711,7957.8086};
-								angles[]={0,5.9167371,-0};
+								angles[]={0,5.9167371,0};
 							};
 							side="Empty";
 							class Attributes
@@ -21140,7 +21141,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={10375.118,6.576292,8055.8608};
-								angles[]={-0,1.3265208,-0};
+								angles[]={0,1.3265208,0};
 							};
 							side="Empty";
 							flags=4;
@@ -21210,7 +21211,7 @@ class Mission
 						};
 					};
 					id=286;
-					atlOffset=1.0004339;
+					atlOffset=2.0018935;
 				};
 				class Item4
 				{
@@ -21622,7 +21623,7 @@ class Mission
 				};
 			};
 			id=136;
-			atlOffset=-64.431602;
+			atlOffset=-64.464584;
 		};
 		class Item3
 		{
@@ -21798,13 +21799,13 @@ class Mission
 						angles[]={6.258244,5.9517474,6.2755585};
 					};
 					side="West";
-					flags=2;
+					flags=6;
 					class Attributes
 					{
 					};
 					id=390;
 					type="B_UAV_AI";
-					atlOffset=90.220062;
+					atlOffset=0.010159492;
 				};
 			};
 			class Attributes
@@ -21847,7 +21848,7 @@ class Mission
 			flags=6;
 			class Attributes
 			{
-				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];";
+				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];" \n "[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
 				disableSimulation=1;
 				dynamicSimulation=1;
 				receiveRemoteTargets=1;
@@ -22029,7 +22030,7 @@ class Mission
 			flags=2;
 			class Attributes
 			{
-				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];";
+				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];" \n "[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
 				disableSimulation=1;
 				dynamicSimulation=1;
 				reportRemoteTargets=1;
@@ -22214,7 +22215,7 @@ class Mission
 			flags=2;
 			class Attributes
 			{
-				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];";
+				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];" \n "[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
 				disableSimulation=1;
 				dynamicSimulation=1;
 				receiveRemoteTargets=1;
@@ -22383,7 +22384,7 @@ class Mission
 			flags=6;
 			class Attributes
 			{
-				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];";
+				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];" \n "[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
 				disableSimulation=1;
 				dynamicSimulation=1;
 				reportRemoteTargets=1;
@@ -23655,7 +23656,7 @@ class Mission
 			flags=2;
 			class Attributes
 			{
-				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];";
+				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];" \n "[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
 				disableSimulation=1;
 				dynamicSimulation=1;
 				reportRemoteTargets=1;
@@ -23853,7 +23854,7 @@ class Mission
 			flags=2;
 			class Attributes
 			{
-				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];";
+				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];" \n "[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
 				disableSimulation=1;
 				dynamicSimulation=1;
 				reportRemoteTargets=1;
@@ -24051,7 +24052,7 @@ class Mission
 			flags=2;
 			class Attributes
 			{
-				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];";
+				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];" \n "[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
 				reportRemoteTargets=1;
 				receiveRemoteTargets=1;
 				reportOwnPosition=1;
@@ -24234,7 +24235,7 @@ class Mission
 			flags=2;
 			class Attributes
 			{
-				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];";
+				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];" \n "[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
 				disableSimulation=1;
 				dynamicSimulation=1;
 				reportRemoteTargets=1;
@@ -24432,7 +24433,7 @@ class Mission
 			flags=2;
 			class Attributes
 			{
-				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];";
+				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];" \n "[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
 				disableSimulation=1;
 				dynamicSimulation=1;
 				reportRemoteTargets=1;
@@ -24630,7 +24631,7 @@ class Mission
 			flags=6;
 			class Attributes
 			{
-				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];";
+				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];" \n "[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
 				reportRemoteTargets=1;
 				receiveRemoteTargets=1;
 				reportOwnPosition=1;
@@ -24813,7 +24814,7 @@ class Mission
 			flags=6;
 			class Attributes
 			{
-				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];";
+				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];" \n "[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
 				reportRemoteTargets=1;
 				receiveRemoteTargets=1;
 				reportOwnPosition=1;
@@ -24947,13 +24948,13 @@ class Mission
 						angles[]={6.2764282,6.0039458,6.2812634};
 					};
 					side="West";
-					flags=6;
+					flags=2;
 					class Attributes
 					{
 					};
 					id=581;
 					type="B_UAV_AI";
-					atlOffset=2.8610229e-06;
+					atlOffset=85.498016;
 				};
 			};
 			class Attributes
@@ -24996,7 +24997,7 @@ class Mission
 			flags=6;
 			class Attributes
 			{
-				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];";
+				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];" \n "[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
 				disableSimulation=1;
 				dynamicSimulation=1;
 				reportRemoteTargets=1;
@@ -25461,7 +25462,7 @@ class Mission
 			flags=6;
 			class Attributes
 			{
-				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];";
+				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];" \n "[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
 				disableSimulation=1;
 				dynamicSimulation=1;
 				reportRemoteTargets=1;
@@ -25659,7 +25660,7 @@ class Mission
 			flags=6;
 			class Attributes
 			{
-				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];";
+				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];" \n "[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
 				disableSimulation=1;
 				dynamicSimulation=1;
 				reportRemoteTargets=1;
@@ -25844,7 +25845,7 @@ class Mission
 			flags=6;
 			class Attributes
 			{
-				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];";
+				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];" \n "[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
 				reportRemoteTargets=1;
 				receiveRemoteTargets=1;
 				reportOwnPosition=1;
@@ -26701,7 +26702,7 @@ class Mission
 			flags=6;
 			class Attributes
 			{
-				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];";
+				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];" \n "[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
 				reportRemoteTargets=1;
 				receiveRemoteTargets=1;
 				reportOwnPosition=1;
@@ -26884,7 +26885,7 @@ class Mission
 			flags=6;
 			class Attributes
 			{
-				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];";
+				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];" \n "[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
 				reportRemoteTargets=1;
 				receiveRemoteTargets=1;
 				reportOwnPosition=1;
@@ -27067,7 +27068,7 @@ class Mission
 			flags=2;
 			class Attributes
 			{
-				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];";
+				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];" \n "[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
 				disableSimulation=1;
 				dynamicSimulation=1;
 				reportRemoteTargets=1;
@@ -27258,14 +27259,14 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={10782.938,20.805687,7782.5313};
+				position[]={10782.938,20.805687,7782.5312};
 				angles[]={0,1.2915438,0};
 			};
 			side="West";
 			flags=6;
 			class Attributes
 			{
-				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];";
+				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];" \n "[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
 				disableSimulation=1;
 				dynamicSimulation=1;
 				reportRemoteTargets=1;
@@ -27463,7 +27464,7 @@ class Mission
 			flags=2;
 			class Attributes
 			{
-				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];";
+				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];" \n "[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
 				disableSimulation=1;
 				dynamicSimulation=1;
 				reportRemoteTargets=1;
@@ -27661,7 +27662,7 @@ class Mission
 			flags=2;
 			class Attributes
 			{
-				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];";
+				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];" \n "[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
 				reportRemoteTargets=1;
 				receiveRemoteTargets=1;
 				reportOwnPosition=1;
@@ -43992,7 +43993,7 @@ class Mission
 			flags=6;
 			class Attributes
 			{
-				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];";
+				init="this addEventHandler [""Fired"", { (_this select 0) setVehicleAmmo 1 }];" \n "[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
 				disableSimulation=1;
 				dynamicSimulation=1;
 				reportRemoteTargets=1;
@@ -44141,7 +44142,7 @@ class Mission
 			};
 			id=955;
 			type="B_Heli_Light_01_F";
-			atlOffset=1.9073486e-06;
+			atlOffset=0.013837814;
 			class CustomAttributes
 			{
 				class Attribute0
