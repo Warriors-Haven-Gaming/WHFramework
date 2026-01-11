@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.017453292;
 	scaleGridStep=0.1;
 	autoGroupingDist=10;
-	toggles=1633;
+	toggles=609;
 	mods[]=
 	{
 		"3denEnhanced"
@@ -16,14 +16,13 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=230;
+		nextID=240;
 	};
 	class Camera
 	{
-		pos[]={10385.873,7.9078999,8023.6279};
-		dir[]={-0.3231495,-0.29272822,0.8999359};
-		up[]={-0.098928474,0.95619571,0.27550495};
-		aside[]={0.94116294,-7.4505806e-09,0.33795333};
+		pos[]={10427.41,28.829628,7897.3989};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710671,0.70710683};
 	};
 };
 binarizationWanted=0;
@@ -5892,19 +5891,6 @@ class Mission
 								};
 								class Attribute2
 								{
-									property="CustomShipNumber3";
-									expression="[([_this, 'Land_Destroyer_01_hull_01_F'] call bis_fnc_destroyer01GetShipPart), _value, 2] spawn bis_fnc_destroyer01InitHullNumbers;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=7;
-										};
-									};
-								};
-								class Attribute3
-								{
 									property="SwitchTextureDestroyer3";
 									expression="([_this,'Land_Destroyer_01_hull_05_F'] call bis_fnc_destroyer01GetShipPart) setObjectTextureGlobal [0, _value]";
 									class Value
@@ -5913,6 +5899,19 @@ class Mission
 										{
 											singleType="STRING";
 											value="\A3\Boat_F_Destroyer\Destroyer_01\Data\Destroyer_01_tag_01_co.paa";
+										};
+									};
+								};
+								class Attribute3
+								{
+									property="CustomShipNumber3";
+									expression="[([_this, 'Land_Destroyer_01_hull_01_F'] call bis_fnc_destroyer01GetShipPart), _value, 2] spawn bis_fnc_destroyer01InitHullNumbers;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=7;
 										};
 									};
 								};
@@ -10077,7 +10076,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={10416.753,10.774976,7399.1563};
+								position[]={10416.753,10.774976,7399.1562};
 								angles[]={0,4.4156837,0};
 							};
 							side="Empty";
@@ -14226,7 +14225,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={10418.637,5.1398835,7969.5908};
-								angles[]={0,4.4156857,-0};
+								angles[]={0,4.4156857,0};
 							};
 							side="Empty";
 							class Attributes
@@ -21117,7 +21116,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={10407.072,6.5770054,7958.3892};
-								angles[]={0,6.0738182,-0};
+								angles[]={0,6.0738182,0};
 							};
 							side="Empty";
 							class Attributes
@@ -27308,7 +27307,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={10782.938,20.805687,7782.5313};
+				position[]={10782.938,20.805687,7782.5312};
 				angles[]={0,1.2915438,0};
 			};
 			side="West";
@@ -44216,6 +44215,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="player addAction [ " \n "    ""Teleport to Amphibious Assault"", " \n "    { " \n "        params ["""", ""_caller""]; " \n "        cutText ["""", ""BLACK"", 1]; " \n "        sleep 1; " \n "        vehicle _caller setVehiclePosition [getPosATL amphibspawn, [], 50, ""NONE""]; " \n "        sleep 0.5; " \n "        cutText ["""", ""BLACK IN"", 1]; " \n "        [side group _caller, ""BLU""] sideChat ""Good hunting!""; " \n "    }, " \n "    nil, " \n "    1.5, " \n "    true, " \n "    true, " \n "    """", " \n "    toString { " \n "        alive amphibspawn " \n "        && {_this inArea amphibstart " \n "        && {effectiveCommander vehicle _this isEqualTo _this}} " \n "    } " \n "];";
 				name="amphibspawn";
 				reportOwnPosition=1;
 			};
@@ -44295,23 +44295,20 @@ class Mission
 		class Item71
 		{
 			dataType="Trigger";
-			position[]={10382.641,2.5994759,8043.2676};
-			angle=2.8236344;
+			position[]={10427.41,3.829628,7922.3989};
+			angle=2.8236279;
 			class Attributes
 			{
 				name="amphibstart";
-				onActivation="private _veh = vehicle (thisList select 0); " \n " " \n "if (!isNull _veh && {surfaceIsWater (getPos _veh)}) then { " \n " " \n "    private _destPosASL = getPosASL amphibspawn; " \n "    private _dir = getDir amphibspawn; " \n "    private _offsetPos = _destPosASL getPos [2, _dir]; " \n " " \n "    _offsetPos set [2, 0]; " \n " " \n "    _veh setPosASL _offsetPos; " \n "    _veh setDir _dir; " \n "};";
-				sizeA=3.076561;
-				sizeB=4.0144863;
-				repeatable=1;
-				activationBy="ANYPLAYER";
+				sizeA=13.673;
+				sizeB=42.153;
+				sizeC=4.783;
 				isRectangle=1;
-				isServerOnly=1;
 				triggerInterval=1;
 			};
 			id=958;
 			type="EmptyDetector";
-			atlOffset=38.664562;
+			atlOffset=4.3605857;
 		};
 	};
 };
