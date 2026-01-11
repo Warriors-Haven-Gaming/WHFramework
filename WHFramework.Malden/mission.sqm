@@ -1,11 +1,11 @@
 version=54;
 class EditorData
 {
-	moveGridStep=0.125;
+	moveGridStep=1;
 	angleGridStep=0.017453292;
 	scaleGridStep=0.1;
 	autoGroupingDist=10;
-	toggles=1633;
+	toggles=609;
 	mods[]=
 	{
 		"3denEnhanced"
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=200;
+		nextID=210;
 	};
 	class Camera
 	{
-		pos[]={10958.033,36.891335,7864.0879};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		pos[]={10380.843,3.7755437,8058.8647};
+		dir[]={-0.66648215,-0.16494633,-0.72704488};
+		up[]={-0.11146051,0.9863025,-0.12158883};
+		aside[]={-0.73714185,-7.4505806e-09,0.67573798};
 	};
 };
 binarizationWanted=0;
@@ -5892,19 +5892,6 @@ class Mission
 								};
 								class Attribute2
 								{
-									property="SwitchTextureDestroyer3";
-									expression="([_this,'Land_Destroyer_01_hull_05_F'] call bis_fnc_destroyer01GetShipPart) setObjectTextureGlobal [0, _value]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="\A3\Boat_F_Destroyer\Destroyer_01\Data\Destroyer_01_tag_01_co.paa";
-										};
-									};
-								};
-								class Attribute3
-								{
 									property="CustomShipNumber3";
 									expression="[([_this, 'Land_Destroyer_01_hull_01_F'] call bis_fnc_destroyer01GetShipPart), _value, 2] spawn bis_fnc_destroyer01InitHullNumbers;";
 									class Value
@@ -5913,6 +5900,19 @@ class Mission
 										{
 											singleType="SCALAR";
 											value=7;
+										};
+									};
+								};
+								class Attribute3
+								{
+									property="SwitchTextureDestroyer3";
+									expression="([_this,'Land_Destroyer_01_hull_05_F'] call bis_fnc_destroyer01GetShipPart) setObjectTextureGlobal [0, _value]";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="\A3\Boat_F_Destroyer\Destroyer_01\Data\Destroyer_01_tag_01_co.paa";
 										};
 									};
 								};
@@ -6429,10 +6429,11 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={10441.608,10.313057,7910.3589};
-								angles[]={0,5.8817611,0};
+								position[]={10441.608,9.9958878,7910.3589};
+								angles[]={0,5.8817611,-0};
 							};
 							side="Empty";
+							flags=4;
 							class Attributes
 							{
 								createAsSimpleObject=1;
@@ -6440,7 +6441,6 @@ class Mission
 							};
 							id=930;
 							type="Land_CampingTable_small_F";
-							atlOffset=0.31716919;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -18693,13 +18693,13 @@ class Mission
 							class PositionInfo
 							{
 								position[]={10411.288,5.4545379,7943.7051};
-								angles[]={0,2.2165856,0};
+								angles[]={0,2.2165682,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="[this, [10430,7914,31], 162, [""Ships""]] call WHF_fnc_vehSpawnInit;";
+								init="[this, [10430,7914,0], 162, [""Ships""]] call WHF_fnc_vehSpawnInit;";
 								disableSimulation=1;
 							};
 							id=302;
@@ -19408,7 +19408,7 @@ class Mission
 							side="Empty";
 							class Attributes
 							{
-								init="[this, [10402,7978,43], 164, [""Cars"", ""Motorcycles"", ""Trucks"", ""MRAPs"", ""APCs"", ""IFVs"", ""Utilities"", ""Artillery"", ""Air Defense"", ""Tanks""]] call WHF_fnc_vehSpawnInit;";
+								init="[this, [10402,7978,43], 164, [""Cars"", ""Motorcycles"", ""Trucks"", ""MRAPs"", ""APCs"", ""IFVs"", ""Utilities"", ""Artillery"", ""Air Defense"", ""Tanks""], [5,50]] call WHF_fnc_vehSpawnInit;";
 								disableSimulation=1;
 							};
 							id=678;
@@ -19483,7 +19483,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, [10380,8052,39], 161, [""Cars"", ""Motorcycles"", ""Trucks"", ""MRAPs"", ""APCs"", ""IFVs"", ""Utilities"", ""Artillery"", ""Air Defense"", ""Tanks""]] call WHF_fnc_vehSpawnInit;";
+								init="[this, [10382.5,8052,38.9597], 173, [""Cars"", ""Motorcycles"", ""Trucks"", ""MRAPs"", ""APCs"", ""IFVs"", ""Utilities"", ""Artillery"", ""Air Defense"", ""Tanks""], [5,50]] call WHF_fnc_vehSpawnInit;";
 								disableSimulation=1;
 							};
 							id=684;
@@ -19551,18 +19551,18 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={10777.884,25.155781,7523.7578};
-								angles[]={0,6.0388398,0};
+								position[]={10777.884,25.155743,7523.7578};
+								angles[]={0,6.0388393,0};
 							};
 							side="Empty";
-							flags=4;
 							class Attributes
 							{
-								init="[this, [10773,7539,44.293], 347, [""Helicopters"", ""Drones""]] call WHF_fnc_vehSpawnInit;";
+								init="[this, [10773,7539,44.293], 347, [""Helicopters"", ""Drones""], [5,50]] call WHF_fnc_vehSpawnInit;";
 								disableSimulation=1;
 							};
 							id=686;
 							type="Land_Laptop_03_olive_F";
+							atlOffset=0.81034088;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -19631,7 +19631,7 @@ class Mission
 							side="Empty";
 							class Attributes
 							{
-								init="[this, [10418,7978,52], 162, [""Motorcycles""]] call WHF_fnc_vehSpawnInit;";
+								init="[this, [10418,7978,52], 162, [""Motorcycles""], [5,50]] call WHF_fnc_vehSpawnInit;";
 								disableSimulation=1;
 							};
 							id=765;
@@ -19699,19 +19699,18 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={10441.677,10.905526,7910.1289};
-								angles[]={0,5.8817596,0};
+								position[]={10441.603,10.570859,7910.356};
+								angles[]={-0,5.8817596,0};
 							};
 							side="Empty";
-							flags=4;
 							class Attributes
 							{
-								init="[this, [10436,7916,42], 42, [""Cars"", ""Motorcycles"", ""Trucks"", ""MRAPs"", ""APCs"", ""IFVs"", ""Utilities"", ""Artillery"", ""Air Defense"", ""Tanks""]] call WHF_fnc_vehSpawnInit;";
+								init="[this, [10436,7916,42], 42, [""Cars"", ""Motorcycles"", ""Trucks"", ""MRAPs"", ""APCs"", ""IFVs"", ""Utilities"", ""Artillery"", ""Air Defense"", ""Tanks""], [5,50]] call WHF_fnc_vehSpawnInit;";
 								disableSimulation=1;
 							};
 							id=931;
 							type="Land_Laptop_03_olive_F";
-							atlOffset=0.017251968;
+							atlOffset=0.81272888;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -43896,13 +43895,13 @@ class Mission
 						angles[]={0,2.8797934,0};
 					};
 					side="West";
-					flags=6;
+					flags=2;
 					class Attributes
 					{
 					};
 					id=883;
 					type="B_UAV_AI";
-					atlOffset=0.00623703;
+					atlOffset=78.781311;
 				};
 				class Item1
 				{
@@ -43913,13 +43912,12 @@ class Mission
 						angles[]={0,2.8797934,0};
 					};
 					side="West";
-					flags=4;
 					class Attributes
 					{
 					};
 					id=884;
 					type="B_UAV_AI";
-					atlOffset=0.00623703;
+					atlOffset=80.615723;
 				};
 			};
 			class Attributes
