@@ -19,6 +19,10 @@ Once set up, you can follow the [GitHub Flow] to make new branches for each
 feature, commit your changes, and start pull requests on this repository
 to be reviewed and merged.
 
+If you also plan to maintain the map branches, especially merging changes from main
+into each branch, consider running [`git config merge.directoryRenames true`]
+beforehand to reduce merge conflicts.
+
 Changes that don't affect gameplay such as documentation can be
 done and submitted more simply by using the [web-based editor].
 
@@ -27,6 +31,7 @@ done and submitted more simply by using the [web-based editor].
 [Eden Editor]: https://community.bistudio.com/wiki/Eden_Editor:_Introduction
 [Link Shell Extension]: https://schinagl.priv.at/nt/hardlinkshellext/linkshellextension.html
 [GitHub Flow]: https://docs.github.com/en/get-started/quickstart/github-flow
+[`git config merge.directoryRenames true`]: https://git-scm.com/docs/git-merge.html#Documentation/git-merge.txt-mergedirectoryRenames
 [web-based editor]: https://docs.github.com/en/codespaces/the-githubdev-web-based-editor
 
 ## Resources
