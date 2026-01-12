@@ -49,9 +49,6 @@ WHF_fnc_initContextActionLoadCrew_moveInAny = compileFinal {
         if (_units isEqualTo []) then {break};
 
         private _loadUnit = switch (true) do {
-            case (_unlockedDriver && _unlockedGunner && _unlockedCargo): {
-                {_unit moveInAny _vehicle} // optimized code path
-            };
             case (_role isEqualTo "driver" && _unlockedDriver): {
                 {_unit moveInDriver _vehicle}
             };
