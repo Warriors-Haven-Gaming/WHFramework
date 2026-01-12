@@ -52,7 +52,7 @@ WHF_fnc_initContextActionLoadCrew_moveInAny = compileFinal {
             case (_role isEqualTo "driver" && _unlockedDriver): {
                 {_unit moveInDriver _vehicle}
             };
-            case (_role in ["commander"] && _unlockedGunner): {
+            case (_role isEqualTo "commander" && _unlockedGunner): {
                 {_unit moveInCommander _vehicle}
             };
             case (_role isEqualTo "gunner" && _unlockedGunner): {
