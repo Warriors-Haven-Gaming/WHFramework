@@ -30,6 +30,7 @@ DEFAULT_BRANCHES = (
     "enoch",
     "armavir",
     "malden",
+    "maksniemi",
     "main",
 )
 

@@ -27,6 +27,7 @@ BRANCH_DIRECTORIES = {
     "enoch": "Enoch",
     "armavir": "UMB_Armavir",
     "malden": "Malden",
+    "maksniemi": "Maksniemi",
 }
 
 COMMON_FILES = {
