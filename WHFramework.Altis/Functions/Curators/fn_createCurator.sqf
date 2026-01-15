@@ -36,10 +36,10 @@ if (_index >= 0) exitWith {
         _uid
     ];
 
-    [_module] remoteExec ["WHF_fnc_initCuratorModule", _player];
     unassignCurator _module;
     unassignCurator _current;
     _player assignCurator _module;
+    [_module] remoteExec ["WHF_fnc_initCuratorModule", _player];
 };
 
 private _module = createGroup [sideLogic, true] createUnit ["ModuleCurator_F", [-1000, -1000, 0], [], 0, "CAN_COLLIDE"];
@@ -60,9 +60,9 @@ diag_log text format [
     _uid
 ];
 
-[_module] remoteExec ["WHF_fnc_initCuratorModule", _player];
 unassignCurator getAssignedCuratorLogic _player;
 _player assignCurator _module;
+[_module] remoteExec ["WHF_fnc_initCuratorModule", _player];
 
 _module spawn {
     scriptName "WHF_fnc_createCurator_addCuratorEditableObjects";

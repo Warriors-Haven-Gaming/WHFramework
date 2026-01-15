@@ -46,6 +46,7 @@ class CfgRemoteExec {
         class SA_Simulate_Towing {};
         class SA_Take_Tow_Ropes {};
 
+        class WHF_fnc_addCuratorAddons { allowedTargets = 2; };
         class WHF_fnc_addPrisonerActions { jip = 1; };
         class WHF_fnc_detainUnitRequest {};
         class WHF_fnc_enableDynamicSimulation { allowedTargets = 2; };
