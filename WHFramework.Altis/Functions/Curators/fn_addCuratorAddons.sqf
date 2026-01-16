@@ -21,7 +21,6 @@ if (!isPlayer _player) exitWith {};
 if (isMultiplayer && {!isRemoteExecuted}) exitWith {};
 if (owner _player isNotEqualTo remoteExecutedOwner) exitWith {};
 
-// WARNING: possible race condition if re-assignment happens during this
 private _module = getAssignedCuratorLogic _player;
 if (isNull _module) exitWith {};
 

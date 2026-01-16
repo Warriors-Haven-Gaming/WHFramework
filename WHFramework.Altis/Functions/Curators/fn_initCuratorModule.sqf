@@ -17,8 +17,12 @@ params ["_module"];
 if (!isNil {_module getVariable "WHF_curators_init"}) exitWith {};
 _module setVariable ["WHF_curators_init", true];
 
-[player, activatedAddons] remoteExec ["WHF_fnc_addCuratorAddons", 2];
 _module addEventHandler ["CuratorObjectPlaced", {
     params ["", "_entity"];
     {[_x] call WHF_fnc_setUnitSkill} forEach crew _entity;
 }];
+
+// WARNING: possible race condition with server-side assignCurator call?
+if (getAssignedCuratorLogic player isEqualTo _module) then {
+    [player, activatedAddons] remoteExec ["WHF_fnc_addCuratorAddons", 2];
+};
