@@ -22,7 +22,7 @@ if (_uid isEqualTo "") exitWith {};
 
 private _modules = allCurators;
 private _index = _modules findIf {_x getVariable "WHF_curators_owner" isEqualTo _uid};
-if (_index < 0) exitWith {diag_log text format ["%1: no module found for %2", _fnc_scriptName, _uid]};
+if (_index < 0) exitWith {};
 
 private _module = _modules # _index;
 
