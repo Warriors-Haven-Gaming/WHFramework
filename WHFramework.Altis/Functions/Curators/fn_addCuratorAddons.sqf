@@ -22,6 +22,21 @@ if (isMultiplayer && {!isRemoteExecuted}) exitWith {};
 if (owner _player isNotEqualTo remoteExecutedOwner) exitWith {};
 
 private _module = getAssignedCuratorLogic _player;
-if (isNull _module) exitWith {};
+if (isNull _module) exitWith {
+    diag_log text format [
+        "%1: no module found for %3 (%4), ignoring %2 addons",
+        _fnc_scriptName,
+        count _addons,
+        name _player,
+        getPlayerUID _player
+    ];
+};
 
+diag_log text format [
+    "%1: adding %2 addons from %3 (%4)",
+    _fnc_scriptName,
+    count _addons,
+    name _player,
+    getPlayerUID _player
+];
 _module addCuratorAddons _addons;
