@@ -10,7 +10,6 @@ Author:
 
 */
 if (!hasInterface) exitWith {};
-if (isClass (configFile >> "CfgPatches" >> "ace_medical")) exitWith {};
 if (!isNil "WHF_safezone_actionIDs") then {{_x # 0 removeAction _x # 1} forEach WHF_safezone_actionIDs};
 
 private _friendlyID = player addAction [

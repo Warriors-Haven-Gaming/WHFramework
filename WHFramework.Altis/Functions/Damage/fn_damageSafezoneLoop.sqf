@@ -8,6 +8,7 @@ Author:
     thegamecracks
 
 */
+private _hasACEMedical = isClass (configFile >> "CfgPatches" >> "ace_medical");
 private _getSafezones = {
     private _respawnSafezones =
         allMapMarkers
@@ -51,4 +52,10 @@ while {true} do {
             {_x setVariable [_var, true]} forEach _protected;
         };
     } forEach call _getSafezones;
+
+    if (_hasACEMedical && {isNil "WHF_debug_disable_ace_safezone"}) then {
+        // FIXME: only block friendly fire with ACE, rather than all incoming damage
+        private _blufor = _entities select {side group _x isEqualTo blufor};
+        {_x allowDamage (_x getVariable ["WHF_safezone_friendly", false] isNotEqualTo true)} forEach _blufor;
+    };
 };
