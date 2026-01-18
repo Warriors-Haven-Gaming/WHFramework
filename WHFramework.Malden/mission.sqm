@@ -12,17 +12,18 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=964;
+		nextID=965;
 	};
 	class LayerIndexProvider
 	{
-		nextID=240;
+		nextID=250;
 	};
 	class Camera
 	{
-		pos[]={10427.41,28.829628,7897.3989};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710671,0.70710683};
+		pos[]={10591.261,34.798168,8032.0518};
+		dir[]={-0.83972049,-0.49075064,-0.23245059};
+		up[]={-0.47296378,0.87130004,-0.13092536};
+		aside[]={-0.26678592,0,0.96375579};
 	};
 };
 binarizationWanted=0;
@@ -151,13 +152,14 @@ addons[]=
 	"Facewear_F_JCA_IE",
 	"Weapons_F_JCA_IA_Rifles_M4A1",
 	"Weapons_F_JCA_IA",
-	"vests_f_JCA_IE"
+	"vests_f_JCA_IE",
+	"A3_Modules_F"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=94;
+		items=95;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -767,6 +769,13 @@ class AddonsMetaData
 			name="JCA - Infantry Arsneal: Weapons";
 			author="Grave";
 		};
+		class Item94
+		{
+			className="A3_Modules_F";
+			name="Arma 3 Alpha - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 dlcs[]=
@@ -851,7 +860,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=72;
+		items=73;
 		class Item0
 		{
 			dataType="Layer";
@@ -5891,19 +5900,6 @@ class Mission
 								};
 								class Attribute2
 								{
-									property="SwitchTextureDestroyer3";
-									expression="([_this,'Land_Destroyer_01_hull_05_F'] call bis_fnc_destroyer01GetShipPart) setObjectTextureGlobal [0, _value]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="\A3\Boat_F_Destroyer\Destroyer_01\Data\Destroyer_01_tag_01_co.paa";
-										};
-									};
-								};
-								class Attribute3
-								{
 									property="CustomShipNumber3";
 									expression="[([_this, 'Land_Destroyer_01_hull_01_F'] call bis_fnc_destroyer01GetShipPart), _value, 2] spawn bis_fnc_destroyer01InitHullNumbers;";
 									class Value
@@ -5912,6 +5908,19 @@ class Mission
 										{
 											singleType="SCALAR";
 											value=7;
+										};
+									};
+								};
+								class Attribute3
+								{
+									property="SwitchTextureDestroyer3";
+									expression="([_this,'Land_Destroyer_01_hull_05_F'] call bis_fnc_destroyer01GetShipPart) setObjectTextureGlobal [0, _value]";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="\A3\Boat_F_Destroyer\Destroyer_01\Data\Destroyer_01_tag_01_co.paa";
 										};
 									};
 								};
@@ -44296,7 +44305,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={10427.41,3.829628,7922.3989};
-			angle=2.8236279;
+			angle=2.8236275;
 			class Attributes
 			{
 				name="amphibstart";
@@ -44309,6 +44318,19 @@ class Mission
 			id=958;
 			type="EmptyDetector";
 			atlOffset=4.3605857;
+		};
+		class Item72
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={10544.449,-0.00017356873,8022.563};
+			};
+			name="WHF_fog_cleanup";
+			init="if (!isServer) exitWith {}; " \n "0 spawn { " \n "    scriptName ""WHF_fog_cleanup""; " \n "    while {true} do { " \n "        sleep 300; " \n "        if (!isNil ""WHF_fog_cleanup_disabled"") then {continue}; " \n "        if (fog < 0.15) then {continue}; " \n "        private _newFog = fog / 4; " \n "        diag_log text format [""WHF_fog_cleanup: reducing fog to %1"", _newFog]; " \n "        180 setFog _newFog; " \n "    }; " \n "}; ";
+			id=964;
+			type="Logic";
+			atlOffset=31.278;
 		};
 	};
 };
