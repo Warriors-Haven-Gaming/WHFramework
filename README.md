@@ -44,13 +44,13 @@ The following vanilla factions are always available for opposing forces:
 
 Additional factions are supported with the following CDLC and mods:
 - Expeditionary Forces
-  - MJTF (Desert)
-  - MJTF (Woodland)
+  - MJTF (Desert) \*
+  - MJTF (Woodland) \*
 - Western Sahara
-  - ION Services
+  - ION Services \*
   - SFIA
   - Tura
-  - UNA
+  - UNA \*
 - [CUP Vehicles] and Units
   - National Party of Chernarus
   - Armed Forces of the Russian Federation
