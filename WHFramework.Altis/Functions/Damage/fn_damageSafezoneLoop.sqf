@@ -55,6 +55,8 @@ while {true} do {
 
     if (_hasACEMedical && {isNil "WHF_debug_disable_ace_safezone"}) then {
         // FIXME: only block friendly fire with ACE, rather than all incoming damage
+        // FIXME: vehicles left by players can gain persistent invulnerability
+        //        since their side becomes unknown.
         private _blufor = _entities select {side group _x isEqualTo blufor};
         {_x allowDamage (_x getVariable ["WHF_safezone_friendly", false] isNotEqualTo true)} forEach _blufor;
     };
