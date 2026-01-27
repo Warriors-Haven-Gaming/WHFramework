@@ -94,3 +94,7 @@ private _FAKs =
 } forEach (_FAKs select [0, WHF_revive_FAKs]);
 
 [_target] remoteExec ["WHF_fnc_reviveUnit", _target];
+
+if (isPlayer _caller && {isPlayer _target}) then {
+    _target setVariable ["fdelta_stats_revived_by", _caller, 2];
+};
