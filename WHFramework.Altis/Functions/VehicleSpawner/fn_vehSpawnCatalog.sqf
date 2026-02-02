@@ -430,7 +430,7 @@ private _helicopters = [
     ["ej_mh92s",                                    [-1,  ["pilot_transport"]]],
     ["ej_mh60s",                                    [-1,  ["pilot_transport"]]],
     ["ej_hh60h",                                    [-1,  ["pilot_transport"]]],
-    ["ej_mh60si"                                    [-1,  ["pilot_transport"]]],
+    ["ej_mh60si",                                   [-1,  ["pilot_transport"]]],
     ["cup_b_mh60l_dap_2x_us",                       [-1,  ["pilot_transport"]]],
     ["cup_b_mh47e_usa",                             [-1,  ["pilot_transport"]]],
     ["cup_b_ch53e_usmc",                            [-1,  ["pilot_transport"]]],
