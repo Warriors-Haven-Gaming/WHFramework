@@ -13,7 +13,7 @@ Parameters:
         The faction to spawn units from.
     Array buildings:
         (Optional, default [])
-        An array of buildings to prioritize garrisoning units io first.
+        An array of buildings to prioritize garrisoning units first.
 
 Returns:
     Array
