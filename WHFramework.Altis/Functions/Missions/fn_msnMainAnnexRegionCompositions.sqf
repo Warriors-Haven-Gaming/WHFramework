@@ -50,7 +50,7 @@ _terrain append _mortarTerrain;
 _groups append _mortarGroups;
 
 private _aaCount = floor (_radius / 400);
-private _aaTypes = ["aa_short", 1, "aa_medium", 1];
+private _aaTypes = ["aa_short", 4, "aa_medium", 1];
 [opfor, [_standard], _aaCount, _center, _radius, _aaTypes, _objects]
     call WHF_fnc_createEmplacements
     params ["_aaObjects", "_aaTerrain", "_aaGroups"];
