@@ -49,6 +49,15 @@ _objects append _mortarObjects;
 _terrain append _mortarTerrain;
 _groups append _mortarGroups;
 
+private _aaCount = floor (_radius / 450);
+private _aaTypes = ["aa_short", 1, "aa_medium", 1];
+[opfor, [_standard], _aaCount, _center, _radius, _aaTypes, _objects]
+    call WHF_fnc_createEmplacements
+    params ["_aaObjects", "_aaTerrain", "_aaGroups"];
+_objects append _aaObjects;
+_terrain append _aaTerrain;
+_groups append _aaGroups;
+
 // NOTE: little bit slow, 0.1ms for 500m radius
 private _roads = _center nearRoads _radius apply {getRoadInfo _x} select {
     _x # 0 in ["ROAD", "MAIN ROAD", "TRACK"] && {!(_x # 2)}
