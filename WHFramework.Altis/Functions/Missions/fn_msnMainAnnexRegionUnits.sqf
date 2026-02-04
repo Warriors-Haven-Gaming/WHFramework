@@ -52,7 +52,7 @@ _groups append _infGroups;
 
 if (_spawnCivilians) then {
     private _civBuildings = nearestTerrainObjects [_center, ["HOUSE"], _radius, false, true];
-    private _civCount = count _civBuildings min floor (_radius / 30) call WHF_fnc_scaleUnitsMain;
+    private _civCount = count _civBuildings min floor (_radius / 15) call WHF_fnc_scaleUnitsMain;
     private _civGroups = [civilian, _civTypes, _civCount, _center, _radius] call WHF_fnc_spawnUnitGroups;
     {[_x, getPosATL leader _x, 200] call BIS_fnc_taskPatrol} forEach _civGroups;
     _groups append _civGroups;
