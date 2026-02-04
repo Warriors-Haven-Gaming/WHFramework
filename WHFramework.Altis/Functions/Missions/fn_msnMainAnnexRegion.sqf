@@ -79,7 +79,8 @@ private _area = [_center, _radius, _radius];
     params ["_objects", "_terrain", "_compGroups"];
 
 private _buildings = flatten _objects select {simulationEnabled _x};
-[_center, _radius, _faction, _buildings] call WHF_fnc_msnMainAnnexRegionUnits
+private _spawnCivilians = type _location in ["NameCity", "NameCityCapital", "NameVillage"];
+[_center, _radius, _faction, _buildings, _spawnCivilians] call WHF_fnc_msnMainAnnexRegionUnits
     params ["_groups", "_vehicles"];
 
 // Note that unlike _compGroups, the above function will dynamically append

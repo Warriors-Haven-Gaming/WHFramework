@@ -14,6 +14,9 @@ Parameters:
     Array buildings:
         (Optional, default [])
         An array of buildings to prioritize garrisoning units first.
+    Boolean spawnCivilians:
+        (Optional, default false)
+        If true, spawn civilian groups alongside the faction.
 
 Returns:
     Array
@@ -25,9 +28,10 @@ Author:
     thegamecracks
 
 */
-params ["_center", "_radius", "_faction", ["_buildings", []]];
+params ["_center", "_radius", "_faction", ["_buildings", []], ["_spawnCivilians", false]];
 
 private _standard = ["standard", _faction];
+private _civTypes = [[[["civilians", _faction]], 1, 4], 1];
 private _unitTypes = +WHF_missions_annex_units_types;
 private _vehicleTypes = WHF_missions_annex_vehicles_types;
 private _garrisonTypes = [[_unitTypes # 0 # 0, _faction]];
@@ -45,6 +49,14 @@ private _infCount = 40 + floor (_radius / 8) call WHF_fnc_scaleUnitsMain;
 private _infGroups = [opfor, _unitTypes, _infCount, _center, _radius] call WHF_fnc_spawnUnitGroups;
 {[_x, getPosATL leader _x, 200] call BIS_fnc_taskPatrol} forEach _infGroups;
 _groups append _infGroups;
+
+if (_spawnCivilians) then {
+    private _civBuildings = nearestTerrainObjects [_center, ["HOUSE"], _radius, false, true];
+    private _civCount = count _civBuildings min floor (_radius / 30) call WHF_fnc_scaleUnitsMain;
+    private _civGroups = [civilian, _civTypes, _civCount, _center, _radius] call WHF_fnc_spawnUnitGroups;
+    {[_x, getPosATL leader _x, 200] call BIS_fnc_taskPatrol} forEach _civGroups;
+    _groups append _civGroups;
+};
 
 // NOTE: may result in positions being double garrisoned
 private _garrisonCount = 30 + floor (_radius / 15) call WHF_fnc_scaleUnitsMain;
