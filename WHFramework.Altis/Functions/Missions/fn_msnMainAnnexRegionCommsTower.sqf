@@ -16,7 +16,7 @@ params ["_tower"];
 
 [
     _tower,
-    localize "STR_WHF_mainAnnexRegionComms_title",
+    localize "STR_WHF_mainAnnexRegionComms_disable",
     "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_hack_ca.paa",
     "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_hack_ca.paa",
     toString {
