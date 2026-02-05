@@ -79,7 +79,7 @@ while {_quantity > 0} do {
         ["_skill", 0],
         ["_equipment", WHF_units_equipment]
     ];
-    private _size = 2 + 2 * floor random ((_max - _min) / 2 + 1);
+    private _size = _min + 2 * floor random ((_max - _min) / 2 + 1);
     private _group =
         [_side, _type, _size, _pos, 10, _skill, _dynamicSimulation, _equipment]
         call WHF_fnc_spawnUnits;
