@@ -487,6 +487,7 @@ private _planes = [
     ["usaf_f35a_light",                         [-1,  ["pilot_cas_plane"]]],
     ["usaf_f35a_stealth",                       [-1,  ["pilot_cas_plane"]]],
     ["peral_f16v",                              [-1,  ["pilot_cas_plane"]]],
+    ["peral_f35b",                              [-1,  ["pilot_cas_plane"]]],
     ["peral_f35c",                              [-1,  ["pilot_cas_plane"]]],
     ["fa_emb312_at27m35_nato",                  [-1,  ["pilot_cas_plane"]]],
     ["cup_b_gr9_dyn_gb",                        [-1,  ["pilot_cas_plane"]]],
