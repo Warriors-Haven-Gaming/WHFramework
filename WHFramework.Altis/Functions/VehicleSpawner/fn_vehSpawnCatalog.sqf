@@ -376,6 +376,7 @@ private _helicoptersCooldown = 300;
 private _helicopters = [
     ["o_t_vtol_02_infantry_dynamicloadout_f",       [900, ["pilot_transport"]]],
     ["o_t_vtol_02_vehicle_dynamicloadout_f",        [900, ["pilot_transport", "pilot_cas_plane"]]],
+    ["o_heli_attack_02_dynamicloadout_f",           [-1,  ["pilot_cas_heli"]]],
     ["cup_b_ah6m_usa",                              [-1,  ["pilot_cas_heli"]]],
     ["cup_b_ah64d_dl_usa",                          [-1,  ["pilot_cas_heli"]]],
     ["cup_i_ah1z_dynamic_aaf",                      [-1,  ["pilot_cas_heli"]]],
