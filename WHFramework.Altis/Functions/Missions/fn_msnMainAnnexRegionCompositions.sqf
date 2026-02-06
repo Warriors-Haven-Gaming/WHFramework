@@ -40,7 +40,7 @@ _objects append _fortObjects;
 _terrain append _fortTerrain;
 _groups append _fortGroups;
 
-private _mortarCount = floor (_radius / 350);
+private _mortarCount = floor (_radius / 350 * WHF_missions_annex_mortars);
 private _mortarTypes = ["mortar", 1];
 [opfor, [_standard], _mortarCount, _center, _radius, _mortarTypes, _objects]
     call WHF_fnc_createEmplacements
@@ -49,7 +49,7 @@ _objects append _mortarObjects;
 _terrain append _mortarTerrain;
 _groups append _mortarGroups;
 
-private _aaCount = floor (_radius / 400);
+private _aaCount = floor (_radius / 400 * WHF_missions_annex_antiair);
 private _aaTypes = ["aa_short", 4, "aa_medium", 1];
 [opfor, [_standard], _aaCount, _center, _radius, _aaTypes, _objects]
     call WHF_fnc_createEmplacements

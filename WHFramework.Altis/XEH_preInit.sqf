@@ -832,6 +832,26 @@ call WHF_fnc_cycleFaction;
     false
 ] call WHF_fnc_addSetting;
 [
+    "WHF_missions_annex_mortars",
+    "SLIDER",
+    ["STR_WHF_settings_missions_annex_mortars", "STR_WHF_settings_missions_annex_mortars_tooltip"],
+    ["STR_WHF_settings_missions", "STR_WHF_settings_missions_annex"],
+    [0, 2, 1, 0, true],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_missions_annex_antiair",
+    "SLIDER",
+    ["STR_WHF_settings_missions_annex_antiair", "STR_WHF_settings_missions_annex_antiair_tooltip"],
+    ["STR_WHF_settings_missions", "STR_WHF_settings_missions_annex"],
+    [0, 2, 1, 0, true],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_missions_annex_units_types",
     "EDITBOX",
     ["STR_WHF_settings_missions_annex_units_types", "STR_WHF_settings_missions_annex_units_types_tooltip"],
