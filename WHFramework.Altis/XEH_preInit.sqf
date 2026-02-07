@@ -525,6 +525,16 @@ call WHF_fnc_cycleFaction;
     false
 ] call WHF_fnc_addSetting;
 [
+    "WHF_halo_mission_infil",
+    "CHECKBOX",
+    ["STR_WHF_settings_halo_mission_infil", "STR_WHF_settings_halo_mission_infil_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_halo"],
+    true,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_halo_mission_exfil",
     "CHECKBOX",
     ["STR_WHF_settings_halo_mission_exfil", "STR_WHF_settings_halo_mission_exfil_tooltip"],

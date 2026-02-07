@@ -21,6 +21,10 @@ Author:
 */
 params ["_unit", "_pos"];
 
+if (!WHF_halo_mission_infil && {[[_pos]] call WHF_fnc_inAreaMission isNotEqualTo []}) exitWith {
+    localize "$STR_WHF_checkHaloJump_restricted"
+};
+
 if ([[_pos], "WHF_halo_restricted"] call WHF_fnc_inAreaMarkers isNotEqualTo []) exitWith {
     localize "$STR_WHF_checkHaloJump_restricted"
 };
