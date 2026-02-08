@@ -597,7 +597,7 @@ private _drones = [
     ["e22_b_jtf_d_ugv_01_rcws_f",           [-1, ["uav"]]],
     ["ef_b_uav_01_mjtf_wdl",                [-1, ["uav"]]],
     ["ef_b_uav_02_dynamicLoadout_mjtf_wdl", [-1, ["uav"]]],
-    ["rksla3_uav_mq9_reaper",               [-1, ["uav"]]],
+    ["rksla3_uav_mq9_reaper_generic",       [-1, ["uav"]]],
     ["b_amf_reaper_dynamiclaodout_f",       [-1, ["uav"]]],
     ["b_uav_05_f",                          [-1, ["uav"]]],
     ["b_uav_02_dynamicloadout_f",           [-1, ["uav"]]],
