@@ -33,7 +33,7 @@ addMissionEventHandler ["OnUserSelectedPlayer", {
     params ["", "_player"];
     _player addEventHandler ["Local", {
         params ["_player"];
-        _player removeEventHandler ["Local", _thisEventHandler];
+        _player removeEventHandler [_thisEvent, _thisEventHandler];
         if !(getPlayerUID _player in WHF_curators_uids) exitWith {};
         [_player] call WHF_fnc_createCurator;
     }];
