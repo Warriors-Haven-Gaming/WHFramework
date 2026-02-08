@@ -1,5 +1,5 @@
 class CfgPatches {
-    class whf_malden {
+    class whf_maksniemi {
         name = "Warriors Haven Framework (Maksniemi)";
         author = "thegamecracks";
         url = "https://github.com/Warriors-Haven-Gaming/WHFramework/tree/maksniemi";
