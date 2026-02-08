@@ -28,6 +28,7 @@ BRANCH_DIRECTORIES = {
     "armavir": "UMB_Armavir",
     "malden": "Malden",
     "maksniemi": "Maksniemi",
+    "bornholm": "Bornholm",
 }
 
 COMMON_FILES = {

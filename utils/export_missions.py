@@ -31,6 +31,7 @@ DEFAULT_BRANCHES = (
     "armavir",
     "malden",
     "maksniemi",
+    "bornholm",
     "main",
 )
 
