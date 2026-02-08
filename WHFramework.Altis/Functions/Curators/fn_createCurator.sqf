@@ -38,8 +38,19 @@ if (_index >= 0) exitWith {
 
     unassignCurator _module;
     unassignCurator _current;
-    _player assignCurator _module;
-    [_module] remoteExec ["WHF_fnc_initCuratorModule", _player];
+    [_player, _module] spawn {
+        params ["_player", "_module"];
+        scriptName "WHF_fnc_createCurator_reassignCurator";
+
+        private _timeout = time + 10;
+        waitUntil {
+            sleep 1;
+            _player assignCurator _module;
+            getAssignedCuratorLogic _player isEqualTo _module || {time > _timeout}
+        };
+        // Should be already initialized, below call is not needed
+        // [_module] remoteExec ["WHF_fnc_initCuratorModule", _player];
+    };
 };
 
 private _module = createGroup [sideLogic, true] createUnit ["ModuleCurator_F", [-1000, -1000, 0], [], 0, "CAN_COLLIDE"];
