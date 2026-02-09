@@ -12,18 +12,18 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=763;
+		nextID=767;
 	};
 	class LayerIndexProvider
 	{
-		nextID=110;
+		nextID=120;
 	};
 	class Camera
 	{
-		pos[]={9755.8486,41.671677,355.40955};
-		dir[]={-0.89935648,-0.42919531,0.083819337};
-		up[]={-0.42735246,0.90320092,0.039828848};
-		aside[]={0.092801496,5.1769894e-07,0.99572289};
+		pos[]={9640.9961,29.88821,359.81366};
+		dir[]={-0.84396756,-0.31550404,-0.43391049};
+		up[]={-0.28061369,0.94890821,-0.14427263};
+		aside[]={-0.45726207,3.3946708e-07,0.88938534};
 	};
 };
 binarizationWanted=0;
@@ -51,14 +51,12 @@ addons[]=
 	"A3_Soft_F_Gamma_Truck_01",
 	"A3_Soft_F_Exp_MRAP_01",
 	"QAV_Merkava",
-	"Ej_MH60MDAP",
 	"EricJ_HMDs_Helos",
 	"Ej_MH80",
 	"Ej_MH6",
 	"A3_Air_F_Heli_Light_01",
 	"QAV_Type08",
 	"A3_Air_F_Beta_Heli_Attack_02",
-	"Ej_MH92DAP",
 	"Air_F_RAF_Heli_Transport_04",
 	"A3_Armor_F_Beta_APC_Wheeled_02",
 	"A3_Soft_F_Exp_LSV_01",
@@ -74,6 +72,8 @@ addons[]=
 	"rksla3_mq9",
 	"QAV_Ripsaw",
 	"A3_Drones_F_Soft_F_Gamma_UGV_01",
+	"Ej_UH60M",
+	"Ej_UH92",
 	"A3_Structures_F_Mil_Flags",
 	"A3_Props_F_Enoch_Military_Equipment",
 	"A3_Structures_F_EPC_Items_Electronics",
@@ -221,105 +221,105 @@ class AddonsMetaData
 		};
 		class Item19
 		{
-			className="Ej_MH60MDAP";
-			name="Ej_MH60MDAP";
-		};
-		class Item20
-		{
 			className="EricJ_HMDs_Helos";
 			name="EricJ_HMDs_Helos";
 		};
-		class Item21
+		class Item20
 		{
 			className="Ej_MH80";
 			name="Ej_MH80";
 		};
-		class Item22
+		class Item21
 		{
 			className="Ej_MH6";
 			name="Ej_MH6";
 		};
-		class Item23
+		class Item22
 		{
 			className="A3_Air_F";
 			name="Arma 3 Alpha - Aircraft";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item24
+		class Item23
 		{
 			className="A3_Armor_F_Tank";
 			name="Arma 3 Tank - Armored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item25
+		class Item24
 		{
 			className="A3_Air_F_Beta";
 			name="Arma 3 Beta - Aircraft";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item26
-		{
-			className="Ej_MH92DAP";
-			name="Ej_MH92DAP";
-		};
-		class Item27
+		class Item25
 		{
 			className="A3_Air_F_Heli";
 			name="Arma 3 Helicopters - Aircraft";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item28
+		class Item26
 		{
 			className="A3_Armor_F_Beta";
 			name="Arma 3 Beta - Armored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item29
+		class Item27
 		{
 			className="A3_Boat_F_Exp";
 			name="Arma 3 Apex - Boats and Submersibles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item30
+		class Item28
 		{
 			className="ej_Mortar_Container";
 			name="ej_Mortar_Container";
 		};
-		class Item31
+		class Item29
 		{
 			className="ej_MLRSContainer_uh60";
 			name="ej_MLRSContainer_uh60";
 		};
-		class Item32
+		class Item30
 		{
 			className="ej_ArtyContainer_uh60";
 			name="ej_ArtyContainer_uh60";
 		};
-		class Item33
+		class Item31
 		{
 			className="A3_Air_F_Exp";
 			name="Arma 3 Apex - Aircraft";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item34
+		class Item32
 		{
 			className="GX_DRONES_UAV_MQ8B";
 			name="GX - Drones - MQ-8B Fire Scout";
 			url="https://steamcommunity.com/profiles/76561197961847052/myworkshopfiles/";
 		};
-		class Item35
+		class Item33
 		{
 			className="A3_Drones_F";
 			name="Arma 3 Beta - Drones";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
+		};
+		class Item34
+		{
+			className="Ej_UH60M";
+			name="Ej_UH60M";
+		};
+		class Item35
+		{
+			className="Ej_UH92";
+			name="Ej_UH92";
 		};
 		class Item36
 		{
@@ -2752,7 +2752,7 @@ class Mission
 					position[]={10128,11,385};
 					name="respawn_west_uav";
 					type="Empty";
-					angle=79.999977;
+					angle=79.999969;
 					id=134;
 					atlOffset=2.1991959;
 					class CustomAttributes
@@ -6412,48 +6412,6 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={9621.082,20.106537,345.93033};
-								angles[]={0,4.625123,0};
-							};
-							side="Empty";
-							class Attributes
-							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
-								reportRemoteTargets=1;
-								receiveRemoteTargets=1;
-								reportOwnPosition=1;
-								pylons="PylonRack_19Rnd_Rockets[0];PylonRack_19Rnd_Rockets[0];";
-							};
-							id=494;
-							type="ej_MH60MDAP2";
-							atlOffset=8.9257765;
-						};
-						class Item34
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={9579.6875,20.096588,341.48108};
-								angles[]={0,4.625123,0};
-							};
-							side="Empty";
-							class Attributes
-							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
-								reportRemoteTargets=1;
-								receiveRemoteTargets=1;
-								reportOwnPosition=1;
-								pylons="PylonRack_19Rnd_Rockets[0];PylonRack_19Rnd_Rockets[0];";
-							};
-							id=495;
-							type="ej_MH60MDAP2";
-							atlOffset=3.5072403;
-						};
-						class Item35
-						{
-							dataType="Object";
-							class PositionInfo
-							{
 								position[]={9698.9824,20.713966,353.91928};
 								angles[]={0,4.625123,0};
 							};
@@ -6469,7 +6427,7 @@ class Mission
 							type="ej_MH67";
 							atlOffset=8.9256945;
 						};
-						class Item36
+						class Item34
 						{
 							dataType="Object";
 							class PositionInfo
@@ -6487,7 +6445,7 @@ class Mission
 							type="ej_mh6j";
 							atlOffset=0.0055904388;
 						};
-						class Item37
+						class Item35
 						{
 							dataType="Object";
 							class PositionInfo
@@ -6505,7 +6463,7 @@ class Mission
 							type="ej_mh6j";
 							atlOffset=0.00081443787;
 						};
-						class Item38
+						class Item36
 						{
 							dataType="Object";
 							class PositionInfo
@@ -6522,7 +6480,7 @@ class Mission
 							type="B_Heli_Light_01_F";
 							atlOffset=96.550201;
 						};
-						class Item39
+						class Item37
 						{
 							dataType="Object";
 							class PositionInfo
@@ -6539,7 +6497,7 @@ class Mission
 							type="B_Heli_Light_01_F";
 							atlOffset=96.395752;
 						};
-						class Item40
+						class Item38
 						{
 							dataType="Object";
 							class PositionInfo
@@ -6557,7 +6515,7 @@ class Mission
 							type="B_Heli_Light_01_F";
 							atlOffset=1.9073486e-06;
 						};
-						class Item41
+						class Item39
 						{
 							dataType="Object";
 							class PositionInfo
@@ -6685,7 +6643,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item42
+						class Item40
 						{
 							dataType="Object";
 							class PositionInfo
@@ -6758,50 +6716,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item43
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={9538.248,19.460457,337.11636};
-								angles[]={0,4.6076694,0};
-							};
-							side="Empty";
-							class Attributes
-							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
-								reportRemoteTargets=1;
-								receiveRemoteTargets=1;
-								reportOwnPosition=1;
-								pylons="GX_PylonPod_12Rnd_PG_Missiles[0];PylonRack_19Rnd_Rockets[0];PylonRack_19Rnd_Rockets[0];GX_PylonPod_12Rnd_PG_Missiles[0];";
-							};
-							id=501;
-							type="ej_MH92DAP3";
-							atlOffset=3.51653;
-						};
-						class Item44
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={9494.79,19.460951,332.65952};
-								angles[]={0,4.6076694,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
-								reportRemoteTargets=1;
-								receiveRemoteTargets=1;
-								reportOwnPosition=1;
-								pylons="GX_PylonPod_12Rnd_Missiles[0];PylonRack_19Rnd_Rockets[0];PylonRack_19Rnd_Rockets[0];GX_PylonPod_12Rnd_Missiles[0];";
-							};
-							id=742;
-							type="ej_MH92DAP3";
-							atlOffset=6.4849854e-05;
-						};
-						class Item45
+						class Item41
 						{
 							dataType="Object";
 							class PositionInfo
@@ -6818,7 +6733,7 @@ class Mission
 							type="E22_B_RAF_Heli_Transport_04_F";
 							atlOffset=8.9257431;
 						};
-						class Item46
+						class Item42
 						{
 							dataType="Object";
 							class PositionInfo
@@ -6975,7 +6890,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item47
+						class Item43
 						{
 							dataType="Object";
 							class PositionInfo
@@ -6992,7 +6907,7 @@ class Mission
 							type="B_T_LSV_01_AT_F";
 							atlOffset=6.9900694;
 						};
-						class Item48
+						class Item44
 						{
 							dataType="Object";
 							class PositionInfo
@@ -7009,7 +6924,7 @@ class Mission
 							id=559;
 							type="B_T_LSV_01_armed_F";
 						};
-						class Item49
+						class Item45
 						{
 							dataType="Object";
 							class PositionInfo
@@ -7027,7 +6942,7 @@ class Mission
 							type="B_T_LSV_01_unarmed_F";
 							atlOffset=0.00062942505;
 						};
-						class Item50
+						class Item46
 						{
 							dataType="Object";
 							class PositionInfo
@@ -7045,7 +6960,7 @@ class Mission
 							type="B_Quadbike_01_F";
 							atlOffset=0.0080032349;
 						};
-						class Item51
+						class Item47
 						{
 							dataType="Object";
 							class PositionInfo
@@ -7080,7 +6995,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item52
+						class Item48
 						{
 							dataType="Object";
 							class PositionInfo
@@ -7207,7 +7122,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item53
+						class Item49
 						{
 							dataType="Object";
 							class PositionInfo
@@ -7335,7 +7250,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item54
+						class Item50
 						{
 							dataType="Object";
 							class PositionInfo
@@ -7353,7 +7268,7 @@ class Mission
 							type="ej_Mortar_Container";
 							atlOffset=0.27245522;
 						};
-						class Item55
+						class Item51
 						{
 							dataType="Object";
 							class PositionInfo
@@ -7371,7 +7286,7 @@ class Mission
 							type="MLRSContainer";
 							atlOffset=83.423859;
 						};
-						class Item56
+						class Item52
 						{
 							dataType="Object";
 							class PositionInfo
@@ -7390,7 +7305,7 @@ class Mission
 							type="ej_CMContainer";
 							atlOffset=83.37458;
 						};
-						class Item57
+						class Item53
 						{
 							dataType="Object";
 							class PositionInfo
@@ -7408,7 +7323,7 @@ class Mission
 							type="ArtyContainer";
 							atlOffset=82.271172;
 						};
-						class Item58
+						class Item54
 						{
 							dataType="Object";
 							class PositionInfo
@@ -7429,7 +7344,7 @@ class Mission
 							type="B_T_UAV_03_dynamicLoadout_F";
 							atlOffset=86.051926;
 						};
-						class Item59
+						class Item55
 						{
 							dataType="Object";
 							class PositionInfo
@@ -7449,7 +7364,7 @@ class Mission
 							type="GX_B_MQ8B_UAV_RECON_SEATED";
 							atlOffset=0.25935841;
 						};
-						class Item60
+						class Item56
 						{
 							dataType="Object";
 							class PositionInfo
@@ -7470,7 +7385,7 @@ class Mission
 							type="rksla3_uav_mq9_reaper_generic";
 							atlOffset=96.792999;
 						};
-						class Item61
+						class Item57
 						{
 							dataType="Object";
 							class PositionInfo
@@ -7488,7 +7403,7 @@ class Mission
 							type="qav_b_ripsaw_Mk44";
 							atlOffset=86.058998;
 						};
-						class Item62
+						class Item58
 						{
 							dataType="Object";
 							class PositionInfo
@@ -7507,9 +7422,94 @@ class Mission
 							type="B_UGV_01_rcws_F";
 							atlOffset=86.054001;
 						};
+						class Item59
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={9621.1279,20.107494,345.88843};
+								angles[]={0,4.625123,0};
+							};
+							side="Empty";
+							class Attributes
+							{
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+								reportRemoteTargets=1;
+								receiveRemoteTargets=1;
+								reportOwnPosition=1;
+								pylons="PylonRack_19Rnd_Rockets[0];PylonRack_19Rnd_Rockets[0];";
+							};
+							id=763;
+							type="ej_MH60M";
+							atlOffset=8.9257765;
+						};
+						class Item60
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={9579.749,20.097546,341.48553};
+								angles[]={0,4.625123,0};
+							};
+							side="Empty";
+							class Attributes
+							{
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+								reportRemoteTargets=1;
+								receiveRemoteTargets=1;
+								reportOwnPosition=1;
+								pylons="PylonRack_19Rnd_Rockets[0];PylonRack_19Rnd_Rockets[0];";
+							};
+							id=764;
+							type="ej_MH60M";
+							atlOffset=3.5072403;
+						};
+						class Item61
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={9538.2402,19.460133,337.18539};
+								angles[]={0,4.6076694,0};
+							};
+							side="Empty";
+							class Attributes
+							{
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+								reportRemoteTargets=1;
+								receiveRemoteTargets=1;
+								reportOwnPosition=1;
+								pylons="GX_PylonPod_12Rnd_PG_Missiles[0];PylonRack_19Rnd_Rockets[0];PylonRack_19Rnd_Rockets[0];GX_PylonPod_12Rnd_PG_Missiles[0];";
+							};
+							id=765;
+							type="ej_MH92";
+							atlOffset=3.51653;
+						};
+						class Item62
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={9494.8125,19.460655,332.68814};
+								angles[]={0,4.6076694,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+								reportRemoteTargets=1;
+								receiveRemoteTargets=1;
+								reportOwnPosition=1;
+								pylons="GX_PylonPod_12Rnd_Missiles[0];PylonRack_19Rnd_Rockets[0];PylonRack_19Rnd_Rockets[0];GX_PylonPod_12Rnd_Missiles[0];";
+							};
+							id=766;
+							type="ej_MH92";
+							atlOffset=6.4849854e-05;
+						};
 					};
 					id=243;
-					atlOffset=84.648201;
+					atlOffset=3.0588017;
 				};
 				class Item3
 				{
@@ -10833,7 +10833,7 @@ class Mission
 				};
 			};
 			id=136;
-			atlOffset=69.126442;
+			atlOffset=69.45134;
 		};
 		class Item3
 		{
