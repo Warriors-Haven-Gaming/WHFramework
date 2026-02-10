@@ -18,15 +18,7 @@ if (!local _unit) exitWith {};
 _unit setDamage 0;
 _unit setUnconscious false;
 _unit allowDamage true;
-
-_unit spawn {
-    sleep WHF_revive_captiveDuration;
-    if !(lifeState _this in ["HEALTHY", "INJURED"]) exitWith {};
-
-    private _wasCaptive = _this getVariable "WHF_incapUnit_wasCaptive";
-    if (isNil "_wasCaptive" || {!_wasCaptive}) then {_this setCaptive false};
-    if (!isNil "_wasCaptive") then {_this setVariable ["WHF_incapUnit_wasCaptive", nil, true]};
-};
+// NOTE: captive state is restored in WHF_fnc_incapLoop
 
 if (isNull objectParent _unit) then {
     if (

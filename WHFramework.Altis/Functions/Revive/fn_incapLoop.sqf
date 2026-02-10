@@ -114,7 +114,22 @@ while {lifeState _unit isEqualTo "INCAPACITATED"} do {
 
     if (!isNull _vehicle && {!alive _vehicle}) then {_unit moveOut _vehicle};
 
-    sleep (1 + random 1);
+    private _timeout = time + 1 + random 1;
+    waitUntil {
+        sleep 0.125;
+        lifeState _unit isNotEqualTo "INCAPACITATED" || {time > _timeout}
+    };
 };
 
 _unit removeEventHandler _killedEH;
+if (local _unit && {alive _unit}) then {
+    _unit allowDamage true;
+    _unit spawn {
+        sleep WHF_revive_captiveDuration;
+        if !(lifeState _this in ["HEALTHY", "INJURED"]) exitWith {};
+
+        private _wasCaptive = _this getVariable "WHF_incapUnit_wasCaptive";
+        if (isNil "_wasCaptive" || {!_wasCaptive}) then {_this setCaptive false};
+        if (!isNil "_wasCaptive") then {_this setVariable ["WHF_incapUnit_wasCaptive", nil, true]};
+    };
+};
