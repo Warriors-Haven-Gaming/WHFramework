@@ -23,9 +23,9 @@ private _objects = ASLToAGL ATLToASL _pos nearObjects ["All", _radius];
 _objects = _objects select {
     private _obj = _x;
     switch (true) do {
-        case (_obj isKindOf "Man"): {alive _obj || {isAwake _obj}};
         case (boundingBoxReal [_obj, "Geometry"] select 2 <= 0): {false};
         case (_exceptions findIf {_obj isKindOf _x} >= 0): {false};
+        case (_obj isKindOf "Man"): {alive _obj || {isAwake _obj}};
         default {true};
     }
 };
