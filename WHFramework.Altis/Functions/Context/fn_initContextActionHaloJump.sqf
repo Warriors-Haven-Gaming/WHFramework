@@ -22,7 +22,7 @@ if (!hasInterface) exitWith {};
                 isTouchingGround vehicle focusOn
                 || {private _z = getPos vehicle focusOn # 2; _z <= 0 && {_z > -3}}
             )
-            && {!(objectParent focusOn isKindOf 'Air')}
+            && {!(objectParent focusOn isKindOf "Air")}
         }
     },
     false,

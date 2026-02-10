@@ -33,7 +33,7 @@ if (!hasInterface) exitWith {};
     {
         isNull objectParent focusOn
         && {isTouchingGround focusOn
-        && {focusOn getVariable ['WHF_role', ''] in ['medic', 'sniper']}}
-            && {isNil 'WHF_quadbike' || {!alive WHF_quadbike}}
+        && {focusOn getVariable ["WHF_role", ""] in ["medic", "sniper"]}}
+            && {isNil "WHF_quadbike" || {!alive WHF_quadbike}}
     }
 ] call WHF_fnc_contextMenuAdd;

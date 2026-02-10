@@ -25,7 +25,7 @@ private _reportID = [
         private _diff = WHF_jtac_lastReport + WHF_jtac_tasks_cooldown - time;
         if (_diff > 0) exitWith {
             private _message = localize "$STR_WHF_initJTACAction_cooldown";
-            50 cutText [format [_message, _diff toFixed 1], 'PLAIN', 0.5];
+            50 cutText [format [_message, _diff toFixed 1], "PLAIN", 0.5];
             false
         };
         true

@@ -20,10 +20,10 @@ if (!WHF_drones_combat_enabled) exitWith {false};
 if (
     WHF_drones_combat_uavOnly
     && {isPlayer _unit
-    && {_unit getVariable ['WHF_role', ''] isNotEqualTo 'uav'}}
+    && {_unit getVariable ["WHF_role", ""] isNotEqualTo "uav"}}
 ) exitWith {false};
 if (!isNull objectParent _unit) exitWith {false};
 if (_unit getVariable ["WHF_safezone_friendly", false] isEqualTo true) exitWith {false};
-if ([backpack _unit] call WHF_fnc_getBackpackDrone isEqualTo '') exitWith {false};
+if ([backpack _unit] call WHF_fnc_getBackpackDrone isEqualTo "") exitWith {false};
 // TODO: require explosive charge to assemble FPV drone
 true
