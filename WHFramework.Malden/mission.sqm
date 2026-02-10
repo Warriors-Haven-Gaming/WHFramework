@@ -12,11 +12,11 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=905;
+		nextID=907;
 	};
 	class MarkerIDProvider
 	{
-		nextID=1;
+		nextID=2;
 	};
 	class LayerIndexProvider
 	{
@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={9554.9961,55.091457,331.58591};
-		dir[]={0.76176673,-0.47513169,0.4404124};
-		up[]={0.41133502,0.87991369,0.23781158};
-		aside[]={0.50051671,3.9930455e-08,-0.86572766};
+		pos[]={9616.1377,6.2420874,371.75491};
+		dir[]={0.92661655,-0.37257427,0.05069701};
+		up[]={0.37201786,0.92800236,0.020353828};
+		aside[]={0.054630257,0,-0.99850661};
 	};
 };
 binarizationWanted=0;
@@ -116,13 +116,14 @@ addons[]=
 	"A3_Weapons_F_Rifles_MX_Black",
 	"A3_Weapons_F_Acc",
 	"Weapons_F_RAF_Binocular",
-	"A3_Characters_F_Heads"
+	"A3_Characters_F_Heads",
+	"A3_Modules_F"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=56;
+		items=57;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -480,6 +481,13 @@ class AddonsMetaData
 			className="CSAT_Eyewear";
 			name="CSAT_Eyewear";
 		};
+		class Item56
+		{
+			className="A3_Modules_F";
+			name="Arma 3 Alpha - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 dlcs[]=
@@ -565,7 +573,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=79;
+		items=80;
 		class Item0
 		{
 			dataType="Layer";
@@ -3798,13 +3806,14 @@ class Mission
 								angles[]={0.84061795,1.4892021,0.13630226};
 							};
 							side="Empty";
+							flags=4;
 							class Attributes
 							{
 								disableSimulation=1;
 							};
 							id=856;
 							type="RKSLA3_placableweapon_brimstone_dm";
-							atlOffset=0.74346733;
+							atlOffset=0.0066680908;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -15114,13 +15123,13 @@ class Mission
 						angles[]={0.0013439035,1.3788799,6.2762914};
 					};
 					side="West";
-					flags=6;
+					flags=2;
 					class Attributes
 					{
 					};
 					id=762;
 					type="B_UAV_AI";
-					atlOffset=0.00037574768;
+					atlOffset=0.89797783;
 				};
 			};
 			class Attributes
@@ -26261,20 +26270,32 @@ class Mission
 		class Item78
 		{
 			dataType="Trigger";
-			position[]={9629.2402,1.5586777,372.38901};
-			angle=6.1803675;
+			position[]={9630.9092,1.5575256,372.62207};
+			angle=6.1803656;
 			class Attributes
 			{
-				sizeA=4.381;
-				sizeB=0.99299997;
+				name="WHF_prison_area";
+				sizeA=6.2409387;
+				sizeB=1.1139932;
 				sizeC=5;
-				repeatable=1;
-				activationBy="EAST";
 				isRectangle=1;
 			};
 			id=902;
 			type="EmptyDetector";
-			atlOffset=0.0011548996;
+			atlOffset=2.8610229e-06;
+		};
+		class Item79
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={9629.0254,-0.00019836426,378.28201};
+			};
+			name="WHF_prison_logic";
+			init="if (!isServer) exitWith {}; " \n "0 spawn { " \n "    while {true} do { " \n "        sleep (1 + random 1); " \n " " \n "        private _prisoners = " \n "            units civilian " \n "            select { " \n "                !isNil {_x getVariable ""WHF_detain_caller""} " \n "                && {isNil {_x getVariable ""WHF_imprisoned""} " \n "                && {isNull attachedTo _x}} " \n "            } " \n "            inAreaArray WHF_prison_area; " \n "        if (_prisoners isEqualTo []) then {continue}; " \n " " \n "        private _x = _prisoners # 0; " \n "        [_x, 20, 120] call WHF_fnc_queueGCDeletion; " \n "        _x setVariable [""WHF_imprisoned"", true, true]; " \n "        if (!isPlayer _x) then { " \n "            [_x, false] remoteExec [""allowDamage"", _x]; " \n "            [_x, false] remoteExec [""setCaptive"", _x]; " \n "            [_x, false] remoteExec [""setPhysicsCollisionFlag""]; " \n "        }; " \n " " \n "        private _detainer = _x getVariable [""WHF_detain_caller"", objNull]; " \n "        if (isNull _detainer) then {continue}; " \n " " \n "        private _type = toLowerANSI typeOf _x; " \n "        private _oldSide = [_x, true] call BIS_fnc_objectSide; " \n "        private _title = switch (true) do { " \n "            case (""officer"" in _type): {""an officer""}; " \n "            case (_oldSide isEqualTo civilian): {""a civilian""}; " \n "            default {selectRandom [""a combatant"", ""an enemy"", ""a soldier""]}; " \n "        }; " \n "        private _message = selectRandom [ " \n "            ""%1 has imprisoned %2!"", " \n "            ""%1 has locked up %2!"", " \n "            ""%1 has secured %2!"" " \n "        ]; " \n "        private _message = format [_message, name _detainer, _title]; " \n "        [[side group _detainer, ""BLU""], _message] remoteExec [""sideChat""]; " \n "        private _notif = format [""Captured %1"", _title]; " \n "        [""TaskSucceeded"", ["""", _notif]] remoteExec [""BIS_fnc_showNotification"", _detainer]; " \n "    }; " \n "}; " \n "";
+			id=905;
+			type="Logic";
+			atlOffset=77.886002;
 		};
 	};
 };
