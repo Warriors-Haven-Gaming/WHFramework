@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=907;
+		nextID=908;
 	};
 	class MarkerIDProvider
 	{
@@ -573,7 +573,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=80;
+		items=81;
 		class Item0
 		{
 			dataType="Layer";
@@ -26296,6 +26296,19 @@ class Mission
 			id=905;
 			type="Logic";
 			atlOffset=77.886002;
+		};
+		class Item80
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={9627.9961,-0.19759369,385.48901};
+			};
+			name="WHF_fog_cleanup";
+			init="if (!isServer) exitWith {}; " \n "0 spawn { " \n "    scriptName ""WHF_fog_cleanup""; " \n "    while {true} do { " \n "        sleep 300; " \n "        if (!isNil ""WHF_fog_cleanup_disabled"") then {continue}; " \n "        if (fog < 0.15) then {continue}; " \n "        private _newFog = fog / 4; " \n "        diag_log text format [""WHF_fog_cleanup: reducing fog to %1"", _newFog]; " \n "        180 setFog _newFog; " \n "    }; " \n "}; ";
+			id=907;
+			type="Logic";
+			atlOffset=77.886009;
 		};
 	};
 };
