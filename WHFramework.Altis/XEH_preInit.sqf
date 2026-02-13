@@ -896,7 +896,7 @@ call WHF_fnc_cycleFaction;
     "TIME",
     ["STR_WHF_settings_missions_annex_reinforce_frequency_units", "STR_WHF_settings_missions_annex_reinforce_frequency_units_tooltip"],
     ["STR_WHF_settings_missions", "STR_WHF_settings_missions_annex"],
-    [10, 600, 120],
+    [10, 600, 240],
     true,
     {},
     false
@@ -906,7 +906,7 @@ call WHF_fnc_cycleFaction;
     "TIME",
     ["STR_WHF_settings_missions_annex_reinforce_frequency_vehicles", "STR_WHF_settings_missions_annex_reinforce_frequency_vehicles_tooltip"],
     ["STR_WHF_settings_missions", "STR_WHF_settings_missions_annex"],
-    [10, 600, 180],
+    [10, 600, 240],
     true,
     {},
     false
