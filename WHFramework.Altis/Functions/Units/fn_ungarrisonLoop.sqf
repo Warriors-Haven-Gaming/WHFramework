@@ -48,6 +48,9 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
 
             if (count _targets < 1) then {continue};
 
+            private _position = [_unit, _targets] call WHF_fnc_nearestPosition;
+            if (isNil "_position") then {continue};
+
             _unit setUnitPos "AUTO";
             _unit enableAIFeature ["COVER", true];
             _unit enableAIFeature ["PATH", true];
@@ -66,7 +69,6 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
             _newGroup enableIRLasers _lasersOn;
             _newGroup enableGunLights (["Auto", "ForceOn"] select _lightsOn);
 
-            private _position = [_unit, _targets] call WHF_fnc_nearestPosition;
             private _waypoint = _newGroup addWaypoint [_position, 5];
             _waypoint setWaypointType "SAD";
             _waypoint setWaypointCompletionRadius 5;

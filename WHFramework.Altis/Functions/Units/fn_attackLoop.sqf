@@ -62,8 +62,10 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
 
         if (_targets isEqualTo []) then {sleep 0.125; continue};
 
-        [_x] call WHF_fnc_clearWaypoints;
         private _position = [_leader, _targets] call WHF_fnc_nearestPosition;
+        if (isNil "_position") then {continue};
+
+        [_x] call WHF_fnc_clearWaypoints;
         private _waypoint = _x addWaypoint [_position, 50];
         _waypoint setWaypointType "SAD";
         _waypoint setWaypointCompletionRadius 20;

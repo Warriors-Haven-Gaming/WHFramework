@@ -112,6 +112,7 @@ while {alive _drone} do {
         if (count _targets < 1) exitWith {[] call _switchTarget};
 
         private _newTarget = [_drone, _targets] call WHF_fnc_nearestPosition;
+        if (isNil "_newTarget") then {continue};
         [_newTarget] call _switchTarget;
         _lastTarget = _time;
     };
