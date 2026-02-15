@@ -22,7 +22,7 @@ if (focusOn distance _unit > 30) exitWith {};
 
 _message = format ([_message call BIS_fnc_localize] + _params);
 private _canSideChat =
-    side group _unit isEqualTo side group focusOn
+    side group _unit isEqualTo side group player
     && {assignedItems _unit findIf {
             getTextRaw (configFile >> "CfgWeapons" >> _x >> "simulation")
             isEqualTo "ItemRadio"
