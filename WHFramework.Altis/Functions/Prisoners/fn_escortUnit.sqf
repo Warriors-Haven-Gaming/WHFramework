@@ -20,7 +20,12 @@ if (!isNil {_caller getVariable "WHF_escort"}) exitWith {};
 
 _target attachTo [_caller, [0.1, -1.1, 0]];
 _caller setVariable ["WHF_escort", _target];
-[_caller, "WHF_escort", ["HEALTHY", "INJURED"]] call WHF_fnc_addLoadActions;
+
+private _onRelease = {
+    params ["_target", "_caller"];
+    [_caller, _target] remoteExec ["WHF_fnc_securePrisoner", _target];
+};
+[_caller, "WHF_escort", ["HEALTHY", "INJURED"], nil, [_caller, _onRelease]] call WHF_fnc_addLoadActions;
 
 _caller spawn {
     while {true} do {

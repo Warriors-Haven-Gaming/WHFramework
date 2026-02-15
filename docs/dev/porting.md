@@ -267,6 +267,12 @@ set to 0%. The following prefixes are supported:
   This restriction only affects infil and not exfil, meaning players will be
   allowed to halo jump out of restricted areas.
 
+- `WHF_prison`
+
+  These areas allow units to be imprisoned when players release them.
+  If the map does not define any prison area, prisoners can be released
+  within 10 metres of an arsenal to capture them instead.
+
 - `WHF_safezone`
 
   These areas prevent players from dealing friendly fire damage. Useful for areas

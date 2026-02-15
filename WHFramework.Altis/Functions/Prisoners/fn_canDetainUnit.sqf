@@ -29,6 +29,7 @@ if (captive _target) exitWith {false};
 if !(_target isKindOf "Man") exitWith {false};
 if !(lifeState _caller in ["HEALTHY", "INJURED"]) exitWith {false};
 if !(lifeState _target in ["HEALTHY", "INJURED"]) exitWith {false};
+if (!isNil {_target getVariable "WHF_prisoner_secured"}) exitWith {false};
 if (_caller distance _target > 10) exitWith {false};
 
 private _sideCaller = side group _caller;
