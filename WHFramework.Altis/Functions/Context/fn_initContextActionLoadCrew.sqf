@@ -101,7 +101,7 @@ WHF_fnc_initContextActionLoadCrew_moveInAny = compileFinal {
         private _vehicle = objectParent focusOn;
         leader focusOn isEqualTo focusOn
         && {local _vehicle
-        && {effectiveCommander _vehicle isEqualTo focusOn
+        && {focusOn in [currentPilot _vehicle, effectiveCommander _vehicle]
         && {vectorMagnitude velocity _vehicle < 1.39
         && {
             (
