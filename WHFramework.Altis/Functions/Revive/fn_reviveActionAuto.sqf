@@ -99,8 +99,9 @@ private _moveToTarget = {
 
 private _shouldRepath = {
     // params ["_target", "_pos"];
+    private _posAGL = ASLToAGL ATLToASL _pos;
     expectedDestination _unit params ["_destination", "_plan"];
-    _plan isNotEqualTo "LEADER PLANNED" || {_destination distance _pos > call _reviveRange}
+    _plan isNotEqualTo "LEADER PLANNED" || {_destination distance _posAGL > call _reviveRange}
 };
 
 private _infantryRange = 3;

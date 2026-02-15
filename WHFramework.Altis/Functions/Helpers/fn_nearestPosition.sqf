@@ -24,6 +24,7 @@ params ["_center", "_positions"];
 
 private _normalizePosition = {
     if (_this isEqualTo objNull) exitWith {-1};
+    if (_this isEqualType []) exitWith {ASLToAGL ATLToASL _this};
     _this
 };
 

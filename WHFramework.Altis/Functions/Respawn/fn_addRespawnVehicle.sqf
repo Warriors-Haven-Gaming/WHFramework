@@ -23,10 +23,14 @@ if (typeOf _vehicle isEqualTo "") exitWith {};
 // TODO: parameterize vehicle side
 _vehicle setVariable ["WHF_vehicle_side", blufor, true];
 
+// NOTE: <Object> distance <Object> can produce different results from
+//       <PositionAGL> distance <Object>. Make sure we use the latter syntax,
+//       as WHF_fnc_respawnLoop will rely on the radius to be computed this way.
 private _pos = getPosATL _vehicle;
+private _posAGL = ASLToAGL ATLToASL _pos;
 private _radius = sizeOf typeOf _vehicle / 2;
 private _objects = [_pos, _radius, [_vehicle]] call WHF_fnc_nearObjectsRespawn;
-{_radius = _radius min ((_pos distance _x) - 1)} forEach _objects;
+{_radius = _radius min ((_posAGL distance _x) - 1)} forEach _objects;
 _radius = _radius max 0;
 
 // Derived from BIS_fnc_initVehicle
