@@ -5,7 +5,7 @@ Description:
     Check if the given position is near an arsenal.
 
 Parameters:
-    Position2D position:
+    Object | PositionAGL | Position2D position:
         The position to check.
     Number radius:
         The max distance allowed from an arsenal.

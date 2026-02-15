@@ -31,7 +31,7 @@ private _actionID = [
             actionIDs _vehicle findIf {
                 _vehicle actionParams _x select 0 isEqualTo _arsenalText
             } < 0
-        && {[getPosATL _vehicle, 50] call WHF_fnc_isNearArsenal}}}}}}}
+        && {[_vehicle, 50] call WHF_fnc_isNearArsenal}}}}}}}
     }},
     toString {true},
     {

@@ -36,7 +36,7 @@ private _actionID = _recruit addAction [
         local _originalTarget
         && {_originalTarget getVariable ["WHF_recruiter", ""] isEqualTo getPlayerUID player
         && {lifeState _originalTarget in ["HEALTHY", "INJURED"]
-        && {[getPosATL _originalTarget, 50] call WHF_fnc_isNearArsenal}}}
+        && {[_originalTarget, 50] call WHF_fnc_isNearArsenal}}}
     },
     3
 ];
