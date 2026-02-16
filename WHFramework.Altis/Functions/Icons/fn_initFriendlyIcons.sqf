@@ -27,11 +27,11 @@ addMissionEventHandler ["Draw3D", {
         };
 
         private _players = [_unit] + ((_crew select {isPlayer _x}) - [_unit]);
-        _players = _players apply {_x call _getName} joinString ", ";
+        private _names = _players apply {_x call _getName} joinString ", ";
 
-        private _other = _crew select {!isPlayer _x};
-        if (_other isEqualTo []) exitWith {_players};
-        format ["%1 + %2", _players, count _other]
+        private _other = _crew - _players;
+        if (_other isEqualTo []) exitWith {_names};
+        format ["%1 + %2", _names, count _other]
     };
 
     // Separate units from vehicles
@@ -307,11 +307,11 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
         };
 
         private _players = [_unit] + ((_crew select {isPlayer _x}) - [_unit]);
-        _players = _players apply {_x call _getName} joinString ", ";
+        private _names = _players apply {_x call _getName} joinString ", ";
 
-        private _other = _crew select {!isPlayer _x};
-        if (_other isEqualTo []) exitWith {_players};
-        format ["%1 + %2", _players, count _other]
+        private _other = _crew - _players;
+        if (_other isEqualTo []) exitWith {_names};
+        format ["%1 + %2", _names, count _other]
     };
 
     private _mapScale = ctrlMapScale _display;
