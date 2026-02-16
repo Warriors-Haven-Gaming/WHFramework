@@ -5,13 +5,13 @@ private _VERSION_NUMBER = 1;
 // change to the structure and instructions have been followed to migrate
 // this configuration to the new version.
 
-private _carsCooldown = 300;
+private _carsCooldown = 60;
 private _cars = [
     // Classname                         cooldown (-1 to use category cooldown)
     // |                                 |    whitelisted roles (see roles.sqf)
-    ["cup_c_octavia_civ",                          [60,  []]],
-    ["c_offroad_02_unarmed_f",                     [60,  []]],
-    ["cup_i_hilux_unarmed_napa",                   [60,  []]],
+    ["cup_c_octavia_civ",                          [-1,  []]],
+    ["c_offroad_02_unarmed_f",                     [-1,  []]],
+    ["cup_i_hilux_unarmed_napa",                   [-1,  []]],
     ["cup_b_nm1038_4s_df_usa_wdl",                 [-1,  []]],
     ["cup_b_lr_special_m2_gb_w",                   [-1,  []]],
     ["cup_b_lr_special_gmg_gb_w",                  [-1,  []]],
@@ -25,13 +25,13 @@ private _cars = [
     ["sparky_jsdf_overhaul_gac_jgsdf_hmv_249",     [-1,  []]],
     ["bwa3_eagle_flw100_fleck",                    [-1,  []]],
     ["bwa3_eagle_flw100_tropen",                   [-1,  []]],
-    ["ef_b_pickup_mjtf_des",                       [120, []]],
-    ["ef_b_pickup_comms_mjtf_des",                 [120, []]],
-    ["ef_b_pickup_mmg_mjtf_des",                   [180, []]],
-    ["b_lsv_01_unarmed_f",                         [120, []]],
+    ["ef_b_pickup_mjtf_des",                       [-1,  []]],
+    ["ef_b_pickup_comms_mjtf_des",                 [-1,  []]],
+    ["ef_b_pickup_mmg_mjtf_des",                   [-1,  []]],
+    ["b_lsv_01_unarmed_f",                         [-1,  []]],
     ["b_lsv_01_armed_f",                           [-1,  []]],
     ["b_lsv_01_at_f",                              [-1,  []]],
-    ["e22_b_jtf_lsv_02_unarmed_f",                 [60,  []]],
+    ["e22_b_jtf_lsv_02_unarmed_f",                 [-1,  []]],
     ["e22_b_jtf_d_lsv_02_unarmed_f",               [-1,  []]],
     ["e22_b_jtf_lsv_02_armed_f",                   [-1,  []]],
     ["e22_b_jtf_d_lsv_02_armed_f",                 [-1,  []]],
@@ -44,7 +44,7 @@ private _cars = [
     ["", []] // Dummy element to assist with VCS tooling, may be removed
 ];
 
-private _motorcyclesCooldown = 120;
+private _motorcyclesCooldown = 30;
 private _motorcycles = [
     ["cup_b_m1030_usa",                          [-1, []]],
     ["cup_i_tt650_napa",                         [-1, []]],
@@ -116,10 +116,10 @@ private _motorcycles = [
     ["", []]
 ];
 
-private _trucksCooldown = 300;
+private _trucksCooldown = 60;
 private _trucks = [
-    ["c_van_01_transport_f",                         [60, []]],
-    ["c_van_01_box_f",                               [60, []]],
+    ["c_van_01_transport_f",                         [-1, []]],
+    ["c_van_01_box_f",                               [-1, []]],
     ["c_van_01_fuel_f",                              [-1, []]],
     ["cup_b_t810_refuel_cz_wdl",                     [-1, []]],
     ["cup_b_t810_reammo_cz_wdl",                     [-1, []]],
@@ -160,7 +160,7 @@ private _trucks = [
     ["", []]
 ];
 
-private _MRAPsCooldown = 300;
+private _MRAPsCooldown = 60;
 private _MRAPs = [
     ["b_mrap_01_f",                        [-1,  []]],
     ["b_mrap_01_gmg_f",                    [-1,  []]],
@@ -169,12 +169,12 @@ private _MRAPs = [
     ["cup_b_rg31_m2_od_usa",               [-1,  []]],
     ["cup_b_dingo_ger_wdl",                [-1,  []]],
     ["cup_b_ridgback_hmg_gb_w",            [-1,  []]],
-    ["cup_b_mastiff_gmg_gb_w",             [600, []]],
+    ["cup_b_mastiff_gmg_gb_w",             [-1,  []]],
     ["ef_b_mrap_01_mjtf_des",              [-1,  []]],
     ["ef_b_mrap_01_hmg_mjtf_des",          [-1,  []]],
-    ["ef_b_mrap_01_gmg_mjtf_des",          [600, []]],
-    ["ef_b_mrap_01_fsv_mjtf_des",          [600, []]],
-    ["ef_b_mrap_01_at_mjtf_des",           [600, []]],
+    ["ef_b_mrap_01_gmg_mjtf_des",          [-1,  []]],
+    ["ef_b_mrap_01_fsv_mjtf_des",          [-1,  []]],
+    ["ef_b_mrap_01_at_mjtf_des",           [-1,  []]],
     ["bwa3_dingo2_flw100_mg3_cg13_fleck",  [-1,  []]],
     ["bwa3_dingo2_flw100_mg3_cg13_tropen", [-1,  []]],
     ["bwa3_dingo2_flw200_m2_cg13_fleck",   [-1,  []]],
@@ -200,12 +200,12 @@ private _MRAPs = [
     ["", []]
 ];
 
-private _APCsCooldown = 300;
+private _APCsCooldown = 60;
 private _APCs = [
-    ["cup_b_m1130_cv_m2_woodland",                 [600, []]],
+    ["cup_b_m1130_cv_m2_woodland",                 [-1,  []]],
     ["cup_b_m1135_atgmv_woodland",                 [-1,  []]],
     ["cup_b_m1128_mgs_woodland",                   [-1,  []]],
-    ["cup_b_m1126_icv_mk19_woodland",              [600, []]],
+    ["cup_b_m1126_icv_mk19_woodland",              [-1,  []]],
     ["sparky_jsdf_overhaul_gac_jgsdf_aav",         [-1,  []]],
     ["sparky_jsdf_overhaul_jsdf_jgsdf_type60apc",  [-1,  []]],
     ["sparky_jsdf_overhaul_jsdf_jgsdf_type73apc",  [-1,  []]],
@@ -221,14 +221,14 @@ private _APCs = [
     ["qav_bdrm2",                                  [-1,  []]],
     ["apc_wheeled_01_mgs_qav",                     [-1,  []]],
     ["apc_wheeled_01_mgs_up_qav",                  [-1,  []]],
-    ["e22_b_jtf_apc_wheeled_03_unarmed_f",         [600, []]],
-    ["e22_b_jtf_d_apc_wheeled_03_unarmed_f",       [600, []]],
+    ["e22_b_jtf_apc_wheeled_03_unarmed_f",         [-1,  []]],
+    ["e22_b_jtf_d_apc_wheeled_03_unarmed_f",       [-1,  []]],
     ["", []]
 ];
 
-private _IFVsCooldown = 300;
+private _IFVsCooldown = 60;
 private _IFVs = [
-    ["cup_b_lav25m240_usmc",                       [600, []]],
+    ["cup_b_lav25m240_usmc",                       [-1,  []]],
     ["cup_b_m7bradley_usa_w",                      [-1,  []]],
     ["cup_b_m2bradley_usa_w",                      [-1,  []]],
     ["cup_b_m2a3bradley_usa_w",                    [-1,  []]],
@@ -236,9 +236,9 @@ private _IFVs = [
     ["cup_b_fv510_gb_w_slat",                      [-1,  []]],
     ["cup_b_mcv80_gb_w",                           [-1,  []]],
     ["cup_b_mcv80_gb_w_slat",                      [-1,  []]],
-    ["cup_b_aav_usmc_tts",                         [600, []]],
-    ["cup_b_boxer_gmg_ger_wdl",                    [600, []]],
-    ["cup_b_boxer_hmg_ger_wdl",                    [600, []]],
+    ["cup_b_aav_usmc_tts",                         [-1,  []]],
+    ["cup_b_boxer_gmg_ger_wdl",                    [-1,  []]],
+    ["cup_b_boxer_hmg_ger_wdl",                    [-1,  []]],
     ["qav_bmp1",                                   [-1,  []]],
     ["qav_bmp1_am",                                [-1,  []]],
     ["qav_bmp1_am_p",                              [-1,  []]],
@@ -256,12 +256,12 @@ private _IFVs = [
     ["", []]
 ];
 
-private _utilityCooldown = 300;
+private _utilityCooldown = 60;
 private _utility = [
     ["cup_b_t810_repair_cz_wdl",                                     [-1,  ["engineer"]]],
     ["cup_b_nm1038_repair_df_usa_wdl",                               [-1,  ["engineer"]]],
     ["b_truck_01_repair_f",                                          [-1,  ["engineer"]]],
-    ["b_apc_tracked_01_crv_f",                                       [600, ["engineer"]]],
+    ["b_apc_tracked_01_crv_f",                                       [-1,  ["engineer"]]],
     ["sparky_jsdf_overhaul_jsdf_jgsdf_type75_wmv",                   [-1,  ["engineer"]]],
     ["sparky_jsdf_overhaul_jsdf_jgsdf_type73_tractor",               [-1,  ["engineer"]]],
     ["sparky_jsdf_overhaul_jsdf_jgsdf_type87_asv",                   [-1,  ["engineer"]]],
@@ -282,12 +282,12 @@ private _utility = [
     ["", []]
 ];
 
-private _artilleryCooldown = 600;
+private _artilleryCooldown = 60;
 private _artillery = [
-    ["cup_b_fv432_mortar",                          [300,  ["arty"]]],
-    ["cup_b_m1129_mc_mk19_woodland",                [300,  ["arty"]]],
-    ["b_d_apc_wheeled_01_mortar_lxws",              [300,  ["arty"]]],
-    ["b_twinmortar_rf",                             [300,  ["arty"]]],
+    ["cup_b_fv432_mortar",                          [-1,   ["arty"]]],
+    ["cup_b_m1129_mc_mk19_woodland",                [-1,   ["arty"]]],
+    ["b_d_apc_wheeled_01_mortar_lxws",              [-1,   ["arty"]]],
+    ["b_twinmortar_rf",                             [-1,   ["arty"]]],
     ["b_mbt_01_arty_f",                             [-1,   ["arty"]]],
     ["sparky_jsdf_overhaul_type74_105mm_spg",       [-1,   ["arty"]]],
     ["sparky_jsdf_overhaul_type75_155mm_spg",       [-1,   ["arty"]]],
@@ -307,12 +307,12 @@ private _artillery = [
     ["", []]
 ];
 
-private _airdefenseCooldown = 300;
+private _airdefenseCooldown = 60;
 private _airdefense = [
     ["cup_b_m6linebacker_usa_w",                 [-1,   ["aa"]]],
-    ["cup_b_m163_vulcan_usa",                    [300,  ["aa"]]],
+    ["cup_b_m163_vulcan_usa",                    [-1,   ["aa"]]],
     ["cup_b_nm1097_avenger_usa_wdl",             [-1,   ["aa"]]],
-    ["b_pickup_aat_rf",                          [300,  ["aa"]]],
+    ["b_pickup_aat_rf",                          [-1,   ["aa"]]],
     ["qav_625e",                                 [-1,   ["aa"]]],
     ["ef_b_mrap_01_laad_mjtf_des",               [-1,   ["aa"]]],
     ["sparky_jsdf_overhaul_jsdf_jgsdf_87spaag",  [-1,   ["aa"]]],
@@ -332,7 +332,7 @@ private _airdefense = [
     ["", []]
 ];
 
-private _tanksCooldown = 300;
+private _tanksCooldown = 60;
 private _tanks = [
     ["o_mbt_02_cannon_f",                             [-1,   ["engineer"]]],
     ["i_mbt_03_cannon_f",                             [-1,   ["engineer"]]],
@@ -351,10 +351,10 @@ private _tanks = [
     ["qav_t54",                                       [-1,   ["engineer"]]],
     ["qav_t72a",                                      [-1,   ["engineer"]]],
     ["qav_t90a",                                      [-1,   ["engineer"]]],
-    ["b_d_mbt_01_tusk_lxws",                          [600,  ["engineer"]]],
+    ["b_d_mbt_01_tusk_lxws",                          [-1,   ["engineer"]]],
     ["b_mbt_01_cannon_f",                             [-1,   ["engineer"]]],
     ["b_mbt_01_tusk_f",                               [-1,   ["engineer"]]],
-    ["b_afv_wheeled_01_up_cannon_f",                  [600,  ["engineer"]]],
+    ["b_afv_wheeled_01_up_cannon_f",                  [-1,   ["engineer"]]],
     ["ef_b_mbt_01_tusk_mjtf_wdl",                     [-1,   ["engineer"]]],
     ["ef_b_mbt_01_tusk_mjtf_des",                     [-1,   ["engineer"]]],
     ["e22_b_jtf_mbt_03_cannon_f",                     [-1,   ["engineer"]]],
@@ -372,10 +372,10 @@ private _tanks = [
     ["", []]
 ];
 
-private _helicoptersCooldown = 300;
+private _helicoptersCooldown = 60;
 private _helicopters = [
-    ["o_t_vtol_02_infantry_dynamicloadout_f",       [900, ["pilot_transport"]]],
-    ["o_t_vtol_02_vehicle_dynamicloadout_f",        [900, ["pilot_transport", "pilot_cas_plane"]]],
+    ["o_t_vtol_02_infantry_dynamicloadout_f",       [-1,  ["pilot_transport"]]],
+    ["o_t_vtol_02_vehicle_dynamicloadout_f",        [-1,  ["pilot_transport", "pilot_cas_plane"]]],
     ["o_heli_attack_02_dynamicloadout_f",           [-1,  ["pilot_cas_heli"]]],
     ["cup_b_ah6m_usa",                              [-1,  ["pilot_cas_heli"]]],
     ["cup_b_ah64d_dl_usa",                          [-1,  ["pilot_cas_heli"]]],
@@ -433,17 +433,17 @@ private _helicopters = [
     ["cup_b_mh60l_dap_2x_us",                       [-1,  ["pilot_transport"]]],
     ["cup_b_mh47e_usa",                             [-1,  ["pilot_transport"]]],
     ["cup_b_ch53e_usmc",                            [-1,  ["pilot_transport"]]],
-    ["valor_turret_transport_crewgun_f",            [600, ["pilot_transport"]]],
-    ["valor_transport_armed_f",                     [600, ["pilot_transport"]]],
-    ["valor_transport_armed_hmg_f",                 [600, ["pilot_transport"]]],
-    ["valor_transport_unarmed_f",                   [600, ["pilot_transport"]]],
-    ["b_t_vtol_01_infantry_f",                      [600, ["pilot_transport"]]],
-    ["b_t_vtol_01_vehicle_f",                       [600, ["pilot_transport"]]],
+    ["valor_turret_transport_crewgun_f",            [-1,  ["pilot_transport"]]],
+    ["valor_transport_armed_f",                     [-1,  ["pilot_transport"]]],
+    ["valor_transport_armed_hmg_f",                 [-1,  ["pilot_transport"]]],
+    ["valor_transport_unarmed_f",                   [-1,  ["pilot_transport"]]],
+    ["b_t_vtol_01_infantry_f",                      [-1,  ["pilot_transport"]]],
+    ["b_t_vtol_01_vehicle_f",                       [-1,  ["pilot_transport"]]],
     ["b_d_heli_transport_01_lxws",                  [-1,  ["pilot_transport"]]],
     ["b_heli_light_03_unarmed_rf",                  [-1,  ["pilot_transport"]]],
     ["b_heli_ec_04_military_rf",                    [-1,  ["pilot_transport"]]],
     ["b_heli_transport_01_f",                       [-1,  ["pilot_transport"]]],
-    ["b_heli_transport_01_pylons_f",                [600, ["pilot_transport"]]],
+    ["b_heli_transport_01_pylons_f",                [-1,  ["pilot_transport"]]],
     ["b_heli_transport_03_f",                       [-1,  ["pilot_transport"]]],
     ["b_heli_ec_03_rf",                             [-1,  ["pilot_transport"]]],
     ["jj_uh1h_doorgunner_ov",                       [-1,  ["pilot_transport"]]],
@@ -478,7 +478,7 @@ private _helicopters = [
     ["", []]
 ];
 
-private _planesCooldown = 300;
+private _planesCooldown = 60;
 private _planes = [
     ["o_plane_cas_02_dynamicloadout_f",         [-1,  ["pilot_cas_plane"]]],
     ["o_plane_fighter_02_f",                    [-1,  ["pilot_cas_plane"]]],
@@ -540,27 +540,27 @@ private _planes = [
     ["sparky_jsdf_overhaul_jsdf_jasdf_f1",      [-1,  ["pilot_cas_plane"]]],
     ["sparky_jsdf_overhaul_jsdf_jasdf_f4ejkai", [-1,  ["pilot_cas_plane"]]],
     ["sparky_jsdf_overhaul_jsdf_jasdf_f2A",     [-1,  ["pilot_cas_plane"]]],
-    ["jk_b_us_u2s_f",                           [600, ["pilot_transport"]]],
-    ["jk_b_us_mc130h_f",                        [600, ["pilot_transport"]]],
-    ["jk_b_us_mc130j_f",                        [600, ["pilot_transport"]]],
-    ["jk_b_us_c130j_30_cargo_f",                [600, ["pilot_transport"]]],
-    ["jk_b_us_ec130j_f",                        [600, ["pilot_transport"]]],
-    ["jk_b_us_hc130j_ii_f",                     [600, ["pilot_transport"]]],
-    ["jk_b_us_kc130j_f",                        [600, ["pilot_transport"]]],
-    ["jk_b_plane_transport_01_f",               [600, ["pilot_transport"]]],
-    ["jk_b_wolves_pmc_c130tjk_f",               [600, ["pilot_transport"]]],
+    ["jk_b_us_u2s_f",                           [-1,  ["pilot_transport"]]],
+    ["jk_b_us_mc130h_f",                        [-1,  ["pilot_transport"]]],
+    ["jk_b_us_mc130j_f",                        [-1,  ["pilot_transport"]]],
+    ["jk_b_us_c130j_30_cargo_f",                [-1,  ["pilot_transport"]]],
+    ["jk_b_us_ec130j_f",                        [-1,  ["pilot_transport"]]],
+    ["jk_b_us_hc130j_ii_f",                     [-1,  ["pilot_transport"]]],
+    ["jk_b_us_kc130j_f",                        [-1,  ["pilot_transport"]]],
+    ["jk_b_plane_transport_01_f",               [-1,  ["pilot_transport"]]],
+    ["jk_b_wolves_pmc_c130tjk_f",               [-1,  ["pilot_transport"]]],
     ["c_plane_civil_01_f",                      [-1,  ["pilot_transport"]]],
-    ["usaf_kc135",                              [600, ["pilot_transport"]]],
-    ["usaf_c130j",                              [600, ["pilot_transport"]]],
-    ["usaf_c130j_cargo",                        [600, ["pilot_transport"]]],
-    ["cup_b_mv22_viv_usmc",                     [600, ["pilot_transport"]]],
-    ["cup_b_c130j_gb",                          [600, ["pilot_transport"]]],
-    ["cup_b_c130j_cargo_gb",                    [600, ["pilot_transport"]]],
-    ["sparky_jsdf_overhaul_jsdf_jasdf_e767",    [600, ["pilot_transport"]]],
+    ["usaf_kc135",                              [-1,  ["pilot_transport"]]],
+    ["usaf_c130j",                              [-1,  ["pilot_transport"]]],
+    ["usaf_c130j_cargo",                        [-1,  ["pilot_transport"]]],
+    ["cup_b_mv22_viv_usmc",                     [-1,  ["pilot_transport"]]],
+    ["cup_b_c130j_gb",                          [-1,  ["pilot_transport"]]],
+    ["cup_b_c130j_cargo_gb",                    [-1,  ["pilot_transport"]]],
+    ["sparky_jsdf_overhaul_jsdf_jasdf_e767",    [-1,  ["pilot_transport"]]],
     ["", []]
 ];
 
-private _dronesCooldown = 300;
+private _dronesCooldown = 60;
 private _drones = [
     ["usaf_mq9",                            [-1, ["uav"]]],
     ["usaf_rq4a",                           [-1, ["uav"]]],
@@ -605,7 +605,7 @@ private _drones = [
     ["", []]
 ];
 
-private _shipsCooldown = 300;
+private _shipsCooldown = 60;
 private _ships = [
     ["b_boat_transport_01_f",               [-1,  []]],
     ["b_lifeboat",                          [-1,  []]],
@@ -617,15 +617,15 @@ private _ships = [
     ["cup_b_rhib_usmc",                     [-1,  []]],
     ["cup_b_zodiac_usmc",                   [-1,  []]],
     ["bae_fic",                             [-1,  []]],
-    ["rhicc_green",                         [600, []]],
+    ["rhicc_green",                         [-1,  []]],
     ["b_cbs_watershadow730_f",              [-1,  []]],
     ["ef_b_combatboat_unarmed_mjtf_des",    [-1,  []]],
-    ["ef_b_combatboat_hmg_mjtf_des",        [600, []]],
-    ["ef_b_combatboat_at_mjtf_des",         [600, []]],
+    ["ef_b_combatboat_hmg_mjtf_des",        [-1,  []]],
+    ["ef_b_combatboat_at_mjtf_des",         [-1,  []]],
     ["ef_b_boat_armed_01_minigun_mjtf_des", [-1,  []]],
     ["ef_b_lcc_mjtf_des",                   [-1,  []]],
     ["ef_b_lcc_sideload_mjtf_des",          [-1,  []]],
-    ["ef_b_boat_transport_01_mjtf_des",     [120, []]],
+    ["ef_b_boat_transport_01_mjtf_des",     [-1,  []]],
     ["e22_b_jtf_boat_transport_01_f",       [-1,  []]],
     ["e22_b_jtf_boat_transport_02_f",       [-1,  []]],
     ["e22_b_jtf_boat_armed_01_minigun_f",   [-1,  []]],
