@@ -26,7 +26,8 @@ if (_target call WHF_fnc_inAreaPrison isEqualTo []) exitWith {};
 
 // Garbage collection is queued upon successful detain attempt,
 // but we can make them cleanup more aggressively here
-// [_target, 20, 300] remoteExec ["WHF_fnc_queueGCDeletion", 2];
+// (some prisoners don't garbage collect either if they have WHF_disableGC)
+[_target, 50, 300] remoteExec ["WHF_fnc_queueGCDeletion", 2];
 
 _target setVariable ["WHF_prisoner_secured", true, true];
 _target setObjectTextureGlobal [0,"#(rgb,8,8,3)color(0.7,0.1,0,1)"];
