@@ -28,8 +28,8 @@ addMissionEventHandler ["Draw3D", {
 
         private _players = [_unit] + ((_crew select {isPlayer _x}) - [_unit]);
         private _names = _players apply {_x call _getName} joinString ", ";
-
         private _other = _crew - _players;
+
         if (_other isEqualTo []) exitWith {_names};
         format ["%1 + %2", _names, count _other]
     };
@@ -308,8 +308,8 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
 
         private _players = [_unit] + ((_crew select {isPlayer _x}) - [_unit]);
         private _names = _players apply {_x call _getName} joinString ", ";
-
         private _other = _crew - _players;
+
         if (_other isEqualTo []) exitWith {_names};
         format ["%1 + %2", _names, count _other]
     };
