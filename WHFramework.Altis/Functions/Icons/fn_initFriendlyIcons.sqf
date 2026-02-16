@@ -19,6 +19,21 @@ addMissionEventHandler ["Draw3D", {
         format ["%1 (%2)", name _this, _role call WHF_fnc_localizeRole]
     };
 
+    private _getNameCrew = {
+        params ["_unit", "_crew"];
+        if (count _crew < 2) exitWith {_unit call _getName};
+        if (inputAction "curatorMultipleMod" isEqualTo 0) exitWith {
+            format ["%1 + %2", _unit call _getName, count _crew - 1]
+        };
+
+        private _players = [_unit] + ((_crew select {isPlayer _x}) - [_unit]);
+        _players = _players apply {_x call _getName} joinString ", ";
+
+        private _other = _crew select {!isPlayer _x};
+        if (_other isEqualTo []) exitWith {_players};
+        format ["%1 + %2", _players, count _other]
+    };
+
     // Separate units from vehicles
     private _side = side group focusOn;
     private _groups = if (WHF_icons_3D_group) then {[group focusOn]} else {groups _side};
@@ -157,9 +172,7 @@ addMissionEventHandler ["Draw3D", {
             format [
                 "%1 (%2)",
                 [_config] call BIS_fnc_displayName,
-                if (count _crew < 2) then {_target call _getName} else {
-                    format ["%1 + %2", _target call _getName, count _crew - 1]
-                }
+                [_target, _crew] call _getNameCrew
             ]
         };
 
@@ -284,6 +297,21 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
         private _role = _this getVariable "WHF_role";
         if (isNil "_role") exitWith {name _this};
         format ["%1 (%2)", name _this, _role call WHF_fnc_localizeRole]
+    };
+
+    private _getNameCrew = {
+        params ["_unit", "_crew"];
+        if (count _crew < 2) exitWith {_unit call _getName};
+        if (inputAction "curatorMultipleMod" isEqualTo 0) exitWith {
+            format ["%1 + %2", _unit call _getName, count _crew - 1]
+        };
+
+        private _players = [_unit] + ((_crew select {isPlayer _x}) - [_unit]);
+        _players = _players apply {_x call _getName} joinString ", ";
+
+        private _other = _crew select {!isPlayer _x};
+        if (_other isEqualTo []) exitWith {_players};
+        format ["%1 + %2", _players, count _other]
     };
 
     private _mapScale = ctrlMapScale _display;
@@ -427,14 +455,7 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
                 format [
                     "%1 (%2)",
                     [_config] call BIS_fnc_displayName,
-                    // _crew apply {
-                    //     if (isPlayer _x) then {_x call _getName} else {
-                    //         format ["%1 [AI]", _x call _getName]
-                    //     }
-                    // } joinString ", "
-                    if (count _crew < 2) then {_commander call _getName} else {
-                        format ["%1 + %2", _commander call _getName, count _crew - 1]
-                    }
+                    [_commander, _crew] call _getNameCrew
                 ]
             };
         };
