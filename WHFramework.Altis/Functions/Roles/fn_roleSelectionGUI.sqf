@@ -136,7 +136,7 @@ isNil {with uiNamespace do {
             [focusOn, _selected] call WHF_fnc_setRoleTraits;
         };
 
-        WHF_roleSelectionGUI_lastSwitch = uiTime;
+        call WHF_roleSelectionGUI_updateSwitchTimeout;
         call WHF_roleSelectionGUI_refreshState;
         playSoundUI ["a3\3den\data\sound\cfgsound\notificationdefault.wss"];
 
@@ -152,9 +152,7 @@ isNil {with uiNamespace do {
     WHF_roleSelectionGUI_canSwitchToRole = {
         params ["_role"];
 
-        private _switchDelay = WHF_roleSelectionGUI_switchDelay;
-        private _lastSwitch = WHF_roleSelectionGUI_lastSwitch;
-        if (uiTime <= _lastSwitch + _switchDelay) exitWith {false};
+        if (call WHF_roleSelectionGUI_checkSwitchTimeout) exitWith {false};
 
         private _current = call WHF_roleSelectionGUI_currentRole;
         if (_current isEqualTo _role) exitWith {false};
@@ -164,6 +162,14 @@ isNil {with uiNamespace do {
         if (count _players >= _limit) exitWith {false};
 
         true
+    };
+    WHF_roleSelectionGUI_checkSwitchTimeout = {
+        private _switchDelay = WHF_roleSelectionGUI_switchDelay;
+        private _lastSwitch = WHF_roleSelectionGUI_lastSwitch;
+        uiTime < _lastSwitch + _switchDelay
+    };
+    WHF_roleSelectionGUI_updateSwitchTimeout = {
+        WHF_roleSelectionGUI_lastSwitch = uiTime;
     };
 
     private _primaryColor = ["GUI", "BCG_RGB"] call BIS_fnc_displayColorGet;
