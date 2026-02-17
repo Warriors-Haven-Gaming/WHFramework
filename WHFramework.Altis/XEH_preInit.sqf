@@ -862,6 +862,16 @@ call WHF_fnc_cycleFaction;
     false
 ] call WHF_fnc_addSetting;
 [
+    "WHF_missions_annex_aircraft",
+    "SLIDER",
+    ["STR_WHF_settings_missions_annex_aircraft", "STR_WHF_settings_missions_annex_aircraft_tooltip"],
+    ["STR_WHF_settings_missions", "STR_WHF_settings_missions_annex"],
+    [0.01, 4, 1, 0, true], // used as a divisor, must not be 0
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_missions_annex_units_types",
     "EDITBOX",
     ["STR_WHF_settings_missions_annex_units_types", "STR_WHF_settings_missions_annex_units_types_tooltip"],
