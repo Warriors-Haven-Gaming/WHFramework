@@ -25,7 +25,7 @@ private _vehicle = objNull;
 private _distance = 0;
 private _isTarget = false;
 private _isEnemyNear = {
-    [focusOn, focusOn, WHF_service_enemy_distance]
+    [focusOn, focusOn, WHF_loadouts_enemy_distance]
         call WHF_fnc_nearEnemies isNotEqualTo []
 };
 if (isNil "WHF_service_target") then {
