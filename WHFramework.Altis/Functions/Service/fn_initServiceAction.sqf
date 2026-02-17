@@ -21,11 +21,12 @@ private _actionID = [
     toString {[false] call WHF_fnc_canServiceVehicle},
     toString {[true] call WHF_fnc_canServiceVehicle},
     {
-        WHF_service_target = cursorObject;
         if !([true] call WHF_fnc_canServiceVehicle) exitWith {}; // Player looked away
         [player, ["InBaseMoves_assemblingVehicleErc", random 0.5, 0, false]] remoteExec ["switchMove"];
+        WHF_service_target = cursorObject;
     },
     {
+        if (isNil "WHF_service_target") exitWith {};
         [WHF_service_target] call WHF_fnc_playServiceSound;
     },
     {
@@ -47,6 +48,7 @@ private _actionID = [
         ];
     },
     {
+        if (isNil "WHF_service_target") exitWith {};
         [player, ["", 0, 0, false]] remoteExec ["switchMove"];
         WHF_service_target = nil;
     },
