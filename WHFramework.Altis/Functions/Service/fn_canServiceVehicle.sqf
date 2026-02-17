@@ -24,9 +24,10 @@ if (!WHF_service_enabled) exitWith {false};
 private _vehicle = objNull;
 private _distance = 0;
 private _isTarget = false;
-private _isEnemyNear = {
-    [focusOn, focusOn, WHF_loadouts_enemy_distance]
-        call WHF_fnc_nearEnemies isNotEqualTo []
+private _rearmReason = "";
+private _checkRearm = {
+    _rearmReason = [focusOn] call WHF_fnc_checkRearmAllowed;
+    _rearmReason isNotEqualTo ""
 };
 if (isNil "WHF_service_target") then {
     private _params = getCursorObjectParams;
@@ -40,10 +41,7 @@ if (isNil "WHF_service_target") then {
 
 if (!alive _vehicle) exitWith {false};
 if (_distance > 7) exitWith {false};
-if (_full && _isEnemyNear) exitWith {
-    50 cutText [localize "$STR_WHF_initServiceAction_enemy", "PLAIN", 0.5];
-    false
-};
+if (_full && _checkRearm) exitWith {50 cutText [_rearmReason, "PLAIN", 0.5]; false};
 if (_isTarget) exitWith {true}; // Fast check
 
 private _isLand = _vehicle isKindOf "LandVehicle";
