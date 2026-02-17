@@ -9,6 +9,10 @@ Parameters:
     String role:
         (Optional, default player getVariable ["WHF_role", ""])
         The role to get the player's last loadout for.
+    String collection:
+        (Optional, default WHF_loadout_collection)
+        The loadout collection to retrieve the player's last loadout from.
+        Use "" or "default" to retrieve the default loadout.
 
 Returns:
     Array
@@ -17,11 +21,11 @@ Author:
     thegamecracks
 
 */
-params [["_role", player getVariable ["WHF_role", ""]]];
+params [["_role", player getVariable ["WHF_role", ""]], ["_collection", WHF_loadout_collection]];
 if (_role isEqualTo "") exitWith {[]};
 
 private _loadouts = missionProfileNamespace getVariable ["WHF_last_loadouts", createHashMap];
-private _key = [WHF_loadout_collection, _role];
+private _key = [_collection, _role];
 private _loadout = _loadouts getOrDefaultCall [_key, {switch (_role) do {
     case "arty": {[["arifle_MXC_F","","acc_pointer_IR","optic_Holosight",["30Rnd_65x39_caseless_mag",30],[],""],[],["hgun_P07_F","","","",["16Rnd_9x21_Mag",16],[],""],["U_B_CombatUniform_mcam_tshirt",[["FirstAidKit",5]]],["V_PlateCarrier2_rgr",[["30Rnd_65x39_caseless_mag",8,30],["16Rnd_9x21_Mag",2,16],["HandGrenade",2,1],["B_IR_Grenade",2,1],["SmokeShell",1,1],["SmokeShellGreen",1,1],["Chemlight_green",2,1]]],["B_Mortar_01_weapon_F",[]],"H_HelmetB_light","G_Combat",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","ItemRadio","ItemCompass","ItemWatch","NVGoggles"]]};
     case "aa": {[["arifle_MXC_F","","acc_pointer_IR","optic_Holosight",["30Rnd_65x39_caseless_mag",30],[],""],["launch_B_Titan_F","","","",["Titan_AA",1],[],""],["hgun_P07_F","","","",["16Rnd_9x21_Mag",16],[],""],["U_B_CombatUniform_mcam",[["FirstAidKit",5]]],["V_PlateCarrier1_rgr",[["FirstAidKit",5],["30Rnd_65x39_caseless_mag",8,30],["16Rnd_9x21_Mag",2,16],["SmokeShell",1,1],["SmokeShellGreen",1,1]]],["B_Carryall_cbr",[["FirstAidKit",2],["Titan_AA",3,1]]],"H_HelmetB_light_desert","G_Combat",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","ItemRadio","ItemCompass","ItemWatch","NVGoggles"]]};

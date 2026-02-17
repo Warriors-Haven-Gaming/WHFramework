@@ -106,6 +106,12 @@ isNil {with uiNamespace do {
         private _selected = call WHF_roleSelectionGUI_selectedRole;
         private _enabled = [_selected] call WHF_roleSelectionGUI_canSwitchToRole;
         WHF_roleSelectionGUI_ctrlSelect ctrlEnable _enabled;
+        call WHF_roleSelectionGUI_updateReset;
+    };
+
+    WHF_roleSelectionGUI_updateReset = {
+        private _enabled = !call WHF_roleSelectionGUI_checkSwitchTimeout;
+        WHF_roleSelectionGUI_ctrlReset ctrlEnable _enabled;
     };
 
     WHF_roleSelectionGUI_updateRespawn = {
@@ -249,6 +255,31 @@ isNil {with uiNamespace do {
     WHF_roleSelectionGUI_ctrlSelect ctrlAddEventHandler ["ButtonClick", {with uiNamespace do {
         call WHF_roleSelectionGUI_requestRole;
     }}];
+
+    WHF_roleSelectionGUI_ctrlReset = _display ctrlCreate ["RscButtonMenu", -1, _group];
+    WHF_roleSelectionGUI_ctrlReset ctrlSetPosition ([0.37, 0.89, 0.15, 0.06] call _scaleToGroup);
+    WHF_roleSelectionGUI_ctrlReset ctrlSetStructuredText composeText [
+        parseText "<img image='\a3\ui_f\data\gui\rsc\rscdisplayarsenal\spacearsenal_ca.paa' size='1'/>",
+        text localize "$STR_WHF_roleSelectionGUI_reset" setAttributes [
+            "align", "center",
+            "font", "RobotoCondensed",
+            "size", "1",
+            "valign", "middle"
+        ]
+    ];
+    WHF_roleSelectionGUI_ctrlReset ctrlCommit 0;
+
+    WHF_roleSelectionGUI_ctrlReset ctrlAddEventHandler ["ButtonClick", {
+        private _loadout = [nil, ""] call WHF_fnc_getLastLoadout;
+        if (_loadout isEqualTo []) exitWith {};
+        [focusOn, _loadout] spawn WHF_fnc_setUnitLoadout;
+
+        with uiNamespace do {
+            call WHF_roleSelectionGUI_updateSwitchTimeout;
+            call WHF_roleSelectionGUI_refreshState;
+        };
+        playSoundUI ["a3\3den\data\sound\cfgsound\notificationdefault.wss"];
+    }];
 
     WHF_roleSelectionGUI_ctrlRespawn = _display ctrlCreate ["RscButtonMenu", -1, _group];
     WHF_roleSelectionGUI_ctrlRespawn ctrlSetPosition ([0.53, 0.89, 0.15, 0.06] call _scaleToGroup);
