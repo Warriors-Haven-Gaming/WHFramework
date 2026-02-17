@@ -54,8 +54,10 @@ _arsenal addAction [
 
         private _weapon = configFile >> "CfgWeapons" >> currentWeapon _caller;
         private _sound = getArray (_weapon >> "reloadMagazineSound") # 0;
-        if !("." in _sound) then {_sound = _sound + ".wss"};
-        playSoundUI [_sound, 0.75, 1, true];
+        if (!isNil "_sound") then {
+            if !("." in _sound) then {_sound = _sound + ".wss"};
+            playSoundUI [_sound, 0.75, 1, true];
+        };
     },
     nil,
     5,
