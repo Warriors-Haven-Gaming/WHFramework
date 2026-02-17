@@ -77,5 +77,5 @@ while {true} do {
     _units = _units arrayIntersect _units;
 
     [WHF_gcDeletionQueue, _units, {deleteVehicle _x}] call _processDiscreetQueue;
-    [WHF_gcUnhideQueue, _units, {_x hideObjectGlobal false}] call _processDiscreetQueue;
+    [WHF_gcUnhideQueue, _units, {_x hideObjectGlobal false; _x allowDamage true}] call _processDiscreetQueue;
 };

@@ -80,7 +80,7 @@ private _compositionGroups = [];
     _pos = _pos vectorAdd [0,0,0];
 
     private _terrain = nearestTerrainObjects [_pos, [], _clearRadius, false, true];
-    {hideObjectGlobal _x} forEach _terrain;
+    {hideObjectGlobal _x; _x allowDamage false} forEach _terrain;
 
     private _objects = [];
     private _direction = random 360;

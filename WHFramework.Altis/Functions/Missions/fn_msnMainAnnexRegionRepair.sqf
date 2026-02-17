@@ -42,7 +42,7 @@ private _standard = ["standard", _faction];
 private _apc = ["apc", _faction];
 
 private _posTerrain = nearestTerrainObjects [_pos, [], 25, false, true];
-{hideObjectGlobal _x} forEach _posTerrain;
+{hideObjectGlobal _x; _x allowDamage false} forEach _posTerrain;
 _terrain pushBack _posTerrain;
 
 private _centerVehicle = selectRandom ([_apc] call WHF_fnc_getVehicleTypes);

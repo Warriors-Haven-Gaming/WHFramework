@@ -61,7 +61,7 @@ call {
     private _centerTurrets = [[selectRandom _turretTypes,[2.93109,-13.7754,0],206.313],[selectRandom _turretTypes,[3.11127,13.875,0],331.155]];
 
     private _centerTerrain = nearestTerrainObjects [_center, [], 30, false, true];
-    _centerTerrain apply {hideObjectGlobal _x};
+    _centerTerrain apply {hideObjectGlobal _x; _x allowDamage false};
     _terrain append _centerTerrain;
 
     private _dir = random 360;
@@ -116,7 +116,7 @@ call {
     private _depotPos = [_pos, [5, 50]] call WHF_fnc_randomPos;
     if (_depotPos isNotEqualTo [0,0]) then {
         private _depotTerrain = nearestTerrainObjects [_depotPos, [], 30, false, true];
-        _depotTerrain apply {hideObjectGlobal _x};
+        _depotTerrain apply {hideObjectGlobal _x; _x allowDamage false};
         _terrain append _depotTerrain;
 
         private _depotDir = ((_depotPos getDir _pos) + 90) % 360;

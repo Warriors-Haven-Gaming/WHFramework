@@ -45,7 +45,7 @@ private _standard = ["standard", _faction];
 private _area = [_center, _radius, _radius];
 
 private _terrainObjects = nearestTerrainObjects [_center, [], 20, false, true];
-_terrainObjects apply {hideObjectGlobal _x};
+_terrainObjects apply {hideObjectGlobal _x; _x allowDamage false};
 
 private _objects = [];
 private _groups = [];
