@@ -26,6 +26,8 @@ _spawner addAction [
         if (count allPlayers > WHF_recruits_limit_player) exitWith {
             hint format [localize "$STR_WHF_spawnRecruit_limit_player", WHF_recruits_limit_player];
         };
+        private _reason = [_caller] call WHF_fnc_checkRearmAllowed;
+        if (_reason isNotEqualTo "") exitWith {50 cutText [_reason, "PLAIN", 0.5]};
 
         private _position = _spawner modelToWorld _offset;
         _position set [2, ASLToAGL getPosASL _spawner # 2 + _offset # 2];
@@ -50,6 +52,8 @@ _spawner addAction [
         if (count allPlayers > WHF_recruits_limit_player) exitWith {
             hint format [localize "$STR_WHF_spawnRecruit_limit_player", WHF_recruits_limit_player];
         };
+        private _reason = [_caller] call WHF_fnc_checkRearmAllowed;
+        if (_reason isNotEqualTo "") exitWith {50 cutText [_reason, "PLAIN", 0.5]};
 
         private _recruits = units _caller select {
             !isPlayer _x

@@ -42,8 +42,12 @@ if (!hasInterface) exitWith {};
 private _actionID = _obj addAction [
     localize "$STR_WHF_vehSpawnInit_action",
     {
-        params ["_target"];
-        [player, _target] remoteExec ["WHF_fnc_vehSpawnGUIServer", 2];
+        params ["_target", "_caller"];
+
+        private _reason = [_caller] call WHF_fnc_checkRearmAllowed;
+        if (_reason isNotEqualTo "") exitWith {50 cutText [_reason, "PLAIN", 0.5]};
+
+        [_caller, _target] remoteExec ["WHF_fnc_vehSpawnGUIServer", 2];
     },
     nil,
     12,

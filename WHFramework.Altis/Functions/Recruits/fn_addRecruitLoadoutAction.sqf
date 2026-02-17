@@ -21,6 +21,10 @@ private _actionID = _recruit addAction [
     localize "$STR_WHF_addRecruitLoadoutAction_edit",
     {
         params ["_recruit"];
+
+        private _reason = [_recruit] call WHF_fnc_checkRearmAllowed;
+        if (_reason isNotEqualTo "") exitWith {50 cutText [_reason, "PLAIN", 0.5]};
+
         if (isClass (configFile >> "CfgPatches" >> "ace_arsenal")) then {
             [_recruit, _recruit, true] call ace_arsenal_fnc_openBox;
         } else {
