@@ -145,12 +145,6 @@ isNil {with uiNamespace do {
         call WHF_roleSelectionGUI_updateSwitchTimeout;
         call WHF_roleSelectionGUI_refreshState;
         playSoundUI ["a3\3den\data\sound\cfgsound\notificationdefault.wss"];
-
-        WHF_roleSelectionGUI_ctrlSelect spawn {
-            sleep WHF_roleSelectionGUI_switchDelay;
-            if (isNull _this) exitWith {};
-            call WHF_roleSelectionGUI_updateSelect;
-        };
     };
 
     WHF_roleSelectionGUI_switchDelay = 1.5;
@@ -176,6 +170,11 @@ isNil {with uiNamespace do {
     };
     WHF_roleSelectionGUI_updateSwitchTimeout = {
         WHF_roleSelectionGUI_lastSwitch = uiTime;
+        WHF_roleSelectionGUI_ctrlSelect spawn {
+            sleep WHF_roleSelectionGUI_switchDelay;
+            if (isNull _this) exitWith {};
+            call WHF_roleSelectionGUI_updateSelect;
+        };
     };
 
     private _primaryColor = ["GUI", "BCG_RGB"] call BIS_fnc_displayColorGet;
