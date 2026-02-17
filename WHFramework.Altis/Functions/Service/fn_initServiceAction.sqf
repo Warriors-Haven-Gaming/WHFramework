@@ -18,11 +18,11 @@ private _actionID = [
     localize "$STR_WHF_initServiceAction",
     "\a3\ui_f_oldman\data\igui\cfg\holdactions\repair_ca.paa",
     "\a3\ui_f_oldman\data\igui\cfg\holdactions\repair_ca.paa",
-    toString {call WHF_fnc_canServiceVehicle},
-    toString {call WHF_fnc_canServiceVehicle},
+    toString {[false] call WHF_fnc_canServiceVehicle},
+    toString {[true] call WHF_fnc_canServiceVehicle},
     {
         WHF_service_target = cursorObject;
-        if (!call WHF_fnc_canServiceVehicle) exitWith {}; // Player looked away
+        if !([true] call WHF_fnc_canServiceVehicle) exitWith {}; // Player looked away
         [player, ["InBaseMoves_assemblingVehicleErc", random 0.5, 0, false]] remoteExec ["switchMove"];
     },
     {

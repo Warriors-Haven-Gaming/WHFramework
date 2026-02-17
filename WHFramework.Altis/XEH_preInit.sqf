@@ -1336,6 +1336,16 @@ call WHF_fnc_cycleFaction;
     {},
     false
 ] call WHF_fnc_addSetting;
+[
+    "WHF_service_enemy_distance",
+    "SLIDER",
+    ["STR_WHF_settings_service_enemy_distance", "STR_WHF_settings_service_enemy_distance_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_service"],
+    [0, 500, 100, 0, false],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
 
 // Time
 [
