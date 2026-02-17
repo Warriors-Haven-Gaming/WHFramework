@@ -36,8 +36,15 @@ if (_pos isEqualType objNull) then {_pos = ASLToAGL getPosASL _pos};
 private _area = [_pos, _radius, _radius, 0, false];
 private _units = _area nearEntities [["CAManBase"], false, true, true];
 
-// 0.007ms
-_units = _units select {!unitIsUAV _x && {!captive _x && {side group _x isNotEqualTo _side}}};
+// 0.012ms
+_units = _units select {
+	!unitIsUAV _x
+	&& {!captive _x
+	&& {simulationEnabled _x
+	&& {isDamageAllowed _x
+	&& {!isObjectHidden _x
+	&& {side group _x isNotEqualTo _side}}}}}
+};
 if (_units isEqualTo []) exitWith {_units};
 
 if (isNil "WHF_fnc_nearEnemies_cache" || {time > WHF_fnc_nearEnemies_cache_expiry}) then {
