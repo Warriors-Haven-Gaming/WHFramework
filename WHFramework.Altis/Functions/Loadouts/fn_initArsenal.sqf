@@ -38,6 +38,7 @@ if (isClass (configFile >> "CfgPatches" >> "ace_arsenal")) then {
         5
     ];
 } else {
+    if (isServer) exitWith {};
     // Would prefer showing rearm reason, not hiding the action outright...
     private _condition = {_this call WHF_fnc_checkRearmAllowed isEqualTo ""};
     ["AmmoboxInit", [_arsenal, true, _condition]] spawn BIS_fnc_arsenal;
