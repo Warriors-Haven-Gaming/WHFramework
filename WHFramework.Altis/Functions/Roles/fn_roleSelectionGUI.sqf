@@ -214,13 +214,11 @@ isNil {with uiNamespace do {
     WHF_roleSelectionGUI_ctrlRoles = _display ctrlCreate ["RscListBox", -1, _group];
     WHF_roleSelectionGUI_ctrlRoles ctrlSetPosition ([0.05, 0.2, 0.6, 0.6] call _scaleToGroup);
     WHF_roleSelectionGUI_ctrlRoles ctrlCommit 0;
-
     WHF_roleSelectionGUI_ctrlRoles ctrlAddEventHandler ["LBSelChanged", {with uiNamespace do {
         // call WHF_roleSelectionGUI_updateRoles; // Skip for performance
         call WHF_roleSelectionGUI_updatePlayers;
         call WHF_roleSelectionGUI_updateSelect;
     }}];
-
     WHF_roleSelectionGUI_ctrlRoles ctrlAddEventHandler ["KeyDown", {with uiNamespace do {
         params ["", "_key", "_shift", "_ctrl", "_alt"];
         if !(_key in [DIK_SPACE, DIK_RETURN, DIK_NUMPADENTER]) exitWith {};
@@ -251,7 +249,6 @@ isNil {with uiNamespace do {
         ]
     ];
     WHF_roleSelectionGUI_ctrlSelect ctrlCommit 0;
-
     WHF_roleSelectionGUI_ctrlSelect ctrlAddEventHandler ["ButtonClick", {with uiNamespace do {
         call WHF_roleSelectionGUI_requestRole;
     }}];
@@ -268,7 +265,6 @@ isNil {with uiNamespace do {
         ]
     ];
     WHF_roleSelectionGUI_ctrlReset ctrlCommit 0;
-
     WHF_roleSelectionGUI_ctrlReset ctrlAddEventHandler ["ButtonClick", {
         private _loadout = [nil, ""] call WHF_fnc_getLastLoadout;
         if (_loadout isEqualTo []) exitWith {};
@@ -293,7 +289,6 @@ isNil {with uiNamespace do {
         ]
     ];
     WHF_roleSelectionGUI_ctrlRespawn ctrlCommit 0;
-
     WHF_roleSelectionGUI_ctrlRespawn ctrlAddEventHandler ["ButtonClick", {
         closeDialog 1;
         playSoundUI ["a3\3den\data\sound\cfgsound\notificationdefault.wss"];
