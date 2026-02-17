@@ -13,6 +13,9 @@ Parameters:
         (Optional, default [])
         An array of objects to ignore, such as the vehicle being registered for respawn.
 
+Returns:
+    Array
+
 Author:
     thegamecracks
 
