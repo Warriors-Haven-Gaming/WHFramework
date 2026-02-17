@@ -56,7 +56,7 @@ private _cooldown = 60;
 if (!isNil "_lastService" && {time - _lastService < _cooldown}) exitWith {false};
 
 private _depots = ["Land_RepairDepot_01_base_F"];
-private _repairDistance = [25, 50] select _isAir;
+private _repairDistance = [25, 50] select !_isLand;
 if (nearestObjects [_vehicle, _depots, _repairDistance] isEqualTo []) exitWith {false};
 
 true
