@@ -319,9 +319,11 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
     private _textMinMapScale = 0.062;
     private _lineMinMapScale = 0.175;
     private _mousePos = getMousePosition;
+    private _selectedUnits = groupSelectedUnits focusOn;
     private _isFocused = {
         _mapScale <= _textMinMapScale
-        || {_display ctrlMapWorldToScreen _pos distance2D _mousePos < 0.02}
+        || {_display ctrlMapWorldToScreen _pos distance2D _mousePos < 0.02
+        || {_crew findIf {_x in _selectedUnits} >= 0}}
     };
 
     // Separate units from vehicles
@@ -379,6 +381,7 @@ findDisplay 12 displayCtrl 51 ctrlAddEventHandler ["Draw", {
     // Draw unit icons
     {
         private _side = side group _x;
+        private _crew = [_x];
         private _color = switch (true) do {
             case (!alive _x): {WHF_icons_color_dead};
             case (lifeState _x in ["INCAPACITATED"]): {WHF_icons_color_incap};
