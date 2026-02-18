@@ -27,6 +27,9 @@ addMissionEventHandler ["EntityKilled", {
     private _side = side group _entity;
     if (_side isEqualTo sideUnknown) exitWith {};
 
+    if (isNull _instigator) then {_instigator = UAVControl vehicle _source # 0};
+    if (isNull _instigator) then {_instigator = _source};
+
     private _civilian = _side isEqualTo civilian;
     private _friendly = _side isEqualTo side group _instigator;
     private _prisoner = !isNull (_entity call WHF_fnc_getDetainedBy);
