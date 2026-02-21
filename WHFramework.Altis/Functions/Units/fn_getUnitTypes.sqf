@@ -75,7 +75,7 @@ private _resolvedTypes = _this apply {
         case ["standard", "cup_usa_woodland"]: {["CUP_B_US_Soldier_AAT_OEFCP","CUP_B_US_Soldier_AT_OEFCP","CUP_B_US_Soldier_AR_OEFCP","CUP_B_US_Soldier_Engineer_OEFCP","CUP_B_US_Soldier_Engineer_EOD_OEFCP","CUP_B_US_Soldier_GL_OEFCP","CUP_B_US_Soldier_MG_OEFCP","CUP_B_US_Soldier_Marksman_OEFCP","CUP_B_US_Soldier_Marksman_EBR_OEFCP","CUP_B_US_Medic_OEFCP","CUP_B_US_Soldier_OEFCP","CUP_B_US_Soldier_ACOG_OEFCP","CUP_B_US_Soldier_LAT_OEFCP","CUP_B_US_Soldier_Light_OEFCP","CUP_B_US_Soldier_Engineer_Sapper_OEFCP","CUP_B_US_Soldier_SL_OEFCP","CUP_B_US_Soldier_TL_OEFCP","CUP_B_US_Soldier_UAV_OEFCP","B_soldier_UAV_F"]};
         case ["standard", "cup_usmc_woodland"]: {["CUP_B_USMC_Soldier_AT","CUP_B_USMC_Soldier_AR","CUP_B_USMC_Medic","CUP_B_USMC_Engineer","CUP_B_USMC_Soldier_GL","CUP_B_USMC_Soldier_MG","CUP_B_USMC_Soldier_Marksman","CUP_B_USMC_Soldier","CUP_B_USMC_SpecOps_SD","CUP_B_USMC_Soldier_LAT","CUP_B_USMC_SpecOps","CUP_B_USMC_Soldier_SL","CUP_B_USMC_Soldier_TL","B_T_soldier_UAV_F"]};
         // case ["aa", "base"]: {[]};
-        case ["aa", "csat"]: {["O_T_Soldier_AAA_F","O_T_Soldier_AA_F"]};
+        case ["aa", "csat"]: {["O_Soldier_AAA_F","O_Soldier_AA_F"]};
         case ["aa", "csat_pacific"]: {["O_T_Soldier_AAA_F","O_T_Soldier_AA_F"]};
         case ["aa", "aaf"]: {["I_Soldier_AAA_F","I_Soldier_AA_F"]};
         case ["aa", "ldf"]: {["I_E_Soldier_AAA_F","I_E_Soldier_AA_F"]};
@@ -100,7 +100,7 @@ private _resolvedTypes = _this apply {
         case ["aa", "cup_usa_woodland"]: {["CUP_B_US_Soldier_AA_OEFCP"]};
         case ["aa", "cup_usmc_woodland"]: {["CUP_B_USMC_Soldier_AA"]};
         case ["at", "base"]: {["I_C_Soldier_Para_5_F"]};
-        case ["at", "csat"]: {["O_T_Soldier_AHAT_F","O_T_Soldier_AAT_F","O_T_Soldier_AT_F","O_T_Soldier_HAT_F"]};
+        case ["at", "csat"]: {["O_Soldier_AHAT_F","O_Soldier_AAT_F","O_Soldier_AT_F","O_Soldier_HAT_F"]};
         case ["at", "csat_pacific"]: {["O_T_Soldier_AHAT_F","O_T_Soldier_AAT_F","O_T_Soldier_AT_F","O_T_Soldier_HAT_F"]};
         case ["at", "aaf"]: {["I_Soldier_AAT_F","I_Soldier_AT_F","I_Soldier_LAT_F"]};
         case ["at", "ldf"]: {["I_E_Soldier_AAT_F","I_E_Soldier_AT_F","I_E_Soldier_LAT_F"]};
