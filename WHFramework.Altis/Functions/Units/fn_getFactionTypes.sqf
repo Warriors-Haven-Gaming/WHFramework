@@ -62,6 +62,9 @@ private _resolvedTypes = _this apply {
         default {[]};
     };
 };
+
+// The arrays returned by WHF_faction_types are immutable.
+// This part both de-duplicates those types and produces mutable arrays.
 _resolvedTypes = flatten _resolvedTypes;
 _resolvedTypes = _resolvedTypes arrayIntersect _resolvedTypes;
 _resolvedTypes
