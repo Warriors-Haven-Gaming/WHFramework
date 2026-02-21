@@ -31,6 +31,7 @@ Author:
 params ["_center", "_radius", "_faction", "_parent", "_objects", "_terrain", "_groups"];
 
 private _standard = ["standard", _faction];
+private _infantryTypes = [_standard, ["aa", _faction], ["at", _faction]];
 private _officer = ["officer", _faction];
 
 [opfor, [_standard], 1, _center, _radius, ["hq", 1], _objects]
@@ -44,7 +45,7 @@ _groups append _compGroups;
 
 private _pos = getPosATL (_compObjects # 0 # 0);
 private _garrisonCount = [16, 32] call WHF_fnc_scaleUnitsMain;
-private _garrisonGroup = [opfor, [_standard], _garrisonCount, _pos, 25] call WHF_fnc_spawnUnits;
+private _garrisonGroup = [opfor, _infantryTypes, _garrisonCount, _pos, 25] call WHF_fnc_spawnUnits;
 private _commanderGroup = [opfor, [_officer], 1, _pos, 10] call WHF_fnc_spawnUnits;
 private _commander = units _commanderGroup # 0;
 [[_commander] + units _garrisonGroup, _pos, 30, true] call WHF_fnc_garrisonUnits;

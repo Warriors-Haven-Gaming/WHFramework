@@ -41,8 +41,7 @@ if (_center isEqualTo []) exitWith {
 
 if (_faction isEqualTo "") then {_faction = selectRandom (WHF_factions_pool get opfor)};
 private _standard = ["standard", _faction];
-
-private _area = [_center, _radius, _radius];
+private _infantryTypes = [_standard, ["aa", _faction], ["at", _faction]];
 
 private _terrainObjects = nearestTerrainObjects [_center, [], 20, false, true];
 _terrainObjects apply {hideObjectGlobal _x; _x allowDamage false};
@@ -90,7 +89,9 @@ private _infCount = [40, 80] call WHF_fnc_scaleUnitsSide;
 private _infGroups = [
     opfor,
     [
-        [[["standard", _faction]], 2, 8, 0], 0.6,
+        [[["standard", _faction]], 2, 8, 0], 0.4,
+        [[[      "aa", _faction]], 2, 4, 0], 0.1,
+        [[[      "at", _faction]], 2, 4, 0], 0.1,
         [[[   "recon", _faction]], 2, 8, 1], 0.2,
         [[[   "elite", _faction]], 4, 8, 2], 0.1,
         [[[  "sniper", _faction]], 2, 2, 3], 0.1
@@ -106,7 +107,7 @@ private _turretGroup = [opfor, [_standard], _turrets] call WHF_fnc_spawnGunners;
 _groups pushBack _turretGroup;
 
 private _garrisonCount = [20, 40] call WHF_fnc_scaleUnitsSide;
-private _garrisonGroup = [opfor, [_standard], _garrisonCount, _center, 50] call WHF_fnc_spawnUnits;
+private _garrisonGroup = [opfor, _infantryTypes, _garrisonCount, _center, 50] call WHF_fnc_spawnUnits;
 [_garrisonGroup, _center, _radius, true] call WHF_fnc_garrisonUnits;
 [[_garrisonGroup], _groups] spawn WHF_fnc_ungarrisonLoop;
 _groups pushBack _garrisonGroup;

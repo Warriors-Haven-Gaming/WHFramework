@@ -52,6 +52,7 @@ if (_factionB isEqualTo "") then {
     _factionB = selectRandom _factions;
 };
 private _standard = [["standard", _factionA], ["standard", _factionB]];
+private _infantryTypes = _standard + [["aa", _factionA], ["aa", _factionB], ["at", _factionA], ["at", _factionB]];
 private _supply = [["supply", _factionA], ["supply", _factionB]];
 
 private _positions = call {
@@ -89,11 +90,11 @@ private _groups = [];
 private _vehicles = [];
 
 private _quantity = [10, 20] call WHF_fnc_scaleUnitsSide;
-private _group = [opfor, _standard, _quantity, _center, _radius] call WHF_fnc_spawnUnits;
+private _group = [opfor, _infantryTypes, _quantity, _center, _radius] call WHF_fnc_spawnUnits;
 _groups pushBack _group;
 [_group, _center] call BIS_fnc_taskDefend;
 
-private _garrisonGroup = [opfor, _standard, _quantity, _center, 100] call WHF_fnc_spawnUnits;
+private _garrisonGroup = [opfor, _infantryTypes, _quantity, _center, 100] call WHF_fnc_spawnUnits;
 [_garrisonGroup, _center, _radius, true] call WHF_fnc_garrisonUnits;
 [[_garrisonGroup], _groups] spawn WHF_fnc_ungarrisonLoop;
 _groups pushBack _garrisonGroup;

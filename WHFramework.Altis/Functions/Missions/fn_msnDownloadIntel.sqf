@@ -39,6 +39,7 @@ if (_center isEqualTo []) exitWith {
 
 if (_faction isEqualTo "") then {_faction = selectRandom (WHF_factions_pool get opfor)};
 private _standard = ["standard", _faction];
+private _infantryTypes = [_standard, ["aa", _faction], ["at", _faction]];
 
 private _terrain = nearestTerrainObjects [_center, [], 20, false, true];
 _terrain apply {hideObjectGlobal _x; _x allowDamage false};
@@ -65,7 +66,7 @@ private _groups = [];
 private _vehicles = [];
 
 private _quantity = [10, 20] call WHF_fnc_scaleUnitsSide;
-private _group = [opfor, [_standard], _quantity, _center, 100] call WHF_fnc_spawnUnits;
+private _group = [opfor, _infantryTypes, _quantity, _center, 100] call WHF_fnc_spawnUnits;
 _groups pushBack _group;
 [_group, _center] call BIS_fnc_taskDefend;
 

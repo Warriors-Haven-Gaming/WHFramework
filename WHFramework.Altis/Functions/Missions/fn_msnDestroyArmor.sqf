@@ -41,6 +41,7 @@ if (_center isEqualTo []) exitWith {
 
 if (_faction isEqualTo "") then {_faction = selectRandom (WHF_factions_pool get opfor)};
 private _standard = ["standard", _faction];
+private _infantryTypes = [_standard, ["aa", _faction], ["at", _faction]];
 
 private _area = [_center, _radius * 2, _radius * 2]; // attack radius
 
@@ -73,7 +74,7 @@ call {
     _objects append _centerTurrets;
 
     private _quantity = [8, 16] call WHF_fnc_scaleUnitsSide;
-    private _group = [opfor, [_standard], _quantity, _center, 20] call WHF_fnc_spawnUnits;
+    private _group = [opfor, _infantryTypes, _quantity, _center, 20] call WHF_fnc_spawnUnits;
     [_group, _center] call BIS_fnc_taskDefend;
     _groups pushBack _group;
 
@@ -108,7 +109,7 @@ call {
     };
 
     private _infantryQuantity = [8, 16] call WHF_fnc_scaleUnitsSide;
-    private _infantryArgs = [opfor, [_standard], _infantryQuantity, _pos, 30];
+    private _infantryArgs = [opfor, _infantryTypes, _infantryQuantity, _pos, 30];
     private _infantryGroup = _infantryArgs call WHF_fnc_spawnUnits;
     [_infantryGroup, _pos] call BIS_fnc_taskDefend;
     _groups pushBack _infantryGroup;

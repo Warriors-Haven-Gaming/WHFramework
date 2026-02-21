@@ -41,6 +41,7 @@ if (_center isEqualTo []) exitWith {
 
 if (_faction isEqualTo "") then {_faction = selectRandom (WHF_factions_pool get opfor)};
 private _standard = ["standard", _faction];
+private _infantryTypes = [_standard, ["aa", _faction], ["at", _faction]];
 
 private _area = [_center, _radius, _radius];
 private _ruins = [];
@@ -72,7 +73,7 @@ if (count _artyTurrets < 1) exitWith {
 private _groups = _artyTurrets apply {
     private _pos = getPosATL selectRandom _x;
     private _quantity = [8, 20] call WHF_fnc_scaleUnitsSide;
-    private _group = [opfor, [_standard], _quantity, _pos, 50] call WHF_fnc_spawnUnits;
+    private _group = [opfor, _infantryTypes, _quantity, _pos, 50] call WHF_fnc_spawnUnits;
     [_group, _pos] call BIS_fnc_taskDefend;
     _group
 };

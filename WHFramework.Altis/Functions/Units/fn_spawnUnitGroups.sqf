@@ -38,7 +38,9 @@ Examples:
         private _groups = [
             opfor,
             [
-                [[["standard", "base"]], 2, 8, 0], 0.80,
+                [[["standard", "base"]], 2, 8, 0], 0.60,
+                [[[      "aa", "base"]], 2, 4, 0], 0.10,
+                [[[      "at", "base"]], 2, 4, 0], 0.10,
                 [[[   "recon", "base"]], 2, 8, 1], 0.10,
                 [[[   "elite", "base"]], 4, 6, 2], 0.05,
                 [[[  "sniper", "base"]], 2, 2, 3], 0.05

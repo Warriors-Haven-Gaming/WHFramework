@@ -40,7 +40,9 @@ private _reinforceUnits = {
     private _newGroups = [
         opfor,
         [
-            [[["standard", _factionRaid]], 2, 8, 0], 0.8,
+            [[["standard", _factionRaid]], 2, 8, 0], 0.6,
+            [[[      "aa", _factionRaid]], 2, 4, 0], 0.1,
+            [[[      "at", _factionRaid]], 2, 4, 0], 0.1,
             [[[   "recon", _factionRaid]], 2, 8, 1], 0.1,
             [[[   "elite", _factionRaid]], 4, 8, 2], 0.05,
             [[[  "sniper", _factionRaid]], 2, 2, 3], 0.05

@@ -26,7 +26,9 @@ private _reinforceUnits = {
     private _newGroups = [
         opfor,
         [
-            [_standard, 2, 8, 0], 0.60,
+            [_standard, 2, 8, 0], 0.40,
+            [      _aa, 2, 4, 0], 0.10,
+            [      _at, 2, 4, 0], 0.10,
             [   _recon, 2, 8, 1], 0.20,
             [   _elite, 4, 8, 2], 0.10,
             [  _sniper, 2, 2, 3], 0.10
@@ -70,6 +72,8 @@ private _attackWaypoint = {
 };
 
 private _standard = [["standard", _faction]];
+private _aa = [["aa", _faction]];
+private _at = [["at", _faction]];
 private _recon = [["recon", _faction]];
 private _elite = [["elite", _faction]];
 private _sniper = [["sniper", _faction]];

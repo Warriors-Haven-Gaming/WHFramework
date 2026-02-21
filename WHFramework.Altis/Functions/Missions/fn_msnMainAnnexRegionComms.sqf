@@ -39,6 +39,7 @@ private _pos = [_center, [30, _radius], [0, _isPosSuitable]] call WHF_fnc_random
 if (_pos isEqualTo [0,0]) exitWith {};
 
 private _standard = ["standard", _faction];
+private _infantryTypes = [_standard, ["aa", _faction], ["at", _faction]];
 private _officer = ["officer", _faction];
 
 private _posTerrain = nearestTerrainObjects [_pos, [], 25, false, true];
@@ -63,7 +64,7 @@ _groups pushBack _group;
 _officer setPosATL (_building modelToWorld [-2 + random 4, 1.1 + random 2, 0.05]);
 
 private _guardCount = [4, 8] call WHF_fnc_scaleUnitsMain;
-private _guardGroup = [opfor, [_standard], _guardCount, _pos, 20] call WHF_fnc_spawnUnits;
+private _guardGroup = [opfor, _infantryTypes, _guardCount, _pos, 20] call WHF_fnc_spawnUnits;
 [_guardGroup, _pos] call BIS_fnc_taskDefend;
 _groups pushBack _guardGroup;
 

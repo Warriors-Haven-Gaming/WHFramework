@@ -56,6 +56,7 @@ if (_center isEqualTo []) exitWith {
 
 if (_faction isEqualTo "") then {_faction = selectRandom (WHF_factions_pool get opfor)};
 private _standard = ["standard", _faction];
+private _infantryTypes = [_standard, ["aa", _faction], ["at", _faction]];
 
 private _area = [_center, _radius, _radius];
 private _ruins = [];
@@ -81,7 +82,9 @@ _objects append _turrets;
 private _groups = [
     opfor,
     [
-        [[["standard", _faction]], 2, 8, 0], 0.80,
+        [[["standard", _faction]], 2, 8, 0], 0.60,
+        [[[      "aa", _faction]], 2, 4, 0], 0.10,
+        [[[      "at", _faction]], 2, 4, 0], 0.10,
         [[[   "recon", _faction]], 2, 8, 1], 0.10,
         [[[   "elite", _faction]], 4, 6, 2], 0.05,
         [[[  "sniper", _faction]], 2, 2, 3], 0.05
@@ -96,7 +99,7 @@ private _turretGroup = [opfor, [_standard], _turrets] call WHF_fnc_spawnGunners;
 _groups pushBack _turretGroup;
 
 private _garrisonCount = [10, 30] call WHF_fnc_scaleUnitsSide;
-private _garrisonGroup = [opfor, [_standard], _garrisonCount, _center, 50] call WHF_fnc_spawnUnits;
+private _garrisonGroup = [opfor, _infantryTypes, _garrisonCount, _center, 50] call WHF_fnc_spawnUnits;
 [_garrisonGroup, _center, 50, true] call WHF_fnc_garrisonUnits;
 [[_garrisonGroup], _groups] spawn WHF_fnc_ungarrisonLoop;
 _groups pushBack _garrisonGroup;

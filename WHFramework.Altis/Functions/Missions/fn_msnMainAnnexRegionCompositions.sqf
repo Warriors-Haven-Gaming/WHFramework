@@ -26,6 +26,7 @@ Author:
 params ["_center", "_radius", "_faction"];
 
 private _standard = ["standard", _faction];
+private _infantryTypes = [_standard, ["aa", _faction], ["at", _faction]];
 
 private _objects = [];
 private _terrain = [];
@@ -33,7 +34,7 @@ private _groups = [];
 
 private _fortCount = floor (_radius / 20 * WHF_missions_annex_forts);
 private _fortTypes = ["camp", 0.5, "outpost", 0.4, "tower", 0.1];
-[opfor, [_standard], _fortCount, _center, _radius, _fortTypes, _objects]
+[opfor, _infantryTypes, _fortCount, _center, _radius, _fortTypes, _objects]
     call WHF_fnc_createEmplacements
     params ["_fortObjects", "_fortTerrain", "_fortGroups"];
 _objects append _fortObjects;
