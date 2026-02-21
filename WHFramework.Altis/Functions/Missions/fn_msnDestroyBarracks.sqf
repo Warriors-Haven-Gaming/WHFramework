@@ -43,6 +43,8 @@ if (_faction isEqualTo "") then {_faction = selectRandom (WHF_factions_pool get 
 private _standard = ["standard", _faction];
 private _infantryTypes = [_standard, ["aa", _faction], ["at", _faction]];
 
+private _area = [_center, _radius, _radius];
+
 private _terrainObjects = nearestTerrainObjects [_center, [], 20, false, true];
 _terrainObjects apply {hideObjectGlobal _x; _x allowDamage false};
 
