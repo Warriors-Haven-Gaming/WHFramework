@@ -50,7 +50,7 @@ This section covers infantry types used for patrols, garrisons, and vehicle crew
 These types are added to [fn_getUnitTypes.sqf].
 
 ## Standard
-Majority of infantry types go here, including AT/AA specialists, squad leaders,
+Majority of infantry types go here, including unguided AT, squad leaders,
 UAV operators, marksmen, grenadiers, and light units. If faction has no UAV operators,
 consider adding a vanilla UAV operator to grant that faction FPV drone capabilities,
 if it makes sense in context of their setting. All garrisons use standard infantry types.
@@ -58,24 +58,40 @@ if it makes sense in context of their setting. All garrisons use standard infant
 ```sqf
 "O_T_Soldier_A_F"
 "O_T_Soldier_AAR_F"
-"O_T_Soldier_AHAT_F"
-"O_T_Soldier_AAA_F"
-"O_T_Soldier_AAT_F"
 "O_T_Soldier_AR_F"
 "O_T_Medic_F"
 "O_T_Engineer_F"
 "O_T_Soldier_Exp_F"
 "O_T_Soldier_GL_F"
 "O_T_Soldier_M_F"
-"O_T_Soldier_AA_F"
-"O_T_Soldier_AT_F"
 "O_T_Soldier_Repair_F"
 "O_T_Soldier_F"
 "O_T_Soldier_LAT_F"
-"O_T_Soldier_HAT_F"
 "O_T_Soldier_SL_F"
 "O_T_Soldier_TL_F"
 "O_T_Soldier_UAV_F"
+```
+
+## AA
+Units dedicated to guided anti-air, including assistant missile specialists.
+Unguided AT can be copied from the standard category if no guided AA exists.
+If no one fits this category, leave empty.
+
+```sqf
+"O_T_Soldier_AAA_F"
+"O_T_Soldier_AA_F"
+```
+
+## AT
+Units dedicated to guided anti-tank, including assistant missile specialists.
+Unguided AT can be copied from the standard category if no guided AT exists.
+If no one fits this category, leave empty.
+
+```sqf
+"O_T_Soldier_AHAT_F"
+"O_T_Soldier_AAT_F"
+"O_T_Soldier_AT_F"
+"O_T_Soldier_HAT_F"
 ```
 
 ## Officer
