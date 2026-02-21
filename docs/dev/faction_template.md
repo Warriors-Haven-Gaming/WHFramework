@@ -9,19 +9,13 @@ The following files need to be modified to register your new faction:
 2. [fn_isFactionSupported.sqf] (Faction ID and Required Addons)
 3. [XEH_preInit.sqf] (Faction ID)
 4. [stringtable.xml] (Faction Name)
-5. [fn_getUnitTypes.sqf] (Faction ID and Classnames)
-6. [fn_getVehicleTypes.sqf] (Faction ID and Classnames)
-7. [fn_getShipTypes.sqf] (Faction ID and Classnames)
-8. [fn_getAircraftTypes.sqf] (Faction ID and Classnames)
+5. [fn_initFactionCatalog.sqf] (Faction ID and Classnames)
 
 [fn_allFactions.sqf]: https://github.com/Warriors-Haven-Gaming/WHFramework/blob/main/WHFramework.Altis/Functions/Factions/fn_allFactions.sqf
 [fn_isFactionSupported.sqf]: https://github.com/Warriors-Haven-Gaming/WHFramework/blob/main/WHFramework.Altis/Functions/Factions/fn_isFactionSupported.sqf
 [XEH_preInit.sqf]: https://github.com/Warriors-Haven-Gaming/WHFramework/blob/main/WHFramework.Altis/XEH_preInit.sqf
 [stringtable.xml]: https://github.com/Warriors-Haven-Gaming/WHFramework/blob/main/WHFramework.Altis/stringtable.xml
-[fn_getUnitTypes.sqf]: https://github.com/Warriors-Haven-Gaming/WHFramework/blob/main/WHFramework.Altis/Functions/Units/fn_getUnitTypes.sqf
-[fn_getVehicleTypes.sqf]: https://github.com/Warriors-Haven-Gaming/WHFramework/blob/main/WHFramework.Altis/Functions/Units/fn_getVehicleTypes.sqf
-[fn_getShipTypes.sqf]: https://github.com/Warriors-Haven-Gaming/WHFramework/blob/main/WHFramework.Altis/Functions/Units/fn_getShipTypes.sqf
-[fn_getAircraftTypes.sqf]: https://github.com/Warriors-Haven-Gaming/WHFramework/blob/main/WHFramework.Altis/Functions/Units/fn_getAircraftTypes.sqf
+[fn_initFactionCatalog.sqf]: https://github.com/Warriors-Haven-Gaming/WHFramework/blob/main/WHFramework.Altis/Functions/Units/fn_initFactionCatalog.sqf
 
 # Copying Classnames
 To copy the classnames for each category, spawn in the types you want in Eden Editor,
@@ -47,7 +41,7 @@ at least one addon name from each mod.
 
 # Unit Types
 This section covers infantry types used for patrols, garrisons, and vehicle crew.
-These types are added to [fn_getUnitTypes.sqf].
+These types are added to [fn_initFactionCatalog.sqf].
 
 ## Standard
 Majority of infantry types go here, including unguided AT, squad leaders,
@@ -194,7 +188,7 @@ If no one fits this category, helicopter pilots can be reused.
 
 # Land Vehicle Types
 This section covers vehicles driven on land, such as cars, trucks, and armor.
-These types are added to [fn_getVehicleTypes.sqf].
+These types are added to [fn_initFactionCatalog.sqf].
 
 ## Standard
 Common, usually light vehicles such as LSVs, pickup trucks, vans, jeeps,
@@ -274,7 +268,7 @@ trucks and SAM launchers. If no vehicles fit this category, leave empty.
 This section covers vehicles that exclusively move over water. Amphibious
 vehicles may work, but are usually used in land vehicle types only.
 Submersibles are not supported.
-These types are added to [fn_getShipTypes.sqf].
+These types are added to [fn_initFactionCatalog.sqf].
 
 ## Light
 Smaller ships with few seats, such as inflatable boats and scooters.
@@ -299,7 +293,7 @@ If no ships fit this category, leave empty.
 
 # Aircraft Types
 This section covers vehicles designed to fly, including helicopters and planes.
-These types are added to [fn_getAircraftTypes.sqf].
+These types are added to [fn_initFactionCatalog.sqf].
 
 ## Attack Helicopters
 Small to medium sized helicopters with fixed boresight weaponry.
