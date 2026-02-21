@@ -34,7 +34,10 @@ private _standard = ["standard", _faction];
 private _civTypes = [[[["civilians", _faction]], 1, 4], 1];
 private _unitTypes = +WHF_missions_annex_units_types;
 private _vehicleTypes = WHF_missions_annex_vehicles_types;
-private _garrisonTypes = [[_unitTypes # 0 # 0, _faction]];
+private _garrisonTypes =
+    _unitTypes select {_x isEqualType []} apply {_x # 0}
+    arrayIntersect ["standard", "aa", "at"]
+    apply {[_x, _faction]};
 
 for "_i" from 0 to (count _unitTypes - 1) step 2 do {
     private _type = _unitTypes # _i # 0;
@@ -58,13 +61,15 @@ if (_spawnCivilians) then {
     _groups append _civGroups;
 };
 
-// NOTE: may result in positions being double garrisoned
-private _garrisonCount = 30 + floor (_radius / 15) call WHF_fnc_scaleUnitsMain;
-private _garrisonGroup = [opfor, _garrisonTypes, _garrisonCount, _center, _radius min 100] call WHF_fnc_spawnUnits;
-[units _garrisonGroup select [0, floor (_garrisonCount / 2)], _buildings] call WHF_fnc_garrisonBuildings;
-[_garrisonGroup, _center, _radius, true] call WHF_fnc_garrisonUnits;
-[[_garrisonGroup], _groups] spawn WHF_fnc_ungarrisonLoop;
-_groups pushBack _garrisonGroup;
+if (_garrisonTypes isNotEqualTo []) then {
+    // NOTE: may result in positions being double garrisoned
+    private _garrisonCount = 30 + floor (_radius / 15) call WHF_fnc_scaleUnitsMain;
+    private _garrisonGroup = [opfor, _garrisonTypes, _garrisonCount, _center, _radius min 100] call WHF_fnc_spawnUnits;
+    [units _garrisonGroup select [0, floor (_garrisonCount / 2)], _buildings] call WHF_fnc_garrisonBuildings;
+    [_garrisonGroup, _center, _radius, true] call WHF_fnc_garrisonUnits;
+    [[_garrisonGroup], _groups] spawn WHF_fnc_ungarrisonLoop;
+    _groups pushBack _garrisonGroup;
+};
 
 private _vehicleCount = 4 + floor (_radius / 70);
 _vehicleCount = _vehicleCount * WHF_missions_annex_vehicles call WHF_fnc_scaleUnitsMain;
