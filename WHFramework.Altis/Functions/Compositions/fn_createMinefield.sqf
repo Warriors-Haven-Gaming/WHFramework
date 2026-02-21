@@ -32,6 +32,8 @@ Author:
 */
 params ["_side", "_quantity", "_center", "_radius", "_type", ["_signs", false]];
 
+if (surfaceIsWater _center) exitWith {[]};
+
 private _apMines = [
     "APERSBoundingMine",
     "APERSMine",
