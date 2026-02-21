@@ -416,9 +416,11 @@ class CfgFunctions {
             class garrisonBuildings {};
             class garrisonUnits {};
             class getAircraftTypes {};
+            class getFactionTypes {};
             class getShipTypes {};
             class getUnitTypes {};
             class getVehicleTypes {};
+            class initFactionCatalog { preInit = 1; };
             class orderHoldFire {};
             class refreshUnitSkills {};
             class reinforceLoop {};
