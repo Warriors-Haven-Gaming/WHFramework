@@ -83,6 +83,8 @@ while {_quantity > 0} do {
     private _group =
         [_side, _type, _size, _pos, 10, _skill, _dynamicSimulation, _equipment]
         call WHF_fnc_spawnUnits;
+
+    if (isNull _group) then {break}; // type was invalid
     _groups pushBack _group;
     _quantity = _quantity - _size;
 };
