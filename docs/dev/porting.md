@@ -221,8 +221,8 @@ separate role loadouts per map.
 
 ## 13. (Optional) Adding time skip actions
 
-To allow players to skip time on demand, you should add the following line
-to an object's Init field:
+To allow admins (and optionally players) to skip time on demand,
+you should add the following line to an object's Init field:
 
 ```sqf
 [this] call WHF_fnc_initSkipTimeAction;
@@ -231,11 +231,11 @@ to an object's Init field:
 The given object must have Simple Object and Local Only disabled
 for the action to appear.
 
-As of now, these actions do not provide a system for players to vote
-on time skip requests. We do **NOT** recommend adding this action in
-public servers unless all players have CBA_A3 loaded, in which case
-the action can be hidden instead by disabling the `Enable Skip Time?`
-CBA setting.
+By default, the action is only shown to server admins using `#login`.
+If CBA_A3 is a required mod, the server-controlled `Enable Skip Time?`
+setting can be turned on to allow any player to initiate a time skip.
+This does not have a voting system, so we recommend **NOT** enabling this
+setting in public servers.
 
 ## 14. (Optional) Adding special area markers
 
