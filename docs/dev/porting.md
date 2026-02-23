@@ -7,7 +7,7 @@ for any given map.
   - [1. Creating the scenario](#1-creating-the-scenario)
   - [2. Loading a premade WHF gamemode](#2-loading-a-premade-whf-gamemode)
   - [3. Copying gamemode files](#3-copying-gamemode-files)
-  - [4. Copying player roles](#4-copying-player-roles)
+  - [4. Copying the player group](#4-copying-the-player-group)
   - [5. Setting up player respawns](#5-setting-up-player-respawns)
   - [6. Adding arsenals](#6-adding-arsenals)
   - [7. Adding respawning vehicles](#7-adding-respawning-vehicles)
@@ -46,27 +46,19 @@ To start porting the gamemode, you need to transfer the gamemode files into your
 first scenario directory. To do this, copy and paste every file inside `WHFramework.Altis`
 into your scenario directory **EXCEPT** for mission.sqm, which you should leave behind.
 
-## 4. Copying player roles
+## 4. Copying the player group
 
-With the gamemode files copied, you should next copy the player roles over.
+With the gamemode files copied, you should copy the player group next.
 Open WHFramework for Altis in Eden Editor. On the left, you should see a layer
-containing the player units. Select all groups in that layer and the units
-in each group, then [Ctrl+C] to copy them.
+containing the player units. Select the group and [Ctrl+C] to copy it.
 
 Now, open your own scenario, find a discreet location, and [Ctrl+V] to paste
 the player units.
 
-You'll notice that the group names have changed. Preferably these should be fixed,
-so double click on each group and edit their `Callsign`. If you're not sure what
-their group name should be, double click one of their units and look for
-`Role Description`, which should say something like "AT Specialist@Anti-Tank".
-The part after the @ symbol, i.e. "Anti-Tank", should be the group name.
-Repeat this for each group until all groups are named.
-
-Additionally, if you have `CBA_A3` loaded, you can find a `Lobby Manager`
-action in the Tools menu on top. Click on this, or press [Ctrl+L], and
-you'll be able to order the slots that show up in the multiplayer lobby.
-Riflemen and other infantry roles should typically be placed first.
+You'll notice that the group name has changed and the default player was reset.
+Double click the group and rename it to "Main Group" (or any name of your choice),
+and mark the first unit as Player.
+You can lock the layer after this to prevent accidentally editing it.
 
 Once you're done, save the scenario.
 
