@@ -33,10 +33,13 @@ call WHF_fnc_initDetainKeybind;
 call WHF_fnc_initEarplugsKeybind;
 call WHF_fnc_initHolsterKeybind;
 call WHF_fnc_initMagRepackKeybind;
+call WHF_fnc_initMinimapHandlers;
 
 0 spawn WHF_fnc_laserLightLoop;
 0 spawn WHF_fnc_updateChannelLoop;
 0 spawn WHF_fnc_initFriendlyIcons;
 0 spawn WHF_fnc_initProjectileIcons;
+
+addMissionEventHandler ["PlayerViewChanged", WHF_fnc_initMinimapHandlers];
 
 [player] call compileScript ["onPlayerRespawn.sqf"];
