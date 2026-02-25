@@ -37,5 +37,6 @@ call WHF_fnc_initMagRepackKeybind;
 0 spawn WHF_fnc_laserLightLoop;
 0 spawn WHF_fnc_updateChannelLoop;
 0 spawn WHF_fnc_initFriendlyIcons;
+0 spawn WHF_fnc_initProjectileIcons;
 
 [player] call compileScript ["onPlayerRespawn.sqf"];
