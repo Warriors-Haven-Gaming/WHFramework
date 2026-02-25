@@ -197,7 +197,12 @@ Assuming stamina will be disabled and self-reviving will be enabled, we recommen
 - Additional ammunition, if possible
 - No DLC or modded items, unless all players are expected to have access to them
 
+See the [Default Loadouts] guide for more detailed recommendations on each role's equipment.
+If building for ACE, you can swap out the first aid kits for ACE Medical items
+and include other items like flashlights, entrenching tools, defusal kits, and so on.
+
 [fn_getLastLoadout.sqf]: https://github.com/Warriors-Haven-Gaming/WHFramework/blob/main/WHFramework.Altis/Functions/Loadouts/fn_getLastLoadout.sqf
+[Default Loadouts]: https://github.com/Warriors-Haven-Gaming/WHFramework/blob/main/docs/dev/loadout_template.md#roles
 
 In the same or a separate scenario, you can spawn in a unit and edit their loadout.
 Start playing as that unit, then open the debug console and run the following code
@@ -212,10 +217,10 @@ with the text that you copied. Repeat this for each role. You may skip
 adding a loadout for the `default {[]}` clause.
 
 We also recommend changing the default value for `WHF_loadout_collection` in
-[XEH_preInit.sqf] with the world name, e.g. `altis`, so players have a unique
-collection for that map. Preferably this setting would be replaced with an
-in-game loadout collection UI, but for now, this is the only way to store
-separate role loadouts per map.
+[XEH_preInit.sqf] with your community and world name, e.g. `wh-altis`,
+so players have a unique collection for that map.
+Preferably this setting would be replaced with an in-game loadout collection UI,
+but for now, this is the only way to store separate role loadouts per map.
 
 [XEH_preInit.sqf]: https://github.com/Warriors-Haven-Gaming/WHFramework/blob/main/WHFramework.Altis/XEH_preInit.sqf
 
