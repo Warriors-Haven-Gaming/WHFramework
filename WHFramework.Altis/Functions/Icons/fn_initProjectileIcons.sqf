@@ -18,16 +18,13 @@ addMissionEventHandler ["ProjectileCreated", {
     if (!WHF_icons_projectiles) exitWith {};
 
     getShotParents _projectile params ["_source", "_instigator"];
-    if (
-        !WHF_icons_projectiles_self
-        && {cameraOn isEqualTo _source}
-    ) exitWith {};
-    if(
-        !WHF_icons_projectiles_friendly
-        && {side group _instigator isEqualTo side group focusOn}
-    ) exitWith {};
+    if (!WHF_icons_projectiles_self && {cameraOn isEqualTo _source}) exitWith {};
+
+    private _friendly = side group _instigator isEqualTo side group focusOn;
+    if(!WHF_icons_projectiles_friendly && _friendly) exitWith {};
 
     private _types = ["BombCore", "MissileCore", "RocketCore"];
+    if (_friendly) then {_types pushBack "ShellCore"}; // only show friendly artillery
     if (_types findIf {_projectile isKindOf _x} < 0) exitWith {};
 
     WHF_projectiles pushBack [time, _projectile, 0, 0];
