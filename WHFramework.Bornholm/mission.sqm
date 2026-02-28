@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.017453292;
 	scaleGridStep=0.1;
 	autoGroupingDist=10;
-	toggles=553;
+	toggles=1577;
 	mods[]=
 	{
 		"3denEnhanced"
@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3184.6624,33.746086,5547.7378};
-		dir[]={-0.40371481,-0.39600542,0.82474387};
-		up[]={-0.1741073,0.91824514,0.35568154};
-		aside[]={0.89816904,-1.671724e-07,0.43965682};
+		pos[]={2882.5271,45.126175,5542.0073};
+		dir[]={0.69655526,-0.63352227,-0.33687899};
+		up[]={0.57035118,0.77370137,-0.27584249};
+		aside[]={-0.43539613,1.1443626e-07,-0.90025783};
 	};
 };
 binarizationWanted=0;
@@ -32591,61 +32591,65 @@ class Mission
 		class Item24
 		{
 			dataType="Trigger";
-			position[]={2904.292,14.565169,5527.9712};
+			position[]={2905.1489,14.564955,5526.9448};
 			angle=5.0905495;
 			class Attributes
 			{
-				onActivation="gatename animate [""Door_1_rot"", 1];  ";
-				onDeactivation="gatename animate [""Door_1_rot"", 0]; ";
-				sizeA=7.7280002;
-				sizeB=2.7160001;
+				onActivation="gate3 animate [""Door_1_rot"", 1];  ";
+				onDeactivation="gate3 animate [""Door_1_rot"", 0]; ";
+				sizeA=8.3660002;
+				sizeB=7.7820001;
 				timeout[]={5,5,5};
 				repeatable=1;
 				activationBy="ANYPLAYER";
 				isRectangle=1;
+				triggerInterval=1.5;
 			};
 			id=1072;
 			type="EmptyDetector";
+			atlOffset=-0.001999855;
 		};
 		class Item25
 		{
 			dataType="Trigger";
-			position[]={3123.6848,15.068888,5619.8184};
-			angle=5.3031693;
+			position[]={3124.6157,15.068971,5621.6021};
+			angle=5.303165;
 			class Attributes
 			{
-				onActivation="gatename animate [""Door_1_rot"", 1];  ";
-				onDeactivation="gatename animate [""Door_1_rot"", 0]; ";
-				sizeA=7.7280002;
-				sizeB=2.9119244;
+				onActivation="gate1 animate [""Door_1_rot"", 1];  ";
+				onDeactivation="gate1 animate [""Door_1_rot"", 0]; ";
+				sizeA=17.715561;
+				sizeB=4.6092796;
 				timeout[]={5,5,5};
 				repeatable=1;
 				activationBy="ANYPLAYER";
 				isRectangle=1;
+				triggerInterval=1.5;
 			};
 			id=1073;
 			type="EmptyDetector";
-			atlOffset=-8.2969666e-05;
+			atlOffset=-0.017689705;
 		};
 		class Item26
 		{
 			dataType="Trigger";
-			position[]={3181.853,15.236058,5587.0547};
-			angle=5.260458;
+			position[]={3180.9473,15.153963,5584.9434};
+			angle=-1.1274463;
 			class Attributes
 			{
-				onActivation="gatename animate [""Door_1_rot"", 1];  ";
-				onDeactivation="gatename animate [""Door_1_rot"", 0]; ";
-				sizeA=7.7280002;
-				sizeB=3.1914589;
+				onActivation="gate2 animate [""Door_1_rot"", 1];  ";
+				onDeactivation="gate2 animate [""Door_1_rot"", 0]; ";
+				sizeA=15.004751;
+				sizeB=4.7718763;
 				timeout[]={5,5,5};
 				repeatable=1;
 				activationBy="ANYPLAYER";
 				isRectangle=1;
+				triggerInterval=1.5;
 			};
 			id=1074;
 			type="EmptyDetector";
-			atlOffset=-0.00014972687;
+			atlOffset=-0.021014214;
 		};
 		class Item27
 		{
