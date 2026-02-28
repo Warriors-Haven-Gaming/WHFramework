@@ -25906,7 +25906,7 @@ class Mission
 			flags=2;
 			class Attributes
 			{
-				init="[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
+				init="this addEventHandler [""Fired"", {_this # 0 setVehicleAmmo 1}];" \n "[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
 				reportRemoteTargets=1;
 				receiveRemoteTargets=1;
 				reportOwnPosition=1;
@@ -25998,7 +25998,7 @@ class Mission
 			flags=6;
 			class Attributes
 			{
-				init="[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
+				init="this addEventHandler [""Fired"", {_this # 0 setVehicleAmmo 1}];" \n "[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
 				receiveRemoteTargets=1;
 				reportOwnPosition=1;
 				aiRadarUsage=1;
@@ -26089,7 +26089,7 @@ class Mission
 			flags=2;
 			class Attributes
 			{
-				init="[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
+				init="this addEventHandler [""Fired"", {_this # 0 setVehicleAmmo 1}];" \n "[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
 				reportRemoteTargets=1;
 				receiveRemoteTargets=1;
 				reportOwnPosition=1;
@@ -26181,7 +26181,7 @@ class Mission
 			flags=6;
 			class Attributes
 			{
-				init="[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
+				init="this addEventHandler [""Fired"", {_this # 0 setVehicleAmmo 1}];" \n "[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
 				reportRemoteTargets=1;
 				receiveRemoteTargets=1;
 				reportOwnPosition=1;
@@ -26273,7 +26273,7 @@ class Mission
 			flags=6;
 			class Attributes
 			{
-				init="[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
+				init="this addEventHandler [""Fired"", {_this # 0 setVehicleAmmo 1}];" \n "[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
 				receiveRemoteTargets=1;
 				reportOwnPosition=1;
 				aiRadarUsage=1;
@@ -26364,7 +26364,7 @@ class Mission
 			flags=2;
 			class Attributes
 			{
-				init="[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
+				init="this addEventHandler [""Fired"", {_this # 0 setVehicleAmmo 1}];" \n "[this, ""ALL""] call WHF_fnc_lockDroneByUID;";
 				reportRemoteTargets=1;
 				receiveRemoteTargets=1;
 				reportOwnPosition=1;
