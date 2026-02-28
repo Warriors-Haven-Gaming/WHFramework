@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2882.5271,45.126175,5542.0073};
-		dir[]={0.69655526,-0.63352227,-0.33687899};
-		up[]={0.57035118,0.77370137,-0.27584249};
-		aside[]={-0.43539613,1.1443626e-07,-0.90025783};
+		pos[]={2949.0334,17.181351,5455.2539};
+		dir[]={0.67410767,-0.21591675,0.7063852};
+		up[]={0.14907274,0.97640896,0.15621035};
+		aside[]={0.72344953,-4.2840838e-08,-0.69039369};
 	};
 };
 binarizationWanted=0;
@@ -20253,7 +20253,7 @@ class Mission
 							side="Empty";
 							class Attributes
 							{
-								init="[this, [2971,5442,0], 203, [""Planes""]] call WHF_fnc_vehSpawnInit;";
+								init="[this, [2971,5442,0], 203, [""Drones"", ""Planes""]] call WHF_fnc_vehSpawnInit;";
 								disableSimulation=1;
 							};
 							id=304;
@@ -21203,7 +21203,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, [2971,5442,0], 203, [""Drones""]] call WHF_fnc_vehSpawnInit;";
+								init="[this, [2971,5442,0], 203, [""Drones"", ""Planes""]] call WHF_fnc_vehSpawnInit;";
 								disableSimulation=1;
 							};
 							id=607;
@@ -32634,7 +32634,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={3180.9473,15.153963,5584.9434};
-			angle=-1.1274463;
+			angle=-1.1274462;
 			class Attributes
 			{
 				onActivation="gate2 animate [""Door_1_rot"", 1];  ";
