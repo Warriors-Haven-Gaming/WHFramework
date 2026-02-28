@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1119;
+		nextID=1122;
 	};
 	class MarkerIDProvider
 	{
@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3176.2876,18.317833,5469.6768};
-		dir[]={-0.44879252,-0.19768964,-0.87151259};
-		up[]={-0.090514131,0.98026311,-0.17576951};
-		aside[]={-0.88906008,-2.3387838e-07,0.45782858};
+		pos[]={2979.1567,24.35881,5464.5015};
+		dir[]={-0.88061905,-0.45483416,-0.13292988};
+		up[]={-0.44975853,0.89056796,-0.067891531};
+		aside[]={-0.14926277,3.0500814e-08,0.98881567};
 	};
 };
 binarizationWanted=0;
@@ -19791,7 +19791,7 @@ class Mission
 					name="Interactables";
 					class Entities
 					{
-						items=46;
+						items=49;
 						class Item0
 						{
 							dataType="Object";
@@ -21678,9 +21678,112 @@ class Mission
 								nAttributes=1;
 							};
 						};
+						class Item46
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3165.8674,18.943146,5460.4521};
+								angles[]={0,3.6477764,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="[this, [0,5,0]] call WHF_fnc_initSpawnRecruitAction;";
+							};
+							id=1119;
+							type="Flag_Blue_F";
+							atlOffset=9.5367432e-07;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="allowDamage";
+									expression="_this allowdamage _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item47
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={2950.6042,18.5881,5452.3726};
+								angles[]={6.2714262,2.1817439,0.020034747};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="[this, [0,5,0]] call WHF_fnc_initSpawnRecruitAction;";
+							};
+							id=1120;
+							type="Flag_Blue_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="allowDamage";
+									expression="_this allowdamage _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item48
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={2961.0781,18.6432,5467.373};
+								angles[]={0,2.1817365,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="[this, [0,5,0]] call WHF_fnc_initSpawnRecruitAction;";
+							};
+							id=1121;
+							type="Flag_Blue_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="allowDamage";
+									expression="_this allowdamage _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
 					};
 					id=286;
-					atlOffset=0.53294945;
+					atlOffset=-0.15261555;
 				};
 				class Item4
 				{
@@ -25493,7 +25596,7 @@ class Mission
 				};
 			};
 			id=136;
-			atlOffset=-0.42753983;
+			atlOffset=-0.42530727;
 		};
 		class Item3
 		{
