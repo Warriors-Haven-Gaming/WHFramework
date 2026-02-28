@@ -24,7 +24,7 @@ addMissionEventHandler ["ProjectileCreated", {
     if(!WHF_icons_projectiles_friendly && _friendly) exitWith {};
 
     private _types = ["BombCore", "MissileCore", "RocketCore"];
-    if (_friendly) then {_types pushBack "ShellCore"}; // only show friendly artillery
+    if (_friendly) then {_types pushBack "ShellCore"}; // FIXME: maybe limit to artillery shells?
     if (_types findIf {_projectile isKindOf _x} < 0) exitWith {};
 
     WHF_projectiles pushBack [time, _projectile, 0, 0];
