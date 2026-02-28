@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3159.8533,40.746841,5319.5142};
-		dir[]={0.79072767,-0.54140574,-0.28572032};
-		up[]={0.5092048,0.84074682,-0.18399537};
-		aside[]={-0.3398346,1.4761463e-07,-0.94048834};
+		pos[]={3178.1243,18.317833,5467.3462};
+		dir[]={-0.76077437,-0.30957404,-0.57044405};
+		up[]={-0.24768783,0.9508729,-0.1857217};
+		aside[]={-0.59991384,3.0919909e-07,0.80007571};
 	};
 };
 binarizationWanted=0;
@@ -680,7 +680,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=32;
+		items=31;
 		class Item0
 		{
 			dataType="Layer";
@@ -25187,7 +25187,7 @@ class Mission
 					name="Markers";
 					class Entities
 					{
-						items=9;
+						items=10;
 						class Item0
 						{
 							dataType="Marker";
@@ -25428,13 +25428,45 @@ class Mission
 								nAttributes=1;
 							};
 						};
+						class Item9
+						{
+							dataType="Marker";
+							position[]={3124.395,15.181,5441.4092};
+							name="WHF_prison_1";
+							markerType="RECTANGLE";
+							type="";
+							colorName="ColorOrange";
+							alpha=0.2;
+							a=2;
+							b=6.0580001;
+							angle=24.999996;
+							id=1117;
+							atlOffset=0.21660233;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ENH_markerShape";
+									expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="NONE";
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
 					};
 					id=335;
-					atlOffset=-0.43895817;
+					atlOffset=-0.26876259;
 				};
 			};
 			id=136;
-			atlOffset=-0.46491909;
+			atlOffset=-0.42753983;
 		};
 		class Item3
 		{
@@ -35795,38 +35827,6 @@ class Mission
 						{
 							singleType="STRING";
 							value="SAM2";
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item31
-		{
-			dataType="Marker";
-			position[]={3124.395,15.181,5441.4092};
-			name="WHF_prison_1";
-			markerType="RECTANGLE";
-			type="";
-			colorName="ColorOrange";
-			alpha=0.2;
-			a=2;
-			b=6.0580001;
-			angle=24.999996;
-			id=1117;
-			atlOffset=0.21660233;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ENH_markerShape";
-					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="NONE";
 						};
 					};
 				};
