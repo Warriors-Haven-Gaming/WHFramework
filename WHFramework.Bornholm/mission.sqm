@@ -20,7 +20,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=60;
+		nextID=70;
 	};
 	class Camera
 	{
@@ -3932,7 +3932,6 @@ class Mission
 							};
 							id=240;
 							type="Land_CampingTable_small_F";
-							atlOffset=3.0517578e-05;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -5371,7 +5370,7 @@ class Mission
 							};
 							id=776;
 							type="Land_CampingTable_small_F";
-							atlOffset=1.0200605;
+							atlOffset=1.0200701;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -5407,7 +5406,6 @@ class Mission
 							};
 							id=778;
 							type="Land_CampingTable_small_F";
-							atlOffset=4.9591064e-05;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -19998,7 +19996,7 @@ class Mission
 							};
 							id=295;
 							type="B_supplyCrate_F";
-							atlOffset=0.0061798096;
+							atlOffset=0.0061187744;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -20039,7 +20037,6 @@ class Mission
 								angles[]={0,0.61091042,0};
 							};
 							side="Empty";
-							flags=4;
 							class Attributes
 							{
 								init="[this] call WHF_fnc_initArsenal;";
@@ -20047,7 +20044,7 @@ class Mission
 							};
 							id=296;
 							type="B_supplyCrate_F";
-							atlOffset=0.00016212463;
+							atlOffset=1.0859661;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -21128,7 +21125,7 @@ class Mission
 							};
 							id=452;
 							type="B_supplyCrate_F";
-							atlOffset=1.0089417;
+							atlOffset=1.0089445;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -21400,7 +21397,7 @@ class Mission
 							};
 							id=1035;
 							type="B_supplyCrate_F";
-							atlOffset=0.70237064;
+							atlOffset=0.70237827;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -21449,7 +21446,7 @@ class Mission
 							};
 							id=1063;
 							type="B_supplyCrate_F";
-							atlOffset=0.0009098053;
+							atlOffset=0.00090885162;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -25225,7 +25222,6 @@ class Mission
 							name="marker_2";
 							text="Service";
 							type="b_service";
-							angle=270;
 							id=338;
 							class CustomAttributes
 							{
@@ -25412,7 +25408,6 @@ class Mission
 							name="marker_5";
 							text="Service";
 							type="b_service";
-							angle=3.0000165;
 							id=958;
 							atlOffset=0.088871002;
 							class CustomAttributes
@@ -25915,7 +25910,7 @@ class Mission
 				};
 			};
 			id=833;
-			atlOffset=1.9944572;
+			atlOffset=1.9949503;
 		};
 		class Item11
 		{
@@ -25937,7 +25932,7 @@ class Mission
 			};
 			id=834;
 			type="E22_B_JC_W_AAA_System_01_F";
-			atlOffset=1.9944572;
+			atlOffset=1.9949503;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -26190,7 +26185,7 @@ class Mission
 				};
 			};
 			id=842;
-			atlOffset=1.9042807;
+			atlOffset=1.9043999;
 		};
 		class Item17
 		{
@@ -26212,7 +26207,7 @@ class Mission
 			};
 			id=843;
 			type="E22_B_JC_W_AAA_System_01_F";
-			atlOffset=1.9042807;
+			atlOffset=1.9043999;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -26418,14 +26413,14 @@ class Mission
 						};
 						class Attribute2
 						{
-							property="enableStamina";
-							expression="_this enablestamina _value;";
+							property="ENH_doStop";
+							expression="if (!is3DEN && _value) then {doStop _this}";
 							class Value
 							{
 								class data
 								{
 									singleType="BOOL";
-									value=0;
+									value=1;
 								};
 							};
 						};
@@ -26457,14 +26452,14 @@ class Mission
 						};
 						class Attribute5
 						{
-							property="ENH_doStop";
-							expression="if (!is3DEN && _value) then {doStop _this}";
+							property="enableStamina";
+							expression="_this enablestamina _value;";
 							class Value
 							{
 								class data
 								{
 									singleType="BOOL";
-									value=1;
+									value=0;
 								};
 							};
 						};
@@ -26663,14 +26658,14 @@ class Mission
 						};
 						class Attribute2
 						{
-							property="enableStamina";
-							expression="_this enablestamina _value;";
+							property="ENH_doStop";
+							expression="if (!is3DEN && _value) then {doStop _this}";
 							class Value
 							{
 								class data
 								{
 									singleType="BOOL";
-									value=0;
+									value=1;
 								};
 							};
 						};
@@ -26702,14 +26697,14 @@ class Mission
 						};
 						class Attribute5
 						{
-							property="ENH_doStop";
-							expression="if (!is3DEN && _value) then {doStop _this}";
+							property="enableStamina";
+							expression="_this enablestamina _value;";
 							class Value
 							{
 								class data
 								{
 									singleType="BOOL";
-									value=1;
+									value=0;
 								};
 							};
 						};
@@ -26908,14 +26903,14 @@ class Mission
 						};
 						class Attribute2
 						{
-							property="enableStamina";
-							expression="_this enablestamina _value;";
+							property="ENH_doStop";
+							expression="if (!is3DEN && _value) then {doStop _this}";
 							class Value
 							{
 								class data
 								{
 									singleType="BOOL";
-									value=0;
+									value=1;
 								};
 							};
 						};
@@ -26947,14 +26942,14 @@ class Mission
 						};
 						class Attribute5
 						{
-							property="ENH_doStop";
-							expression="if (!is3DEN && _value) then {doStop _this}";
+							property="enableStamina";
+							expression="_this enablestamina _value;";
 							class Value
 							{
 								class data
 								{
 									singleType="BOOL";
-									value=1;
+									value=0;
 								};
 							};
 						};
@@ -27157,14 +27152,14 @@ class Mission
 						};
 						class Attribute2
 						{
-							property="enableStamina";
-							expression="_this enablestamina _value;";
+							property="ENH_doStop";
+							expression="if (!is3DEN && _value) then {doStop _this}";
 							class Value
 							{
 								class data
 								{
 									singleType="BOOL";
-									value=0;
+									value=1;
 								};
 							};
 						};
@@ -27196,14 +27191,14 @@ class Mission
 						};
 						class Attribute5
 						{
-							property="ENH_doStop";
-							expression="if (!is3DEN && _value) then {doStop _this}";
+							property="enableStamina";
+							expression="_this enablestamina _value;";
 							class Value
 							{
 								class data
 								{
 									singleType="BOOL";
-									value=1;
+									value=0;
 								};
 							};
 						};
