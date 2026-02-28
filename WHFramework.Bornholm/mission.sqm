@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3045.3821,52.644333,5413.4966};
-		dir[]={0.40604001,-0.58563173,0.70154613};
-		up[]={0.29335874,0.81057721,0.50685811};
-		aside[]={0.86548954,-1.4901161e-08,-0.50092697};
+		pos[]={2919.2917,50.397156,5564.6938};
+		dir[]={-0.13099144,-0.73780602,-0.66220599};
+		up[]={-0.14317955,0.6749773,-0.72381109};
+		aside[]={-0.9810071,-8.8528031e-07,0.19405484};
 	};
 };
 binarizationWanted=0;
@@ -3067,7 +3067,7 @@ class Mission
 					position[]={3172.449,14.968,5463.4331};
 					name="respawn_west_arty";
 					type="Empty";
-					angle=203.99997;
+					angle=203.99995;
 					id=1118;
 					atlOffset=-0.00022125244;
 					class CustomAttributes
@@ -32756,14 +32756,14 @@ class Mission
 		class Item24
 		{
 			dataType="Trigger";
-			position[]={2905.1489,14.564955,5526.9448};
+			position[]={2910.8645,14.564955,5532.7271};
 			angle=5.0905495;
 			class Attributes
 			{
 				onActivation="gate3 animate [""Door_1_rot"", 1];  ";
 				onDeactivation="gate3 animate [""Door_1_rot"", 0]; ";
-				sizeA=8.3660002;
-				sizeB=7.7820001;
+				sizeA=20.042311;
+				sizeB=11.435652;
 				repeatable=1;
 				activationBy="ANYPLAYER";
 				isRectangle=1;
@@ -32771,19 +32771,19 @@ class Mission
 			};
 			id=1072;
 			type="EmptyDetector";
-			atlOffset=-0.001999855;
+			atlOffset=-0.0037355423;
 		};
 		class Item25
 		{
 			dataType="Trigger";
-			position[]={3124.6157,15.068971,5621.6021};
+			position[]={3127.5449,15.068971,5625.8984};
 			angle=5.303165;
 			class Attributes
 			{
 				onActivation="gate1 animate [""Door_1_rot"", 1];  ";
 				onDeactivation="gate1 animate [""Door_1_rot"", 0]; ";
-				sizeA=17.715561;
-				sizeB=4.6092796;
+				sizeA=22.915022;
+				sizeB=5.0907097;
 				repeatable=1;
 				activationBy="ANYPLAYER";
 				isRectangle=1;
@@ -32791,19 +32791,19 @@ class Mission
 			};
 			id=1073;
 			type="EmptyDetector";
-			atlOffset=-0.017689705;
+			atlOffset=-0.097079277;
 		};
 		class Item26
 		{
 			dataType="Trigger";
-			position[]={3180.9473,15.153963,5584.9434};
-			angle=-1.1274461;
+			position[]={3182.1191,15.153963,5586.4961};
+			angle=5.1557393;
 			class Attributes
 			{
 				onActivation="gate2 animate [""Door_1_rot"", 1];  ";
 				onDeactivation="gate2 animate [""Door_1_rot"", 0]; ";
-				sizeA=15.004751;
-				sizeB=4.7718763;
+				sizeA=23.957027;
+				sizeB=4.4307995;
 				repeatable=1;
 				activationBy="ANYPLAYER";
 				isRectangle=1;
@@ -32811,7 +32811,7 @@ class Mission
 			};
 			id=1074;
 			type="EmptyDetector";
-			atlOffset=-0.021014214;
+			atlOffset=-0.075523376;
 		};
 		class Item27
 		{
