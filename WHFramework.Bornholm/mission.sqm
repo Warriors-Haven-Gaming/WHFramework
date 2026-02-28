@@ -25,9 +25,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={3184.6624,33.746086,5547.7378};
-		dir[]={-0.41779155,-0.36537942,0.83183861};
-		up[]={-0.16399191,0.93085575,0.32651415};
-		aside[]={0.89362395,-1.0686927e-07,0.44882289};
+		dir[]={-0.40371481,-0.39600542,0.82474387};
+		up[]={-0.1741073,0.91824514,0.35568154};
+		aside[]={0.89816904,-1.671724e-07,0.43965682};
 	};
 };
 binarizationWanted=0;
@@ -27410,7 +27410,7 @@ class Mission
 								class data
 								{
 									singleType="BOOL";
-									value=1;
+									value=0;
 								};
 							};
 						};
@@ -27679,6 +27679,23 @@ class Mission
 			};
 			id=1007;
 			type="I_HMG_02_high_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item20
 		{
@@ -27889,7 +27906,7 @@ class Mission
 								class data
 								{
 									singleType="BOOL";
-									value=1;
+									value=0;
 								};
 							};
 						};
@@ -28320,7 +28337,7 @@ class Mission
 								class data
 								{
 									singleType="BOOL";
-									value=1;
+									value=0;
 								};
 							};
 						};
@@ -28767,7 +28784,7 @@ class Mission
 								class data
 								{
 									singleType="BOOL";
-									value=1;
+									value=0;
 								};
 							};
 						};
@@ -29550,32 +29567,6 @@ class Mission
 					{
 						class Attribute0
 						{
-							property="ENH_aimingSpeed";
-							expression="if (_value != 0.5) then {[_this, ['aimingSpeed', _value]] remoteExec ['setSkill', _this]}";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.75;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ENH_spotTime";
-							expression="if (_value != 0.5) then {[_this, ['spotTime', _value]] remoteExec ['setSkill', _this]}";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.75;
-								};
-							};
-						};
-						class Attribute2
-						{
 							property="ENH_doStop";
 							expression="if (!is3DEN && _value) then {doStop _this}";
 							class Value
@@ -29587,7 +29578,7 @@ class Mission
 								};
 							};
 						};
-						class Attribute3
+						class Attribute1
 						{
 							property="ENH_spotDistance";
 							expression="if (_value != 0.5) then {[_this, ['spotDistance', _value]] remoteExec ['setSkill', _this]}";
@@ -29600,20 +29591,111 @@ class Mission
 								};
 							};
 						};
-						class Attribute4
+						class Attribute2
 						{
-							property="pitch";
-							expression="_this setpitch _value;";
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ENH_reloadingSpeed";
+							expression="if (_value != 0.5) then {[_this, ['reloadSpeed', _value]] remoteExec ['setSkill', _this]}";
 							class Value
 							{
 								class data
 								{
 									singleType="SCALAR";
-									value=1.1;
+									value=0.75;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="ENH_aimingSpeed";
+							expression="if (_value != 0.5) then {[_this, ['aimingSpeed', _value]] remoteExec ['setSkill', _this]}";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.75;
 								};
 							};
 						};
 						class Attribute5
+						{
+							property="ENH_aimingAccuracy";
+							expression="if (_value != 0.5) then {[_this, ['aimingAccuracy', _value]] remoteExec ['setSkill', _this]}";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.75;
+								};
+							};
+						};
+						class Attribute6
+						{
+							property="enableStamina";
+							expression="_this enablestamina _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+						};
+						class Attribute7
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male06ENG";
+								};
+							};
+						};
+						class Attribute8
+						{
+							property="ENH_commanding";
+							expression="if (_value != 0.5) then {[_this, ['commanding', _value]] remoteExec ['setSkill', _this]}";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.75;
+								};
+							};
+						};
+						class Attribute9
+						{
+							property="ENH_courage";
+							expression="if (_value != 0.5) then {[_this, ['courage', _value]] remoteExec ['setSkill', _this]}";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.75;
+								};
+							};
+						};
+						class Attribute10
 						{
 							property="ENH_AmbientAnimations";
 							expression="            if (_value # 0 != '') then            {                _value params ['_animSet', '_anims', '_canExit', '_attach'];                                _this setVariable ['ENH_ambientAnimations_anims', _anims];                _this disableAI 'ANIM';                if (_attach && !is3DEN) then                {                    private _logic = group _this createUnit ['Logic', getPosATL _this, [], 0, 'NONE'];                    _this setVariable ['ENH_ambientAnimations_logic', _logic];                    [_this, _logic] call BIS_fnc_attachToRelative;                };                                ENH_fnc_ambientAnimations_play =                {                    params ['_unit'];                    private _anim = selectRandom (_unit getVariable ['ENH_ambientAnimations_anims', []]);                    [_unit, _anim] remoteExec ['switchMove', 0];                };                                ENH_fnc_ambientAnimations_exit =                {                    params ['_unit'];                    if !(_unit getVariable ['ENH_ambientAnimations_exit', true]) exitWith {false};                    _unit setVariable ['ENH_ambientAnimations_exit', true];                    detach _unit;                    deleteVehicle (_unit getVariable ['ENH_ambientAnimations_logic', objNull]);                    if (alive _unit) then                    {                        [_unit, ''] remoteExec ['switchMove', 0];                        _unit enableAI 'ANIM';                    };                    _unit removeEventHandler ['Killed', _unit getVariable ['ENH_EHKilled',-1]];                    _unit removeEventHandler ['Dammaged', _unit getVariable ['ENH_EHDammaged',-1]];                    _unit removeEventHandler ['AnimDone', _unit getVariable ['ENH_EHAnimDone',-1]];                };                                private _EHAnimDone = _this addEventHandler ['AnimDone',                    {                        params ['_unit'];                        if (alive _unit) then                        {                            _unit call ENH_fnc_ambientAnimations_play;                        }                        else                        {                            _unit call ENH_fnc_ambientAnimations_exit;                        };                    }                ];                _this setVariable ['ENH_EHAnimDone', _EHAnimDone];                                if (_canExit && !is3DEN) then                {                    private _EHKilled = _this addEventHandler ['Killed',                    {                        (_this select 0) call ENH_fnc_ambientAnimations_exit;                    }];                    _this setVariable ['ENH_EHKilled', _EHKilled];                    private _EHDammaged = _this addEventHandler ['Dammaged',                    {                        (_this select 0) call ENH_fnc_ambientAnimations_exit;                    }];                    _this setVariable ['ENH_EHDammaged', _EHDammaged];                    _this spawn                    {                        scriptName 'ENH_Attribute_AmbientAnimations';                        params ['_unit'];                        waitUntil                        {                            sleep 1; (_unit getVariable ['ENH_ambientAnimations_exit', false]) || {behaviour _unit == 'COMBAT'}                        };                        _unit call ENH_fnc_ambientAnimations_exit;                    };                };                _this call ENH_fnc_ambientAnimations_play;            };";
@@ -29680,111 +29762,20 @@ class Mission
 								};
 							};
 						};
-						class Attribute6
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male06ENG";
-								};
-							};
-						};
-						class Attribute7
-						{
-							property="enh_general";
-							expression="if (_value != 0.5) then {[_this, ['general', _value]] remoteExec ['setSkill', _this]}";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.75;
-								};
-							};
-						};
-						class Attribute8
-						{
-							property="ENH_commanding";
-							expression="if (_value != 0.5) then {[_this, ['commanding', _value]] remoteExec ['setSkill', _this]}";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.75;
-								};
-							};
-						};
-						class Attribute9
-						{
-							property="ENH_reloadingSpeed";
-							expression="if (_value != 0.5) then {[_this, ['reloadSpeed', _value]] remoteExec ['setSkill', _this]}";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.75;
-								};
-							};
-						};
-						class Attribute10
-						{
-							property="ENH_aimingShake";
-							expression="if (_value != 0.5) then {[_this, ['aimingShake', _value]] remoteExec ['setSkill', _this]}";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.75;
-								};
-							};
-						};
 						class Attribute11
 						{
-							property="ENH_aimingAccuracy";
-							expression="if (_value != 0.5) then {[_this, ['aimingAccuracy', _value]] remoteExec ['setSkill', _this]}";
+							property="pitch";
+							expression="_this setpitch _value;";
 							class Value
 							{
 								class data
 								{
 									singleType="SCALAR";
-									value=0.75;
+									value=1.1;
 								};
 							};
 						};
 						class Attribute12
-						{
-							property="ENH_courage";
-							expression="if (_value != 0.5) then {[_this, ['courage', _value]] remoteExec ['setSkill', _this]}";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.75;
-								};
-							};
-						};
-						class Attribute13
-						{
-							property="enableStamina";
-							expression="_this enablestamina _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						class Attribute14
 						{
 							property="ENH_allowFleeing";
 							expression="if (_value != 0.5) then {[_this, _value] remoteExec ['allowFleeing', _this]}";
@@ -29797,7 +29788,46 @@ class Mission
 								};
 							};
 						};
-						nAttributes=15;
+						class Attribute13
+						{
+							property="ENH_spotTime";
+							expression="if (_value != 0.5) then {[_this, ['spotTime', _value]] remoteExec ['setSkill', _this]}";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.75;
+								};
+							};
+						};
+						class Attribute14
+						{
+							property="enh_general";
+							expression="if (_value != 0.5) then {[_this, ['general', _value]] remoteExec ['setSkill', _this]}";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.75;
+								};
+							};
+						};
+						class Attribute15
+						{
+							property="ENH_aimingShake";
+							expression="if (_value != 0.5) then {[_this, ['aimingShake', _value]] remoteExec ['setSkill', _this]}";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.75;
+								};
+							};
+						};
+						nAttributes=16;
 					};
 				};
 				class Item5
@@ -30001,7 +30031,7 @@ class Mission
 								class data
 								{
 									singleType="BOOL";
-									value=1;
+									value=0;
 								};
 							};
 						};
@@ -30432,7 +30462,7 @@ class Mission
 								class data
 								{
 									singleType="BOOL";
-									value=1;
+									value=0;
 								};
 							};
 						};
@@ -30734,6 +30764,23 @@ class Mission
 			id=1030;
 			type="B_HMG_01_high_F";
 			atlOffset=2.9862061;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item22
 		{
@@ -30894,32 +30941,6 @@ class Mission
 					{
 						class Attribute0
 						{
-							property="ENH_aimingSpeed";
-							expression="if (_value != 0.5) then {[_this, ['aimingSpeed', _value]] remoteExec ['setSkill', _this]}";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.75;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ENH_spotTime";
-							expression="if (_value != 0.5) then {[_this, ['spotTime', _value]] remoteExec ['setSkill', _this]}";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.75;
-								};
-							};
-						};
-						class Attribute2
-						{
 							property="ENH_doStop";
 							expression="if (!is3DEN && _value) then {doStop _this}";
 							class Value
@@ -30931,7 +30952,7 @@ class Mission
 								};
 							};
 						};
-						class Attribute3
+						class Attribute1
 						{
 							property="ENH_spotDistance";
 							expression="if (_value != 0.5) then {[_this, ['spotDistance', _value]] remoteExec ['setSkill', _this]}";
@@ -30944,20 +30965,111 @@ class Mission
 								};
 							};
 						};
-						class Attribute4
+						class Attribute2
 						{
-							property="pitch";
-							expression="_this setpitch _value;";
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ENH_reloadingSpeed";
+							expression="if (_value != 0.5) then {[_this, ['reloadSpeed', _value]] remoteExec ['setSkill', _this]}";
 							class Value
 							{
 								class data
 								{
 									singleType="SCALAR";
-									value=1.1;
+									value=0.75;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="ENH_aimingSpeed";
+							expression="if (_value != 0.5) then {[_this, ['aimingSpeed', _value]] remoteExec ['setSkill', _this]}";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.75;
 								};
 							};
 						};
 						class Attribute5
+						{
+							property="ENH_aimingAccuracy";
+							expression="if (_value != 0.5) then {[_this, ['aimingAccuracy', _value]] remoteExec ['setSkill', _this]}";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.75;
+								};
+							};
+						};
+						class Attribute6
+						{
+							property="enableStamina";
+							expression="_this enablestamina _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+						};
+						class Attribute7
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male08ENG";
+								};
+							};
+						};
+						class Attribute8
+						{
+							property="ENH_commanding";
+							expression="if (_value != 0.5) then {[_this, ['commanding', _value]] remoteExec ['setSkill', _this]}";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.75;
+								};
+							};
+						};
+						class Attribute9
+						{
+							property="ENH_courage";
+							expression="if (_value != 0.5) then {[_this, ['courage', _value]] remoteExec ['setSkill', _this]}";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.75;
+								};
+							};
+						};
+						class Attribute10
 						{
 							property="ENH_AmbientAnimations";
 							expression="            if (_value # 0 != '') then            {                _value params ['_animSet', '_anims', '_canExit', '_attach'];                                _this setVariable ['ENH_ambientAnimations_anims', _anims];                _this disableAI 'ANIM';                if (_attach && !is3DEN) then                {                    private _logic = group _this createUnit ['Logic', getPosATL _this, [], 0, 'NONE'];                    _this setVariable ['ENH_ambientAnimations_logic', _logic];                    [_this, _logic] call BIS_fnc_attachToRelative;                };                                ENH_fnc_ambientAnimations_play =                {                    params ['_unit'];                    private _anim = selectRandom (_unit getVariable ['ENH_ambientAnimations_anims', []]);                    [_unit, _anim] remoteExec ['switchMove', 0];                };                                ENH_fnc_ambientAnimations_exit =                {                    params ['_unit'];                    if !(_unit getVariable ['ENH_ambientAnimations_exit', true]) exitWith {false};                    _unit setVariable ['ENH_ambientAnimations_exit', true];                    detach _unit;                    deleteVehicle (_unit getVariable ['ENH_ambientAnimations_logic', objNull]);                    if (alive _unit) then                    {                        [_unit, ''] remoteExec ['switchMove', 0];                        _unit enableAI 'ANIM';                    };                    _unit removeEventHandler ['Killed', _unit getVariable ['ENH_EHKilled',-1]];                    _unit removeEventHandler ['Dammaged', _unit getVariable ['ENH_EHDammaged',-1]];                    _unit removeEventHandler ['AnimDone', _unit getVariable ['ENH_EHAnimDone',-1]];                };                                private _EHAnimDone = _this addEventHandler ['AnimDone',                    {                        params ['_unit'];                        if (alive _unit) then                        {                            _unit call ENH_fnc_ambientAnimations_play;                        }                        else                        {                            _unit call ENH_fnc_ambientAnimations_exit;                        };                    }                ];                _this setVariable ['ENH_EHAnimDone', _EHAnimDone];                                if (_canExit && !is3DEN) then                {                    private _EHKilled = _this addEventHandler ['Killed',                    {                        (_this select 0) call ENH_fnc_ambientAnimations_exit;                    }];                    _this setVariable ['ENH_EHKilled', _EHKilled];                    private _EHDammaged = _this addEventHandler ['Dammaged',                    {                        (_this select 0) call ENH_fnc_ambientAnimations_exit;                    }];                    _this setVariable ['ENH_EHDammaged', _EHDammaged];                    _this spawn                    {                        scriptName 'ENH_Attribute_AmbientAnimations';                        params ['_unit'];                        waitUntil                        {                            sleep 1; (_unit getVariable ['ENH_ambientAnimations_exit', false]) || {behaviour _unit == 'COMBAT'}                        };                        _unit call ENH_fnc_ambientAnimations_exit;                    };                };                _this call ENH_fnc_ambientAnimations_play;            };";
@@ -31024,111 +31136,20 @@ class Mission
 								};
 							};
 						};
-						class Attribute6
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male08ENG";
-								};
-							};
-						};
-						class Attribute7
-						{
-							property="enh_general";
-							expression="if (_value != 0.5) then {[_this, ['general', _value]] remoteExec ['setSkill', _this]}";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.75;
-								};
-							};
-						};
-						class Attribute8
-						{
-							property="ENH_commanding";
-							expression="if (_value != 0.5) then {[_this, ['commanding', _value]] remoteExec ['setSkill', _this]}";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.75;
-								};
-							};
-						};
-						class Attribute9
-						{
-							property="ENH_reloadingSpeed";
-							expression="if (_value != 0.5) then {[_this, ['reloadSpeed', _value]] remoteExec ['setSkill', _this]}";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.75;
-								};
-							};
-						};
-						class Attribute10
-						{
-							property="ENH_aimingShake";
-							expression="if (_value != 0.5) then {[_this, ['aimingShake', _value]] remoteExec ['setSkill', _this]}";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.75;
-								};
-							};
-						};
 						class Attribute11
 						{
-							property="ENH_aimingAccuracy";
-							expression="if (_value != 0.5) then {[_this, ['aimingAccuracy', _value]] remoteExec ['setSkill', _this]}";
+							property="pitch";
+							expression="_this setpitch _value;";
 							class Value
 							{
 								class data
 								{
 									singleType="SCALAR";
-									value=0.75;
+									value=1.1;
 								};
 							};
 						};
 						class Attribute12
-						{
-							property="ENH_courage";
-							expression="if (_value != 0.5) then {[_this, ['courage', _value]] remoteExec ['setSkill', _this]}";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.75;
-								};
-							};
-						};
-						class Attribute13
-						{
-							property="enableStamina";
-							expression="_this enablestamina _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						class Attribute14
 						{
 							property="ENH_allowFleeing";
 							expression="if (_value != 0.5) then {[_this, _value] remoteExec ['allowFleeing', _this]}";
@@ -31141,7 +31162,46 @@ class Mission
 								};
 							};
 						};
-						nAttributes=15;
+						class Attribute13
+						{
+							property="ENH_spotTime";
+							expression="if (_value != 0.5) then {[_this, ['spotTime', _value]] remoteExec ['setSkill', _this]}";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.75;
+								};
+							};
+						};
+						class Attribute14
+						{
+							property="enh_general";
+							expression="if (_value != 0.5) then {[_this, ['general', _value]] remoteExec ['setSkill', _this]}";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.75;
+								};
+							};
+						};
+						class Attribute15
+						{
+							property="ENH_aimingShake";
+							expression="if (_value != 0.5) then {[_this, ['aimingShake', _value]] remoteExec ['setSkill', _this]}";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.75;
+								};
+							};
+						};
+						nAttributes=16;
 					};
 				};
 				class Item1
@@ -31345,7 +31405,7 @@ class Mission
 								class data
 								{
 									singleType="BOOL";
-									value=1;
+									value=0;
 								};
 							};
 						};
@@ -31793,7 +31853,7 @@ class Mission
 								class data
 								{
 									singleType="BOOL";
-									value=1;
+									value=0;
 								};
 							};
 						};
@@ -32224,7 +32284,7 @@ class Mission
 								class data
 								{
 									singleType="BOOL";
-									value=1;
+									value=0;
 								};
 							};
 						};
@@ -32515,6 +32575,23 @@ class Mission
 			id=1066;
 			type="B_HMG_01_high_F";
 			atlOffset=2.960598;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item24
 		{
@@ -32736,32 +32813,6 @@ class Mission
 					{
 						class Attribute0
 						{
-							property="ENH_aimingSpeed";
-							expression="if (_value != 0.5) then {[_this, ['aimingSpeed', _value]] remoteExec ['setSkill', _this]}";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.75;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ENH_spotTime";
-							expression="if (_value != 0.5) then {[_this, ['spotTime', _value]] remoteExec ['setSkill', _this]}";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.75;
-								};
-							};
-						};
-						class Attribute2
-						{
 							property="ENH_doStop";
 							expression="if (!is3DEN && _value) then {doStop _this}";
 							class Value
@@ -32773,7 +32824,7 @@ class Mission
 								};
 							};
 						};
-						class Attribute3
+						class Attribute1
 						{
 							property="ENH_spotDistance";
 							expression="if (_value != 0.5) then {[_this, ['spotDistance', _value]] remoteExec ['setSkill', _this]}";
@@ -32786,20 +32837,111 @@ class Mission
 								};
 							};
 						};
-						class Attribute4
+						class Attribute2
 						{
-							property="pitch";
-							expression="_this setpitch _value;";
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ENH_reloadingSpeed";
+							expression="if (_value != 0.5) then {[_this, ['reloadSpeed', _value]] remoteExec ['setSkill', _this]}";
 							class Value
 							{
 								class data
 								{
 									singleType="SCALAR";
-									value=1.1;
+									value=0.75;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="ENH_aimingSpeed";
+							expression="if (_value != 0.5) then {[_this, ['aimingSpeed', _value]] remoteExec ['setSkill', _this]}";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.75;
 								};
 							};
 						};
 						class Attribute5
+						{
+							property="ENH_aimingAccuracy";
+							expression="if (_value != 0.5) then {[_this, ['aimingAccuracy', _value]] remoteExec ['setSkill', _this]}";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.75;
+								};
+							};
+						};
+						class Attribute6
+						{
+							property="enableStamina";
+							expression="_this enablestamina _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+						};
+						class Attribute7
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male06ENG";
+								};
+							};
+						};
+						class Attribute8
+						{
+							property="ENH_commanding";
+							expression="if (_value != 0.5) then {[_this, ['commanding', _value]] remoteExec ['setSkill', _this]}";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.75;
+								};
+							};
+						};
+						class Attribute9
+						{
+							property="ENH_courage";
+							expression="if (_value != 0.5) then {[_this, ['courage', _value]] remoteExec ['setSkill', _this]}";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.75;
+								};
+							};
+						};
+						class Attribute10
 						{
 							property="ENH_AmbientAnimations";
 							expression="            if (_value # 0 != '') then            {                _value params ['_animSet', '_anims', '_canExit', '_attach'];                                _this setVariable ['ENH_ambientAnimations_anims', _anims];                _this disableAI 'ANIM';                if (_attach && !is3DEN) then                {                    private _logic = group _this createUnit ['Logic', getPosATL _this, [], 0, 'NONE'];                    _this setVariable ['ENH_ambientAnimations_logic', _logic];                    [_this, _logic] call BIS_fnc_attachToRelative;                };                                ENH_fnc_ambientAnimations_play =                {                    params ['_unit'];                    private _anim = selectRandom (_unit getVariable ['ENH_ambientAnimations_anims', []]);                    [_unit, _anim] remoteExec ['switchMove', 0];                };                                ENH_fnc_ambientAnimations_exit =                {                    params ['_unit'];                    if !(_unit getVariable ['ENH_ambientAnimations_exit', true]) exitWith {false};                    _unit setVariable ['ENH_ambientAnimations_exit', true];                    detach _unit;                    deleteVehicle (_unit getVariable ['ENH_ambientAnimations_logic', objNull]);                    if (alive _unit) then                    {                        [_unit, ''] remoteExec ['switchMove', 0];                        _unit enableAI 'ANIM';                    };                    _unit removeEventHandler ['Killed', _unit getVariable ['ENH_EHKilled',-1]];                    _unit removeEventHandler ['Dammaged', _unit getVariable ['ENH_EHDammaged',-1]];                    _unit removeEventHandler ['AnimDone', _unit getVariable ['ENH_EHAnimDone',-1]];                };                                private _EHAnimDone = _this addEventHandler ['AnimDone',                    {                        params ['_unit'];                        if (alive _unit) then                        {                            _unit call ENH_fnc_ambientAnimations_play;                        }                        else                        {                            _unit call ENH_fnc_ambientAnimations_exit;                        };                    }                ];                _this setVariable ['ENH_EHAnimDone', _EHAnimDone];                                if (_canExit && !is3DEN) then                {                    private _EHKilled = _this addEventHandler ['Killed',                    {                        (_this select 0) call ENH_fnc_ambientAnimations_exit;                    }];                    _this setVariable ['ENH_EHKilled', _EHKilled];                    private _EHDammaged = _this addEventHandler ['Dammaged',                    {                        (_this select 0) call ENH_fnc_ambientAnimations_exit;                    }];                    _this setVariable ['ENH_EHDammaged', _EHDammaged];                    _this spawn                    {                        scriptName 'ENH_Attribute_AmbientAnimations';                        params ['_unit'];                        waitUntil                        {                            sleep 1; (_unit getVariable ['ENH_ambientAnimations_exit', false]) || {behaviour _unit == 'COMBAT'}                        };                        _unit call ENH_fnc_ambientAnimations_exit;                    };                };                _this call ENH_fnc_ambientAnimations_play;            };";
@@ -32866,111 +33008,20 @@ class Mission
 								};
 							};
 						};
-						class Attribute6
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male06ENG";
-								};
-							};
-						};
-						class Attribute7
-						{
-							property="enh_general";
-							expression="if (_value != 0.5) then {[_this, ['general', _value]] remoteExec ['setSkill', _this]}";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.75;
-								};
-							};
-						};
-						class Attribute8
-						{
-							property="ENH_commanding";
-							expression="if (_value != 0.5) then {[_this, ['commanding', _value]] remoteExec ['setSkill', _this]}";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.75;
-								};
-							};
-						};
-						class Attribute9
-						{
-							property="ENH_reloadingSpeed";
-							expression="if (_value != 0.5) then {[_this, ['reloadSpeed', _value]] remoteExec ['setSkill', _this]}";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.75;
-								};
-							};
-						};
-						class Attribute10
-						{
-							property="ENH_aimingShake";
-							expression="if (_value != 0.5) then {[_this, ['aimingShake', _value]] remoteExec ['setSkill', _this]}";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.75;
-								};
-							};
-						};
 						class Attribute11
 						{
-							property="ENH_aimingAccuracy";
-							expression="if (_value != 0.5) then {[_this, ['aimingAccuracy', _value]] remoteExec ['setSkill', _this]}";
+							property="pitch";
+							expression="_this setpitch _value;";
 							class Value
 							{
 								class data
 								{
 									singleType="SCALAR";
-									value=0.75;
+									value=1.1;
 								};
 							};
 						};
 						class Attribute12
-						{
-							property="ENH_courage";
-							expression="if (_value != 0.5) then {[_this, ['courage', _value]] remoteExec ['setSkill', _this]}";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.75;
-								};
-							};
-						};
-						class Attribute13
-						{
-							property="enableStamina";
-							expression="_this enablestamina _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						class Attribute14
 						{
 							property="ENH_allowFleeing";
 							expression="if (_value != 0.5) then {[_this, _value] remoteExec ['allowFleeing', _this]}";
@@ -32983,7 +33034,46 @@ class Mission
 								};
 							};
 						};
-						nAttributes=15;
+						class Attribute13
+						{
+							property="ENH_spotTime";
+							expression="if (_value != 0.5) then {[_this, ['spotTime', _value]] remoteExec ['setSkill', _this]}";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.75;
+								};
+							};
+						};
+						class Attribute14
+						{
+							property="enh_general";
+							expression="if (_value != 0.5) then {[_this, ['general', _value]] remoteExec ['setSkill', _this]}";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.75;
+								};
+							};
+						};
+						class Attribute15
+						{
+							property="ENH_aimingShake";
+							expression="if (_value != 0.5) then {[_this, ['aimingShake', _value]] remoteExec ['setSkill', _this]}";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.75;
+								};
+							};
+						};
+						nAttributes=16;
 					};
 				};
 				class Item1
@@ -33187,7 +33277,7 @@ class Mission
 								class data
 								{
 									singleType="BOOL";
-									value=1;
+									value=0;
 								};
 							};
 						};
@@ -33618,7 +33708,7 @@ class Mission
 								class data
 								{
 									singleType="BOOL";
-									value=1;
+									value=0;
 								};
 							};
 						};
@@ -33910,6 +34000,23 @@ class Mission
 			id=1087;
 			type="B_HMG_01_high_F";
 			atlOffset=0.013008118;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item29
 		{
@@ -34119,7 +34226,7 @@ class Mission
 								class data
 								{
 									singleType="BOOL";
-									value=1;
+									value=0;
 								};
 							};
 						};
@@ -34550,7 +34657,7 @@ class Mission
 								class data
 								{
 									singleType="BOOL";
-									value=1;
+									value=0;
 								};
 							};
 						};
@@ -35011,7 +35118,7 @@ class Mission
 								class data
 								{
 									singleType="BOOL";
-									value=1;
+									value=0;
 								};
 							};
 						};
@@ -35442,7 +35549,7 @@ class Mission
 								class data
 								{
 									singleType="BOOL";
-									value=1;
+									value=0;
 								};
 							};
 						};
