@@ -95,6 +95,18 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 
+// Channels
+[
+    "WHF_killFeed_vehicle_enabled",
+    "CHECKBOX",
+    ["STR_WHF_settings_channels_killFeed_vehicle_enabled", "STR_WHF_settings_channels_killFeed_vehicle_enabled_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_channels"],
+    true,
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+
 // Curators
 [
     "WHF_curators_uids",

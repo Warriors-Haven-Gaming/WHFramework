@@ -9,6 +9,71 @@ Author:
     thegamecracks
 
 */
+// Client-side vehicle kill feed
+if (hasInterface) then {addMissionEventHandler ["EntityKilled", {
+    params ["_entity", "_source", "_instigator"];
+    if (!WHF_killFeed_vehicle_enabled) exitWith {};
+
+    if (isNull _source) exitWith {};
+    if (_entity isEqualTo _source) exitWith {};
+    if (!isNil {_entity getVariable "WHF_killFeed_disabled"}) exitWith {};
+
+    if !(_entity isKindOf "AllVehicles") exitWith {};
+    if (_entity isKindOf "CAManBase") exitWith {};
+    if (sizeOf typeOf _entity < 7.5) exitWith {}; // skip quadbikes, quadcopters, etc.
+
+    if (isNull _instigator) then {_instigator = UAVControl vehicle _source # 0};
+    if (isNull _instigator) then {_instigator = _source};
+    if (!isPlayer _instigator) exitWith {};
+
+    private _sideEntity = side group _entity;
+    private _sideInstigator = side group _instigator;
+    if (_sideEntity isEqualTo sideUnknown) exitWith {};
+    if !([_sideInstigator, _sideEntity] call BIS_fnc_sideIsEnemy) exitWith {};
+
+    // FIXME: is there a simpler way to produce a numeric seed from an object?
+    private _seed = 0;
+    {_seed = _seed + _x} forEach toArray netId _entity;
+    private _selectSeeded = {
+        params ["_arr", "_offset"];
+        _arr select floor (_seed + _offset random (count _arr - 0.0001))
+    };
+
+    private _messages = switch (true) do {
+        case (_entity isKindOf "Air" && {!isTouchingGround _entity}): {[
+            "$STR_WHF_killFeed_vehicle_air_1",
+            "$STR_WHF_killFeed_vehicle_air_2",
+            "$STR_WHF_killFeed_vehicle_air_3",
+            "$STR_WHF_killFeed_vehicle_air_4"
+        ]};
+        default {[
+            "$STR_WHF_killFeed_vehicle_1",
+            "$STR_WHF_killFeed_vehicle_2",
+            "$STR_WHF_killFeed_vehicle_3",
+            "$STR_WHF_killFeed_vehicle_4",
+            "$STR_WHF_killFeed_vehicle_5"
+        ]};
+    };
+    private _vehicle = vehicle _source;
+    private _entityName = [configOf _entity] call BIS_fnc_displayName;
+    private _sourceName = switch (true) do {
+        case !(_vehicle isKindOf "CAManBase"): {
+            format [
+                localize "$STR_WHF_killFeed_vehicle_source",
+                name _instigator,
+                [configOf _vehicle] call BIS_fnc_displayName
+            ]
+        };
+        default {name _instigator};
+    };
+
+    private _message = [_messages, 0] call _selectSeeded;
+    _message = format [localize _message, _entityName, _sourceName];
+    [_sideInstigator, "BLU"] sideChat _message;
+
+    nil
+}]};
+
 if (!isServer) exitWith {};
 if (difficultyOption "deathMessages" isNotEqualTo 0) exitWith {
     diag_log text format [
@@ -17,6 +82,7 @@ if (difficultyOption "deathMessages" isNotEqualTo 0) exitWith {
     ];
 };
 
+// Server-side unit kill feed (probably could be client-side)
 addMissionEventHandler ["EntityKilled", {
     params ["_entity", "_source", "_instigator"];
     if (isNull _source) exitWith {};
