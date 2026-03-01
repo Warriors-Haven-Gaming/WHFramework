@@ -55,12 +55,18 @@ private _factions = call WHF_fnc_allFactions;
 
 private _resolvedTypes = _this apply {
     private _types = WHF_faction_types get _x;
-    switch (true) do {
+
+    _types = switch (true) do {
         case (!isNil "_types"): {_types};
         case !(_x # 1 in ["civilians", "standard"]): {[[_x # 0, "standard", _x # 2]] call WHF_fnc_getFactionTypes};
         case (_x # 2 isNotEqualTo "base"): {[[_x # 0, _x # 1, "base"]] call WHF_fnc_getFactionTypes};
         default {[]};
     };
+
+    private _optional = WHF_faction_types_optional get _x;
+    if (!isNil "_optional") then {_types append _optional};
+
+    _types
 };
 
 // The arrays returned by WHF_faction_types are immutable.

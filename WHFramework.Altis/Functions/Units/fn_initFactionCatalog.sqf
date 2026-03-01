@@ -666,3 +666,20 @@ WHF_faction_types = compileFinal createHashMapFromArray [
 
     [[], []]
 ];
+
+// Additional modded units and vehicles can be added here if desired.
+// All classnames defined here that exist on the server will be appended
+// to their corresponding keys in WHF_fnc_getFactionTypes.
+//
+// This is a workaround for supporting optional faction mods that integrate
+// with existing factions, and is not recommended if you have enough material
+// to create a dedicated faction.
+//
+// Beware that using classnames from server-side mods can result in units
+// and vehicles that are invisible to other clients.
+private _filter = {isClass (configFile >> "CfgVehicles" >> _x)};
+WHF_faction_types_optional = compileFinal createHashMapFromArray [
+    [["units", "civilians", "base"], [] select _filter],
+
+    [[], []]
+];
