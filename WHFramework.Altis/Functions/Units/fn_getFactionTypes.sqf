@@ -54,23 +54,21 @@ private _factions = call WHF_fnc_allFactions;
 } forEach _this;
 
 private _resolvedTypes = _this apply {
-    private _types = WHF_faction_types get _x;
+    private _types = WHF_faction_types get _x; // immutable
 
     _types = switch (true) do {
-        case (!isNil "_types"): {_types};
+        case (!isNil "_types"): {+_types}; // copy as mutable array
         case !(_x # 1 in ["civilians", "standard"]): {[[_x # 0, "standard", _x # 2]] call WHF_fnc_getFactionTypes};
         case (_x # 2 isNotEqualTo "base"): {[[_x # 0, _x # 1, "base"]] call WHF_fnc_getFactionTypes};
         default {[]};
     };
 
-    private _optional = WHF_faction_types_optional get _x;
+    private _optional = WHF_faction_types_optional get _x; // immutable
     if (!isNil "_optional") then {_types append _optional};
 
     _types
 };
 
-// The arrays returned by WHF_faction_types are immutable.
-// This part both de-duplicates those types and produces mutable arrays.
 _resolvedTypes = flatten _resolvedTypes;
 _resolvedTypes = _resolvedTypes arrayIntersect _resolvedTypes;
 _resolvedTypes
