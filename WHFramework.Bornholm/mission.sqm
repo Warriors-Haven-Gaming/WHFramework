@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1210;
+		nextID=1201;
 	};
 	class MarkerIDProvider
 	{
@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3148.5039,22.932884,5548.6567};
-		dir[]={-0.34568685,-0.45676661,-0.8198052};
-		up[]={-0.17750932,0.88951939,-0.42096418};
-		aside[]={-0.92152655,-1.6400591e-06,0.38857758};
+		pos[]={3071.3408,73.654816,5279.9727};
+		dir[]={0.16627026,-0.30855966,0.93667144};
+		up[]={0.053951941,0.95115489,0.30392319};
+		aside[]={0.98470485,-1.1466909e-06,-0.17479558};
 	};
 };
 binarizationWanted=0;
@@ -102,6 +102,7 @@ addons[]=
 	"qav_marshall",
 	"Peral_A10",
 	"pook_ARTY_c",
+	"UK3CB_BAF_Vehicles_Coyote_Jackal",
 	"UK3CB_BAF_Vehicles_Bulldog",
 	"UK3CB_BAF_Vehicles_Warrior_a3",
 	"UK3CB_BAF_Vehicles_Husky",
@@ -109,7 +110,6 @@ addons[]=
 	"UK3CB_BAF_Vehicles_MAN",
 	"FA_Mig29",
 	"UK3CB_BAF_Vehicles_Panther",
-	"UK3CB_BAF_Vehicles_Coyote_Jackal",
 	"A3_Structures_F_EPC_Items_Electronics",
 	"A3_Props_F_Enoch_Military_Equipment",
 	"A3_Structures_F_Tank_Military_RepairDepot",
@@ -435,57 +435,57 @@ class AddonsMetaData
 		};
 		class Item42
 		{
+			className="UK3CB_BAF_Vehicles_Coyote_Jackal";
+			name="3CB BAF Vehicles - Coyote and Jackal";
+			author="3 Commando Brigade";
+			url="www.3commandobrigade.com";
+		};
+		class Item43
+		{
 			className="UK3CB_BAF_Vehicles_Bulldog";
 			name="3CB BAF Vehicles - Bulldog";
 			author="3 Commando Brigade";
 			url="www.3commandobrigade.com";
 		};
-		class Item43
+		class Item44
 		{
 			className="UK3CB_BAF_Vehicles_Warrior_a3";
 			name="3CB BAF Vehicles - Warrior";
 			author="3 Commando Brigade";
 			url="www.3commandobrigade.com";
 		};
-		class Item44
+		class Item45
 		{
 			className="UK3CB_BAF_Vehicles_Husky";
 			name="3CB BAF Vehicles - Husky";
 			author="3 Commando Brigade";
 			url="www.3commandobrigade.com";
 		};
-		class Item45
+		class Item46
 		{
 			className="UK3CB_BAF_Vehicles_LandRover";
 			name="3CB BAF Vehicles - Land Rover";
 			author="3 Commando Brigade";
 			url="www.3commandobrigade.com";
 		};
-		class Item46
+		class Item47
 		{
 			className="UK3CB_BAF_Vehicles_MAN";
 			name="3CB BAF Vehicles - MAN Truck";
 			author="AUTHOR_3CB";
 			url="www.3commandobrigade.com";
 		};
-		class Item47
+		class Item48
 		{
 			className="FA_Mig29";
 			name="FA_Mig29";
 			author="Luca";
 			url="https://steamcommunity.com/id/7112015/myworkshopfiles/";
 		};
-		class Item48
+		class Item49
 		{
 			className="UK3CB_BAF_Vehicles_Panther";
 			name="3CB BAF Vehicles - Panther";
-			author="3 Commando Brigade";
-			url="www.3commandobrigade.com";
-		};
-		class Item49
-		{
-			className="UK3CB_BAF_Vehicles_Coyote_Jackal";
-			name="3CB BAF Vehicles - Coyote and Jackal";
 			author="3 Commando Brigade";
 			url="www.3commandobrigade.com";
 		};
@@ -18264,6 +18264,60 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
+								position[]={3142.761,17.641926,5535.1982};
+								angles[]={0.0026294757,0.41879198,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
+							};
+							id=1131;
+							type="UK3CB_BAF_Coyote_Logistics_L134A1_W";
+							atlOffset=-0.00043296814;
+						};
+						class Item62
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3146.8032,17.647316,5533.4971};
+								angles[]={0.0025135824,0.41887912,0.00077204045};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
+							};
+							id=1132;
+							type="UK3CB_BAF_Coyote_Logistics_L111A1_W";
+							atlOffset=-3.8146973e-06;
+						};
+						class Item63
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3150.7759,17.6558,5531.6226};
+								angles[]={0.0032018756,0.40142608,0.00077204045};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
+							};
+							id=1133;
+							type="UK3CB_BAF_Coyote_Passenger_L111A1_W";
+							atlOffset=-0.00040817261;
+						};
+						class Item64
+						{
+							dataType="Object";
+							class PositionInfo
+							{
 								position[]={3149.7527,17.471159,5548.1587};
 								angles[]={6.2767973,3.5081117,0.0004886922};
 							};
@@ -18276,7 +18330,7 @@ class Mission
 							id=1152;
 							type="UK3CB_BAF_FV432_Mk3_RWS_Green";
 						};
-						class Item62
+						class Item65
 						{
 							dataType="Object";
 							class PositionInfo
@@ -18294,7 +18348,7 @@ class Mission
 							type="UK3CB_BAF_Warrior_A3_W_Cage_Camo";
 							atlOffset=-1.0490417e-05;
 						};
-						class Item63
+						class Item66
 						{
 							dataType="Object";
 							class PositionInfo
@@ -18312,7 +18366,7 @@ class Mission
 							type="UK3CB_BAF_Husky_Passenger_GPMG_Green";
 							atlOffset=-3.528595e-05;
 						};
-						class Item64
+						class Item67
 						{
 							dataType="Object";
 							class PositionInfo
@@ -18330,7 +18384,42 @@ class Mission
 							type="UK3CB_BAF_Husky_Passenger_HMG_Green";
 							atlOffset=-4.863739e-05;
 						};
-						class Item65
+						class Item68
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3135.2229,17.186613,5538.4243};
+								angles[]={0.0026529003,0.41887903,0.0004886922};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
+							};
+							id=1138;
+							type="UK3CB_BAF_Jackal2_L134A1_W";
+							atlOffset=-1.5258789e-05;
+						};
+						class Item69
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3138.7476,17.645384,5536.3042};
+								angles[]={0.0026529003,0.40142572,0.0004886922};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
+							};
+							id=1137;
+							type="UK3CB_BAF_Jackal2_L111A1_W";
+						};
+						class Item70
 						{
 							dataType="Object";
 							class PositionInfo
@@ -18365,7 +18454,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item66
+						class Item71
 						{
 							dataType="Object";
 							class PositionInfo
@@ -18400,7 +18489,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item67
+						class Item72
 						{
 							dataType="Object";
 							class PositionInfo
@@ -18418,7 +18507,7 @@ class Mission
 							type="UK3CB_BAF_LandRover_WMIK_Milan_FFR_Green_A";
 							atlOffset=-0.00035381317;
 						};
-						class Item68
+						class Item73
 						{
 							dataType="Object";
 							class PositionInfo
@@ -18436,7 +18525,7 @@ class Mission
 							type="UK3CB_BAF_MAN_HX58_Fuel_Green";
 							atlOffset=9.5367432e-07;
 						};
-						class Item69
+						class Item74
 						{
 							dataType="Object";
 							class PositionInfo
@@ -18454,7 +18543,7 @@ class Mission
 							type="UK3CB_BAF_MAN_HX58_Repair_Green";
 							atlOffset=1.9073486e-06;
 						};
-						class Item70
+						class Item75
 						{
 							dataType="Object";
 							class PositionInfo
@@ -18551,7 +18640,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item71
+						class Item76
 						{
 							dataType="Object";
 							class PositionInfo
@@ -18569,7 +18658,7 @@ class Mission
 							type="pook_MLRS_BLUFOR";
 							atlOffset=0.00058746338;
 						};
-						class Item72
+						class Item77
 						{
 							dataType="Object";
 							class PositionInfo
@@ -18586,94 +18675,9 @@ class Mission
 							id=1143;
 							type="UK3CB_BAF_Panther_GPMG_Green_A";
 						};
-						class Item73
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3150.7759,17.662804,5531.6221};
-								angles[]={0.0031939524,0.40142572,0.00076794485};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								init="[this] call WHF_fnc_addRespawnVehicle;";
-							};
-							id=1205;
-							type="UK3CB_BAF_Jackal2_L111A1_W";
-						};
-						class Item74
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3146.803,17.202423,5533.4956};
-								angles[]={0.0025132741,0.41887903,0.00076794485};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								init="[this] call WHF_fnc_addRespawnVehicle;";
-							};
-							id=1206;
-							type="UK3CB_BAF_Jackal2_L134A1_W";
-						};
-						class Item75
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3142.7612,17.648954,5535.1973};
-								angles[]={0.0026354471,0.41879177,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								init="[this] call WHF_fnc_addRespawnVehicle;";
-							};
-							id=1207;
-							type="UK3CB_BAF_Jackal2_L111A1_W";
-						};
-						class Item76
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3138.7478,17.193893,5536.3037};
-								angles[]={0.0026529003,0.40142572,0.0004886922};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								init="[this] call WHF_fnc_addRespawnVehicle;";
-							};
-							id=1208;
-							type="UK3CB_BAF_Jackal2_L134A1_W";
-						};
-						class Item77
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3135.2227,17.638123,5538.4243};
-								angles[]={0.0026529003,0.41887903,0.0004886922};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								init="[this] call WHF_fnc_addRespawnVehicle;";
-							};
-							id=1209;
-							type="UK3CB_BAF_Jackal2_L111A1_W";
-						};
 					};
 					id=243;
-					atlOffset=-0.00034427643;
+					atlOffset=0.01499939;
 				};
 				class Item3
 				{
@@ -24319,7 +24323,7 @@ class Mission
 				};
 			};
 			id=136;
-			atlOffset=-0.42844772;
+			atlOffset=-0.42531204;
 		};
 		class Item3
 		{
