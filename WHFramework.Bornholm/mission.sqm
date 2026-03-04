@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=120;
+		nextID=130;
 	};
 	class Camera
 	{
-		pos[]={3071.3408,73.654816,5279.9727};
-		dir[]={0.16627026,-0.30855966,0.93667144};
-		up[]={0.053951941,0.95115489,0.30392319};
-		aside[]={0.98470485,-1.1466909e-06,-0.17479558};
+		pos[]={3099.6562,23.491251,5525.4976};
+		dir[]={-0.14368558,-0.56863475,0.8099454};
+		up[]={-0.099325925,0.82258934,0.5598945};
+		aside[]={0.98462749,-6.693881e-09,0.17467457};
 	};
 };
 binarizationWanted=0;
@@ -3005,7 +3005,7 @@ class Mission
 					position[]={3172.449,14.968,5463.4331};
 					name="respawn_west_arty";
 					type="Empty";
-					angle=203.99989;
+					angle=203.99988;
 					id=1118;
 					atlOffset=-0.00022125244;
 				};
@@ -18424,8 +18424,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={3100.2412,17.493599,5535.1831};
-								angles[]={0.0014648439,0.41887903,0};
+								position[]={3100.2407,17.493597,5535.1836};
+								angles[]={0.0014660766,0.41887903,0};
 							};
 							side="Empty";
 							flags=4;
@@ -18435,7 +18435,6 @@ class Mission
 							};
 							id=1142;
 							type="UK3CB_BAF_LandRover_WMIK_GPMG_FFR_Green_A";
-							atlOffset=9.5367432e-07;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -18447,7 +18446,7 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[""UK3CB_BAF_Javelin_Slung_Tube""],[1]],[[""UK3CB_BAF_762_200Rnd_T""],[12]],[[""UK3CB_BAF_Javelin_CLU"",""FirstAidKit""],[1,4]],[[],[]]],false]";
+											value="[[[[],[]],[[],[]],[[""FirstAidKit""],[10]],[[],[]]],false]";
 										};
 									};
 								};
@@ -18459,8 +18458,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={3097.1538,17.33086,5536.9644};
-								angles[]={0.00119604,0.41887903,0};
+								position[]={3097.1541,17.33086,5536.9639};
+								angles[]={0.0012042772,0.41887903,0};
 							};
 							side="Empty";
 							flags=4;
@@ -18470,6 +18469,40 @@ class Mission
 							};
 							id=1141;
 							type="UK3CB_BAF_LandRover_WMIK_HMG_FFR_Green_A";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[],[]],[[],[]],[[""FirstAidKit""],[10]],[[],[]]],false]";
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item72
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3093.7908,17.118557,5537.9653};
+								angles[]={0.0012042772,0.43624505,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="[this] call WHF_fnc_addRespawnVehicle;";
+							};
+							id=1140;
+							type="UK3CB_BAF_LandRover_WMIK_Milan_FFR_Green_A";
 							atlOffset=9.5367432e-07;
 							class CustomAttributes
 							{
@@ -18482,30 +18515,12 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[""UK3CB_BAF_Javelin_Slung_Tube""],[1]],[[""UK3CB_BAF_762_200Rnd_T"",""UK3CB_BAF_127_100Rnd""],[6,6]],[[""UK3CB_BAF_Javelin_CLU"",""FirstAidKit""],[1,4]],[[],[]]],false]";
+											value="[[[[],[]],[[],[]],[[""FirstAidKit""],[10]],[[],[]]],false]";
 										};
 									};
 								};
 								nAttributes=1;
 							};
-						};
-						class Item72
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3093.7903,17.118202,5537.9653};
-								angles[]={0.00119604,0.43624505,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								init="[this] call WHF_fnc_addRespawnVehicle;";
-							};
-							id=1140;
-							type="UK3CB_BAF_LandRover_WMIK_Milan_FFR_Green_A";
-							atlOffset=-0.00035381317;
 						};
 						class Item73
 						{
@@ -18677,7 +18692,7 @@ class Mission
 						};
 					};
 					id=243;
-					atlOffset=0.01499939;
+					atlOffset=0.015005112;
 				};
 				class Item3
 				{
@@ -24323,7 +24338,7 @@ class Mission
 				};
 			};
 			id=136;
-			atlOffset=-0.42531204;
+			atlOffset=-0.42531109;
 		};
 		class Item3
 		{
