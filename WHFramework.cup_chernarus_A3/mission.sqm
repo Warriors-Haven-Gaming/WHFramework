@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4969.5327,453.80124,10121.508};
-		dir[]={-0.8281796,-0.54593152,0.12705328};
-		up[]={-0.53966612,0.83779573,0.082792215};
-		aside[]={0.15164272,-1.7890125e-07,0.98846865};
+		pos[]={4566.6294,522.81915,10139.388};
+		dir[]={0.71219397,-0.56762707,0.41302317};
+		up[]={0.49103132,0.82328486,0.28476408};
+		aside[]={0.50167549,5.5762939e-08,-0.86506164};
 	};
 };
 binarizationWanted=0;
@@ -292,11 +292,11 @@ class Mission
 		briefingName="Warriors Haven Framework (Chernarus 2020)";
 		timeOfChanges=1800.0002;
 		startWeather=0.30000001;
-		startFog=0.0099999998;
+		startFog=0.050000001;
 		startWind=0.1;
 		startWaves=0.1;
 		forecastWeather=0.30000001;
-		forecastFog=0.0099999998;
+		forecastFog=0.050000001;
 		forecastWind=0.1;
 		forecastWaves=0.1;
 		forecastLightnings=0.1;
@@ -305,8 +305,8 @@ class Mission
 		day=8;
 		hour=12;
 		minute=0;
-		startFogBase=250;
-		forecastFogBase=250;
+		startFogBase=100;
+		forecastFogBase=100;
 		startFogDecay=0.02;
 		forecastFogDecay=0.02;
 		class CustomAttributes
@@ -2471,7 +2471,7 @@ class Mission
 					text="Main Operating Base";
 					type="b_hq";
 					colorName="ColorWEST";
-					angle=239.99991;
+					angle=239.99988;
 					id=131;
 					class CustomAttributes
 					{
@@ -2497,7 +2497,7 @@ class Mission
 					position[]={4871.9473,338.99185,10149.344};
 					name="respawn_west_pilot_transport";
 					type="Empty";
-					angle=240.00002;
+					angle=240;
 					id=132;
 					class CustomAttributes
 					{
@@ -2549,7 +2549,7 @@ class Mission
 					position[]={4716,348.11002,10217};
 					name="respawn_west_uav";
 					type="Empty";
-					angle=60.000065;
+					angle=60.000061;
 					id=134;
 					class CustomAttributes
 					{
@@ -6529,7 +6529,7 @@ class Mission
 						};
 					};
 					id=316;
-					atlOffset=-0.32922363;
+					atlOffset=-0.32919312;
 				};
 				class Item6
 				{
@@ -6749,7 +6749,7 @@ class Mission
 						};
 					};
 					id=335;
-					atlOffset=-10.516083;
+					atlOffset=-10.498016;
 				};
 			};
 			id=136;
