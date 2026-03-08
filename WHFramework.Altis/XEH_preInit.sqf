@@ -154,6 +154,16 @@ Author:
     false
 ] call WHF_fnc_addSetting;
 [
+    "WHF_damage_ff_missile",
+    "CHECKBOX",
+    ["STR_WHF_settings_damage_ff_missile", "STR_WHF_settings_damage_ff_missile_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_damage"],
+    false,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_hit_sounds",
     "CHECKBOX",
     ["STR_WHF_settings_damage_hit_sounds", "STR_WHF_settings_damage_hit_sounds_tooltip"],
