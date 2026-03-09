@@ -1356,6 +1356,19 @@ call WHF_fnc_cycleFaction;
     {},
     false
 ] call WHF_fnc_addSetting;
+[
+    "WHF_safezone_terrain_types",
+    "EDITBOX",
+    ["STR_WHF_settings_safezone_terrain_types", "STR_WHF_settings_safezone_terrain_types_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_safezone"],
+    '[]',
+    true,
+    {
+        WHF_safezone_terrain_types = parseSimpleArray _this;
+        [] call WHF_fnc_initTerrainSafezone;
+    },
+    false
+] call WHF_fnc_addSetting;
 
 // Service
 [
