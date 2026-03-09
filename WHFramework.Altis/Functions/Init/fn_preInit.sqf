@@ -26,20 +26,10 @@ addMissionEventHandler ["PreloadFinished", {
     saveMissionProfileNamespace;
 
     private _introPlayed = !isNil {uiNamespace getVariable "WHF_play_intro"};
-    [_introPlayed && !isMultiplayer] spawn WHF_fnc_startIntroSequence;
-    if (!_introPlayed) then {
-        uiNamespace setVariable ["WHF_play_intro", true];
-        selectRandom [
-            ["AmbientTrack02_F_Orange", 0], // Laws of War DLC: Remnants of War
-            ["LeadTrack02_F_Tank", 0],      // Tanks DLC: Last Stand
-            ["LeadTrack04_F_Tacops", 0],    // Tac-Ops DLC: Outro
-            ["LeadTrack01_F_Tank", 0],      // Tanks DLC: Fight for the City
-            ["LeadTrack01_F_Orange", 0],    // This Is War (Laws of War Remix)
-            ["LeadTrack05_F_Tank", 4],      // Tanks DLC: Wrath of the Giants
-            ["LeadTrack02_F_Jets", 0]       // Air Power
-        ] params ["_music", "_offset"];
-        [_music, 60, 0, 15, 15] spawn WHF_fnc_playMusicSnippet;
-    };
+    private _short = _introPlayed && !isMultiplayer;
+    private _music = !_introPlayed;
+    [_short, _music] spawn WHF_fnc_startIntroSequence;
+    uiNamespace setVariable ["WHF_play_intro", true];
 
     0 spawn {
         sleep 0.5;
