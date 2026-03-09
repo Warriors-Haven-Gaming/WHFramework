@@ -9,24 +9,6 @@ Author:
 
 */
 private _hasACEMedical = isClass (configFile >> "CfgPatches" >> "ace_medical");
-private _getSafezones = {
-    private _respawnSafezones =
-        allMapMarkers
-        select {_x find "respawn" isEqualTo 0}
-        apply {[
-            markerPos [_x, true],
-            WHF_safezone_respawn_radius,
-            WHF_safezone_respawn_radius
-        ]};
-
-    private _customSafezones =
-        allMapMarkers
-        select {_x find "WHF_safezone" isEqualTo 0};
-
-    [
-        [_respawnSafezones + _customSafezones, "WHF_safezone_friendly"]
-    ]
-};
 
 while {true} do {
     sleep (1 + random 1);
@@ -39,7 +21,7 @@ while {true} do {
         select {local _x && {alive _x && {simulationEnabled _x}}};
 
     {
-        _x params ["_areas", "_var"];
+        _x params ["_var", "_areas"];
 
         private _protected = [];
         if (WHF_safezone_enabled) then {
@@ -51,7 +33,7 @@ while {true} do {
             {_x setVariable [_var, false]} forEach _entities;
             {_x setVariable [_var, true]} forEach _protected;
         };
-    } forEach call _getSafezones;
+    } forEach call WHF_fnc_listSafezones;
 
     if (_hasACEMedical && {isNil "WHF_debug_disable_ace_safezone"}) then {
         // FIXME: only block friendly fire with ACE, rather than all incoming damage
