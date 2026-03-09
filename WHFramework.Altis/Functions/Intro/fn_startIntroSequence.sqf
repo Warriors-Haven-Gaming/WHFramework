@@ -18,7 +18,6 @@ Author:
 
 */
 params [["_short", false], ["_music", true]];
-sleep 0.5;
 
 if (_music) then {
     selectRandom [
@@ -32,6 +31,8 @@ if (_music) then {
     ] params ["_music", "_offset"];
     [_music, 60, 0, 15, 15] spawn WHF_fnc_playMusicSnippet;
 };
+
+sleep 0.5;
 
 if (!_short) then {
     [] call WHF_fnc_introGUI;
