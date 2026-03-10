@@ -667,7 +667,7 @@ WHF_faction_types = compileFinal createHashMapFromArray [
     [[], []]
 ];
 
-private _heli_attack = ["E22_O_RAF_Heli_Light_02_dynamicLoadout_F","TEC_VH_WD_Helicopter_Keftar","TEC_VH_WD_Helicopter_Orca_Armed","Z10","Z11WA"];
+private _heli_attack = ["E22_O_RAF_Heli_Light_02_dynamicLoadout_F","TEC_VH_WD_Helicopter_Keftar","TEC_VH_WD_Helicopter_Orca_Armed","Z10","Z11WA","Z19"];
 private _heli_gunship = ["E22_O_RAF_Heli_Attack_02_dynamicLoadout_F","TEC_VH_WD_Helicopter_Kajman"];
 private _heli_light = [];
 private _heli_medium = [];
