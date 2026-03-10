@@ -447,6 +447,9 @@ private _helicoptersCooldown = 60;
 private _helicopters = [
     ["o_t_vtol_02_infantry_dynamicloadout_f",       [-1,  ["pilot_transport"]]],
     ["o_t_vtol_02_vehicle_dynamicloadout_f",        [-1,  ["pilot_transport", "pilot_cas_plane"]]],
+    ["z10",                                         [-1,  ["pilot_cas_heli"]]],
+    ["z11wa",                                       [-1,  ["pilot_cas_heli"]]],
+    ["z19",                                         [-1,  ["pilot_cas_heli"]]],
     ["o_heli_attack_02_dynamicloadout_f",           [-1,  ["pilot_cas_heli"]]],
     ["cup_b_ah6m_usa",                              [-1,  ["pilot_cas_heli"]]],
     ["cup_b_ah64d_dl_usa",                          [-1,  ["pilot_cas_heli"]]],
@@ -560,6 +563,19 @@ private _helicopters = [
 
 private _planesCooldown = 60;
 private _planes = [
+    ["fa_mig29_aaf",                            [-1,  ["pilot_cas_plane"]]],
+    ["js_jc_su35",                              [-1,  ["pilot_cas_plane"]]],
+    ["plaaf_fighter_j10",                       [-1,  ["pilot_cas_plane"]]],
+    ["plaaf_fighter_j11",                       [-1,  ["pilot_cas_plane"]]],
+    ["plaaf_fighter_j15",                       [-1,  ["pilot_cas_plane"]]],
+    ["plaaf_fighter_j16",                       [-1,  ["pilot_cas_plane"]]],
+    ["plaaf_fighter_j20",                       [-1,  ["pilot_cas_plane"]]],
+    ["sab_etendard_o",                          [-1,  ["pilot_cas_plane"]]],
+    ["sab_magister_o",                          [-1,  ["pilot_cas_plane"]]],
+    ["sab_mirageiv_o",                          [-1,  ["pilot_cas_plane"]]],
+    ["sab_mystere_o",                           [-1,  ["pilot_cas_plane"]]],
+    ["sab_su34_i",                              [-1,  ["pilot_cas_plane"]]],
+    ["su33_protatype_pt_2",                     [-1,  ["pilot_cas_plane"]]],
     ["o_plane_cas_02_dynamicloadout_f",         [-1,  ["pilot_cas_plane"]]],
     ["o_plane_fighter_02_f",                    [-1,  ["pilot_cas_plane"]]],
     ["i_plane_fighter_03_dynamicloadout_f",     [-1,  ["pilot_cas_plane"]]],
