@@ -15,7 +15,6 @@ if (!isNil "WHF_initVehicleHandlers") exitWith {};
 
 addMissionEventHandler ["EntityCreated", {
     params ["_entity"];
-    if (!local _entity) exitWith {};
     _entity call WHF_fnc_setupVehicle;
 }];
 
