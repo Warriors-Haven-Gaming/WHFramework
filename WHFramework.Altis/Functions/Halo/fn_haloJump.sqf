@@ -21,12 +21,11 @@ params ["_center", "_direction"];
 
 if (isNil "_direction") then {_direction = getPosATL focusOn getDir _center};
 
-private _allUnits = units focusOn select {
-    _x isEqualTo focusOn
-    || {!isPlayer _x
-    && {local _x
-    && {focusOn distance _x < 100}}}
-};
+private _area = [focusOn, 100, 100, 0, false, 100];
+private _allUnits =
+    units focusOn
+    select {_x isEqualTo focusOn || {!isPlayer _x && {local _x}}}
+    inAreaArray _area;
 {_x setUnitFreefallHeight 50} forEach _allUnits;
 
 private _vehicles = _allUnits apply {objectParent _x} select {
@@ -37,13 +36,11 @@ private _vehicles = _allUnits apply {objectParent _x} select {
 
 // NOTE: in localhost, this can steal a bunch of UGVs from the base
 _vehicles append (allUnitsUAV select {
-    private _commander = effectiveCommander _x;
     local _x
-    && {alive _commander
-    && {side group _commander isEqualTo side group focusOn
-    && {!(_x isKindOf "Air")
-    && {focusOn distance _x < 100}}}}
-});
+    && {alive effectiveCommander _x
+    && {side group _x isEqualTo side group focusOn
+    && {!(_x isKindOf "Air")}}}
+} inAreaArray _area);
 
 _vehicles = _vehicles arrayIntersect _vehicles;
 private _units = _allUnits select {isNull objectParent _x};
