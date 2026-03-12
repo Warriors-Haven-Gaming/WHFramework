@@ -32,6 +32,7 @@ DEFAULT_BRANCHES = (
     "malden",
     "maksniemi",
     "bornholm",
+    "chernarus-2020",
     "main",
 )
 

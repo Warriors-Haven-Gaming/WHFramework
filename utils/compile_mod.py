@@ -29,6 +29,7 @@ BRANCH_DIRECTORIES = {
     "malden": "Malden",
     "maksniemi": "Maksniemi",
     "bornholm": "Bornholm",
+    "chernarus-2020": "cup_chernarus_A3",
 }
 
 COMMON_FILES = {
