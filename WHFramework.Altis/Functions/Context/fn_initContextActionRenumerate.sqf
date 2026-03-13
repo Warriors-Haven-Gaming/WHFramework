@@ -14,13 +14,13 @@ if (!hasInterface) exitWith {};
 WHF_fnc_initContextActionRenumerate_firstBreakInIndex = compileFinal {
     params ["_units"];
     private _indexes = _units apply {groupId _x};
-    private _last = -1;
+    private _ret = -1;
     {
-        if (_last < 0) then {_last = _x; continueWith -1};
-        if (_x - _last isNotEqualTo 1) exitWith {_forEachIndex};
-        _last = _x;
-        -1
-    } forEach _indexes
+        if (_x - _forEachIndex isNotEqualTo 1) exitWith {
+            _ret = _forEachIndex;
+        };
+    } forEach _indexes;
+    _ret
 };
 
 [
