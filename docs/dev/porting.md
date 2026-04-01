@@ -4,24 +4,24 @@ This guide loosely covers how to create a Warriors Haven Framework port
 for any given map.
 
 - [Creating Ports](#creating-ports)
-  - [1. Creating the scenario](#1-creating-the-scenario)
-  - [2. Loading a premade WHF gamemode](#2-loading-a-premade-whf-gamemode)
-  - [3. Copying gamemode files](#3-copying-gamemode-files)
-  - [4. Copying the player group](#4-copying-the-player-group)
-  - [5. Setting up player respawns](#5-setting-up-player-respawns)
-  - [6. Adding arsenals](#6-adding-arsenals)
-  - [7. Adding respawning vehicles](#7-adding-respawning-vehicles)
-  - [8. Adding vehicle locks](#8-adding-vehicle-locks)
-  - [9. Adding service stations](#9-adding-service-stations)
-  - [10. Adding recruit flag poles](#10-adding-recruit-flag-poles)
-  - [11. Adding vehicle spawners](#11-adding-vehicle-spawners)
-  - [12. (Optional) Setting default loadouts](#12-optional-setting-default-loadouts)
-  - [13. (Optional) Adding time skip actions](#13-optional-adding-time-skip-actions)
-  - [14. (Optional) Adding special area markers](#14-optional-adding-special-area-markers)
-  - [15. (Optional) Adding custom locations](#15-optional-adding-custom-locations)
-  - [16. Other tips](#16-other-tips)
+  - [Creating the scenario](#creating-the-scenario)
+  - [Loading a premade WHF gamemode](#loading-a-premade-whf-gamemode)
+  - [Copying gamemode files](#copying-gamemode-files)
+  - [Copying the player group](#copying-the-player-group)
+  - [Setting up player respawns](#setting-up-player-respawns)
+  - [Adding arsenals](#adding-arsenals)
+  - [Adding respawning vehicles](#adding-respawning-vehicles)
+  - [Adding vehicle locks](#adding-vehicle-locks)
+  - [Adding service stations](#adding-service-stations)
+  - [Adding recruit flag poles](#adding-recruit-flag-poles)
+  - [Adding vehicle spawners](#adding-vehicle-spawners)
+  - [(Optional) Setting default loadouts](#optional-setting-default-loadouts)
+  - [(Optional) Adding time skip actions](#optional-adding-time-skip-actions)
+  - [(Optional) Adding special area markers](#optional-adding-special-area-markers)
+  - [(Optional) Adding custom locations](#optional-adding-custom-locations)
+  - [Other tips](#other-tips)
 
-## 1. Creating the scenario
+## Creating the scenario
 
 The first step you should do is open the map you plan on porting to.
 Immediately after opening, save the scenario in MPMissions under a name
@@ -32,7 +32,7 @@ After creating your scenario, you need to find your scenario files.
 This should be somewhere in your profile's mpmissions directory, for example,
 `C:\Users\myname\Documents\Arma 3 - Other Profiles\myname\mpmissions` on Windows.
 
-## 2. Loading a premade WHF gamemode
+## Loading a premade WHF gamemode
 
 Now, you should download a copy of this project's source code and get it into
 Eden Editor. Our main branch will contain `WHFramework.Altis`, the gamemode files
@@ -41,13 +41,13 @@ for our Altis map.
 Copy `WHFramework.Altis` into your mpmissions directory. Afterwards, you should
 be able to see WHFramework for Altis in the Eden Editor.
 
-## 3. Copying gamemode files
+## Copying gamemode files
 
 To start porting the gamemode, you need to transfer the gamemode files into your
 first scenario directory. To do this, copy and paste every file inside `WHFramework.Altis`
 into your scenario directory **EXCEPT** for mission.sqm, which you should leave behind.
 
-## 4. Copying the player group
+## Copying the player group
 
 With the gamemode files copied, you should copy the player group next.
 Open WHFramework for Altis in Eden Editor. On the left, you should see a layer
@@ -63,7 +63,7 @@ You can lock the layer after this to prevent accidentally editing it.
 
 Once you're done, save the scenario.
 
-## 5. Setting up player respawns
+## Setting up player respawns
 
 Respawn markers are used to determine where to respawn players. You can copy
 the Main Operating Base marker from Altis, or manually create a marker with
@@ -85,7 +85,7 @@ of the role, for example, `respawn_west_arty`. Here are the role IDs we've defin
 - `sniper`
 - `uav`
 
-## 6. Adding arsenals
+## Adding arsenals
 
 To convert an object into an arsenal, usually a Supply box,
 you should add the following line to the object's Init field:
@@ -98,7 +98,7 @@ The given object must have Simple Object and Local Only disabled
 for the action to appear. Do **NOT** use the default Arsenal checkbox,
 as this will not function the same as our gamemode arsenals.
 
-## 7. Adding respawning vehicles
+## Adding respawning vehicles
 
 To make a vehicle automatically respawn, you should add this to the vehicle's
 Init field:
@@ -117,7 +117,7 @@ Do **NOT** combine this with the vanilla Vehicle Respawn module.
 
 [fn_setupVehicle.sqf]: https://github.com/Warriors-Haven-Gaming/WHFramework/blob/main/WHFramework.Altis/Functions/Vehicles/fn_setupVehicle.sqf
 
-## 8. Adding vehicle locks
+## Adding vehicle locks
 
 To add role-specific locks to a vehicle, you should add this to the vehicle's
 Init field:
@@ -137,7 +137,7 @@ Note that in singleplayer, vehicle locks have no effect. This must be tested in
 a multiplayer game, which you can start in Eden Editor by selecting Play >
 Play in Multiplayer (MP).
 
-## 9. Adding service stations
+## Adding service stations
 
 A service station can be added by placing any of the following objects,
 no Init field required:
@@ -148,7 +148,7 @@ no Init field required:
 The given object must have Simple Object and Local Only disabled
 for the action to appear.
 
-## 10. Adding recruit flag poles
+## Adding recruit flag poles
 
 To allow players to request recruits from an object, usually a flag pole,
 you should add the following line to the object's Init field:
@@ -164,7 +164,7 @@ Arguments:
 The given object must have Simple Object and Local Only disabled
 for the action to appear.
 
-## 11. Adding vehicle spawners
+## Adding vehicle spawners
 
 To allow players to request vehicles from an object, usually a laptop,
 you should add the following line to the object's Init field:
@@ -185,7 +185,7 @@ Arguments:
 The given object must have Simple Object and Local Only disabled
 for the action to appear.
 
-## 12. (Optional) Setting default loadouts
+## (Optional) Setting default loadouts
 
 Default loadouts can be defined in [fn_getLastLoadout.sqf], and are applied to
 all players that don't have a pre-existing loadout in their current collection.
@@ -225,7 +225,7 @@ but for now, this is the only way to store separate role loadouts per map.
 
 [XEH_preInit.sqf]: https://github.com/Warriors-Haven-Gaming/WHFramework/blob/main/WHFramework.Altis/XEH_preInit.sqf
 
-## 13. (Optional) Adding time skip actions
+## (Optional) Adding time skip actions
 
 To allow admins (and optionally players) to skip time on demand,
 you should add the following line to an object's Init field:
@@ -243,7 +243,7 @@ setting can be turned on to allow any player to initiate a time skip.
 This does not have a voting system, so we recommend **NOT** enabling this
 setting in public servers.
 
-## 14. (Optional) Adding special area markers
+## (Optional) Adding special area markers
 
 Area markers can be placed to provide effects across the map by assigning them
 variable names with special prefixes, like `WHF_safezone_1`. These areas do
@@ -277,7 +277,7 @@ set to 0%. The following prefixes are supported:
   beyond proximity of a respawn marker, such as to cover a large airport. Unlike
   respawn safezones, these safezone markers cannot be resized on the fly with CBA settings.
 
-## 15. (Optional) Adding custom locations
+## (Optional) Adding custom locations
 
 While most of our missions use [Ambient Parameters] to find suitable positions
 for generation, the Annex Region main mission relies on finding [Locations] to spawn.
@@ -308,7 +308,7 @@ and your text defines the name of that location. The location type also determin
 if civilians should spawn at that location. If you don't want any civilian presence,
 you can change the "NameVillage" location type to "NameLocal".
 
-## 16. Other tips
+## Other tips
 
 When building your scenario, here are a few more tips we recommend following
 to make sure the base works as expected:
