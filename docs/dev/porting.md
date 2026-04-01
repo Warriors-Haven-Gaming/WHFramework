@@ -18,7 +18,8 @@ for any given map.
   - [12. (Optional) Setting default loadouts](#12-optional-setting-default-loadouts)
   - [13. (Optional) Adding time skip actions](#13-optional-adding-time-skip-actions)
   - [14. (Optional) Adding special area markers](#14-optional-adding-special-area-markers)
-  - [15. Other tips](#15-other-tips)
+  - [15. (Optional) Adding custom locations](#15-optional-adding-custom-locations)
+  - [16. Other tips](#16-other-tips)
 
 ## 1. Creating the scenario
 
@@ -276,7 +277,38 @@ set to 0%. The following prefixes are supported:
   beyond proximity of a respawn marker, such as to cover a large airport. Unlike
   respawn safezones, these safezone markers cannot be resized on the fly with CBA settings.
 
-## 15. Other tips
+## 15. (Optional) Adding custom locations
+
+While most of our missions use [Ambient Parameters] to find suitable positions
+for generation, the Annex Region main mission relies on finding [Locations] to spawn.
+This means terrains that have very few locations will be significantly limited
+in where the main mission can occur.
+
+[Ambient Parameters]: https://community.bistudio.com/wiki/selectBestPlaces
+[Locations]: https://community.bistudio.com/wiki/Location
+
+However, it is possible to define scripted locations for potential objectives.
+Place down a Game Logic object (or any invisible object is fine)
+and add the following script to the object's Init field:
+
+```sqf
+_size = 500;
+_loc = createLocation ["NameVillage", getPosATL this, _size / 2, _size / 2];
+_loc setText "My Custom AO";
+```
+
+Your scripted location will be included as a candidate for mission generation
+alongside the locations built into the map. If you want to exclude certain built-in
+locations, you can cover each of them with `WHF_deadzone` special area markers.
+Note that if a deadzone covers your scripted location, it will also prevent the
+gamemode from spawning main missions there.
+
+The size variable defines the largest area allowed for Annex Region in metres,
+and your text defines the name of that location. The location type also determines
+if civilians should spawn at that location. If you don't want any civilian presence,
+you can change the "NameVillage" location type to "NameLocal".
+
+## 16. Other tips
 
 When building your scenario, here are a few more tips we recommend following
 to make sure the base works as expected:
