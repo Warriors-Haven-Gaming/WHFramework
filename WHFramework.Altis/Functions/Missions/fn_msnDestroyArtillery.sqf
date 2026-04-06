@@ -46,7 +46,7 @@ private _infantryTypes = [_standard, ["aa", _faction], ["at", _faction]];
 private _area = [_center, _radius, _radius];
 private _ruins = [];
 
-[opfor, [_standard], 2 + floor random 3, _center, _radius, ["arty",1], _ruins]
+[[opfor, _faction], [_standard], 2 + floor random 3, _center, _radius, ["arty",1], _ruins]
     call WHF_fnc_createEmplacements
     params ["_artyObjects", "_artyTerrain", "_artyGroups"];
 

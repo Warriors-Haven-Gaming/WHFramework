@@ -48,7 +48,7 @@ private _area = [_center, _radius, _radius];
 private _ruins = [];
 
 private _aaTypes = WHF_missions_aaa_types;
-[opfor, [_standard], 2 + floor random 3, _center, _radius, _aaTypes, _ruins]
+[[opfor, _faction], [_standard], 2 + floor random 3, _center, _radius, _aaTypes, _ruins]
     call WHF_fnc_createEmplacements
     params ["_aaObjects", "_aaTerrain", "_aaGroups"];
 

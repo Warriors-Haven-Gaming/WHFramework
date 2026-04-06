@@ -34,7 +34,7 @@ private _standard = ["standard", _faction];
 private _infantryTypes = [_standard, ["aa", _faction], ["at", _faction]];
 private _officer = ["officer", _faction];
 
-[opfor, [_standard], 1, _center, _radius, ["hq", 1], _objects]
+[[opfor, _faction], [_standard], 1, _center, _radius, ["hq", 1], _objects]
     call WHF_fnc_createEmplacements
     params ["_compObjects", "_compTerrain", "_compGroups"];
 if (count _compObjects < 1) exitWith {};

@@ -5,8 +5,9 @@ Description:
     Create random roadblocks in a given area.
 
 Parameters:
-    Side side:
-        The group's side.
+    Side | Array side:
+        The emplacement group's side, or an array of [side, faction]
+        where faction determines the set of compositions to spawn.
     Number quantity:
         The number of roadblocks to spawn.
     Array roads:
@@ -27,6 +28,7 @@ Author:
 
 */
 params ["_side", "_unitTypes", "_quantity", "_roads", "_center"];
+_side params ["_side", ["_faction", "base"]];
 
 _roads = _roads apply {
     if (_x isEqualType objNull) then {getRoadInfo _x} else {_x}

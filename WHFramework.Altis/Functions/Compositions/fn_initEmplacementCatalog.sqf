@@ -11,7 +11,7 @@ Author:
 if (!isNil "WHF_emplacements") exitWith {};
 private _catalog = createHashMapFromArray [
     [
-        "aa_short",
+        ["aa_short", "base"],
         [
             // Vanilla
             [
@@ -37,7 +37,7 @@ private _catalog = createHashMapFromArray [
         ]
     ],
     [
-        "aa_medium",
+        ["aa_medium", "base"],
         [
             // CUP
             [
@@ -52,7 +52,7 @@ private _catalog = createHashMapFromArray [
         ]
     ],
     [
-        "aa_long",
+        ["aa_long", "base"],
         [
             // Vanilla
             [
@@ -62,7 +62,7 @@ private _catalog = createHashMapFromArray [
         ]
     ],
     [
-        "arty",
+        ["arty", "base"],
         [
             // CUP
             [
@@ -77,7 +77,7 @@ private _catalog = createHashMapFromArray [
         ]
     ],
     [
-        "camp",
+        ["camp", "base"],
         [
             // CUP
             [
@@ -121,7 +121,7 @@ private _catalog = createHashMapFromArray [
         ]
     ],
     [
-        "hq",
+        ["hq", "base"],
         [
             // CUP
             [
@@ -148,7 +148,7 @@ private _catalog = createHashMapFromArray [
         ]
     ],
     [
-        "mortar",
+        ["mortar", "base"],
         [
             // Vanilla
             [
@@ -166,7 +166,7 @@ private _catalog = createHashMapFromArray [
         ]
     ],
     [
-        "outpost",
+        ["outpost", "base"],
         [
             // CUP
             [
@@ -192,7 +192,7 @@ private _catalog = createHashMapFromArray [
         ]
     ],
     [
-        "tower",
+        ["tower", "base"],
         [
             // Vanilla
             [

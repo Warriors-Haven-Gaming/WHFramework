@@ -34,7 +34,7 @@ private _groups = [];
 
 private _fortCount = floor (_radius / 20 * WHF_missions_annex_forts);
 private _fortTypes = ["camp", 0.5, "outpost", 0.4, "tower", 0.1];
-[opfor, _infantryTypes, _fortCount, _center, _radius, _fortTypes, _objects]
+[[opfor, _faction], _infantryTypes, _fortCount, _center, _radius, _fortTypes, _objects]
     call WHF_fnc_createEmplacements
     params ["_fortObjects", "_fortTerrain", "_fortGroups"];
 _objects append _fortObjects;
@@ -43,7 +43,7 @@ _groups append _fortGroups;
 
 private _mortarCount = floor (_radius / 350 * WHF_missions_annex_mortars);
 private _mortarTypes = ["mortar", 1];
-[opfor, [_standard], _mortarCount, _center, _radius, _mortarTypes, _objects]
+[[opfor, _faction], [_standard], _mortarCount, _center, _radius, _mortarTypes, _objects]
     call WHF_fnc_createEmplacements
     params ["_mortarObjects", "_mortarTerrain", "_mortarGroups"];
 _objects append _mortarObjects;
@@ -52,7 +52,7 @@ _groups append _mortarGroups;
 
 private _aaCount = floor (_radius / 400 * WHF_missions_annex_antiair);
 private _aaTypes = ["aa_short", 4, "aa_medium", 1];
-[opfor, [_standard], _aaCount, _center, _radius, _aaTypes, _objects]
+[[opfor, _faction], [_standard], _aaCount, _center, _radius, _aaTypes, _objects]
     call WHF_fnc_createEmplacements
     params ["_aaObjects", "_aaTerrain", "_aaGroups"];
 _objects append _aaObjects;
@@ -64,7 +64,7 @@ private _roads = _center nearRoads _radius apply {getRoadInfo _x} select {
     _x # 0 in ["ROAD", "MAIN ROAD", "TRACK"] && {!(_x # 2)}
 };
 private _roadblockCount = floor (count _roads / 30 * WHF_missions_annex_vehicles);
-[opfor, [_standard], _roadblockCount, _roads, _center] call WHF_fnc_createRoadblocks
+[[opfor, _faction], [_standard], _roadblockCount, _roads, _center] call WHF_fnc_createRoadblocks
     params ["_roadblockObjects", "_roadblockTerrain", "_roadblockGroups"];
 _objects append _roadblockObjects;
 _terrain append _roadblockTerrain;

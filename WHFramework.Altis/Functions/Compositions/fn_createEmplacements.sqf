@@ -5,8 +5,9 @@ Description:
     Create random emplacements in a given area.
 
 Parameters:
-    Side side:
-        The emplacement groups' side.
+    Side | Array side:
+        The emplacement group's side, or an array of [side, faction]
+        where faction determines the set of compositions to spawn.
     Array unitTypes:
         One or more group types to spawn units from.
         See WHF_fnc_getUnitTypes for allowed values.
@@ -46,13 +47,19 @@ Author:
 
 */
 params ["_side", "_unitTypes", "_quantity", "_center", "_radius", "_types", ["_ruins", -1]];
+_side params ["_side", ["_faction", "base"]];
 
 private _availableCompositions = [];
 for "_i" from 0 to count _types - 1 step 2 do {
     private _type = _types # _i;
     private _weight = _types # (_i + 1);
-    private _comps = WHF_emplacements get _type;
+
+    private _comps = WHF_emplacements get [_type, _faction];
+    if (isNil "_comps" && {_faction isNotEqualTo "base"}) then {
+        _comps = WHF_emplacements get [_type, "base"];
+    };
     if (isNil "_comps") then {continue};
+
     {_availableCompositions append [_x, _weight]} forEach _comps;
 };
 if (count _availableCompositions < 2) exitWith {[[], [], []]};
