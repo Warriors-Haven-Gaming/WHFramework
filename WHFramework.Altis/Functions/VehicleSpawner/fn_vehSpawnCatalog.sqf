@@ -348,6 +348,7 @@ private _artillery = [
     ["b_d_apc_wheeled_01_mortar_lxws",              [-1,   ["arty"]]],
     ["b_twinmortar_rf",                             [-1,   ["arty"]]],
     ["b_mbt_01_arty_f",                             [-1,   ["arty"]]],
+    ["b_m119a3_f",                                  [-1,   ["arty"]]],
     ["sparky_jsdf_overhaul_type74_105mm_spg",       [-1,   ["arty"]]],
     ["sparky_jsdf_overhaul_type75_155mm_spg",       [-1,   ["arty"]]],
     ["sparky_jsdf_overhaul_jsdf_type99_155mm_spg",  [-1,   ["arty"]]],
