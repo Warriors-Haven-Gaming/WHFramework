@@ -475,6 +475,7 @@ private _helicopters = [
     ["e22_b_jtf_heli_attack_03_f",                  [-1,  ["pilot_cas_heli"]]],
     ["e22_b_jtf_d_heli_attack_03_f",                [-1,  ["pilot_cas_heli"]]],
     ["ej_ah1z",                                     [-1,  ["pilot_cas_heli"]]],
+    ["fza_ah64d_b2e",                               [-1,  ["pilot_cas_heli"]]],
     ["uk3cb_baf_apache_ah1_js",                     [-1,  ["pilot_cas_heli"]]],
     ["uk3cb_baf_wildcat_ah1_8_armed",               [-1,  ["pilot_cas_heli"]]],
     ["uk3cb_baf_wildcat_ah1_6_armed",               [-1,  ["pilot_cas_heli"]]],
