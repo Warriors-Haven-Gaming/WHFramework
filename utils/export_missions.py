@@ -33,6 +33,7 @@ DEFAULT_BRANCHES = (
     "maksniemi",
     "bornholm",
     "chernarus-2020",
+    "lingor",
     "main",
 )
 

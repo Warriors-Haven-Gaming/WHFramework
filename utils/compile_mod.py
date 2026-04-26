@@ -30,6 +30,7 @@ BRANCH_DIRECTORIES = {
     "maksniemi": "Maksniemi",
     "bornholm": "Bornholm",
     "chernarus-2020": "cup_chernarus_A3",
+    "lingor": "lingor3",
 }
 
 COMMON_FILES = {
