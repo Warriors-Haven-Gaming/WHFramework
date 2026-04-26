@@ -673,6 +673,8 @@ private _heli_light = [];
 private _heli_medium = [];
 private _jet_cap = ["E22_O_RAF_Plane_Fighter_02_F","E22_O_RAF_Plane_Fighter_02_Stealth_F","FA_Mig29_AAF","FA_Mig29_CSAT_Trop","JS_JC_SU35","PLAAF_Fighter_J11","PLAAF_Fighter_J15","PLAAF_Fighter_J16","PLAAF_Fighter_J20","sab_etendard_o","sab_mystere_o","Su33_Protatype_PT_2","TEC_VH_WD_Jet_Shikra","TEC_VH_WD_Jet_Shikra_Stealth","TEC_VH_WD_Plane_Shahan"];
 private _jet_cas = ["E22_O_RAF_Plane_CAS_02_dynamicLoadout_F","PLAAF_Fighter_J10","sab_magister_o","sab_mirageiv_o","sab_su34_I","sab_su34_O","TEC_VH_WD_Jet_Neophron"];
+private _ships_light = ["pook_ASSAULT_BOAT_INDFOR","pook_ASSAULT_SHIP_INDFOR"];
+private _ships_heavy = ["pook_ESCORT_BOAT_INDFOR","pook_MINELAYER_INDFOR","pook_PATROL_BOAT_INDFOR","pook_PBR_GUNBOAT_INDFOR","pook_PBR_Transport_INDFOR"];
 
 // Additional modded units and vehicles can be added here if desired.
 // All classnames defined here that exist on the server will be appended
@@ -838,6 +840,57 @@ WHF_faction_types_optional = compileFinal createHashMapFromArray [
     [["aircraft", "heli_medium",  "cup_usmc_woodland"], _heli_medium select _filter],
     [["aircraft", "jet_cap",      "cup_usmc_woodland"], _jet_cap select _filter],
     [["aircraft", "jet_cas",      "cup_usmc_woodland"], _jet_cas select _filter],
+
+    [["ships", "light",     "base"], _ships_light select _filter],
+    [["ships", "heavy",     "base"], _ships_heavy select _filter],
+    [["ships", "light",     "csat"], _ships_light select _filter],
+    [["ships", "heavy",     "csat"], _ships_heavy select _filter],
+    [["ships", "light",     "csat_pacific"], _ships_light select _filter],
+    [["ships", "heavy",     "csat_pacific"], _ships_heavy select _filter],
+    [["ships", "light",     "aaf"], _ships_light select _filter],
+    [["ships", "heavy",     "aaf"], _ships_heavy select _filter],
+    [["ships", "light",     "ldf"], _ships_light select _filter],
+    [["ships", "heavy",     "ldf"], _ships_heavy select _filter],
+    [["ships", "light",     "ws_sfia"], _ships_light select _filter],
+    [["ships", "heavy",     "ws_sfia"], _ships_heavy select _filter],
+    [["ships", "light",     "ws_tura"], _ships_light select _filter],
+    [["ships", "heavy",     "ws_tura"], _ships_heavy select _filter],
+    [["ships", "light",     "e22_raf_alpine"], _ships_light select _filter],
+    [["ships", "heavy",     "e22_raf_alpine"], _ships_heavy select _filter],
+    [["ships", "light",     "e22_raf_arid"], _ships_light select _filter],
+    [["ships", "heavy",     "e22_raf_arid"], _ships_heavy select _filter],
+    [["ships", "light",     "e22_raf_woodland"], _ships_light select _filter],
+    [["ships", "heavy",     "e22_raf_woodland"], _ships_heavy select _filter],
+    [["ships", "light",     "rhsafrf"], _ships_light select _filter],
+    [["ships", "heavy",     "rhsafrf"], _ships_heavy select _filter],
+    [["ships", "light",     "cup_afrf"], _ships_light select _filter],
+    [["ships", "heavy",     "cup_afrf"], _ships_heavy select _filter],
+    [["ships", "light",     "cup_afrf_modern"], _ships_light select _filter],
+    [["ships", "heavy",     "cup_afrf_modern"], _ships_heavy select _filter],
+    [["ships", "light",     "cup_npc"], _ships_light select _filter],
+    [["ships", "heavy",     "cup_npc"], _ships_heavy select _filter],
+    [["ships", "light",     "cup_tk"], _ships_light select _filter],
+    [["ships", "heavy",     "cup_tk"], _ships_heavy select _filter],
+    [["ships", "light",     "cup_tk_ins"], _ships_light select _filter],
+    [["ships", "heavy",     "cup_tk_ins"], _ships_heavy select _filter],
+    [["ships", "light",     "gendarmerie"], _ships_light select _filter],
+    [["ships", "heavy",     "gendarmerie"], _ships_heavy select _filter],
+    [["ships", "light",     "nato"], _ships_light select _filter],
+    [["ships", "heavy",     "nato"], _ships_heavy select _filter],
+    [["ships", "light",     "nato_pacific"], _ships_light select _filter],
+    [["ships", "heavy",     "nato_pacific"], _ships_heavy select _filter],
+    [["ships", "light",     "ef_mjtf_desert"], _ships_light select _filter],
+    [["ships", "heavy",     "ef_mjtf_desert"], _ships_heavy select _filter],
+    [["ships", "light",     "ef_mjtf_woodland"], _ships_light select _filter],
+    [["ships", "heavy",     "ef_mjtf_woodland"], _ships_heavy select _filter],
+    [["ships", "light",     "ws_ion"], _ships_light select _filter],
+    [["ships", "heavy",     "ws_ion"], _ships_heavy select _filter],
+    [["ships", "light",     "ws_una"], _ships_light select _filter],
+    [["ships", "heavy",     "ws_una"], _ships_heavy select _filter],
+    [["ships", "light",     "cup_usa_woodland"], _ships_light select _filter],
+    [["ships", "heavy",     "cup_usa_woodland"], _ships_heavy select _filter],
+    [["ships", "light",     "cup_usmc_woodland"], _ships_light select _filter],
+    [["ships", "heavy",     "cup_usmc_woodland"], _ships_heavy select _filter],
 
     [[], []]
 ];
