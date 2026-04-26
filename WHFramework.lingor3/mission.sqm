@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1521;
+		nextID=1522;
 	};
 	class MarkerIDProvider
 	{
@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4184.6221,48.528313,1626.1753};
-		dir[]={0.25608236,-0.27237839,-0.92750084};
-		up[]={0.072492428,0.96218795,-0.26255971};
-		aside[]={-0.96394676,3.085006e-09,-0.26614448};
+		pos[]={4151.4741,42.577175,1314.0062};
+		dir[]={-0.51886147,-0.47912037,-0.70800269};
+		up[]={-0.28322425,0.87774044,-0.38646987};
+		aside[]={-0.80660999,-3.6507845e-07,0.59112519};
 	};
 };
 binarizationWanted=0;
@@ -614,7 +614,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=33;
+		items=34;
 		class Item0
 		{
 			dataType="Layer";
@@ -2779,7 +2779,7 @@ class Mission
 					position[]={4182,47.240002,1627};
 					name="respawn_west_uav";
 					type="Empty";
-					angle=127.99998;
+					angle=127.99996;
 					id=134;
 					atlOffset=3.8146973e-06;
 					class CustomAttributes
@@ -41050,6 +41050,18 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item33
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={4127.375,21.42,1281.75};
+			};
+			name="WHF_fog_cleanup";
+			init="if (!isServer) exitWith {}; " \n "0 spawn { " \n "    scriptName ""WHF_fog_cleanup""; " \n "    while {true} do { " \n "        sleep 300; " \n "        if (!isNil ""WHF_fog_cleanup_disabled"") then {continue}; " \n "        if (fog < 0.15) then {continue}; " \n "        private _newFog = fog / 4; " \n "        diag_log text format [""WHF_fog_cleanup: reducing fog to %1"", _newFog]; " \n "        180 setFog _newFog; " \n "    }; " \n "};";
+			id=1521;
+			type="Logic";
 		};
 	};
 };
