@@ -710,6 +710,7 @@ private _ships = [
     ["cup_b_zodiac_usmc",                   [-1,  []]],
     ["bae_fic",                             [-1,  []]],
     ["rhicc_green",                         [-1,  []]],
+    ["rhicc_gray",                          [-1,  []]],
     ["pook_socr_m134b_blufor",              [-1,  []]],
     ["pook_socr_m134_blufor",               [-1,  []]],
     ["pook_socr_m2_blufor",                 [-1,  []]],
