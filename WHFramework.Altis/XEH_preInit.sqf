@@ -619,6 +619,16 @@ call WHF_fnc_cycleFaction;
     false
 ] call WHF_fnc_addSetting;
 [
+    "WHF_icons_3D_enemy",
+    "CHECKBOX",
+    ["STR_WHF_settings_icons_3D_enemy", "STR_WHF_settings_icons_3D_enemy_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_icons"],
+    false,
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_icons_map",
     "CHECKBOX",
     ["STR_WHF_settings_icons_map", "STR_WHF_settings_icons_map_tooltip"],

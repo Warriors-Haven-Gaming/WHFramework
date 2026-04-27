@@ -37,6 +37,7 @@ call WHF_fnc_initMinimapHandlers;
 
 0 spawn WHF_fnc_laserLightLoop;
 0 spawn WHF_fnc_updateChannelLoop;
+0 spawn WHF_fnc_initEnemyIcons;
 0 spawn WHF_fnc_initFriendlyIcons;
 0 spawn WHF_fnc_initProjectileIcons;
 
