@@ -32,6 +32,7 @@ if (count _respawns > 0) then {
 
 _unit enableStamina WHF_fitness_stamina;
 _unit setCustomAimCoef WHF_fitness_sway;
+_unit setSkill 1;
 _unit setCaptive false;
 
 if (!isNil {_unit getVariable "WHF_incapUnit_wasCaptive"}) then {
