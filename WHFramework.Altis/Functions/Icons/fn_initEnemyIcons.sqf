@@ -12,8 +12,8 @@ Author:
 addMissionEventHandler ["Draw3D", {
     if (!WHF_icons_3D_enemy) exitWith {};
 
-    private _maxAge = 6;
-    private _maxDistance = 500;
+    private _maxAge = WHF_icons_3D_enemy_age;
+    private _maxDistance = WHF_icons_3D_enemy_distance;
 
     private _cameraPos = positionCameraToWorld [0, 0, 0];
     private _playerSide = side group focusOn;

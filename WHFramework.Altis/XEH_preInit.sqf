@@ -629,6 +629,26 @@ call WHF_fnc_cycleFaction;
     false
 ] call WHF_fnc_addSetting;
 [
+    "WHF_icons_3D_enemy_age",
+    "SLIDER",
+    ["STR_WHF_settings_icons_3D_enemy_age", "STR_WHF_settings_icons_3D_enemy_age_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_icons"],
+    [2, 120, 6, 1, false],
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_icons_3D_enemy_distance",
+    "SLIDER",
+    ["STR_WHF_settings_icons_3D_enemy_distance", "STR_WHF_settings_icons_3D_enemy_distance_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_icons"],
+    [10, 10000, 500, 0, false],
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_icons_map",
     "CHECKBOX",
     ["STR_WHF_settings_icons_map", "STR_WHF_settings_icons_map_tooltip"],
