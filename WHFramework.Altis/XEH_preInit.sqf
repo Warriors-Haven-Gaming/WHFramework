@@ -567,6 +567,26 @@ call WHF_fnc_cycleFaction;
     false
 ] call WHF_fnc_addSetting;
 [
+    "WHF_halo_vehicle_air",
+    "CHECKBOX",
+    ["STR_WHF_settings_halo_vehicle_air", "STR_WHF_settings_halo_vehicle_air_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_halo"],
+    false,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
+    "WHF_halo_vehicle_static",
+    "CHECKBOX",
+    ["STR_WHF_settings_halo_vehicle_static", "STR_WHF_settings_halo_vehicle_static_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_halo"],
+    false,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_halo_limit_player",
     "SLIDER",
     ["STR_WHF_settings_halo_limit_player", "STR_WHF_settings_halo_limit_player_tooltip"],

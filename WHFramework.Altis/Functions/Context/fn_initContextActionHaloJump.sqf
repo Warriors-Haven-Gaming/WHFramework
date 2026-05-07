@@ -22,7 +22,8 @@ if (!hasInterface) exitWith {};
                 isTouchingGround cameraOn
                 || {private _z = getPos cameraOn # 2; _z <= 0 && {_z > -3}}
             )
-            && {!(cameraOn isKindOf "Air" || {cameraOn isKindOf "StaticWeapon"})}
+            && {WHF_halo_vehicle_air || {!(cameraOn isKindOf "Air")}}
+            && {WHF_halo_vehicle_static || {!(cameraOn isKindOf "StaticWeapon")}}
         }
     },
     false,

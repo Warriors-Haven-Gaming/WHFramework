@@ -40,7 +40,10 @@ _vehicles append (allUnitsUAV select {
 } inAreaArray _area);
 
 _vehicles = _vehicles arrayIntersect _vehicles;
-_vehicles = _vehicles select {!(_x isKindOf "Air" || {_x isKindOf "StaticWeapon"})};
+_vehicles = _vehicles select {
+	(WHF_halo_vehicle_air || {!(_x isKindOf "Air")})
+	&& {WHF_halo_vehicle_static || {!(_x isKindOf "StaticWeapon")}}
+};
 private _units = _allUnits select {isNull objectParent _x};
 
 private _seed = floor random 1000000;
