@@ -106,8 +106,15 @@ private _getNextPos = {
     _x setPosATL ([WHF_halo_spacing_vehicle, false] call _getNextPos);
     _x setDir _direction;
 
-    _x spawn {
+    private _useParachute = true;
+    if (_x isKindOf "Air") then {
+        if (isEngineOn _x) then {
+            _useParachute = false;
+        };
+    };
+
+    if (_useParachute) then {_x spawn {
         waitUntil {sleep (0.5 + random 0.5); getPos _this # 2 < WHF_halo_parachuteAltitude_vehicle};
         [_this] call WHF_fnc_deployParachute;
-    };
+    }};
 } forEach _vehicles;
