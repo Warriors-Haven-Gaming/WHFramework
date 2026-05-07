@@ -67,6 +67,10 @@ _seed spawn WHF_fnc_haloJumpCut;
         _unit
     ];
 }} forEach (_units + _vehicles);
+
+// If you're halo jumping aircraft without your engines on...
+{_x engineOn true} forEach (_vehicles select {_x isKindOf "Air"});
+
 sleep 3; // CAUTION: unit/vehicle locality can change after this point
 
 private _altitude = [WHF_halo_altitude_vehicle, WHF_halo_altitude_unit] select (_vehicles isEqualTo []);
@@ -108,12 +112,10 @@ private _getNextPos = {
 
     private _useParachute = true;
     if (_x isKindOf "Air") then {
+        _useParachute = false;
+        private _speed = [40, 70] select (_x isKindOf "Plane");
         _x setPosATL (getPosATL _x vectorAdd [0, 0, 50]);
-        if (isEngineOn _x) then {
-            _useParachute = false;
-            private _speed = [40, 70] select (_x isKindOf "Plane");
-            _x setVelocity [sin _direction * _speed, cos _direction * _speed, 0];
-        };
+        _x setVelocity [sin _direction * _speed, cos _direction * _speed, 10];
     };
 
     if (_useParachute) then {_x spawn {
