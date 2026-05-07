@@ -19,8 +19,8 @@ if (!hasInterface) exitWith {};
         count allPlayers <= WHF_halo_limit_player
         && {
             (
-                isTouchingGround vehicle focusOn
-                || {private _z = getPos vehicle focusOn # 2; _z <= 0 && {_z > -3}}
+                isTouchingGround cameraOn
+                || {private _z = getPos cameraOn # 2; _z <= 0 && {_z > -3}}
             )
             && {!(objectParent focusOn isKindOf "Air")}
         }

@@ -105,8 +105,8 @@ WHF_fnc_initContextActionLoadCrew_moveInAny = compileFinal {
         && {vectorMagnitude velocity _vehicle < 1.39
         && {
             (
-                isTouchingGround vehicle focusOn
-                || {private _z = getPos vehicle focusOn # 2; _z <= 0 && {_z > -3}}
+                isTouchingGround cameraOn
+                || {private _z = getPos cameraOn # 2; _z <= 0 && {_z > -3}}
             )
         && {_vehicle emptyPositions "" > 0 // Skip vehicle locks for performance
         && {call WHF_fnc_initContextActionLoadCrew_getNearbyCrew isNotEqualTo []}}}}}}
