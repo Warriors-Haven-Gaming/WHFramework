@@ -67,8 +67,6 @@ _seed spawn WHF_fnc_haloJumpCut;
         _unit
     ];
 }} forEach (_units + _vehicles);
-
-// If you're halo jumping aircraft without your engines on...
 {_x engineOn true} forEach (_vehicles select {_x isKindOf "Air"});
 
 sleep 3; // CAUTION: unit/vehicle locality can change after this point
@@ -107,19 +105,25 @@ private _getNextPos = {
 {
     if (!local _x) then {continue}; // Someone else got into the driver seat >:(
 
-    _x setPosATL ([WHF_halo_spacing_vehicle, false] call _getNextPos);
-    _x setDir _direction;
-
-    private _useParachute = true;
-    if (_x isKindOf "Air") then {
-        _useParachute = false;
+    private _pos = [WHF_halo_spacing_vehicle, false] call _getNextPos;
+    if !(_x isKindOf "Air") then {
+        _x setPosATL _pos;
+        _x setDir _direction;
+        _x spawn {
+            waitUntil {sleep (0.5 + random 0.5); getPos _this # 2 < WHF_halo_parachuteAltitude_vehicle};
+            [_this] call WHF_fnc_deployParachute;
+        };
+    } else {
         private _speed = [40, 70] select (_x isKindOf "Plane");
-        _x setPosATL (getPosATL _x vectorAdd [0, 0, 50]);
-        _x setVelocity [sin _direction * _speed, cos _direction * _speed, 10];
-    };
+        _pos = _pos vectorAdd [0, 0, 50];
 
-    if (_useParachute) then {_x spawn {
-        waitUntil {sleep (0.5 + random 0.5); getPos _this # 2 < WHF_halo_parachuteAltitude_vehicle};
-        [_this] call WHF_fnc_deployParachute;
-    }};
+        // HACK: use setVehiclePosition to set engine RPM sufficient for flight,
+        //       then setPosATL for desired altitude
+        _x setVehiclePosition [_pos, [], 0, "FLY"];
+        _x setPosATL _pos;
+        _x setDir _direction;
+        _x setVelocity [sin _direction * _speed, cos _direction * _speed, 10];
+        _x setAirplaneThrottle 1;
+        currentPilot _x action ["LandGearUp", _x];
+    };
 } forEach _vehicles;
