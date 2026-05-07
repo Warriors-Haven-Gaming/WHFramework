@@ -3,7 +3,6 @@ Function: WHF_fnc_initKillFeed
 
 Description:
     Set up kill feed handlers.
-    Function must be executed on server.
 
 Author:
     thegamecracks
