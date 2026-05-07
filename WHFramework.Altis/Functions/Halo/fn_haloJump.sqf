@@ -111,6 +111,8 @@ private _getNextPos = {
         _x setPosATL (getPosATL _x vectorAdd [0, 0, 50]);
         if (isEngineOn _x) then {
             _useParachute = false;
+            private _speed = [40, 70] select (_x isKindOf "Plane");
+            _x setVelocity [sin _direction * _speed, cos _direction * _speed, 0];
         };
     };
 
