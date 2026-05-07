@@ -28,21 +28,19 @@ private _allUnits =
     inAreaArray _area;
 {_x setUnitFreefallHeight 50} forEach _allUnits;
 
-private _vehicles = _allUnits apply {objectParent _x} select {
-    local _x
-    && {!(_x isKindOf "Air")
-    && {effectiveCommander _x in _allUnits}}
-};
+private _vehicles =
+    _allUnits apply {objectParent _x}
+    select {local _x && {effectiveCommander _x in _allUnits}};
 
 // NOTE: in localhost, this can steal a bunch of UGVs from the base
 _vehicles append (allUnitsUAV select {
     local _x
     && {alive effectiveCommander _x
-    && {side group _x isEqualTo side group focusOn
-    && {!(_x isKindOf "Air")}}}
+    && {side group _x isEqualTo side group focusOn}}
 } inAreaArray _area);
 
 _vehicles = _vehicles arrayIntersect _vehicles;
+_vehicles = _vehicles select {!(_x isKindOf "Air" || {_x isKindOf "StaticWeapon"})};
 private _units = _allUnits select {isNull objectParent _x};
 
 private _seed = floor random 1000000;

@@ -22,7 +22,7 @@ if (!hasInterface) exitWith {};
                 isTouchingGround cameraOn
                 || {private _z = getPos cameraOn # 2; _z <= 0 && {_z > -3}}
             )
-            && {!(objectParent focusOn isKindOf "Air")}
+            && {!(cameraOn isKindOf "Air" || {cameraOn isKindOf "StaticWeapon"})}
         }
     },
     false,
