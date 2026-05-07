@@ -108,6 +108,7 @@ private _getNextPos = {
 
     private _useParachute = true;
     if (_x isKindOf "Air") then {
+        _x setPosATL (getPosATL _x vectorAdd [0, 0, 50]);
         if (isEngineOn _x) then {
             _useParachute = false;
         };
