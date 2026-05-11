@@ -3,7 +3,6 @@ Function: WHF_fnc_setupVehicle
 
 Description:
     Apply custom modifications to a vehicle.
-    Function must be executed where vehicle is local.
 
 Parameters:
     Object vehicle:
