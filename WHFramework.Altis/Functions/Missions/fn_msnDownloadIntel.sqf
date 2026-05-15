@@ -78,6 +78,23 @@ _groups pushBack _vehicleGroup;
 _vehicles append assignedVehicles _vehicleGroup;
 [_vehicleGroup, _center] call BIS_fnc_taskDefend;
 
+private _playAlarm = {
+    params ["_laptop"];
+    scriptName "WHF_fnc_msnDownloadIntel_alarm";
+    for "_i" from 1 to 30 do {
+        playSound3D [
+            "a3\sounds_f\air\heli_attack_02\alarm.wss",
+            objNull,
+            true,
+            getPosASL _laptop,
+            1,
+            1,
+            100
+        ];
+        sleep 0.8;
+    };
+};
+
 private _taskID = [
     blufor,
     "",
@@ -94,10 +111,13 @@ while {true} do {
     sleep 3;
     if (!alive _laptop) exitWith {[_taskID, "CANCELED"] spawn WHF_fnc_taskEnd};
     if (_laptop getVariable ["WHF_downloadStarted", false] isEqualTo true) then {
-        if (!_downloadStartedOnce) then {
-            _downloadStartedOnce = true;
-            [_laptop, _faction, _groups, _vehicles] call WHF_fnc_msnDownloadIntelReinforcements;
-        };
+        if (_downloadStartedOnce) exitWith {};
+        _downloadStartedOnce = true;
+
+        [_laptop] spawn _playAlarm;
+
+        sleep (3 + random 7);
+        [_laptop, _faction, _groups, _vehicles] call WHF_fnc_msnDownloadIntelReinforcements;
     };
     if (_laptop getVariable ["WHF_downloadEnded", false] isEqualTo true) exitWith {
         [_taskID, "SUCCEEDED"] spawn WHF_fnc_taskEnd;
