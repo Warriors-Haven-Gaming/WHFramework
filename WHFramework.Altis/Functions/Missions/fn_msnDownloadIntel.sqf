@@ -56,8 +56,8 @@ private _intel = [
         ["Land_OfficeChair_01_F",[-1.6875,3.28906,0.728849],0]
     ],
     _center,
-    random 360,
-    ["frozen", "normal"]
+    [_center, 0] call WHF_fnc_getDirSurfaceNormal,
+    ["ASL", "frozen"]
 ] call WHF_fnc_objectsMapper;
 private _laptop = _intel # 5;
 [_laptop] remoteExec ["WHF_fnc_msnDownloadIntelLaptop", 0, _laptop];

@@ -69,13 +69,7 @@ if (!isClass (configFile >> "CfgPatches" >> "CUP_Editor_Structures_Config")) the
     _barracks = _barracks select {!(_x # 0 in _types)};
 };
 
-private _normal = surfaceNormal _center;
-private _dir = if (_normal isEqualTo [0,0,1]) then {random 360} else {
-    private _dir = _center getDir (_center vectorAdd _normal);
-    _dir = (_dir + 180) % 360;
-    _dir
-};
-
+private _dir = [_center, 180] call WHF_fnc_getDirSurfaceNormal;
 private _ASLFlags = ["ASL", "path", "simple"];
 private _normalFlags = ["normal", "path", "simple"];
 _barracks = [_barracks, _center, _dir, _ASLFlags, _objects] call WHF_fnc_objectsMapper;
