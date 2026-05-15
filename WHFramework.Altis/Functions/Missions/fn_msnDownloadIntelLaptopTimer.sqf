@@ -51,6 +51,17 @@ _laptop setVariable ["WHF_downloadEnded", true];
 if (hasInterface) then {
     if (focusOn inArea _area) then {
         [blufor, "BLU"] sideChat localize "$STR_WHF_downloadIntelLaptop_ended_inArea";
+        playSound3D [
+            "a3\sounds_f_orange\missionsfx\orange_access_fm.wss",
+            objNull,
+            true,
+            _laptop,
+            1,
+            1,
+            100,
+            0,
+            true
+        ];
     } else {
         [blufor, "BLU"] sideChat localize "$STR_WHF_downloadIntelLaptop_ended";
     };
