@@ -95,6 +95,12 @@ private _playAlarm = {
     };
 };
 
+private _alertGroups = {
+    private _targets = units blufor inAreaArray [getPosATL _laptop, 5, 5, 0, false, 5];
+    if (_targets isEqualTo []) exitWith {};
+    {_x reveal [selectRandom _targets, 4]} forEach _groups;
+};
+
 private _taskID = [
     blufor,
     "",
@@ -116,6 +122,8 @@ while {true} do {
 
         [_laptop] spawn _playAlarm;
 
+        sleep (1 + random 2);
+        call _alertGroups;
         sleep (3 + random 7);
         [_laptop, _faction, _groups, _vehicles] call WHF_fnc_msnDownloadIntelReinforcements;
     };
