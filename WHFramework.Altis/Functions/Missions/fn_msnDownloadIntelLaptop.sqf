@@ -25,5 +25,5 @@ _laptop addAction [
     true,
     true,
     "",
-    "!(_target getVariable ['downloadStarted',false])"
+    "!(_target getVariable ['WHF_downloadStarted',false])"
 ];
