@@ -6,7 +6,7 @@ Description:
     Function must be executed in scheduled environment.
 
 Parameters:
-    PositionATL ecnter:
+    PositionATL center:
         (Optional, default [])
         If specified, the given position is used for the intel instead of
         attempting to find a suitable location.
