@@ -69,6 +69,12 @@ private _attackWaypoint = {
     _waypoint setWaypointType "DESTROY";
     _group setBehaviourStrong "AWARE";
     _group setSpeedMode "FULL";
+
+    // Maybe overkill? AI are pretty inconsistent about entering this building,
+    // probably should swap out the small house with a larger HQ
+    if (!isNull objectParent leader _group) exitWith {};
+    if (_entry isEqualTo [0,0,0]) exitWith {};
+    {_x doMove _entry} forEach units _group;
 };
 
 private _standard = [["standard", _faction]];
@@ -82,6 +88,7 @@ private _targets = units blufor inAreaArray [getPosATL _laptop, 5, 5, 0, false, 
 if (count _targets < 1) then {_targets = [_laptop]};
 
 private _center = getPosATL _laptop vectorMultiply [1,1,0];
+private _entry = nearestBuilding _laptop buildingExit 0;
 private _radius = [40, 200];
 call _reinforceUnits;
 private _vehicleCount = [1, 4] call WHF_fnc_scaleUnitsSide;
