@@ -107,9 +107,10 @@ are always used.
 
 ## ACE Compatibility
 
-Certain features like damage reduction and our revive system are disabled when
-ACE is loaded. However, we don't normally test ACE with this gamemode, so you
-may encounter issues with it.
+While we don't normally run ACE with this gamemode, we try to maintain
+compatibility with it by modifying or disabling some of our built-in features,
+including cruise control, damage reduction, earplugs, revive system,
+magazine repacking, and context menu actions.
 
 ## Can I publish derivatives of this gamemode?
 
