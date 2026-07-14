@@ -84,6 +84,7 @@ for "_i" from 1 to _quantity do {
 
 _group allowFleeing 0;
 _group setBehaviourStrong "SAFE";
+_group setFormation selectRandom ["COLUMN", "FILE"];
 _group setCombatMode "RED";
 
 if (_dynamicSimulation) then {

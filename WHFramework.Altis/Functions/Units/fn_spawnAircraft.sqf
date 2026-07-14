@@ -94,6 +94,7 @@ private _faction = _types # 0 # 1;
 
 _group allowFleeing 0;
 _group setBehaviourStrong "SAFE";
+_group setFormation selectRandom ["WEDGE", "VEE", "LINE", "DIAMOND"];
 _group setCombatMode "RED";
 
 _group

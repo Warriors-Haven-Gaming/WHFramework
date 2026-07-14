@@ -96,7 +96,7 @@ private _infGroups = [
     _center,
     _radius
 ] call WHF_fnc_spawnUnitGroups;
-{[_x, getPosATL leader _x, 50] call BIS_fnc_taskPatrol} forEach _infGroups;
+{[_x, getPosATL leader _x, 50] call WHF_fnc_taskPatrol} forEach _infGroups;
 _groups append _infGroups;
 
 private _turretGroup = [opfor, [_standard], _turrets] call WHF_fnc_spawnGunners;

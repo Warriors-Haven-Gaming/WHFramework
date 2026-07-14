@@ -93,7 +93,7 @@ private _groups = [
     _center,
     _radius
 ] call WHF_fnc_spawnUnitGroups;
-{[_x, getPosATL leader _x, 50] call BIS_fnc_taskPatrol} forEach _groups;
+{[_x, getPosATL leader _x, 50] call WHF_fnc_taskPatrol} forEach _groups;
 
 private _turretGroup = [opfor, [_standard], _turrets] call WHF_fnc_spawnGunners;
 _groups pushBack _turretGroup;
@@ -109,7 +109,7 @@ private _vehicleGroup =
     [opfor, [_standard], [_standard], _vehicleCount, _center, _radius]
     call WHF_fnc_spawnVehicles;
 private _vehicles = assignedVehicles _vehicleGroup;
-[_vehicleGroup, _center, _radius] call BIS_fnc_taskPatrol;
+[_vehicleGroup, _center, _radius] call WHF_fnc_taskPatrol;
 _groups pushBack _vehicleGroup;
 
 [_groups, _area] spawn WHF_fnc_attackLoop;

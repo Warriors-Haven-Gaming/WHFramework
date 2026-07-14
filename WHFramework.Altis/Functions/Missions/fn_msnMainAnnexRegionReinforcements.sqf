@@ -60,7 +60,7 @@ private _reinforceUnits = {
         ["hidden"]
     ] call WHF_fnc_spawnUnitGroups;
 
-    {[_x, getPosATL leader _x, 200] call BIS_fnc_taskPatrol} forEach _newGroups;
+    {[_x, getPosATL leader _x, 200] call WHF_fnc_taskPatrol} forEach _newGroups;
     _groups append _newGroups;
 };
 
@@ -81,7 +81,7 @@ private _reinforceVehicles = {
         ["hidden"]
     ] call WHF_fnc_spawnVehicles;
 
-    [_group, getPosATL leader _group, 200] call BIS_fnc_taskPatrol;
+    [_group, getPosATL leader _group, 200] call WHF_fnc_taskPatrol;
     _groups pushBack _group;
     _vehicles append assignedVehicles _group;
 };

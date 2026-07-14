@@ -112,7 +112,7 @@ private _groups = [];
     private _quantity = 4 + floor random 2;
 
     private _guardGroup = [blufor, [_standardAid], _quantity, _center, 100, 1] call WHF_fnc_spawnUnits;
-    [_guardGroup, _center, 50] call BIS_fnc_taskPatrol;
+    [_guardGroup, _center, 50] call WHF_fnc_taskPatrol;
     _groups pushBack _guardGroup;
 
     private _civGroup = [civilian, [_civiliansAid], _quantity, _center, 100] call WHF_fnc_spawnUnits;

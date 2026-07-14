@@ -50,14 +50,14 @@ private _vehicles = [];
 
 private _infCount = 40 + floor (_radius / 8) call WHF_fnc_scaleUnitsMain;
 private _infGroups = [opfor, _unitTypes, _infCount, _center, _radius] call WHF_fnc_spawnUnitGroups;
-{[_x, getPosATL leader _x, 200] call BIS_fnc_taskPatrol} forEach _infGroups;
+{[_x, getPosATL leader _x, 200] call WHF_fnc_taskPatrol} forEach _infGroups;
 _groups append _infGroups;
 
 if (_spawnCivilians) then {
     private _civBuildings = nearestTerrainObjects [_center, ["HOUSE"], _radius, false, true];
     private _civCount = count _civBuildings min floor (_radius / 15) call WHF_fnc_scaleUnitsMain;
     private _civGroups = [civilian, _civTypes, _civCount, _center, _radius * 0.6] call WHF_fnc_spawnUnitGroups;
-    {[_x, getPosATL leader _x, 200] call BIS_fnc_taskPatrol} forEach _civGroups;
+    {[_x, getPosATL leader _x, 200] call WHF_fnc_taskPatrol} forEach _civGroups;
     _groups append _civGroups;
 };
 
@@ -75,7 +75,7 @@ private _vehicleCount = 4 + floor (_radius / 70);
 _vehicleCount = _vehicleCount * WHF_missions_annex_vehicles call WHF_fnc_scaleUnitsMain;
 for "_i" from 1 to _vehicleCount do {
     private _group = [opfor, _vehicleTypes, [_standard], 1, _center, _radius] call WHF_fnc_spawnVehicles;
-    [_group, getPosATL leader _group, 200] call BIS_fnc_taskPatrol;
+    [_group, getPosATL leader _group, 200] call WHF_fnc_taskPatrol;
     _groups pushBack _group;
     _vehicles append assignedVehicles _group;
 };

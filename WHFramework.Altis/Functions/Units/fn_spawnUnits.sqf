@@ -89,7 +89,8 @@ if ("lasers" in _equipment) then {_group enableIRLasers true};
 if (_sideProvided) then {
     _group allowFleeing 0;
     _group setBehaviourStrong "SAFE";
-    _group setCombatMode "RED";
+    _group setFormation selectRandom ["WEDGE", "VEE", "LINE", "DIAMOND"];
+    // if (random 1 < 0.25) then {_group setCombatMode "RED"};
     if (_dynamicSimulation) then {[_group, true, 1] spawn WHF_fnc_enableDynamicSimulation};
 };
 

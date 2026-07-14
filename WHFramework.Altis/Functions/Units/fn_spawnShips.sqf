@@ -80,6 +80,7 @@ for "_i" from 1 to _quantity do {
 
 _group allowFleeing 0;
 _group setBehaviourStrong "SAFE";
+_group setFormation selectRandom ["WEDGE", "VEE", "LINE", "DIAMOND"];
 _group setCombatMode "RED";
 
 // FIXME: ships seem to not support dynamic simulation
