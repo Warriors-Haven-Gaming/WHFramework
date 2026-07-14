@@ -57,16 +57,19 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
             _leader targets [true, _maxDistance, [], 180]
             apply {_leader targetKnowledge _x}
             select {_x # 4 isNotEqualTo sideUnknown}
-            apply {_x # 6 vectorMultiply [1,1,0]};
+            apply {_x # 6}; // ASL
         if (!isNil "_area") then {_targets = _targets inAreaArray _area};
 
         if (_targets isEqualTo []) then {sleep 0.125; continue};
 
-        private _position = [_leader, _targets] call WHF_fnc_nearestPosition;
-        if (isNil "_position") then {continue};
+        // NOTE: function expects PositionATL, but this is close enough
+        private _positionASL = [_leader, _targets] call WHF_fnc_nearestPosition;
+        if (isNil "_positionASL") then {continue};
 
         [_x] call WHF_fnc_clearWaypoints;
-        private _waypoint = _x addWaypoint [_position, 50];
+
+        private _positionAGL = ASLToAGL _positionASL;
+        private _waypoint = _x addWaypoint [_positionAGL, 50];
         _waypoint setWaypointType "SAD";
         _waypoint setWaypointCompletionRadius 20;
 

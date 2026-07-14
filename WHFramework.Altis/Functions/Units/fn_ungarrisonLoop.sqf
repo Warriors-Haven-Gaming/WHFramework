@@ -44,12 +44,13 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
                 _unit targets [true, 100, [], 180]
                 apply {_unit targetKnowledge _x}
                 select {_x # 4 isNotEqualTo sideUnknown}
-                apply {_x # 6 vectorMultiply [1,1,0]};
+                apply {_x # 6}; // ASL
 
             if (count _targets < 1) then {continue};
 
-            private _position = [_unit, _targets] call WHF_fnc_nearestPosition;
-            if (isNil "_position") then {continue};
+            // NOTE: function expects PositionATL, but this is close enough
+            private _positionASL = [_unit, _targets] call WHF_fnc_nearestPosition;
+            if (isNil "_positionASL") then {continue};
 
             _unit setUnitPos "AUTO";
             _unit enableAIFeature ["COVER", true];
@@ -69,7 +70,8 @@ while {_groups findIf {units _x findIf {alive _x} >= 0} >= 0} do {
             _newGroup enableIRLasers _lasersOn;
             _newGroup enableGunLights (["Auto", "ForceOn"] select _lightsOn);
 
-            private _waypoint = _newGroup addWaypoint [_position, 5];
+            private _positionAGL = ASLToAGL _positionASL;
+            private _waypoint = _newGroup addWaypoint [_positionAGL, 5];
             _waypoint setWaypointType "SAD";
             _waypoint setWaypointCompletionRadius 5;
 
