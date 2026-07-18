@@ -64,6 +64,25 @@ private _gcAircraftGroup = {
     } forEach assignedVehicles _group;
 };
 
+private _spawnSideGunners = {
+    params ["_group", "_types"];
+    // NOTE: WHF_fnc_spawnAircraft selects this faction in the same way
+    private _faction = _types # 0 # 1;
+    {
+        private _vehicle = _x;
+        private _pos = [-random 500, -random 500, 0];
+        private _quantity =
+            (_vehicle emptyPositions "Gunner")
+            + (_vehicle emptyPositions "Turret")
+            + (_vehicle emptyPositions "CargoFFV");
+        private _unitTypes = [["standard", _faction]];
+
+        private _units = [_group, _unitTypes, _quantity, _pos, 0] call WHF_fnc_spawnUnits;
+        {_x moveInAny _vehicle} forEach _units;
+        deleteVehicle (_units select {isNull objectParent _x});
+    } forEach assignedVehicles _group;
+};
+
 private _shouldRefreshTargetAreas = {
     _aircraftGroups isNotEqualTo []
     || {_types call WHF_fnc_getAircraftTypes isNotEqualTo []}
@@ -302,6 +321,7 @@ while {_this # 0} do {
         _pos = _pos vectorAdd [0, 0, 300 + random 500];
         private _group = [_side, _types, 1, _pos, 100] call WHF_fnc_spawnAircraft;
         if (isNull _group) exitWith {};
+        [_group, _types] call _spawnSideGunners;
 
         [_targetArea, _cost, _group] call _assignTargetArea;
         _aircraftGroups pushBack _group;
