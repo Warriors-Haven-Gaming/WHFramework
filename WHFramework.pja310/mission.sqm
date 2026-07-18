@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1301.0137,46.580421,941.57916};
-		dir[]={0.14674346,-0.46647897,0.87231666};
-		up[]={0.077421121,0.88441294,0.46023229};
-		aside[]={0.9861787,-5.7023135e-07,-0.16589773};
+		pos[]={1127.6863,38.201237,1014.3349};
+		dir[]={0.083424769,-0.48170811,0.87242091};
+		up[]={0.045859989,0.87628192,0.47958595};
+		aside[]={0.99551558,-5.9345621e-07,-0.095198661};
 	};
 };
 binarizationWanted=0;
@@ -2624,7 +2624,7 @@ class Mission
 					text="Main Operating Base";
 					type="b_hq";
 					colorName="ColorWEST";
-					angle=359.99982;
+					angle=359.99979;
 					id=131;
 					class CustomAttributes
 					{
@@ -2703,7 +2703,7 @@ class Mission
 					position[]={2837.1348,23.509003,323.97559};
 					name="respawn_west_uav";
 					type="Empty";
-					angle=6.8301833e-06;
+					angle=6.8301829e-06;
 					id=134;
 					atlOffset=57.72356;
 					class CustomAttributes
@@ -6070,7 +6070,7 @@ class Mission
 							side="Empty";
 							class Attributes
 							{
-								init="[this, [1135,1069,0], 0, [""Drones"", ""Helicopters""]] call WHF_fnc_vehSpawnInit;";
+								init="[this, [1135,1069,0], 0, [""Drones"", ""Helicopters"", ""Planes""]] call WHF_fnc_vehSpawnInit;";
 								disableSimulation=1;
 							};
 							id=292;
@@ -8847,7 +8847,7 @@ class Mission
 							name="marker_2";
 							text="Service";
 							type="b_service";
-							angle=44.999989;
+							angle=44.999985;
 							id=338;
 							class CustomAttributes
 							{
@@ -8954,7 +8954,7 @@ class Mission
 							name="marker_10";
 							text="Service";
 							type="b_service";
-							angle=44.999985;
+							angle=44.999981;
 							id=486;
 							class CustomAttributes
 							{
@@ -8981,7 +8981,7 @@ class Mission
 							name="marker_11";
 							text="Service";
 							type="b_service";
-							angle=224.99998;
+							angle=224.99997;
 							id=491;
 							class CustomAttributes
 							{
