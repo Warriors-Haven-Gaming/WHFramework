@@ -25,6 +25,13 @@ Returns:
     Group
         The group that was spawned in.
 
+Examples:
+    (begin example)
+        private _types = [["jet_cas", "csat"], ["jet_cap", "csat"]];
+        private _group = [opfor, _types, 2, _center, _radius] call WHF_fnc_spawnAircraft;
+        private _vehicles = assignedVehicles _group;
+    (end)
+
 Author:
     thegamecracks
 

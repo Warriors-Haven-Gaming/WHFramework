@@ -8,9 +8,15 @@ Description:
 Parameters:
     Array types:
         One or more group types to return.
+        See WHF_fnc_initFactionCatalog for allowed aircraft values.
 
 Returns:
     Array
+
+Examples:
+    (begin example)
+        [["jet_cas", "csat"], ["jet_cap", "csat"]] call WHF_fnc_getAircraftTypes;
+    (end)
 
 Author:
     thegamecracks

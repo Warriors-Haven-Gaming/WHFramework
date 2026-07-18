@@ -18,6 +18,12 @@ Returns:
     Group
         The group that was spawned in.
 
+Examples:
+    (begin example)
+        private _unitTypes = [["standard", "csat"]];
+        private _group = [opfor, _unitTypes, _turrets] call WHF_fnc_spawnGunners;
+    (end)
+
 Author:
     thegamecracks
 

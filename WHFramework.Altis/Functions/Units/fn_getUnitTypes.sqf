@@ -8,9 +8,15 @@ Description:
 Parameters:
     Array types:
         One or more group types to return.
+        See WHF_fnc_initFactionCatalog for allowed unit values.
 
 Returns:
     Array
+
+Examples:
+    (begin example)
+        [["standard", "csat"], ["recon", "csat"]] call WHF_fnc_getUnitTypes;
+    (end)
 
 Author:
     thegamecracks

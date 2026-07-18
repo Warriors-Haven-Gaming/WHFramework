@@ -19,6 +19,14 @@ Parameters:
 Returns:
     Array
 
+Examples:
+    (begin example)
+        [
+            ["units", "standard", "csat"],
+            ["units", "recon", "csat"]
+        ] call WHF_fnc_getFactionTypes;
+    (end)
+
 Author:
     thegamecracks
 

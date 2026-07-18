@@ -37,6 +37,17 @@ Returns:
         If a side was passed, this will be the newly created group.
         If a group was passed, this will be the array of new units.
 
+Examples:
+    (begin example)
+        private _types = [["standard", "csat"], ["recon", "csat"]];
+        private _group = [opfor, _types, 16, _center, _radius] call WHF_fnc_spawnUnits;
+    (end)
+    (begin example)
+        private _group = createGroup [blufor, true];
+        private _types = [["at", "nato"]];
+        private _units = [_group, _types, 4, _center, _radius] call WHF_fnc_spawnUnits;
+    (end)
+
 Author:
     thegamecracks
 

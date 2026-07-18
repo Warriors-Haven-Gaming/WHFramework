@@ -8,9 +8,15 @@ Description:
 Parameters:
     Array types:
         One or more group types to return.
+        See WHF_fnc_initFactionCatalog for allowed ship values.
 
 Returns:
     Array
+
+Examples:
+    (begin example)
+        [["light", "csat"], ["heavy", "csat"]] call WHF_fnc_getShipTypes;
+    (end)
 
 Author:
     thegamecracks

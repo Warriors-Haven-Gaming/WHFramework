@@ -8,9 +8,15 @@ Description:
 Parameters:
     Array types:
         One or more group types to return.
+        See WHF_fnc_initFactionCatalog for allowed vehicle values.
 
 Returns:
     Array
+
+Examples:
+    (begin example)
+        [["supply", "csat"], ["apc", "csat"]] call WHF_fnc_getVehicleTypes;
+    (end)
 
 Author:
     thegamecracks

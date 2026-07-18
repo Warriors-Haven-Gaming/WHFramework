@@ -28,6 +28,14 @@ Returns:
     Group
         The group that was spawned in.
 
+Examples:
+    (begin example)
+        private _types = [["heavy", "csat"]];
+        private _unitTypes = [["standard", "csat"]];
+        private _group = [opfor, _types, _unitTypes, 2, _center, _radius] call WHF_fnc_spawnShips;
+        private _vehicles = assignedVehicles _group;
+    (end)
+
 Author:
     thegamecracks
 
