@@ -34,6 +34,7 @@ DEFAULT_BRANCHES = (
     "bornholm",
     "chernarus-2020",
     "lingor",
+    "alrayak",
     "main",
 )
 

@@ -31,6 +31,7 @@ BRANCH_DIRECTORIES = {
     "bornholm": "Bornholm",
     "chernarus-2020": "cup_chernarus_A3",
     "lingor": "lingor3",
+    "alrayak": "pja310",
 }
 
 COMMON_FILES = {
