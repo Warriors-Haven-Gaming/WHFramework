@@ -6,16 +6,16 @@ class CfgPatches {
 
         requiredVersion = 2.20;
         requiredAddons[] = {
-            "EF_AH99",
-            "EF_Data_Compat_RF",
-            "EF_Hunter",
-            "EF_VanillaVehicles",
-            "mehland",
-            "QAV_AbramsX",
-            "RF_Air_Heli_Light_03",
-            "RF_Air_heli_medium_ec",
-            "RF_Vehicles_Pickup_01",
-            "Valor_Plane_F",
+            // "EF_AH99",
+            // "EF_Data_Compat_RF",
+            // "EF_Hunter",
+            // "EF_VanillaVehicles",
+            // "mehland",
+            // "QAV_AbramsX",
+            // "RF_Air_Heli_Light_03",
+            // "RF_Air_heli_medium_ec",
+            // "RF_Vehicles_Pickup_01",
+            // "Valor_Plane_F",
             "whf_main",
         };
         skipWhenMissingDependencies = 1;

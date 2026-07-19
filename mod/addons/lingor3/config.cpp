@@ -6,7 +6,7 @@ class CfgPatches {
 
         requiredVersion = 2.20;
         requiredAddons[] = {
-            "A3_Map_lingor3",
+            // "A3_Map_lingor3",
             "whf_main",
         };
         skipWhenMissingDependencies = 1;

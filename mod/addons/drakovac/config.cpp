@@ -6,7 +6,7 @@ class CfgPatches {
 
         requiredVersion = 2.20;
         requiredAddons[] = {
-            "drakovac",
+            // "drakovac",
             "whf_main",
         };
         skipWhenMissingDependencies = 1;

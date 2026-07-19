@@ -6,16 +6,16 @@ class CfgPatches {
 
         requiredVersion = 2.20;
         requiredAddons[] = {
-            "cba_xeh",
-            "CUP_Buildings_Config",
-            "CUP_WheeledVehicles_Dingo",
-            "F35C_cfg",
-            "FA_EMB312",
-            "Peral_F16",
-            "QAV_AbramsX",
-            "QAV_Ripsaw",
-            "regero",
-            "Valor_Plane_F",
+            // "cba_xeh",
+            // "CUP_Buildings_Config",
+            // "CUP_WheeledVehicles_Dingo",
+            // "F35C_cfg",
+            // "FA_EMB312",
+            // "Peral_F16",
+            // "QAV_AbramsX",
+            // "QAV_Ripsaw",
+            // "regero",
+            // "Valor_Plane_F",
             "whf_main",
         };
         skipWhenMissingDependencies = 1;

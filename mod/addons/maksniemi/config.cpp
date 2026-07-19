@@ -6,7 +6,7 @@ class CfgPatches {
 
         requiredVersion = 2.20;
         requiredAddons[] = {
-            "vt4",
+            // "vt4",
             "whf_main",
         };
         skipWhenMissingDependencies = 1;

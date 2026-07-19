@@ -6,7 +6,7 @@ class CfgPatches {
 
         requiredVersion = 2.20;
         requiredAddons[] = {
-            "CUP_Chernarus_A3_Config",
+            // "CUP_Chernarus_A3_Config",
             "whf_main",
         };
         skipWhenMissingDependencies = 1;

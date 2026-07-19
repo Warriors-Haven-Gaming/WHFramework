@@ -6,7 +6,7 @@ class CfgPatches {
 
         requiredVersion = 2.20;
         requiredAddons[] = {
-            "UMB_Armavir",
+            // "UMB_Armavir",
             "whf_main",
         };
         skipWhenMissingDependencies = 1;

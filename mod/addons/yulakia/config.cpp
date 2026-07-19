@@ -6,22 +6,22 @@ class CfgPatches {
 
         requiredVersion = 2.20;
         requiredAddons[] = {
-            "cba_xeh",
-            "CUP_Buildings_Config",
-            "CUP_Creatures_Military_Taki",
-            "CUP_WheeledVehicles_Hilux",
-            "F35C_cfg",
-            "FA_EMB312",
-            "GX_Skyshield",
-            "ibr_yulakia_objects",
-            "Peral_F16",
-            "QAV_AbramsX",
-            "QAV_Ripsaw",
-            "skilava_props_set_01",
-            "TCGM_Girls",
-            "Valor_Plane_F",
+            // "cba_xeh",
+            // "CUP_Buildings_Config",
+            // "CUP_Creatures_Military_Taki",
+            // "CUP_WheeledVehicles_Hilux",
+            // "F35C_cfg",
+            // "FA_EMB312",
+            // "GX_Skyshield",
+            // "ibr_yulakia_objects",
+            // "Peral_F16",
+            // "QAV_AbramsX",
+            // "QAV_Ripsaw",
+            // "skilava_props_set_01",
+            // "TCGM_Girls",
+            // "Valor_Plane_F",
             "whf_main",
-            "yulakia",
+            // "yulakia",
         };
         skipWhenMissingDependencies = 1;
 

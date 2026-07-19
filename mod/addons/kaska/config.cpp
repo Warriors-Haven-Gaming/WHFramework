@@ -6,7 +6,7 @@ class CfgPatches {
 
         requiredVersion = 2.20;
         requiredAddons[] = {
-            "kaska",
+            // "kaska",
             "whf_main",
         };
         skipWhenMissingDependencies = 1;
