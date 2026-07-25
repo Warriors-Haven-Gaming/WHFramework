@@ -31,6 +31,36 @@ down in a line of parachutes.
 
 ![](/docs/images/halo.jpg)
 
+## Maps
+
+The following maps are officially supported by our gamemode, meaning that
+we port mission updates to each map when making a new
+[release](https://github.com/Warriors-Haven-Gaming/WHFramework/releases):
+- Altis
+- Livonia
+- Malden
+- Tanoa
+- Al Rayak ([Map](https://steamcommunity.com/sharedfiles/filedetails/?id=648172507))
+- Bornholm ([Map](https://steamcommunity.com/sharedfiles/filedetails/?id=2914536900))
+- Chernarus 2020 ([Map](https://steamcommunity.com/sharedfiles/filedetails/?id=1981964169))
+- Drakovac ([Map](https://steamcommunity.com/sharedfiles/filedetails/?id=3523961062))
+- Kaska ([Map](https://steamcommunity.com/sharedfiles/filedetails/?id=2846963826))
+- Lingor ([Map](https://steamcommunity.com/sharedfiles/filedetails/?id=718649903))
+- Maksniemi ([Map](https://steamcommunity.com/sharedfiles/filedetails/?id=3640732171))
+- Mehland ([Modpack](https://steamcommunity.com/sharedfiles/filedetails/?id=3540735632))
+- Mogadishu ([Modpack](https://steamcommunity.com/sharedfiles/filedetails/?id=3514176008))
+- Regero ([Modpack](https://steamcommunity.com/sharedfiles/filedetails/?id=3514175208))
+- UMB Armavir ([Map](https://steamcommunity.com/sharedfiles/filedetails/?id=2636365838))
+- UMB Colombia ([Map](https://steamcommunity.com/sharedfiles/filedetails/?id=2266710560))
+- Yulakia ([Modpack](https://steamcommunity.com/sharedfiles/filedetails/?id=3514172655))
+
+The [Steam Workshop] mod combines these maps into a convenient package
+(see [How do I play?](#how-do-i-play)), but you can also find each map's
+source code in their corresponding Git branch, like
+[`yulakia`](https://github.com/Warriors-Haven-Gaming/WHFramework/tree/yulakia).
+
+[Steam Workshop]: https://steamcommunity.com/sharedfiles/filedetails/?id=3514182772
+
 ## Factions
 
 The following vanilla factions are always available for opposing forces:
@@ -90,7 +120,6 @@ Altis and Tanoa.
 Dedicated server hosters may also consider using our suggested [BattlEye filters]
 to improve security. See this [DayZ BattlEye Guide] for more information.
 
-[Steam Workshop]: https://steamcommunity.com/sharedfiles/filedetails/?id=3514182772
 [Releases]: https://github.com/Warriors-Haven-Gaming/WHFramework/releases/latest
 [BattlEye filters]: https://github.com/Warriors-Haven-Gaming/WHFramework/tree/main/BattlEye
 [DayZ BattlEye Guide]: https://opendayz.net/threads/a-guide-to-battleye-filters.21066/
