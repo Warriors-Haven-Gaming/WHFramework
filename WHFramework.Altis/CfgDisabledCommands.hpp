@@ -121,14 +121,14 @@ class CfgDisabledCommands
         };
     };
 
-    // class CTRLCLASSNAME
-    // {
-    //     class SYNTAX1
-    //     {
-    //         targets[] = {0,1,0};
-    //         args[] = {{},{"CONTROL"}};
-    //     };
-    // };
+    class CTRLCLASSNAME
+    {
+        class SYNTAX1
+        {
+            targets[] = {1,1,1}; // {0,1,0}
+            args[] = {{},{"CONTROL"}};
+        };
+    };
 
     class CTRLMODEL
     {
@@ -166,14 +166,14 @@ class CfgDisabledCommands
         };
     };
 
-    // class FORCEADDUNIFORM
-    // {
-    //     class SYNTAX1
-    //     {
-    //         targets[] = {0,0,0};
-    //         args[] = {{"OBJECT"},{"STRING"}};
-    //     };
-    // };
+    class FORCEADDUNIFORM
+    {
+        class SYNTAX1
+        {
+            targets[] = {1,1,1}; // {0,0,0}
+            args[] = {{"OBJECT"},{"STRING"}};
+        };
+    };
 
     class LOADFILE
     {
@@ -208,14 +208,14 @@ class CfgDisabledCommands
         };
     };
 
-    // class PUBLICVARIABLE
-    // {
-    //     class SYNTAX1
-    //     {
-    //         targets[] = {1,0,1};
-    //         args[] = {{},{"STRING"}};
-    //     };
-    // };
+    class PUBLICVARIABLE
+    {
+        class SYNTAX1
+        {
+            targets[] = {1,1,1}; // {1,0,1}
+            args[] = {{},{"STRING"}};
+        };
+    };
 
     class REMOVEALLACTIONS
     {
@@ -226,14 +226,14 @@ class CfgDisabledCommands
         };
     };
 
-    // class REMOVEALLITEMS
-    // {
-    //     class SYNTAX1
-    //     {
-    //         targets[] = {0,0,0};
-    //         args[] = {{},{"OBJECT"}};
-    //     };
-    // };
+    class REMOVEALLITEMS
+    {
+        class SYNTAX1
+        {
+            targets[] = {1,1,1}; // {0,0,0}
+            args[] = {{},{"OBJECT"}};
+        };
+    };
 
     class REMOVEALLMISSIONEVENTHANDLERS
     {
@@ -262,14 +262,14 @@ class CfgDisabledCommands
         };
     };
 
-    // class SETAMMO
-    // {
-    //     class SYNTAX1
-    //     {
-    //         targets[] = {0,0,0};
-    //         args[] = {{"OBJECT"},{"ARRAY"}};
-    //     };
-    // };
+    class SETAMMO
+    {
+        class SYNTAX1
+        {
+            targets[] = {1,1,1}; // {0,0,0}
+            args[] = {{"OBJECT"},{"ARRAY"}};
+        };
+    };
 
     class SETDAMMAGE
     {
