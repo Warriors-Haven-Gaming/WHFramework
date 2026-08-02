@@ -84,5 +84,6 @@ for "_i" from 1 to _quantity * 2 do {
     _turrets pushBack _turret;
 };
 
+[_turrets, true] call WHF_fnc_enableDynamicSimulation; // FIXME: crew race condition if not executed on server
 private _group = [_side, _unitTypes, _turrets] call WHF_fnc_spawnGunners;
 [_turrets, [], [_group]]

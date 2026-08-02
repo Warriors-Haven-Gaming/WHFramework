@@ -22,7 +22,7 @@ Parameters:
     Array flags:
         (Optional, default [])
         An array containing any of the following flags:
-            "": No flags are currently supported.
+            "noDynamicSimulation": Disable dynamic simulation on vehicles and groups.
 
 Returns:
     Group
@@ -54,7 +54,7 @@ if (_quantity < 1) exitWith {grpNull};
 private _shipTypes = _types call WHF_fnc_getShipTypes;
 if (count _shipTypes < 1) exitWith {grpNull};
 
-// private _dynamicSimulation = !("noDynamicSimulation" in _flags);
+private _dynamicSimulation = !("noDynamicSimulation" in _flags);
 
 private _group = createGroup [_side, true];
 private _vehicles = [];
@@ -76,6 +76,9 @@ for "_i" from 1 to _quantity do {
     // WHF_usedPositions pushBack [_vehicle, 10];
 };
 
+// FIXME: crew race condition if not executed on server
+if (_dynamicSimulation) then {[_vehicles, true] call WHF_fnc_enableDynamicSimulation};
+
 {
     private _vehicle = _x;
     private _seats = _vehicle emptyPositions "";
@@ -91,10 +94,6 @@ _group setBehaviourStrong "SAFE";
 _group setFormation selectRandom ["WEDGE", "VEE", "LINE", "DIAMOND"];
 _group setCombatMode "RED";
 
-// FIXME: ships seem to not support dynamic simulation
-// if (_dynamicSimulation) then {
-//     private _objects = _vehicles + [_group];
-//     [_objects, true, 1] spawn WHF_fnc_enableDynamicSimulation;
-// };
+if (_dynamicSimulation) then {[_group, true] call WHF_fnc_enableDynamicSimulation};
 
 _group
