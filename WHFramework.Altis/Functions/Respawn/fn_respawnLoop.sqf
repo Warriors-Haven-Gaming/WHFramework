@@ -57,6 +57,7 @@ private _respawnVehicle = {
     _object setDir _dir;
     if (!surfaceIsWater _pos) then {_object setVectorUp surfaceNormal _pos};
     _object setPosATL _pos;
+    _object enableDynamicSimulation true;
 
     _object
 };
@@ -80,6 +81,7 @@ private _restoreVehicle = {
     private _dir = _record get "_dir";
     _object setDir _dir;
     _object setPosATL _pos;
+    _object enableDynamicSimulation true;
 
     _object
 };

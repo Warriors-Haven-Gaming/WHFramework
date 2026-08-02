@@ -22,6 +22,7 @@ if (typeOf _vehicle isEqualTo "") exitWith {};
 
 // TODO: parameterize vehicle side
 _vehicle setVariable ["WHF_vehicle_side", blufor, true];
+_vehicle enableDynamicSimulation true;
 
 // NOTE: <Object> distance <Object> can produce different results from
 //       <PositionAGL> distance <Object>. Make sure we use the latter syntax,
