@@ -15,7 +15,7 @@ if (hasInterface) then {addMissionEventHandler ["EntityKilled", {
 
     if (isNull _source) exitWith {};
     if (_entity isEqualTo _source) exitWith {};
-    if (!isNil {_entity getVariable "WHF_killFeed_disabled"}) exitWith {};
+    if !(_entity isNil "WHF_killFeed_disabled") exitWith {};
 
     if !(_entity isKindOf "AllVehicles") exitWith {};
     if (_entity isKindOf "CAManBase") exitWith {};
@@ -86,7 +86,7 @@ addMissionEventHandler ["EntityKilled", {
     params ["_entity", "_source", "_instigator"];
     if (isNull _source) exitWith {};
     if (_entity isEqualTo _source) exitWith {}; // Likely force respawned
-    if (!isNil {_entity getVariable "WHF_killFeed_disabled"}) exitWith {};
+    if !(_entity isNil "WHF_killFeed_disabled") exitWith {};
     if !(_entity isKindOf "CAManBase") exitWith {};
 
     private _side = side group _entity;

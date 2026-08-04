@@ -16,7 +16,7 @@ private _vehicleAPSEnabled = {
         case 1: {isPlayer effectiveCommander _vehicle};
         case 2: {
             private _commander = effectiveCommander _vehicle;
-            isPlayer _commander || {!isNil {_commander getVariable "WHF_recruiter"}}
+            isPlayer _commander || {!(_commander isNil "WHF_recruiter")}
         };
         case 3: {true};
         default {false};

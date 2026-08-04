@@ -32,7 +32,7 @@ params [
 
 private _canWaitToRevive = {
     // Interrupt self-reviving if we're being revived by another unit
-    if (!isNil {_unit getVariable "WHF_revive_caller"}) exitWith {true};
+    if !(_unit isNil "WHF_revive_caller") exitWith {true};
 
     // Indefinitely suspend self-reviving when over the player limit
     if (count allPlayers > WHF_selfRevive_maxPlayers) exitWith {true};
@@ -57,8 +57,8 @@ private _getHoldTime = {
 };
 
 private _isAssigned = {
-    !isNil {_unit getVariable "WHF_reviveActionAuto_assigned"}
-    || {!isNil {_unit getVariable "WHF_carry_caller"}
+    !(_unit isNil "WHF_reviveActionAuto_assigned")
+    || {!(_unit isNil "WHF_carry_caller")
     || {!isNull attachedTo _unit}}
 };
 

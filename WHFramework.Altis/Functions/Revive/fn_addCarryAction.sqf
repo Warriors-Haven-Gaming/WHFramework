@@ -23,8 +23,8 @@ private _carryID = [
     "a3\ui_f\data\igui\cfg\holdactions\holdaction_takeoff1_ca.paa",
     "a3\ui_f\data\igui\cfg\holdactions\holdaction_takeoff2_ca.paa",
     toString {
-        isNil {_this getVariable "WHF_carry"}
-        && {isNil {_originalTarget getVariable "WHF_revive_caller"}
+        _this isNil "WHF_carry"
+        && {_originalTarget isNil "WHF_revive_caller"
         && {lifeState _originalTarget in ["INCAPACITATED"]
         && {isNull attachedTo _originalTarget
         && {_this distance _target < 3}}}}

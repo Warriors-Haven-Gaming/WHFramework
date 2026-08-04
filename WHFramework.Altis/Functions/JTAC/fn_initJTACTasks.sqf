@@ -38,7 +38,7 @@ private _clearJTACTask = {
     if (isNil "_tasks") exitWith {};
 
     // Prevent double execution after killed + deleted events
-    if (!isNil {_target getVariable "WHF_jtac_cleared"}) exitWith {};
+    if !(_target isNil "WHF_jtac_cleared") exitWith {};
     _target setVariable ["WHF_jtac_cleared", true];
 
     private _silent = _thisEvent isEqualTo "EntityDeleted";

@@ -34,7 +34,7 @@ _target setHit ["legs", (_target getHit "legs") min 0.45];
 
 // If garbage collection is disabled, assume there's custom behaviour
 // for this unit and that they shouldn't run away
-if (!isNil {_target getVariable "WHF_disableGC"}) exitWith {};
+if !(_target isNil "WHF_disableGC") exitWith {};
 
 _target enableAIFeature ["FSM", false];
 _target forceSpeed (_target getSpeed "FAST");

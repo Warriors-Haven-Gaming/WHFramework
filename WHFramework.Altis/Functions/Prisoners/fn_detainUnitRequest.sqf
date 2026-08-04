@@ -102,7 +102,7 @@ unassignVehicle _target;
 _target action ["Surrender", _target];
 [_target, ["", 0, 0, false]] remoteExec ["switchGesture"];
 
-if (isNil {_target getVariable "WHF_disableGC"}) then {
+if (_target isNil "WHF_disableGC") then {
     [_target, -1, 1800] remoteExec ["WHF_fnc_queueGCDeletion", 2];
 };
 
@@ -137,7 +137,7 @@ _target spawn {
     sleep 5;
     while {alive _this && {captive _this}} do {
         sleep (1 + random 1);
-        if (isNil {_this getVariable "WHF_prisoner_actionIDs"}) then {break};
+        if (_this isNil "WHF_prisoner_actionIDs") then {break};
         if (!isNull objectParent _this) then {continue};
         if !(lifeState _this in ["HEALTHY", "INJURED"]) then {continue};
         if (unitPos _this isNotEqualTo "Up") then {_this setUnitPos "UP"};

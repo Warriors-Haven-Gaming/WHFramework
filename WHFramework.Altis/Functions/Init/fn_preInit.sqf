@@ -25,7 +25,7 @@ addMissionEventHandler ["PreloadFinished", {
     missionProfileNamespace setVariable ["WHF_play_times", _timesPlayed + 1];
     saveMissionProfileNamespace;
 
-    private _introPlayed = !isNil {uiNamespace getVariable "WHF_play_intro"};
+    private _introPlayed = !(uiNamespace isNil "WHF_play_intro");
     private _short = _introPlayed && !isMultiplayer;
     private _music = !_introPlayed;
     [_short, _music] spawn WHF_fnc_startIntroSequence;

@@ -23,7 +23,7 @@ while {true} do {
         select {side _x in _allowedSides}
         select {_x getVariable ["WHF_siren_disabled", false] isNotEqualTo true}
         select {
-            isNil {_x getVariable "WHF_siren_lastFlare"}
+            _x isNil "WHF_siren_lastFlare"
             || {time - (_x getVariable "WHF_siren_lastFlare") > WHF_signalFlareGroupCooldown}
         }
         apply {leader _x}
@@ -54,7 +54,7 @@ while {true} do {
     sleep 2;
     if (captive _siren) then {continue}; // Probably detained mid-signal, nice
     if !(lifeState _siren in ["HEALTHY", "INJURED"]) then {continue};
-    if (isNil {_siren getVariable "WHF_siren_startedAt"}) then {continue};
+    if (_siren isNil "WHF_siren_startedAt") then {continue};
 
     private _targets = _siren targets [true, WHF_signalFlareMaxDistance];
     private _allies = (

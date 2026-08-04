@@ -46,7 +46,7 @@ private _condition = "
     private _targets = _this getVariable 'WHF_load_targets';
     !isNil '_targets' && {keys _targets findIf {
         _targets get _x params ['_lifeStates'];
-        !isNil {_this getVariable _x}
+        !(_this isNil _x)
         && {attachedTo (_this getVariable _x) isEqualTo _this
         && {lifeState (_this getVariable _x) in _lifeStates}}
     } >= 0}
@@ -61,7 +61,7 @@ private _loadID = _unit addAction [
         private _targetVars = keys _targets;
         private _index = _targetVars findIf {
             _targets get _x params ["_lifeStates"];
-            !isNil {_unit getVariable _x}
+            !(_unit isNil _x)
             && {attachedTo (_unit getVariable _x) isEqualTo _unit
             && {lifeState (_unit getVariable _x) in _lifeStates}}
         };
@@ -99,7 +99,7 @@ private _releaseID = _unit addAction [
         private _targetVars = keys _targets;
         private _index = _targetVars findIf {
             _targets get _x params ["_lifeStates"];
-            !isNil {_unit getVariable _x}
+            !(_unit isNil _x)
             && {attachedTo (_unit getVariable _x) isEqualTo _unit
             && {lifeState (_unit getVariable _x) in _lifeStates}}
         };

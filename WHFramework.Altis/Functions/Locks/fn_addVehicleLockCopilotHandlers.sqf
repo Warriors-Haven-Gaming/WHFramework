@@ -13,7 +13,7 @@ Author:
 
 */
 params ["_vehicle"];
-if (!isNil {_vehicle getVariable "WHF_vehicleLock_copilotID"}) exitWith {};
+if !(_vehicle isNil "WHF_vehicleLock_copilotID") exitWith {};
 
 private _handlerID = _vehicle addEventHandler ["ControlsShifted", {
     params ["_vehicle", "_unit"];

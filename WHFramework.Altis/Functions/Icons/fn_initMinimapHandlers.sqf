@@ -15,7 +15,7 @@ if (!hasInterface) exitWith {};
 private _minimap = uiNamespace getVariable "RscCustomInfoMiniMap";
 
 {
-    if (!isNil {_x getVariable "WHF_addMinimapHandlers_called"}) then {continue};
+    if !(_x isNil "WHF_addMinimapHandlers_called") then {continue};
 
     // NOTE: order determines which icons draw over each other
     _x ctrlAddEventHandler ["Draw", WHF_fnc_drawMapProjectileIcons];
@@ -51,7 +51,7 @@ if (
         if (_displays isEqualTo []) then {continue};
 
         private _ctrl = _displays # 0 displayCtrl 500;
-        if (!isNil {_ctrl getVariable "WHF_addMinimapHandlers_called"}) then {continue};
+        if !(_ctrl isNil "WHF_addMinimapHandlers_called") then {continue};
 
         // FIXME: duplicated above
         _ctrl ctrlAddEventHandler ["Draw", WHF_fnc_drawMapProjectileIcons];

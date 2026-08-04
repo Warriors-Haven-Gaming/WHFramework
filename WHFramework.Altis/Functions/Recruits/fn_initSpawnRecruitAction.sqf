@@ -61,7 +61,7 @@ _spawner addAction [
             && {alive _x
             && {_caller distance _x < 100
             && {_x getVariable ["WHF_recruiter", ""] isEqualTo getPlayerUID player
-            && {!isNil {_x getVariable "WHF_role"}}}}}}
+            && {!(_x isNil "WHF_role")}}}}}
         };
 
         // Filter out recruits whose roles have no saved loadouts

@@ -16,7 +16,7 @@ Author:
 
 */
 params ["_caller", "_target"];
-if (!isNil {_caller getVariable "WHF_escort"}) exitWith {};
+if !(_caller isNil "WHF_escort") exitWith {};
 
 _target attachTo [_caller, [0.1, -1.1, 0]];
 _caller setVariable ["WHF_escort", _target];

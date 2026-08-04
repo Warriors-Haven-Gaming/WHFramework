@@ -19,7 +19,7 @@ private _id = [
     toString {
         count allPlayers <= WHF_selfRevive_maxPlayers
         && {lifeState _target isEqualTo "INCAPACITATED"
-        && {isNil {_target getVariable "WHF_revive_caller"}
+        && {_target isNil "WHF_revive_caller"
         && {time - (_target getVariable ["WHF_incapacitated_at",0]) > WHF_selfRevive_minTime}}}
     },
     toString {[_target, _caller, _actionId, _arguments] call WHF_fnc_selfReviveConditionProgress},

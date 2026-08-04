@@ -19,7 +19,7 @@ params ["_caller", "_target"];
 if (!local _target) exitWith {};
 
 if (isNull _caller) exitWith {};
-if (!isNil {_target getVariable "WHF_prisoner_secured"}) exitWith {};
+if !(_target isNil "WHF_prisoner_secured") exitWith {};
 if (_target call WHF_fnc_inAreaPrison isEqualTo []) exitWith {};
 
 // TODO: replace target unit with an agent?

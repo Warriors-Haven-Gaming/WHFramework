@@ -46,7 +46,7 @@ private _findNearestTarget = {
 
 private _isTargetSuitable = {
     // params ["_x"];
-    if (isNil {_x getVariable "WHF_revive_actionID_remote"}) exitWith {false};
+    if (_x isNil "WHF_revive_actionID_remote") exitWith {false};
 
     private _area = [_area, _groupArea] select (group _x isEqualTo group _unit);
     if !(_x inArea _area) exitWith {false};

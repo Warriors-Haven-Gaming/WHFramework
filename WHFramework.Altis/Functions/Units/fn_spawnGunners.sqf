@@ -45,7 +45,7 @@ private _mannedTurrets = _turrets - _uavTurrets;
 private _initTurrets = {
     // params ["_turrets", "_side"];
     {
-        if (!isNil {_x getVariable "WHF_gunner_init"}) exitWith {};
+        if !(_x isNil "WHF_gunner_init") exitWith {};
         private _turret = _x;
         _turret setFuel 0;
         _turret allowCrewInImmobile [true, true];

@@ -13,7 +13,7 @@ Author:
 
 */
 params ["_vehicle"];
-if (!isNil {_vehicle getVariable "WHF_setupVehicle_called"}) exitWith {};
+if !(_vehicle isNil "WHF_setupVehicle_called") exitWith {};
 if !(_vehicle isKindOf "AllVehicles") exitWith {};
 if (_vehicle isKindOf "Man") exitWith {};
 

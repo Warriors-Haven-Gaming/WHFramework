@@ -15,7 +15,7 @@ Author:
 */
 params ["_unit"];
 
-if (isNil {_unit getVariable "WHF_role"}) then {
+if (_unit isNil "WHF_role") then {
     _unit setVariable ["WHF_role", "rifleman", true];
 };
 
@@ -35,7 +35,7 @@ _unit setCustomAimCoef WHF_fitness_sway;
 _unit setSkill 1;
 _unit setCaptive false;
 
-if (!isNil {_unit getVariable "WHF_incapUnit_wasCaptive"}) then {
+if !(_unit isNil "WHF_incapUnit_wasCaptive") then {
     _unit setVariable ["WHF_incapUnit_wasCaptive", nil, true];
 };
 

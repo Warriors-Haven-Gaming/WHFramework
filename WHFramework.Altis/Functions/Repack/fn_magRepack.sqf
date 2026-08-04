@@ -63,7 +63,7 @@ private _soundPlayed = false;
     private _canRepack = {
         count _magazines > 1
         && {lifeState _unit in ["HEALTHY", "INJURED"]
-        && {!isNil {_unit getVariable "WHF_magRepack"}}}
+        && {!(_unit isNil "WHF_magRepack")}}
     };
 
     if !(call _canRepack) then {continue};

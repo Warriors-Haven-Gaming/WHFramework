@@ -70,7 +70,7 @@ waitUntil {
     sleep 0.1;
     time > _timeout
     || {call _reviveIsCanceled
-    || {isNil {_caller getVariable "WHF_revive_animation"}}}
+    || {_caller isNil "WHF_revive_animation"}}
 };
 private _isCanceled = call _reviveIsCanceled;
 

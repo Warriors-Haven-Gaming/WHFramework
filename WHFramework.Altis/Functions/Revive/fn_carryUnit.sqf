@@ -16,7 +16,7 @@ Author:
 
 */
 params ["_caller", "_target"];
-if (!isNil {_caller getVariable "WHF_carry"}) exitWith {};
+if !(_caller isNil "WHF_carry") exitWith {};
 
 _target attachTo [_caller, [-0.25,0,-1.2], "spine3"];
 [_target, ["ainjpfalmstpsnonwnondf_carried_dead", 0, 1, false]] remoteExec ["switchMove"];

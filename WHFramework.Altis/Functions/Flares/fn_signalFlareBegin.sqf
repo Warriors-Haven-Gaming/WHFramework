@@ -43,7 +43,7 @@ if (local _siren) then {
 sleep 2;
 if (captive _siren) exitWith {}; // Probably detained mid-signal, nice
 if !(lifeState _siren in ["HEALTHY", "INJURED"]) exitWith {};
-if (isNil {_siren getVariable "WHF_siren_startedAt"}) exitWith {};
+if (_siren isNil "WHF_siren_startedAt") exitWith {};
 
 _flareDir = getDir _siren + _flareDir;
 private _pos = getPosATL _siren vectorAdd [0, 0, 2];

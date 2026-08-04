@@ -43,7 +43,7 @@ if (!isRemoteExecutedJIP) then {
         systemChat format [localize _key, name _unit, name _killer];
     };
     if (local _unit) then {
-        if (isNil {_unit getVariable "WHF_incapUnit_wasCaptive"}) then {
+        if (_unit isNil "WHF_incapUnit_wasCaptive") then {
             _unit setVariable ["WHF_incapUnit_wasCaptive", captive _unit, true];
         };
         _unit setCaptive true;

@@ -36,7 +36,7 @@ player addEventHandler ["FiredMan", {
 player addEventHandler ["GetInMan", {
     params ["", "", "_vehicle"];
 
-    if (!isNil {_vehicle getVariable "WHF_addProjectileHandlers"}) exitWith {};
+    if !(_vehicle isNil "WHF_addProjectileHandlers") exitWith {};
 
     private _missileID = _vehicle addEventHandler ["IncomingMissile", {
         params ["", "", "_source", "", "_missile"];

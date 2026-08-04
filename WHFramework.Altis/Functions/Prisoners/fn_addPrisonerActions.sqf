@@ -14,7 +14,7 @@ Author:
 */
 params ["_unit"];
 if (!alive _unit && {isRemoteExecutedJIP}) exitWith {remoteExec ["", remoteExecutedJIPID]};
-if (!isNil {_unit getVariable "WHF_prisoner_actionIDs"}) exitWith {};
+if !(_unit isNil "WHF_prisoner_actionIDs") exitWith {};
 
 private _condition = "
     captive _originalTarget
@@ -35,7 +35,7 @@ private _escortID = _unit addAction [
     true,
     "",
     _condition + "
-        && {isNil {_this getVariable 'WHF_escort'}}
+        && {_this isNil 'WHF_escort'}
     ",
     3
 ];

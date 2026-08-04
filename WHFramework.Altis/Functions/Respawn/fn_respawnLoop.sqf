@@ -100,7 +100,7 @@ while {true} do {
 
     private _time = time;
 
-    private _recruits = allUnits select {!isNil {_x getVariable "WHF_recruiter"}};
+    private _recruits = allUnits select {!(_x isNil "WHF_recruiter")};
     private _remoteControlledUnits = allPlayers apply {remoteControlled _x} select {!isNull _x};
 
     private _units = allPlayers;

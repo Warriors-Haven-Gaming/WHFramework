@@ -26,7 +26,7 @@ Author:
 
 */
 params ["_obj", "_pos", "_dir", ["_categories", []], ["_safeArea", [10, 50, "O_APC_Tracked_02_AA_F"]]];
-if (!isNil {_obj getVariable "WHF_vehSpawn_pos"}) exitWith {};
+if !(_obj isNil "WHF_vehSpawn_pos") exitWith {};
 
 // For backwards compatibility, treat Z=0 over water as ASL
 _pos = _pos vectorAdd [0,0,0];

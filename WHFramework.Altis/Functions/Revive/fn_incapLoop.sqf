@@ -28,7 +28,7 @@ private _findNearestMedic = {
     private _medics = units side group _unit select {
         _x getUnitTrait "medic"
         && {lifeState _x in ["HEALTHY", "INJURED"]
-        && {isPlayer _x || {!isNil {_x getVariable "WHF_recruiter"}}}}
+        && {isPlayer _x || {!(_x isNil "WHF_recruiter")}}}
     };
     _medics = _medics inAreaArray [getPosATL _unit, 500, 500];
     if (count _medics < 1) exitWith {""};
