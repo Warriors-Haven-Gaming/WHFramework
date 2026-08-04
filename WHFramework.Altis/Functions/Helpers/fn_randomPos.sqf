@@ -87,6 +87,13 @@ for "_i" from 1 to 30 do {
 
     private _empty = _pos findEmptyPosition [0, 50, _type];
     if (_empty isEqualTo []) then {continue};
+
+    // BIS_fnc_randomPos and findEmptyPosition can return a position inside a rock formation.
+    // Tallest rock I found was 15m at Altis, [3172.82,13037.3,15.1532].
+    // If there's any static prop other than foliage (canocclude = 0), consider it unsafe.
+    private _props = lineIntersectsObjs [_empty, _empty vectorAdd [0,0,20], objNull, objNull, true, 4 + 16];
+    if (_props findIf {_x namedProperties ["Geometry"] getOrDefault ["canocclude", ""] isNotEqualTo "0"} >= 0) then {continue};
+
     if !([_empty] call _checkCondition) then {continue};
 
     _ret = _empty;
