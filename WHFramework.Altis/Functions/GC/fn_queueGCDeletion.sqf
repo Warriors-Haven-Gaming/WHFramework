@@ -29,7 +29,6 @@ Author:
     thegamecracks
 
 */
-if (!isServer) exitWith {};
 params ["_objects", ["_minDistance", -1], ["_delay", 0]];
 if !(_objects isEqualType []) then {_objects = [_objects]};
 if (_minDistance < 0) then {_minDistance = WHF_gcDeletionDistance};

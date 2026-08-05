@@ -22,8 +22,4 @@ if (isMultiplayer) then {["Initialize"] call BIS_fnc_dynamicGroups};
 
 WHF_mainMissionLoop_script = [] spawn WHF_fnc_missionLoopMain;
 WHF_sideMissionLoop_script = [] spawn WHF_fnc_missionLoopSide;
-
-WHF_gcDeletionQueue = [];
-WHF_gcUnhideQueue = [];
-WHF_garbageCollector_script = 0 spawn WHF_fnc_garbageCollectorLoop;
 WHF_timeMultiplierLoop_script = 0 spawn WHF_fnc_timeMultiplierLoop;

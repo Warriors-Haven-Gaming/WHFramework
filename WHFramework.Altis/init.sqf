@@ -14,3 +14,7 @@ diag_log text format ["Initializing %1", briefingName];
 WHF_damageSafezoneLoop_script = 0 spawn WHF_fnc_damageSafezoneLoop;
 WHF_findAPSLoop_script = 0 spawn WHF_fnc_findAPSLoop;
 WHF_simulateAPSLoop_script = 0 spawn WHF_fnc_simulateAPSLoop;
+
+WHF_gcDeletionQueue = [];
+WHF_gcUnhideQueue = [];
+WHF_garbageCollector_script = 0 spawn WHF_fnc_garbageCollectorLoop;
