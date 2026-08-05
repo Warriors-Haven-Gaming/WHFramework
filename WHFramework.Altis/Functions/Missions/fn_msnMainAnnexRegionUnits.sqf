@@ -92,7 +92,6 @@ for "_i" from 1 to _shipCount do {
 };
 
 private _area = [_center, _radius, _radius];
-private _maxDistance = 500;
-[_groups, _area, _maxDistance] spawn WHF_fnc_attackLoop;
+[_groups, _area, WHF_missions_annex_attack_distance] spawn WHF_fnc_attackLoop;
 
 [_groups, _vehicles]

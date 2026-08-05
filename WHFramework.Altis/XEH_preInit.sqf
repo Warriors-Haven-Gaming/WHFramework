@@ -954,6 +954,16 @@ call WHF_fnc_cycleFaction;
     false
 ] call WHF_fnc_addSetting;
 [
+    "WHF_missions_annex_attack_distance",
+    "SLIDER",
+    ["STR_WHF_settings_missions_annex_attack_distance", "STR_WHF_settings_missions_annex_attack_distance_tooltip"],
+    ["STR_WHF_settings_missions", "STR_WHF_settings_missions_annex"],
+    [0, 3000, 500, 0, false],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_missions_annex_units_types",
     "EDITBOX",
     ["STR_WHF_settings_missions_annex_units_types", "STR_WHF_settings_missions_annex_units_types_tooltip"],
