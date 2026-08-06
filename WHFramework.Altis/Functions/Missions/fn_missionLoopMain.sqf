@@ -8,6 +8,8 @@ Author:
     thegamecracks
 
 */
+diag_log text format ["%1: started main mission loop", _fnc_scriptName];
+
 private _minScripts = {if (WHF_missions_main_enabled) then {WHF_missions_main_min} else {0}};
 private _maxScripts = {if (WHF_missions_main_enabled) then {WHF_missions_main_max} else {0}};
 

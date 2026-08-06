@@ -8,6 +8,8 @@ Author:
     thegamecracks
 
 */
+diag_log text format ["%1: started side mission loop", _fnc_scriptName];
+
 private _functions = [
     "WHF_fnc_msnDefendAidSupplies",
     "WHF_fnc_msnDestroyAAA",
