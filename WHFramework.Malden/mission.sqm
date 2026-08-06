@@ -12,11 +12,11 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=360;
+		nextID=363;
 	};
 	class LayerIndexProvider
 	{
-		nextID=30;
+		nextID=41;
 	};
 	class Camera
 	{
@@ -321,7 +321,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=6;
+		items=7;
 		class Item0
 		{
 			dataType="Layer";
@@ -2613,7 +2613,7 @@ class Mission
 					position[]={8063,29.639599,10245};
 					name="respawn_west_pilot_transport";
 					type="Empty";
-					angle=354.99991;
+					angle=354.99988;
 					id=132;
 					class CustomAttributes
 					{
@@ -2691,7 +2691,7 @@ class Mission
 					position[]={8047,29.579199,10238};
 					name="respawn_west_pilot_cas_heli";
 					type="Empty";
-					angle=224.99992;
+					angle=224.99991;
 					id=135;
 					class CustomAttributes
 					{
@@ -6461,6 +6461,41 @@ class Mission
 			};
 			id=348;
 			atlOffset=-0.0019016266;
+		};
+		class Item6
+		{
+			dataType="Layer";
+			name="Headless Clients";
+			state=1;
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={0,-96.5,0};
+					};
+					name="HC1";
+					isPlayable=1;
+					id=360;
+					type="HeadlessClient_F";
+				};
+				class Item1
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={0,-96.5,0};
+					};
+					name="HC2";
+					isPlayable=1;
+					id=361;
+					type="HeadlessClient_F";
+				};
+			};
+			id=362;
 		};
 	};
 };
