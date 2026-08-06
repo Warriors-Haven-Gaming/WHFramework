@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=547;
+		nextID=550;
 	};
 	class MarkerIDProvider
 	{
@@ -20,7 +20,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=34;
+		nextID=44;
 	};
 	class Camera
 	{
@@ -315,7 +315,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=6;
+		items=7;
 		class Item0
 		{
 			dataType="Layer";
@@ -440,46 +440,6 @@ class Mission
 					{
 						class Attribute0
 						{
-							property="markerblink";
-							expression="if ((_value # 0 isNotEqualTo 0) || (_value # 1 isNotEqualTo 0)) then {[_this, _value # 0, _value # 1] spawn BIS_fnc_blinkMarker};";
-							class Value
-							{
-								class data
-								{
-									singleType="ARRAY";
-									class value
-									{
-										items=3;
-										class Item0
-										{
-											class data
-											{
-												singleType="SCALAR";
-												value=0;
-											};
-										};
-										class Item1
-										{
-											class data
-											{
-												singleType="SCALAR";
-												value=0;
-											};
-										};
-										class Item2
-										{
-											class data
-											{
-												singleType="SCALAR";
-												value=0;
-											};
-										};
-									};
-								};
-							};
-						};
-						class Attribute1
-						{
 							property="ENH_markerShape";
 							expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
 							class Value
@@ -491,7 +451,7 @@ class Mission
 								};
 							};
 						};
-						nAttributes=2;
+						nAttributes=1;
 					};
 				};
 			};
@@ -7510,6 +7470,41 @@ class Mission
 			};
 			id=416;
 			atlOffset=76.18;
+		};
+		class Item6
+		{
+			dataType="Layer";
+			name="Headless Clients";
+			state=1;
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={0,-76.18,0};
+					};
+					name="HC1";
+					isPlayable=1;
+					id=547;
+					type="HeadlessClient_F";
+				};
+				class Item1
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={0,-76.18,0};
+					};
+					name="HC2";
+					isPlayable=1;
+					id=548;
+					type="HeadlessClient_F";
+				};
+			};
+			id=549;
 		};
 	};
 };
