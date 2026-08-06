@@ -15,6 +15,7 @@ for any given map.
   - [Adding service stations](#adding-service-stations)
   - [Adding recruit flag poles](#adding-recruit-flag-poles)
   - [Adding vehicle spawners](#adding-vehicle-spawners)
+  - [Adding headless clients](#adding-headless-clients)
   - [(Optional) Setting default loadouts](#optional-setting-default-loadouts)
   - [(Optional) Adding time skip actions](#optional-adding-time-skip-actions)
   - [(Optional) Adding special area markers](#optional-adding-special-area-markers)
@@ -184,6 +185,28 @@ Arguments:
 
 The given object must have Simple Object and Local Only disabled
 for the action to appear.
+
+## Adding headless clients
+
+As of now, the gamemode can take advantage of up to two headless clients.
+Headless clients require a "slot" in the role selection for them to join,
+so you need to place down these entities in your scenario.
+We recommend doing the following steps:
+
+1. Go to System > Logical Entities > Virtual Entities > Headless Client
+   and place two headless clients.
+2. Set the variable name of the first client to `HC1`, and the second one to `HC2`.
+3. Select both clients at once, open Attributes, mark them as "Playable"
+   and set their positions to the map origin coordinates, `[0,0,0]`.
+4. With both clients still selected, create a new layer for them using "New Layer"
+   on the bottom left of Eden Editor, name the layer "Headless Clients",
+   and disable the layer's transformation to prevent accidental selection.
+
+If you're already familiar with setting up headless clients, you don't *have*
+to follow these steps strictly. In fact, the HC names can be anything you want
+as the gamemode does not give any special meaning to their names, and they can
+be anywhere on the map. As long as they *have* a variable name and that the HC
+entities are playable units, they will work.
 
 ## (Optional) Setting default loadouts
 
