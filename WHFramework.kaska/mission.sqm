@@ -12,11 +12,11 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=491;
+		nextID=494;
 	};
 	class LayerIndexProvider
 	{
-		nextID=40;
+		nextID=51;
 	};
 	class Camera
 	{
@@ -362,7 +362,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=6;
+		items=7;
 		class Item0
 		{
 			dataType="Layer";
@@ -11314,7 +11314,7 @@ class Mission
 							name="marker_5";
 							text="Cars";
 							type="b_motor_inf";
-							angle=179.99995;
+							angle=179.99994;
 							id=336;
 							class CustomAttributes
 							{
@@ -11685,6 +11685,41 @@ class Mission
 				};
 			};
 			id=347;
+		};
+		class Item6
+		{
+			dataType="Layer";
+			name="Headless Clients";
+			state=1;
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={0,-40,0};
+					};
+					name="HC1";
+					isPlayable=1;
+					id=491;
+					type="HeadlessClient_F";
+				};
+				class Item1
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={0,-40,0};
+					};
+					name="HC2";
+					isPlayable=1;
+					id=492;
+					type="HeadlessClient_F";
+				};
+			};
+			id=493;
 		};
 	};
 };
