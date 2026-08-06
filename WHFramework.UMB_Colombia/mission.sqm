@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=563;
+		nextID=566;
 	};
 	class MarkerIDProvider
 	{
@@ -20,7 +20,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=25;
+		nextID=34;
 	};
 	class Camera
 	{
@@ -282,7 +282,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=6;
+		items=7;
 		class Item0
 		{
 			dataType="Group";
@@ -2785,52 +2785,12 @@ class Mission
 					position[]={11907,54.384998,5626};
 					name="respawn_west_pilot_cas_plane";
 					type="Empty";
-					angle=99.999992;
+					angle=99.999985;
 					id=562;
 					atlOffset=0.00049209595;
 					class CustomAttributes
 					{
 						class Attribute0
-						{
-							property="markerblink";
-							expression="if ((_value # 0 isNotEqualTo 0) || (_value # 1 isNotEqualTo 0)) then {[_this, _value # 0, _value # 1] spawn BIS_fnc_blinkMarker};";
-							class Value
-							{
-								class data
-								{
-									singleType="ARRAY";
-									class value
-									{
-										items=3;
-										class Item0
-										{
-											class data
-											{
-												singleType="SCALAR";
-												value=0;
-											};
-										};
-										class Item1
-										{
-											class data
-											{
-												singleType="SCALAR";
-												value=0;
-											};
-										};
-										class Item2
-										{
-											class data
-											{
-												singleType="SCALAR";
-												value=0;
-											};
-										};
-									};
-								};
-							};
-						};
-						class Attribute1
 						{
 							property="ENH_markerShape";
 							expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
@@ -2843,7 +2803,7 @@ class Mission
 								};
 							};
 						};
-						nAttributes=2;
+						nAttributes=1;
 					};
 				};
 			};
@@ -4982,6 +4942,41 @@ class Mission
 			};
 			id=432;
 			atlOffset=-87.577431;
+		};
+		class Item6
+		{
+			dataType="Layer";
+			name="Headless Clients";
+			state=1;
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={0,87.577431,0};
+					};
+					name="HC2";
+					isPlayable=1;
+					id=564;
+					type="HeadlessClient_F";
+				};
+				class Item1
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={0,87.577431,0};
+					};
+					name="HC1";
+					isPlayable=1;
+					id=563;
+					type="HeadlessClient_F";
+				};
+			};
+			id=565;
 		};
 	};
 };
