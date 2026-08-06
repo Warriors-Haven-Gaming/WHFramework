@@ -12,11 +12,11 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1347;
+		nextID=1350;
 	};
 	class LayerIndexProvider
 	{
-		nextID=225;
+		nextID=237;
 	};
 	class Camera
 	{
@@ -502,7 +502,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=3;
+		items=4;
 		class Item0
 		{
 			dataType="Layer";
@@ -649,19 +649,19 @@ class Mission
 							};
 							id=542;
 							type="Peral_F16V";
-							atlOffset=-0.015918732;
+							atlOffset=-0.01594162;
 							class CustomAttributes
 							{
 								class Attribute0
 								{
-									property="F16VFontStyle";
-									expression="_this setVariable [""F16VFontStyle"", _value]; [_this, _value] call lala_peral_F16V_fnc_applyAircraftFontStyle; [_this,_this getVariable [""F16V_Squadron_Insignia"",""None""]] call Peral_F16V_fnc_Squadron_Insignia;";
+									property="F16V_Squadron_Insignia";
+									expression="_this setVariable [""F16V_Squadron_Insignia"", _value]; [_this,_value] call Peral_F16V_fnc_Squadron_Insignia;";
 									class Value
 									{
 										class data
 										{
 											singleType="STRING";
-											value="white_font";
+											value="None";
 										};
 									};
 								};
@@ -719,14 +719,14 @@ class Mission
 								};
 								class Attribute5
 								{
-									property="F16V_Squadron_Insignia";
-									expression="_this setVariable [""F16V_Squadron_Insignia"", _value]; [_this,_value] call Peral_F16V_fnc_Squadron_Insignia;";
+									property="F16VFontStyle";
+									expression="_this setVariable [""F16VFontStyle"", _value]; [_this, _value] call lala_peral_F16V_fnc_applyAircraftFontStyle; [_this,_this getVariable [""F16V_Squadron_Insignia"",""None""]] call Peral_F16V_fnc_Squadron_Insignia;";
 									class Value
 									{
 										class data
 										{
 											singleType="STRING";
-											value="None";
+											value="white_font";
 										};
 									};
 								};
@@ -15934,7 +15934,7 @@ class Mission
 							{
 							};
 							id=924;
-							type="Land_BackAlley_01_l_gate_F";
+							type="land_backalley_01_l_gate_f";
 							class CustomAttributes
 							{
 								class Attribute0
@@ -18659,6 +18659,41 @@ class Mission
 			};
 			id=1216;
 			atlOffset=35.91;
+		};
+		class Item3
+		{
+			dataType="Layer";
+			name="Headless Clients";
+			state=1;
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={0,-35.91,0};
+					};
+					name="HC1";
+					isPlayable=1;
+					id=1347;
+					type="HeadlessClient_F";
+				};
+				class Item1
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={0,-35.91,0};
+					};
+					name="HC2";
+					isPlayable=1;
+					id=1348;
+					type="HeadlessClient_F";
+				};
+			};
+			id=1349;
 		};
 	};
 };
