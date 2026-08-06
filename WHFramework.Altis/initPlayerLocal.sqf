@@ -14,16 +14,9 @@ Author:
 
 */
 params ["_player"];
+
+[] call WHF_fnc_waitSyncCBA;
 if (!hasInterface) exitWith {};
-
-// HACK: wait a bit for CBA settings to sync
-private _timeout = time + 1;
-waitUntil {
-    time > _timeout
-    || {!isNil "WHF_loadout_blacklist"
-    && {!(WHF_loadout_blacklist isEqualType "")}}
-};
-
 if (isMultiplayer) then {["InitializePlayer", [player]] call BIS_fnc_dynamicGroups};
 
 // Functions that require mission display

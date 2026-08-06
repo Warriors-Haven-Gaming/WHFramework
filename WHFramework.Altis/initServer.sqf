@@ -25,8 +25,14 @@ if (isMultiplayer) then {["Initialize"] call BIS_fnc_dynamicGroups};
 WHF_timeMultiplierLoop_script = 0 spawn WHF_fnc_timeMultiplierLoop;
 
 private _headlessClients =  entities "HeadlessClient_F" select {isPlayer _x};
-private _runMissionLoopMain = {WHF_mainMissionLoop_script = [] spawn WHF_fnc_missionLoopMain};
-private _runMissionLoopSide = {WHF_sideMissionLoop_script = [] spawn WHF_fnc_missionLoopSide};
+private _runMissionLoopMain = {
+    [] call WHF_fnc_waitSyncCBA;
+    WHF_mainMissionLoop_script = [] spawn WHF_fnc_missionLoopMain;
+};
+private _runMissionLoopSide = {
+    [] call WHF_fnc_waitSyncCBA;
+    WHF_sideMissionLoop_script = [] spawn WHF_fnc_missionLoopSide;
+};
 switch (true) do {
     case (_headlessClients isEqualTo []): {
         diag_log text format ["%1: Starting main/side mission loops on server", _fnc_scriptName];
@@ -43,8 +49,8 @@ switch (true) do {
             name _sideHC
         ];
 
-        [0, _runMissionLoopMain] remoteExec ["call", _mainHC];
-        [0, _runMissionLoopSide] remoteExec ["call", _sideHC];
+        [0, _runMissionLoopMain] remoteExec ["spawn", _mainHC];
+        [0, _runMissionLoopSide] remoteExec ["spawn", _sideHC];
 
         if (count _headlessClients > 2) then {diag_log text format [
             "%1: %2 more headless clients detected, they will be unused!",
@@ -60,7 +66,7 @@ switch (true) do {
             name _mainHC
         ];
 
-        [0, _runMissionLoopMain] remoteExec ["call", _mainHC];
-        [0, _runMissionLoopSide] remoteExec ["call", _mainHC];
+        [0, _runMissionLoopMain] remoteExec ["spawn", _mainHC];
+        [0, _runMissionLoopSide] remoteExec ["spawn", _mainHC];
     };
 };
