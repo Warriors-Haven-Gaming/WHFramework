@@ -36,7 +36,7 @@ are backed up and are able to receive the default loadouts.
 [
     "WHF_loadout_collection",
     "EDITBOX",
-    ["STR_WHF_settings_loadouts_collection", "STR_WHF_settings_loadouts_collection_tooltip"],
+    ["STR_WHF_settings_loadout_collection", "STR_WHF_settings_loadout_collection_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_loadouts"],
     "main", // <-- Change this text here
     false,
