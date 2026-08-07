@@ -52,11 +52,7 @@ _arsenal addAction [
         private _reason = [_caller] call WHF_fnc_checkRearmAllowed;
         if (_reason isNotEqualTo "") exitWith {50 cutText [_reason, "PLAIN", 0.5]};
 
-        if (isClass (configFile >> "CfgPatches" >> "ace_medical")) then {
-            _caller call ace_medical_fnc_fullHeal;
-        } else {
-            _caller setDamage 0;
-        };
+        _caller call WHF_fnc_healUnit;
 
         private _loadout = [] call WHF_fnc_getLastLoadout;
         if (_loadout isEqualTo []) exitWith {};

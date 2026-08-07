@@ -8,7 +8,7 @@ Author:
     thegamecracks
 
 */
-private _hasACEMedical = isClass (configFile >> "CfgPatches" >> "ace_medical");
+private _hasCustomMedical = call WHF_fnc_getMedicalSystem isNotEqualTo "";
 
 while {true} do {
     sleep (1 + random 1);
@@ -35,7 +35,7 @@ while {true} do {
         };
     } forEach call WHF_fnc_listSafezones;
 
-    if (_hasACEMedical && {isNil "WHF_debug_disable_ace_safezone"}) then {
+    if (_hasCustomMedical && {isNil "WHF_debug_disable_ace_safezone"}) then {
         // FIXME: only block friendly fire with ACE, rather than all incoming damage
         // FIXME: vehicles left by players can gain persistent invulnerability
         //        since their side becomes unknown.

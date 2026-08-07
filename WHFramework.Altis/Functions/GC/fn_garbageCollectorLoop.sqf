@@ -35,8 +35,6 @@ private _processDiscreetQueue = {
 };
 
 private _deleteAbandonedRecruits = {
-    private _hasACEMedical = isClass (configFile >> "CfgPatches" >> "ace_medical");
-
     {
         private _recruits = [];
         private _recruitOwners = [];
@@ -58,12 +56,14 @@ private _deleteAbandonedRecruits = {
             if !(_x getVariable "WHF_recruiter" in _missingOwners) then {continue};
 
             private _incapacitated = lifeState _x isEqualTo "INCAPACITATED";
-            if (_incapacitated && _hasACEMedical) then {continue};
+            if (_incapacitated && _hasCustomMedical) then {continue};
 
             deleteVehicle _x;
         } forEach _recruits;
     } forEach groups blufor;
 };
+
+private _hasCustomMedical = call WHF_fnc_getMedicalSystem isNotEqualTo "";
 
 while {true} do {
     sleep (10 + random 10);

@@ -13,7 +13,7 @@ Author:
 
 */
 params ["_recruit"];
-if (isClass (configFile >> "CfgPatches" >> "ace_medical")) exitWith {};
+if (call WHF_fnc_getMedicalSystem isNotEqualTo "") exitWith {};
 _recruit addEventHandler ["HandleDamage", {call {
     params ["_unit", "", "_damage", "_source", "", "_hitIndex", "_instigator"];
 

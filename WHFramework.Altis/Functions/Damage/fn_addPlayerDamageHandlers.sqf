@@ -9,7 +9,7 @@ Author:
 
 */
 if (!hasInterface) exitWith {};
-if (isClass (configFile >> "CfgPatches" >> "ace_medical")) exitWith {};
+if (call WHF_fnc_getMedicalSystem isNotEqualTo "") exitWith {};
 player addEventHandler ["HandleDamage", {call {
     params ["_unit", "", "_damage", "_source", "", "_hitIndex", "_instigator"];
 

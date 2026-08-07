@@ -60,8 +60,8 @@ private _speakerJIPID = netId _unit + ":WHF_setSpeaker";
 [_unit, _voice] remoteExec ["WHF_fnc_setSpeaker", _target, _speakerJIPID];
 
 [_unit] call WHF_fnc_initVehicleLockHandlers;
-if (!isClass (configFile >> "CfgPatches" >> "ace_medical")) then {
-    [_unit] call WHF_fnc_addRecruitDamageHandlers;
+[_unit] call WHF_fnc_addRecruitDamageHandlers;
+if (call WHF_fnc_getMedicalSystem isEqualTo "") then {
     _unit setVariable ["WHF_reviveActionAuto_script", _unit spawn WHF_fnc_reviveActionAuto];
 
     _unit spawn {

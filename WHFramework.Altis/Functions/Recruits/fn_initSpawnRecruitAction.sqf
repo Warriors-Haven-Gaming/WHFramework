@@ -72,11 +72,7 @@ _spawner addAction [
             [_x, [_x] call WHF_fnc_getLastLoadout]
         });
 
-        if (isClass (configFile >> "CfgPatches" >> "ace_medical")) then {
-            {_x call ace_medical_fnc_fullHeal} forEach _recruits;
-        } else {
-            {_x setDamage 0} forEach _recruits;
-        };
+        {_x call WHF_fnc_healUnit} forEach _recruits;
 
         _recruits = _recruits select {
             private _role = _x getVariable "WHF_role";

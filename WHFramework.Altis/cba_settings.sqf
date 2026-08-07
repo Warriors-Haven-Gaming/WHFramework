@@ -1,3 +1,24 @@
+// Armor Plates System
+force diw_armor_plates_main_allowSelfRevive = true;
+force diw_armor_plates_main_bleedoutTime = 600;
+force diw_armor_plates_main_bleedoutTimeSubtraction = 30;
+force diw_armor_plates_main_enableAIUnconscious = true;
+force diw_armor_plates_main_enableHealRegen = 1;
+force diw_armor_plates_main_enableHpRegen = true;
+force diw_armor_plates_main_headshotMult = 1;
+force diw_armor_plates_main_hpRegenRate = 5;
+force diw_armor_plates_main_maxHealMedic = 1;
+force diw_armor_plates_main_maxHealRegen = 0.5;
+force diw_armor_plates_main_maxHealRifleman = 0.75;
+force diw_armor_plates_main_maxPlateHealth = 100;
+force force diw_armor_plates_main_maxPlayerHP = 300;
+force diw_armor_plates_main_medicReviveTime = 5;
+force diw_armor_plates_main_minBleedoutTime = 60;
+force diw_armor_plates_main_plateToughness = true;
+force diw_armor_plates_main_requestAIforHelp = true;
+force diw_armor_plates_main_spawnWithFullPlates = true;
+force diw_armor_plates_main_useHandleDamageFiltering = true;
+
 // Death and Hit Reactions
 force WBK_DeathAnimMod_Hit_PLR = false;
 
