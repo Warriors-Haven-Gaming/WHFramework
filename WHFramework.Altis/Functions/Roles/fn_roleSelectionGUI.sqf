@@ -159,7 +159,7 @@ isNil {with uiNamespace do {
 
         private _players = [_role] call WHF_roleSelectionGUI_ctrlPlayersInRole;
         private _limit = [_role] call WHF_fnc_getRoleLimit;
-        if (count _players >= _limit) exitWith {false};
+        if (isPlayer focusOn && {count _players >= _limit}) exitWith {false};
 
         true
     };
