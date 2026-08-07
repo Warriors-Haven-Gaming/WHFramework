@@ -54,7 +54,7 @@ _arsenal addAction [
 
         _caller call WHF_fnc_healUnit;
 
-        private _loadout = [] call WHF_fnc_getLastLoadout;
+        private _loadout = [_caller getVariable "WHF_role"] call WHF_fnc_getLastLoadout;
         if (_loadout isEqualTo []) exitWith {};
         if !([_caller, _loadout] call WHF_fnc_setUnitLoadout) exitWith {};
 

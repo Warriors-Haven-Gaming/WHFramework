@@ -136,7 +136,7 @@ isNil {with uiNamespace do {
 
         focusOn setVariable ["WHF_role", _selected, true];
         with missionNamespace do {
-            private _loadout = [] call WHF_fnc_getLastLoadout;
+            private _loadout = [focusOn getVariable "WHF_role"] call WHF_fnc_getLastLoadout;
             if (_loadout isEqualTo []) exitWith {};
             [focusOn, _loadout] spawn WHF_fnc_setUnitLoadout;
             [focusOn, _selected] call WHF_fnc_setRoleTraits;
