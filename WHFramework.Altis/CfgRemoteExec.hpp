@@ -31,7 +31,7 @@ class CfgRemoteExec {
         class BIS_fnc_sayMessage { allowedTargets = 1; };
         class BIS_fnc_setCustomSoundController {};
         class BIS_fnc_setIdentity {};
-        class BIS_fnc_setTask { jip = 1; };
+        class BIS_fnc_setTask {};
         class BIS_fnc_setTaskLocal { jip = 1; };
         class BIS_fnc_sharedObjectives {};
         class BIS_fnc_showNotification { allowedTargets = 1; };
