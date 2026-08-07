@@ -837,6 +837,16 @@ call WHF_fnc_cycleFaction;
     {},
     false
 ] call WHF_fnc_addSetting;
+[
+    "WHF_loadout_save_on_arsenal",
+    "CHECKBOX",
+    ["STR_WHF_settings_loadout_save_on_arsenal", "STR_WHF_settings_loadout_save_on_arsenal_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_loadouts"],
+    true,
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
 
 // Locks
 [

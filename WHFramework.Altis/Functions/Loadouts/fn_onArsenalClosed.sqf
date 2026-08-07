@@ -9,6 +9,7 @@ Author:
 
 */
 if (isNil "WHF_loadout_center") exitWith {};
+if (!WHF_loadout_save_on_arsenal) exitWith {};
 if !(WHF_loadout_center isKindOf "Man") exitWith {};
 
 private _role = WHF_loadout_center getVariable "WHF_role";
