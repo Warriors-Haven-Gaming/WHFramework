@@ -2,8 +2,7 @@
 Function: WHF_fnc_initManualFireSlewHandlers
 
 Description:
-    Set up laser target handlers for recruits.
-    Function must be executed in scheduled environment.
+    Set up manual fire turret slewing handlers.
 
 Author:
     thegamecracks
