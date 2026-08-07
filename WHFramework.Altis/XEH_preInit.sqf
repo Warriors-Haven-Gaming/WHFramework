@@ -1159,6 +1159,16 @@ call WHF_fnc_cycleFaction;
     false
 ] call WHF_fnc_addSetting;
 [
+    "WHF_recruits_manual_fire_slew",
+    "CHECKBOX",
+    ["STR_WHF_settings_recruits_manual_fire_slew", "STR_WHF_settings_recruits_manual_fire_slew_tooltip"],
+    "STR_WHF_settings_recruits",
+    true,
+    false,
+    {},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_recruits_limit",
     "SLIDER",
     ["STR_WHF_settings_recruits_limit", "STR_WHF_settings_recruits_limit_tooltip"],
