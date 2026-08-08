@@ -17,6 +17,7 @@ private _id = [
     "\A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_revive_ca.paa",
     "\A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_revive_ca.paa",
     toString {
+        // Partially duplicated in WHF_fnc_respawnActionAdd
         count allPlayers <= WHF_selfRevive_maxPlayers
         && {lifeState _target isEqualTo "INCAPACITATED"
         && {_target isNil "WHF_revive_caller"

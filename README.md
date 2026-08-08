@@ -109,8 +109,7 @@ and load Warriors Haven Framework in the Arma 3 Launcher.
 
 After loading the mod, you can start the gamemode from Scenarios in the main menu,
 or host it by going to Server Browser > Host Server and selecting Warriors Haven Framework
-from the appropriate map. Beware that if you play the SP version from the Scenarios menu,
-you will not be able to respawn when you die and will have to restart the mission each time.
+from the appropriate map.
 
 For dedicated server hosters, you can also host the gamemode directly from
 the mission files on our [Releases] page. This allows players to join without

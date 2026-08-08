@@ -19,6 +19,7 @@ if (_unit isNil "WHF_role") then {
     _unit setVariable ["WHF_role", "rifleman", true];
 };
 
+// NOTE: partially duplicated in WHF_fnc_respawnUnit
 private _loadout = [] call WHF_fnc_getLastLoadout;
 if (_loadout isNotEqualTo []) then {[_unit, _loadout] spawn WHF_fnc_setUnitLoadout};
 [_unit] call WHF_fnc_setRoleTraits;

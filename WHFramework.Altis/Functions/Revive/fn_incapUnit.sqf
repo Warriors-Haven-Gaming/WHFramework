@@ -30,7 +30,10 @@ if !(_unit isKindOf "Man") exitWith {};
 [_unit] call WHF_fnc_addCarryAction;
 
 if (!isRemoteExecutedJIP) then {
-    if (_unit isEqualTo player) then {call WHF_fnc_selfReviveAdd};
+    if (_unit isEqualTo player) then {
+        call WHF_fnc_selfReviveAdd;
+        if (!isMultiplayer) then {call WHF_fnc_respawnActionAdd};
+    };
     if (isPlayer _unit) then {
         private _friendly = side group _unit isEqualTo side group _killer;
         private _pvp = isPlayer _killer;
