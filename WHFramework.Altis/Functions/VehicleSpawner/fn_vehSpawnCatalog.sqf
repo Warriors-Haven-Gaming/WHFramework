@@ -379,6 +379,7 @@ private _artillery = [
     ["pook_9k52_blufor",                            [-1,   ["arty"]]],
     ["pook_4k51_blufor",                            [-1,   ["arty"]]],
     ["pook_3k60_blufor",                            [-1,   ["arty"]]],
+    ["rds_m119_fia",                                [-1,   ["arty"]]],
     ["cup_b_m270_he_baf_wood",                      [-1,   ["arty"]]],
     ["cup_b_m270_dpicm_baf_wood",                   [-1,   ["arty"]]],
     ["b_mbt_01_mlrs_f",                             [-1,   ["arty"]]],
