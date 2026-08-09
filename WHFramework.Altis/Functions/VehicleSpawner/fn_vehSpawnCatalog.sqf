@@ -731,6 +731,7 @@ private _ships = [
     ["c_scooter_transport_01_f",            [-1,  []]],
     ["cup_b_rhib_usmc",                     [-1,  []]],
     ["cup_b_zodiac_usmc",                   [-1,  []]],
+    ["peral_lcac",                          [-1,  []]],
     ["bae_fic",                             [-1,  []]],
     ["rhicc_green",                         [-1,  []]],
     ["rhicc_gray",                          [-1,  []]],
