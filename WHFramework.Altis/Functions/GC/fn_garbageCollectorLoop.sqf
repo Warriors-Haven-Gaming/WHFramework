@@ -71,8 +71,7 @@ while {true} do {
     if (isServer) then {call _deleteAbandonedRecruits};
 
     private _remoteControlledUnits = allPlayers apply {remoteControlled _x} select {!isNull _x};
-    private _units = units blufor select {isPlayer _x};
-    _units append allPlayers;
+    private _units = allPlayers - entities "HeadlessClient_F";
     _units append _remoteControlledUnits;
     _units = _units arrayIntersect _units;
 
