@@ -77,5 +77,9 @@ while {true} do {
     _units = _units arrayIntersect _units;
 
     [WHF_gcDeletionQueue, _units, {deleteVehicle _x}] call _processDiscreetQueue;
-    [WHF_gcUnhideQueue, _units, {_x hideObjectGlobal false; _x allowDamage true}] call _processDiscreetQueue;
+
+    // NOTE: closures not supported, caller must inherit our scope and not shadow our variable
+    private _hiddenQueue = [];
+    [WHF_gcUnhideQueue, _units, {_hiddenQueue pushBack _x}] call _processDiscreetQueue;
+    if (_hiddenQueue isNotEqualTo []) then {[_hiddenQueue, false] call WHF_fnc_hideObjectGlobal};
 };

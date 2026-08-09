@@ -87,7 +87,7 @@ private _compositionGroups = [];
     _pos = _pos vectorAdd [0,0,0];
 
     private _terrain = nearestTerrainObjects [_pos, [], _clearRadius, false, true];
-    {hideObjectGlobal _x; _x allowDamage false} forEach _terrain;
+    [_terrain, true] call WHF_fnc_hideObjectGlobal;
 
     private _objects = [];
     private _direction = random 360;

@@ -43,7 +43,7 @@ private _infantryTypes = [_standard, ["aa", _faction], ["at", _faction]];
 private _officer = ["officer", _faction];
 
 private _posTerrain = nearestTerrainObjects [_pos, [], 25, false, true];
-{hideObjectGlobal _x; _x allowDamage false} forEach _posTerrain;
+[_posTerrain, true] call WHF_fnc_hideObjectGlobal;
 _terrain pushBack _posTerrain;
 
 private _structure = [["Land_Cargo_House_V4_F",[-2.09961,1.59961,0],0],["Land_SurvivalRadio_F",[-4.59961,2.09961,1.47975],45],["Land_PCSet_01_screen_F",[-2.89453,1.93848,1.48],180],["Land_PCSet_01_keyboard_F",[-2.85938,2.3252,1.48],180],["Land_PCSet_01_mouse_F",[-3.16992,2.33887,1.48],180],["Land_PortableDesk_01_olive_F",[-3.59961,2.09961,0.592812],0],["Land_DeskChair_01_olive_F",[-2.85,2.5,0.592812],0],["Land_Printer_01_F",[-3.59961,2.09961,1.489],180],["Land_PCSet_01_case_F",[-4.09961,2.09961,0.593],180],["Land_CampingTable_F",[-2.09961,5.09961,0.729],0],["OmniDirectionalAntenna_01_black_F",[-0.0361328,2.5459,3.118],0],["Land_Camping_Light_F",[-2.91699,5.29492,1.545],0],["SatelliteAntenna_01_Mounted_Black_F",[1.12,5.59961,1.78],90]];

@@ -46,7 +46,7 @@ private _infantryTypes = [_standard, ["aa", _faction], ["at", _faction]];
 private _area = [_center, _radius, _radius];
 
 private _terrainObjects = nearestTerrainObjects [_center, [], 20, false, true];
-_terrainObjects apply {hideObjectGlobal _x; _x allowDamage false};
+[_terrainObjects, true] call WHF_fnc_hideObjectGlobal;
 
 private _objects = [];
 private _groups = [];

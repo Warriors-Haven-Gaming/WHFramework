@@ -42,7 +42,7 @@ private _standard = ["standard", _faction];
 private _infantryTypes = [_standard, ["aa", _faction], ["at", _faction]];
 
 private _terrain = nearestTerrainObjects [_center, [], 20, false, true];
-_terrain apply {hideObjectGlobal _x; _x allowDamage false};
+[_terrain, true] call WHF_fnc_hideObjectGlobal;
 
 private _intel = [
     [

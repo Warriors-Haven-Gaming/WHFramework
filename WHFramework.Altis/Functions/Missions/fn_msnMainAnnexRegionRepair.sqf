@@ -43,7 +43,7 @@ private _infantryTypes = [_standard, ["aa", _faction], ["at", _faction]];
 private _apc = ["apc", _faction];
 
 private _posTerrain = nearestTerrainObjects [_pos, [], 25, false, true];
-{hideObjectGlobal _x; _x allowDamage false} forEach _posTerrain;
+[_posTerrain, true] call WHF_fnc_hideObjectGlobal;
 _terrain pushBack _posTerrain;
 
 private _centerVehicle = selectRandom ([_apc] call WHF_fnc_getVehicleTypes);
