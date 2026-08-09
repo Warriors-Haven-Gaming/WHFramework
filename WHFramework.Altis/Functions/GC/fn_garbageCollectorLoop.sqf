@@ -70,6 +70,11 @@ while {true} do {
 
     if (isServer) then {call _deleteAbandonedRecruits};
 
+    if (
+        WHF_gcDeletionQueue isEqualTo []
+        && {WHF_gcUnhideQueue isEqualTo []}
+    ) then {continue};
+
     private _remoteControlledUnits = allPlayers apply {remoteControlled _x} select {!isNull _x};
     private _units = allPlayers - entities "HeadlessClient_F";
     _units append _remoteControlledUnits;
