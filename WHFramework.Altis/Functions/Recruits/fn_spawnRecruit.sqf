@@ -69,6 +69,7 @@ if (call WHF_fnc_getMedicalSystem isEqualTo "") then {
         while {true} do {
             sleep (10 + random 10);
             if (!alive _this) then {break};
+            if (!local _this) then {continue};
             if (!isPlayer leader _this) then {continue};
             if !(lifeState _this in ["HEALTHY", "INJURED"]) then {continue};
             if (_this getHit "legs" < 0.5) then {continue};
