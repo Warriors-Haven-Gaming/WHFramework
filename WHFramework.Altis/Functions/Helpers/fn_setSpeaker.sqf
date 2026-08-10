@@ -17,5 +17,5 @@ Author:
 
 */
 params ["_unit", "_speaker"];
-if (!alive _unit && {isRemoteExecutedJIP}) then {remoteExec ["", remoteExecutedJIPID]};
+if (!alive _unit && {isRemoteExecutedJIP}) exitWith {remoteExec ["", remoteExecutedJIPID]};
 _unit setSpeaker _speaker;
