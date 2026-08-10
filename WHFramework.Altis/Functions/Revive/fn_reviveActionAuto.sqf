@@ -26,6 +26,7 @@ _unit setVariable ["WHF_fnc_reviveActionAuto_script", _thisScript];
 private _canRevive = {
     if (!local _unit) exitWith {false};
     if (!isNull objectParent _unit) exitWith {false};
+    if !(lifeState _unit in ["HEALTHY", "INJURED"]) exitWith {false};
     if !(currentCommand _unit in _allowedCommands) exitWith {false};
     if (_unit call WHF_fnc_unitIsReviving) exitWith {false};
     true
