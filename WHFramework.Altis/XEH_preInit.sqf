@@ -117,6 +117,8 @@ Author:
     true,
     {
         WHF_curators_uids = parseSimpleArray _this;
+        WHF_curators_uids pushBack "_SP_PLAYER_";
+        WHF_curators_uids = WHF_curators_uids arrayIntersect WHF_curators_uids;
         if (isServer) then {call WHF_fnc_refreshCurators};
     },
     false
