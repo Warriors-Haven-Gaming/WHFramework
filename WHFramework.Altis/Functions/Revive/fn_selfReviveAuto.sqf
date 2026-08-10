@@ -69,7 +69,7 @@ private _bleedoutAt = _incappedAt + WHF_revive_bleedout; // Duplicated in WHF_fn
 private _randomDelay = random 5; // Helps avoid units simultaneously reviving
 private _mustRevive = _bleedoutAt - _duration - 10;
 private _startedAt = -1;
-while {local _unit && {lifeState _unit isEqualTo "INCAPACITATED"}} do {
+while {lifeState _unit isEqualTo "INCAPACITATED"} do {
     sleep (1 + random 1);
 
     private _time = time;
@@ -88,6 +88,6 @@ while {local _unit && {lifeState _unit isEqualTo "INCAPACITATED"}} do {
     if (_time < _startedAt + _duration) then {continue};
 
     {_unit removeItem _x} forEach _FAKs;
-    _unit call WHF_fnc_reviveUnit;
+    [_unit] remoteExec ["WHF_fnc_reviveUnit", _unit];
     break;
 };
