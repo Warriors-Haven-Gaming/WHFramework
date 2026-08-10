@@ -15,6 +15,8 @@ Author:
 */
 params ["_unit"];
 
+[] call WHF_fnc_waitSyncCBA;
+
 if (_unit isNil "WHF_role") then {
     _unit setVariable ["WHF_role", "rifleman", true];
 };

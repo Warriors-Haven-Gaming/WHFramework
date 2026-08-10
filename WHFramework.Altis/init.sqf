@@ -11,6 +11,8 @@ Author:
 */
 diag_log text format ["Initializing %1", briefingName];
 
+[] call WHF_fnc_waitSyncCBA;
+
 WHF_damageSafezoneLoop_script = 0 spawn WHF_fnc_damageSafezoneLoop;
 WHF_findAPSLoop_script = 0 spawn WHF_fnc_findAPSLoop;
 WHF_simulateAPSLoop_script = 0 spawn WHF_fnc_simulateAPSLoop;
