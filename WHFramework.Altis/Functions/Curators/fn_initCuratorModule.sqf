@@ -23,6 +23,11 @@ _module addEventHandler ["CuratorObjectPlaced", {
 }];
 
 // WARNING: possible race condition with server-side assignCurator call?
+if (isRemoteExecuted) then {
+    private _timeout = time + 10;
+    waitUntil {sleep 1; time > _timeout || {getAssignedCuratorLogic player isEqualTo _module}};
+};
+
 if (getAssignedCuratorLogic player isEqualTo _module) then {
     [player, activatedAddons] remoteExec ["WHF_fnc_addCuratorAddons", 2];
 };
