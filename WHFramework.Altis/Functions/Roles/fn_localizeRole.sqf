@@ -16,6 +16,7 @@ Author:
 
 */
 params ["_role"];
+// Must support calling from uiNamespace
 switch (_role) do {
     case "autorifleman": {localize "str_b_soldier_ar_f0"};
     case "engineer": {localize "str_b_engineer_f0"};

@@ -18,7 +18,8 @@ Author:
 */
 params ["_role"];
 
-private _current = count call WHF_fnc_listPlayers;
+// Must support calling from uiNamespace
+private _current = count call (missionNamespace getVariable "WHF_fnc_listPlayers");
 private _calculateLimit = {
     params ["_start", "_step"];
     floor (_start + _current / _step)
