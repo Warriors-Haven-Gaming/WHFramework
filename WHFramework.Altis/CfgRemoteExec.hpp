@@ -71,6 +71,7 @@ class CfgRemoteExec {
         class WHF_fnc_removePrisonerActions {};
         class WHF_fnc_reportJTACTarget { allowedTargets = 2; };
         class WHF_fnc_requestSkipTime { allowedTargets = 2; };
+        class WHF_fnc_reviveActionAuto {};
         class WHF_fnc_reviveUnit {};
         class WHF_fnc_securePrisoner {};
         class WHF_fnc_selfDestructUAV {};

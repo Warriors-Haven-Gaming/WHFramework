@@ -3,8 +3,9 @@ Function: WHF_fnc_reviveActionAuto
 
 Description:
     Handle automatically performing revives on nearby units.
+    This may be called on a remote unit, in which case the script will
+    idle until the unit is killed or becomes local.
     Function must be executed in scheduled environment.
-    Function must be executed where unit is local.
 
 Parameters:
     Object unit:
@@ -15,8 +16,15 @@ Author:
 
 */
 params ["_unit"];
+if (!alive _unit) exitWith {
+    if (isRemoteExecutedJIP) then {remoteExec ["", remoteExecutedJIPID]};
+};
+
+if (!scriptDone (_unit getVariable ["WHF_fnc_reviveActionAuto_script", scriptNull])) exitWith {};
+_unit setVariable ["WHF_fnc_reviveActionAuto_script", _thisScript];
 
 private _canRevive = {
+    if (!local _unit) exitWith {false};
     if (!isNull objectParent _unit) exitWith {false};
     if !(currentCommand _unit in _allowedCommands) exitWith {false};
     if (_unit call WHF_fnc_unitIsReviving) exitWith {false};
@@ -75,7 +83,7 @@ private _cancelTarget = {
         _assignedTarget setVariable ["WHF_reviveActionAuto_assigned", nil];
     };
     _assignedTarget = objNull;
-    _unit doFollow leader _unit;
+    if (local _unit) then {_unit doFollow leader _unit};
 };
 
 private _isAssigned = {
@@ -115,9 +123,7 @@ private _reviveRange = {
 private _allowedCommands = ["", "WAIT", "ATTACK", "MOVE", "GET OUT", "ATTACKFIRE", "Suppress"];
 private _assignedTarget = objNull;
 
-while {true} do {
-    if (!local _unit || {!alive _unit}) exitWith {call _cancelTarget};
-
+while {alive _unit} do {
     if (isNull _assignedTarget) then {sleep (2 + random 2)};
     if (!call _canRevive) then {call _cancelTarget; continue};
 

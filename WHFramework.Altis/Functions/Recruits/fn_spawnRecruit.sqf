@@ -62,8 +62,10 @@ private _speakerJIPID = netId _unit + ":WHF_setSpeaker";
 [_unit] call WHF_fnc_initVehicleLockHandlers;
 [_unit] call WHF_fnc_addRecruitDamageHandlers;
 if (call WHF_fnc_getMedicalSystem isEqualTo "") then {
-    _unit setVariable ["WHF_reviveActionAuto_script", _unit spawn WHF_fnc_reviveActionAuto];
+    private _reviveJIPID = netId _unit + ":reviveActionAuto";
+    [_unit] remoteExec ["WHF_fnc_reviveActionAuto", 0, _reviveJIPID];
 
+    // FIXME: handle auto-healing on all clients, including JIP
     _unit spawn {
         scriptName "WHF_fnc_spawnRecruit_autoHeal";
         while {true} do {
