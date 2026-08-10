@@ -62,7 +62,7 @@ _areaMarker setMarkerColorLocal "ColorBlue";
 _areaMarker setMarkerAlpha 0.7;
 
 private _playersInArea = {
-    allPlayers
+    call WHF_fnc_listPlayers
         select {side group _x isEqualTo blufor}
         inAreaArray _area
 };

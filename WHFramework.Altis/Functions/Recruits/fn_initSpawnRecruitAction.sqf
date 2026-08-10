@@ -23,7 +23,7 @@ _spawner addAction [
         if (leader _caller isNotEqualTo _caller) exitWith {
             hint localize "$STR_WHF_spawnRecruit_leader";
         };
-        if (count allPlayers > WHF_recruits_limit_player) exitWith {
+        if (count call WHF_fnc_listPlayers > WHF_recruits_limit_player) exitWith {
             hint format [localize "$STR_WHF_spawnRecruit_limit_player", WHF_recruits_limit_player];
         };
         private _reason = [_caller] call WHF_fnc_checkRearmAllowed;

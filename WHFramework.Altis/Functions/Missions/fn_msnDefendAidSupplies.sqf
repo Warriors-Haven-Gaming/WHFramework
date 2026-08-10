@@ -132,7 +132,7 @@ private _taskID = [
 ] call WHF_fnc_taskCreate;
 
 private _playersInArea = {
-    allPlayers
+    call WHF_fnc_listPlayers
         select {side group _x isEqualTo blufor}
         inAreaArray [_center, _radius, _radius, 0, false, 50]
 };

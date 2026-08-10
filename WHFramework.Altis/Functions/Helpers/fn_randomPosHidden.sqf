@@ -56,7 +56,7 @@ private _condition = {
         private _surfaces = lineIntersectsSurfaces [_eyePos, _posASL, _x];
         if (_surfaces findIf {!(typeOf (_x # 3) in ["hatg_mirror"])} < 0) exitWith {false};
         true
-    } forEach (allPlayers select {!(_x isKindOf "VirtualMan_F")})
+    } forEach call WHF_fnc_listPlayers
 };
 
 [

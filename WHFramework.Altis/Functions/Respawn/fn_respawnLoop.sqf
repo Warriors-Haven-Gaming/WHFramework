@@ -100,10 +100,10 @@ while {true} do {
 
     private _time = time;
 
+    private _units = call WHF_fnc_listPlayers;
     private _recruits = allUnits select {!(_x isNil "WHF_recruiter")};
-    private _remoteControlledUnits = allPlayers apply {remoteControlled _x} select {!isNull _x};
+    private _remoteControlledUnits = _units apply {remoteControlled _x} select {!isNull _x};
 
-    private _units = allPlayers;
     _units append _recruits;
     _units append _remoteControlledUnits;
     _units = _units arrayIntersect _units;

@@ -143,7 +143,7 @@ private _allCachesSecured = {
 };
 
 private _playersInArea = {
-    private _players = allPlayers select {side group _x isEqualTo blufor};
+    private _players = call WHF_fnc_listPlayers select {side group _x isEqualTo blufor};
     [_players, _reinforceArea] call WHF_fnc_anyInArea
 };
 

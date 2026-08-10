@@ -25,7 +25,7 @@ params [["_location", locationNull], ["_faction", ""]];
 private _getRadius = {
     params ["_location"];
 
-    private _playerCount = count allPlayers min 80;
+    private _playerCount = count call WHF_fnc_listPlayers min 80;
     private _minRadius = 250 + _playerCount * 10;
     private _maxRadius = 500 + _playerCount * 15;
 

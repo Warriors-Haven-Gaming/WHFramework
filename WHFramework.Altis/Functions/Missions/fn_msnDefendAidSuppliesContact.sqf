@@ -25,7 +25,7 @@ params ["_signal", "_center", "_radius", "_groups"];
 
 private _area = [_center, _radius, _radius];
 private _playersInArea = {
-    allPlayers
+    call WHF_fnc_listPlayers
         select {side group _x isEqualTo blufor}
         inAreaArray _area
 };

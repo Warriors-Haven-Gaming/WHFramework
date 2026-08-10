@@ -66,7 +66,7 @@ private _updateMarkerByIndex = {
 
 private _playersNearSupply = {
     params ["_supply"];
-    allPlayers
+    call WHF_fnc_listPlayers
         select {side group _x isEqualTo blufor}
         inAreaArray [getPosATL _supply, _radius, _radius]
 };

@@ -75,7 +75,7 @@ while {true} do {
         && {WHF_gcUnhideQueue isEqualTo []}
     ) then {continue};
 
-    private _units = allPlayers select {!(_x isKindOf "VirtualMan_F")};
+    private _units = call WHF_fnc_listPlayers;
     private _remoteControlledUnits = _units apply {remoteControlled _x} select {!isNull _x};
     _units append _remoteControlledUnits;
     _units = _units arrayIntersect _units;
