@@ -48,6 +48,7 @@ class CfgRemoteExec {
 
         class WHF_fnc_addCuratorAddons { allowedTargets = 2; };
         class WHF_fnc_addPrisonerActions { jip = 1; };
+        class WHF_fnc_cycleFaction { allowedTargets = 2; };
         class WHF_fnc_detainUnitRequest {};
         class WHF_fnc_enableDynamicSimulation { allowedTargets = 2; };
         class WHF_fnc_forceRespawnVehicle { allowedTargets = 2; };

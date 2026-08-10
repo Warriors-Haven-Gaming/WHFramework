@@ -3,13 +3,14 @@ Function: WHF_fnc_cycleFaction
 
 Description:
     Cycle the current faction to use for units.
-    Function must be executed on server.
+    Function must be executed on server or remote executed from a headless client.
 
 Author:
     thegamecracks
 
 */
 if (!isServer) exitWith {};
+if (isRemoteExecuted && {!(remoteExecutedOwner in [0, 2])}) exitWith {};
 
 private _isFactionEnabled = {
     params ["_faction", "_suffix"];
