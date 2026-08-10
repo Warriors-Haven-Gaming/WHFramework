@@ -21,15 +21,17 @@ private _countActiveScripts = {
     count _scripts
 };
 
+private _cycleFaction = {
+    [] remoteExec ["WHF_fnc_cycleFaction", 2];
+    sleep 0.5; // Allow for some network delay
+};
+
 private _spawnNextScript = {
     // Add any complex logic here for stateful mission generation.
     // For example, an FOB mission can be generated and then later
     // followed up with a FOB defense mission.
-
-    [] remoteExec ["WHF_fnc_cycleFaction", 2];
-    sleep 0.5; // Allow for some network delay
-
     if (random 1 < 1) exitWith {
+        call _cycleFaction;
         if (_total > 0) then {sleep (180 + random 120)}; // Grace period
         [] spawn WHF_fnc_msnMainAnnexRegion
     };
