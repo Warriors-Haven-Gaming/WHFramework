@@ -80,7 +80,7 @@ _drone setVariable ["WHF_fpv_charge", _charge];
 _drone addEventHandler ["Killed", {
     params ["_drone"];
     private _charge = _drone getVariable ["WHF_fpv_charge", objNull];
-    triggerAmmo _charge;
+    triggerAmmo [_charge, 0];
 }];
 
 _drone flyInHeightASL [0, 0, 0];
@@ -126,7 +126,7 @@ while {alive _drone} do {
     };
 
     private _distance = _drone distance _target;
-    if (_distance < 10) exitWith {sleep 0.75; triggerAmmo _charge};
+    if (_distance < 10) exitWith {sleep 0.75; triggerAmmo [_charge, 0]};
 
     private _hidePos = _drone getHideFrom _target;
     private _distance2D = _drone distance2D _target;
