@@ -37,11 +37,10 @@ private _isRunning = {
 private _sleepIteration = {
     _frequency params ["_min", "_max"];
 
-    private _duration = if (isNil "_max" || {_min > _max}) then {_min} else {
+    private _timeout = if (isNil "_max" || {_min > _max}) then {_min} else {
         _min + random (_max - _min)
     };
-    private _deadline = time + _duration;
-    waitUntil {sleep 1; !call _isRunning || {time >= _deadline}};
+    waitUntil [{!call _isRunning}, _timeout, 1];
     call _isRunning
 };
 

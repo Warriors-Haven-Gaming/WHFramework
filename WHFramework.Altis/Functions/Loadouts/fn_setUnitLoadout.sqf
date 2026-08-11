@@ -40,6 +40,5 @@ private _setLoadout = {
 
 if (!isSwitchingWeapon _unit) exitWith {call _setLoadout};
 
-private _timeout = time + 5;
-waitUntil {sleep 0.1; !isSwitchingWeapon _unit || {time > _timeout}};
+waitUntil [{!isSwitchingWeapon _unit}, 5, 0.1];
 if (!isSwitchingWeapon _unit) then {call _setLoadout} else {false}

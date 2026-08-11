@@ -28,8 +28,8 @@ switch (call WHF_fnc_getMedicalSystem) do {
             // Plates are tied to the vest container which gets replaced if
             // the unit receives a new loadout. Delay by at least 1 second
             // to allow loadout changes to apply first.
-            private _timeout = time + 5;
-            waitUntil {sleep 1; !isSwitchingWeapon _this || {time > _timeout}};
+            sleep 1;
+            waitUntil [{!isSwitchingWeapon _this}, 5, 1];
 
             _this call diw_armor_plates_main_fnc_fillVestWithPlates;
 

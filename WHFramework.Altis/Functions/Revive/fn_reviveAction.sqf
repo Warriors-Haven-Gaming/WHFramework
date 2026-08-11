@@ -65,13 +65,7 @@ _target setVariable ["WHF_revive_caller", _caller, true];
 if (!isPlayer _caller) then {_caller doWatch _target};
 
 _caller playMoveNow _animation;
-private _timeout = time + 10;
-waitUntil {
-    sleep 0.1;
-    time > _timeout
-    || {call _reviveIsCanceled
-    || {_caller isNil "WHF_revive_animation"}}
-};
+waitUntil [{call _reviveIsCanceled || {_caller isNil "WHF_revive_animation"}}, 10, 0.1];
 private _isCanceled = call _reviveIsCanceled;
 
 _caller setVariable ["WHF_revive_animation", nil];

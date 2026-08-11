@@ -114,11 +114,7 @@ while {lifeState _unit isEqualTo "INCAPACITATED"} do {
 
     if (!isNull _vehicle && {!alive _vehicle}) then {_unit moveOut _vehicle};
 
-    private _timeout = time + 1 + random 1;
-    waitUntil {
-        sleep 0.125;
-        lifeState _unit isNotEqualTo "INCAPACITATED" || {time > _timeout}
-    };
+    waitUntil [{lifeState _unit isNotEqualTo "INCAPACITATED"}, 1 + random 1, 0.125];
 };
 
 _unit removeEventHandler _killedEH;

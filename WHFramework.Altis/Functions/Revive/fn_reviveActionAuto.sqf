@@ -97,12 +97,7 @@ private _moveToTarget = {
     private _pos = getPosATL _target;
     if (call _shouldRepath) then {_unit doMove _pos};
 
-    private _timeout = time + 3;
-    waitUntil {
-        moveToCompleted _unit
-        || {time > _timeout
-        || {!(_target call _isAssigned)}}
-    };
+    waitUntil [{moveToCompleted _unit || {!(_target call _isAssigned)}}, 3];
     if !(_target call _isAssigned) then {call _cancelTarget};
 };
 

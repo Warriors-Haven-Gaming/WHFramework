@@ -58,8 +58,7 @@ if (isNil "WHF_vehSpawn_lastVehicles") then {WHF_vehSpawn_lastVehicles = createH
 private _lastVehicle = WHF_vehSpawn_lastVehicles getOrDefault [_uid, objNull];
 if (!isNull _lastVehicle) then {
     [_lastVehicle, _player] remoteExec ["WHF_fnc_vehSpawnDespawn", _lastVehicle];
-    private _timeout = time + 3;
-    waitUntil {sleep 0.2; isNull _lastVehicle || {time > _timeout}};
+    waitUntil [{isNull _lastVehicle}, 3, 0.2];
 };
 
 _vehicle = createVehicle [_vehicle, [-random 500, -random 500, random 500], [], 0, "CAN_COLLIDE"];

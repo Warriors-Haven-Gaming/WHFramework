@@ -42,12 +42,10 @@ if (_index >= 0) exitWith {
         params ["_player", "_module"];
         scriptName "WHF_fnc_createCurator_reassignCurator";
 
-        private _timeout = time + 10;
-        waitUntil {
-            sleep 1;
+        waitUntil [{
             _player assignCurator _module;
-            getAssignedCuratorLogic _player isEqualTo _module || {time > _timeout}
-        };
+            getAssignedCuratorLogic _player isEqualTo _module
+        }, 10, 1];
         // Should be already initialized, below call is not needed
         // [_module] remoteExec ["WHF_fnc_initCuratorModule", _player];
     };

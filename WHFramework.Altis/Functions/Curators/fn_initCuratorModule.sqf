@@ -24,8 +24,7 @@ _module addEventHandler ["CuratorObjectPlaced", {
 
 // WARNING: possible race condition with server-side assignCurator call?
 if (isRemoteExecuted) then {
-    private _timeout = time + 10;
-    waitUntil {sleep 1; time > _timeout || {getAssignedCuratorLogic player isEqualTo _module}};
+    waitUntil [{getAssignedCuratorLogic player isEqualTo _module}, 10, 1];
 };
 
 if (getAssignedCuratorLogic player isEqualTo _module) then {
