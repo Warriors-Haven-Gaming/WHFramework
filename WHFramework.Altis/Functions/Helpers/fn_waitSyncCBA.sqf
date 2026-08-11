@@ -23,7 +23,7 @@ Author:
 params [["_timeout", 30]];
 _timeout = uiTime + _timeout;
 waitUntil {
-    time > _timeout
+    uiTime > _timeout
     || {!isNil "WHF_loadout_blacklist" // any setting with parseSimpleArray works
     && {!(WHF_loadout_blacklist isEqualType "")}}
 };
