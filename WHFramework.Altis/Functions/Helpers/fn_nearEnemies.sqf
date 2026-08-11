@@ -33,7 +33,7 @@ if (_pos isEqualType objNull) then {_pos = ASLToAGL getPosASL _pos};
 // NOTE: after 2.22, it might be faster to use PositionWorld
 
 // 0.017ms
-private _area = [_pos, _radius, _radius, 0, false];
+private _area = [_pos, _radius, _radius];
 private _units = _area nearEntities [["CAManBase"], false, true, true];
 
 // 0.012ms
