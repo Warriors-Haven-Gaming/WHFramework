@@ -78,7 +78,7 @@ private _spawnSideGunners = {
         private _unitTypes = [["standard", _faction]];
 
         private _units = [_group, _unitTypes, _quantity, _pos, 0] call WHF_fnc_spawnUnits;
-        {_x moveInAny _vehicle} forEach _units;
+        {_x moveInAny [_vehicle, [], true]} forEach _units;
         deleteVehicle (_units select {isNull objectParent _x});
     } forEach assignedVehicles _group;
 };

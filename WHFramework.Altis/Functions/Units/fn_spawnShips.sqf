@@ -85,7 +85,7 @@ if (_dynamicSimulation) then {[_vehicles, true] call WHF_fnc_enableDynamicSimula
     private _quantity = selectRandom [3, 5, 7] min _seats;
     private _pos = [-random 500, -random 500, 0];
     private _units = [_group, _unitTypes, _quantity, _pos, 0] call WHF_fnc_spawnUnits;
-    {_x moveInAny _vehicle} forEach _units;
+    {_x moveInAny [_vehicle, [], true]} forEach _units;
     deleteVehicle (_units select {isNull objectParent _x});
 } forEach _vehicles;
 

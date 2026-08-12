@@ -36,7 +36,7 @@ WHF_fnc_initContextActionLoadCrew_moveInAny = compileFinal {
     private _unlockedGunner = [player, _vehicle, "gunner"] call WHF_fnc_checkVehicleLock isEqualTo "";
     private _unlockedCargo = [player, _vehicle, "cargo"] call WHF_fnc_checkVehicleLock isEqualTo "";
     if (_unlockedDriver && _unlockedGunner && _unlockedCargo) exitWith {
-        _units select {_x moveInAny _vehicle}
+        _units select {_x moveInAny [_vehicle, [], true]}
     };
 
     private _seats = fullCrew [_vehicle, "", true] select {isNull (_x # 0)};

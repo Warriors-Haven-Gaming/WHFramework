@@ -95,7 +95,7 @@ private _faction = _types # 0 # 1;
     _pilot = [[_pilot, _faction]];
 
     private _units = [_group, _pilot, 2, _pos, 0] call WHF_fnc_spawnUnits;
-    {_x moveInAny _vehicle} forEach _units;
+    {_x moveInAny [_vehicle, [], true]} forEach _units;
     deleteVehicle (_units select {isNull objectParent _x});
 } forEach _vehicles;
 
