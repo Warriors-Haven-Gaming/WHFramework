@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1310;
+		nextID=1312;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=216;
+		nextID=235;
 	};
 	class Camera
 	{
-		pos[]={12615.569,67.274147,10832.559};
-		dir[]={0.33550957,-0.46043557,0.82185578};
-		up[]={0.17402972,0.88768065,0.42629817};
-		aside[]={0.92582643,-1.9208528e-08,-0.37795416};
+		pos[]={11660.504,30.955072,11974.141};
+		dir[]={-0.96407497,-0.24657929,0.099378295};
+		up[]={-0.24534391,0.9690966,0.025290983};
+		aside[]={0.10254496,-6.5114e-07,0.9947812};
 	};
 };
 binarizationWanted=0;
@@ -307,7 +307,7 @@ class AddonsMetaData
 		class Item30
 		{
 			className="A3_Static_F_Destroyer";
-			name="CFGPATCHES_A3_Static_F_Destroyer";
+			name="Arma 3 Destroyer - Turrets";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -2767,7 +2767,7 @@ class Mission
 					position[]={12639.135,23.509007,10889.476};
 					name="respawn_west_uav";
 					type="Empty";
-					angle=6.8301842e-06;
+					angle=6.8301838e-06;
 					id=952;
 					atlOffset=82.428612;
 					class CustomAttributes
@@ -6979,56 +6979,21 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={11614.559,25.695086,11972.406};
-								angles[]={0.0013372133,2.0944183,6.2765174};
+								position[]={11641.901,25.201391,11978.037};
+								angles[]={6.2818413,2.0941856,6.2791882};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
 								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
-							};
-							id=672;
-							type="B_Heli_Transport_01_F";
-							atlOffset=-0.00061988831;
-						};
-						class Item26
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={11624.053,25.496199,11988.896};
-								angles[]={0.0039967569,2.0942173,6.2698536};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
-							};
-							id=673;
-							type="B_Heli_Transport_01_F";
-							atlOffset=-0.00030136108;
-						};
-						class Item27
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={11641.901,25.201321,11978.037};
-								angles[]={6.2818484,2.0941863,6.2791886};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+								pylons="PylonRack_12Rnd_PGM_missiles_black;PylonRack_12Rnd_PGM_missiles_black;PylonRack_12Rnd_PGM_missiles_black;PylonRack_12Rnd_PGM_missiles_black;";
 							};
 							id=669;
 							type="B_Heli_Transport_01_pylons_F";
-							atlOffset=-0.0010700226;
+							atlOffset=-0.00099945068;
 						};
-						class Item28
+						class Item26
 						{
 							dataType="Object";
 							class PositionInfo
@@ -7046,7 +7011,7 @@ class Mission
 							type="I_Heli_light_03_unarmed_F";
 							atlOffset=-0.0032043457;
 						};
-						class Item29
+						class Item27
 						{
 							dataType="Object";
 							class PositionInfo
@@ -7064,7 +7029,7 @@ class Mission
 							type="B_CargoNet_01_ammo_F";
 							atlOffset=-3.8146973e-06;
 						};
-						class Item30
+						class Item28
 						{
 							dataType="Object";
 							class PositionInfo
@@ -7082,7 +7047,7 @@ class Mission
 							type="B_CargoNet_01_ammo_F";
 							atlOffset=-3.4332275e-05;
 						};
-						class Item31
+						class Item29
 						{
 							dataType="Object";
 							class PositionInfo
@@ -7100,7 +7065,7 @@ class Mission
 							type="B_Truck_01_flatbed_F";
 							atlOffset=-0.00018310547;
 						};
-						class Item32
+						class Item30
 						{
 							dataType="Object";
 							class PositionInfo
@@ -7118,7 +7083,7 @@ class Mission
 							type="B_Slingload_01_Ammo_F";
 							atlOffset=-0.00065231323;
 						};
-						class Item33
+						class Item31
 						{
 							dataType="Object";
 							class PositionInfo
@@ -7136,7 +7101,7 @@ class Mission
 							type="B_Slingload_01_Fuel_F";
 							atlOffset=-0.00047683716;
 						};
-						class Item34
+						class Item32
 						{
 							dataType="Object";
 							class PositionInfo
@@ -7154,7 +7119,7 @@ class Mission
 							type="B_Slingload_01_Repair_F";
 							atlOffset=-0.00054359436;
 						};
-						class Item35
+						class Item33
 						{
 							dataType="Object";
 							class PositionInfo
@@ -7172,7 +7137,7 @@ class Mission
 							type="B_supplyCrate_F";
 							atlOffset=-7.8201294e-05;
 						};
-						class Item36
+						class Item34
 						{
 							dataType="Object";
 							class PositionInfo
@@ -7190,7 +7155,7 @@ class Mission
 							type="B_supplyCrate_F";
 							atlOffset=-8.0108643e-05;
 						};
-						class Item37
+						class Item35
 						{
 							dataType="Object";
 							class PositionInfo
@@ -7207,7 +7172,7 @@ class Mission
 							type="B_Boat_Armed_01_minigun_F";
 							atlOffset=0.95478773;
 						};
-						class Item38
+						class Item36
 						{
 							dataType="Object";
 							class PositionInfo
@@ -7224,7 +7189,7 @@ class Mission
 							type="B_Boat_Armed_01_minigun_F";
 							atlOffset=2.9973092;
 						};
-						class Item39
+						class Item37
 						{
 							dataType="Object";
 							class PositionInfo
@@ -7244,7 +7209,7 @@ class Mission
 							type="B_T_UAV_03_dynamicLoadout_F";
 							atlOffset=-0.0042514801;
 						};
-						class Item40
+						class Item38
 						{
 							dataType="Object";
 							class PositionInfo
@@ -7263,7 +7228,7 @@ class Mission
 							type="B_UGV_01_rcws_F";
 							atlOffset=-0.0041427612;
 						};
-						class Item41
+						class Item39
 						{
 							dataType="Object";
 							class PositionInfo
@@ -7282,9 +7247,45 @@ class Mission
 							type="B_UGV_01_rcws_F";
 							atlOffset=-0.0062961578;
 						};
+						class Item40
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11624.053,25.496199,11988.896};
+								angles[]={0.0039967569,2.0942173,6.2698536};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+							};
+							id=1310;
+							type="B_CTRG_Heli_Transport_01_Assault_F";
+							atlOffset=-0.00030136108;
+						};
+						class Item41
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11614.559,25.695086,11972.406};
+								angles[]={0.0013372133,2.0944183,6.2765174};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+							};
+							id=1311;
+							type="B_CTRG_Heli_Transport_01_Assault_F";
+							atlOffset=-0.00061988831;
+						};
 					};
 					id=695;
-					atlOffset=-1.9742355;
+					atlOffset=-0.50886154;
 				};
 				class Item3
 				{
@@ -9227,7 +9228,7 @@ class Mission
 				};
 			};
 			id=697;
-			atlOffset=-6.8585167;
+			atlOffset=-6.8036385;
 		};
 		class Item3
 		{
@@ -9545,6 +9546,7 @@ class Mission
 				};
 			};
 			id=1164;
+			atlOffset=5.7220459e-06;
 		};
 		class Item7
 		{
@@ -10238,7 +10240,7 @@ class Mission
 							};
 							id=1252;
 							type="Land_Laptop_03_olive_F";
-							atlOffset=0.80905724;
+							atlOffset=0.80906487;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -10660,6 +10662,7 @@ class Mission
 							};
 							id=1167;
 							type="B_T_UAV_03_dynamicLoadout_F";
+							atlOffset=5.7220459e-06;
 						};
 						class Item4
 						{
@@ -10758,7 +10761,7 @@ class Mission
 							};
 							id=1263;
 							type="Land_CampingTable_small_F";
-							atlOffset=0.0070533752;
+							atlOffset=0.0070514679;
 							class CustomAttributes
 							{
 								class Attribute0
