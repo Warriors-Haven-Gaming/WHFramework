@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2247;
+		nextID=2249;
 	};
 	class MarkerIDProvider
 	{
@@ -20,7 +20,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=109;
+		nextID=120;
 	};
 	class Camera
 	{
@@ -340,8 +340,6 @@ class Mission
 		day=6;
 		hour=10;
 		minute=0;
-		startFogBase=0;
-		forecastFogBase=0;
 		startFogDecay=0.014;
 		forecastFogDecay=0.014;
 	};
@@ -1442,8 +1440,8 @@ class Mission
 							{
 								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 							};
-							id=2098;
-							type="B_CTRG_Heli_Transport_01_tropic_F";
+							id=2247;
+							type="B_CTRG_Heli_Transport_01_Assault_tropic_F";
 							atlOffset=-0.00039672852;
 						};
 						class Item27
@@ -1460,13 +1458,13 @@ class Mission
 							{
 								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
 							};
-							id=2099;
-							type="B_CTRG_Heli_Transport_01_tropic_F";
+							id=2248;
+							type="B_CTRG_Heli_Transport_01_Assault_tropic_F";
 							atlOffset=-0.0024719238;
 						};
 					};
 					id=673;
-					atlOffset=0.020477295;
+					atlOffset=-0.010070801;
 				};
 				class Item2
 				{
@@ -8894,7 +8892,7 @@ class Mission
 				};
 			};
 			id=671;
-			atlOffset=-0.025421143;
+			atlOffset=-0.01776123;
 		};
 		class Item1
 		{
