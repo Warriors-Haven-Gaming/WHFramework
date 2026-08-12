@@ -12,11 +12,11 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=364;
+		nextID=366;
 	};
 	class LayerIndexProvider
 	{
-		nextID=21;
+		nextID=32;
 	};
 	class Camera
 	{
@@ -3849,56 +3849,20 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={9369.0059,16.848366,9290.9873};
-								angles[]={6.2741885,3.3161454,6.2816033};
+								position[]={9350.9922,17.080538,9316.9961};
+								angles[]={6.2753663,3.3159163,6.2800961};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
 								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
-							};
-							id=269;
-							type="B_Heli_Transport_01_F";
-							atlOffset=-3.8146973e-06;
-						};
-						class Item26
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={9387.9941,16.787889,9287.9902};
-								angles[]={6.2725997,3.3159437,6.2828403};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
-							};
-							id=270;
-							type="B_Heli_Transport_01_F";
-							atlOffset=-4.7683716e-05;
-						};
-						class Item27
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={9350.9922,17.080448,9316.9961};
-								angles[]={6.275373,3.3159173,6.2800975};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+								pylons="PylonRack_12Rnd_PGM_missiles_black;PylonRack_12Rnd_PGM_missiles_black;PylonRack_12Rnd_PGM_missiles_black;PylonRack_12Rnd_PGM_missiles_black;";
 							};
 							id=271;
 							type="B_Heli_Transport_01_pylons_F";
-							atlOffset=-8.9645386e-05;
 						};
-						class Item28
+						class Item26
 						{
 							dataType="Object";
 							class PositionInfo
@@ -3916,7 +3880,7 @@ class Mission
 							type="I_Heli_light_03_unarmed_F";
 							atlOffset=-6.2942505e-05;
 						};
-						class Item29
+						class Item27
 						{
 							dataType="Object";
 							class PositionInfo
@@ -3934,7 +3898,7 @@ class Mission
 							type="B_CargoNet_01_ammo_F";
 							atlOffset=-1.6212463e-05;
 						};
-						class Item30
+						class Item28
 						{
 							dataType="Object";
 							class PositionInfo
@@ -3952,7 +3916,7 @@ class Mission
 							type="B_CargoNet_01_ammo_F";
 							atlOffset=-9.5367432e-06;
 						};
-						class Item31
+						class Item29
 						{
 							dataType="Object";
 							class PositionInfo
@@ -3970,7 +3934,7 @@ class Mission
 							type="B_Truck_01_flatbed_F";
 							atlOffset=0.06268692;
 						};
-						class Item32
+						class Item30
 						{
 							dataType="Object";
 							class PositionInfo
@@ -3988,7 +3952,7 @@ class Mission
 							type="B_Slingload_01_Ammo_F";
 							atlOffset=-1.9073486e-05;
 						};
-						class Item33
+						class Item31
 						{
 							dataType="Object";
 							class PositionInfo
@@ -4006,7 +3970,7 @@ class Mission
 							type="B_Slingload_01_Fuel_F";
 							atlOffset=-3.4332275e-05;
 						};
-						class Item34
+						class Item32
 						{
 							dataType="Object";
 							class PositionInfo
@@ -4024,7 +3988,7 @@ class Mission
 							type="B_Slingload_01_Repair_F";
 							atlOffset=-9.727478e-05;
 						};
-						class Item35
+						class Item33
 						{
 							dataType="Object";
 							class PositionInfo
@@ -4042,7 +4006,7 @@ class Mission
 							type="B_supplyCrate_F";
 							atlOffset=-1.8119812e-05;
 						};
-						class Item36
+						class Item34
 						{
 							dataType="Object";
 							class PositionInfo
@@ -4060,7 +4024,7 @@ class Mission
 							type="B_supplyCrate_F";
 							atlOffset=-5.4359436e-05;
 						};
-						class Item37
+						class Item35
 						{
 							dataType="Object";
 							class PositionInfo
@@ -4078,7 +4042,7 @@ class Mission
 							type="B_Boat_Armed_01_minigun_F";
 							atlOffset=0.18345499;
 						};
-						class Item38
+						class Item36
 						{
 							dataType="Object";
 							class PositionInfo
@@ -4094,7 +4058,7 @@ class Mission
 							type="B_Boat_Armed_01_minigun_F";
 							atlOffset=0.66424966;
 						};
-						class Item39
+						class Item37
 						{
 							dataType="Object";
 							class PositionInfo
@@ -4114,7 +4078,7 @@ class Mission
 							type="B_T_UAV_03_dynamicLoadout_F";
 							atlOffset=-0.00030517578;
 						};
-						class Item40
+						class Item38
 						{
 							dataType="Object";
 							class PositionInfo
@@ -4133,7 +4097,7 @@ class Mission
 							type="B_UGV_01_rcws_F";
 							atlOffset=-0.0010633469;
 						};
-						class Item41
+						class Item39
 						{
 							dataType="Object";
 							class PositionInfo
@@ -4152,9 +4116,45 @@ class Mission
 							type="B_UGV_01_rcws_F";
 							atlOffset=-0.0011224747;
 						};
+						class Item40
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={9369.0059,16.848366,9290.9873};
+								angles[]={6.2741885,3.3161454,6.2816033};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+							};
+							id=364;
+							type="B_CTRG_Heli_Transport_01_Assault_F";
+							atlOffset=-3.8146973e-06;
+						};
+						class Item41
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={9387.9941,16.787889,9287.9902};
+								angles[]={6.2725997,3.3159437,6.2828403};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+							};
+							id=365;
+							type="B_CTRG_Heli_Transport_01_Assault_F";
+							atlOffset=-4.7683716e-05;
+						};
 					};
 					id=243;
-					atlOffset=0.12620449;
+					atlOffset=-0.18438721;
 				};
 				class Item3
 				{
@@ -6164,7 +6164,7 @@ class Mission
 				};
 			};
 			id=136;
-			atlOffset=1.9291945;
+			atlOffset=1.7353525;
 		};
 		class Item3
 		{
