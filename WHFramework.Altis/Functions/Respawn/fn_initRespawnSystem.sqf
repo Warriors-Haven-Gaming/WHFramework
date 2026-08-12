@@ -16,7 +16,7 @@ WHF_respawn_delay = 15;
 WHF_respawn_desertedDistance = 500;
 
 WHF_respawn_records = [];
-WHF_respawn_script = 0 spawn WHF_fnc_respawnLoop;
+WHF_respawn_script = spawn WHF_fnc_respawnLoop;
 
 private _requestRespawn = {
     params ["_vehicle"];

@@ -186,7 +186,7 @@ Author:
     true,
     {
         if (!isNil "WHF_combatDroneLoop_script") then {terminate WHF_combatDroneLoop_script};
-        if (_this) then {WHF_combatDroneLoop_script = 0 spawn WHF_fnc_combatDroneLoop};
+        if (_this) then {WHF_combatDroneLoop_script = spawn WHF_fnc_combatDroneLoop};
     },
     false
 ] call WHF_fnc_addSetting;
@@ -370,7 +370,7 @@ call WHF_fnc_cycleFaction;
     true,
     {
         if (!isNil "WHF_signalFlareLoop_script") then {terminate WHF_signalFlareLoop_script};
-        if (_this) then {WHF_signalFlareLoop_script = 0 spawn WHF_fnc_signalFlareLoop};
+        if (_this) then {WHF_signalFlareLoop_script = spawn WHF_fnc_signalFlareLoop};
     },
     false
 ] call WHF_fnc_addSetting;

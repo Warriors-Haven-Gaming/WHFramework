@@ -38,7 +38,7 @@ player addEventHandler ["HandleDamage", {call {
     [_unit, _instigator] remoteExec ["WHF_fnc_incapUnit", 0, _jipID];
 
     if (_hitIndex isEqualTo 2 && {_unit isEqualTo focusOn}) then {
-        0 spawn WHF_fnc_headshotEffects;
+        spawn WHF_fnc_headshotEffects;
     };
     _capped
 }}];

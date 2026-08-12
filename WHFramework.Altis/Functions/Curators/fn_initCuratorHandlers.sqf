@@ -51,7 +51,7 @@ addMissionEventHandler ["EntityRespawned", {
     [_entity] call WHF_fnc_createCurator;
 }];
 
-WHF_refreshCurators_script = 0 spawn {
+WHF_refreshCurators_script = spawn {
     scriptName "WHF_refreshCurators_script";
     while {true} do {
         sleep (25 + random 10);

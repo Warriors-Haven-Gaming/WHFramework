@@ -7,7 +7,7 @@ Description:
 
 Examples:
     (begin example)
-        0 spawn WHF_fnc_updateChannelLoop;
+        spawn WHF_fnc_updateChannelLoop;
     (end)
 
 Author:

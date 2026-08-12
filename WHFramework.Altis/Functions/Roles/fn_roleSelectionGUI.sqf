@@ -292,7 +292,7 @@ isNil {with uiNamespace do {
         closeDialog 1;
         playSoundUI ["a3\3den\data\sound\cfgsound\notificationdefault.wss"];
 
-        0 spawn {
+        spawn {
             scriptName "WHF_fnc_roleSelectionGUI_respawn";
             private _duration = 0.75 + random 0.5;
             private _half = _duration / 2;

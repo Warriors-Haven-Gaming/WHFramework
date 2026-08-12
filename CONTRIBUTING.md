@@ -56,7 +56,7 @@ done and submitted more simply by using the [web-based editor].
 
   ```sqf
   // Good:
-  WHF_findAPSLoop_script = 0 spawn WHF_fnc_findAPSLoop;
+  WHF_findAPSLoop_script = spawn WHF_fnc_findAPSLoop;
   WHF_earplugs_music_last = 1;
   WHF_earplugs_radio_last = 1;
   private _uid = "";

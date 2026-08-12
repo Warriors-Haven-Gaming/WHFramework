@@ -13,10 +13,10 @@ diag_log text format ["Initializing %1", briefingName];
 
 [] call WHF_fnc_waitSyncCBA;
 
-WHF_damageSafezoneLoop_script = 0 spawn WHF_fnc_damageSafezoneLoop;
-WHF_findAPSLoop_script = 0 spawn WHF_fnc_findAPSLoop;
-WHF_simulateAPSLoop_script = 0 spawn WHF_fnc_simulateAPSLoop;
+WHF_damageSafezoneLoop_script = spawn WHF_fnc_damageSafezoneLoop;
+WHF_findAPSLoop_script = spawn WHF_fnc_findAPSLoop;
+WHF_simulateAPSLoop_script = spawn WHF_fnc_simulateAPSLoop;
 
 WHF_gcDeletionQueue = [];
 WHF_gcUnhideQueue = [];
-WHF_garbageCollector_script = 0 spawn WHF_fnc_garbageCollectorLoop;
+WHF_garbageCollector_script = spawn WHF_fnc_garbageCollectorLoop;

@@ -31,7 +31,7 @@ addMissionEventHandler ["PreloadFinished", {
     [_short, _music] spawn WHF_fnc_startIntroSequence;
     uiNamespace setVariable ["WHF_play_intro", true];
 
-    0 spawn {
+    spawn {
         sleep 0.5;
         systemChat format ["Finished initialization (%1)", briefingName];
     };

@@ -22,16 +22,16 @@ if (isMultiplayer) then {
 
 if (isMultiplayer) then {["Initialize"] call BIS_fnc_dynamicGroups};
 
-WHF_timeMultiplierLoop_script = 0 spawn WHF_fnc_timeMultiplierLoop;
+WHF_timeMultiplierLoop_script = spawn WHF_fnc_timeMultiplierLoop;
 
 private _headlessClients =  entities "HeadlessClient_F" select {isPlayer _x};
 private _runMissionLoopMain = {
     [] call WHF_fnc_waitSyncCBA;
-    WHF_mainMissionLoop_script = [] spawn WHF_fnc_missionLoopMain;
+    WHF_mainMissionLoop_script = spawn WHF_fnc_missionLoopMain;
 };
 private _runMissionLoopSide = {
     [] call WHF_fnc_waitSyncCBA;
-    WHF_sideMissionLoop_script = [] spawn WHF_fnc_missionLoopSide;
+    WHF_sideMissionLoop_script = spawn WHF_fnc_missionLoopSide;
 };
 switch (true) do {
     case (_headlessClients isEqualTo []): {

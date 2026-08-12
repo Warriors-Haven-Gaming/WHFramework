@@ -32,7 +32,7 @@ if (
     getNumber (configOf cameraOn >> "artilleryScanner") > 0
     && {isNil "WHF_fnc_initMinimapHandlers_artillery"
     || {scriptDone WHF_fnc_initMinimapHandlers_artillery}}
-) then {WHF_fnc_initMinimapHandlers_artillery = 0 spawn {
+) then {WHF_fnc_initMinimapHandlers_artillery = spawn {
     scriptName "WHF_fnc_initMinimapHandlers_artillery";
     disableSerialization;
 
