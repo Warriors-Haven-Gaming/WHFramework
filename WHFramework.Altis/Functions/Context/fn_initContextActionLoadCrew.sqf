@@ -35,50 +35,11 @@ WHF_fnc_initContextActionLoadCrew_moveInAny = compileFinal {
     private _unlockedDriver = [player, _vehicle, "driver"] call WHF_fnc_checkVehicleLock isEqualTo "";
     private _unlockedGunner = [player, _vehicle, "gunner"] call WHF_fnc_checkVehicleLock isEqualTo "";
     private _unlockedCargo = [player, _vehicle, "cargo"] call WHF_fnc_checkVehicleLock isEqualTo "";
-    if (_unlockedDriver && _unlockedGunner && _unlockedCargo) exitWith {
-        _units select {_x moveInAny [_vehicle, [], true]}
-    };
-
-    private _seats = fullCrew [_vehicle, "", true] select {isNull (_x # 0)};
-    if (_seats isEqualTo []) exitWith {[]};
-
-    reverse _units; // optimize popping from stack
-    private _loaded = [];
-    {
-        _x params ["", "_role", "_cargoIndex", "_turretPath"];
-        if (_units isEqualTo []) then {break};
-
-        private _loadUnit = switch (true) do {
-            case (_role isEqualTo "driver" && _unlockedDriver): {
-                {_unit moveInDriver _vehicle}
-            };
-            case (_role isEqualTo "commander" && _unlockedGunner): {
-                {_unit moveInCommander _vehicle}
-            };
-            case (_role isEqualTo "gunner" && _unlockedGunner): {
-                {_unit moveInGunner _vehicle}
-            };
-            case (_role isEqualTo "turret" && _unlockedGunner): {
-                {_unit moveInTurret [_vehicle, _turretPath]}
-            };
-            case (_role isEqualTo "cargo" && _unlockedCargo): {
-                {
-                    _unit assignAsCargoIndex [_vehicle, _cargoIndex];
-                    _unit moveInCargo _vehicle; // alt syntax does not assign unit
-                }
-            };
-            default {continue};
-        };
-
-        private _unit = _units select -1;
-        call _loadUnit;
-        if (objectParent _unit isEqualTo _vehicle) then {
-            _loaded pushBack _unit;
-            _units deleteAt [-1];
-        };
-    } forEach _seats;
-
-    _loaded
+    private _positions = [];
+    if (_unlockedDriver) then {_positions pushBack "DRIVER"};
+    if (_unlockedGunner) then {_positions append ["COMMANDER", "GUNNER"]};
+    if (_unlockedCargo) then {_positions append ["TURRET", "CARGO"]};
+    _units select {_x moveInAny [_vehicle, _positions, true]}
 };
 
 [
