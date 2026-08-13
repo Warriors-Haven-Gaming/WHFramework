@@ -106,12 +106,32 @@ isNil {with uiNamespace do {
         private _selected = call WHF_roleSelectionGUI_selectedRole;
         private _enabled = [_selected] call WHF_roleSelectionGUI_canSwitchToRole;
         WHF_roleSelectionGUI_ctrlSelect ctrlEnable _enabled;
-        call WHF_roleSelectionGUI_updateReset;
+        call WHF_roleSelectionGUI_updateLoadout;
     };
 
-    WHF_roleSelectionGUI_updateReset = {
-        private _enabled = !call WHF_roleSelectionGUI_checkSwitchTimeout;
-        WHF_roleSelectionGUI_ctrlReset ctrlEnable _enabled;
+    WHF_roleSelectionGUI_updateLoadout = {
+        private _onTimeout = call WHF_roleSelectionGUI_checkSwitchTimeout;
+        switch (true) do {
+            // condition duplicated in WHF_fnc_setLastLoadout
+            case (missionNamespace getVariable ["WHF_loadout_collection", ""] in ["", "default"]): {
+                WHF_roleSelectionGUI_ctrlSave ctrlEnable false;
+                WHF_roleSelectionGUI_ctrlSave ctrlSetTooltip localize "$STR_WHF_roleSelectionGUI_save_tooltip_collection";
+            };
+            case (missionNamespace getVariable "WHF_loadout_save_on_arsenal"): {
+                WHF_roleSelectionGUI_ctrlSave ctrlEnable false;
+                WHF_roleSelectionGUI_ctrlSave ctrlSetTooltip localize "$STR_WHF_roleSelectionGUI_save_tooltip_arsenal";
+            };
+            case (call WHF_roleSelectionGUI_currentRole isEqualTo "");
+            case (_onTimeout): {
+                WHF_roleSelectionGUI_ctrlSave ctrlEnable false;
+                WHF_roleSelectionGUI_ctrlSave ctrlSetTooltip "";
+            };
+            default {
+                WHF_roleSelectionGUI_ctrlSave ctrlEnable true;
+                WHF_roleSelectionGUI_ctrlSave ctrlSetTooltip "";
+            };
+        };
+        WHF_roleSelectionGUI_ctrlReset ctrlEnable !_onTimeout;
     };
 
     WHF_roleSelectionGUI_updateRespawn = {
@@ -251,6 +271,30 @@ isNil {with uiNamespace do {
     WHF_roleSelectionGUI_ctrlSelect ctrlAddEventHandler ["ButtonClick", {with uiNamespace do {
         call WHF_roleSelectionGUI_requestRole;
     }}];
+
+    WHF_roleSelectionGUI_ctrlSave = _display ctrlCreate ["RscButtonMenu", -1, _group];
+    WHF_roleSelectionGUI_ctrlSave ctrlSetPosition ([0.21, 0.89, 0.15, 0.06] call _scaleToGroup);
+    WHF_roleSelectionGUI_ctrlSave ctrlSetStructuredText composeText [
+        parseText "<img image='\a3\ui_f\data\gui\rsc\rscdisplayarsenal\spacearsenal_ca.paa' size='1'/>",
+        text localize "$str_disp_int_save" setAttributes [
+            "align", "center",
+            "font", "RobotoCondensed",
+            "size", "1",
+            "valign", "middle"
+        ]
+    ];
+    WHF_roleSelectionGUI_ctrlSave ctrlCommit 0;
+    WHF_roleSelectionGUI_ctrlSave ctrlAddEventHandler ["ButtonClick", {
+        private _loadout = focusOn call WHF_fnc_getUnitLoadout;
+        private _role = with uiNamespace do WHF_roleSelectionGUI_currentRole;
+        [_loadout, _role] call WHF_fnc_setLastLoadout;
+
+        with uiNamespace do {
+            call WHF_roleSelectionGUI_updateSwitchTimeout;
+            call WHF_roleSelectionGUI_refreshState;
+        };
+        playSoundUI ["a3\3den\data\sound\cfgsound\notificationdefault.wss"];
+    }];
 
     WHF_roleSelectionGUI_ctrlReset = _display ctrlCreate ["RscButtonMenu", -1, _group];
     WHF_roleSelectionGUI_ctrlReset ctrlSetPosition ([0.37, 0.89, 0.15, 0.06] call _scaleToGroup);
