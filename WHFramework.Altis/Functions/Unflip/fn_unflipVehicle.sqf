@@ -29,7 +29,7 @@ if (_pos isEqualTo []) exitWith {
 
     _vehicle setVariable ["WHF_unflipVehicle_failedAt", time];
     private _message = "$STR_WHF_unflipVehicle_spacing";
-    if (isRemoteExecuted) then {
+    if (remoteExecutedOwner isNotEqualTo 0) then {
         [_message] remoteExec ["WHF_fnc_localizedHint", remoteExecutedOwner];
     } else {
         [_message] call WHF_fnc_localizedHint;
