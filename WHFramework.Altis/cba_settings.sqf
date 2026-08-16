@@ -30,6 +30,7 @@ force diw_armor_plates_main_useHandleDamageFiltering = true;
 force WBK_DeathAnimMod_Hit_PLR = false;
 
 // Hide Among The Grass
+force hatg_setting_cooldown = 15;
 force hatg_setting_movement_crouch = 20;
 force hatg_setting_surfaces = false;
 
