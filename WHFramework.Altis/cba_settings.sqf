@@ -27,6 +27,7 @@ force diw_armor_plates_main_spawnWithFullPlates = true;
 force diw_armor_plates_main_useHandleDamageFiltering = true;
 
 // Death and Hit Reactions
+force WBK_DeathAnimMod_Flinch_PLR = false;
 force WBK_DeathAnimMod_Hit_PLR = false;
 
 // Hide Among The Grass
