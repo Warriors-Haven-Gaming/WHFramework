@@ -1,3 +1,10 @@
+// Advanced Vault System
+force AVS_Jump_MAINWEAP_X = "5";
+force AVS_Jump_MAINWEAP_Z = "3";
+force AVS_Jump_PIST_Z = "4";
+force AVS_Jump_UNARMED_Z = "5";
+force AVS_Rolling = true;
+
 // Armor Plates System
 force diw_armor_plates_main_allowSelfRevive = true;
 force diw_armor_plates_main_bleedoutTime = 600;
