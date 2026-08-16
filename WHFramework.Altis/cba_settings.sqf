@@ -40,3 +40,7 @@ force lambs_danger_disableAIPlayerGroupReaction = true;
 
 // LAMBS Main
 force lambs_main_disablePlayerGroupSuppression = true;
+
+// OCAP - Recorder
+force OCAP_settings_saveTag = "WHF";
+force OCAP_settings_trackTimes = true;
