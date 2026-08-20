@@ -104,6 +104,7 @@ while {lifeState _unit isEqualTo "INCAPACITATED"} do {
         case (_time > _drownAt): {
             _unit call WHF_fnc_respawnUnit;
             if (isPlayer _unit) then {[_unit] remoteExec ["WHF_fnc_incapDrowned"]};
+            break;
         };
     };
 
