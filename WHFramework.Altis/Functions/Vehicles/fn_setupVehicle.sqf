@@ -119,12 +119,15 @@ switch (true) do {
     case (_vehicle isKindOf "APC_Wheeled_03_base_F"): {
         [_vehicle, WHF_aps_ammoAPC] call WHF_fnc_addAPS;
     };
-    // case (_vehicle isKindOf "Heli_Transport_01_DAP_base_F"): {
-    //     _vehicle animateSource ["Hide_BenchesBack", 0, true];
-    //     _vehicle animateSource ["Hide_BenchesFront", 0, true];
-    //     _vehicle animateSource ["Hide_Door_L", 0, true];
-    //     _vehicle animateSource ["Hide_Door_R", 0, true];
-    // };
+    case (_vehicle isKindOf "Heli_Transport_01_DAP_base_F"): {
+        // FIXME: pylons do not take precedence over respawning vehicles
+        _vehicle setPylonLoadout [6, "PylonECMPod_01_DIRCM_R"];
+        _vehicle setPylonLoadout [7, "PylonECMPod_01_DIRCM_L"];
+        // _vehicle animateSource ["Hide_BenchesBack", 0, true];
+        // _vehicle animateSource ["Hide_BenchesFront", 0, true];
+        // _vehicle animateSource ["Hide_Door_L", 0, true];
+        // _vehicle animateSource ["Hide_Door_R", 0, true];
+    };
     case (_vehicle isKindOf "MBT_01_mlrs_base_F"): {
         [_vehicle, WHF_aps_ammoMBT] call WHF_fnc_addAPS;
         _vehicle addMagazinesTurret ["12Rnd_230mm_rockets_cluster", [0], 1];
