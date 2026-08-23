@@ -32,9 +32,6 @@ isNil {with uiNamespace do {
     createDialog "RscDisplayEmpty";
     private _display = findDisplay -1;
 
-    if (isNil "WHF_fnc_localizeRole") then {WHF_fnc_localizeRole = missionNamespace getVariable "WHF_fnc_localizeRole"};
-    if (isNil "WHF_fnc_getRoleLimit") then {WHF_fnc_getRoleLimit = missionNamespace getVariable "WHF_fnc_getRoleLimit"};
-
     WHF_roleSelectionGUI_currentRole = {focusOn getVariable ["WHF_role", ""]};
     WHF_roleSelectionGUI_selectedRole = {
         private _roles = WHF_roleSelectionGUI_ctrlRoles;
@@ -54,7 +51,7 @@ isNil {with uiNamespace do {
         private _message = format [
             "%1 (%2)",
             name focusOn,
-            _role call WHF_fnc_localizeRole
+            _role call (missionNamespace getVariable "WHF_fnc_localizeRole")
         ];
         WHF_roleSelectionGUI_ctrlHeader ctrlSetStructuredText composeText [
             text _message setAttributes ["align", "center", "size", "1.5"]
@@ -70,9 +67,9 @@ isNil {with uiNamespace do {
         {
             private _text = format [
                 "%1 (%2/%3)",
-                _x call WHF_fnc_localizeRole,
+                _x call (missionNamespace getVariable "WHF_fnc_localizeRole"),
                 count ([_x] call WHF_roleSelectionGUI_ctrlPlayersInRole),
-                [_x] call WHF_fnc_getRoleLimit
+                [_x] call (missionNamespace getVariable "WHF_fnc_getRoleLimit")
             ];
 
             private _index = _list lbAdd _text;
@@ -178,7 +175,7 @@ isNil {with uiNamespace do {
         if (_current isEqualTo _role) exitWith {false};
 
         private _players = [_role] call WHF_roleSelectionGUI_ctrlPlayersInRole;
-        private _limit = [_role] call WHF_fnc_getRoleLimit;
+        private _limit = [_role] call (missionNamespace getVariable "WHF_fnc_getRoleLimit");
         if (isPlayer focusOn && {count _players >= _limit}) exitWith {false};
 
         true

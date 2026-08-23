@@ -14,8 +14,6 @@ isNil {with uiNamespace do {
     createDialog "RscDisplayEmpty";
     private _display = findDisplay -1;
 
-    if (isNil "WHF_fnc_diaryLocalize") then {WHF_fnc_diaryLocalize = missionNamespace getVariable "WHF_fnc_diaryLocalize"};
-
     private _primaryColor = ["GUI", "BCG_RGB"] call BIS_fnc_displayColorGet;
     private _scaleToGroup = {_this vectorMultiply [_width, _height, _width, _height]};
 
@@ -50,7 +48,7 @@ isNil {with uiNamespace do {
         ] setAttributes ["size", "8", "align", "center"],
         parseText "<br/><br/>",
         parseText format [
-            "$STR_WHF_intro_description" call WHF_fnc_diaryLocalize,
+            "$STR_WHF_intro_description" call (missionNamespace getVariable "WHF_fnc_diaryLocalize"),
             getText (configFile >> "CfgWorlds" >> worldName >> "description")
         ]
     ];
