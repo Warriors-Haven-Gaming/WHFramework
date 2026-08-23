@@ -30,10 +30,10 @@ if (_alive && {isRemoteExecuted && {owner _vehicle isNotEqualTo remoteExecutedOw
 if (vectorMagnitude velocity _vehicle > 2.5) exitWith {false};
 if (crew _vehicle findIf {alive _x} >= 0) exitWith {false};
 if (["LandVehicle", "Air", "Ship"] findIf {_vehicle isKindOf _x} < 0) exitWith {false};
-if (
-    hasInterface
-    && {_alive
-    && {[focusOn, _vehicle, "driver"] call WHF_fnc_checkVehicleLock isNotEqualTo ""}}
-) exitWith {false};
+// if (
+//     hasInterface
+//     && {_alive
+//     && {[focusOn, _vehicle, "driver"] call WHF_fnc_checkVehicleLock isNotEqualTo ""}}
+// ) exitWith {false};
 
 true
