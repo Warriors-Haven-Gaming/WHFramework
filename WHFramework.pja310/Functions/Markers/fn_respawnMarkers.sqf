@@ -29,8 +29,13 @@ private _prefixes = [_basePrefix];
 
 private _role = _unit getVariable "WHF_role";
 if (!isNil "_role") then {
-    private _prefix = format ["%1_%2", _basePrefix, _role];
-    _prefixes insert [0, [_prefix]];
+    private _suffixes = [_role];
+    if (_role isEqualTo "ugv") then {_suffixes pushBack "uav"};
+
+    {
+        private _prefix = format ["%1_%2", _basePrefix, _x];
+        _prefixes insert [0, [_prefix]];
+    } forEachReversed _suffixes;
 };
 
 flatten (

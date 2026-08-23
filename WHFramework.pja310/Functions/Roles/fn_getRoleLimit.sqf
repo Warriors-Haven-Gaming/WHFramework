@@ -40,5 +40,6 @@ switch (_role) do {
     case "rifleman":        {_current};
     case "sniper":          {[4,  8] call _calculateLimit};
     case "uav":             {[1, 20] call _calculateLimit};
+    case "ugv":             {[1, 20] call _calculateLimit};
     default {-1};
 }

@@ -31,6 +31,7 @@ private _type = switch (_role) do {
     case "rifleman": {"B_Soldier_F"};
     case "sniper": {"B_sniper_F"};
     case "uav": {"B_soldier_UAV_F"};
+    case "ugv": {"B_soldier_UAV_F"};
     default {""};
 };
 if (_type isEqualTo "") exitWith {""};
