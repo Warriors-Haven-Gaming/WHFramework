@@ -5,14 +5,14 @@ class EditorData
 	angleGridStep=0.017453292;
 	scaleGridStep=0.1;
 	autoGroupingDist=10;
-	toggles=1057;
+	toggles=545;
 	mods[]=
 	{
 		"3denEnhanced"
 	};
 	class ItemIDProvider
 	{
-		nextID=1252;
+		nextID=1254;
 	};
 	class LayerIndexProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2029.0885,2.6541178,1342.9883};
-		dir[]={0.45931366,-0.30420321,0.83457589};
-		up[]={0.14668098,0.95260233,0.26651812};
-		aside[]={0.87609577,-4.2002648e-07,-0.48216444};
+		pos[]={1492.5732,64.617691,1239.4135};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -14293,7 +14293,7 @@ class Mission
 					name="Interactables";
 					class Entities
 					{
-						items=60;
+						items=63;
 						class Item0
 						{
 							dataType="Object";
@@ -16584,9 +16584,114 @@ class Mission
 								nAttributes=1;
 							};
 						};
+						class Item60
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1492.5732,39.785103,1264.4135};
+								angles[]={0,3.8571782,0};
+							};
+							side="Empty";
+							class Attributes
+							{
+								init="[this, [1267,1328,0], 180, [""Drones""]] call WHF_fnc_vehSpawnInit;";
+								disableSimulation=1;
+							};
+							id=642;
+							type="Land_Laptop_03_olive_F";
+							atlOffset=0.96276474;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="allowDamage";
+									expression="_this allowdamage _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item61
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1497.6589,39.758759,1264.4353};
+								angles[]={0,2.2863815,0};
+							};
+							side="Empty";
+							class Attributes
+							{
+								init="[this, [1267,1328,0], 180, [""Drones""]] call WHF_fnc_vehSpawnInit;";
+								disableSimulation=1;
+							};
+							id=1161;
+							type="Land_Laptop_03_olive_F";
+							atlOffset=0.93642044;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="allowDamage";
+									expression="_this allowdamage _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item62
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1060.6653,16.040659,1339.1222};
+								angles[]={0,3.0717795,6.2820859};
+							};
+							side="Empty";
+							class Attributes
+							{
+								init="[this, [1058,1329,0], 178, [""Planes""]] call WHF_fnc_vehSpawnInit;";
+								disableSimulation=1;
+							};
+							id=659;
+							type="Land_Laptop_03_olive_F";
+							atlOffset=0.81299973;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="allowDamage";
+									expression="_this allowdamage _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
 					};
 					id=286;
-					atlOffset=-2.4029598;
+					atlOffset=9.3110781;
 				};
 				class Item4
 				{
@@ -19922,7 +20027,7 @@ class Mission
 				};
 			};
 			id=136;
-			atlOffset=36.415405;
+			atlOffset=35.595116;
 		};
 		class Item3
 		{
@@ -20215,7 +20320,7 @@ class Mission
 					name="Interactables_1";
 					class Entities
 					{
-						items=10;
+						items=7;
 						class Item0
 						{
 							dataType="Object";
@@ -20339,19 +20444,18 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={71.617409,9.7483416,16556.135};
+								position[]={71.617592,9.7482815,16556.135};
 								angles[]={0.0002443461,6.2657318,6.2796078};
 							};
 							side="Empty";
-							flags=4;
 							class Attributes
 							{
-								init="[this, [2384,395,31.680], 15, [""Drones"", ""Helicopters""]] call WHF_fnc_vehSpawnInit;";
+								init="[this, [69,16572,30.608], 183, [""Drones"", ""Helicopters""]] call WHF_fnc_vehSpawnInit;";
 								disableSimulation=1;
 							};
 							id=385;
 							type="Land_Laptop_03_olive_F";
-							atlOffset=2.8610229e-05;
+							atlOffset=0.81267929;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -20371,41 +20475,6 @@ class Mission
 							};
 						};
 						class Item4
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={1492.5732,39.785103,1264.4135};
-								angles[]={0,3.8571782,0};
-							};
-							side="Empty";
-							class Attributes
-							{
-								init="[this, [1267,1328,0], 180, [""Drones""]] call WHF_fnc_vehSpawnInit;";
-								disableSimulation=1;
-							};
-							id=642;
-							type="Land_Laptop_03_olive_F";
-							atlOffset=0.96276474;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="allowDamage";
-									expression="_this allowdamage _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item5
 						{
 							dataType="Object";
 							class PositionInfo
@@ -20453,42 +20522,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item6
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={1060.6653,16.040659,1339.1222};
-								angles[]={0,3.0717795,6.2820859};
-							};
-							side="Empty";
-							class Attributes
-							{
-								init="[this, [1058,1329,0], 178, [""Planes""]] call WHF_fnc_vehSpawnInit;";
-								disableSimulation=1;
-							};
-							id=659;
-							type="Land_Laptop_03_olive_F";
-							atlOffset=0.81299973;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="allowDamage";
-									expression="_this allowdamage _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item7
+						class Item5
 						{
 							dataType="Object";
 							class PositionInfo
@@ -20536,7 +20570,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item8
+						class Item6
 						{
 							dataType="Object";
 							class PositionInfo
@@ -20570,44 +20604,9 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item9
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={1497.6589,39.758759,1264.4353};
-								angles[]={0,2.2863815,0};
-							};
-							side="Empty";
-							class Attributes
-							{
-								init="[this, [1267,1328,0], 180, [""Drones""]] call WHF_fnc_vehSpawnInit;";
-								disableSimulation=1;
-							};
-							id=1161;
-							type="Land_Laptop_03_olive_F";
-							atlOffset=0.93642044;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="allowDamage";
-									expression="_this allowdamage _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
 					};
 					id=373;
-					atlOffset=41.761841;
+					atlOffset=37.675781;
 				};
 				class Item3
 				{
@@ -20887,7 +20886,7 @@ class Mission
 				};
 			};
 			id=354;
-			atlOffset=24.32906;
+			atlOffset=24.049904;
 		};
 		class Item4
 		{
@@ -23242,7 +23241,7 @@ class Mission
 					};
 					id=909;
 					type="GX_B_UAV_AI";
-					atlOffset=1.8453637;
+					atlOffset=3.2243061;
 				};
 				class Item1
 				{
@@ -23259,7 +23258,7 @@ class Mission
 					};
 					id=910;
 					type="GX_B_UAV_AI";
-					atlOffset=1.8453637;
+					atlOffset=3.7823834;
 				};
 			};
 			class Attributes
