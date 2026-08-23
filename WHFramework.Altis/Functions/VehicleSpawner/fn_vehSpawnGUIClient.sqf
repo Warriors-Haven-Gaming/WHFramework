@@ -61,7 +61,7 @@ uiNamespace setVariable ["WHF_vehSpawnGUI_spawner", _spawner];
 uiNamespace setVariable ["WHF_vehSpawnGUI_pos", _pos];
 uiNamespace setVariable ["WHF_vehSpawnGUI_dir", _dir];
 uiNamespace setVariable ["WHF_vehSpawnGUI_categories", _categories];
-uiNamespace setVariable ["WHF_vehSpawnGUI_cooldown", uiTime + _cooldown];
+uiNamespace setVariable ["WHF_vehSpawnGUI_cooldown", time + _cooldown];
 uiNamespace setVariable ["WHF_vehSpawnGUI_vehicles", _catalog];
 
 isNil {with uiNamespace do {
@@ -114,7 +114,7 @@ isNil {with uiNamespace do {
     };
 
     WHF_vehSpawnGUI_refreshStatus = {
-        private _cooldown = ceil (WHF_vehSpawnGUI_cooldown - uiTime);
+        private _cooldown = ceil (WHF_vehSpawnGUI_cooldown - time);
         private _text = switch (true) do {
             case (_cooldown > 0): {
                 WHF_vehSpawnGUI_ctrlConfirm ctrlEnable false;
@@ -268,7 +268,7 @@ isNil {with uiNamespace do {
     _display spawn {
         while {!isNull _this} do {
             call WHF_vehSpawnGUI_refreshStatus;
-            uiSleep (1 - abs (WHF_vehSpawnGUI_cooldown - uiTime) % 1);
+            sleep 1;
         };
     };
 }};

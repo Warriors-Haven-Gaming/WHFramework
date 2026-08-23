@@ -21,6 +21,6 @@ if (!isServer) exitWith {};
 if (_uid isEqualType objNull) then {_uid = getPlayerUID _uid};
 
 if (isNil "WHF_vehSpawn_cooldowns") then {WHF_vehSpawn_cooldowns = createHashMap};
-private _now = serverTime;
+private _now = time;
 private _time = WHF_vehSpawn_cooldowns getOrDefault [_uid, _now];
 _time - _now

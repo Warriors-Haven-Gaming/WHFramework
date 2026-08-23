@@ -21,4 +21,4 @@ if (_uid isEqualType objNull) then {_uid = getPlayerUID _uid};
 if (_uid isEqualTo "") exitWith {};
 
 if (isNil "WHF_vehSpawn_cooldowns") then {WHF_vehSpawn_cooldowns = createHashMap};
-WHF_vehSpawn_cooldowns set [_uid, serverTime + _cooldown];
+WHF_vehSpawn_cooldowns set [_uid, time + _cooldown];
