@@ -1565,3 +1565,15 @@ call WHF_fnc_cycleFaction;
     {},
     false
 ] call WHF_fnc_addSetting;
+
+// Vehicle Spawners
+[
+    "WHF_vehSpawn_limit_player",
+    "LIST",
+    ["STR_WHF_settings_vehSpawn_limit_player", "STR_WHF_settings_vehSpawn_limit_player_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_vehSpawn"],
+    [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [], 1],
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;

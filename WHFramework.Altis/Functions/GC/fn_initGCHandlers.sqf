@@ -30,7 +30,9 @@ addMissionEventHandler ["BuildingChanged", {
 addMissionEventHandler ["PlayerDisconnected", {
     params ["", "_uid"];
     if (isNil "WHF_vehSpawn_lastVehicles") exitWith {};
-    private _vehicle = WHF_vehSpawn_lastVehicles get _uid;
-    if (isNil "_vehicle" || {isNull _vehicle}) exitWith {};
-    [_vehicle, 50] call WHF_fnc_queueGCDeletion;
+
+    private _lastVehicles = WHF_vehSpawn_lastVehicles deleteAt _uid;
+    if (isNil "_lastVehicles") exitWith {};
+
+    {[_x, 50] call WHF_fnc_queueGCDeletion} forEach _lastVehicles;
 }];

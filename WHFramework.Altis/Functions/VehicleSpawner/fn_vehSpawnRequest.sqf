@@ -54,11 +54,20 @@ if (_pos isEqualTo []) exitWith {
     remoteExec ["WHF_fnc_vehSpawnObstructed", remoteExecutedOwner];
 };
 
-if (isNil "WHF_vehSpawn_lastVehicles") then {WHF_vehSpawn_lastVehicles = createHashMap};
-private _lastVehicle = WHF_vehSpawn_lastVehicles getOrDefault [_uid, objNull];
-if (!isNull _lastVehicle) then {
-    [_lastVehicle, _player] remoteExec ["WHF_fnc_vehSpawnDespawn", _lastVehicle];
-    waitUntil [{isNull _lastVehicle}, 3, 0.2];
+// TODO: disable vehicle spawner if WHF_vehSpawn_limit_player < 1?
+// TODO: show number of alive vehicles in GUI
+private _lastVehicles = [];
+private _oldVehicles = [];
+isNil {
+    if (isNil "WHF_vehSpawn_lastVehicles") then {WHF_vehSpawn_lastVehicles = createHashMap};
+    private _alive = WHF_vehSpawn_lastVehicles getOrDefault [_uid, []] select {alive _x};
+    _oldVehicles = _alive select [0, count _alive - WHF_vehSpawn_limit_player + 1];
+    _lastVehicles = _alive - _oldVehicles;
+};
+
+if (_oldVehicles isNotEqualTo []) then {
+    [_oldVehicles, _player] remoteExec ["WHF_fnc_vehSpawnDespawn", _oldVehicles];
+    waitUntil [{_oldVehicles findIf {!isNull _x} < 0}, 3, 0.2];
 };
 
 _vehicle = createVehicle [_vehicle, [-random 500, -random 500, random 500], [], 0, "CAN_COLLIDE"];
@@ -71,7 +80,8 @@ if (isNull _vehicle) exitWith {
     ];
 };
 
-WHF_vehSpawn_lastVehicles set [_uid, _vehicle];
+_lastVehicles pushBack _vehicle;
+WHF_vehSpawn_lastVehicles set [_uid, _lastVehicles];
 
 _vehicle setDir _dir;
 _vehicle setPosATL _pos;
