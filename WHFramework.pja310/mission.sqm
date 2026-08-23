@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1249;
+		nextID=1251;
 	};
 	class LayerIndexProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1295.5665,31.463547,867.30585};
-		dir[]={0.023888048,-0.65084428,0.75899172};
-		up[]={0.020472426,0.75918448,0.65050036};
-		aside[]={0.99960709,-2.2556196e-07,-0.031461313};
+		pos[]={1165.1422,22.051868,1073.6957};
+		dir[]={0.24331713,-0.46480951,-0.85133398};
+		up[]={0.12773499,0.88540047,-0.44692707};
+		aside[]={-0.96150649,-8.9232344e-08,-0.27480546};
 	};
 };
 binarizationWanted=0;
@@ -46,13 +46,13 @@ addons[]=
 	"A3_Soft_F_Gamma_Truck_01",
 	"USAF_ServiceMenu",
 	"A3_Air_F_Heli_Light_01",
-	"A3_Air_F_Beta_Heli_Transport_01",
 	"Peral_Airfield_Logistics",
 	"A3_Supplies_F_Heli_CargoNets",
 	"A3_Soft_F_Enoch_Truck_01",
 	"A3_Supplies_F_Heli_Slingload",
 	"A3_Weapons_F_Ammoboxes",
 	"A3_Boat_F_Boat_Armed_01",
+	"A3_Air_F_Beta_Heli_Transport_01",
 	"A3_Structures_F_EPC_Items_Electronics",
 	"A3_Props_F_Enoch_Military_Equipment",
 	"A3_Structures_F_Tank_Military_RepairDepot",
@@ -6040,41 +6040,6 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={1080.5,17.167511,1058.9979};
-								angles[]={0.0010918301,3.9132079e-05,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
-							};
-							id=269;
-							type="B_Heli_Transport_01_F";
-							atlOffset=-4.7683716e-06;
-						};
-						class Item9
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={1167.5,17.200256,1060.0004};
-								angles[]={0,6.2829762,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
-							};
-							id=271;
-							type="B_Heli_Transport_01_pylons_F";
-						};
-						class Item10
-						{
-							dataType="Object";
-							class PositionInfo
-							{
 								position[]={1111.9976,15.867109,1146.9928};
 								angles[]={0.0010918301,3.1415906,0};
 							};
@@ -6088,7 +6053,7 @@ class Mission
 							type="B_CargoNet_01_ammo_F";
 							atlOffset=-3.8146973e-06;
 						};
-						class Item11
+						class Item9
 						{
 							dataType="Object";
 							class PositionInfo
@@ -6106,7 +6071,7 @@ class Mission
 							type="B_CargoNet_01_ammo_F";
 							atlOffset=-2.8610229e-06;
 						};
-						class Item12
+						class Item10
 						{
 							dataType="Object";
 							class PositionInfo
@@ -6123,7 +6088,7 @@ class Mission
 							id=275;
 							type="B_Truck_01_flatbed_F";
 						};
-						class Item13
+						class Item11
 						{
 							dataType="Object";
 							class PositionInfo
@@ -6141,7 +6106,7 @@ class Mission
 							type="B_Slingload_01_Ammo_F";
 							atlOffset=-2.0980835e-05;
 						};
-						class Item14
+						class Item12
 						{
 							dataType="Object";
 							class PositionInfo
@@ -6159,7 +6124,7 @@ class Mission
 							type="B_Slingload_01_Fuel_F";
 							atlOffset=-9.5367432e-07;
 						};
-						class Item15
+						class Item13
 						{
 							dataType="Object";
 							class PositionInfo
@@ -6176,7 +6141,7 @@ class Mission
 							id=278;
 							type="B_Slingload_01_Repair_F";
 						};
-						class Item16
+						class Item14
 						{
 							dataType="Object";
 							class PositionInfo
@@ -6194,7 +6159,7 @@ class Mission
 							type="B_supplyCrate_F";
 							atlOffset=-9.5367432e-07;
 						};
-						class Item17
+						class Item15
 						{
 							dataType="Object";
 							class PositionInfo
@@ -6212,7 +6177,7 @@ class Mission
 							type="B_supplyCrate_F";
 							atlOffset=-9.5367432e-07;
 						};
-						class Item18
+						class Item16
 						{
 							dataType="Object";
 							class PositionInfo
@@ -6229,7 +6194,7 @@ class Mission
 							type="B_Boat_Armed_01_minigun_F";
 							atlOffset=14.673554;
 						};
-						class Item19
+						class Item17
 						{
 							dataType="Object";
 							class PositionInfo
@@ -6246,9 +6211,44 @@ class Mission
 							type="B_Boat_Armed_01_minigun_F";
 							atlOffset=11.181;
 						};
+						class Item18
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1080.5,17.167515,1058.9978};
+								angles[]={0.0010995574,3.4906585e-05,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+							};
+							id=1249;
+							type="B_CTRG_Heli_Transport_01_Assault_F";
+						};
+						class Item19
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1167.5,17.200256,1060.0004};
+								angles[]={0,6.2829762,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+								pylons="PylonFuelTank_UH80;PylonWeapon_500Rnd_127mm_HEIAP_belt_left;PylonRack_12Rnd_PGM_missiles_black;PylonFuelTank_UH80;PylonRadarPod_01_F;PylonECMPod_01_DIRCM_R;PylonECMPod_01_DIRCM_L;";
+							};
+							id=1250;
+							type="B_CTRG_Heli_Transport_01_DAP_F";
+						};
 					};
 					id=243;
-					atlOffset=-8.0751286;
+					atlOffset=-2.7238331;
 				};
 				class Item3
 				{
@@ -10463,7 +10463,7 @@ class Mission
 				};
 			};
 			id=136;
-			atlOffset=41.750237;
+			atlOffset=40.071518;
 		};
 		class Item3
 		{
