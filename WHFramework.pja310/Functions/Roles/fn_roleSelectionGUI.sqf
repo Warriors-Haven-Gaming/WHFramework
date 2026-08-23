@@ -21,6 +21,7 @@ uiNamespace setVariable ["WHF_roleSelectionGUI_roles", [
     "jtac",
     "arty",
     "uav",
+    "ugv",
     "pilot_transport",
     "pilot_cas_heli",
     "pilot_cas_plane"
