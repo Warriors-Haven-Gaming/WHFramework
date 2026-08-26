@@ -345,8 +345,8 @@ isNil {with uiNamespace do {
             sleep _duration;
 
             private _marker = [focusOn] call WHF_fnc_respawnMarkers select 0;
-            focusOn setPosASL AGLToASL markerPos [_marker, true];
             focusOn setDir markerDir _marker;
+            focusOn setPosASL AGLToASL markerPos [_marker, true];
 
             _half fadeSound _soundVolume;
             cutText ["", "BLACK IN", _half];

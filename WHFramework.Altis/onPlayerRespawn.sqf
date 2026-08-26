@@ -29,8 +29,8 @@ if (_loadout isNotEqualTo []) then {[_unit, _loadout] spawn WHF_fnc_setUnitLoado
 private _respawns = [_unit] call WHF_fnc_respawnMarkers;
 if (count _respawns > 0) then {
     private _marker = _respawns # 0;
-    _unit setPosASL AGLToASL markerPos [_marker, true];
     _unit setDir markerDir _marker;
+    _unit setPosASL AGLToASL markerPos [_marker, true];
 };
 
 _unit enableStamina WHF_fitness_stamina;
