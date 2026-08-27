@@ -77,7 +77,8 @@ diag_log text format [
 
 [_player, _module] spawn _assignCurator;
 [_module] spawn {
+    params ["_module"];
     scriptName "WHF_fnc_createCurator_addCuratorEditableObjects";
     private _objects = allMissionObjects "" select {!(_x isKindOf "Logic")};
-    _this addCuratorEditableObjects [_objects, true];
+    _module addCuratorEditableObjects [_objects, true];
 };
