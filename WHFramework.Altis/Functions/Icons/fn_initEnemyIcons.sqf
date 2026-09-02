@@ -36,7 +36,9 @@ addMissionEventHandler ["Draw3D", {
         // private _isTarget = _target isEqualTo cursorTarget;
         private _side = side group _target; // more consistent than target knowledge
         private _size = linearConversion [2, 30, _distance, 1, 0.5, true];
-        private _opacity = linearConversion [_maxAge / 2, _maxAge, _age, 1, 0, true];
+        private _opacity =
+            linearConversion [_maxDistance - 100 max 0, _maxDistance, _distance, 1, 0, true]
+            * linearConversion [_maxAge / 2, _maxAge, _age, 1, 0, true];
         private _color = switch (true) do {
             case (!alive _target): {WHF_icons_color_dead};
             case (lifeState _target isEqualTo "INCAPACITATED"): {WHF_icons_color_incap};
