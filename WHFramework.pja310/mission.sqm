@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1254;
+		nextID=1256;
 	};
 	class LayerIndexProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1492.5732,64.617691,1239.4135};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,0};
+		pos[]={984.76703,51.353645,1280.2368};
+		dir[]={0.95533091,-0.27648291,0.10471649};
+		up[]={0.27485093,0.96101362,0.030126981};
+		aside[]={0.10896514,3.934183e-07,-0.99407667};
 	};
 };
 binarizationWanted=0;
@@ -87,7 +87,6 @@ addons[]=
 	"unit_config",
 	"qav_marshall",
 	"rksla3_aw159",
-	"REB_FIR_F16",
 	"rksla3_foxhound_lppv",
 	"A3_Soft_F_Exp_MRAP_01",
 	"A3_Soft_F_Exp_LSV_01",
@@ -154,7 +153,8 @@ addons[]=
 	"A3_Characters_F_Orange_Headgear",
 	"Weapons_F_JCA_IA_Rifles_SR10",
 	"A3_Structures_F_Heli_Items_Electronics",
-	"A3_Characters_F_Decade_Headgear"
+	"A3_Characters_F_Decade_Headgear",
+	"QAV_MV35"
 };
 class AddonsMetaData
 {
@@ -421,229 +421,229 @@ class AddonsMetaData
 		};
 		class Item41
 		{
-			className="REB_FIR_F16";
-			name="REBalanced FIR F-16";
-			author="Orbis2358";
-		};
-		class Item42
-		{
 			className="rksla3_foxhound_lppv";
 			name="rksla3_foxhound_lppv";
 		};
-		class Item43
+		class Item42
 		{
 			className="A3_Soft_F_Exp";
 			name="Arma 3 Apex - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item44
+		class Item43
 		{
 			className="A3_Soft_F";
 			name="Arma 3 Alpha - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item45
+		class Item44
 		{
 			className="Test_boat_F";
 			name="Test_boat_F";
 		};
-		class Item46
+		class Item45
 		{
 			className="USAF_RQ4A";
 			name="USAF_RQ4A";
 			author="USAF Mod Team";
 		};
-		class Item47
+		class Item46
 		{
 			className="gx_drones_usv_magura";
 			name="GX Drones - MAGURA";
 			author="GX";
 		};
-		class Item48
+		class Item47
 		{
 			className="A3_Structures_F_Tank";
 			name="Arma 3 Tank - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item49
+		class Item48
 		{
 			className="VehicleCargoManager";
 			name="VehicleCargoManager";
 			author="Roosevelt Cat";
 		};
-		class Item50
+		class Item49
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item51
+		class Item50
 		{
 			className="A3_Modules_F";
 			name="Arma 3 Alpha - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item52
+		class Item51
 		{
 			className="gx_drones_rws_defnder";
 			name="GX Drones - RWS - DeFNder";
 			author="GX";
 		};
-		class Item53
+		class Item52
 		{
 			className="A3_Static_F_Sams";
 			name="Arma 3 Sams - Turrets";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item54
+		class Item53
 		{
 			className="A3_Static_F_Jets";
 			name="Arma 3 Jets - Turrets";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item55
+		class Item54
 		{
 			className="A3_Static_F_Destroyer";
 			name="Arma 3 Destroyer - Turrets";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item56
+		class Item55
 		{
 			className="A3_Boat_F_Destroyer";
 			name="Arma 3 Jets - Boats and Submersibles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item57
+		class Item56
 		{
 			className="CUP_CAMisc_E_WF";
 			name="CUP_CAMisc_E_WF";
 		};
-		class Item58
+		class Item57
 		{
 			className="CUP_StandaloneTerrains_Core_Faction";
 			name="CUP_StandaloneTerrains_Core_Faction";
 		};
-		class Item59
+		class Item58
 		{
 			className="RDS_StaticWeapons_Core";
 			name="RDS_StaticWeapons_Core";
 		};
-		class Item60
+		class Item59
 		{
 			className="CUP_Editor_A1_Roads_Config";
 			name="CUP_Editor_A1_Roads_Config";
 		};
-		class Item61
+		class Item60
 		{
 			className="CUP_Buildings_Config";
 			name="CUP_Buildings_Config";
 		};
-		class Item62
+		class Item61
 		{
 			className="CUP_New_Buildings_Bunker";
 			name="CUP_New_Buildings_Bunker";
 		};
-		class Item63
+		class Item62
 		{
 			className="A3_Structures_F_Exp_Industrial";
 			name="Arma 3 Apex - Industrial Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item64
+		class Item63
 		{
 			className="A3_Structures_F_Exp_Civilian";
 			name="Arma 3 Apex - Civilian Buildings";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item65
+		class Item64
 		{
 			className="A3_Structures_F_Exp_Cultural";
 			name="Arma 3 Apex - Cultural Buildings";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item66
+		class Item65
 		{
 			className="A3_Structures_F_Exp_Commercial";
 			name="Arma 3 Apex - Commercial Buildings";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item67
+		class Item66
 		{
 			className="gx_drones_core";
 			name="GX Drones - Core";
 			author="GX";
 		};
-		class Item68
+		class Item67
 		{
 			className="Weapons_F_JCA_IA";
 			name="JCA - Infantry Arsneal: Weapons";
 			author="Grave";
 		};
-		class Item69
+		class Item68
 		{
 			className="A3_Weapons_F_Enoch";
 			name="Arma 3 Contact Platform - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item70
+		class Item69
 		{
 			className="Headwear_F_JCA_IE";
 			name="Headwear_F_JCA_IE";
 			author="Grave";
 		};
-		class Item71
+		class Item70
 		{
 			className="A3_Weapons_F_Orange";
 			name="Arma 3 Orange - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item72
+		class Item71
 		{
 			className="A3_Characters_F_Exp";
 			name="Arma 3 Apex - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item73
+		class Item72
 		{
 			className="Max_WAW";
 			name="Max_WAW";
 		};
-		class Item74
+		class Item73
 		{
 			className="A3_Characters_F_Orange";
 			name="Arma 3 Orange - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item75
+		class Item74
 		{
 			className="A3_Characters_F_AoW";
 			name="Arma 3 Art of War - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item76
+		class Item75
 		{
 			className="A3_Characters_F_Decade";
 			name="CFGPATCHES_A3_Characters_F_Decade";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
+		};
+		class Item76
+		{
+			className="QAV_MV35";
+			name="MV-35";
+			author="Quiggs";
 		};
 	};
 };
@@ -731,7 +731,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=101;
+		items=102;
 		class Item0
 		{
 			dataType="Layer";
@@ -12276,7 +12276,7 @@ class Mission
 					name="Vehicles";
 					class Entities
 					{
-						items=48;
+						items=47;
 						class Item0
 						{
 							dataType="Object";
@@ -13794,54 +13794,6 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={948.37402,16.880222,1325.3289};
-								angles[]={0.0010995574,3.1590459,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_cas_plane""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
-							};
-							id=898;
-							type="FIR_F16C_WP_Juvat";
-							atlOffset=9.5367432e-07;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="F16_ABSound_A_ID";
-									expression="_this setVariable [""F16_ABSound_C"",_value];";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="F16_ReplacePilotID";
-									expression="_this setVariable [""F16_ReplacePilot"",_value]; [_this, _value,'single'] execVM 'FIR_AirWeaponSystem_US\Script\init\replace_pilot.sqf';";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item31
-						{
-							dataType="Object";
-							class PositionInfo
-							{
 								position[]={1267.4993,17.590286,975.625};
 								angles[]={6.2820859,1.5358897,0.0010995574};
 							};
@@ -13910,7 +13862,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item32
+						class Item31
 						{
 							dataType="Object";
 							class PositionInfo
@@ -13957,7 +13909,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item33
+						class Item32
 						{
 							dataType="Object";
 							class PositionInfo
@@ -13974,7 +13926,7 @@ class Mission
 							id=942;
 							type="B_T_MRAP_01_F";
 						};
-						class Item34
+						class Item33
 						{
 							dataType="Object";
 							class PositionInfo
@@ -13992,7 +13944,7 @@ class Mission
 							type="B_T_MRAP_01_gmg_F";
 							atlOffset=9.5367432e-07;
 						};
-						class Item35
+						class Item34
 						{
 							dataType="Object";
 							class PositionInfo
@@ -14010,7 +13962,7 @@ class Mission
 							type="B_T_MRAP_01_hmg_F";
 							atlOffset=9.5367432e-07;
 						};
-						class Item36
+						class Item35
 						{
 							dataType="Object";
 							class PositionInfo
@@ -14027,7 +13979,7 @@ class Mission
 							id=941;
 							type="B_T_LSV_01_AT_F";
 						};
-						class Item37
+						class Item36
 						{
 							dataType="Object";
 							class PositionInfo
@@ -14044,7 +13996,7 @@ class Mission
 							id=940;
 							type="B_T_LSV_01_armed_F";
 						};
-						class Item38
+						class Item37
 						{
 							dataType="Object";
 							class PositionInfo
@@ -14061,7 +14013,7 @@ class Mission
 							id=939;
 							type="B_T_LSV_01_unarmed_F";
 						};
-						class Item39
+						class Item38
 						{
 							dataType="Object";
 							class PositionInfo
@@ -14078,7 +14030,7 @@ class Mission
 							id=687;
 							type="B_Quadbike_01_F";
 						};
-						class Item40
+						class Item39
 						{
 							dataType="Object";
 							class PositionInfo
@@ -14095,7 +14047,7 @@ class Mission
 							id=743;
 							type="B_Quadbike_01_F";
 						};
-						class Item41
+						class Item40
 						{
 							dataType="Object";
 							class PositionInfo
@@ -14113,7 +14065,7 @@ class Mission
 							type="B_Quadbike_01_F";
 							atlOffset=-9.5367432e-07;
 						};
-						class Item42
+						class Item41
 						{
 							dataType="Object";
 							class PositionInfo
@@ -14185,7 +14137,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item43
+						class Item42
 						{
 							dataType="Object";
 							class PositionInfo
@@ -14202,7 +14154,7 @@ class Mission
 							type="Burnes_LCAC_1";
 							atlOffset=4.2245378;
 						};
-						class Item44
+						class Item43
 						{
 							dataType="Object";
 							class PositionInfo
@@ -14221,7 +14173,7 @@ class Mission
 							type="B_T_UGV_01_olive_F";
 							atlOffset=-6.0081482e-05;
 						};
-						class Item45
+						class Item44
 						{
 							dataType="Object";
 							class PositionInfo
@@ -14240,7 +14192,7 @@ class Mission
 							type="B_T_UGV_01_rcws_olive_F";
 							atlOffset=-1.9073486e-06;
 						};
-						class Item46
+						class Item45
 						{
 							dataType="Object";
 							class PositionInfo
@@ -14258,7 +14210,7 @@ class Mission
 							type="USAF_RQ4A";
 							atlOffset=-9.5367432e-07;
 						};
-						class Item47
+						class Item46
 						{
 							dataType="Object";
 							class PositionInfo
@@ -29594,6 +29546,81 @@ class Mission
 				};
 			};
 			id=1248;
+		};
+		class Item101
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={948.46021,19.311977,1325.7504};
+				angles[]={0.0010995574,3.1066861,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this setVariable [""WHF_vehicleLock_driver"", [""role"", [""pilot_transport""]]];" \n "[this] call WHF_fnc_addRespawnVehicle;";
+				textures="Black";
+				reportRemoteTargets=1;
+				receiveRemoteTargets=1;
+				reportOwnPosition=1;
+			};
+			id=1254;
+			type="B_VTOL_03_unarmed_QAV";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="VehicleCustomization";
+					expression="if (local _this) then {([_this] + _value + [true]) call (uinamespace getvariable 'BIS_fnc_initVehicle')};";
+					class Value
+					{
+						class data
+						{
+							singleType="ARRAY";
+							class value
+							{
+								items=2;
+								class Item0
+								{
+									class data
+									{
+										singleType="ARRAY";
+										class value
+										{
+											items=2;
+											class Item0
+											{
+												class data
+												{
+													singleType="STRING";
+													value="Black";
+												};
+											};
+											class Item1
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1;
+												};
+											};
+										};
+									};
+								};
+								class Item1
+								{
+									class data
+									{
+										singleType="ARRAY";
+									};
+								};
+							};
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 	class Connections
