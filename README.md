@@ -165,3 +165,5 @@ following these guidelines:
 Vicious Resilience and I ([thegamecracks](https://ko-fi.com/thegamecracks))
 are the sole developers of this gamemode.
 If you really like it, please consider buying us a coffee! ☕
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/G2G81JH7Z8)
