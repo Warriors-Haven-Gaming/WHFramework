@@ -159,3 +159,9 @@ following these guidelines:
   of Warriors Haven Framework.
 - Under the above notice, include either a link to our workshop page, or a link
   to this GitHub repository.
+
+## Donations
+
+Vicious Resilience and I ([thegamecracks](https://ko-fi.com/thegamecracks))
+are the sole developers of this gamemode.
+If you really like it, please consider buying us a coffee! ☕
