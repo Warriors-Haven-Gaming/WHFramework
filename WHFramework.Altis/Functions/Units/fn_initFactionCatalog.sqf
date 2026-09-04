@@ -572,7 +572,7 @@ WHF_faction_types = compileFinal createHashMapFromArray [
     [["aircraft", "heli_attack",  "nato_pacific"], ["B_Heli_Light_01_dynamicLoadout_F","B_CTRG_Heli_Transport_01_DAP_tropic_F"]],
     [["aircraft", "heli_gunship", "nato_pacific"], ["B_Heli_Attack_01_dynamicLoadout_F","B_Heli_Attack_01_pylons_dynamicLoadout_F"]],
     [["aircraft", "heli_light",   "nato_pacific"], ["B_Heli_Light_01_F"]],
-    [["aircraft", "heli_medium",  "nato_pacific"], ["B_CTRG_Heli_Transport_01_Assault_tropic_F","B_Heli_Transport_03_F"]],
+    [["aircraft", "heli_medium",  "nato_pacific"], ["B_CTRG_Heli_Transport_01_Assault_tropic_F","B_CTRG_Heli_Transport_01_tropic_F"]],
     [["aircraft", "jet_cap",      "nato_pacific"], ["B_Plane_Fighter_01_F"]],
     [["aircraft", "jet_cas",      "nato_pacific"], ["B_Plane_CAS_01_dynamicLoadout_F"]],
     [["aircraft", "heli_attack",  "ef_mjtf_desert"], ["B_Heli_Light_01_dynamicLoadout_F"]],
