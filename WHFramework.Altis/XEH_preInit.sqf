@@ -1577,3 +1577,15 @@ call WHF_fnc_cycleFaction;
     {},
     false
 ] call WHF_fnc_addSetting;
+
+// Weather
+[
+    "WHF_weather_fog_cleanup_enabled",
+    "CHECKBOX",
+    ["STR_WHF_settings_weather_fog_cleanup_enabled", "STR_WHF_settings_weather_fog_cleanup_enabled_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_weather"],
+    true,
+    true,
+    {},
+    false
+] call WHF_fnc_addSetting;

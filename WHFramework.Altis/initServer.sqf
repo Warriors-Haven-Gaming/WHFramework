@@ -22,6 +22,7 @@ if (isMultiplayer) then {
 
 if (isMultiplayer) then {["Initialize"] call BIS_fnc_dynamicGroups};
 
+WHF_fogCleanupLoop_script = spawn WHF_fnc_fogCleanupLoop;
 WHF_timeMultiplierLoop_script = spawn WHF_fnc_timeMultiplierLoop;
 
 private _headlessClients =  entities "HeadlessClient_F" select {isPlayer _x};
