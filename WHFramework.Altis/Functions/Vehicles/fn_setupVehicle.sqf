@@ -23,6 +23,10 @@ _vehicle call WHF_fnc_addVehicleDamageHandlers;
 if (_vehicle isKindOf "ReammoBox_F") exitWith {};
 if (!local _vehicle) exitWith {};
 
+_vehicle setVehicleReceiveRemoteTargets true;
+_vehicle setVehicleReportOwnPosition true;
+_vehicle setVehicleReportRemoteTargets true;
+
 switch (true) do {
     // QAV - AbramsX
     case (_vehicle isKindOf "qav_abramsx_base"): {
