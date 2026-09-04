@@ -12,7 +12,11 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1260;
+		nextID=1262;
+	};
+	class MarkerIDProvider
+	{
+		nextID=1;
 	};
 	class LayerIndexProvider
 	{
@@ -20,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={13001.562,182.85782,14777.161};
-		dir[]={0.19092919,-0.52960742,0.82648176};
-		up[]={0.11920782,0.84824055,0.51601988};
-		aside[]={0.97434425,-5.2968971e-08,-0.22508694};
+		pos[]={1156.7732,139.39696,801.73132};
+		dir[]={0.54360396,-0.1725803,0.82141149};
+		up[]={0.095245153,0.98499477,0.14391987};
+		aside[]={0.83392417,1.4121179e-07,-0.551884};
 	};
 };
 binarizationWanted=0;
@@ -740,7 +744,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=102;
+		items=104;
 		class Item0
 		{
 			dataType="Layer";
@@ -29630,6 +29634,66 @@ class Mission
 			id=1259;
 			type="B_HMG_01_high_F";
 			atlOffset=3.1411591;
+		};
+		class Item102
+		{
+			dataType="Marker";
+			position[]={10218.385,101.67904,20216.15};
+			name="WHF_deadzone_north";
+			markerType="RECTANGLE";
+			type="";
+			alpha=0;
+			a=10312.629;
+			b=340.5593;
+			id=1260;
+			atlOffset=96.146912;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item103
+		{
+			dataType="Marker";
+			position[]={20341.617,101.95972,10237.154};
+			name="WHF_deadzone_east";
+			markerType="RECTANGLE";
+			type="";
+			alpha=0;
+			a=340.55899;
+			b=10312.629;
+			id=1261;
+			atlOffset=96.14653;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 	class Connections
