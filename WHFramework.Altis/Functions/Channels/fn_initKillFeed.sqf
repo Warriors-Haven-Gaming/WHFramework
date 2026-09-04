@@ -27,6 +27,7 @@ if (hasInterface) then {addMissionEventHandler ["EntityKilled", {
 
     private _sideEntity = side group _entity;
     private _sideInstigator = side group _instigator;
+    if (_sideEntity isEqualTo sideUnknown) then {_sideEntity = _entity getVariable ["WHF_vehicle_side", sideUnknown]};
     if (_sideEntity isEqualTo sideUnknown) exitWith {};
     if !([_sideInstigator, _sideEntity] call BIS_fnc_sideIsEnemy) exitWith {};
 
