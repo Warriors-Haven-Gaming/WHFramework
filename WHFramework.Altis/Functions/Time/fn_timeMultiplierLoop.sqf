@@ -5,15 +5,6 @@ Description:
     Periodically updates the time multiplier.
     Function must be executed on server.
 
-Parameters:
-    Array functions:
-        The function names of each mission to spawn.
-    Code minScripts:
-        A function that returns minimum number of active missions allowed.
-    Code maxScripts:
-        A function that returns maximum number of active missions allowed.
-        Takes priority over minScripts.
-
 Author:
     thegamecracks
 
