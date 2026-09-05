@@ -33,14 +33,11 @@ params ["_side", "_unitTypes", "_turrets"];
 _turrets = _turrets select {
     alive _x
     && {local _x
-    && {count allTurrets _x > 0
-    && {isNull gunner _x}}}
+    && {count allTurrets _x > 0}}
 };
 
-if (_turrets isEqualTo []) exitWith {grpNull};
-
 private _uavTurrets = _turrets select {unitIsUAV _x};
-private _mannedTurrets = _turrets - _uavTurrets;
+private _mannedTurrets = _turrets - _uavTurrets select {isNull gunner _x};
 
 private _initTurrets = {
     // params ["_turrets", "_side"];
@@ -74,25 +71,28 @@ private _initTurrets = {
 };
 
 private _registerArtillery = {
-    // params ["_mannedTurrets", "_group"];
+    // params ["_mannedTurrets", "_mannedGroup"];
     if (_mannedTurrets findIf {_x call WHF_fnc_isArtilleryVehicle} < 0) exitWith {};
     if (isNil "lambs_wp_fnc_taskartilleryregister") exitWith {};
 
     // TODO: add scripts for automatic targeting in vanilla
-    [_group] call lambs_wp_fnc_taskartilleryregister;
+    [_mannedGroup] call lambs_wp_fnc_taskartilleryregister;
 };
 
 private _pos = [-random 500, -random 500, 0];
-private _group = [_side, _unitTypes, count _mannedTurrets, _pos, 0, 0, false] call WHF_fnc_spawnUnits;
-{
-    private _turret = _mannedTurrets # _forEachIndex;
-    _group addVehicle _turret;
-    _x moveInGunner _turret;
-    if (isNull objectParent _x) then {deleteVehicle _x};
-} forEach units _group;
+private _mannedGroup = grpNull;
+if (_mannedTurrets isNotEqualTo []) then {
+    _mannedGroup = [_side, _unitTypes, count _mannedTurrets, _pos, 0, 0, false] call WHF_fnc_spawnUnits;
+    {
+        private _turret = _mannedTurrets # _forEachIndex;
+        _mannedGroup addVehicle _turret;
+        _x moveInGunner _turret;
+        if (isNull objectParent _x) then {deleteVehicle _x};
+    } forEach units _mannedGroup;
+};
 
 {_side createVehicleCrew _x} forEach _uavTurrets;
 
 call _initTurrets;
-call _registerArtillery;
-_group
+call _registerArtillery; // TODO: can UAV artillery be registered?
+_mannedGroup
