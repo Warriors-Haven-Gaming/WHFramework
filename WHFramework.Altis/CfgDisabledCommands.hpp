@@ -380,7 +380,7 @@ class CfgDisabledCommands
     {
         class SYNTAX1
         {
-            targets[] = {0,0,0};
+            targets[] = {1,1,1};
             args[] = {{"OBJECT"},{"SCALAR"}};
         };
     };

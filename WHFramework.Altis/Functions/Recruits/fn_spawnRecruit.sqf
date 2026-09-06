@@ -39,6 +39,7 @@ private _type = switch (_role) do {
 private _unit = group focusOn createUnit [_type, _position, [], 0, "NONE"];
 [_unit] joinSilent group focusOn;
 _unit enableStamina WHF_fitness_stamina;
+_unit setUnitRecoilCoefficient WHF_fitness_recoil;
 _unit setCustomAimCoef WHF_fitness_sway;
 _unit setDir (_position getDir focusOn);
 _unit setSkill WHF_recruits_skill;

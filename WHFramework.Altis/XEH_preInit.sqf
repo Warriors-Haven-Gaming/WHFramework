@@ -350,6 +350,16 @@ call WHF_fnc_cycleFaction;
     false
 ] call WHF_fnc_addSetting;
 [
+    "WHF_fitness_recoil",
+    "SLIDER",
+    ["STR_WHF_settings_fitness_recoil", "STR_WHF_settings_fitness_recoil_tooltip"],
+    ["STR_WHF_settings", "STR_WHF_settings_fitness"],
+    [0.5, 1, 1, 0, true],
+    true,
+    {player setUnitRecoilCoefficient _this},
+    false
+] call WHF_fnc_addSetting;
+[
     "WHF_fitness_sway",
     "SLIDER",
     ["STR_WHF_settings_fitness_sway", "STR_WHF_settings_fitness_sway_tooltip"],
