@@ -354,7 +354,7 @@ call WHF_fnc_cycleFaction;
     "SLIDER",
     ["STR_WHF_settings_fitness_recoil", "STR_WHF_settings_fitness_recoil_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_fitness"],
-    [0.5, 1, 1, 0, true],
+    [0.5, 5, 1, 0, true],
     true,
     {player setUnitRecoilCoefficient _this},
     false
@@ -364,7 +364,7 @@ call WHF_fnc_cycleFaction;
     "SLIDER",
     ["STR_WHF_settings_fitness_sway", "STR_WHF_settings_fitness_sway_tooltip"],
     ["STR_WHF_settings", "STR_WHF_settings_fitness"],
-    [0.1, 1, 0.1, 0, true],
+    [0.1, 2, 0.1, 0, true],
     true,
     {player setCustomAimCoef _this},
     false
