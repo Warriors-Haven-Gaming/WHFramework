@@ -27,6 +27,12 @@ _vehicle setVehicleReceiveRemoteTargets true;
 _vehicle setVehicleReportOwnPosition true;
 _vehicle setVehicleReportRemoteTargets true;
 
+private _setPylonLoadout_called = false;
+private _setPylonLoadout = {
+    _setPylonLoadout_called = true;
+    _vehicle setPylonLoadout _this;
+};
+
 switch (true) do {
     // QAV - AbramsX
     case (_vehicle isKindOf "qav_abramsx_base"): {
@@ -124,44 +130,44 @@ switch (true) do {
         [_vehicle, WHF_aps_ammoAPC] call WHF_fnc_addAPS;
     };
     case (_vehicle isKindOf "Heli_Attack_01_dynamicLoadout_base_F"): {
-        _vehicle setPylonLoadout [1, "PylonRack_12Rnd_missiles",       false, [-1]];
-        _vehicle setPylonLoadout [2, "PylonMissile_1Rnd_AAA_missiles", false, [-1]];
-        _vehicle setPylonLoadout [3, "PylonRack_12Rnd_PG_missiles",    false, [-1]];
-        _vehicle setPylonLoadout [4, "PylonRack_12Rnd_PG_missiles",    false, [-1]];
-        _vehicle setPylonLoadout [5, "PylonMissile_1Rnd_AAA_missiles", false, [-1]];
-        _vehicle setPylonLoadout [6, "PylonRack_12Rnd_missiles",       false, [-1]];
+        [1, "PylonRack_12Rnd_missiles",       false, [-1]] call _setPylonLoadout;
+        [2, "PylonMissile_1Rnd_AAA_missiles", false, [-1]] call _setPylonLoadout;
+        [3, "PylonRack_12Rnd_PG_missiles",    false, [-1]] call _setPylonLoadout;
+        [4, "PylonRack_12Rnd_PG_missiles",    false, [-1]] call _setPylonLoadout;
+        [5, "PylonMissile_1Rnd_AAA_missiles", false, [-1]] call _setPylonLoadout;
+        [6, "PylonRack_12Rnd_missiles",       false, [-1]] call _setPylonLoadout;
         switch (true) do {
             case (_vehicle isKindOf "EF_AH99J_dynamicLoadout_base"): {
-                _vehicle setPylonLoadout [7,  "EF_PylonMissile_Missile_Sidearm_x1", false, [-1]];
-                _vehicle setPylonLoadout [8,  "EF_PylonMissile_Titan_NLOS_2Rnd",    false, [-1]];
-                _vehicle setPylonLoadout [9,  "EF_PylonMissile_Titan_NLOS_2Rnd",    false, [-1]];
-                _vehicle setPylonLoadout [10, "EF_PylonMissile_Missile_Sidearm_x1", false, [-1]];
+                [7,  "EF_PylonMissile_Missile_Sidearm_x1", false, [-1]] call _setPylonLoadout;
+                [8,  "EF_PylonMissile_Titan_NLOS_2Rnd",    false, [-1]] call _setPylonLoadout;
+                [9,  "EF_PylonMissile_Titan_NLOS_2Rnd",    false, [-1]] call _setPylonLoadout;
+                [10, "EF_PylonMissile_Missile_Sidearm_x1", false, [-1]] call _setPylonLoadout;
             };
             case (_vehicle isKindOf "Heli_Attack_01_pylons_dynamicLoadout_base_F"): {
-                _vehicle setPylonLoadout [7, "PylonRack_4Rnd_LG_scalpel", false, [-1]];
-                _vehicle setPylonLoadout [8, "PylonRack_4Rnd_LG_scalpel", false, [-1]];
+                [7, "PylonRack_4Rnd_LG_scalpel", false, [-1]] call _setPylonLoadout;
+                [8, "PylonRack_4Rnd_LG_scalpel", false, [-1]] call _setPylonLoadout;
             };
         };
     };
     case (_vehicle isKindOf "Heli_Attack_02_dynamicLoadout_base_F"): {
-        _vehicle setPylonLoadout [1, "PylonRack_4Rnd_LG_scalpel",      false, [-1]];
-        _vehicle setPylonLoadout [2, "PylonRack_19Rnd_Rocket_Skyfire", false, [-1]];
-        _vehicle setPylonLoadout [3, "PylonRack_19Rnd_Rocket_Skyfire", false, [-1]];
-        _vehicle setPylonLoadout [4, "PylonRack_4Rnd_LG_scalpel",      false, [-1]];
+        [1, "PylonRack_4Rnd_LG_scalpel",      false, [-1]] call _setPylonLoadout;
+        [2, "PylonRack_19Rnd_Rocket_Skyfire", false, [-1]] call _setPylonLoadout;
+        [3, "PylonRack_19Rnd_Rocket_Skyfire", false, [-1]] call _setPylonLoadout;
+        [4, "PylonRack_4Rnd_LG_scalpel",      false, [-1]] call _setPylonLoadout;
     };
     case (_vehicle isKindOf "Heli_Light_02_dynamicLoadout_base_F"): {
-        _vehicle setPylonLoadout [1, selectRandom ["PylonWeapon_2000Rnd_65x39_belt", "PylonWeapon_300Rnd_20mm_shells"]];
-        _vehicle setPylonLoadout [2, selectRandom ["PylonRack_12Rnd_PG_missiles", "PylonRack_20Rnd_Rocket_03_HE_F"]];
+        [1, selectRandom ["PylonWeapon_2000Rnd_65x39_belt", "PylonWeapon_300Rnd_20mm_shells"]] call _setPylonLoadout;
+        [2, selectRandom ["PylonRack_12Rnd_PG_missiles",    "PylonRack_20Rnd_Rocket_03_HE_F"]] call _setPylonLoadout;
     };
     case (_vehicle isKindOf "Heli_light_03_dynamicLoadout_base_F"): {
         private _magazines = ["PylonWeapon_300Rnd_20mm_shells", "PylonRack_12Rnd_missiles", "PylonRack_12Rnd_PG_missiles", "PylonRack_4Rnd_LG_scalpel"];
-        _vehicle setPylonLoadout [1, selectRandom _magazines];
-        _vehicle setPylonLoadout [2, selectRandom _magazines];
+        [1, selectRandom _magazines] call _setPylonLoadout;
+        [2, selectRandom _magazines] call _setPylonLoadout;
     };
     case (_vehicle isKindOf "Heli_Transport_01_DAP_base_F"): {
         // FIXME: pylons do not take precedence over respawning vehicles
-        _vehicle setPylonLoadout [6, "PylonECMPod_01_DIRCM_R"];
-        _vehicle setPylonLoadout [7, "PylonECMPod_01_DIRCM_L"];
+        [6, "PylonECMPod_01_DIRCM_R"] call _setPylonLoadout;
+        [7, "PylonECMPod_01_DIRCM_L"] call _setPylonLoadout;
         // _vehicle animateSource ["Hide_BenchesBack", 0, true];
         // _vehicle animateSource ["Hide_BenchesFront", 0, true];
         // _vehicle animateSource ["Hide_Door_L", 0, true];
@@ -193,24 +199,30 @@ switch (true) do {
         [_vehicle, WHF_aps_ammoMRAP] call WHF_fnc_addAPS;
     };
     case (_vehicle isKindOf "Plane_Fighter_01_Base_F"): {
-        _vehicle setPylonLoadout [1,  "PylonRack_Missile_AMRAAM_D_x2"   ];
-        _vehicle setPylonLoadout [2,  "PylonRack_Missile_AMRAAM_D_x2"   ];
-        _vehicle setPylonLoadout [3,  "PylonRack_Missile_AGM_02_x2"     ];
-        _vehicle setPylonLoadout [4,  "PylonRack_Missile_AGM_02_x2"     ];
-        _vehicle setPylonLoadout [5,  "PylonMissile_Missile_BIM9X_x1"   ];
-        _vehicle setPylonLoadout [6,  "PylonMissile_Missile_BIM9X_x1"   ];
-        _vehicle setPylonLoadout [7,  "PylonMissile_Missile_HARM_INT_x1"];
-        _vehicle setPylonLoadout [8,  "PylonMissile_Missile_HARM_INT_x1"];
-        _vehicle setPylonLoadout [9,  "PylonRack_Bomb_SDB_x4"           ];
-        _vehicle setPylonLoadout [10, "PylonRack_Bomb_SDB_x4"           ];
-        _vehicle setPylonLoadout [11, "PylonMissile_Bomb_GBU12_x1"      ];
-        _vehicle setPylonLoadout [12, "PylonMissile_Bomb_GBU12_x1"      ];
+        [1,  "PylonRack_Missile_AMRAAM_D_x2"   ] call _setPylonLoadout;
+        [2,  "PylonRack_Missile_AMRAAM_D_x2"   ] call _setPylonLoadout;
+        [3,  "PylonRack_Missile_AGM_02_x2"     ] call _setPylonLoadout;
+        [4,  "PylonRack_Missile_AGM_02_x2"     ] call _setPylonLoadout;
+        [5,  "PylonMissile_Missile_BIM9X_x1"   ] call _setPylonLoadout;
+        [6,  "PylonMissile_Missile_BIM9X_x1"   ] call _setPylonLoadout;
+        [7,  "PylonMissile_Missile_HARM_INT_x1"] call _setPylonLoadout;
+        [8,  "PylonMissile_Missile_HARM_INT_x1"] call _setPylonLoadout;
+        [9,  "PylonRack_Bomb_SDB_x4"           ] call _setPylonLoadout;
+        [10, "PylonRack_Bomb_SDB_x4"           ] call _setPylonLoadout;
+        [11, "PylonMissile_Bomb_GBU12_x1"      ] call _setPylonLoadout;
+        [12, "PylonMissile_Bomb_GBU12_x1"      ] call _setPylonLoadout;
     };
     case (_vehicle isKindOf "VTOL_02_infantry_dynamicLoadout_base_F");
     case (_vehicle isKindOf "VTOL_02_vehicle_dynamicLoadout_base_F"): {
-        _vehicle setPylonLoadout [1, "PylonRack_4Rnd_LG_scalpel",      false, [-1]];
-        _vehicle setPylonLoadout [2, "PylonRack_19Rnd_Rocket_Skyfire", false, [-1]];
-        _vehicle setPylonLoadout [3, "PylonRack_19Rnd_Rocket_Skyfire", false, [-1]];
-        _vehicle setPylonLoadout [4, "PylonRack_4Rnd_LG_scalpel",      false, [-1]];
+        [1, "PylonRack_4Rnd_LG_scalpel",      false, [-1]] call _setPylonLoadout;
+        [2, "PylonRack_19Rnd_Rocket_Skyfire", false, [-1]] call _setPylonLoadout;
+        [3, "PylonRack_19Rnd_Rocket_Skyfire", false, [-1]] call _setPylonLoadout;
+        [4, "PylonRack_4Rnd_LG_scalpel",      false, [-1]] call _setPylonLoadout;
     };
+};
+
+if (_setPylonLoadout_called) then {
+    // setPylonLoadout does not remove unused weapons, so we need to clean it up.
+    // FIXME: this fails to clean up turret-specific weapons
+    {_vehicle removeWeaponGlobal _x} forEach (weapons _vehicle select {_vehicle ammo _x <= 0});
 };
