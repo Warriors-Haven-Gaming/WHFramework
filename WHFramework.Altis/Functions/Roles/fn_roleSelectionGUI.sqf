@@ -285,6 +285,7 @@ isNil {with uiNamespace do {
         private _loadout = focusOn call WHF_fnc_getUnitLoadout;
         private _role = with uiNamespace do WHF_roleSelectionGUI_currentRole;
         [_loadout, _role] call WHF_fnc_setLastLoadout;
+        saveMissionProfileNamespace;
 
         with uiNamespace do {
             call WHF_roleSelectionGUI_updateSwitchTimeout;
