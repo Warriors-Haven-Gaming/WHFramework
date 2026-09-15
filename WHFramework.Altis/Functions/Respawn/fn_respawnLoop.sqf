@@ -27,8 +27,9 @@ private _setPylonLoadout = {
     private _pylons = _record get "_pylons";
     if (_pylons isEqualTo []) exitWith {};
     {_object setPylonLoadout [_x # 0, _x # 3, true, _x # 2]} forEach _pylons;
-    // FIXME: this fails to clean up turret-specific weapons
-    {_object removeWeaponGlobal _x} forEach (weapons _object select {_object ammo _x <= 0});
+    // FIXME: clean up empty, turret-specific weapons
+    // FIXME: ammo command requires muzzle, not weapon class (see gatling on Kajman or Xi'an)
+    // {_object removeWeaponGlobal _x} forEach (weapons _object select {_object ammo _x <= 0});
 };
 
 private _respawnVehicle = {

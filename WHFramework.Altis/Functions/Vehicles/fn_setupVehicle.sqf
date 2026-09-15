@@ -223,6 +223,7 @@ switch (true) do {
 
 if (_setPylonLoadout_called) then {
     // setPylonLoadout does not remove unused weapons, so we need to clean it up.
-    // FIXME: this fails to clean up turret-specific weapons
-    {_vehicle removeWeaponGlobal _x} forEach (weapons _vehicle select {_vehicle ammo _x <= 0});
+    // FIXME: clean up empty, turret-specific weapons
+    // FIXME: ammo command requires muzzle, not weapon class (see gatling on Kajman or Xi'an)
+    // {_vehicle removeWeaponGlobal _x} forEach (weapons _vehicle select {_vehicle ammo _x <= 0});
 };
